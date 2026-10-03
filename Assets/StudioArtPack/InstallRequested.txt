@@ -1,0 +1,2 @@
+Create a separate art preview scene on first editor import. Preserve the original scene.
+首次导入时生成独立美术预览场景，保留原场景。

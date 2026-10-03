@@ -1,0 +1,30 @@
+{
+  "locales": ["zh-Hans", "ja", "en"],
+  "entries": [
+    {"key":"menu.start","zhHans":"开始游戏","ja":"ゲーム開始","en":"Start Game"},
+    {"key":"menu.solo","zhHans":"单人模式","ja":"ソロプレイ","en":"Solo"},
+    {"key":"menu.coop","zhHans":"本地双人","ja":"ローカル協力プレイ","en":"Local Co-op"},
+    {"key":"menu.settings","zhHans":"设置","ja":"設定","en":"Settings"},
+    {"key":"menu.quit","zhHans":"退出游戏","ja":"ゲーム終了","en":"Quit Game"},
+    {"key":"menu.back","zhHans":"返回","ja":"戻る","en":"Back"},
+    {"key":"pause.title","zhHans":"已暂停","ja":"一時停止","en":"Paused"},
+    {"key":"pause.resume","zhHans":"继续游戏","ja":"ゲームに戻る","en":"Resume"},
+    {"key":"pause.restart","zhHans":"重新开始","ja":"リトライ","en":"Retry"},
+    {"key":"pause.menu","zhHans":"返回主菜单","ja":"タイトルに戻る","en":"Main Menu"},
+    {"key":"settings.language","zhHans":"语言","ja":"言語","en":"Language"},
+    {"key":"settings.volume","zhHans":"主音量","ja":"マスター音量","en":"Master Volume"},
+    {"key":"settings.music","zhHans":"音乐音量","ja":"BGM音量","en":"Music Volume"},
+    {"key":"settings.sfx","zhHans":"音效音量","ja":"効果音音量","en":"Sound Effects"},
+    {"key":"settings.shake","zhHans":"屏幕震动","ja":"画面の揺れ","en":"Screen Shake"},
+    {"key":"settings.rumble","zhHans":"手柄震动","ja":"コントローラー振動","en":"Controller Vibration"},
+    {"key":"hud.score","zhHans":"分数：{0}","ja":"スコア：{0}","en":"Score: {0}"},
+    {"key":"hud.wave","zhHans":"第 {0} 波","ja":"ウェーブ {0}","en":"Wave {0}"},
+    {"key":"hud.combo","zhHans":"{0} 连击","ja":"{0} コンボ","en":"{0} Combo"},
+    {"key":"hud.player","zhHans":"玩家 {0}","ja":"プレイヤー {0}","en":"Player {0}"},
+    {"key":"upgrade.choose","zhHans":"选择一项强化","ja":"強化を1つ選択","en":"Choose an Upgrade"},
+    {"key":"upgrade.wait","zhHans":"等待另一位玩家","ja":"もう一人の選択を待っています","en":"Waiting for the Other Player"},
+    {"key":"result.win","zhHans":"挑战成功！","ja":"クリア！","en":"Run Complete!"},
+    {"key":"result.end","zhHans":"本局结束","ja":"ゲーム終了","en":"Run Over"},
+    {"key":"device.disconnected","zhHans":"手柄已断开，请重新连接","ja":"コントローラーが切断されました。再接続してください","en":"Controller Disconnected. Please Reconnect."}
+  ]
+}

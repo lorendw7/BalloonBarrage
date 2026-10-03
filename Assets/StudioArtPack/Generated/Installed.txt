@@ -1,0 +1,4 @@
+Art preview installed / 美术预览已生成
+Assets/StudioArtPack/Generated/StudioArtPreview.unity
+Original scene and gameplay scripts preserved.
+UI panel and burst are prepared prefabs; runtime score/effect hooks are not implemented.
