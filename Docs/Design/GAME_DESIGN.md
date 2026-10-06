@@ -6,6 +6,9 @@ This is the current specification, replacing the former rhythm-game plan.
 已确认：大量气球、爽快射击、肉鸽变化；桌面单人/本地同屏双人，键鼠+手柄或双手柄；手机以单人为主；保留暖色工作室与鲜艳涂鸦；用户亲自编写玩法。
 Confirmed: satisfying balloon hordes and roguelite variety; desktop solo/local co-op with keyboard-mouse plus gamepad or two pads; mobile primarily solo; cozy studio/vibrant graffiti; learner-authored gameplay.
 
+开发顺序为共用单人核心、手机单人、本地双人；手机单人优先于本地双人。教学顺序与验收见 [开发路线](ROADMAP.md)。
+Develop the shared solo core, mobile solo, then local co-op; mobile solo has priority over local co-op. See the [roadmap](ROADMAP.md) for lesson order and acceptance.
+
 以下局长、胜负规则、强化和性能预算为首版提案，待试玩修订。不承诺联网、双鼠标或移动双人。音乐服务射击，不强制按拍开火。
 Run length, outcomes, upgrades, and performance budgets below are proposals to playtest. Online, two independent mice, and mobile co-op are out of scope. Music supports shooting without enforcing timing.
 

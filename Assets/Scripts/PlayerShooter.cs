@@ -19,11 +19,6 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            return;
-        }
-
         Camera mainCamera = Camera.main;
 
         if (mainCamera == null)
@@ -56,6 +51,7 @@ public class PlayerShooter : MonoBehaviour
         if (muzzle == null || paintProjectilePrefab == null)
         {
             Debug.LogWarning("请连接 Muzzle 和 Paint Projectile Prefab。");
+            return;
         }
 
         Vector3 direction = (aimPoint - muzzle.position).normalized;

@@ -3,6 +3,12 @@
 
 ## 2026-10-06 射击学习检查点 / Shooting learning checkpoint
 
+后续更新：学习者已移除提前点击门控并补充引用保护 return；当前源文件重新独立编译通过，元数据检查通过。场景枪局部位置保存为 (0.55, -0.35, 1)，Rotation 三轴约 0.65，Scale 仍继承 (1, 1, 1)。保留该场景改动，提醒将缩放值填到 Scale；持续瞄准和镜头构图尚需试玩。
+Follow-up: the learner removed the early click gate and added the guard return; current runtime sources compile again and metadata checks pass. Saved gun-local position is (0.55, -0.35, 1), Rotation is approximately 0.65 on each axis, and Scale remains inherited (1, 1, 1). Preserve the scene edit and advise entering scaling values under Scale. Continuous aim and framing still need playtesting.
+
+下列重复门控待修条目记录的是本日较早检查点，并非最新代码状态。
+The unresolved click-gate entries below describe the earlier checkpoint today, not the latest code state.
+
 - 静态检查通过：182 个资源元数据 GUID 无重复，13 份文档链接有效，无缺失或孤立 .meta。
   Static checks passed: 182 unique metadata GUIDs, valid links in thirteen documents, and no missing/orphaned metadata.
 - 使用 Unity 附带 Roslyn 及当前工程程序集引用，独立编译 8 个运行时源文件通过；输出保留在忽略的本地检查目录。CS0649 警告涉及 Inspector 赋值字段；这不是完整 Unity 导入、Windows 构建或运行时测试。

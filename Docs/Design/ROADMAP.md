@@ -8,8 +8,8 @@ The goal is a playable BalloonBarrage learning prototype authored by the learner
 已接入：固定相机工作室、单个气球随机生成、玩家发射器、飞行颜料弹的 SphereCast 路径碰撞、Balloon.Hit 一次结算、计分、击破音效、立即爆裂和独立青色碎片、美术环境及喷漆枪。用户反馈发射流程可以运行；尚非完整一局游戏。
 Integrated: fixed-camera studio, single-target spawning, player shooter, moving projectiles with SphereCast path checks, one-time Balloon.Hit resolution, score, audio, immediate pop with independent teal fragments, environment art, and paint gun. The learner reports firing works; this is not a complete round.
 
-PlayerShooter 已连接 Muzzle、PaintDrop3D_Teal 和 MuzzleSpray，弹丸预制体已挂脚本，保存参数为速度 35、半径 0.08、寿命 2 秒。下一课先修复重复的点击门控、缺失引用警告后的 return，以及枪挡住画面的构图，不把点击转向描述为持续瞄准已完成。
-PlayerShooter references Muzzle, PaintDrop3D_Teal, and MuzzleSpray. The projectile prefab has its script with speed 35, radius 0.08, and lifetime 2 seconds. Fix the duplicate early click gate, missing return after the reference warning, and gun framing next; continuous aiming is not complete.
+PlayerShooter 已连接 Muzzle、PaintDrop3D_Teal 和 MuzzleSpray，弹丸预制体参数为速度 35、半径 0.08、寿命 2 秒。学习者已修复提前的点击门控和缺失 return；下一步试玩持续瞄准并调整枪构图。场景中 0.65 填在 Rotation 而非 Scale，助手未自动改动。
+PlayerShooter references Muzzle, PaintDrop3D_Teal, and MuzzleSpray; projectile settings are speed 35, radius 0.08, and lifetime 2 seconds. The learner fixed the early click gate and missing return. Playtest continuous aim and adjust framing next. The scene has 0.65 in Rotation rather than Scale; the assistant did not change it.
 
 尚未完成：BalloonFloat 仍为空；生成器立即替换旧球，没有等待和入场动画。Canvas 菜单、运行时三语切换、波次、对象池、双人输入、肉鸽强化和手机触控未完成。三语文案和菜单美术存在不等于玩法接入。
 Pending: BalloonFloat is empty; immediate respawning has no delay or entrance. Canvas menus, runtime localization, waves, pooling, co-op, upgrades, and touch remain. Existing trilingual strings and menu art do not imply integration.
@@ -18,11 +18,14 @@ Pending: BalloonFloat is empty; immediate respawning has no delay or entrance. C
 
 ## 分阶段课程 / Course stages
 
+优先级：共用单人核心 → 手机单人 → 本地双人。先在现有 Windows 场景验证共用玩法，不等待双人或桌面专属打磨才开始手机适配。输入与画面反馈分离，触控复用命中、生成和计分逻辑。
+Priority: shared solo core → mobile solo → local co-op. Validate shared gameplay in the existing Windows scene, then begin mobile adaptation without waiting for co-op or desktop-only polish. Keep input separate from feedback so touch reuses hits, spawning, and scoring.
+
 | 阶段 / Stage | 课程范围 / Lessons | 可验证结果 / Exit condition | 预计课次 / Sessions |
 |---|---|---|---:|
-| 1. 单人 Windows 原型 / Solo Windows prototype | 下列十个教学单元 / Ten units below | 从菜单完整玩一局、结算、重开；完成基础强化与性能测试 / Complete round, retry, basic upgrades, and profiling | 10–14 |
-| 2. 本地双人 / Local co-op | 玩家设备归属、双准星、分数归属、键鼠+手柄、双手柄、断线 / Device ownership, reticles, score attribution, device pairs, disconnect | 两人不串输入，同球一次结算，断线提示明确 / Independent input, single resolution, clear disconnect handling | 4–6 |
-| 3. 手机单人 / Mobile solo | 触控、安全区、自适应 UI、效果预算、真机与构建 / Touch, safe area, responsive UI, budgets, device tests, builds | 横屏真机完整单人游玩 / Complete landscape-device solo run | 4–6 |
+| 1. 共用单人核心 / Shared solo core | 下列十个教学单元，在 Windows 场景验证 / Ten units below, tested in the Windows scene | 从菜单完整玩一局、结算、重开；完成基础强化与性能测试 / Complete round, retry, basic upgrades, and profiling | 10–14 |
+| 2. 手机单人 / Mobile solo | 触控、安全区、自适应 UI、效果预算、真机与构建 / Touch, safe area, responsive UI, budgets, device tests, builds | 横屏真机完整单人游玩 / Complete landscape-device solo run | 4–6 |
+| 3. 本地双人 / Local co-op | 玩家设备归属、双准星、分数归属、键鼠+手柄、双手柄、断线 / Device ownership, reticles, score attribution, device pairs, disconnect | 两人不串输入，同球一次结算，断线提示明确 / Independent input, single resolution, clear disconnect handling | 4–6 |
 
 收敛到最小可玩原型后，剩余预计 **18–26 次**，每次 45–90 分钟，另需练习和排错。每周 3 次约 6–9 周授课，实际完成可能更长；不是商业发布工期。复杂单元拆课；高级连锁、特殊气球、更多武器和关卡留作原型后的扩展。
 With scope narrowed to a minimal prototype, estimate **18–26 sessions** of 45–90 minutes plus practice/debugging: roughly 6–9 teaching weeks at three weekly sessions, potentially longer in practice. This is not a commercial release estimate. Split complex units; advanced chains, special balloons, extra weapons, and levels are post-prototype extensions.
@@ -38,7 +41,7 @@ With scope narrowed to a minimal prototype, estimate **18–26 sessions** of 45�
 7. **完整局流程 / Round flow**：开始、暂停、计时、结算、重开；菜单不发射，暂停不生成，新局清零。 / Start, pause, timer, results, retry; no menu firing or paused spawns; reset run state.
 8. **最小肉鸽 / Minimal roguelite**：波后三选一，至少射速、散射、伤害三类；新局重置。 / Post-wave choices among rate, spread, and damage; reset each run.
 9. **对象池与预算 / Pooling and budgets**：回收重置；限制粒子和弹丸；记录 30/60/100 目标性能。 / Correct reuse/reset, bounded particles/projectiles, profiling 30/60/100 targets.
-10. **Windows 验收 / Windows acceptance**：声音/画质/语言设置、独立构建、从菜单到重开回归。 / Audio/quality/language settings, standalone build, full menu-to-retry regression.
+10. **单人基线验收 / Solo baseline acceptance**：声音/画质/语言设置、Windows 基础构建、从菜单到重开回归；随后优先手机适配，桌面专属扩展后置。 / Audio/quality/language settings, baseline Windows build, full menu-to-retry regression; mobile adaptation next, desktop-only extensions later.
 
 现阶段相机射线只选瞄准点；真实命中由颜料弹移动路径检查决定，不回退到点击即伤害，也不模拟真实流体。双人仍为本地键鼠+手柄或双手柄；手机单人优先。
 The camera ray selects an aim point only; projectile path checks resolve hits. Do not revert to instant click damage or simulate physical fluids. Co-op targets local keyboard/mouse plus gamepad or dual gamepads; mobile prioritizes solo.

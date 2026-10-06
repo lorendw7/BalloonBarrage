@@ -3,6 +3,9 @@
 暖色涂鸦工作室中的爽快气球射击肉鸽。Windows 支持单人及本地同屏双人，移动端以单人为主。双人、海量气球和随机强化是下一阶段目标，不是当前已完成功能。
 A cozy graffiti-studio balloon-shooting roguelite. Windows targets solo/local two-player co-op; mobile focuses on solo play. Co-op, hordes, and upgrades are planned, not implemented.
 
+开发优先级：共用单人核心 → 手机单人 → 本地双人。Windows 场景继续作为教学验证入口，手机单人优先于双人功能。
+Development priority: shared solo core → mobile solo → local co-op. The Windows scene remains the teaching testbed; mobile solo takes priority over co-op.
+
 ## 唯一工作目录 / Single working directory
 使用 Unity **6000.0.77f1** 打开 `D:/CS/Code/BalloonShooter`。远端为 [lorendw7/BalloonBarrage](https://github.com/lorendw7/BalloonBarrage)，本地目录按用户确认保留原名。
 Open `D:/CS/Code/BalloonShooter` with Unity **6000.0.77f1**. The remote is BalloonBarrage; the local folder intentionally retains its confirmed name.
@@ -21,8 +24,8 @@ Do not use the old `D:/CS/Code/Unity/BalloonShooter` path. Assets and learner co
 ## 当前状态 / Current state
 - 已有：玩家发射器、飞行颜料弹与路径碰撞、计分、单目标连续生成、立即爆裂与独立碎片、击破音效、工作室场景和美术。用户反馈射击流程可以运行；尚非完整一局游戏。
   Present: player shooter, moving paint projectiles with swept collision, score, single-target respawning, immediate pop with independent fragments, audio, studio scenes and art. The learner reports the shooting flow works; this is not yet a complete round.
-- 枪口特效和 PlayerShooter 三个引用已连接。仍有重复点击门控，导致枪只在点击时转向；缺失引用分支少了 return。下课由学习者修复并调整枪的相机局部位置。
-  Muzzle VFX and the three PlayerShooter references are wired. A duplicate click gate prevents continuous aim; the missing-reference guard lacks a return. The learner fixes these and adjusts camera-local gun placement next.
+- 枪口特效和 PlayerShooter 三个引用已连接。学习者已删除提前退出的点击门控，并在缺失引用警告后补上 return；持续瞄准需试玩验收，枪的画面遮挡仍待调整。
+  Muzzle VFX and the three PlayerShooter references are wired. The learner removed the early click gate and added the missing-reference return; continuous aiming awaits playtest acceptance, and gun framing still needs adjustment.
 - 菜单图形已制作，按钮事件未连接；BalloonFloat.cs 仍是空模板。新气球尚无生成等待或入场动画。
   Menu graphics exist, but button events are not wired. BalloonFloat.cs is empty; respawn delay and entrance animation are pending.
 - 未完成：双人输入、连射、对象池、随机强化、完整局流程、手机适配。
