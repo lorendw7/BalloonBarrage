@@ -19,10 +19,12 @@ If PaintBlaster is missing, add the working directory above in Unity Hub. The ol
 Do not use the old `D:/CS/Code/Unity/BalloonShooter` path. Assets and learner code are consolidated in the working directory above; recovery snapshots stay in the ignored `.local-backups/` folder.
 
 ## 当前状态 / Current state
-- 已有：鼠标点击、计分、单目标连续生成、缩小消失、击破音效、用户写好的爆破粒子代码与预制体引用、工作室场景和美术。
-  Present: mouse popping, score, single-target respawning, shrink animation, pop audio, learner-authored pop-particle code and prefab references, studio scenes and art.
-- 菜单背景及六个 UI 图形已制作，按钮事件未连接；BalloonFloat.cs 仍是空模板。`blaster-m` 喷漆枪已组装，用户写好的 `PaintGunVfx.cs` 已同步，组件挂载和粒子连接由教学继续完成。
-  Menu background and six UI graphics are authored; events are not wired. BalloonFloat.cs remains an empty template. The assembled `blaster-m` and learner-authored PaintGunVfx.cs are present; component attachment and particle wiring remain lesson tasks.
+- 已有：玩家发射器、飞行颜料弹与路径碰撞、计分、单目标连续生成、立即爆裂与独立碎片、击破音效、工作室场景和美术。用户反馈射击流程可以运行；尚非完整一局游戏。
+  Present: player shooter, moving paint projectiles with swept collision, score, single-target respawning, immediate pop with independent fragments, audio, studio scenes and art. The learner reports the shooting flow works; this is not yet a complete round.
+- 枪口特效和 PlayerShooter 三个引用已连接。仍有重复点击门控，导致枪只在点击时转向；缺失引用分支少了 return。下课由学习者修复并调整枪的相机局部位置。
+  Muzzle VFX and the three PlayerShooter references are wired. A duplicate click gate prevents continuous aim; the missing-reference guard lacks a return. The learner fixes these and adjusts camera-local gun placement next.
+- 菜单图形已制作，按钮事件未连接；BalloonFloat.cs 仍是空模板。新气球尚无生成等待或入场动画。
+  Menu graphics exist, but button events are not wired. BalloonFloat.cs is empty; respawn delay and entrance animation are pending.
 - 未完成：双人输入、连射、对象池、随机强化、完整局流程、手机适配。
   Pending: co-op, automatic fire, pooling, upgrades, run flow, and mobile adaptation.
 - 玩法由用户亲自编写，教学在会话中；辅助工具只处理编辑器资源。

@@ -327,5 +327,5 @@ MonoBehaviour:
   popDuration: 0.12
   popSound: {fileID: 8300000, guid: b8ae541a4dbe7be44bea956ba8b18bd8, type: 3}
   popVolume: 0.5
-  popEffectPrefab: {fileID: 6113047579041386206, guid: 6a7cd42b37d2a8d48831870f18b4ebd4, type: 3}
+  popEffectPrefab: {fileID: 6864040625691906089, guid: 9d26bc8cc4d00b942bb1191dd43b5a52, type: 3}
   popPoint: {fileID: 0}

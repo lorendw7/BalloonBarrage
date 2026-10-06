@@ -1,46 +1,47 @@
 # 教学与开发路线 / Learning and development roadmap
 
-更新 / Updated: 2026-10-03。目标是让初学者亲自完成一个可玩的 BalloonBarrage 学习原型。每课只增加一个可以在 Unity 中立即验证的结果；玩法代码由学习者输入，仓库工具只整理资源、美术和文档。
+更新 / Updated: 2026-10-06 (Asia/Tokyo)。目标是让初学者亲自完成一个可玩的 BalloonBarrage 学习原型。每课只增加一个可以在 Unity 中立即验证的结果；玩法代码由学习者输入，仓库工具只整理资源、美术和文档。
 The goal is a playable BalloonBarrage learning prototype authored by the learner. Every lesson adds one immediately testable Unity result. The learner types gameplay code; repository tools only organize assets, art, and documentation.
 
 ## 当前基线 / Current baseline
 
-已完成：固定相机工作室、单个气球随机生成、鼠标点击射线、计分、缩小消失、击破音效、美术环境、涂鸦、菜单图形、橡胶碎片素材，以及基于 `blaster-m` 的喷漆枪组装预制体。
-Complete: fixed-camera studio, one-at-a-time random balloon spawning, mouse ray click, score, shrink pop, audio, environment art, graffiti, menu graphics, latex-fragment art, and an assembled `blaster-m` paint-gun prefab.
+已接入：固定相机工作室、单个气球随机生成、玩家发射器、飞行颜料弹的 SphereCast 路径碰撞、Balloon.Hit 一次结算、计分、击破音效、立即爆裂和独立青色碎片、美术环境及喷漆枪。用户反馈发射流程可以运行；尚非完整一局游戏。
+Integrated: fixed-camera studio, single-target spawning, player shooter, moving projectiles with SphereCast path checks, one-time Balloon.Hit resolution, score, audio, immediate pop with independent teal fragments, environment art, and paint gun. The learner reports firing works; this is not a complete round.
 
-爆破粒子代码和基础预制体绑定已经从学习者保存的旧项目同步，橡胶碎片升级和视觉验收仍待完成。PaintGunVfx 脚本也已同步，下一步在枪上挂组件并连接 MuzzleSpray。
-The learner's pop-particle code and basic prefab binding have been synchronized; latex-fragment upgrades and visual checks remain. PaintGunVfx is present; attach it to the gun and wire MuzzleSpray next.
+PlayerShooter 已连接 Muzzle、PaintDrop3D_Teal 和 MuzzleSpray，弹丸预制体已挂脚本，保存参数为速度 35、半径 0.08、寿命 2 秒。下一课先修复重复的点击门控、缺失引用警告后的 return，以及枪挡住画面的构图，不把点击转向描述为持续瞄准已完成。
+PlayerShooter references Muzzle, PaintDrop3D_Teal, and MuzzleSpray. The projectile prefab has its script with speed 35, radius 0.08, and lifetime 2 seconds. Fix the duplicate early click gate, missing return after the reference warning, and gun framing next; continuous aiming is not complete.
 
-尚未完成：独立玩家射击器、喷漆弹、Canvas 菜单、波次、对象池、双人输入、肉鸽强化和手机触控。
-Pending: player-owned shooting, paint projectiles, Canvas menus, waves, pooling, co-op input, roguelite upgrades, and mobile touch.
+尚未完成：BalloonFloat 仍为空；生成器立即替换旧球，没有等待和入场动画。Canvas 菜单、运行时三语切换、波次、对象池、双人输入、肉鸽强化和手机触控未完成。三语文案和菜单美术存在不等于玩法接入。
+Pending: BalloonFloat is empty; immediate respawning has no delay or entrance. Canvas menus, runtime localization, waves, pooling, co-op, upgrades, and touch remain. Existing trilingual strings and menu art do not imply integration.
 
-当前课 / Current lesson: **1.1 按鼠标播放枪口喷漆粒子 / Play muzzle paint on mouse press**。
+当前课 / Current lesson: **持续瞄准与镜头构图 / Continuous aim and gun framing**。
 
 ## 分阶段课程 / Course stages
 
 | 阶段 / Stage | 课程范围 / Lessons | 可验证结果 / Exit condition | 预计课次 / Sessions |
 |---|---|---|---:|
-| 1. 喷漆射击闭环 / Paint-shooting slice | 枪口粒子、玩家射击器、射线命中、爆破特效、颜料痕迹 / Muzzle VFX, shooter, hit ray, pop VFX, paint mark | 枪口、命中点和爆破位置一致；气球不再自己读取鼠标 / Muzzle, hit and pop align; balloons no longer read input | 5 |
-| 2. 一局游戏 / Playable round | Canvas 分数、开始、暂停、倒计时、结算、重开 / Canvas score, start, pause, timer, results, retry | 能从菜单完整玩完并重开一局 / Complete and retry a round | 4–6 |
-| 3. 大量气球 / Balloon hordes | 多目标生成、波次、逃逸压力、对象池、反馈数量限制 / Multiple targets, waves, pressure, pooling, feedback budgets | PC 依次测试 30/60/100 个目标，无重复计分 / Test 30/60/100 targets without duplicate scoring | 5–7 |
-| 4. 本地双人 / Local co-op | Input System、准星、玩家归属、键鼠+手柄、双手柄、断线 / Player input, reticles, ownership, device pairs, disconnect | 两名玩家无串线、同球只结算一次 / No cross-control; one resolution per balloon | 5–7 |
-| 5. 肉鸽构筑 / Roguelite loop | 三选一、射速、散射、穿透、连锁、特殊气球、随机种子 / Upgrade choices, modifiers, special balloons, seeds | 五波内形成可辨识构筑并正常结算 / Distinct build across five waves | 6–8 |
-| 6. PC 打磨 / PC polish | 三语切换、音画反馈、菜单美术、设置、构建和性能检查 / Localization, feedback, UI art, settings, build, profiling | Windows 1080p/60 FPS 目标和完整构建 / Complete Windows build targeting 1080p/60 FPS | 3–5 |
-| 7. 手机单人 / Mobile solo | 触控、安全区、自适应 UI、粒子降级、真机性能 / Touch, safe area, responsive UI, VFX scaling, device profiling | 横屏真机可完整单人游玩 / Complete solo run on a landscape device | 5–8 |
+| 1. 单人 Windows 原型 / Solo Windows prototype | 下列十个教学单元 / Ten units below | 从菜单完整玩一局、结算、重开；完成基础强化与性能测试 / Complete round, retry, basic upgrades, and profiling | 10–14 |
+| 2. 本地双人 / Local co-op | 玩家设备归属、双准星、分数归属、键鼠+手柄、双手柄、断线 / Device ownership, reticles, score attribution, device pairs, disconnect | 两人不串输入，同球一次结算，断线提示明确 / Independent input, single resolution, clear disconnect handling | 4–6 |
+| 3. 手机单人 / Mobile solo | 触控、安全区、自适应 UI、效果预算、真机与构建 / Touch, safe area, responsive UI, budgets, device tests, builds | 横屏真机完整单人游玩 / Complete landscape-device solo run | 4–6 |
 
-剩余预计 **33–46 次**，每次约 45–90 分钟，另需自主练习和排错时间。每周 3–4 次，学习原型约需 2–4 个月；这不是商业发布工期。
-Estimated remaining work: **33–46 sessions** of 45–90 minutes plus practice and debugging. At 3–4 lessons weekly, expect roughly 2–4 months for a learning prototype, not a commercial release.
+收敛到最小可玩原型后，剩余预计 **18–26 次**，每次 45–90 分钟，另需练习和排错。每周 3 次约 6–9 周授课，实际完成可能更长；不是商业发布工期。复杂单元拆课；高级连锁、特殊气球、更多武器和关卡留作原型后的扩展。
+With scope narrowed to a minimal prototype, estimate **18–26 sessions** of 45–90 minutes plus practice/debugging: roughly 6–9 teaching weeks at three weekly sessions, potentially longer in practice. This is not a commercial release estimate. Split complex units; advanced chains, special balloons, extra weapons, and levels are post-prototype extensions.
 
-## 第一阶段的五课 / Stage 1 lesson sequence
+## 单人原型的十个单元 / Ten solo-prototype units
 
-1. **枪口会喷 / Muzzle plays**：点击鼠标时调用现有 `MuzzleSpray.Play()`，只验证视觉。
-2. **输入归玩家 / Player owns input**：新建 `PlayerShooter`，把射线检测从 `Balloon.Update()` 移出。
-3. **命中有来源 / Explicit hit API**：`Balloon.Hit()` 负责一次结算，防止输入、分数和表现耦合。
-4. **气球真爆破 / Pop particles**：实例化橡胶碎片粒子，并解释 Prefab、引用和生命周期。
-5. **墙上留漆 / Paint impact**：仅在有效表面生成受数量限制的颜料痕迹，完成第一阶段验收。
+1. **持续瞄准与构图 / Continuous aim and framing**：不点击也转向；空引用安全退出；枪不挡住中心。 / Aim without clicking, exit safely on missing references, keep the center clear.
+2. **气球入场 / Balloon entrance**：生成延迟、平滑入场、漂浮；一次击破只安排一次生成，两个动画不争夺位置。 / Delay, entrance, float; one replacement per pop and no competing movement scripts.
+3. **爽快连射 / Held fire**：按秒计时的射速、枪口效果单一输入归属、表现后坐力。 / Time-based rate, one muzzle input owner, visual recoil.
+4. **颜料命中 / Paint impacts**：墙面痕迹和气球反馈；不穿墙；痕迹数量与寿命上限。 / Wall marks and balloon feedback without through-wall paint; bounded count/lifetime.
+5. **多球与波次 / Targets and waves**：合法出生位置、数量、压力、胜负和一次计分。 / Valid spawn positions, counts, pressure, win/loss, single scoring.
+6. **HUD 与三语 / HUD and localization**：Canvas 自适应、分数/波次、中日英字体和切换。 / Responsive Canvas score/wave display, Chinese/Japanese/English fonts and switching.
+7. **完整局流程 / Round flow**：开始、暂停、计时、结算、重开；菜单不发射，暂停不生成，新局清零。 / Start, pause, timer, results, retry; no menu firing or paused spawns; reset run state.
+8. **最小肉鸽 / Minimal roguelite**：波后三选一，至少射速、散射、伤害三类；新局重置。 / Post-wave choices among rate, spread, and damage; reset each run.
+9. **对象池与预算 / Pooling and budgets**：回收重置；限制粒子和弹丸；记录 30/60/100 目标性能。 / Correct reuse/reset, bounded particles/projectiles, profiling 30/60/100 targets.
+10. **Windows 验收 / Windows acceptance**：声音/画质/语言设置、独立构建、从菜单到重开回归。 / Audio/quality/language settings, standalone build, full menu-to-retry regression.
 
-阶段 1 先使用射线命中，画面可显示短促喷漆；暂不模拟真实液体弹道。后续如玩法需要，再把视觉弹丸与命中判定分离。这样先学清输入、职责和命中，再增加移动与对象池。
-Stage 1 uses ray hits with a short visible paint burst rather than physical fluid ballistics. A visual projectile may be separated from hit resolution later. This teaches input, ownership, and hits before movement and pooling.
+现阶段相机射线只选瞄准点；真实命中由颜料弹移动路径检查决定，不回退到点击即伤害，也不模拟真实流体。双人仍为本地键鼠+手柄或双手柄；手机单人优先。
+The camera ray selects an aim point only; projectile path checks resolve hits. Do not revert to instant click damage or simulate physical fluids. Co-op targets local keyboard/mouse plus gamepad or dual gamepads; mobile prioritizes solo.
 
 ## 每次教学约定 / Lesson contract
 
