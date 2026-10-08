@@ -1,8 +1,13 @@
 using UnityEngine;
+using BalloonBarrage.Foundation;
 
 public class BalloonSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject balloonPrefab;
+
+    [SerializeField] private BalloonSpawnSettings spawnSettings;
+
+    private float remainingDelay;
 
     [SerializeField]
     private Vector2 xRange = new Vector2(
@@ -19,15 +24,33 @@ public class BalloonSpawner : MonoBehaviour
 
     private void Start()
     {
+        if (spawnSettings == null || balloonPrefab == null)
+        {
+            Debug.LogError("请连接生成配置和气球预制体");
+            enabled = false;
+            return;
+        }
+
         Spawn();
+        remainingDelay = spawnSettings.RespawnDelay;
     }
 
     private void Update()
     {
-        if (currentBallon == null)
+        if (currentBallon != null)
         {
-            Spawn();
+            return;
         }
+
+        remainingDelay -= Time.deltaTime;
+
+        if (remainingDelay > 0f)
+        {
+            return;
+        }
+
+        Spawn();
+        remainingDelay = spawnSettings.RespawnDelay;
     }
 
     private void Spawn()

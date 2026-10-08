@@ -1,7 +1,9 @@
 # 美术素材清单 / Art asset catalog
 喷漆枪复用与补充 / Existing guns and paint supplements: [说明 / Details](PAINT_BLASTER.md).
 新增橡胶碎片爆破包 / New latex pop pack: [说明 / Details](BALLOON_POP_V2.md).
-更新日期 / Updated: 2026-10-03
+更新日期 / Updated: 2026-10-08
+
+官网复用菜单背景、工作室/油漆枪概念与气球参考；Website/assets.json 只维护原图路径，输出不提交。原图留在 Assets 分类，概念图标为非实机，不复制模型/图集包到网站。 / The site references canonical menu/concept art via a manifest, with generated copies ignored. Preserve Assets originals and label concepts as non-gameplay; do not duplicate model/atlas packages.
 
 | 文件 / File | 用途 / Use | 状态 / Status |
 |---|---|---|

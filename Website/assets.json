@@ -1,0 +1,6 @@
+[
+  { "source": "Assets/StudioArtPack/Menu/MenuBackground_v1.png", "output": "menu-background.png" },
+  { "source": "Assets/Art/Concepts/CozyGraffitiStudio_Concept.png", "output": "studio-concept.png" },
+  { "source": "Assets/StudioArtPack/PaintBlaster/Concepts/PaintBlaster_Concept_v1.png", "output": "paint-blaster-concept.png" },
+  { "source": "Assets/Art/Concepts/Balloon_Readability_v2.png", "output": "balloon-concept.png" }
+]

@@ -12,6 +12,8 @@
 #
 .utmp/
 /.local-backups/
+/Website/dist/
+/Website/node_modules/
 /.claude/
 *.slnx
 /[Ll]ibrary/

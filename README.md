@@ -1,66 +1,84 @@
 # BalloonBarrage / 气球弹幕
 
-暖色涂鸦工作室中的爽快气球射击肉鸽。Windows 支持单人及本地同屏双人，移动端以单人为主。双人、海量气球和随机强化是下一阶段目标，不是当前已完成功能。
-A cozy graffiti-studio balloon-shooting roguelite. Windows targets solo/local two-player co-op; mobile focuses on solo play. Co-op, hordes, and upgrades are planned, not implemented.
+暖色涂鸦工作室中的卡通油漆枪射击游戏。**桌面优先，Windows 单人先行**；大量气球、波次、肉鸽强化和本地双人是计划功能，不是当前已完成内容。暂不走应用商店，GitHub Pages 托管官网，GitHub Releases 分发游戏包。
+A cartoon paint-blaster game in a cozy graffiti studio. **Desktop first, starting with Windows solo.** Balloon crowds, waves, roguelite upgrades, and local co-op are planned, not complete. No store release is planned: GitHub Pages hosts the site and GitHub Releases distributes builds.
 
-开发优先级：共用单人核心 → 手机单人 → 本地双人。Windows 场景继续作为教学验证入口，手机单人优先于双人功能。
-Development priority: shared solo core → mobile solo → local co-op. The Windows scene remains the teaching testbed; mobile solo takes priority over co-op.
+- 官网 / Website: [中文](https://lorendw7.github.io/BalloonBarrage/) · [日本語](https://lorendw7.github.io/BalloonBarrage/ja/) · [English](https://lorendw7.github.io/BalloonBarrage/en/).
+- 下载 / Downloads: [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases). 当前尚无公开 Windows 包；源代码 ZIP 不是可运行游戏。 / No public Windows build exists yet; a source ZIP is not a playable game.
+- 仓库 / Repository: [lorendw7/BalloonBarrage](https://github.com/lorendw7/BalloonBarrage).
 
-## 唯一工作目录 / Single working directory
-使用 Unity **6000.0.77f1** 打开 `D:/CS/Code/BalloonShooter`。远端为 [lorendw7/BalloonBarrage](https://github.com/lorendw7/BalloonBarrage)，本地目录按用户确认保留原名。
-Open `D:/CS/Code/BalloonShooter` with Unity **6000.0.77f1**. The remote is BalloonBarrage; the local folder intentionally retains its confirmed name.
+## 打开项目 / Open the project
 
-原型入口 / Prototype: `Assets/Scenes/PrototypeScene.unity`。
-美术预览 / Art preview: `Assets/StudioArtPack/Generated/StudioArtPreview.unity`。
-喷漆枪预制体 / Paint gun: [PaintGun_M.prefab](Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M.prefab)。
-喷漆枪预览 / Paint-gun preview: `Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M_Preview.unity`。
+安装 Git LFS，克隆后执行 git lfs pull，使用 Unity **6000.0.77f1** 打开包含 Assets、Packages、ProjectSettings 的仓库根。本机唯一活动目录是 `D:/CS/Code/BalloonShooter`；不要打开旧的 `D:/CS/Code/Unity/BalloonShooter`。
+Install Git LFS and run git lfs pull after cloning. Open the repository root containing Assets, Packages, ProjectSettings with Unity **6000.0.77f1**. The canonical local checkout is `D:/CS/Code/BalloonShooter`, not the retired path containing another Unity directory.
 
-如果 Unity 里没有 PaintBlaster 文件夹，在 Unity Hub 从磁盘添加上面的唯一工作目录。旧路径多一层 `Unity/`，两者不是同一项目。
-If PaintBlaster is missing, add the working directory above in Unity Hub. The old path contains an extra `Unity/` folder and is a separate project.
-
-不要再使用旧路径 `D:/CS/Code/Unity/BalloonShooter`。当前所有资源和学习者代码已统一到上面的工作目录；恢复文件保存在 `.local-backups/`，不提交 Git。
-Do not use the old `D:/CS/Code/Unity/BalloonShooter` path. Assets and learner code are consolidated in the working directory above; recovery snapshots stay in the ignored `.local-backups/` folder.
+- 原型 / Prototype: `Assets/Scenes/PrototypeScene.unity`.
+- 气球 / Balloon: `Assets/Prefabs/PlayableBalloon.prefab`.
+- 油漆枪 / Paint blaster: [PaintGun_M.prefab](Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M.prefab).
+- 环境预览 / Art preview: `Assets/StudioArtPack/Generated/StudioArtPreview.unity`.
+- 枪预览 / Blaster preview: `Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M_Preview.unity`.
+- 配置检查 / Wiring helper: Unity 菜单 / menu `Tools → BalloonBarrage → Learning Workbench`.
 
 ## 当前状态 / Current state
-- 已有：玩家发射器、飞行颜料弹与路径碰撞、计分、单目标连续生成、立即爆裂与独立碎片、击破音效、工作室场景和美术。用户反馈射击流程可以运行；尚非完整一局游戏。
-  Present: player shooter, moving paint projectiles with swept collision, score, single-target respawning, immediate pop with independent fragments, audio, studio scenes and art. The learner reports the shooting flow works; this is not yet a complete round.
-- 枪口特效和 PlayerShooter 三个引用已连接。学习者已删除提前退出的点击门控，并在缺失引用警告后补上 return；持续瞄准需试玩验收，枪的画面遮挡仍待调整。
-  Muzzle VFX and the three PlayerShooter references are wired. The learner removed the early click gate and added the missing-reference return; continuous aiming awaits playtest acceptance, and gun framing still needs adjustment.
-- 菜单图形已制作，按钮事件未连接；BalloonFloat.cs 仍是空模板。新气球尚无生成等待或入场动画。
-  Menu graphics exist, but button events are not wired. BalloonFloat.cs is empty; respawn delay and entrance animation are pending.
-- 未完成：双人输入、连射、对象池、随机强化、完整局流程、手机适配。
-  Pending: co-op, automatic fire, pooling, upgrades, run flow, and mobile adaptation.
-- 玩法由用户亲自编写，教学在会话中；辅助工具只处理编辑器资源。
-  The learner writes gameplay; lessons stay in conversation. Utilities prepare editor assets only.
+
+2026-10-08 保存代码检查：已有持续鼠标瞄准、单击发射飞行颜料弹、路径碰撞、一次击破计分、音效和独立碎片、单目标随机生成及配置等待、平滑入场。保存预制体启用胶囊并关闭两个旧球形命中体。漂浮脚本有代码，但未挂到保存玩法预制体。
+Saved-source inspection on 2026-10-08 shows continuous mouse aim, click-fired moving paint, swept collision, single scoring, audio/fragments, single-target spawning with delay, and smooth entrance. The prefab enables a capsule and disables both old spheres. Float code exists but is not attached to the saved prefab.
+
+多球课已在会话提供，保存生成器仍管理一个目标。连射、波次、完整回合、强化、对象池、菜单事件、游戏内三语切换和手柄/双人未实现。官网三语不等于游戏内语言已接入。
+The multi-target lesson has been supplied in chat, but the saved spawner still tracks one target. Held fire, waves, rounds, upgrades, pooling, menu actions, in-game localization, controllers, and co-op remain pending. Website languages do not imply in-game localization.
+
+学习者写核心，助手维护配置、工具、测试、美术、文档和官网。本轮保留学习者保存改动，不代写核心或移动 Unity GUID。Windows 构建和运行验收仍需完成。
+The learner writes core gameplay; the assistant maintains foundations, tools, tests, art, docs, and the site. Preserve saved learner changes without authoring core or moving Unity GUIDs. Windows builds and runtime acceptance remain pending.
+
+## 官网 / Website
+
+Website/ 在 Unity Assets 之外。Node.js 22+，无需安装依赖，在仓库根运行：
+Website/ is outside Unity Assets. With Node.js 22+, run at the repository root; no dependencies are needed:
+
+```text
+node Website/scripts/build.mjs
+node --test Website/tests/site.test.mjs
+node Website/scripts/serve.mjs
+```
+
+预览 / Preview: http://127.0.0.1:4173/. 离线构建加 --offline；无法确认发布状态时不假称没有包。规则见 [官网与桌面发行](Docs/Project/WEBSITE_AND_RELEASES.md)。
+Append --offline for offline builds; an unknown release status is not reported as no release. See the [distribution guide](Docs/Project/WEBSITE_AND_RELEASES.md).
 
 ## 导航 / Navigation
+
 - [游戏设计 / Game design](Docs/Design/GAME_DESIGN.md)
 - [开发路线 / Roadmap](Docs/Design/ROADMAP.md)
 - [美术规范 / Art direction](Docs/Art/ART_DIRECTION.md)
 - [素材索引 / Asset catalog](Docs/Art/ASSET_CATALOG.md)
 - [菜单素材 / Menu assets](Docs/Art/MENU_ASSETS.md)
-- [中日英界面资源 / Chinese, Japanese, English UI](Docs/Art/LOCALIZATION.md)
-- [工程结构与迁移 / Structure and migration](Docs/Project/STRUCTURE.md)
-- [验证结果与待处理项 / Validation and outstanding items](Docs/Project/VALIDATION.md)
-- [作者与许可 / Credits](CREDITS.md)
+- [中日英游戏文案 / Game strings](Docs/Art/LOCALIZATION.md)
+- [结构与迁移 / Structure](Docs/Project/STRUCTURE.md)
+- [官网与桌面发行 / Distribution](Docs/Project/WEBSITE_AND_RELEASES.md)
+- [验证记录 / Validation](Docs/Project/VALIDATION.md)
+- [素材署名 / Credits](CREDITS.md)
 
-## 目录 / Layout
+## 分类 / Layout
+
 ```text
-Assets/                 Unity 资源及 .meta / Assets and metadata
-  Art/                  模型、纹理、材质、概念图 / Models, textures, materials, concepts
-  Audio/                下载音效 / Downloaded audio
-  Localization/         中日英文案资源 / Chinese, Japanese, English strings
-  Prefabs/              当前玩法预制体 / Gameplay prefabs
-  Scenes/               当前场景 / Scenes
-  Scripts/              用户玩法代码 / Learner gameplay
-  StudioArtPack/        生成美术、UI、预览和工具 / Generated art, UI, preview, tools
-  Settings/             渲染和输入配置 / Rendering and input settings
-  TutorialInfo/         Unity 模板资源 / Unity template resources
-Docs/
-  Design/               玩法和计划 / Design and roadmap
-  Art/                  美术规范、清单、提示词 / Art guides, inventory, prompts
-  Project/              结构和验证 / Structure and validation
-Tools/ProjectMaintenance/ 工程维护工具 / Maintenance tools
-Packages/               依赖 / Dependencies
-ProjectSettings/        Unity 配置 / Unity settings
+Assets/                    Unity 素材及元数据 / Unity art and metadata
+  Art/                     源模型、纹理、概念 / Models, textures, concepts
+  Audio/                   音效 / Audio
+  Localization/            三语游戏文案 / Game translations
+  Prefabs/                 玩法预制体 / Gameplay prefabs
+  Scenes/                  玩法场景 / Scenes
+  Scripts/                 学习者核心 / Learner-owned core
+  Framework/               助手配置、工具、测试 / Foundation, tools, tests
+  Settings/                渲染、输入、Gameplay 配置 / Render, input, gameplay
+  StudioArtPack/            生成美术、菜单、组装枪、预览 / Generated art, menu, blaster, previews
+Docs/Design/               唯一设计与路线 / Authoritative design and roadmap
+Docs/Art/                  美术索引与说明 / Art catalog and guides
+Docs/Project/              工程维护与发行 / Maintenance and distribution
+Tools/ProjectMaintenance/  维护工具 / Maintenance tools
+Website/                   官网源码与测试 / Website source and tests
+.github/workflows/         官网自动发布 / Website publication
+Packages/                  Unity 依赖 / Dependencies
+ProjectSettings/           Unity 配置 / Settings
 ```
+
+不提交缓存、备份、网站输出或游戏二进制。游戏 ZIP 放 Releases。网站从原始素材构建，不提交第二份原图。
+Exclude caches, backups, site output, and game binaries. Put ZIPs in Releases. Build website images from canonical art without another committed source copy.

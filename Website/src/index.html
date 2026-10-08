@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{{locale}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#fff4dc">
+  <title>{{title}}</title>
+  <link rel="icon" type="image/svg+xml" href="{{base}}favicon.svg">
+  <link rel="stylesheet" href="{{base}}styles.css">
+  <link rel="preload" as="image" href="{{base}}assets/menu-background.png">
+  {{alternateLinks}}
+  <script type="module" src="{{base}}app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{skip}}</a>
+  <header class="site-header">
+    <a class="brand" href="{{home}}" aria-label="BalloonBarrage"><img src="{{base}}favicon.svg" width="36" height="36" alt=""><span>Balloon<span class="brand-color">Barrage</span></span></a>
+    <nav class="main-nav" aria-label="{{navGame}}"><a href="#game">{{navGame}}</a><a href="#art">{{navArt}}</a><a href="#download">{{navDownload}}</a></nav>
+    <nav class="language-nav" aria-label="{{language}}">{{languageLinks}}</nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">{{eyebrow}}</p>
+        <div class="wordmark" aria-hidden="true">BALLOON<br><span>BARRAGE</span><i>POP!</i></div>
+        <h1 id="hero-title">{{headline}}</h1>
+        <p class="hero-description">{{intro}}</p>
+        <div class="hero-actions"><a class="button button-coral" href="#download">{{heroDownload}}</a><a class="text-link" href="#game">{{heroMore}}</a></div>
+        <p class="prototype-note">{{prototype}}</p>
+      </div>
+      <span class="edition-sticker">{{edition}}</span>
+    </section>
+    <section class="section game-section" id="game" aria-labelledby="game-title">
+      <div class="section-heading"><p class="kicker">{{gameKicker}}</p><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-number teal">01</span><span class="badge">{{available}}</span><h3>{{feature1Title}}</h3><p>{{feature1Body}}</p></article>
+        <article class="feature"><span class="feature-number coral">02</span><span class="badge">{{direction}}</span><h3>{{feature2Title}}</h3><p>{{feature2Body}}</p></article>
+        <article class="feature"><span class="feature-number yellow">03</span><span class="badge">{{planned}}</span><h3>{{feature3Title}}</h3><p>{{feature3Body}}</p></article>
+      </div>
+    </section>
+    <section class="art-section" id="art" aria-labelledby="art-title">
+      <div class="section section-heading"><p class="kicker">{{artKicker}}</p><h2 id="art-title">{{artTitle}}</h2><p>{{artIntro}}</p></div>
+      <div class="art-grid section">
+        <figure class="art-card art-wide"><a class="art-open" href="{{base}}assets/studio-concept.png" data-art aria-label="{{artOpen}}: {{artStudio}}"><img src="{{base}}assets/studio-concept.png" loading="lazy" decoding="async" width="1672" height="941" alt="{{studioAlt}}"></a><figcaption><span>{{artStudio}}</span><span class="badge">{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card art-tilt-left"><a class="art-open" href="{{base}}assets/paint-blaster-concept.png" data-art aria-label="{{artOpen}}: {{artGun}}"><img src="{{base}}assets/paint-blaster-concept.png" loading="lazy" decoding="async" width="1536" height="1024" alt="{{gunAlt}}"></a><figcaption><span>{{artGun}}</span><span class="badge">{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card art-tilt-right"><a class="art-open" href="{{base}}assets/balloon-concept.png" data-art aria-label="{{artOpen}}: {{artBalloon}}"><img src="{{base}}assets/balloon-concept.png" loading="lazy" decoding="async" width="1536" height="1024" alt="{{balloonAlt}}"></a><figcaption><span>{{artBalloon}}</span><span class="badge">{{artLabel}}</span></figcaption></figure>
+      </div>
+    </section>
+    <section class="section roadmap-section" aria-labelledby="roadmap-title">
+      <div class="section-heading"><p class="kicker">{{roadmapKicker}}</p><h2 id="roadmap-title">{{roadmapTitle}}</h2></div>
+      <ol class="roadmap">
+        <li><span class="step-number">01</span><div><span class="badge">{{done}}</span><h3>{{step1Title}}</h3><p>{{step1Body}}</p></div></li>
+        <li><span class="step-number">02</span><div><span class="badge badge-yellow">{{next}}</span><h3>{{step2Title}}</h3><p>{{step2Body}}</p></div></li>
+        <li><span class="step-number">03</span><div><span class="badge">{{later}}</span><h3>{{step3Title}}</h3><p>{{step3Body}}</p></div></li>
+        <li><span class="step-number">04</span><div><span class="badge">{{releaseGate}}</span><h3>{{step4Title}}</h3><p>{{step4Body}}</p></div></li>
+      </ol>
+    </section>
+    <section class="download-section" id="download" aria-labelledby="download-title">
+      <div class="section download-grid">
+        <div class="download-copy"><p class="kicker">{{downloadKicker}}</p><h2 id="download-title">{{downloadTitle}}</h2><p>{{downloadIntro}}</p><div class="controls"><h3>{{controlsTitle}}</h3><p><kbd>Mouse</kbd> {{controlsAim}}</p><p><kbd>LMB</kbd> {{controlsFire}}</p><p class="small">{{controlsNote}}</p></div></div>
+        <div class="download-card"><p class="platform"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 3h20v14H2V3zm2 2v10h16V5H4zm5 14h6l1 2H8l1-2z"/></svg>{{downloadPlatform}}</p>{{releasePanel}}<div class="download-links"><a href="https://github.com/lorendw7/BalloonBarrage/releases">{{downloadRelease}}</a><a href="https://github.com/lorendw7/BalloonBarrage">{{downloadSource}}</a></div><a class="feedback" href="https://github.com/lorendw7/BalloonBarrage/issues">{{feedback}}</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="section footer"><div><a class="footer-brand" href="{{home}}">{{footer}}</a><p>{{footerNote}}</p></div><details class="credits"><summary>{{credits}}</summary><p>{{creditsBody}}</p><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/CREDITS.md">{{creditsLink}}</a></details><p class="privacy">{{privacy}}</p></footer>
+  <dialog class="art-dialog" aria-label="{{artOpen}}"><button class="dialog-close" type="button">{{artClose}}</button><img alt=""><p></p></dialog>
+  <noscript><p class="section small">{{noScript}}</p></noscript>
+</body>
+</html>

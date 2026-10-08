@@ -1,13 +1,13 @@
 # BalloonBarrage 设计 / Game design
-更新 / Updated: 2026-09-18. 本文取代旧节奏游戏计划，是当前唯一玩法规范。
+更新 / Updated: 2026-10-08. 本文取代旧节奏游戏计划，是当前唯一玩法规范。
 This is the current specification, replacing the former rhythm-game plan.
 
 ## 已确认与提案 / Confirmed scope and proposals
-已确认：大量气球、爽快射击、肉鸽变化；桌面单人/本地同屏双人，键鼠+手柄或双手柄；手机以单人为主；保留暖色工作室与鲜艳涂鸦；用户亲自编写玩法。
-Confirmed: satisfying balloon hordes and roguelite variety; desktop solo/local co-op with keyboard-mouse plus gamepad or two pads; mobile primarily solo; cozy studio/vibrant graffiti; learner-authored gameplay.
+已确认：大量气球、爽快射击、肉鸽变化；桌面单人/本地同屏双人，键鼠+手柄或双手柄；暖色工作室与鲜艳涂鸦；用户亲自写核心。桌面优先，Windows 首发，手机后置，暂不走应用商店。
+Confirmed: balloon hordes, satisfying shooting, roguelite variety, desktop solo/co-op with paired controllers, cozy graffiti, learner-owned core. Desktop first, Windows first release; mobile deferred, no app store currently planned.
 
-开发顺序为共用单人核心、手机单人、本地双人；手机单人优先于本地双人。教学顺序与验收见 [开发路线](ROADMAP.md)。
-Develop the shared solo core, mobile solo, then local co-op; mobile solo has priority over local co-op. See the [roadmap](ROADMAP.md) for lesson order and acceptance.
+开发顺序为 Windows 单人核心、完整桌面试玩、手柄和本地双人。中日英官网复用项目美术，通过 Pages 发布；游戏 ZIP 用 Releases 分发。教学与验收见 [路线](ROADMAP.md)，发行见 [官网与桌面发行](../Project/WEBSITE_AND_RELEASES.md)。
+Develop Windows solo, a complete demo, then controllers/co-op. A trilingual site reuses project art on Pages; Releases distributes ZIPs. See the [roadmap](ROADMAP.md) and [distribution guide](../Project/WEBSITE_AND_RELEASES.md).
 
 以下局长、胜负规则、强化和性能预算为首版提案，待试玩修订。不承诺联网、双鼠标或移动双人。音乐服务射击，不强制按拍开火。
 Run length, outcomes, upgrades, and performance budgets below are proposals to playtest. Online, two independent mice, and mobile co-op are out of scope. Music supports shooting without enforcing timing.
@@ -39,8 +39,8 @@ Each player owns ID, devices, reticle, cadence, and upgrades. P1 has a coral rin
 | 技能 / Skill | 空格 / Space | 面部按钮 / Face button | 独立技能按钮 / Skill button |
 | 暂停 / Pause | Esc | Start/Menu | 屏幕按钮 / UI button |
 
-使用 Input System 的 PlayerInput/设备配对，保持共享相机。后续将输入从每个气球的 Mouse.current 移到玩家射击控制器，不使用全局 Gamepad.current 区分两人。手柄断线暂停并提供重连或继续单人，不自动让另一手柄控制两人。
-Plan PlayerInput device pairing with a shared camera. Move Mouse.current input out of balloons into player controllers; do not use global Gamepad.current to distinguish players. Pause on disconnect, offering reconnect or solo continuation without cross-control.
+计划使用 PlayerInput/设备配对，保持共享相机。单人 Mouse.current 已在 PlayerShooter，不在气球；双人时按玩家配对，不用全局 Gamepad.current 区分两人。断线暂停并提示重连或继续单人，不自动串线。
+Plan PlayerInput pairing with a shared camera. Solo Mouse.current is already in PlayerShooter, not balloons; co-op needs per-player devices, not global Gamepad.current. Pause on disconnect with reconnect/solo choices without cross-control.
 
 升级时暂停，两人各自选择后继续；公共暂停菜单仅由发起者导航。手机 UI 触点不触发场景开火，处理触点 ID、安全区与横屏布局，不实现移动双人。
 Pause for upgrades until both choose; the initiator owns shared pause navigation. Mobile UI touches must not shoot the scene. Handle touch IDs, safe areas, and landscape; no mobile co-op.
@@ -74,6 +74,7 @@ Plan pooling, per-player shot queries, audio/decal caps, and scalable particles.
 - [ ] 暂停、断线、升级恢复正确，无菜单穿透 / Correct recovery and no UI click-through.
 - [ ] 同球只结算一次，连锁有终止 / Single resolution and bounded chains.
 - [ ] 重开清空状态，连续复用无残留 / Clean retry and pooled state.
-- [ ] 真机单人触控、安全区、性能和发热 / Mobile solo touch, safe areas, performance, thermals.
+- [ ] Windows 完整 ZIP 与真实下载入口 / Complete Windows ZIP and genuine downloads.
+- [ ] 手机后置，不阻塞桌面发行 / Mobile deferred, not a desktop release gate.
 
 参考 / Reference: [Unity PlayerInputManager](https://docs.unity.cn/Packages/com.unity.inputsystem%401.9/manual/PlayerInputManager.html). 项目锁定 1.19.0，实际实现以随包文档核对 API。Verify APIs against the installed 1.19.0 package during implementation.

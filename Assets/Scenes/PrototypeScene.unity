@@ -970,6 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 8031993649134300037, guid: 987530bb311f6864b921033d4a5fbf82, type: 3}
+  spawnSettings: {fileID: 11400000, guid: ecdcc52e368c41b996d51cb470de9df8, type: 2}
   xRange: {x: -3, y: 3}
   yRange: {x: -2, y: 2}
   zPosition: 8

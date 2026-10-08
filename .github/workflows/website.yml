@@ -1,0 +1,57 @@
+name: Publish official website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Website/**'
+      - 'Assets/Art/Concepts/**'
+      - 'Assets/StudioArtPack/Menu/**'
+      - 'Assets/StudioArtPack/PaintBlaster/Concepts/**'
+      - '.github/workflows/website.yml'
+      - '.gitattributes'
+  release:
+    types: [published, edited, deleted]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Build trilingual pages from canonical game art
+        run: node Website/scripts/build.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Verify translations, downloads and local references
+        run: node --test Website/tests/site.test.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: Website/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

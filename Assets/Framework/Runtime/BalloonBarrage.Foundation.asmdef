@@ -1,0 +1,10 @@
+{
+    "name": "BalloonBarrage.Foundation",
+    "rootNamespace": "BalloonBarrage.Foundation",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

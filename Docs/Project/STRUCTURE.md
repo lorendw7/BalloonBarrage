@@ -1,5 +1,22 @@
 # 工程结构与迁移 / Structure and migration
 
+## ADR-001：框架与核心分工 / Foundation and core ownership
+
+状态 / Status: Accepted。日期 / Date: 2026-10-08。决策依据 / Decider: 用户要求助手搭框架、自己写核心 / User requests assistant-owned foundations and learner-owned core.
+
+背景 / Context：加快教学，保留可运行原型；最新方向为桌面优先、手机后置，不整体代写核心。 / Accelerate learning while preserving the prototype; desktop now first, mobile deferred, without rewriting gameplay.
+
+决定 / Decision：Assets/Framework/Runtime 保存无玩法副作用的数据类型，以 BalloonBarrage.Foundation 程序集隔离；Assets/Framework/Editor 保存只读辅助窗口；Assets/Framework/Tests/Editor 保存配置测试。Assets/Settings/Gameplay 保存可调资产。现有 Assets/Scripts 保持学习者核心，不移动 GUID 或自动接入玩法。
+Keep side-effect-free settings types in Assets/Framework/Runtime under the BalloonBarrage.Foundation assembly, read-only tools in Editor, configuration tests in Tests/Editor, and assets in Assets/Settings/Gameplay. Preserve learner-owned Assets/Scripts and GUIDs; do not automatically integrate gameplay.
+
+比较 / Options：仅讲解、不搭工具，改动少但重复接线慢；完整玩法框架代写，速度快但削弱理解；本次采用渐进数据/工具框架，减少机械操作而保留规则实现。 / Explanation-only minimizes changes but repeats setup; a fully authored gameplay framework is fast but reduces learner ownership; incremental data/tools remove mechanical work while leaving rules to the learner.
+
+后果 / Consequences：新参数不会自动改变旧脚本行为；必须由学习者读取并验收。检查窗口只检查当前原型中启用的发射器和生成器及其字段，不证明命中、计时或入场正确。测试只覆盖配置默认值、负延迟保护和资产导入，不覆盖核心玩法。
+New settings do not change old behavior until learner integration and acceptance. The workbench checks enabled prototype shooters/spawners and fields, not hit/timing/entrance correctness. Tests cover defaults, negative-delay protection, and asset import, not core gameplay.
+
+下一步 / Action items：学习者已接入配置、等待和入场，现在优先多球、连射和桌面完整流程。使用 Workbench 检查接线，在 Test Runner 的 EditMode 页运行配置测试；漂浮后置。
+Settings, delay, and entrance are integrated. Prioritize multiple targets, held fire, and desktop flow. Use Workbench and EditMode configuration tests; defer float polish.
+
 唯一工作根目录 D:/CS/Code/BalloonShooter；远端 BalloonBarrage。Assets、Packages、ProjectSettings 必须留在 Unity 项目根下。
 Working root: D:/CS/Code/BalloonShooter; remote: BalloonBarrage. Keep Assets, Packages, ProjectSettings at the Unity root.
 
@@ -35,4 +52,14 @@ Synchronize the learner's later Balloon.cs, PaintGunVfx.cs, PlayableBalloon.pref
 Complete new-asset metadata and make preview output relative to the project. Keep downloaded guns, generated art, gameplay, localization, and settings in their respective folders rather than duplicating models and GUIDs.
 
 根据用户要求，本次发布以整理后的目录创建新的根提交并替换远端 main 历史，清理旧计划分支。重建前的完整 Git 历史和工作文件保存在本地 `.local-backups/before-history-rebuild-20261003/`，不上传。
-At the user's request, publish the consolidated tree as a new root commit replacing main history and remove the obsolete planning branch. Pre-rebuild Git history and working files are backed up locally under `.local-backups/before-history-rebuild-20261003/` and are not uploaded.
+That history rebuild was completed on 2026-10-03. Subsequent publications append commits; do not rewrite history again. Pre-rebuild files/history stay in the ignored local backup.
+
+以上重建记录是 2026-10-03 已完成的历史操作；后续正常追加提交，不再次重写历史。
+
+## 2026-10-08 官网与目录职责 / Website and folder ownership
+
+Website/ 独立保存静态官网：src/ 是页面/样式/三语，scripts/ 是构建预览，tests/ 是验证。网站说明集中到 Docs/Project/WEBSITE_AND_RELEASES.md，不创建重复计划或教学文档。
+Website/ holds the static site: src/ for pages/styles/translations, scripts/ for build/preview, tests/ for verification. Its guide lives in Docs/Project/WEBSITE_AND_RELEASES.md, not another competing plan or lesson document.
+
+Website/assets.json 只维护原图路径，构建复制到忽略的 Website/dist/assets；Assets 仍只有一份源图片，Unity .meta/GUID 不移动。Pages 只上传 Website/dist，不上传缓存、备份或整个工程。游戏 ZIP 放 Releases，不提交主干。
+Website/assets.json references canonical images, copied only to ignored output. Assets retains one source image with unchanged Unity metadata/GUIDs. Upload only Website/dist to Pages, not caches/backups/the whole project. Keep game ZIPs in Releases, not main.

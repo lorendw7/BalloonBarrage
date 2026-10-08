@@ -1,55 +1,52 @@
 # 教学与开发路线 / Learning and development roadmap
 
-更新 / Updated: 2026-10-06 (Asia/Tokyo)。目标是让初学者亲自完成一个可玩的 BalloonBarrage 学习原型。每课只增加一个可以在 Unity 中立即验证的结果；玩法代码由学习者输入，仓库工具只整理资源、美术和文档。
-The goal is a playable BalloonBarrage learning prototype authored by the learner. Every lesson adds one immediately testable Unity result. The learner types gameplay code; repository tools only organize assets, art, and documentation.
+更新 / Updated: 2026-10-08 (Asia/Tokyo).
 
-## 当前基线 / Current baseline
+## 方向 / Direction
 
-已接入：固定相机工作室、单个气球随机生成、玩家发射器、飞行颜料弹的 SphereCast 路径碰撞、Balloon.Hit 一次结算、计分、击破音效、立即爆裂和独立青色碎片、美术环境及喷漆枪。用户反馈发射流程可以运行；尚非完整一局游戏。
-Integrated: fixed-camera studio, single-target spawning, player shooter, moving projectiles with SphereCast path checks, one-time Balloon.Hit resolution, score, audio, immediate pop with independent teal fragments, environment art, and paint gun. The learner reports firing works; this is not a complete round.
+桌面优先，Windows 键鼠单人先完成，再做手柄和本地同屏双人。暂不走应用商店；官网用 GitHub Pages，游戏包用 GitHub Releases。手机后置，不是桌面发行门槛。
+Desktop first: Windows keyboard/mouse solo, then controllers and shared-screen co-op. No app-store release is planned; use Pages for the site and Releases for builds. Mobile is deferred and is not a desktop release gate.
 
-PlayerShooter 已连接 Muzzle、PaintDrop3D_Teal 和 MuzzleSpray，弹丸预制体参数为速度 35、半径 0.08、寿命 2 秒。学习者已修复提前的点击门控和缺失 return；下一步试玩持续瞄准并调整枪构图。场景中 0.65 填在 Rotation 而非 Scale，助手未自动改动。
-PlayerShooter references Muzzle, PaintDrop3D_Teal, and MuzzleSpray; projectile settings are speed 35, radius 0.08, and lifetime 2 seconds. The learner fixed the early click gate and missing return. Playtest continuous aim and adjust framing next. The scene has 0.65 in Rotation rather than Scale; the assistant did not change it.
+## 保存代码基线 / Saved-code baseline
 
-尚未完成：BalloonFloat 仍为空；生成器立即替换旧球，没有等待和入场动画。Canvas 菜单、运行时三语切换、波次、对象池、双人输入、肉鸽强化和手机触控未完成。三语文案和菜单美术存在不等于玩法接入。
-Pending: BalloonFloat is empty; immediate respawning has no delay or entrance. Canvas menus, runtime localization, waves, pooling, co-op, upgrades, and touch remain. Existing trilingual strings and menu art do not imply integration.
+- 已接入：持续瞄准、单击发射、飞行颜料弹、路径碰撞、一次计分、音效碎片、单目标生成、配置等待与平滑入场。
+  Integrated: aim, click firing, flying paint, swept collision, single scoring, pop audio/fragments, one target, settings delay, smooth entrance.
+- 胶囊已启用，两个旧球形体关闭。漂浮有代码但未挂到保存预制体，后置处理。
+  Capsule enabled, two old spheres disabled. Float exists but is not attached to the saved prefab; defer polish.
+- 多球名单在会话提供，但保存生成器仍管理一个目标。会话示例不等于已实现。
+  Multi-target tracking was supplied in chat; saved code still tracks one target. Examples are not implementation.
+- 官网三语已制作；Unity 菜单事件、游戏语言切换、连射、波次、完整回合、强化和双人尚待实现。
+  The website is trilingual; game menu actions, localization, held fire, waves, full rounds, upgrades, and co-op are pending.
 
-当前课 / Current lesson: **持续瞄准与镜头构图 / Continuous aim and gun framing**。
+## 主功能教学 / Main-feature lessons
 
-## 分阶段课程 / Course stages
+| 顺序 / Order | 学习者核心 / Learner core | 助手准备 / Assistant foundation | 验收 / Acceptance |
+|---|---|---|---|
+| 1 | 多球名单与存活上限 / Target tracking and cap | 生成配置与检查 / Settings and checks | 打掉后补充，不无限生成 / Refill without unbounded growth |
+| 2 | 连射与按秒射速 / Held fire and cadence | 武器配置 / Weapon settings | 帧率不改变射速 / Frame-independent cadence |
+| 3 | 波次、预算、胜负 / Waves, budgets, outcomes | 波次数据 / Wave data | 生成有界，最终波能结束 / Bounded spawning, final wave ends |
+| 4 | 开始、暂停、结算、重开 / Start, pause, results, retry | UI 层级与接线 / UI structure | 新局清零，暂停停止战斗 / Reset on retry, pause combat |
+| 5 | 三选一强化 / Upgrade choices | 数据、图标、说明 / Data, icons, descriptions | 强化有效且重开恢复 / Effective choices, clean reset |
+| 6 | 菜单与游戏中日英切换 / Menus and localization | 字体、文案、美术 / Fonts, strings, art | 完整导航与字形 / Navigation and glyph coverage |
+| 7 | 回收复位与性能预算 / Reuse and budgets | 性能记录、池接口 / Profiling, pool interfaces | 无旧状态、弹丸碎片有上限 / Clean state, bounded VFX |
+| 8 | Windows 完整验收 / Desktop regression | 官网与发行说明 / Website and release guide | ZIP 解压后能完整玩一局 / Extracted ZIP supports full round |
+| 9 | 手柄和本地双人 / Controllers and co-op | 设备加入与双 HUD / Device join, dual HUD | 两种设备组合不串输入 / Independent device ownership |
 
-优先级：共用单人核心 → 手机单人 → 本地双人。先在现有 Windows 场景验证共用玩法，不等待双人或桌面专属打磨才开始手机适配。输入与画面反馈分离，触控复用命中、生成和计分逻辑。
-Priority: shared solo core → mobile solo → local co-op. Validate shared gameplay in the existing Windows scene, then begin mobile adaptation without waiting for co-op or desktop-only polish. Keep input separate from feedback so touch reuses hits, spawning, and scoring.
+漂浮、绳子、后坐力、喷漆细节统一留到主流程后。课程按理解程度拆分，不承诺固定课数或商业发布日期。
+Defer float, strings, recoil, and paint polish until the core flow works. Split lessons according to understanding; no fixed session count or release date is promised.
 
-| 阶段 / Stage | 课程范围 / Lessons | 可验证结果 / Exit condition | 预计课次 / Sessions |
-|---|---|---|---:|
-| 1. 共用单人核心 / Shared solo core | 下列十个教学单元，在 Windows 场景验证 / Ten units below, tested in the Windows scene | 从菜单完整玩一局、结算、重开；完成基础强化与性能测试 / Complete round, retry, basic upgrades, and profiling | 10–14 |
-| 2. 手机单人 / Mobile solo | 触控、安全区、自适应 UI、效果预算、真机与构建 / Touch, safe area, responsive UI, budgets, device tests, builds | 横屏真机完整单人游玩 / Complete landscape-device solo run | 4–6 |
-| 3. 本地双人 / Local co-op | 玩家设备归属、双准星、分数归属、键鼠+手柄、双手柄、断线 / Device ownership, reticles, score attribution, device pairs, disconnect | 两人不串输入，同球一次结算，断线提示明确 / Independent input, single resolution, clear disconnect handling | 4–6 |
+## 教学约定 / Lesson contract
 
-收敛到最小可玩原型后，剩余预计 **18–26 次**，每次 45–90 分钟，另需练习和排错。每周 3 次约 6–9 周授课，实际完成可能更长；不是商业发布工期。复杂单元拆课；高级连锁、特殊气球、更多武器和关卡留作原型后的扩展。
-With scope narrowed to a minimal prototype, estimate **18–26 sessions** of 45–90 minutes plus practice/debugging: roughly 6–9 teaching weeks at three weekly sessions, potentially longer in practice. This is not a commercial release estimate. Split complex units; advanced chains, special balloons, extra weapons, and levels are post-prototype extensions.
+助手维护配置、工具、测试、美术、文档和官网；学习者写 Assets/Scripts 核心。每课给短代码、解释变量和分支，学习者输入、Inspector 接线、试玩。除明确授权，不自动代写射击、生成、计分、强化或胜负；提交请求只发布保存代码，不补写未完成规则。
+The assistant maintains foundations, tools, tests, art, docs, and the site; the learner writes Assets/Scripts core. Each lesson gives small examples, explains variables/branches, then learner entry, wiring, and playtest. Without explicit authorization, do not author gameplay; commit requests publish saved code without implementing missing rules.
 
-## 单人原型的十个单元 / Ten solo-prototype units
+## 桌面发行门槛 / Desktop release gates
 
-1. **持续瞄准与构图 / Continuous aim and framing**：不点击也转向；空引用安全退出；枪不挡住中心。 / Aim without clicking, exit safely on missing references, keep the center clear.
-2. **气球入场 / Balloon entrance**：生成延迟、平滑入场、漂浮；一次击破只安排一次生成，两个动画不争夺位置。 / Delay, entrance, float; one replacement per pop and no competing movement scripts.
-3. **爽快连射 / Held fire**：按秒计时的射速、枪口效果单一输入归属、表现后坐力。 / Time-based rate, one muzzle input owner, visual recoil.
-4. **颜料命中 / Paint impacts**：墙面痕迹和气球反馈；不穿墙；痕迹数量与寿命上限。 / Wall marks and balloon feedback without through-wall paint; bounded count/lifetime.
-5. **多球与波次 / Targets and waves**：合法出生位置、数量、压力、胜负和一次计分。 / Valid spawn positions, counts, pressure, win/loss, single scoring.
-6. **HUD 与三语 / HUD and localization**：Canvas 自适应、分数/波次、中日英字体和切换。 / Responsive Canvas score/wave display, Chinese/Japanese/English fonts and switching.
-7. **完整局流程 / Round flow**：开始、暂停、计时、结算、重开；菜单不发射，暂停不生成，新局清零。 / Start, pause, timer, results, retry; no menu firing or paused spawns; reset run state.
-8. **最小肉鸽 / Minimal roguelite**：波后三选一，至少射速、散射、伤害三类；新局重置。 / Post-wave choices among rate, spread, and damage; reset each run.
-9. **对象池与预算 / Pooling and budgets**：回收重置；限制粒子和弹丸；记录 30/60/100 目标性能。 / Correct reuse/reset, bounded particles/projectiles, profiling 30/60/100 targets.
-10. **单人基线验收 / Solo baseline acceptance**：声音/画质/语言设置、Windows 基础构建、从菜单到重开回归；随后优先手机适配，桌面专属扩展后置。 / Audio/quality/language settings, baseline Windows build, full menu-to-retry regression; mobile adaptation next, desktop-only extensions later.
+- [ ] 完整单人开始、游玩、结算、重开与暂停/退出。 / Complete solo flow and pause/quit.
+- [ ] Windows x64 非开发构建在目标机器验证声音、窗口、输入。 / Non-development x64 build tested on target hardware.
+- [ ] 核对模型、音效、字体许可，保留署名。 / Audit licenses and preserve attribution.
+- [ ] 调查既有渲染引用，验收游戏语言；官网测试不能替代游戏测试。 / Investigate render references and verify in-game language; site tests are not gameplay tests.
+- [ ] ZIP 包含完整运行文件，Release 提供版本、操作、已知问题和 SHA-256。 / Complete runtime package and release notes/checksum.
+- [ ] 官网只链接真实上传包，概念图注明非实机。 / Genuine package links and labelled concept art.
 
-现阶段相机射线只选瞄准点；真实命中由颜料弹移动路径检查决定，不回退到点击即伤害，也不模拟真实流体。双人仍为本地键鼠+手柄或双手柄；手机单人优先。
-The camera ray selects an aim point only; projectile path checks resolve hits. Do not revert to instant click damage or simulate physical fluids. Co-op targets local keyboard/mouse plus gamepad or dual gamepads; mobile prioritizes solo.
-
-## 每次教学约定 / Lesson contract
-
-每课遵循：说明目标 → 展示完整短代码 → 逐句解释 → 由学习者输入 → Inspector 连接 → Play Mode 验收 → 常见错误排查。除非用户明确要求，助手不代写 `Assets/Scripts` 下的玩法代码。
-Each lesson follows: goal, short complete code, line-by-line explanation, learner typing, Inspector wiring, Play Mode verification, and common-failure checks. Gameplay scripts under `Assets/Scripts` are not authored by the assistant unless explicitly requested.
-
-完成当前课前不提前引入双人、对象池或移动端；美术资源存在不代表玩法已经接入。联网、双鼠标和移动双人暂不排期。
-Do not introduce co-op, pooling, or mobile before the current lesson passes. Existing art does not imply gameplay integration. Online play, dual mice, and mobile co-op remain out of scope.
+下一课：多球和连射，先验证桌面单人；不再先做手机输入。 / Next: multiple targets and held fire for desktop solo, not touch input.

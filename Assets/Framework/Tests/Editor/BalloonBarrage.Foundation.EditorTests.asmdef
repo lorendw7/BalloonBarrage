@@ -1,0 +1,7 @@
+{
+    "name": "BalloonBarrage.Foundation.EditorTests",
+    "references": ["BalloonBarrage.Foundation"],
+    "optionalUnityReferences": ["TestAssemblies"],
+    "includePlatforms": ["Editor"],
+    "autoReferenced": false
+}

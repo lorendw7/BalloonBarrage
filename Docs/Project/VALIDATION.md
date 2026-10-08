@@ -1,5 +1,25 @@
 # 验证记录 / Validation record
-更新 / Updated: 2026-10-06 (Asia/Tokyo)
+更新 / Updated: 2026-10-08 (Asia/Tokyo)
+
+## 2026-10-08 桌面官网检查 / Desktop website checks
+
+- Website/ 构建中日英三个静态页面，复用四张原始美术；五项 Node 测试通过，覆盖翻译键、真实/空/失败下载状态、链接与原图字节一致性。公开 Release 查询为空，未创建游戏包。
+  Website/ builds three static language pages from four canonical artworks. Five Node tests pass for translation keys, ready/empty/failure download states, local links, and exact asset bytes. The public release list is empty; no game package was created.
+- 静态审计通过：195 个唯一元数据 GUID、14 份文档；67 个图片/音效/模型未发现相同内容的重复。官网输出与本地检查文件被忽略，Unity 原图和 .meta 不移动。
+  Static audits pass with 195 unique metadata GUIDs and fourteen documents; 67 art/audio/model files contain no exact duplicates. Website output and local checks are ignored; Unity source assets and metadata are not moved.
+- 当前一个框架源文件与八个玩法源文件使用 Unity 编译器独立编译通过；CS0649 是 Inspector 赋值字段警告。这不是 Unity Test Runner、完整导入、试玩或 Windows 构建验证。
+  One foundation and eight gameplay sources compile independently with Unity's compiler. CS0649 warnings concern Inspector-assigned fields. This is not Unity Test Runner, full import, playtesting, or Windows build validation.
+- 保存的生成参数接线、延迟、入场和碰撞体调整随本次提交保留；本轮没有代写核心脚本。以下较早框架检查的“尚未接入”已被此检查点取代。桌面单人优先，主流程和发行包仍待实现/验收；既有渲染引用问题仍保留。
+  This commit preserves saved settings wiring, delay/entrance work and collider changes without rewriting core scripts. Earlier "not integrated" notes are superseded by this checkpoint. Desktop solo is first; full flow and a distributable build still need implementation/acceptance. Inherited rendering-reference issues remain.
+
+## 2026-10-08 框架检查 / Foundation checks
+
+- 参数程序集、现有核心脚本、LearningWorkbench 编辑器工具及三个 NUnit 测试源文件，使用 Unity 附带编译器和真实程序集引用分别编译通过。
+  The settings assembly, existing core scripts, LearningWorkbench, and three NUnit test sources compile separately with Unity's bundled compiler and actual assembly references.
+- 静态检查通过：194 个唯一资源元数据 GUID、13 份文档；新增文件元数据完整。Assets/Scripts、Scenes、Prefabs 无本轮修改。
+  Static checks pass with 194 unique metadata GUIDs and thirteen documents; new metadata is complete. This change does not modify Assets/Scripts, Scenes, or Prefabs.
+- 尚未在 Unity Test Runner 执行新测试或试玩辅助窗口，编译测试源文件不等于测试运行通过。生成配置未接入核心，延迟/入场逻辑仍由学习者实现。此前渲染设置引用问题仍待处理。
+  New tests have not run in Unity Test Runner, and the workbench has not been exercised in the editor. Compiling test sources is not a passing test run. Settings are not integrated; delay/entrance remain learner work. Inherited rendering-reference issues remain outstanding.
 
 ## 2026-10-06 射击学习检查点 / Shooting learning checkpoint
 
