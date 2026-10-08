@@ -3,6 +3,10 @@
 
 ## 2026-10-08 桌面官网检查 / Desktop website checks
 
+- [GitHub Pages 发布](https://github.com/lorendw7/BalloonBarrage/actions/runs/37793811426) 构建、测试与部署全部成功；[线上官网](https://lorendw7.github.io/BalloonBarrage/) 的三个语言页面、样式、脚本、图标、发布状态和四张图片共 11 个资源返回 HTTP 200。
+  The [Pages workflow](https://github.com/lorendw7/BalloonBarrage/actions/runs/37793811426) built, tested, and deployed successfully. Eleven [live-site](https://lorendw7.github.io/BalloonBarrage/) resources return HTTP 200: all language pages, styles, script, favicon, release snapshot, and four artworks.
+- 浏览器实测中文→日文→英文→中文，英文大图打开/关闭、中文下载区“试玩包准备中”均正确；桌面画面及 390×844 小屏检查通过，中英文无横向溢出，未观察到浏览器错误/警告。没有下载或测试游戏二进制。
+  Browser checks passed for Chinese → Japanese → English → Chinese, the English artwork dialog, and the Chinese "demo pending" panel. Desktop and 390×844 layouts were inspected, with no horizontal overflow in Chinese/English and no observed browser errors/warnings. No game binary was downloaded or tested.
 - Website/ 构建中日英三个静态页面，复用四张原始美术；五项 Node 测试通过，覆盖翻译键、真实/空/失败下载状态、链接与原图字节一致性。公开 Release 查询为空，未创建游戏包。
   Website/ builds three static language pages from four canonical artworks. Five Node tests pass for translation keys, ready/empty/failure download states, local links, and exact asset bytes. The public release list is empty; no game package was created.
 - 静态审计通过：195 个唯一元数据 GUID、14 份文档；67 个图片/音效/模型未发现相同内容的重复。官网输出与本地检查文件被忽略，Unity 原图和 .meta 不移动。
