@@ -1,6 +1,17 @@
 # 验证记录 / Validation record
 更新 / Updated: 2026-10-09 (Asia/Tokyo)
 
+## 2026-10-09 多球与连射恢复 / Multiple-target and held-fire recovery
+
+- 用户明确授权恢复丢失的两课实现。依据保留的教学代码重建 PlayerShooter 和 BalloonSpawner；这不是逐字找回已删除的最终文件。场景保存 maxBalloons=3、shotsPerSecond=5，保留原有脚本、场景和素材 GUID。
+  With explicit creator authorization, PlayerShooter and BalloonSpawner were reconstructed from retained lessons rather than recovered byte-for-byte from deleted final files. Scene defaults are three targets and five shots/second; existing GUIDs remain intact.
+- 连射改用 isPressed，持续瞄准保持在开火判断之前；发射成功后按 Time.time 加上 1 / Mathf.Max(0.1f, shotsPerSecond) 设置冷却。修正早期逗号笔误；松手停止新弹丸，现有弹丸继续飞行。低帧率下不补发遗漏射击，保持教学版逻辑。
+  Held fire uses isPressed after aiming and schedules the next shot using Time.time plus the bounded interval. The earlier decimal typo is corrected. Releasing stops new shots; existing projectiles continue. Low-FPS catch-up remains outside the lesson.
+- 多球列表记录实例，逐帧清理销毁条目，满额时重置补充等待，缺额时按配置延迟逐个补球。独立副本中的三个 Unity PlayMode 测试通过：开局三球、延迟补充及清空后上限；5 发/秒持按、松手与重按；2 发/秒的较慢节奏。测试使用模拟鼠标和隔离计数弹丸，由 Unity 正常调用 Update；结果在忽略的 .local-backups/gameplay-recovery-results.xml。
+  The target list removes destroyed entries and refills individually after the configured delay without exceeding the cap. Three isolated Unity PlayMode tests pass for target refill/cap and held fire at five/two shots per second, release and re-press. Tests use simulated input and counting projectiles with normal Unity Update calls. Local results remain ignored.
+- 官网中日英操作说明同步为按住左键，并说明多球补充已接入。离线三语构建、五项官网测试及静态审计通过（381 个唯一 GUID、14 份文档）。计时、结算与重开仍为下一课；既有渲染引用问题、Windows 包和现场试玩仍待处理。
+  All site languages now describe held fire and replenishing targets. Offline site build, five website tests and static checks pass (381 unique GUIDs, fourteen documents). Timer/results/retry are next; inherited renderer references, Windows packaging and exhibition playtests remain outstanding.
+
 ## 2026-10-09 删除后恢复 / Recovery after re-clone
 
 - 从历史编辑记录恢复四个场景生成器、三张原始纹理和配乐源文件，按 V1→V2→V3→V4 顺序重建 PrototypeScene。使用 Unity 6000.0.77f1 独立副本运行，退出 0，日志包含 STUDIO_RECOVERY_OK；目视检查最终 1600×900 相机图。

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using BalloonBarrage.Foundation;
 
 public class BalloonSpawner : MonoBehaviour
@@ -20,7 +21,10 @@ public class BalloonSpawner : MonoBehaviour
     [SerializeField]
     private float zPosition = 8f;
 
-    private GameObject currentBallon;
+    [SerializeField, Min(1)]
+    private int maxBalloons = 3;
+
+    private List<GameObject> activeBalloons = new List<GameObject>();
 
     private void Start()
     {
@@ -31,14 +35,20 @@ public class BalloonSpawner : MonoBehaviour
             return;
         }
 
-        Spawn();
+        for (int i = 0; i < maxBalloons; i++)
+        {
+            Spawn();
+        }
         remainingDelay = spawnSettings.RespawnDelay;
     }
 
     private void Update()
     {
-        if (currentBallon != null)
+        activeBalloons.RemoveAll(balloon => balloon == null);
+
+        if (activeBalloons.Count >= maxBalloons)
         {
+            remainingDelay = spawnSettings.RespawnDelay;
             return;
         }
 
@@ -61,10 +71,12 @@ public class BalloonSpawner : MonoBehaviour
             zPosition
         );
 
-        currentBallon = Instantiate(
+        GameObject newBalloon = Instantiate(
             balloonPrefab,
             position,
             balloonPrefab.transform.rotation
         );
+
+        activeBalloons.Add(newBalloon);
     }    
 }

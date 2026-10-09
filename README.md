@@ -30,14 +30,14 @@ Install Git LFS and run git lfs pull after cloning. Open the repository root con
 
 ## 当前状态 / Current state
 
-2026-10-09 删除旧仓库后重新拉取：用户确认多球与连射此前已完成教学和实现，但这些未发布的改动未随远端恢复。本次按历史生成代码和原始纹理重建 V4 地图及五段柔和配乐；下面的旧代码基线描述当前拉取版本，不代表学习进度退回。核心恢复与完整回合验收仍待完成。
-After the October 9 re-clone, the creator confirmed previously implementing multiple targets and held fire, but those unpublished changes are absent from the remote checkout. This recovery rebuilds the V4 studio and five soft tracks from historical generators and original textures. The saved-code baseline below describes this checkout, not lost learning progress. Gameplay recovery and full-round acceptance remain pending.
+2026-10-09 删除旧仓库后重新拉取，现已恢复 V4 地图、五段柔和配乐，并按用户授权恢复之前两课的多球与连射实现。此前未发布的最终文件无法逐字找回；本次依据保留的教学代码重建，修正射速下限的小数点笔误。下一课继续 90 秒计时与回合状态。
+Following the October 9 re-clone, the V4 studio, five soft tracks, multiple-target spawning and held fire are restored. The unpublished final files were unavailable; gameplay was reconstructed from the retained lessons with creator authorization, correcting the rate-bound decimal typo. Continue with the 90-second timer and round-state lesson.
 
-2026-10-09 重新拉取代码检查：已有持续鼠标瞄准、单击发射飞行颜料弹、路径碰撞、一次击破计分、音效和独立碎片、单目标随机生成及配置等待、平滑入场。多球与连射的已完成学习记录保留，但实现未在此次地图恢复范围内。保存预制体启用胶囊并关闭两个旧球形命中体；漂浮有代码但未挂载。
-The October 9 re-clone contains continuous aim, click firing, paint collision, score, pop audio/fragments, single-target spawning and entrance. Completed multiple-target/held-fire learning is recorded, but gameplay implementation is outside this scene recovery. The prefab uses a capsule; float code is not attached.
+当前已接入持续瞄准、按住左键连射（默认每秒 5 发）、飞行颜料弹和路径碰撞、一次计分、音效碎片、多球列表和数量上限（默认 3 球）、配置延迟补充与平滑入场。保存预制体启用胶囊并关闭旧球形体；漂浮有代码但未挂载。
+Integrated: continuous aim, held fire (default five shots/second), flying paint and swept collision, single scoring, pop audio/fragments, target tracking/cap (default three), configured refill delay and entrance. The prefab uses a capsule; float code is not attached.
 
-多球课已在会话提供，保存生成器仍管理一个目标。波次、完整回合、强化、对象池、菜单事件、游戏内三语切换和手柄/双人未实现。官网三语不等于游戏内语言已接入。
-The multi-target lesson has been supplied, but the saved spawner still tracks one target. Waves, rounds, upgrades, pooling, menu actions, in-game localization, controllers and co-op remain pending.
+波次、完整回合、强化、对象池、菜单事件、游戏内三语切换和手柄/双人尚待实现。官网三语不等于游戏内语言已接入。
+Waves, rounds, upgrades, pooling, menu actions, in-game localization, controllers and co-op remain pending.
 
 原型当前采用官网暖光工作室方向：深青绿、奶油灰与胡桃木色、真实受光材质、窗格日光和丰富边缘道具。镜头 FOV 45°、略后移，枪缩放 0.50 并下移；音乐改为柔和的 108 BPM 键盘曲（2D、自动循环、音量 0.14）。按用户要求仅保留当前五段；菜单与短音等待流程事件接线。Unity 编译/渲染通过，试玩与 Windows 包仍待验收。
 PrototypeScene now follows the website's warm studio direction with deep teal, plaster, walnut, physical shading and daylight. Wider 45-degree framing and a smaller/lower gun reveal the room. The softer 108 BPM loop plays at volume 0.14; menu/round events remain unconnected. Unity compilation/rendering passed; playtesting and a Windows build remain pending.
@@ -45,8 +45,8 @@ PrototypeScene now follows the website's warm studio direction with deep teal, p
 V4 进一步加入细橡木、拱形壁龛、曲面叶片与窗边盆栽，主音改为钢琴式合成。实际画面与官网概念图的模型精细度仍有差距；当前素材、参数和验证记录见 [工作室说明](Docs/Art/STUDIO_ART_PACK.md)。
 V4 adds fine oak, arched niches and curved foliage, with piano-like synthesis. Realtime model detail still differs from the website concept; the studio guide records current assets and settings.
 
-学习者写核心，助手维护配置、工具、测试、美术、文档和官网。本轮保留学习者保存改动，不代写核心或移动 Unity GUID。Windows 构建和运行验收仍需完成。
-The learner writes core gameplay; the assistant maintains foundations, tools, tests, art, docs, and the site. Preserve saved learner changes without authoring core or moving Unity GUIDs. Windows builds and runtime acceptance remain pending.
+学习者写核心，助手维护配置、工具、测试、美术、文档和官网；本轮例外是用户明确授权恢复丢失的两课代码，保留所有 Unity GUID。Windows 构建和完整一局验收仍需完成。
+Gameplay remains learner-owned; this pass explicitly authorizes restoring the two lost lessons while preserving Unity GUIDs. Windows builds and full-round acceptance remain pending.
 
 ## 官网 / Website
 

@@ -47,7 +47,7 @@ Open PrototypeScene for the current game; the older StudioArtPreview is a histor
 - 枪是 Main Camera 的子物体，当前镜头和枪参数见上方 V3；位置、缩放、旋转是不同设置，不要把缩放值填到 Rotation。
 - V1 建立窗景、画框、工作台、颜料罐、音箱、盆栽与装饰灯罩；V3 已按最新要求调整材质、相机和灯光。物体集中在边缘，中央保留靶区，原涂鸦保留。
 - `ExhibitionV1/Prefabs` 包含 CourtyardWindow、FramedBalloonPoster、PaintWorkbench 和 StudioBackgroundMusic。场景内新增物体统一放在 **ExhibitionStudioV1** 下，后续可直接移动或替换。装饰无 Collider，避免挡住射击。
-- 建场景时，先在 Game 中选择 16:9，再从相机视角调整边缘道具。左墙放窗与工作台，右侧放盆栽和画框，上方放横梁；不要只看 Scene 视图判断遮挡。本地渲染图中的三球仅演示构图，当前生成器仍是单球。
+- 建场景时，先在 Game 中选择 16:9，再从相机视角调整边缘道具。左墙放窗与工作台，右侧放盆栽和画框，上方放横梁；不要只看 Scene 视图判断遮挡。构图预览独立放置三球，当前运行生成器也已恢复默认 3 球的列表和补充逻辑。
 - `Tools → Balloon Studio → Build Exhibition Studio V1` 是编辑器组装工具；当前场景已经生成，无需再执行。工具拒绝覆盖已有 ExhibitionStudioV1，防止丢失手动调整，首次生成会备份原场景。
 
 The gun is smaller and sits at the lower right. New props are grouped under ExhibitionStudioV1 and have no colliders. Four reusable prefabs are provided. Judge placement in a 16:9 Game view; three preview balloons illustrate composition only. The editor tool backs up the scene and refuses to overwrite an existing group.

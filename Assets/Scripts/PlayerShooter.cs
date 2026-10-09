@@ -11,6 +11,11 @@ public class PlayerShooter : MonoBehaviour
 
     [SerializeField] private ParticleSystem muzzleSpray;
 
+    [SerializeField, Min(0.1f)]
+    private float shotsPerSecond = 5f;
+
+    private float nextShotTime;
+
     // Update is called once per frame
     void Update()
     {
@@ -43,7 +48,12 @@ public class PlayerShooter : MonoBehaviour
 
         transform.LookAt(aimPoint);
 
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
+        if (!Mouse.current.leftButton.isPressed)
+        {
+            return;
+        }
+
+        if (Time.time < nextShotTime)
         {
             return;
         }
@@ -61,6 +71,8 @@ public class PlayerShooter : MonoBehaviour
             muzzle.position,
             Quaternion.LookRotation(direction)
             );
+
+        nextShotTime = Time.time + 1f / Mathf.Max(0.1f, shotsPerSecond);
 
         if (muzzleSpray != null)
         {

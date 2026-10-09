@@ -5446,6 +5446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 8031993649134300037, guid: 987530bb311f6864b921033d4a5fbf82, type: 3}
   spawnSettings: {fileID: 11400000, guid: ecdcc52e368c41b996d51cb470de9df8, type: 2}
+  maxBalloons: 3
   xRange: {x: -3, y: 3}
   yRange: {x: -2, y: 2}
   zPosition: 8
@@ -6341,6 +6342,7 @@ MonoBehaviour:
   muzzle: {fileID: 1466054584}
   paintProjectilePrefab: {fileID: 1371160461916757868, guid: 1503380901ff47c44b942dfabf1913a2, type: 3}
   muzzleSpray: {fileID: 1941884822}
+  shotsPerSecond: 5
 --- !u!1 &642603958
 GameObject:
   m_ObjectHideFlags: 0

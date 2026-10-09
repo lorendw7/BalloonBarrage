@@ -2,8 +2,8 @@
 
 更新 / Updated: 2026-10-09 (Asia/Tokyo).
 
-恢复备注：用户确认多球与连射已经完成过；10/09 删除旧仓库、重新拉取后代码丢失。本轮恢复地图和配乐，当前保存代码基线仍是远端旧版本。恢复这两项后，继续 90 秒回合教学，不重复已完成的学习单元。
-Recovery note: the creator confirmed completing multiple targets and held fire before deleting and re-cloning the checkout on October 9. This pass restores the studio and music; the saved-code baseline remains the older remote revision. Recover gameplay before continuing the 90-second round lesson; do not repeat completed learning units.
+恢复备注：10/09 删除旧仓库并重新拉取后，地图和配乐已恢复；用户进一步授权按保留的教学代码恢复多球与连射。默认 3 球、每秒 5 发，下一课继续 90 秒回合，不重复已完成的学习单元。
+Recovery note: after the October 9 re-clone, the studio and music were recovered and the creator authorized reconstructing multiple targets and held fire from retained lessons. Defaults are three targets and five shots/second. Continue with the 90-second round rather than repeating completed learning units.
 
 ## 方向 / Direction
 
@@ -33,14 +33,14 @@ If behind, reduce target/effect counts while preserving timer/results/retry and 
 
 ## 保存代码基线 / Saved-code baseline
 
-- 已接入：持续瞄准、单击发射、飞行颜料弹、路径碰撞、一次计分、音效碎片、单目标生成、配置等待与平滑入场。
-  Integrated: aim, click firing, flying paint, swept collision, single scoring, pop audio/fragments, one target, settings delay, smooth entrance.
+- 已接入：持续瞄准、按住连射、飞行颜料弹、路径碰撞、一次计分、音效碎片、多目标生成、配置等待与平滑入场。
+  Integrated: aim, held fire, flying paint, swept collision, single scoring, pop audio/fragments, multiple targets, settings delay and smooth entrance.
 - 胶囊已启用，两个旧球形体关闭。漂浮有代码但未挂到保存预制体，后置处理。
   Capsule enabled, two old spheres disabled. Float exists but is not attached to the saved prefab; defer polish.
-- 多球名单在会话提供，但保存生成器仍管理一个目标。会话示例不等于已实现。
-  Multi-target tracking was supplied in chat; saved code still tracks one target. Examples are not implementation.
-- 官网三语已制作；Unity 菜单事件、游戏语言切换、连射、波次、完整回合、强化和双人尚待实现。
-  The website is trilingual; game menu actions, localization, held fire, waves, full rounds, upgrades, and co-op are pending.
+- 多球列表与上限已恢复：开局 3 球，销毁条目清理后按配置延迟逐个补充；连射默认每秒 5 发，松手停止生成弹丸，冷却按秒计算。
+  Restored tracking/cap: start with three targets, remove destroyed entries and refill individually after the configured delay. Held fire defaults to five shots/second, stops on release and uses time-based cooldown.
+- 官网三语已制作；Unity 菜单事件、游戏语言切换、波次、完整回合、强化和双人尚待实现。
+  The website is trilingual; game menu actions, localization, waves, full rounds, upgrades and co-op are pending.
 
 ## 展示前教学 / Pre-showcase lessons
 
@@ -53,8 +53,8 @@ If behind, reduce target/effect counts while preserving timer/results/retry and 
 | 5 | 日文开始、暂停与退出 / Japanese start, pause and quit | 复用现有菜单素材与文案，检查字形 / Reuse menu art/strings and check glyphs | 初见能开始；暂停不战斗；菜单点击不穿透 / First-time start, paused combat, no menu click-through |
 | 6 | Windows 打包与现场试玩 / Windows package and exhibition playtest | 检查包、官网、发行说明 / Verify package, website and release notes | ZIP 完整解压，离线完成一局，现场电脑稳定 / Extract full ZIP, finish a round offline, stable exhibition-PC play |
 
-当前约六个教学单元，可按理解程度拆分；每次完成一个可玩的增量。上一课多球示例尚未保存，本次继续讲不依赖多球的连射；10/12 前两项都要由学习者输入并试玩验收。之后先完成计时、结算、重开，不插入美术细节课。
-There are about six teaching units, split as needed, each producing a playable increment. The prior multiple-target example is not saved yet; the next held-fire lesson is independent, and both need learner implementation/playtesting by October 12. Then complete timer/results/retry before art polish.
+当前约六个教学单元，可按理解程度拆分；每次完成一个可玩的增量。前两课的多球和连射已恢复，接下来先完成计时、结算、重开，不插入美术细节课。
+There are about six teaching units, split as needed. The first two lessons are restored; next complete timer/results/retry before art polish.
 
 ## 展示后扩展 / After the showcase
 
@@ -75,4 +75,4 @@ The assistant maintains foundations, tools, tests, art, docs, and the site; the 
 - [ ] ZIP 包含完整运行文件，Release 提供版本、操作、已知问题和 SHA-256。 / Complete runtime package and release notes/checksum.
 - [ ] 官网只链接真实上传包，概念图注明非实机。 / Genuine package links and labelled concept art.
 
-下一课：连射与射速；同时完成上一课多球名单，然后进入 90 秒计时与回合状态。 / Next: held fire and cadence; finish the prior multiple-target lesson, then implement the 90-second timer and round state.
+下一课：90 秒计时与回合状态，时间到停止开火、生成和计分。 / Next: the 90-second timer and round state; stop shooting, spawning and scoring at time up.
