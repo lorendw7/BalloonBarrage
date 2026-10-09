@@ -1,6 +1,6 @@
 # 官网与桌面发行 / Website and desktop distribution
 
-更新 / Updated: 2026-10-08 (Asia/Tokyo).
+更新 / Updated: 2026-10-09 (Asia/Tokyo).
 
 ## 职责 / Ownership
 
@@ -10,7 +10,15 @@ Website/ is separate from Unity. Pages hosts a site, not a browser game; distrib
 官网 / Site: https://lorendw7.github.io/BalloonBarrage/. 三语 / Languages: root 中文, ja/ 日本語, en/ English (under /BalloonBarrage/).
 下载 / Releases: https://github.com/lorendw7/BalloonBarrage/releases.
 
-## 本地使用 / Local use
+## Qpic 与九大祭 / Qpic and Kyudai-sai
+
+用户确认自己是 [Qpic](https://www.qpic.jp/) 成员、本作计划 2026-10-31 展示。三语首页提供展示区、页内入口与页脚 Qpic 链接，以及 [九大祭官网](https://kyudaisai.jp/79th/) 链接。使用“成员作品/计划展示”的含义，不声明 Qpic 官方联合开发或背书；不使用未提供的社团标志。具体展位、试玩时段待确认后补充，活动整体的 10/31–11/01 不等于本作两天均参展。
+The user confirmed Qpic membership and a planned October 31 showcase. All three homepages include a showcase section, in-page entry, footer Qpic link, and official festival link. Describe a member's project and planned exhibition, without claiming official co-development or endorsement or adding an unprovided club logo. Add booth/hours once confirmed; the festival's two-day schedule does not establish two-day attendance for this game.
+
+展示版目标与排期以 [路线](../Design/ROADMAP.md) 为准。官网仍准确显示已保存原型的单击操作与真实下载状态；提供连射教学不等于已实现，不提前标记试玩包可下载。现场操作以日文为先，官网分享优先使用 [日文页](https://lorendw7.github.io/BalloonBarrage/ja/)。
+The roadmap owns demo scope and dates. Keep current click controls and actual download availability accurate until implementation/build verification; a lesson is not a shipped feature. Prioritize Japanese in the exhibition UI and share the Japanese website with visitors.
+
+## 本地构建 / Local build
 
 Node.js 22+，无需依赖安装。先 git lfs pull，仓库根运行： / Node.js 22+, no dependencies. Fetch LFS art, run at the root:
 

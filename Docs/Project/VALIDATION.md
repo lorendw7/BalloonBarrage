@@ -1,5 +1,14 @@
 # 验证记录 / Validation record
-更新 / Updated: 2026-10-08 (Asia/Tokyo)
+更新 / Updated: 2026-10-09 (Asia/Tokyo)
+
+## 2026-10-09 Qpic 与展示计划 / Qpic and showcase planning
+
+- 官网中日英加入作者的 Qpic 成员身份、Qpic 与九大祭官网链接，以及用户确认的 2026-10-31 计划展示日期。展位和时段保留待确认状态。开发路线收敛为 90 秒单人试玩，目标 10/27 展示候选包；目标不是完成声明。
+  All site languages identify the creator as a Qpic member, link Qpic/the official festival site, and give the user-confirmed planned showcase date of October 31. Booth/hours remain pending. The roadmap targets a 90-second solo demo and an October 27 candidate, without marking those features complete.
+- 三语构建与五项现有网站测试通过；在线构建查询的公开游戏包为空。静态审计通过：195 个唯一资源 GUID、14 份文档，无本轮 Unity 资源移动。
+  The trilingual build and five existing website tests pass. The online build found no public game package. Static auditing passes with 195 unique asset GUIDs and fourteen documents; no Unity assets were moved.
+- 本轮未修改学习者核心、场景或预制体，保存代码仍为单球、单击发射。尚未完成展示版玩法、Windows 构建或现场电脑试玩；教学代码须由学习者输入并运行验收。
+  Learner gameplay, scenes and prefabs are unchanged. Saved code still has a single target and click firing. The exhibition gameplay, Windows build and exhibition-PC playtests remain unfinished; lesson code needs learner entry and runtime acceptance.
 
 ## 2026-10-08 桌面官网检查 / Desktop website checks
 

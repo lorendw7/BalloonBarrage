@@ -1,5 +1,5 @@
 # BalloonBarrage 设计 / Game design
-更新 / Updated: 2026-10-08. 本文取代旧节奏游戏计划，是当前唯一玩法规范。
+更新 / Updated: 2026-10-09. 本文取代旧节奏游戏计划，是当前唯一玩法规范。
 This is the current specification, replacing the former rhythm-game plan.
 
 ## 已确认与提案 / Confirmed scope and proposals
@@ -9,10 +9,21 @@ Confirmed: balloon hordes, satisfying shooting, roguelite variety, desktop solo/
 开发顺序为 Windows 单人核心、完整桌面试玩、手柄和本地双人。中日英官网复用项目美术，通过 Pages 发布；游戏 ZIP 用 Releases 分发。教学与验收见 [路线](ROADMAP.md)，发行见 [官网与桌面发行](../Project/WEBSITE_AND_RELEASES.md)。
 Develop Windows solo, a complete demo, then controllers/co-op. A trilingual site reuses project art on Pages; Releases distributes ZIPs. See the [roadmap](ROADMAP.md) and [distribution guide](../Project/WEBSITE_AND_RELEASES.md).
 
-以下局长、胜负规则、强化和性能预算为首版提案，待试玩修订。不承诺联网、双鼠标或移动双人。音乐服务射击，不强制按拍开火。
-Run length, outcomes, upgrades, and performance budgets below are proposals to playtest. Online, two independent mice, and mobile co-op are out of scope. Music supports shooting without enforcing timing.
+## 九大祭展示版本 / Kyudai-sai demonstration
 
-## 核心循环 / Core loop
+用户于 2026-10-09 确认自己是 [Qpic](https://www.qpic.jp/) 成员，计划 10 月 31 日展示本作。[第 79 回九大祭官方日程](https://kyudaisai.jp/79th/) 为 2026-10-31 至 11-01。近期按 10 月 27 日展示候选包倒排，具体展位和时段待确认。官网中日英介绍作者与 Qpic 的关系并提供链接。
+On October 9 the creator confirmed Qpic membership and an October 31 showcase. The official festival dates are October 31–November 1. Target a demo candidate on October 27; booth and hours remain pending. All three website languages link Qpic and describe the creator's membership.
+
+展示版先做固定靶场、90 秒计分挑战：日文开始/操作提示 → 鼠标瞄准、按住连射、多气球补充 → 时间到停止生成与计分 → 显示分数 → 一键重开。支持暂停/返回标题/退出；打包后离线可玩。90 秒是初始试玩参数，可按现场轮换调整。
+The exhibition build is a fixed-gallery, 90-second score challenge: Japanese start/instructions → mouse aim, held fire and replenishing targets → time up stops spawning and scoring → results → quick retry. Include pause, return to title and quit, with offline packaged play. Ninety seconds is an initial playtest setting.
+
+展示前必需：分数和计时每局复位；结束时清理飞行弹丸和目标；日文字体无缺字；展示电脑上连续十局和 30 分钟运行无卡死或持续对象增长。波次/漏球失败、强化、对象池、语言切换、手柄/双人和漂浮细节移至展示后；若性能实测不达标，先降低同时目标与特效上限，再决定是否提前引入对象池。排期和逐课验收维护在 [路线](ROADMAP.md)。
+Before the exhibition: reset score/time each round, clear projectiles/targets at the end, verify Japanese glyphs, and run ten consecutive rounds plus a 30-minute soak on the exhibition PC without lockups or growing object counts. Defer waves/escape failure, upgrades, pooling, language switching, controllers/co-op and float polish. Reduce target/effect caps first if profiling misses the target; bring pooling forward only if measurements require it. See the roadmap for dates and lesson acceptance.
+
+以下局长、胜负规则、强化和性能预算为展示后版本提案，待试玩修订。不承诺联网、双鼠标或移动双人。音乐服务射击，不强制按拍开火。
+Run length, outcomes, upgrades, and performance budgets below are post-showcase proposals to playtest. Online, two independent mice, and mobile co-op are out of scope. Music supports shooting without enforcing timing.
+
+## 展示后核心循环 / Post-showcase core loop
 菜单 → 人数/设备加入 → 波次射击 → 暂停战斗、三选一强化 → 更密集波次 → 精英气球 → 结算/再来一局。
 Menu → player/device join → wave shooting → pause for one-of-three upgrade → denser waves → elite balloon → results/retry.
 

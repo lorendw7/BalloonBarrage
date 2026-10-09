@@ -7,6 +7,14 @@ A cartoon paint-blaster game in a cozy graffiti studio. **Desktop first, startin
 - 下载 / Downloads: [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases). 当前尚无公开 Windows 包；源代码 ZIP 不是可运行游戏。 / No public Windows build exists yet; a source ZIP is not a playable game.
 - 仓库 / Repository: [lorendw7/BalloonBarrage](https://github.com/lorendw7/BalloonBarrage).
 
+## 九大祭展示 / Kyudai-sai showcase
+
+作者是 [Qpic（九州大学物理研究部）](https://www.qpic.jp/) 成员，计划在 **2026-10-31** 的九大祭展示本作。[第 79 回九大祭](https://kyudaisai.jp/79th/) 的官方活动日期为 10 月 31 日至 11 月 1 日；本作展位与试玩时段待确认。
+The creator is a [Qpic](https://www.qpic.jp/) member and plans to exhibit this game on **October 31, 2026**. The [79th Kyudai-sai](https://kyudaisai.jp/79th/) runs October 31–November 1; this game's booth and demo hours are pending.
+
+近期目标：90 秒一局的 Windows 键鼠单人试玩，多球、连射、计时计分、日文提示、结算重开。**10 月 27 日完成展示候选包，28–30 日验证现场电脑**。波次、肉鸽强化、手柄和双人放到展示后；完整排期与验收见 [路线](Docs/Design/ROADMAP.md)。这是开发目标，尚非已完成能力。
+Near-term target: a 90-second Windows solo demo with multiple balloons, held fire, timer/score, Japanese instructions, results, and retry. **Candidate build by October 27; exhibition-PC checks October 28–30.** Waves, roguelite upgrades, controllers, and co-op follow the showcase. See the [roadmap](Docs/Design/ROADMAP.md). These are development targets, not implemented features.
+
 ## 打开项目 / Open the project
 
 安装 Git LFS，克隆后执行 git lfs pull，使用 Unity **6000.0.77f1** 打开包含 Assets、Packages、ProjectSettings 的仓库根。本机唯一活动目录是 `D:/CS/Code/BalloonShooter`；不要打开旧的 `D:/CS/Code/Unity/BalloonShooter`。

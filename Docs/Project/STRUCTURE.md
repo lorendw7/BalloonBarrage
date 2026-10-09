@@ -14,8 +14,8 @@ Keep side-effect-free settings types in Assets/Framework/Runtime under the Ballo
 后果 / Consequences：新参数不会自动改变旧脚本行为；必须由学习者读取并验收。检查窗口只检查当前原型中启用的发射器和生成器及其字段，不证明命中、计时或入场正确。测试只覆盖配置默认值、负延迟保护和资产导入，不覆盖核心玩法。
 New settings do not change old behavior until learner integration and acceptance. The workbench checks enabled prototype shooters/spawners and fields, not hit/timing/entrance correctness. Tests cover defaults, negative-delay protection, and asset import, not core gameplay.
 
-下一步 / Action items：学习者已接入配置、等待和入场，现在优先多球、连射和桌面完整流程。使用 Workbench 检查接线，在 Test Runner 的 EditMode 页运行配置测试；漂浮后置。
-Settings, delay, and entrance are integrated. Prioritize multiple targets, held fire, and desktop flow. Use Workbench and EditMode configuration tests; defer float polish.
+下一步 / Action items：学习者已接入配置、等待和入场。按 2026-10-31 九大祭展示倒排，优先多球、连射、90 秒计分回合、日文操作和重开；10/27 展示候选包，详见 [路线](../Design/ROADMAP.md)。使用 Workbench 检查接线，在 Test Runner 的 EditMode 页运行配置测试；漂浮后置。
+Settings, delay, and entrance are integrated. For the October 31 Kyudai-sai showcase, prioritize multiple targets, held fire, 90-second score rounds, Japanese controls, and retry, targeting an October 27 candidate; see the roadmap. Use Workbench and EditMode configuration tests; defer float polish.
 
 唯一工作根目录 D:/CS/Code/BalloonShooter；远端 BalloonBarrage。Assets、Packages、ProjectSettings 必须留在 Unity 项目根下。
 Working root: D:/CS/Code/BalloonShooter; remote: BalloonBarrage. Keep Assets, Packages, ProjectSettings at the Unity root.

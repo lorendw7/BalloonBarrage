@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main">{{skip}}</a>
   <header class="site-header">
     <a class="brand" href="{{home}}" aria-label="BalloonBarrage"><img src="{{base}}favicon.svg" width="36" height="36" alt=""><span>Balloon<span class="brand-color">Barrage</span></span></a>
-    <nav class="main-nav" aria-label="{{navGame}}"><a href="#game">{{navGame}}</a><a href="#art">{{navArt}}</a><a href="#download">{{navDownload}}</a></nav>
+    <nav class="main-nav" aria-label="{{navGame}}"><a href="#game">{{navGame}}</a><a href="#festival">{{navFestival}}</a><a href="#art">{{navArt}}</a><a href="#download">{{navDownload}}</a></nav>
     <nav class="language-nav" aria-label="{{language}}">{{languageLinks}}</nav>
   </header>
   <main id="main">
@@ -28,8 +28,15 @@
         <p class="hero-description">{{intro}}</p>
         <div class="hero-actions"><a class="button button-coral" href="#download">{{heroDownload}}</a><a class="text-link" href="#game">{{heroMore}}</a></div>
         <p class="prototype-note">{{prototype}}</p>
+        <a class="festival-badge" href="#festival">{{festivalBadge}}</a>
       </div>
       <span class="edition-sticker">{{edition}}</span>
+    </section>
+    <section class="festival-section" id="festival" aria-labelledby="festival-title">
+      <div class="section festival-grid">
+        <div class="festival-copy"><p class="kicker">{{festivalKicker}}</p><h2 id="festival-title">{{festivalTitle}}</h2><p>{{festivalBody}}</p><div class="festival-links"><a class="button button-teal" href="https://www.qpic.jp/">{{qpicLink}}</a><a class="text-link" href="https://kyudaisai.jp/79th/">{{festivalLink}}</a></div></div>
+        <div class="festival-date"><p>{{festivalDateLabel}}</p><time datetime="2026-10-31">{{festivalDate}}</time><p>{{festivalVenue}}</p><p class="small">{{festivalNote}}</p></div>
+      </div>
     </section>
     <section class="section game-section" id="game" aria-labelledby="game-title">
       <div class="section-heading"><p class="kicker">{{gameKicker}}</p><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
@@ -52,8 +59,8 @@
       <ol class="roadmap">
         <li><span class="step-number">01</span><div><span class="badge">{{done}}</span><h3>{{step1Title}}</h3><p>{{step1Body}}</p></div></li>
         <li><span class="step-number">02</span><div><span class="badge badge-yellow">{{next}}</span><h3>{{step2Title}}</h3><p>{{step2Body}}</p></div></li>
-        <li><span class="step-number">03</span><div><span class="badge">{{later}}</span><h3>{{step3Title}}</h3><p>{{step3Body}}</p></div></li>
-        <li><span class="step-number">04</span><div><span class="badge">{{releaseGate}}</span><h3>{{step4Title}}</h3><p>{{step4Body}}</p></div></li>
+        <li><span class="step-number">03</span><div><span class="badge">{{releaseGate}}</span><h3>{{step3Title}}</h3><p>{{step3Body}}</p></div></li>
+        <li><span class="step-number">04</span><div><span class="badge">{{later}}</span><h3>{{step4Title}}</h3><p>{{step4Body}}</p></div></li>
       </ol>
     </section>
     <section class="download-section" id="download" aria-labelledby="download-title">
@@ -63,7 +70,7 @@
       </div>
     </section>
   </main>
-  <footer class="section footer"><div><a class="footer-brand" href="{{home}}">{{footer}}</a><p>{{footerNote}}</p></div><details class="credits"><summary>{{credits}}</summary><p>{{creditsBody}}</p><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/CREDITS.md">{{creditsLink}}</a></details><p class="privacy">{{privacy}}</p></footer>
+  <footer class="section footer"><div><a class="footer-brand" href="{{home}}">{{footer}}</a><p>{{footerNote}}</p><p><a href="https://www.qpic.jp/">{{qpicLink}}</a></p></div><details class="credits"><summary>{{credits}}</summary><p>{{creditsBody}}</p><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/CREDITS.md">{{creditsLink}}</a></details><p class="privacy">{{privacy}}</p></footer>
   <dialog class="art-dialog" aria-label="{{artOpen}}"><button class="dialog-close" type="button">{{artClose}}</button><img alt=""><p></p></dialog>
   <noscript><p class="section small">{{noScript}}</p></noscript>
 </body>
