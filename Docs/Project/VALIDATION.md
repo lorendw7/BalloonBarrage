@@ -1,6 +1,66 @@
 # 验证记录 / Validation record
 更新 / Updated: 2026-10-09 (Asia/Tokyo)
 
+## 2026-10-09 删除后恢复 / Recovery after re-clone
+
+- 从历史编辑记录恢复四个场景生成器、三张原始纹理和配乐源文件，按 V1→V2→V3→V4 顺序重建 PrototypeScene。使用 Unity 6000.0.77f1 独立副本运行，退出 0，日志包含 STUDIO_RECOVERY_OK；目视检查最终 1600×900 相机图。
+  Recovered four art generators, three original textures and the composition source from historical edit records. Unity 6000.0.77f1 replayed the art passes in an isolated checkout and exited 0 with STUDIO_RECOVERY_OK; the final camera render was visually inspected.
+- 五段 WAV 解码、格式、整小节时长、峰值和循环端点检查通过；主配乐自动播放、循环、2D、音量 0.14。主曲 108 BPM / 71.111 秒，菜单 84 BPM / 22.857 秒，保留柔和版本。菜单与回合提示音事件仍未接线。
+  All five WAV tracks pass decoding, format, full-bar duration, peak and loop-endpoint checks. Main music is 2D, autoplay, looped at volume 0.14. Menu/round audio events remain unconnected.
+- 静态审计通过：381 个唯一资源 GUID，14 份文档。新增引用可解析；既有渲染设置的 11 个未解析 GUID 仍保留，完整项目引用审计不能称全部通过。没有进行人工听感验收或 Windows 构建。
+  Static checks pass with 381 unique GUIDs and fourteen documents. New references resolve; eleven inherited renderer/profile references remain unresolved. Listening acceptance and Windows build validation are not claimed.
+- 同步前校验当前场景及八个核心脚本哈希，保留全部原有 GUID；新建资源与元数据配对同步。用户确认曾完成多球与连射，但重新拉取版本缺少未发布实现；本次按请求恢复场景与音乐，未改写学习者核心。旧场景和验证副本留在忽略的 .local-backups。
+  Scene and eight gameplay-source hashes were checked before syncing. Existing GUIDs remain; rebuilt assets and metadata travel together. The creator reports previously completing multiple targets and held fire, but their unpublished implementation is absent after re-clone. This requested scene/music recovery preserves gameplay sources. Backups and validation workspaces remain ignored.
+
+## 2026-10-09 官网参考细化 V4 / Reference refinement V4
+
+- 新细木纹、青绿拱形壁龛、储物搁板与无阴影局部暖光、曲面尖叶和窗边盆栽已加入。弱化大块天窗网格阴影，保持当前镜头与枪位置。新木纹使用内置 imagegen，原始提示词及成品路径已记录。
+  Fine oak, arched niches, shelf lights and curved foliage refine the website-inspired scene. Current framing remains. Generated texture provenance and exact prompt are recorded.
+- Unity 6000.0.77f1 编译/批处理退出 0，日志 REFERENCE_STUDIO_OK。修复叶尖浮点边界导致的无效顶点并重新上传网格，确认 39 个叶片顶点与有限包围盒；目视检查最终 1600×900 渲染。射击引用、四角枪口近裁切和新装饰无碰撞检查通过。
+  Unity compilation/batch passes exited 0. Leaf-tip numeric bounds were corrected and mesh data re-uploaded; finite bounds and 39 vertices were checked. The final render was inspected; shooter references, aim depth and collider checks pass.
+- 五段配乐继续原位更新，保留文件名和 GUID。采用原创钢琴式合成音、轻微力度/时序差异与低音量铺底；32 小节主曲与 8 小节菜单保持 108/84 BPM。WAV 解码检查通过，无削波，循环端点连续；没有声称完成人工试听。
+  Five tracks retain filenames/GUIDs while using piano-like synthesis and restrained variations. Decoded WAV format, full-bar length, peak and loop-boundary checks pass; listening acceptance is not claimed.
+- 静态审计通过：380 个唯一 GUID、14 份文档。同步前核对场景/学习者源码哈希，备份原场景；新增资源引用可解析。官网是概念图，当前模型细节与参考渲染仍有差距；Windows 包与现场电脑试玩仍待完成。
+  Static auditing passes with 380 GUIDs and fourteen documents; hashes and original scene backup preserve learner work. New references resolve. The realtime scene still differs in model detail from the concept rendering; Windows/exhibition-PC acceptance remains pending.
+
+## 2026-10-09 官网风格 V3、镜头与柔和配乐 / Atmosphere V3, framing and soft music
+
+- 按用户反馈将浅色平涂卡通材质替换为 URP/Lit 受光材质，加入木纹/微水泥、深青绿/胡桃木色、软阴影与窗格日光，补充天窗。镜头改为 (0, 0.10, -8.8)、俯角 2°、FOV 45°；枪局部位置 (0.47, -0.51, 1.35)、统一缩放 0.50，扩大场景展示面积。原核心脚本未改写。
+  Physical materials, restrained colors, textures, daylight and shadows replace flat toon shading. Wider camera framing and a lower/smaller gun expose more of the room without rewriting learner gameplay.
+- Unity 6000.0.77f1 在隔离项目中编译、生成和最终光影调整均退出 0，日志 ATMOSPHERE_STUDIO_OK。已目视检查 1600×900 最终场景图；射击引用、四角枪口近裁切检查、缺失脚本检查通过，新装饰无 Collider。三球仍仅为渲染构图示意。
+  Unity compile/build/refinement passes exited 0. The final camera render was inspected; shooter references, four-corner muzzle depth, missing-script and decor-collider checks passed. Temporary balloons are layout illustrations only.
+- 现有五段音乐改为柔和版本并保留资源 GUID：主曲 108 BPM、71.111 秒；菜单 84 BPM、22.857 秒；短音 2.222 秒。主曲均方根电平约从 -17.1 降至 -21.5 dBFS（单声道测量），4 kHz 以上频段能量占比由约 3.81% 降至 0.082%。这些指标说明更低的电平与高频含量，不替代实际听感；尚未人工试听或完成 Play Mode 音频验收。
+  Five softer tracks preserve asset GUIDs. Main/menu tempos are 108/84 BPM. Mono RMS dropped about 4.4 dB and energy above 4 kHz fell from 3.81% to 0.082%; these file measurements do not replace listening or Play Mode acceptance.
+- 静态审计通过：365 个唯一资源 GUID、14 份文档。同步前核对原场景和学习者源码哈希，备份原场景；新增材质与网格引用可解析，原型无新增无法解析引用。旧 V1/V2 配色、镜头、配乐参数由本节与当前素材说明替代。Windows 构建及现场试玩仍待完成。
+  Static auditing passes with 365 unique GUIDs and fourteen documents. Pre-sync hashes and scene backups preserve learner work; new references resolve. Current V3 specifications supersede older V1/V2 notes; Windows/exhibition-PC acceptance remains pending.
+
+## 2026-10-09 卡通 V2 与日系配乐 / Cartoon V2 and game-pop music
+
+- 按用户的新要求丰富配色与边缘装饰，参照官网 CozyGraffitiStudio 概念图。新增圆角工作台构件、画架、木箱、滴漆桶、画笔杯、书本、双音箱、绿植、旗串与地毯；保留相机、灯光、原涂鸦和学习者核心。
+  The requested art pass adds richer peripheral props and rounded forms following the website concept while preserving camera, lights, graffiti and learner gameplay.
+- Unity 6000.0.77f1 在缓存的隔离项目中编译与批处理执行成功，退出码 0，记录 CARTOON_STUDIO_OK；卡通 shader 无编译错误。渲染 1600×900 前后图、三球构图示意与四角瞄准图；已目视检查最终场景图。三球依旧仅为临时渲染示意，不代表已实现多球生成。
+  Unity compiled and completed the cached isolated batch pass with exit 0; the toon shader has no compilation errors. Final scene images were inspected. Temporary three-balloon layout previews do not implement multi-target spawning.
+- 主配乐升级为 148 BPM、32 小节、51.892 秒的原创日系游戏风合成曲，有 A/B 乐句变化；菜单曲为 104 BPM、18.462 秒。另有纯鼓循环与两个 1.622 秒短音。主曲在场景和音乐 Prefab 中均已接入，2D 循环，音量 0.16；菜单/回合短音尚未绑定事件。按用户明确要求删除旧版五段 WAV 及元数据，删除前核对已无运行素材引用。
+  The new original game-pop groove loops for 32 bars at 148 BPM, with contrasting phrases. Menu, drum-only and short cues are provided. Main music is assigned in both scene and prefab at volume 0.16; future events remain unconnected. The earlier five WAVs/metadata were removed as expressly requested after checking references.
+- 新 WAV 为双声道 44.1 kHz、16-bit PCM，峰值 -2.01 至 -1.31 dBFS，无削波。循环接缝有 3 毫秒平滑过渡，解码后端点连续；整小节帧数检查通过。尚未人工试听或进行 Unity Play Mode 音频验收，文件检查不替代听感判断。
+  New WAV format, peak/headroom, full-bar lengths and smoothed loop endpoints were checked. Listening and Play Mode audio acceptance remain pending.
+- 同步前再次核对场景和学习者源码哈希，保留原场景备份。静态审计通过：316 个唯一资源 GUID、14 份文档；新增引用解析检查通过。既有渲染引用问题与 Windows 构建/现场试玩待办仍保留。下面 V1 配乐规格属于历史记录，已被本节替代。
+  Hashes were checked before syncing and the original scene was backed up. Static auditing passes with 316 unique GUIDs and fourteen documents. Inherited render-reference issues and build/playtesting tasks remain. V1 audio specifications below are historical and superseded.
+
+## 2026-10-09 展示场景与原创配乐 / Exhibition studio and original music
+
+- Unity 6000.0.77f1 在隔离的项目副本中完整导入并编译，ExhibitionStudioBuilder.BuildBatch 退出码 0，记录 EXHIBITION_STUDIO_OK。已保存 PrototypeScene；检查枪口/颜料弹/喷漆引用、场景无 Missing Script、装饰与枪无 Collider，以及背景 AudioSource 的 clip/Loop/2D/Play On Awake 配置。
+  Unity fully imported and compiled an isolated project copy; the batch builder exited 0. Scene checks covered shooter references, zero missing scripts, collider-free decor/gun, and looping 2D background-audio wiring.
+- 相机生成 1600×900 修改前后图、构图示意和四个靶区角落的瞄准图，已检查画面。枪口未穿越相机近裁切面。三球仅为临时渲染示意，已删除且未保存到场景；此检查不是多球玩法完成或 Play Mode 测试。
+  Before/after, layout and four-corner aim images were rendered. Muzzle depth stays beyond the near plane; before/after, layout and upper-left aim were visually inspected. Three illustrative balloons were removed before any scene save; this is not multi-target gameplay or a Play Mode test.
+- 同步前核对原型与学习者 PlayerShooter 的 SHA256，保存原场景备份；同步时保留活动编辑器已导入的新资源 GUID，并一致重映射生成的引用。学习者核心文件未改写。
+  Source hashes were checked before synchronization and the original scene was backed up. Newly imported editor GUIDs were preserved with consistent reference remapping. Learner gameplay was not rewritten.
+- 五段原创合成 WAV 为 44.1 kHz/双声道/16-bit PCM，峰值均约 -1.31 dBFS，无削波；主循环 16 小节、112 BPM、34.286 秒，菜单 8 小节、84 BPM、22.857 秒。循环端点跳变量低于 0.001（归一化振幅），制作源文件及指标随素材保存。这是文件级检查，尚未人工试听或验收 Unity 音频循环。
+  All five synthesized WAVs use stereo 44.1 kHz 16-bit PCM, with peaks around -1.31 dBFS and no clipping. Main/menu lengths align with full bars; loop endpoint steps are below 0.001 normalized amplitude. Listening and Unity audio-loop acceptance remain pending.
+- 静态审计通过：215 个唯一元数据 GUID、14 份文档；全项目既有渲染引用问题仍保留，此次成功渲染不代表其已全部修复。Windows 构建与展会电脑试玩尚未完成。旧 Qpic 计划检查中的“单击发射”描述是较早检查点；当前学习者已保存连射代码。
+  同步后的新增材质/预制体 GUID 引用均可解析，原型未新增无法解析的引用；重新解码五段 WAV，格式、整小节帧数、峰值及循环边界检查通过。
+  Static metadata/document auditing passed with 215 unique GUIDs and fourteen documents. Inherited rendering-reference issues remain; successful rendering does not claim all were repaired. Windows/exhibition-PC playtests remain pending. The earlier click-firing note below predates the learner's held-fire changes.
+
 ## 2026-10-09 Qpic 与展示计划 / Qpic and showcase planning
 
 - 官网中日英加入作者的 Qpic 成员身份、Qpic 与九大祭官网链接，以及用户确认的 2026-10-31 计划展示日期。展位和时段保留待确认状态。开发路线收敛为 90 秒单人试玩，目标 10/27 展示候选包；目标不是完成声明。

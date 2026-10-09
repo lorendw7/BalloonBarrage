@@ -1,7 +1,7 @@
 # 美术素材清单 / Art asset catalog
 喷漆枪复用与补充 / Existing guns and paint supplements: [说明 / Details](PAINT_BLASTER.md).
 新增橡胶碎片爆破包 / New latex pop pack: [说明 / Details](BALLOON_POP_V2.md).
-更新日期 / Updated: 2026-10-08
+更新日期 / Updated: 2026-10-09
 
 官网复用菜单背景、工作室/油漆枪概念与气球参考；Website/assets.json 只维护原图路径，输出不提交。原图留在 Assets 分类，概念图标为非实机，不复制模型/图集包到网站。 / The site references canonical menu/concept art via a manifest, with generated copies ignored. Preserve Assets originals and label concepts as non-gameplay; do not duplicate model/atlas packages.
 
@@ -26,7 +26,7 @@ Slice the existing atlas by cell count: four columns, two rows. Do not assume a 
 Scenes and prefabs have been consolidated from the editor project with metadata preserved. Prototype and art preview are separate entry points; asset presence does not imply gameplay integration.
 
 ## 来源与生成 / Provenance
-下载来源记录见根目录 [CREDITS](../../CREDITS.md)，保留作者声明并待补具体下载页面。
+下载来源记录见根目录 [CREDITS](../../CREDITS.md)，保留作者声明并待补具体下载页面。展示场景新图片的原始提示词、配乐用途与制作方式见 [工作室美术包](STUDIO_ART_PACK.md)。
 See root CREDITS for recorded third-party attribution; retain declarations and add exact download URLs later.
 
 ## 统一资源分类 / Unified inventory
@@ -35,9 +35,14 @@ See root CREDITS for recorded third-party attribution; retain declarations and a
 | Assets/Art/Balloon | 1 个源气球模型 / One source balloon model |
 | Assets/Art/BlasterKit | 40 FBX：18 枪、4 泡沫弹、2 弹夹、3 箱子、2 手榴弹造型、3 瞄具、2 枪口、1 烟雾网格、5 靶及碎片 / 40 models: 18 blasters, 4 darts, 2 clips, 3 crates, 2 grenade props, 3 scopes, 2 muzzle parts, 1 smoke mesh, 5 targets/fragments |
 | Assets/Audio | 5 普通+5 玻璃轻碰撞音 / Five generic and five glass impacts |
+| Assets/Audio/Music | 3 原创循环曲、开场与结算短音；主曲已接入原型 / Three original loops and two cues; main groove assigned in PrototypeScene |
 | Assets/Prefabs | 当前玩法气球 / Gameplay balloon |
 | Assets/StudioArtPack/Textures | 生成的墙面装饰、木纹、地面、纸张、喷漆 / Generated environment and spray art |
 | Assets/StudioArtPack/Generated | 材质、气球颜色变体、装饰、粒子与预览 / Materials, variants, props, particles, preview |
+| Assets/StudioArtPack/ExhibitionV1 | 2 生成图片、2 材质、窗/画框/工作台/背景音乐 4 Prefab，已布置到原型 / Two generated images, two materials and four prefabs placed in PrototypeScene |
+| Assets/StudioArtPack/CartoonV2 | 卡通材质、圆角网格、颜料桶/木箱/画架/画笔/地面装饰/旗串组合 / Toon materials, rounded meshes and reusable bucket/crate/easel/brush/floor/pennant assemblies |
+| Assets/StudioArtPack/AtmosphereV3 | 当前受光材质、带 UV 的圆角网格、窗格光遮罩；深色工作室风格 / Current physical materials, UV meshes and native window-light mask |
+| Assets/StudioArtPack/ReferenceV4 | 新细橡木纹理、壁龛/叶片网格、细化材质 / Fine oak texture, alcove/leaf meshes and refined materials |
 | Assets/StudioArtPack/SprayPrefabs | 6 喷漆预制体 / Six spray prefabs |
 | Assets/StudioArtPack/Menu | 新菜单背景与 6 图形图集 / New menu background and six-element UI atlas |
 | Assets/StudioArtPack/PaintBlaster/Assembled | blaster-m 喷漆枪组装、枪口粒子与独立预览场景 / Assembled blaster-m, muzzle particles and independent preview scene |

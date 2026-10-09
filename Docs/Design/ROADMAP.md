@@ -2,6 +2,9 @@
 
 更新 / Updated: 2026-10-09 (Asia/Tokyo).
 
+恢复备注：用户确认多球与连射已经完成过；10/09 删除旧仓库、重新拉取后代码丢失。本轮恢复地图和配乐，当前保存代码基线仍是远端旧版本。恢复这两项后，继续 90 秒回合教学，不重复已完成的学习单元。
+Recovery note: the creator confirmed completing multiple targets and held fire before deleting and re-cloning the checkout on October 9. This pass restores the studio and music; the saved-code baseline remains the older remote revision. Recover gameplay before continuing the 90-second round lesson; do not repeat completed learning units.
+
 ## 方向 / Direction
 
 桌面优先，Windows 键鼠单人先完成，再做手柄和本地同屏双人。暂不走应用商店；官网用 GitHub Pages，游戏包用 GitHub Releases。手机后置，不是桌面发行门槛。

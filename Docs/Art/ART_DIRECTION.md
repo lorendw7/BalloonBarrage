@@ -1,14 +1,17 @@
 # 美术规范 / Art direction
 
-延续用户认可的暖奶油墙、蜂蜜木框、鲜艳青绿/黄色/珊瑚涂鸦组合。不统一降低已调好的涂鸦透明度，不重置相机或灯光。新版玩法参考 [游戏设计](../Design/GAME_DESIGN.md)。
-Preserve the approved cream wall, honey wood, and vibrant teal/yellow/coral graffiti. Do not globally dim approved splats or reset the camera/lights. See the current game design.
+当前以官网暖光工作室概念为方向：奶油灰墙、胡桃木色结构、深青绿与少量赭红/黄铜，使用真实受光材质、木纹、微水泥和柔和阴影。保留既有涂鸦，避免大面积浅紫和糖果色平涂。2026-10-09 用户明确要求调整相机与枪以欣赏场景；当前 V3 参数见 [工作室美术包](STUDIO_ART_PACK.md)。新版玩法参考 [游戏设计](../Design/GAME_DESIGN.md)。
+Current direction follows the website's warm studio concept: cream-grey plaster, walnut structure, deep teal and restrained rust/brass, with physical materials and soft shadows. Preserve graffiti. The user explicitly requested camera/gun reframing; current V3 settings are in the studio guide.
+
+2026-10-09 用户要求增加色彩、层次与卡通感：V2 保留蜂蜜框架与原涂鸦，以更平整的卡通色块替代大面积重复木纹；侧墙与道具采用薄荷、淡紫、青绿、珊瑚和黄色，并增加圆角与边缘装饰。说明见 [工作室美术包](STUDIO_ART_PACK.md)。
+The requested V2 pass adds richer cartoon colors and layers, preserving honey framing and graffiti while simplifying broad wood patterns. Mint/lavender walls, teal/coral/yellow props, rounded forms and peripheral decor follow the website concept.
 
 ## 可读性 / Readability
 视觉优先级：准星与气球 → 击破反馈 → HUD → 环境。气球保留梨形、结口、短绳和宽高光，不能与静态涂鸦圆点混淆。密集波次先减少背景局部干扰，不把气球缩成无法瞄准的小点。
 Priority: reticles/targets, hit feedback, HUD, environment. Preserve pear silhouettes, knots, short strings, broad highlights; distinguish targets from painted dots. Reduce local background competition before shrinking targets beyond readability.
 
-固定 16:9 相机沿用当前调校；Scene 缩放不等于 Game 构图。UI 用屏幕 Canvas 与锚点，适配 720p、1080p、手机横屏和安全区。密集目标的最小尺寸需用真实手柄与触控实测。
-Keep the tuned 16:9 camera; Scene zoom is not Game composition. Use screen-space UI/anchors for 720p, 1080p, landscape mobile and safe areas. Validate minimum target size on gamepads and touch devices.
+固定 16:9 相机使用 V3 的 FOV 45° 与略后移构图；Scene 缩放不等于 Game 构图。UI 用屏幕 Canvas 与锚点，适配 720p、1080p、手机横屏和安全区。密集目标的最小尺寸需用真实手柄与触控实测。
+Use V3's 45-degree 16:9 framing; Scene zoom is not Game composition. Use screen-space UI anchors and validate future input-device readability.
 
 ## 配色 / Palette
 奶油底 #F4E6D0，珊瑚 #FF6B6B，青绿 #3EC6C0，黄 #FFD166，靛蓝 #5B5F97，炭灰文字 #30343F。双人准星同时使用颜色、形状和 P1/P2 标号。

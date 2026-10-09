@@ -17,8 +17,8 @@ New settings do not change old behavior until learner integration and acceptance
 下一步 / Action items：学习者已接入配置、等待和入场。按 2026-10-31 九大祭展示倒排，优先多球、连射、90 秒计分回合、日文操作和重开；10/27 展示候选包，详见 [路线](../Design/ROADMAP.md)。使用 Workbench 检查接线，在 Test Runner 的 EditMode 页运行配置测试；漂浮后置。
 Settings, delay, and entrance are integrated. For the October 31 Kyudai-sai showcase, prioritize multiple targets, held fire, 90-second score rounds, Japanese controls, and retry, targeting an October 27 candidate; see the roadmap. Use Workbench and EditMode configuration tests; defer float polish.
 
-唯一工作根目录 D:/CS/Code/BalloonShooter；远端 BalloonBarrage。Assets、Packages、ProjectSettings 必须留在 Unity 项目根下。
-Working root: D:/CS/Code/BalloonShooter; remote: BalloonBarrage. Keep Assets, Packages, ProjectSettings at the Unity root.
+唯一工作根目录 D:/CS/Code/BalloonBarrage；远端 BalloonBarrage。Assets、Packages、ProjectSettings 必须留在 Unity 项目根下。
+Working root: D:/CS/Code/BalloonBarrage; remote: BalloonBarrage. Keep Assets, Packages, ProjectSettings at the Unity root.
 
 ## 迁移 / Migration
 以实际编辑项目的已保存 Assets/Packages/ProjectSettings 为准，原仓库独有美术保留。首次清单：198 新增、59 同路径相同、21 同路径不同；冲突先备份再更新，.meta 成对迁移。

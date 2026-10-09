@@ -1,0 +1,64 @@
+{
+  "tracks": [
+    {
+      "file": "Assets/Audio/Music/StudioDaylight_Loop.wav",
+      "bpm": 108,
+      "bars": 32,
+      "duration_seconds": 71.111111,
+      "loop": true,
+      "peak_dbfs": -6.28,
+      "rms_dbfs": -21.41,
+      "loop_boundary_step": 0.0,
+      "format": "44.1 kHz / stereo / 16-bit PCM WAV",
+      "source": "original synthesized composition; no recordings or samples"
+    },
+    {
+      "file": "Assets/Audio/Music/StudioDaylight_Drums_Loop.wav",
+      "bpm": 108,
+      "bars": 32,
+      "duration_seconds": 71.111111,
+      "loop": true,
+      "peak_dbfs": -12.3,
+      "rms_dbfs": -26.94,
+      "loop_boundary_step": 0.0,
+      "format": "44.1 kHz / stereo / 16-bit PCM WAV",
+      "source": "original synthesized composition; no recordings or samples"
+    },
+    {
+      "file": "Assets/Audio/Music/StudioDaylight_Menu_Loop.wav",
+      "bpm": 84,
+      "bars": 8,
+      "duration_seconds": 22.857143,
+      "loop": true,
+      "peak_dbfs": -5.06,
+      "rms_dbfs": -21.41,
+      "loop_boundary_step": 0.0,
+      "format": "44.1 kHz / stereo / 16-bit PCM WAV",
+      "source": "original synthesized composition; no recordings or samples"
+    },
+    {
+      "file": "Assets/Audio/Music/RoundComplete_Soft.wav",
+      "bpm": 108,
+      "bars": 1,
+      "duration_seconds": 2.222222,
+      "loop": false,
+      "peak_dbfs": -7.97,
+      "rms_dbfs": -21.41,
+      "loop_boundary_step": null,
+      "format": "44.1 kHz / stereo / 16-bit PCM WAV",
+      "source": "original synthesized composition; no recordings or samples"
+    },
+    {
+      "file": "Assets/Audio/Music/RoundStart_Soft.wav",
+      "bpm": 108,
+      "bars": 1,
+      "duration_seconds": 2.222222,
+      "loop": false,
+      "peak_dbfs": -8.52,
+      "rms_dbfs": -21.41,
+      "loop_boundary_step": null,
+      "format": "44.1 kHz / stereo / 16-bit PCM WAV",
+      "source": "original synthesized composition; no recordings or samples"
+    }
+  ]
+}

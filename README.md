@@ -17,10 +17,11 @@ Near-term target: a 90-second Windows solo demo with multiple balloons, held fir
 
 ## 打开项目 / Open the project
 
-安装 Git LFS，克隆后执行 git lfs pull，使用 Unity **6000.0.77f1** 打开包含 Assets、Packages、ProjectSettings 的仓库根。本机唯一活动目录是 `D:/CS/Code/BalloonShooter`；不要打开旧的 `D:/CS/Code/Unity/BalloonShooter`。
-Install Git LFS and run git lfs pull after cloning. Open the repository root containing Assets, Packages, ProjectSettings with Unity **6000.0.77f1**. The canonical local checkout is `D:/CS/Code/BalloonShooter`, not the retired path containing another Unity directory.
+安装 Git LFS，克隆后执行 git lfs pull，使用 Unity **6000.0.77f1** 打开包含 Assets、Packages、ProjectSettings 的仓库根。本机唯一活动目录是 `D:/CS/Code/BalloonBarrage`；不要打开旧的 `D:/CS/Code/Unity/BalloonShooter`。
+Install Git LFS and run git lfs pull after cloning. Open the repository root containing Assets, Packages, ProjectSettings with Unity **6000.0.77f1**. The canonical local checkout is `D:/CS/Code/BalloonBarrage`, not the retired path containing another Unity directory.
 
 - 原型 / Prototype: `Assets/Scenes/PrototypeScene.unity`.
+- 当前展示美术与配乐 / Current exhibition art and music: 已应用到原型，说明见 [工作室美术包](Docs/Art/STUDIO_ART_PACK.md)。 / Applied to PrototypeScene; see the studio guide.
 - 气球 / Balloon: `Assets/Prefabs/PlayableBalloon.prefab`.
 - 油漆枪 / Paint blaster: [PaintGun_M.prefab](Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M.prefab).
 - 环境预览 / Art preview: `Assets/StudioArtPack/Generated/StudioArtPreview.unity`.
@@ -29,11 +30,20 @@ Install Git LFS and run git lfs pull after cloning. Open the repository root con
 
 ## 当前状态 / Current state
 
-2026-10-08 保存代码检查：已有持续鼠标瞄准、单击发射飞行颜料弹、路径碰撞、一次击破计分、音效和独立碎片、单目标随机生成及配置等待、平滑入场。保存预制体启用胶囊并关闭两个旧球形命中体。漂浮脚本有代码，但未挂到保存玩法预制体。
-Saved-source inspection on 2026-10-08 shows continuous mouse aim, click-fired moving paint, swept collision, single scoring, audio/fragments, single-target spawning with delay, and smooth entrance. The prefab enables a capsule and disables both old spheres. Float code exists but is not attached to the saved prefab.
+2026-10-09 删除旧仓库后重新拉取：用户确认多球与连射此前已完成教学和实现，但这些未发布的改动未随远端恢复。本次按历史生成代码和原始纹理重建 V4 地图及五段柔和配乐；下面的旧代码基线描述当前拉取版本，不代表学习进度退回。核心恢复与完整回合验收仍待完成。
+After the October 9 re-clone, the creator confirmed previously implementing multiple targets and held fire, but those unpublished changes are absent from the remote checkout. This recovery rebuilds the V4 studio and five soft tracks from historical generators and original textures. The saved-code baseline below describes this checkout, not lost learning progress. Gameplay recovery and full-round acceptance remain pending.
 
-多球课已在会话提供，保存生成器仍管理一个目标。连射、波次、完整回合、强化、对象池、菜单事件、游戏内三语切换和手柄/双人未实现。官网三语不等于游戏内语言已接入。
-The multi-target lesson has been supplied in chat, but the saved spawner still tracks one target. Held fire, waves, rounds, upgrades, pooling, menu actions, in-game localization, controllers, and co-op remain pending. Website languages do not imply in-game localization.
+2026-10-09 重新拉取代码检查：已有持续鼠标瞄准、单击发射飞行颜料弹、路径碰撞、一次击破计分、音效和独立碎片、单目标随机生成及配置等待、平滑入场。多球与连射的已完成学习记录保留，但实现未在此次地图恢复范围内。保存预制体启用胶囊并关闭两个旧球形命中体；漂浮有代码但未挂载。
+The October 9 re-clone contains continuous aim, click firing, paint collision, score, pop audio/fragments, single-target spawning and entrance. Completed multiple-target/held-fire learning is recorded, but gameplay implementation is outside this scene recovery. The prefab uses a capsule; float code is not attached.
+
+多球课已在会话提供，保存生成器仍管理一个目标。波次、完整回合、强化、对象池、菜单事件、游戏内三语切换和手柄/双人未实现。官网三语不等于游戏内语言已接入。
+The multi-target lesson has been supplied, but the saved spawner still tracks one target. Waves, rounds, upgrades, pooling, menu actions, in-game localization, controllers and co-op remain pending.
+
+原型当前采用官网暖光工作室方向：深青绿、奶油灰与胡桃木色、真实受光材质、窗格日光和丰富边缘道具。镜头 FOV 45°、略后移，枪缩放 0.50 并下移；音乐改为柔和的 108 BPM 键盘曲（2D、自动循环、音量 0.14）。按用户要求仅保留当前五段；菜单与短音等待流程事件接线。Unity 编译/渲染通过，试玩与 Windows 包仍待验收。
+PrototypeScene now follows the website's warm studio direction with deep teal, plaster, walnut, physical shading and daylight. Wider 45-degree framing and a smaller/lower gun reveal the room. The softer 108 BPM loop plays at volume 0.14; menu/round events remain unconnected. Unity compilation/rendering passed; playtesting and a Windows build remain pending.
+
+V4 进一步加入细橡木、拱形壁龛、曲面叶片与窗边盆栽，主音改为钢琴式合成。实际画面与官网概念图的模型精细度仍有差距；当前素材、参数和验证记录见 [工作室说明](Docs/Art/STUDIO_ART_PACK.md)。
+V4 adds fine oak, arched niches and curved foliage, with piano-like synthesis. Realtime model detail still differs from the website concept; the studio guide records current assets and settings.
 
 学习者写核心，助手维护配置、工具、测试、美术、文档和官网。本轮保留学习者保存改动，不代写核心或移动 Unity GUID。Windows 构建和运行验收仍需完成。
 The learner writes core gameplay; the assistant maintains foundations, tools, tests, art, docs, and the site. Preserve saved learner changes without authoring core or moving Unity GUIDs. Windows builds and runtime acceptance remain pending.
@@ -70,7 +80,7 @@ Append --offline for offline builds; an unknown release status is not reported a
 ```text
 Assets/                    Unity 素材及元数据 / Unity art and metadata
   Art/                     源模型、纹理、概念 / Models, textures, concepts
-  Audio/                   音效 / Audio
+  Audio/                   音效与原创配乐 / Sound effects and original music
   Localization/            三语游戏文案 / Game translations
   Prefabs/                 玩法预制体 / Gameplay prefabs
   Scenes/                  玩法场景 / Scenes
