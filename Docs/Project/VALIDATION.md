@@ -1,6 +1,20 @@
 # 验证记录 / Validation record
 更新 / Updated: 2026-10-10 (Asia/Tokyo)
 
+## 2026-10-10 V5 场景细节 / V5 studio detail pass
+
+- 在现有 V4 场景中添加窗边五金与折叠帘、桌面画材、纸卷/速写本、挂板与时钟、画材推车、木凳、书架和窄踢脚线。所有内容统一在 StudioDetailsV5，保存八个可复用 Prefab、六个共享网格和五个新材质。
+  V5 adds window hardware/curtains, art tools, rolls/books, a pegboard/clock, canvas cart, stool, shelving and skirting. StudioDetailsV5 uses eight reusable prefabs, six shared meshes and five new materials.
+- Unity 6000.0.77f1 在独立副本中编译与渲染成功，STUDIO_DETAILS_OK 与 STUDIO_DETAILS_REFINED_OK；目视检查两轮 1600×900 相机图并调整推车位置。新道具 155 个 MeshRenderer、16,218 顶点，无新 Collider 或 Light；扩大后的靶区边界、材质、有限网格值与四角枪口检查通过。这不是独立游戏包或帧率测试。
+  Isolated Unity compilation/rendering succeeds with both detail-pass markers. Two camera renders were inspected and the cart repositioned. Added props have 155 MeshRenderers and 16,218 vertices, no colliders/lights; target margins, material/finite geometry and four-corner muzzle checks pass. No standalone build or FPS test is claimed.
+- 四项独立 PlayMode 检查通过：三球补充与上限、5 发/秒持按/松手/重按、2 发/秒节奏、新细节检查及运行截图。最终预览使用正常生成的三个气球，无临时构图球；本地结果为忽略的 .local-backups/studio-detail-v5-tests.xml。
+  Four isolated PlayMode checks pass for target refill/cap, held fire/release/re-press at five shots per second, two-shot timing, and detail validation/capture. The final image uses three normally spawned balloons. Results remain ignored.
+- 同步前后 SHA-256 检查确认原有玩法源码、Prefab 资源、音乐与场景元数据未变；逐个场景序列化块比较确认全部原有组件内容一致，只有场景根列表增加 V5。清理渲染自动附加的默认 URP 灯光组件和字段排序噪声，保留用户参数与旧 GUID。
+  SHA-256 checks preserve original gameplay sources, prefab assets, music and scene metadata. Every original serialized scene component is retained; only the root list gains V5. Render-created default URP light data and field-order noise are excluded, preserving saved settings and GUIDs.
+
+- 静态检查通过：407 个唯一资源 GUID、14 份文档；新资源引用可解析。官网在线构建与六项 Node 检查通过，更新后的原型图片从唯一原图同步到三语网站。
+  Static checks pass with 407 unique asset GUIDs and fourteen documents; new references resolve. The online site build and six Node checks pass, using the updated canonical prototype image across all three languages.
+
 ## 2026-10-10 官网文案与排版审核 / Website editorial and layout review
 
 - 中日英页面减少宣传口号、重复特性与路线区块、装饰贴纸及倾斜卡片，改为玩法、实景原型、开发近况、展示计划与美术草案。素材署名继续保留 AI 辅助生成与第三方来源记录。

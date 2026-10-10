@@ -30,6 +30,9 @@ Install Git LFS and run git lfs pull after cloning. Open the repository root con
 
 ## 当前状态 / Current state
 
+2026-10-10 在原工作室中补充 V5 细节：窗帘与五金、调色盘和杯子、纸卷与速写本、工具挂板、时钟、画材推车、木凳和书架。新增道具集中在两侧，中央保留气球空间；官网原型图已换为正常运行时的相机截图。
+The October 10 V5 pass adds curtains and window hardware, a palette and cup, paper rolls and sketchbooks, a pegboard, clock, canvas cart, stool and shelving. Props stay around the edges to leave room for targets; the website prototype image is captured during normal gameplay.
+
 2026-10-09 删除旧仓库后重新拉取，现已恢复 V4 地图、五段柔和配乐，并按用户授权恢复之前两课的多球与连射实现。此前未发布的最终文件无法逐字找回；本次依据保留的教学代码重建，修正射速下限的小数点笔误。下一课继续 90 秒计时与回合状态。
 Following the October 9 re-clone, the V4 studio, five soft tracks, multiple-target spawning and held fire are restored. The unpublished final files were unavailable; gameplay was reconstructed from the retained lessons with creator authorization, correcting the rate-bound decimal typo. Continue with the 90-second timer and round-state lesson.
 

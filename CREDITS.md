@@ -28,3 +28,6 @@ Current softer tracks retain the same original synthesis provenance and asset GU
 
 ReferenceV4/FineOak_v4.png 使用内置 imagegen 生成，原始提示词见工作室美术包说明。拱形壁龛、曲面叶片由 Unity 网格构建。配乐进一步采用原创钢琴式合成音色与轻和声铺底，未使用钢琴录音或第三方歌曲。
 ReferenceV4's fine oak texture uses built-in imagegen, with the exact prompt in the studio guide. Alcove/leaf meshes are generated in Unity. Music now uses original piano-like synthesis and a quiet harmonic bed, without recorded piano samples or third-party songs.
+
+2026-10-10 DetailsV5 的帘布、工具挂板、杯子、调色盘、画材推车等由 Unity 基础网格与程序化几何构建，复用已有材质；没有新增外部模型、图片或音频。官网新增画面为当前三维原型的运行相机截取，不是概念图。
+DetailsV5 props use Unity primitives and procedural geometry with existing materials, without new external models, images or audio. The website preview is a camera capture of the running 3D prototype, not concept art.

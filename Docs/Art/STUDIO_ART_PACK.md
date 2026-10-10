@@ -1,7 +1,21 @@
 # StudioArtPack / 工作室美术包
-更新 / Updated: 2026-10-09
+更新 / Updated: 2026-10-10
 
-## 当前 V4：参考图细化 / Current V4 reference refinement
+## 当前 V5：工作室细节 / Current V5 studio details
+
+在 V4 暖光、橡木与米灰墙面的基础上补充使用痕迹，保持中央靶区与相机位置。新增：窗边折叠帘、帘杆与窗扣；带拇指孔和颜料点的调色盘、笔刷、杯子与颜料管；工作台下层速写本与空心纸卷；右墙工具挂板、色样纸、滚筒与装饰时钟；带脚轮的画材推车、备用画布和折叠布；圆木凳、左侧壁龛书架及窄木踢脚线。
+V5 adds signs of use while retaining V4 lighting, oak, plaster, framing and the clear target area: gathered curtains and hardware; a thumbhole palette, brushes, mug and paint tubes; sketchbooks and hollow paper rolls; a tool pegboard, color study, roller and decorative clock; a wheeled canvas cart, folded cloth, wooden stool, niche books and narrow skirting.
+
+资源位于 `Assets/StudioArtPack/DetailsV5`，场景统一收在 **StudioDetailsV5**。包含五个新材质、六个共享网格和八个可复用 Prefab；窗帘褶皱、杯子的内壁、纸卷开口、调色盘拇指孔与挂板孔列均为实际网格。其余复用既有橡木、颜料和金属材质，不新增图片、外部模型、实时灯光或装饰碰撞体。时钟为静态装饰，窗帘没有布料模拟。
+DetailsV5 contains five materials, six shared meshes and eight connected reusable prefabs under StudioDetailsV5. Cloth folds, cup interiors, tube openings, the palette hole and pegboard perforation marks are geometry. Existing oak, pigment and metal materials are reused; there are no new images, external models, realtime lights or decor colliders. The clock is decorative and curtains do not simulate cloth.
+
+`Tools → Balloon Studio → Add Studio Details V5` 为一次性添加入口；当前 PrototypeScene 已应用，不必重复执行。工具要求现有 V4，备份场景并拒绝覆盖已有 V5；之后直接调整场景组或 Prefab。八个 Prefab 为 WindowDetails、WorkbenchObjects、WorkbenchPaperShelf、PainterPegboard、StudioWallClock、CanvasSupplyCart、PainterStool、NicheBookShelf。新增几何共 155 个 MeshRenderer、16,218 顶点；这是资源统计，不是帧率测量。
+The one-time editor menu requires V4, backs up the scene and refuses to overwrite V5. The current PrototypeScene already includes it; edit its group or prefabs directly. The eight prefabs cover window, desktop, lower shelf, pegboard, clock, cart, stool and niche books. Added geometry has 155 MeshRenderers and 16,218 vertices; these counts are not FPS measurements.
+
+独立 Unity 副本中完成构图、四角瞄准与引用检查，以及多球/连射回归。最终图由正常运行生成三个气球后截取相机，保存到 `Assets/Art/Previews/PrototypeScene_20261010.png`，官网复用此图。同步时核对原有玩法、Prefab、配乐和场景 GUID，清理 Unity 渲染初始化产生的额外灯光数据；除新增场景根列表外，原有场景组件内容保持一致。
+An isolated Unity copy validates composition, four-corner aiming, references and target/fire regression. The canonical preview captures three normally spawned runtime targets and is reused on the site. Sync checks preserve original gameplay, prefabs, music and scene GUID; render-initialization light metadata is excluded. Existing serialized scene components remain unchanged except for the expanded root list.
+
+## V4：参考图与材质基础 / V4 reference and material foundation
 
 继续向官网的 CozyGraffitiStudio 参考图靠拢：新细纹橡木替换粗木纹，两侧设置青绿色拱形壁龛、储物搁板与小型暖光；整片下墙色块隐藏，保留米灰墙面。植物换为带曲面的尖叶，并增加窗边陶盆；天窗改为更明亮的天空色，减轻大块网格阴影对靶区的干扰。V3 的宽镜头与低位枪布局保留。
 The current pass adds finer oak, arched teal niches with warm shelf lights, curved foliage and window planters. Large lower-wall panels are hidden and the skylight reads brighter. V3 framing remains. The website image is a visual reference; this does not claim identical concept-art rendering.

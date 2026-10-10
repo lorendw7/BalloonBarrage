@@ -1,9 +1,9 @@
 # 美术素材清单 / Art asset catalog
 喷漆枪复用与补充 / Existing guns and paint supplements: [说明 / Details](PAINT_BLASTER.md).
 新增橡胶碎片爆破包 / New latex pop pack: [说明 / Details](BALLOON_POP_V2.md).
-更新日期 / Updated: 2026-10-09
+更新日期 / Updated: 2026-10-10
 
-官网复用菜单背景、工作室/油漆枪概念与气球参考；Website/assets.json 只维护原图路径，输出不提交。原图留在 Assets 分类，概念图标为非实机，不复制模型/图集包到网站。 / The site references canonical menu/concept art via a manifest, with generated copies ignored. Preserve Assets originals and label concepts as non-gameplay; do not duplicate model/atlas packages.
+官网复用原型运行截图、工作室/油漆枪概念与气球参考；Website/assets.json 只维护原图路径，输出不提交。原图留在 Assets 分类，概念图标为非实机，不复制模型/图集包到网站。 / The site references a gameplay camera capture and canonical concept art via a manifest, with generated copies ignored. Preserve Assets originals and label concepts as non-gameplay; do not duplicate model/atlas packages.
 
 | 文件 / File | 用途 / Use | 状态 / Status |
 |---|---|---|
@@ -43,6 +43,8 @@ See root CREDITS for recorded third-party attribution; retain declarations and a
 | Assets/StudioArtPack/CartoonV2 | 卡通材质、圆角网格、颜料桶/木箱/画架/画笔/地面装饰/旗串组合 / Toon materials, rounded meshes and reusable bucket/crate/easel/brush/floor/pennant assemblies |
 | Assets/StudioArtPack/AtmosphereV3 | 当前受光材质、带 UV 的圆角网格、窗格光遮罩；深色工作室风格 / Current physical materials, UV meshes and native window-light mask |
 | Assets/StudioArtPack/ReferenceV4 | 新细橡木纹理、壁龛/叶片网格、细化材质 / Fine oak texture, alcove/leaf meshes and refined materials |
+| Assets/StudioArtPack/DetailsV5 | 窗边、画材、家具与墙面细节；8 Prefab、6 网格、5 材质，已加入原型 / Window, art-tool, furniture and wall details; eight prefabs, six meshes and five materials placed in PrototypeScene |
+| Assets/Art/Previews/PrototypeScene_20261010.png | 当前 V5 原型运行相机图，正常生成三球，不含界面 / Current V5 gameplay camera capture with three normally spawned targets, excluding UI |
 | Assets/StudioArtPack/SprayPrefabs | 6 喷漆预制体 / Six spray prefabs |
 | Assets/StudioArtPack/Menu | 新菜单背景与 6 图形图集 / New menu background and six-element UI atlas |
 | Assets/StudioArtPack/PaintBlaster/Assembled | blaster-m 喷漆枪组装、枪口粒子与独立预览场景 / Assembled blaster-m, muzzle particles and independent preview scene |
