@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawn } from "node:child_process";
 import { languages, strings } from "../src/strings.mjs";
 import { selectDownload, repositoryUrl } from "../scripts/releases.mjs";
 import { renderPage } from "../scripts/render.mjs";
@@ -59,4 +60,29 @@ test("built pages have valid local links, scripts, styles and artwork", async ()
     const outputAsset = await readFile(path.join(output, "assets", item.output));
     assert.deepEqual(source, outputAsset, "Website artwork must come from the canonical game asset");
   }
+});
+
+test("preview serves language directory roots and blocks paths outside dist", { timeout: 10000 }, async (t) => {
+  const server = spawn(process.execPath, [path.join(site, "scripts/serve.mjs")], {
+    env: { ...process.env, PORT: "0" }, stdio: ["ignore", "pipe", "pipe"], windowsHide: true
+  });
+  t.after(() => server.kill());
+  const base = await new Promise((resolve, reject) => {
+    let output = "";
+    server.on("error", reject);
+    server.on("exit", (code) => reject(new Error(`Preview exited before listening: ${code}`)));
+    server.stdout.on("data", (chunk) => {
+      output += chunk;
+      const url = output.match(/http:\/\/127\.0\.0\.1:\d+/);
+      if (url) resolve(url[0]);
+    });
+  });
+  for (const [route, locale] of [["/", "zh-Hans"], ["/ja/", "ja"], ["/en/", "en"]]) {
+    const response = await fetch(base + route);
+    assert.equal(response.status, 200, route);
+    assert.ok((await response.text()).includes(`<html lang="${locale}">`));
+  }
+  assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
+  assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
+  assert.equal((await fetch(base + "/missing.html")).status, 404);
 });

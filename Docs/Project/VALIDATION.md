@@ -1,5 +1,16 @@
 # 验证记录 / Validation record
-更新 / Updated: 2026-10-09 (Asia/Tokyo)
+更新 / Updated: 2026-10-10 (Asia/Tokyo)
+
+## 2026-10-10 官网文案与排版审核 / Website editorial and layout review
+
+- 中日英页面减少宣传口号、重复特性与路线区块、装饰贴纸及倾斜卡片，改为玩法、实景原型、开发近况、展示计划与美术草案。素材署名继续保留 AI 辅助生成与第三方来源记录。
+  All three languages replace repeated slogans and decorative cards with gameplay, a prototype capture, development notes, exhibition plans and clearly labelled concept art. Credits retain AI-assisted and third-party provenance.
+- 新增 1600×900 原型相机图；独立副本 PlayMode 截图检查通过，断言正常生成三个气球后截取，非临时构图示意；不含界面。截图输出与测试日志在忽略目录，原图与元数据保存到 Assets/Art/Previews。
+  The isolated PlayMode capture check passes after asserting three normally spawned targets. The 1600×900 camera capture excludes UI and does not stage layout balloons. Logs stay ignored; the canonical image and metadata live in Assets/Art/Previews.
+- 在线构建生成三个语言页面与五张原图，公开试玩包状态为空。六项 Node 检查通过，覆盖翻译、真实/空/失败下载、静态链接与原图一致性，以及预览服务三语根路径、样式、404 与越界路径。修复 Windows 本地预览首页 403。
+  Online build produces three language pages and five canonical images; no public demo package is found. Six Node checks pass for translations, release states, references, asset bytes and preview HTTP routes/errors/traversal. Windows root-page preview 403 is fixed.
+- 浏览器检查中→日→英语言切换、原型大图打开、Esc 关闭与焦点返回；检查桌面页面及实际 325px 窄屏三语内容，没有横向溢出。页面保持概念图说明与空下载状态，未观察到浏览器警告或错误。静态审计通过：383 个唯一 GUID、14 份文档。没有修改玩法、场景或配乐。
+  Browser checks cover Chinese/Japanese/English navigation, the prototype dialog, Escape and focus return. Desktop and actual 325px narrow layouts were inspected without horizontal overflow; concept labels and the empty release state remain visible, with no observed browser warnings/errors. Static checks pass with 383 unique GUIDs and fourteen documents. Gameplay, scene and music are unchanged.
 
 ## 2026-10-09 多球与连射恢复 / Multiple-target and held-fire recovery
 

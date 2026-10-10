@@ -6,6 +6,7 @@ on:
     paths:
       - 'Website/**'
       - 'Assets/Art/Concepts/**'
+      - 'Assets/Art/Previews/**'
       - 'Assets/StudioArtPack/Menu/**'
       - 'Assets/StudioArtPack/PaintBlaster/Concepts/**'
       - '.github/workflows/website.yml'

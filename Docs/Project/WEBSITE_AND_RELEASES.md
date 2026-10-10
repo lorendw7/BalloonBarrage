@@ -12,11 +12,11 @@ Website/ is separate from Unity. Pages hosts a site, not a browser game; distrib
 
 ## Qpic 与九大祭 / Qpic and Kyudai-sai
 
-用户确认自己是 [Qpic](https://www.qpic.jp/) 成员、本作计划 2026-10-31 展示。三语首页提供展示区、页内入口与页脚 Qpic 链接，以及 [九大祭官网](https://kyudaisai.jp/79th/) 链接。使用“成员作品/计划展示”的含义，不声明 Qpic 官方联合开发或背书；不使用未提供的社团标志。具体展位、试玩时段待确认后补充，活动整体的 10/31–11/01 不等于本作两天均参展。
-The user confirmed Qpic membership and a planned October 31 showcase. All three homepages include a showcase section, in-page entry, footer Qpic link, and official festival link. Describe a member's project and planned exhibition, without claiming official co-development or endorsement or adding an unprovided club logo. Add booth/hours once confirmed; the festival's two-day schedule does not establish two-day attendance for this game.
+用户确认自己是 [Qpic](https://www.qpic.jp/) 成员、本作计划 2026-10-31 展示。三语首页的展示区提供 Qpic 与 [九大祭官网](https://kyudaisai.jp/79th/) 链接。使用作者第一人称介绍成员作品与计划展示，不声明 Qpic 官方联合开发或背书；不使用未提供的社团标志。具体展位、试玩时段待确认后补充，活动整体的 10/31–11/01 不等于本作两天均参展。
+The user confirmed Qpic membership and a planned October 31 showcase. The exhibition section links to Qpic and the festival site. Use the creator's first-person voice without claiming official co-development or endorsement or adding an unprovided club logo. Add booth/hours once confirmed; the festival's two-day schedule does not establish two-day attendance for this game.
 
-展示版目标与排期以 [路线](../Design/ROADMAP.md) 为准。官网仍准确显示已保存原型的单击操作与真实下载状态；提供连射教学不等于已实现，不提前标记试玩包可下载。现场操作以日文为先，官网分享优先使用 [日文页](https://lorendw7.github.io/BalloonBarrage/ja/)。
-The roadmap owns demo scope and dates. Keep current click controls and actual download availability accurate until implementation/build verification; a lesson is not a shipped feature. Prioritize Japanese in the exhibition UI and share the Japanese website with visitors.
+展示版目标与排期以 [路线](../Design/ROADMAP.md) 为准。多球补充与持按连射已恢复并通过 PlayMode 检查，官网操作说明与此一致。90 秒完整回合、结算与重开仍待完成，试玩包未公开。现场操作以日文为先，官网分享优先使用 [日文页](https://lorendw7.github.io/BalloonBarrage/ja/)。
+The roadmap owns demo scope and dates. Multiple targets and held fire have been restored and checked in PlayMode; the website describes those controls. Complete 90-second rounds, results and retry remain unfinished, and no public demo is available. Prioritize Japanese in the exhibition UI and share the Japanese site with visitors.
 
 ## 本地构建 / Local build
 
@@ -33,8 +33,11 @@ Preview at http://127.0.0.1:4173. --offline reports unknown status while retaini
 
 ## 素材与文案 / Assets and strings
 
-Website/assets.json 引用四张现有原图：菜单背景、工作室/油漆枪概念、气球造型。构建拒绝 LFS 指针，仅复制选定图片到输出，不提交第二份源图片或 .meta。概念图明确非实机。[素材索引](../Art/ASSET_CATALOG.md) 与 [署名](../../CREDITS.md) 是来源记录。
-The manifest references four canonical assets: menu, studio/blaster concepts, balloon reference. Reject LFS pointers and copy selected images only to output. Do not commit duplicate sources/metadata. Label concepts as non-gameplay. See [catalog](../Art/ASSET_CATALOG.md) and [credits](../../CREDITS.md).
+Website/assets.json 引用五张原图：菜单背景、工作室/油漆枪概念、气球造型，以及 Assets/Art/Previews/PrototypeScene_20261010.png。新增画面在独立 Unity 副本的 PlayMode 中加载当前场景，等待正常生成三个气球后截取相机；不含界面，也没有用构图示意球冒充运行画面。构建拒绝 LFS 指针，仅复制选定图片到输出，网站目录不提交第二份原图。概念图单独标明。[素材索引](../Art/ASSET_CATALOG.md) 与 [署名](../../CREDITS.md) 是来源记录。
+The manifest references five canonical images, including the October 10 prototype capture. In an isolated Unity copy, PlayMode loads the current scene and waits for three normal runtime targets before capturing the camera. It excludes UI and uses no staged layout balloons. Reject LFS pointers and copy selected images only to output; keep no duplicate source art in Website. Label concepts separately. See [catalog](../Art/ASSET_CATALOG.md) and [credits](../../CREDITS.md).
+
+2026-10-10 官网审核：去掉重复宣传口号、编号特性/路线卡片、贴纸与倾斜描边，保留暖色工作室风格。内容围绕当前玩法、开发近况、展示计划、美术草案与真实发布状态；三语使用自然表达，素材来源保留 AI 辅助生成说明。初版 Windows 预览根目录曾因尾部分隔符返回 403，现已规范根路径，并增加实际 HTTP 检查。
+The October 10 editorial pass removes repeated slogans, numbered feature/roadmap cards, stickers and tilted borders while retaining the warm studio palette. The page covers current gameplay, development notes, exhibition plans, sketches and genuine release status. All three languages use direct phrasing, with AI-assisted art disclosed in credits. Preview roots are normalized to fix Windows directory-root 403s and covered by an HTTP integration check.
 
 Website/src/strings.mjs 保存网站三语，Assets/Localization/UIStrings.json 保存游戏三语，用途不同。网站每个语言静态预渲染，翻译测试验证相同键集和非空值；语言通过独立 URL 分享。
 Website strings and game strings are separate surfaces. Render each site language statically, verify identical nonempty keys, and share independent language URLs.
