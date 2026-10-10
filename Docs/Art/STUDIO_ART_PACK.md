@@ -1,7 +1,21 @@
 # StudioArtPack / 工作室美术包
 更新 / Updated: 2026-10-10
 
-## 当前 V5：工作室细节 / Current V5 studio details
+## 当前 V6：近景模型与材质 / Current V6 models and surfaces
+
+精修优先集中在玩家手中的油漆枪、气球和窗边工作台。枪新增圆润外壳、嵌入面板、金属喷嘴与套环、带纹路的深色握把、圆滑颜料罐与盖沿；保留原导入模型，并关闭其渲染，枪口、粒子和射击引用保持原位。外壳几何按七种材质合并为七个 MeshRenderer。气球换用 96 周向分段、48 纵向分段的平滑曲面，保留原绑口几何，重新连接一条细曲线绳，并保留原 Collider、音效和计分组件。
+V6 prioritizes the held gun, balloons and window workbench. A rounded shell, inset panels, open metal nozzle, ribbed grip, reservoir and lid replace the visible gun surface; the original imported mesh remains disabled, with muzzle and firing references in place. Static gun parts are combined into seven material batches. Balloons use a 96-by-48 smooth surface with the original knot, a single curved rope, and unchanged colliders, sound and score components.
+
+工作台、搁板、木凳座面、杯口、杯把和纸卷改善边缘与曲面。木材使用细橡木原图加微凹凸和反光变化，织物使用织纹；金属、涂漆外壳、陶瓷釉面、橡胶和乳胶各有独立材质。`Assets/StudioArtPack/SurfacesV6` 包含 13 个材质、17 个网格、11 张 512×512 程序化表面图与一个 256 分辨率的室内 HDR 反射 Cubemap。表面图为原生数学纹理，法线图与表面参数图使用线性导入、Mip Maps、Trilinear 和各向异性 8；不新增外部美术来源。
+Workbench edges, shelving, stool seat, cup rims/handles and paper rolls receive smoother geometry. Oak retains its existing image with subtle normal and smoothness maps; cloth has a woven surface. Metal, enamel, ceramic, rubber and latex have distinct materials. SurfacesV6 contains thirteen materials, seventeen meshes, eleven native 512-square surface maps and a 256-resolution HDR room reflection cubemap. Normal/parameter maps use linear import, mipmaps, trilinear filtering and anisotropy eight. No external art is added.
+
+室内反射离线截取，排除手持枪；通过 Reflection Probe 的 Custom 模式显式引用 Cubemap，保证场景重新载入和运行后仍保留。没有新增实时灯光、装饰碰撞体或玩法脚本。相机、分辨率和抗锯齿设置沿用现有值，本轮是模型与表面改进。
+The room reflection is captured offline with the held gun excluded. A Custom-mode Reflection Probe references the cubemap explicitly so it survives scene reload and Play Mode. This pass adds no realtime lights, decor colliders or gameplay scripts; camera and rendering quality settings retain their saved values.
+
+`Tools → Balloon Studio → Refine Models and Surfaces V6` 是一次性入口；当前 PrototypeScene、枪与气球 Prefab 已应用，不必重复执行。工具拒绝覆盖已有 V6。后续直接编辑材质、网格与 Prefab；预览见 `Assets/Art/Previews/RefinedGun_20261010.png`、`RefinedWorkbench_20261010.png` 和 `RefinedBalloon_20261010.png`。官网使用更新后的 `PrototypeScene_20261010.png`。
+The one-time V6 menu refuses to overwrite existing assets. PrototypeScene and its gun/balloon prefabs already include the pass; edit those assets directly. Gun, workbench and balloon closeups are saved alongside the updated prototype camera capture used by the website.
+
+## V5：工作室细节基础 / V5 studio detail foundation
 
 在 V4 暖光、橡木与米灰墙面的基础上补充使用痕迹，保持中央靶区与相机位置。新增：窗边折叠帘、帘杆与窗扣；带拇指孔和颜料点的调色盘、笔刷、杯子与颜料管；工作台下层速写本与空心纸卷；右墙工具挂板、色样纸、滚筒与装饰时钟；带脚轮的画材推车、备用画布和折叠布；圆木凳、左侧壁龛书架及窄木踢脚线。
 V5 adds signs of use while retaining V4 lighting, oak, plaster, framing and the clear target area: gathered curtains and hardware; a thumbhole palette, brushes, mug and paint tubes; sketchbooks and hollow paper rolls; a tool pegboard, color study, roller and decorative clock; a wheeled canvas cart, folded cloth, wooden stool, niche books and narrow skirting.
@@ -9,8 +23,8 @@ V5 adds signs of use while retaining V4 lighting, oak, plaster, framing and the 
 资源位于 `Assets/StudioArtPack/DetailsV5`，场景统一收在 **StudioDetailsV5**。包含五个新材质、六个共享网格和八个可复用 Prefab；窗帘褶皱、杯子的内壁、纸卷开口、调色盘拇指孔与挂板孔列均为实际网格。其余复用既有橡木、颜料和金属材质，不新增图片、外部模型、实时灯光或装饰碰撞体。时钟为静态装饰，窗帘没有布料模拟。
 DetailsV5 contains five materials, six shared meshes and eight connected reusable prefabs under StudioDetailsV5. Cloth folds, cup interiors, tube openings, the palette hole and pegboard perforation marks are geometry. Existing oak, pigment and metal materials are reused; there are no new images, external models, realtime lights or decor colliders. The clock is decorative and curtains do not simulate cloth.
 
-`Tools → Balloon Studio → Add Studio Details V5` 为一次性添加入口；当前 PrototypeScene 已应用，不必重复执行。工具要求现有 V4，备份场景并拒绝覆盖已有 V5；之后直接调整场景组或 Prefab。八个 Prefab 为 WindowDetails、WorkbenchObjects、WorkbenchPaperShelf、PainterPegboard、StudioWallClock、CanvasSupplyCart、PainterStool、NicheBookShelf。新增几何共 155 个 MeshRenderer、16,218 顶点；这是资源统计，不是帧率测量。
-The one-time editor menu requires V4, backs up the scene and refuses to overwrite V5. The current PrototypeScene already includes it; edit its group or prefabs directly. The eight prefabs cover window, desktop, lower shelf, pegboard, clock, cart, stool and niche books. Added geometry has 155 MeshRenderers and 16,218 vertices; these counts are not FPS measurements.
+`Tools → Balloon Studio → Add Studio Details V5` 为一次性添加入口；当前 PrototypeScene 已应用，不必重复执行。工具要求现有 V4，备份场景并拒绝覆盖已有 V5；之后直接调整场景组或 Prefab。八个 Prefab 为 WindowDetails、WorkbenchObjects、WorkbenchPaperShelf、PainterPegboard、StudioWallClock、CanvasSupplyCart、PainterStool、NicheBookShelf。V5 初次添加时共 155 个 MeshRenderer、16,218 顶点，部分网格随后由 V6 精修替换；这是资源统计，不是帧率测量。
+The one-time editor menu requires V4, backs up the scene and refuses to overwrite V5. The eight connected prefabs cover window, desktop, lower shelf, pegboard, clock, cart, stool and niche books. V5 initially adds 155 MeshRenderers and 16,218 vertices; V6 later replaces some meshes. These counts are not FPS measurements.
 
 独立 Unity 副本中完成构图、四角瞄准与引用检查，以及多球/连射回归。最终图由正常运行生成三个气球后截取相机，保存到 `Assets/Art/Previews/PrototypeScene_20261010.png`，官网复用此图。同步时核对原有玩法、Prefab、配乐和场景 GUID，清理 Unity 渲染初始化产生的额外灯光数据；除新增场景根列表外，原有场景组件内容保持一致。
 An isolated Unity copy validates composition, four-corner aiming, references and target/fire regression. The canonical preview captures three normally spawned runtime targets and is reused on the site. Sync checks preserve original gameplay, prefabs, music and scene GUID; render-initialization light metadata is excluded. Existing serialized scene components remain unchanged except for the expanded root list.

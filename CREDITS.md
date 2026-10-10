@@ -31,3 +31,6 @@ ReferenceV4's fine oak texture uses built-in imagegen, with the exact prompt in 
 
 2026-10-10 DetailsV5 的帘布、工具挂板、杯子、调色盘、画材推车等由 Unity 基础网格与程序化几何构建，复用已有材质；没有新增外部模型、图片或音频。官网新增画面为当前三维原型的运行相机截取，不是概念图。
 DetailsV5 props use Unity primitives and procedural geometry with existing materials, without new external models, images or audio. The website preview is a camera capture of the running 3D prototype, not concept art.
+
+同日 SurfacesV6 的圆润枪外壳、平滑气球与道具曲面为项目新增的原生几何；枪原始导入文件保留，气球绑口沿用原模型，细绳由曲线重新构建。织纹、法线和表面参数图由数学函数构建，橡木继续使用已署名的 FineOak_v4.png。室内反射与近景图来自 Unity 相机，未新增外部模型、图片或音频来源；既有第三方许可保持原署名。
+SurfacesV6 adds native gun-shell, balloon and prop geometry. Original gun imports remain; the balloon knot retains original geometry and its rope is rebuilt as a curve. Woven, normal and surface maps are mathematical patterns; oak reuses the credited FineOak_v4 image. Room reflections and closeups are Unity captures. No external model, image or audio source is added; existing third-party credits still apply.

@@ -1,6 +1,19 @@
 # 验证记录 / Validation record
 更新 / Updated: 2026-10-10 (Asia/Tokyo)
 
+## 2026-10-10 V6 近景模型与表面 / V6 visible models and surfaces
+
+- 精修枪外壳、喷嘴、颜料罐、面板与握把，将静态部件合并为七个材质批次；气球换为 4,978 顶点平滑曲面与原绑口，尾绳整理为一条细曲线。工作台倒角、杯口、纸卷、杯把和木凳座面同步精修。SurfacesV6 保存 13 个材质、17 个网格、11 张原生表面图和室内反射 Cubemap。
+  Refined gun parts use seven material batches. The 4,978-vertex balloon retains its knot with one curved rope; workbench, cup, paper-roll, handle and stool edges improve. SurfacesV6 saves thirteen materials, seventeen meshes, eleven native surface maps and a room reflection cubemap.
+- 独立 Unity 副本中编译、生成、近景渲染和四角瞄准通过；观察枪、工作台、气球及正常生成三球的运行图。降低金属微法线与反光变化，消除近景条纹；修复反射在重新载入时丢失引用的问题，改用 Custom 模式显式引用离线 Cubemap。V5 道具仍为 155 个 MeshRenderer，精修后 27,606 顶点；没有进行帧率测试或独立 Windows 构建。
+  Isolated Unity compilation, rendering and four-corner aiming pass. Gun/workbench/balloon closeups and a normal three-target gameplay capture are inspected. Metal microdetail is restrained; the reflection's lost reload reference is fixed with an explicit Custom-mode cubemap. V5 props retain 155 renderers and now have 27,606 vertices. FPS and standalone builds are not claimed.
+- 五项 PlayMode 检查通过：多球上限与延迟补充、5 发/秒持按及松手/重按、2 发/秒节奏、精修资源与运行截图、实际颜料弹命中气球并仅加分一次。绳线接点微调后捕获检查再次通过。结果保存于忽略目录的 surface-v6-acceptance.xml 与 surface-v6-final-capture.xml。
+  Five PlayMode checks pass for refill/cap, held fire/release/re-press at five shots per second, two-shot timing, refined resources/capture, and an actual projectile hit with one score award. Capture passes again after rope-joint adjustment; results remain ignored.
+- 同步前核对工作区基线；SHA-256 保证玩法源码、原导入模型与配乐不变。Prefab 逐块比较确认原组件 ID、玩法和 Collider 字段、枪口与握持点保持；场景相机、Transform、脚本、音频和灯光序列化块保留，只更新美术网格/材质与 Prefab 覆盖，并增加反射组。排除渲染初始化自动附加的两个默认 URP 灯光组件，清理 22 个未使用的临时组装网格。
+  Baseline hashes preserve gameplay sources, imported models and music. Prefab comparisons retain component IDs, gameplay/collider fields, muzzle and grip transforms. Original scene camera, transforms, scripts, audio and lights remain; visual references/overrides update and a reflection group is added. Two initialization-only URP light components and twenty-two unused construction meshes are excluded.
+- 静态审计通过：458 个唯一资源 GUID，14 份文档；所有新增资源引用可解析。相机与画质参数未修改；官网在线构建与六项 Node 检查通过，从唯一原型截图生成三语页面。
+  Static checks pass with 458 unique GUIDs and fourteen documents; new references resolve. Camera/rendering quality settings remain. Online website build and six Node checks pass with the canonical updated prototype image.
+
 ## 2026-10-10 V5 场景细节 / V5 studio detail pass
 
 - 在现有 V4 场景中添加窗边五金与折叠帘、桌面画材、纸卷/速写本、挂板与时钟、画材推车、木凳、书架和窄踢脚线。所有内容统一在 StudioDetailsV5，保存八个可复用 Prefab、六个共享网格和五个新材质。

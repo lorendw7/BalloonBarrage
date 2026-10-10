@@ -44,7 +44,9 @@ See root CREDITS for recorded third-party attribution; retain declarations and a
 | Assets/StudioArtPack/AtmosphereV3 | 当前受光材质、带 UV 的圆角网格、窗格光遮罩；深色工作室风格 / Current physical materials, UV meshes and native window-light mask |
 | Assets/StudioArtPack/ReferenceV4 | 新细橡木纹理、壁龛/叶片网格、细化材质 / Fine oak texture, alcove/leaf meshes and refined materials |
 | Assets/StudioArtPack/DetailsV5 | 窗边、画材、家具与墙面细节；8 Prefab、6 网格、5 材质，已加入原型 / Window, art-tool, furniture and wall details; eight prefabs, six meshes and five materials placed in PrototypeScene |
-| Assets/Art/Previews/PrototypeScene_20261010.png | 当前 V5 原型运行相机图，正常生成三球，不含界面 / Current V5 gameplay camera capture with three normally spawned targets, excluding UI |
+| Assets/StudioArtPack/SurfacesV6 | 近景模型、13 种表面材质、17 个网格、11 张程序化表面图及室内反射，已应用 / Refined models, thirteen surface materials, seventeen meshes, eleven native surface maps and a baked room reflection, applied |
+| Assets/Art/Previews/RefinedGun_20261010.png、RefinedWorkbench_20261010.png、RefinedBalloon_20261010.png | 油漆枪、工作台、气球精修近景 / Refined gun, workbench and balloon camera closeups |
+| Assets/Art/Previews/PrototypeScene_20261010.png | 当前 V6 原型运行相机图，正常生成三球，不含界面 / Current V6 gameplay camera capture with three normally spawned targets, excluding UI |
 | Assets/StudioArtPack/SprayPrefabs | 6 喷漆预制体 / Six spray prefabs |
 | Assets/StudioArtPack/Menu | 新菜单背景与 6 图形图集 / New menu background and six-element UI atlas |
 | Assets/StudioArtPack/PaintBlaster/Assembled | blaster-m 喷漆枪组装、枪口粒子与独立预览场景 / Assembled blaster-m, muzzle particles and independent preview scene |

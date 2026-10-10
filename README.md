@@ -30,6 +30,9 @@ Install Git LFS and run git lfs pull after cloning. Open the repository root con
 
 ## 当前状态 / Current state
 
+2026-10-10 V6 精修玩家近景模型与表面：圆润油漆枪外壳和喷嘴、平滑气球、工作台倒角及杯口；木材、织物、金属、陶瓷、橡胶与乳胶使用不同的纹理和反光。室内反射为离线截取，枪口与气球碰撞配置保留。近景图与资源参数见 [工作室说明](Docs/Art/STUDIO_ART_PACK.md)。
+V6 refines the held gun, balloon surface, workbench edges and cup rim. Wood, cloth, metal, ceramic, rubber and latex use distinct surface detail and reflections; the room reflection is captured offline. Muzzle and target collision settings remain in place. See the studio guide for closeups and settings.
+
 2026-10-10 在原工作室中补充 V5 细节：窗帘与五金、调色盘和杯子、纸卷与速写本、工具挂板、时钟、画材推车、木凳和书架。新增道具集中在两侧，中央保留气球空间；官网原型图已换为正常运行时的相机截图。
 The October 10 V5 pass adds curtains and window hardware, a palette and cup, paper rolls and sketchbooks, a pegboard, clock, canvas cart, stool and shelving. Props stay around the edges to leave room for targets; the website prototype image is captured during normal gameplay.
 

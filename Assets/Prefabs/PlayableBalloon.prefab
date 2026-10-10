@@ -41,7 +41,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4871913745506140688}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -78,25 +78,55 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: -0.42, z: -0.05}
-  - {x: -0.06, y: -0.72, z: -0.05}
-  - {x: 0.05, y: -0.92, z: -0.05}
-  - {x: 0, y: -1.08, z: -0.05}
+  - {x: -0.007872075, y: -0.4618482, z: -0.03699577}
+  - {x: -0.0060854256, y: -0.47425133, z: -0.036376595}
+  - {x: -0.0042749345, y: -0.4866354, z: -0.03525555}
+  - {x: -0.0024248362, y: -0.49899966, z: -0.033739567}
+  - {x: -0.0005207658, y: -0.51134527, z: -0.031993985}
+  - {x: 0.00145033, y: -0.52367496, z: -0.030226111}
+  - {x: 0.0035000145, y: -0.535992, z: -0.02866304}
+  - {x: 0.00563854, y: -0.54830015, z: -0.027527332}
+  - {x: 0.007875025, y: -0.5606027, z: -0.027013063}
+  - {x: 0.010217249, y: -0.57290155, z: -0.027262092}
+  - {x: 0.012672067, y: -0.5851971, z: -0.028346062}
+  - {x: 0.015245199, y: -0.5974877, z: -0.030253887}
+  - {x: 0.017941356, y: -0.60976976, z: -0.0328871}
+  - {x: 0.020763963, y: -0.6220373, z: -0.036061764}
+  - {x: 0.023715228, y: -0.63428295, z: -0.03952098}
+  - {x: 0.026795745, y: -0.64649814, z: -0.042952776}
+  - {x: 0.030004233, y: -0.6586739, z: -0.04601538}
+  - {x: 0.033337384, y: -0.6708017, z: -0.048366904}
+  - {x: 0.036789447, y: -0.68287456, z: -0.049694538}
+  - {x: 0.040352255, y: -0.6948873, z: -0.049747348}
+  - {x: 0.044014692, y: -0.70683825, z: -0.04835987}
+  - {x: 0.04776299, y: -0.7187289, z: -0.045475364}
+  - {x: 0.051580727, y: -0.73056483, z: -0.041157365}
+  - {x: 0.05544892, y: -0.74235535, z: -0.035592794}
+  - {x: 0.059346616, y: -0.75411355, z: -0.029085517}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.009
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 1
-        value: 0.025
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -205,6 +235,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 8b68d23c98181344390efd19950a966b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value:
+      objectReference: {fileID: 2100000, guid: 20dfe49a340c9f748844da529e0da2bd, type: 2}
+    - target: {fileID: -6400281290468069383, guid: 8b68d23c98181344390efd19950a966b, type: 3}
+      propertyPath: m_Mesh
+      value:
+      objectReference: {fileID: 4300000, guid: 235a8ea419b6576438b768db363656a1, type: 2}
     - target: {fileID: 919132149155446097, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       propertyPath: m_Name
       value: PlayableBalloon
@@ -357,8 +395,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2648beb7a3da04246988c5bab5fba116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   points: 10
   popSound: {fileID: 8300000, guid: b8ae541a4dbe7be44bea956ba8b18bd8, type: 3}
   popVolume: 0.5
@@ -374,8 +412,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 517470c4931b54e47a8fee9c0561c7d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   spawnSettings: {fileID: 11400000, guid: ecdcc52e368c41b996d51cb470de9df8, type: 2}
 --- !u!114 &2277765683520032670
 MonoBehaviour:
@@ -387,7 +425,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28d497ca654a83a4cb012a24191c59dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   floatAmplitude: 0.12
   floatFrequency: 0.6
