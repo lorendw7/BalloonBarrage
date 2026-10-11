@@ -2,6 +2,14 @@
 
 Updated: October 11, 2026 (Asia/Tokyo). Historical detail remains in Git history; prior checks do not automatically validate new gameplay.
 
+## Current 90-second start and pause flow
+
+- Reviewed the learner's start/help, pause/resume, Quit, results/retry and associated gameplay gates. Corrected the waiting-state initialization from IsPlaying=true to false so the start menu blocks timer, spawning, firing and scoring. No additional gameplay feature was authored in this review.
+- The current saved scene duration is 90 seconds. Current gameplay sources compile with Unity's bundled compiler and generated project references; the isolated Unity test project also compiled them successfully.
+- One isolated acceptance coroutine passed: the start menu keeps the timer at 90, spawns no balloons, blocks held-fire input and score changes; BeginRound enables counting and bounded replenishment; pause freezes the timer/audio state; resume restores them; end captures the score and cleans balloons; retry resets score/time and returns to the waiting menu with no targets.
+- Methods were invoked directly and mouse state simulated. This does not validate actual GUI clicks, keyboard hardware, audible music, or a natural full 90-second expiry. The learner previously reported results/retry, pause/Resume and editor Quit passed manual testing; the current Start interface still requires manual acceptance.
+- Static metadata/document-link audit and all sixteen original bundled-file hashes pass. Source snapshots match the reviewed gameplay and scene. No new Windows ZIP was built during this publication; the development ZIP below is an older snapshot.
+
 ## Windows rhythm-data development snapshot
 
 - Reviewed the saved RoundController, Score, BalloonSpawner, PlayerShooter, PaintProjectile and Balloon behavior. The learner's results/Play Again UI is present, including the corrected Final Score label. No new gameplay was authored in this packaging pass.
@@ -23,7 +31,7 @@ Updated: October 11, 2026 (Asia/Tokyo). Historical detail remains in Git history
 
 ## Gameplay checkpoint
 
-RoundController is attached with a five-second test duration. Shooting, refill and scoring use its play state. Results/retry are saved and method-driven checks now pass as described above; the 90-second exhibition setting and manual interface acceptance remain pending.
+RoundController is attached with a saved 90-second duration. Waiting, playing, paused and finished states control the start/pause/results displays. Shooting, refill and scoring use the play/pause gates. The newest acceptance checks are described above; target-PC and full graphical-flow acceptance remain pending.
 
 ## Prior evidence
 

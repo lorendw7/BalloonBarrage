@@ -28,8 +28,8 @@ namespace BalloonBarrage.EditorTools
             File.Copy("CREDITS.md", Path.Combine(output, "CREDITS.md"), true);
             File.WriteAllText(Path.Combine(output, "README.txt"),
                 "BalloonBarrage noncommercial development snapshot\n" +
-                "Aim with the mouse; hold left click to fire. Play Again restarts the round. Alt+F4 exits.\n" +
-                "The scene uses a five-second test round. Pause/start menus are not implemented.\n" +
+                "Click Start, aim with the mouse and hold left click to fire. Play Again returns to the start menu.\n" +
+                "The current scene uses a 90-second round. Esc pauses; Resume continues; Quit or Alt+F4 exits.\n" +
                 "StepMania songs and charts are included as data; song selection, chart loading and beat judgement are not implemented.\n" +
                 "Original studio music remains active. See BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania/NOTICE.txt.\n" +
                 "Included songs carry upstream noncommercial restrictions. Do not sell this package.\n" +

@@ -48,7 +48,8 @@ public class PlayerShooter : MonoBehaviour
 
         transform.LookAt(aimPoint);
 
-        if (!RoundController.IsPlaying)
+        if (!RoundController.IsPlaying ||
+    RoundController.IsPaused)
         {
             return;
         }

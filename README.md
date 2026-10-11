@@ -9,9 +9,9 @@ A Unity paint-blaster prototype set in a warm graffiti studio. The intended game
 1. Install Git LFS, clone this repository, and run `git lfs pull`.
 2. Open the repository root in Unity **6000.0.77f1**.
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
-4. Aim with the mouse and hold the left button to fire.
+4. Read the instructions and click Start. Aim with the mouse and hold the left button to fire. Esc pauses; Resume continues and Quit exits.
 
-The saved scene uses a **five-second round for testing**. The exhibition target is 90 seconds after manual results/retry acceptance. The prototype has multiple targets, held fire, projectile collision, scoring, music playback, and a timer that gates combat. Results, Play Again, cleanup and score reset are saved; automated timer and ten-retry checks pass. Start/pause menus and beat judging are pending. See the [validation record](Docs/Project/VALIDATION.md) for evidence and limitations.
+The saved scene uses a **90-second round**. Start/instructions, pause/resume, Quit, results, cleanup and score reset are implemented. Before Start, countdown, target spawning, firing and scoring are gated. Play Again reloads the scene and returns to the start menu. Automated flow checks pass; current GUI interaction still needs a manual start-menu pass. The prototype includes multiple targets, held fire, projectile collision and original music playback. Beat judging, waves and upgrades are pending. See the [validation record](Docs/Project/VALIDATION.md) for evidence and limitations.
 
 ## Music and charts
 

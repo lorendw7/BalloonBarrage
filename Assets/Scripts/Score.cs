@@ -14,7 +14,8 @@ public class Score : MonoBehaviour
 
     public static void Add(int amount)
     {
-        if (!RoundController.IsPlaying)
+        if (!RoundController.IsPlaying ||
+    RoundController.IsPaused)
         {
             return;
         }

@@ -4,11 +4,11 @@ Updated: October 11, 2026 (Asia/Tokyo). This is the single delivery plan; [game 
 
 ## Current baseline and next lesson
 
-Saved implementation includes continuous aim, held fire (five shots/second), flying paint with swept collision, one-time scoring, target tracking/refill (three targets), configured respawn delay, entrance animation, and background music. RoundController is attached with a five-second test duration; shooting, refill, and scoring check its play state. The learner reported the five-second stop test passed.
+Saved implementation includes continuous aim, held fire (five shots/second), flying paint with swept collision, one-time scoring, target tracking/refill (three targets), configured respawn delay, entrance animation, and background music. RoundController is attached with a saved 90-second duration; shooting, refill, and scoring check its play state.
 
-Results and the Play Again button are now saved. Isolated acceptance checks passed for the five-second timer, gated scoring, final-score capture, cleanup and ten scene reloads with reset score and three targets. These checks call the methods directly; visual button interaction still needs a manual pass. Spawn-spacing checks remain pending. No beat judgement, wave director, upgrades, full menu flow, or controller pairing is implemented.
+Results, Play Again, Esc pause/resume, Resume, Quit and start/instructions are saved. The learner reports results/retry, pause-panel interaction and editor Quit passed manual testing. Review corrected one initialization value: IsPlaying is false while waiting for Start. Latest isolated checks pass for waiting-state timer/spawn/held-fire/score gates, BeginRound, pause/resume, end cleanup and retry returning to the start menu. These checks drive methods and simulated mouse state; visual Start/Resume/Quit interaction still needs manual acceptance. No beat judgement, wave director, upgrades or controller pairing is implemented.
 
-Next: manually verify the results panel and Play Again button at five seconds, then restore 90 seconds in the Inspector. Continue with bounded spawn-spacing checks, followed by start/pause UI. A Windows development ZIP now includes the three StepMania song/chart packs as raw data; runtime song selection and chart judging remain future lessons. Preserve concurrent learner edits and verify the saved code before publishing a checkpoint.
+Next: manually accept the start/instructions flow, then proceed directly to the original-track audio clock, beat judgement and hit bonuses, followed by waves and upgrades. Spawn-spacing work remains deferred at the learner's request. The existing Windows development ZIP predates pause/start-menu changes and retains its five-second test scene; rebuild after accepting the new flow. External song selection and chart judgement remain future lessons.
 
 ## Exhibition schedule
 
@@ -38,7 +38,7 @@ Keep the existing scene. If behind, reduce target/effect counts and optional pol
 
 Use the [downloaded chart references](MUSIC_AND_CHARTS.md) to study phrasing, density, tempo and offset conventions. Do not make a general-purpose importer a prerequisite for the first rhythm demo.
 
-A planning estimate is 12–18 small lessons of 60–90 minutes from the current baseline: basic flow/collision/menu/build 4–6, rhythm/bonus/calibration 4–6, waves/upgrades 3–4, integrated fixes 1–2. Adjust after acceptance; this is not a completion-date promise. Extra songs and co-op require separate estimates.
+From the accepted round/pause/quit baseline, estimate 8–12 remaining small lessons of roughly 60–90 minutes for the first one-track solo rhythm/roguelite demo: start/help 1, audio clock/judgement/bonus/calibration 3–4, waves/outcomes 1–2, upgrades/selection/reset 2–3, integrated playtests/fixes 1–2. The estimate includes the current start/help lesson and excludes additional songs, external chart import, co-op and full release polish. Adjust scope and lesson size after acceptance; this is not a completion-date promise.
 
 ## Working and release gates
 

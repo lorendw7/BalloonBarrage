@@ -35,18 +35,15 @@ public class BalloonSpawner : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < maxBalloons; i++)
-        {
-            Spawn();
-        }
-        remainingDelay = spawnSettings.RespawnDelay;
+        remainingDelay = 0f;
     }
 
     private void Update()
     {
         activeBalloons.RemoveAll(balloon => balloon == null);
 
-        if (!RoundController.IsPlaying)
+        if (!RoundController.IsPlaying ||
+    RoundController.IsPaused)
         {
             return;
         }
