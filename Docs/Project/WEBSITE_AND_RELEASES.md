@@ -33,7 +33,9 @@ Read [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases) for 
 5. Record SHA-256, version, controls, tested system, known issues and release status. Do not invent minimum hardware requirements.
 6. Upload to Releases, use prerelease for early demos, and verify the rebuilt website links the actual asset.
 
-Downloaded study songs are excluded from the package. See [Music and charts](../Design/MUSIC_AND_CHARTS.md) before importing third-party content.
+The user-authorized StepMania collection is now included through StreamingAssets. Packages containing it are noncommercial development snapshots; retain its NOTICE and upstream credits. Commercial distribution requires separate clearance. See [Music and charts](../Design/MUSIC_AND_CHARTS.md).
+
+For a development snapshot, set `BALLOON_BUILD_OUTPUT` to an empty absolute directory and run Unity in an isolated project copy with `-batchmode -quit -executeMethod BalloonBarrage.EditorTools.WindowsDevelopmentBuild.Build`. This builds Windows x64 with Development enabled and includes an English package README and credits. It is distinct from the non-development release checklist above. Verify the output with `Tools/Rhythm/Verify-Bundle.ps1 -BundlePath <output>/BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania`, then ZIP the entire output directory.
 
 ## Recovery
 

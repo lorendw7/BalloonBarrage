@@ -1,0 +1,21 @@
+StepMania song/chart collection -- noncommercial development bundle
+Source: https://github.com/stepmania/stepmania
+Pinned revision: 825467bcd81c812b33ad684dc04dd151b2d5dec3
+Retrieved: 2026-10-11
+
+Goin' Under -- NegaRen
+Mecha-Tribe Assault -- Kommisar
+Springtime -- Kommisar
+Chart authors and other credits remain in the original SM/SSC files.
+Original song folders, audio, charts and artwork are unmodified.
+
+Upstream README describes included songs as Creative Commons Non-Commercial
+(CC-NC) and prohibits selling the game with its included songs. It links to
+creativecommons.org without naming a precise license/version. See the
+preserved README.md and source-manifest.json. No commercial rights or license
+version are claimed. Do not sell this bundle. Obtain specific permission
+before commercial distribution or monetized use. These song assets are not
+covered by the StepMania engine's MIT code license.
+
+Included by request for BalloonBarrage noncommercial development builds.
+Inclusion as files does not implement song selection or chart judging.

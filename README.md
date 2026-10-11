@@ -11,11 +11,11 @@ A Unity paint-blaster prototype set in a warm graffiti studio. The intended game
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Aim with the mouse and hold the left button to fire.
 
-The saved scene uses a **five-second round for testing**. The exhibition target is 90 seconds after results and retry pass acceptance. The prototype has multiple targets, held fire, projectile collision, scoring, music playback, and a timer that gates combat. Round-end cleanup, score reset, and reload support are saved; the results/retry flow is still being completed and needs runtime acceptance. Start/pause menus and beat judging are pending. See the [validation record](Docs/Project/VALIDATION.md) for evidence and limitations.
+The saved scene uses a **five-second round for testing**. The exhibition target is 90 seconds after manual results/retry acceptance. The prototype has multiple targets, held fire, projectile collision, scoring, music playback, and a timer that gates combat. Results, Play Again, cleanup and score reset are saved; automated timer and ten-retry checks pass. Start/pause menus and beat judging are pending. See the [validation record](Docs/Project/VALIDATION.md) for evidence and limitations.
 
 ## Music and charts
 
-Three public StepMania song/chart packs have been collected for local study. The repository contains a pinned download manifest and checksum-verifying downloader; downloaded songs stay outside Unity assets and version control. Read the [music and chart guide](Docs/Design/MUSIC_AND_CHARTS.md) for sources, restrictions, and the proposed rhythm workflow. The current prototype uses original synthesized music.
+Three public StepMania song/chart packs are included under `Assets/StreamingAssets/Rhythm/StepMania` for noncommercial development packages, with original credits, source manifest and a usage notice. The current prototype still plays its original synthesized music; song selection, chart loading and rhythm judgement are not implemented. Read the [music and chart guide](Docs/Design/MUSIC_AND_CHARTS.md) for contents and restrictions.
 
 ## Documentation
 

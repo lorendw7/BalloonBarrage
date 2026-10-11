@@ -2,7 +2,7 @@
   "source": "https://github.com/stepmania/stepmania",
   "revision": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
   "retrieved": "2026-10-11",
-  "usage": "Local study only; upstream describes songs as CC-NC without a specific license version. Not approved for redistribution in BalloonBarrage.",
+  "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared.",
   "files": [
     {
       "path": "Songs/StepMania 5/Goin' Under/Goin' Under.ogg",

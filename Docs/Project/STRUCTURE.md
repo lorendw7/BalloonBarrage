@@ -26,7 +26,8 @@ The learner owns `Assets/Scripts` gameplay. The assistant maintains side-effect-
 | Tools/Rhythm | Pinned reference manifest and downloader |
 | Tools/ProjectMaintenance | Repository audits and migration utility |
 | Website | Site source, build scripts and tests |
-| .local-reference | Ignored local third-party study downloads |
+| Assets/StreamingAssets/Rhythm | Original song/chart data and notices included in development builds |
+| .local-reference | Ignored download cache |
 | .local-backups | Ignored snapshots and historical validation outputs |
 
 Keep Assets, Packages and ProjectSettings at the Unity root. The active local checkout is `D:/CS/Code/BalloonBarrage`; retired checkouts are not authoritative.

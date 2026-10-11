@@ -6,9 +6,9 @@ Updated: October 11, 2026 (Asia/Tokyo). This is the single delivery plan; [game 
 
 Saved implementation includes continuous aim, held fire (five shots/second), flying paint with swept collision, one-time scoring, target tracking/refill (three targets), configured respawn delay, entrance animation, and background music. RoundController is attached with a five-second test duration; shooting, refill, and scoring check its play state. The learner reported the five-second stop test passed.
 
-Results and retry are in progress. Saved code resets score at round start, captures the final score, disables/destroys targets and projectiles, and provides a scene-reload method. Finish and accept the results/retry interface; method presence alone does not prove a working flow. Spawn-spacing checks are also pending. No beat judgement, wave director, upgrades, full menu flow, or controller pairing is implemented.
+Results and the Play Again button are now saved. Isolated acceptance checks passed for the five-second timer, gated scoring, final-score capture, cleanup and ten scene reloads with reset score and three targets. These checks call the methods directly; visual button interaction still needs a manual pass. Spawn-spacing checks remain pending. No beat judgement, wave director, upgrades, full menu flow, or controller pairing is implemented.
 
-Next: finish end-of-round cleanup and results, reset score explicitly on retry, then run ten consecutive five-second rounds. Only after this passes, restore 90 seconds in the Inspector. Preserve concurrent learner edits and verify the saved code before publishing a checkpoint.
+Next: manually verify the results panel and Play Again button at five seconds, then restore 90 seconds in the Inspector. Continue with bounded spawn-spacing checks, followed by start/pause UI. A Windows development ZIP now includes the three StepMania song/chart packs as raw data; runtime song selection and chart judging remain future lessons. Preserve concurrent learner edits and verify the saved code before publishing a checkpoint.
 
 ## Exhibition schedule
 

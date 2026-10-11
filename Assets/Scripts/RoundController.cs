@@ -79,6 +79,19 @@ public class RoundController : MonoBehaviour
         float left = (Screen.width - 260f) / 2f;
         float top = (Screen.height - 160f) / 2f;
 
+        GUI.Box(
+            new Rect(left, top, 260, 160),
+            "Round Finished");
 
+        GUI.Label(
+            new Rect(left + 20, top + 45, 220, 30),
+            $"Final Score: {finalScore}");
+
+        if (GUI.Button(
+            new Rect(left + 20,  top + 95, 220, 40),
+            $"Play Again"))
+        {
+            RestartRound();
+        }
     }
 }
