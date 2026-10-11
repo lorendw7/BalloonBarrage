@@ -1,0 +1,104 @@
+{
+  "source": "https://github.com/stepmania/stepmania",
+  "revision": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
+  "retrieved": "2026-10-11",
+  "usage": "Local study only; upstream describes songs as CC-NC without a specific license version. Not approved for redistribution in BalloonBarrage.",
+  "files": [
+    {
+      "path": "Songs/StepMania 5/Goin' Under/Goin' Under.ogg",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ogg",
+      "bytes": 2350139,
+      "sha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483"
+    },
+    {
+      "path": "Songs/StepMania 5/Goin' Under/Goin' Under.sm",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.sm",
+      "bytes": 51838,
+      "sha256": "ac051b2e8a33790d6ab402ccefe68ede0451c18ed0ced385273eb7d1193c0d47"
+    },
+    {
+      "path": "Songs/StepMania 5/Goin' Under/Goin' Under.ssc",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ssc",
+      "bytes": 53393,
+      "sha256": "d29fa1147bb9018b04ab1bfdbb7ef867d70baa2a1f4d748b54af7c00c377dac5"
+    },
+    {
+      "path": "Songs/StepMania 5/Goin' Under/bg.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/bg.png",
+      "bytes": 1726649,
+      "sha256": "06069f63ff8e19c674112f62e2aa5ae16190ac96efddc9ac0f66ca425fa48dbd"
+    },
+    {
+      "path": "Songs/StepMania 5/Goin' Under/bn.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/bn.png",
+      "bytes": 147164,
+      "sha256": "b586e4ecff8674756b414fccf76822d2599a15532aafbd2574a8d58ae7e52829"
+    },
+    {
+      "path": "Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ogg",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ogg",
+      "bytes": 2126581,
+      "sha256": "6eb052cf8081ebb01d4b30e8db34e9eeca692635e2c1ed3ba7f7bd131c1b65c3"
+    },
+    {
+      "path": "Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ssc",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ssc",
+      "bytes": 62937,
+      "sha256": "a594bd13b0728ecb2e9eb8e56ddb0e1744c0d2eef80466a42ea299703615e426"
+    },
+    {
+      "path": "Songs/StepMania 5/MechaTribe Assault/mechatribeassaultbg.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/mechatribeassaultbg.png",
+      "bytes": 474100,
+      "sha256": "6bbfbd05a721d2d4677d1e010972dd6d8a1af2cc5fffb9717cea6715759e5bec"
+    },
+    {
+      "path": "Songs/StepMania 5/MechaTribe Assault/mechatribeassaultbn.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/mechatribeassaultbn.png",
+      "bytes": 91426,
+      "sha256": "094f1aa41ce6fe2a122e910253bb1c87dd14c4d9d77535c494b05863a570928e"
+    },
+    {
+      "path": "Songs/StepMania 5/MechaTribe Assault/wyde cd-tital.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/wyde%20cd-tital.png",
+      "bytes": 3852,
+      "sha256": "55e0b2fe8cfb97e5b1930c9af0bbc2da44523b1c4ee0c37190e741f2a9920c7a"
+    },
+    {
+      "path": "Songs/StepMania 5/Springtime/Kommisar - Springtime.mp3",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/Kommisar%20-%20Springtime.mp3",
+      "bytes": 5161865,
+      "sha256": "97529087ffa2909beac1d78d6756571e85c3c16f468f056760c189793678ea18"
+    },
+    {
+      "path": "Songs/StepMania 5/Springtime/Springtime.ssc",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/Springtime.ssc",
+      "bytes": 69609,
+      "sha256": "df30022b90bd1f70d21ae4aca03e1f1236916a35aebc0f7147d82616022b2882"
+    },
+    {
+      "path": "Songs/StepMania 5/Springtime/spring.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/spring.png",
+      "bytes": 636118,
+      "sha256": "5756ef25d40698d45dae51c6e40878170b79b4529376f240de758759ef736501"
+    },
+    {
+      "path": "Songs/StepMania 5/Springtime/springbn.png",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/springbn.png",
+      "bytes": 107366,
+      "sha256": "6a99cee87b45d7b1276bfa3e4f324bce4806367f7f9be2c71d7ab323ef7ae15a"
+    },
+    {
+      "path": "Songs/instructions.txt",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/instructions.txt",
+      "bytes": 527,
+      "sha256": "2fd531b4838801ae81590b343d3341aa3b896358fba79e3c3cfb56c9f94b078c"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/README.md",
+      "bytes": 2515,
+      "sha256": "65ce609188ec1fc8baa34f10be63e112020afe94f5991099c4d71b0fe8bac176"
+    }
+  ]
+}

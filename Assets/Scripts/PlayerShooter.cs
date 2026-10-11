@@ -48,6 +48,11 @@ public class PlayerShooter : MonoBehaviour
 
         transform.LookAt(aimPoint);
 
+        if (!RoundController.IsPlaying)
+        {
+            return;
+        }
+
         if (!Mouse.current.leftButton.isPressed)
         {
             return;

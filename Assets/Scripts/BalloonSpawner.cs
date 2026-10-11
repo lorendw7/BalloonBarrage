@@ -46,6 +46,11 @@ public class BalloonSpawner : MonoBehaviour
     {
         activeBalloons.RemoveAll(balloon => balloon == null);
 
+        if (!RoundController.IsPlaying)
+        {
+            return;
+        }
+
         if (activeBalloons.Count >= maxBalloons)
         {
             remainingDelay = spawnSettings.RespawnDelay;

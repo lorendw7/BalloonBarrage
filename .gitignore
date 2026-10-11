@@ -12,6 +12,7 @@
 #
 .utmp/
 /.local-backups/
+/.local-reference/
 /Website/dist/
 /Website/node_modules/
 /.claude/

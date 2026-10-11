@@ -1,36 +1,25 @@
-# 作者与许可 / Credits
+# Credits and provenance
 
-Third-party assets used in this project:
-本项目使用的第三方素材，以下记录从旧项目保留，具体原下载页面及完整许可文本待补充核对。
-Records below are preserved from the former project; exact download pages and full license texts still need verification.
+## Existing third-party assets
 
-- **Balloon** by Poly by Google [CC-BY] via [Poly Pizza](https://poly.pizza)
-- **Blaster Kit** by [Kenney](https://kenney.nl) — CC0
-- **Impact Sounds** by [Kenney](https://kenney.nl) — CC0
+| Asset | Recorded creator/source | Recorded license | Verification status |
+|---|---|---|---|
+| Balloon | Poly by Google, via [Poly Pizza](https://poly.pizza) | CC-BY | Preserve attribution; exact original page/version and full text still need verification |
+| Blaster Kit | [Kenney](https://kenney.nl) | CC0 | Existing project declaration; exact download record still needs verification |
+| Impact Sounds | [Kenney](https://kenney.nl) | CC0 | Existing project declaration; exact download record still needs verification |
 
-以上是项目已有的来源声明，不是本次独立完成的许可审计。Balloon 的署名信息必须保留，不能将全项目素材统称为 CC0。
-These are existing project declarations, not a new independent license audit. Retain Balloon attribution; do not describe all project assets as CC0.
+These retained declarations are not a new independent license audit. Do not describe all project assets as CC0. Preserve model/palette packages and third-party notices.
 
-StudioArtPack 纹理、喷漆和菜单使用内置 imagegen 生成，原始提示词见 Docs/Art。概念图不是第三方模型贴图，也不能替代模型授权。
-StudioArtPack textures, sprays, and menus were generated with built-in imagegen; exact prompts are in Docs/Art. Concept images neither replace model textures nor establish model licenses.
+## Project-created content
 
-2026-10-09 新增 WindowCourtyard_v1 与 BalloonPoster_v1，使用内置 imagegen；完整提示词及成品路径见 [工作室美术包](Docs/Art/STUDIO_ART_PACK.md)。庭院是虚构场景，并非九州大学实景或 Qpic 官方素材。窗框、画框与工作台由 Unity 基础网格组装。
-The October 9 courtyard/poster textures use built-in imagegen; prompts and final paths are recorded in the studio guide. The fictional courtyard is not official campus or Qpic imagery. Frames and workbench use Unity primitives.
+Studio textures, sprays, menu images, latex fragments and paint concepts use built-in image generation. Exact recorded prompts are retained in the [art guides](Docs/Art/ASSET_CATALOG.md). Older concept/splat prompts are unavailable. Concept images do not establish licenses for imported models.
 
-Assets/Audio/Music 的五段音乐/提示音是为本项目制作的原创合成作品，由 Tools/Audio/compose_studio_music.py 合成鼓、贝斯、键盘与木琴声部；未使用外部录音、采样或第三方歌曲。此说明仅针对新增配乐，不改变既有第三方素材的许可。
-The five music/cue WAVs are original synthesized compositions made for this project with the included generator. They use synthesized drums, bass, keys and marimba, with no recordings, external samples or third-party songs. This provenance does not change existing asset licenses.
+The courtyard is fictional and is not official Kyushu University or Qpic imagery. Frames, props, curved leaves, alcoves, refined gun/balloon surfaces, ropes and meshes use Unity primitives or procedural geometry. Native woven, normal and surface maps are mathematical patterns; fine oak retains its generated-image provenance. Room reflections and prototype previews are Unity camera captures.
 
-同日配乐升级为 AnimeStudio/AnimeDrums/AnimeMenu/AnimeRoundStart/AnimeRoundComplete 五段日系游戏风原创合成曲，旧五段按用户确认删除。CartoonV2 的圆角网格、旗串和卡通着色器为项目新增制作，不来自官网下载模型。
-The same-day music update provides five original anime-game-inspired synthesized tracks/cues; the earlier five were removed as requested. CartoonV2 meshes, pennants and toon shader were created for the project, not downloaded from the website.
+The five current WAVs in `Assets/Audio/Music` are original synthesized compositions produced with `Tools/Audio/compose_studio_music.py`. They use no third-party recordings, samples or songs. This statement applies to those files only and does not change any existing asset license.
 
-当前柔和版文件为 StudioDaylight_Loop、StudioDaylight_Drums_Loop、StudioDaylight_Menu_Loop、RoundStart_Soft、RoundComplete_Soft；延续原创合成制作，重命名时保留原资源 GUID。AtmosphereV3 复用已有生成纹理并新增 Unity 受光材质、UV 网格和程序化灯光遮罩，没有新增外部音乐或图片来源。
-Current softer tracks retain the same original synthesis provenance and asset GUIDs. AtmosphereV3 reuses existing generated textures with new Unity materials, UV meshes and a functional light cookie; no external music or imagery was added.
+## Downloaded rhythm study references
 
-ReferenceV4/FineOak_v4.png 使用内置 imagegen 生成，原始提示词见工作室美术包说明。拱形壁龛、曲面叶片由 Unity 网格构建。配乐进一步采用原创钢琴式合成音色与轻和声铺底，未使用钢琴录音或第三方歌曲。
-ReferenceV4's fine oak texture uses built-in imagegen, with the exact prompt in the studio guide. Alcove/leaf meshes are generated in Unity. Music now uses original piano-like synthesis and a quiet harmonic bed, without recorded piano samples or third-party songs.
+[StepMania](https://github.com/stepmania/stepmania) supplies the public reference packs Goin' Under (NegaRen), Mecha-Tribe Assault (Kommisar), and Springtime (Kommisar). Upstream describes included songs as CC-NC, without a precise license version in its README. Chart-level credits remain in the original files.
 
-2026-10-10 DetailsV5 的帘布、工具挂板、杯子、调色盘、画材推车等由 Unity 基础网格与程序化几何构建，复用已有材质；没有新增外部模型、图片或音频。官网新增画面为当前三维原型的运行相机截取，不是概念图。
-DetailsV5 props use Unity primitives and procedural geometry with existing materials, without new external models, images or audio. The website preview is a camera capture of the running 3D prototype, not concept art.
-
-同日 SurfacesV6 的圆润枪外壳、平滑气球与道具曲面为项目新增的原生几何；枪原始导入文件保留，气球绑口沿用原模型，细绳由曲线重新构建。织纹、法线和表面参数图由数学函数构建，橡木继续使用已署名的 FineOak_v4.png。室内反射与近景图来自 Unity 相机，未新增外部模型、图片或音频来源；既有第三方许可保持原署名。
-SurfacesV6 adds native gun-shell, balloon and prop geometry. Original gun imports remain; the balloon knot retains original geometry and its rope is rebuilt as a curve. Woven, normal and surface maps are mathematical patterns; oak reuses the credited FineOak_v4 image. Room reflections and closeups are Unity captures. No external model, image or audio source is added; existing third-party credits still apply.
+Downloads are local study material in ignored `.local-reference/Rhythm/StepMania`, outside Unity assets and game releases. Only the source manifest, checksums and downloader are committed. No redistribution permission for BalloonBarrage is claimed. See [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md) for the pinned source and import gate.
