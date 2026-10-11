@@ -169,3 +169,7 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# Preserve pinned upstream song/chart bytes for checksum verification on every OS.
+Assets/StreamingAssets/Rhythm/StepMania/README.md -text
+Assets/StreamingAssets/Rhythm/StepMania/Songs/** -text
