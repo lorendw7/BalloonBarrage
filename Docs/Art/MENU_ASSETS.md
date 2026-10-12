@@ -1,5 +1,7 @@
 # Menu assets
 
+For the latest screen layouts, nine-sliced controls, score/timer plaques and integration lessons, use [Interface V2](INTERFACE_V2.md). This page preserves the original V1 asset reference and exact prompts.
+
 Folder: `Assets/StudioArtPack/Menu`. Generated art is shared across locales; overlay live text using the [localization data](LOCALIZATION.md).
 
 | Asset or sprite | Suggested use |

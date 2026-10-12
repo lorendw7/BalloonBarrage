@@ -237,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 20dfe49a340c9f748844da529e0da2bd, type: 2}
     - target: {fileID: -6400281290468069383, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       propertyPath: m_Mesh
-      value:
+      value: 
       objectReference: {fileID: 4300000, guid: 235a8ea419b6576438b768db363656a1, type: 2}
     - target: {fileID: 919132149155446097, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       propertyPath: m_Name
@@ -298,6 +298,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2277765683520032670}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b68d23c98181344390efd19950a966b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 654622638241705721}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 8b68d23c98181344390efd19950a966b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1714560493150358714}
@@ -338,7 +341,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367568488569541468}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 33ea7b69413667a4daf589d0a444230d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -395,12 +398,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2648beb7a3da04246988c5bab5fba116, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   points: 10
   popSound: {fileID: 8300000, guid: b8ae541a4dbe7be44bea956ba8b18bd8, type: 3}
   popVolume: 0.5
-  popEffectPrefab: {fileID: 6864040625691906089, guid: 9d26bc8cc4d00b942bb1191dd43b5a52, type: 3}
+  popEffectPrefab: {fileID: 928517576936858472, guid: 7eeeb4a095cf1434cb3a5f8e3b1b352e, type: 3}
   popPoint: {fileID: 0}
 --- !u!114 &8428113125174779938
 MonoBehaviour:
@@ -409,11 +412,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8031993649134300037}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 517470c4931b54e47a8fee9c0561c7d0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnSettings: {fileID: 11400000, guid: ecdcc52e368c41b996d51cb470de9df8, type: 2}
 --- !u!114 &2277765683520032670
 MonoBehaviour:
@@ -425,7 +428,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28d497ca654a83a4cb012a24191c59dc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  floatAmplitude: 0.12
-  floatFrequency: 0.6
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.6
+--- !u!54 &654622638241705721
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031993649134300037}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0

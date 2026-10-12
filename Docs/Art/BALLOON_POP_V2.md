@@ -1,5 +1,7 @@
 # Latex-fragment balloon pop
 
+For the prepared combined latex-and-paint burst and the current wiring exercise, see the [paint-pop lesson](PAINT_POP_LESSON.md). The existing gameplay prefab still references the original teal fragment effect until the learner connects the new version.
+
 Folder: `Assets/StudioArtPack/BalloonPopV2`. The generated `LatexFragments_v1.png` is a transparent 2×2 atlas of neutral latex scraps, tinted through a shared unlit material. Teal, Coral and Gold particle prefabs share the texture.
 
 Each burst emits twelve particles with 0.38–0.68-second lifetime, size 0.22–0.4, speed 2.4–4, gravity, random spin and late fade. Each particle retains one randomly selected cell; the atlas is not sequential animation. XY emission suits the current front camera and does not simulate general 3D mesh fracture.

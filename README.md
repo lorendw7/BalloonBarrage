@@ -27,6 +27,9 @@ All project documentation is maintained in English. The website and planned game
 - [Validation](Docs/Project/VALIDATION.md): completed checks and outstanding gates.
 - [Website and releases](Docs/Project/WEBSITE_AND_RELEASES.md): build, download, and packaging workflow.
 - [Art direction](Docs/Art/ART_DIRECTION.md) and [asset catalog](Docs/Art/ASSET_CATALOG.md): current art and specialist guides.
+- [Cover finish V9](Docs/Art/COVER_FINISH_V9.md): latest actual-scene finish, saved lighting and runtime-camera preview.
+- [Interface V2](Docs/Art/INTERFACE_V2.md): new UI assets, preview gallery and lessons for wiring Start, Quit, Resume and score displays.
+- [Paint-pop lesson](Docs/Art/PAINT_POP_LESSON.md): the next small gameplay exercise, with prepared effect prefabs and a manual acceptance checklist.
 - [Credits](CREDITS.md): attribution and provenance.
 
 The creator plans an October 31, 2026 showcase as a Qpic member. The roadmap targets an October 27 candidate; booth and hours remain unconfirmed. A source archive is not a playable game. Check Releases for actual Windows packages.

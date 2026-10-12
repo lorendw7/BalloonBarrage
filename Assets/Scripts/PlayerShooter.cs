@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 
 public class PlayerShooter : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerShooter : MonoBehaviour
     private float shotsPerSecond = 5f;
 
     private float nextShotTime;
+
+    private bool waitingForFireRelease = true;
 
     // Update is called once per frame
     void Update()

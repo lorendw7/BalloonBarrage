@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class RoundController : MonoBehaviour
 {
@@ -17,6 +18,22 @@ public class RoundController : MonoBehaviour
 
     public static bool IsPaused { get; private set; }
 
+    [SerializeField]
+    private GameObject startScreen;
+
+    [SerializeField]
+    private GameObject pauseScreen;
+
+    [SerializeField]
+    private GameObject gameplayHUD;
+
+    [SerializeField]
+    private Text scoreText;
+
+    [SerializeField]
+    private Text timeText;
+
+
     private void Start()
     {
         IsPaused = false;
@@ -26,23 +43,80 @@ public class RoundController : MonoBehaviour
         remainingTime = roundDuration;
         IsPlaying = false;
         hasStarted = false;
+
+        if (startScreen != null)
+        {
+            startScreen.SetActive(true);
+        }
+        if (pauseScreen != null)
+        {
+            pauseScreen.SetActive(false);
+        }
     }
 
-    private void BeginRound()
+    private void LateUpdate()
     {
+        if (gameplayHUD != null)
+        {
+            gameplayHUD.SetActive(IsPlaying);
+        }
+
+        if (scoreText != null)
+        {
+            scoreText.text = Score.Value.ToString("D6");
+        }
+
+        if (timeText != null)
+        {
+            int seconds = Mathf.CeilToInt(remainingTime);
+
+            timeText.text = $"{seconds / 60:00}:{seconds % 60:00}";
+        }
+    }
+    public void BeginRound()
+    {
+        if (hasStarted)
+        {
+            return;
+        }
+
         Score.ResetScore();
         remainingTime = roundDuration;
         hasStarted = true;
         IsPlaying = true;
+
+        if (startScreen != null)
+        {
+            startScreen.SetActive(false);
+        }
     }
 
     private void TogglePause()
     {
+        if (!IsPlaying)
+        {
+            return;
+        }
+
         IsPaused = !IsPaused;
 
         Time.timeScale = IsPaused ? 0f : 1f;
         AudioListener.pause = IsPaused;
+
+        if (pauseScreen != null)
+        {
+            pauseScreen.SetActive(IsPaused);
+        }
     }
+
+    public void ResumeRound()
+    {
+        if (IsPlaying && IsPaused)
+        {
+            TogglePause();
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -112,19 +186,13 @@ public class RoundController : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(
-            new Rect(20, 55, 200, 40),
-            $"Time: {Mathf.CeilToInt(remainingTime)}");
-
         if (IsPaused)
         {
-            DrawPauseMenu();
             return;
         }
 
         if (!hasStarted)
         {
-            DrawStartMenu();
             return;
         }
 
@@ -180,7 +248,7 @@ public class RoundController : MonoBehaviour
         }
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

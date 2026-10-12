@@ -21,12 +21,4 @@ public class Score : MonoBehaviour
         }
         value += amount;
     }
-
-    private void OnGUI()
-    {
-        GUI.Label(
-            new Rect(20, 20, 200, 40),
-            $"Score: {value}"
-        );
-    }
 }

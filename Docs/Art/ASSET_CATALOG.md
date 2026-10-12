@@ -13,15 +13,23 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/Audio/Music | Three original loops, two cues and music metadata |
 | Assets/Prefabs | Playable balloon |
 | Assets/StudioArtPack | Generated textures, props, materials, VFX and preview scenes |
+| Assets/StudioArtPack/InterfaceV2 | New menu background, nine sliced sprites, five UI presentation prefabs and Unity previews |
+| Assets/StudioArtPack/RoomFinishV7 | Oak floor texture and world-scale UV mesh, cream walls, ivory ceiling and prior room reflection |
+| Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
+| Assets/StudioArtPack/CoverFinishV9 | Current plaster, rounded joinery, botanical foliage, sideboard, color grade, lightmap-ready mesh copies and game-camera captures |
+| Assets/Scenes/PrototypeScene | Saved V9 lighting data, directional lightmap pair and bake-generated reflection |
 | Assets/Localization | 25 UI keys in three languages; runtime switching pending |
 
 ## Integration guides
 
 - [Studio art pack](STUDIO_ART_PACK.md): current V6 surfaces, earlier dependencies, music and recorded prompts.
+- [Cover finish V9](COVER_FINISH_V9.md): current environment finish, offline lighting, tuning and capture evidence.
 - [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals and muzzle effects.
 - [Balloon pop](BALLOON_POP_V2.md): latex-fragment particles.
+- [Paint-pop lesson](PAINT_POP_LESSON.md): connect combined fragments and paint droplets through the existing learner hook.
 - [Spray assets](SPRAY_ASSETS.md): wall decoration atlas and prefabs.
-- [Menu assets](MENU_ASSETS.md): background and text-free UI slices.
+- [Interface V2](INTERFACE_V2.md): current UI prefabs, score/timer display and learner integration steps.
+- [Menu assets](MENU_ASSETS.md): original V1 background, slices and preserved prompts.
 - [Localization](LOCALIZATION.md): text, font and runtime requirements.
 - [Music and charts](../Design/MUSIC_AND_CHARTS.md): external study downloads.
 

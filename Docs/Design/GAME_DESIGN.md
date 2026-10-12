@@ -1,6 +1,6 @@
 # Game design
 
-Updated: October 11, 2026. Delivery order and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md).
+Updated: October 12, 2026. Delivery order and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md).
 
 ## Confirmed direction
 
@@ -10,7 +10,9 @@ Windows solo is the first platform and mode. A fixed camera and shared gallery a
 
 ## Exhibition slice
 
-The minimum October showcase is a 90-second score challenge: Japanese start/instructions, mouse aiming and held fire, replenishing balloons, time-up, final score, and quick retry. Include pause, return to title, quit, and offline play. Reset score/time and clear projectiles/targets every round. The current scene duration is five seconds for testing.
+The minimum October showcase is a 90-second score challenge: Japanese start/instructions, mouse aiming and held fire, replenishing balloons, time-up, final score, and quick retry. Include pause, return to title, quit, and offline play. Reset score/time and clear projectiles/targets every round. The current saved scene duration is 90 seconds; the older development ZIP still contains its five-second test scene.
+
+Prioritize tactile paint feedback: a brief latex-and-paint burst at each popped balloon, plus decorative paint marks where projectiles hit eligible scene surfaces. Start with MainWall, a cap of 40 marks, and clearing on retry; floor and additional walls follow acceptance. Marks must not obscure targets, change hit detection or accumulate indefinitely. The saved teal burst is connected, but projectile-created surface painting remains planned learner work. Delivery order and cutoffs live in the roadmap.
 
 This slice establishes a reliable loop. Rhythm judging and roguelite upgrades are subsequent milestones and must not be advertised as implemented.
 

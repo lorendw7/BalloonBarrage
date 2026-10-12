@@ -1,6 +1,6 @@
 # Art direction
 
-The current studio uses cream-grey plaster, warm oak/walnut, deep teal and restrained rust/brass accents, physically lit materials, window daylight and soft shadows. Preserve the existing vibrant graffiti and keep props at the edges. The current scene supersedes the earlier pastel/toon-only concept.
+The current studio uses cream-grey plaster, warm oak/walnut, deep teal and restrained rust/brass accents, physically lit materials, window daylight and soft shadows. [Cover finish V9](COVER_FINISH_V9.md) adds subtle mineral/leaf surfaces, rounded joinery and saved offline interior lighting. Preserve the existing vibrant graffiti and keep props at the edges. The current scene supersedes the earlier pastel/toon-only concept.
 
 Visual priority is reticles and balloons, hit feedback, HUD, then environment. Preserve recognizable pear silhouettes, knots, short strings and broad highlights. Reduce background interference before making targets smaller. Decorative ropes and props should not intercept gameplay collision queries.
 

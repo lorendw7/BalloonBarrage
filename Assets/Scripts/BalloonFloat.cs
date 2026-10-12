@@ -1,35 +1,91 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BalloonFloat : MonoBehaviour
 {
+    [SerializeField]
+    private float moveSpeed = 0.6f;
 
     [SerializeField]
-    private float floatAmplitude = 0.12f;
+    private Vector2 xRange = new Vector2(-3.5f, 3.5f);
 
     [SerializeField]
-    private float floatFrequency = 0.6f;
+    private Vector2 yRange = new Vector2(-2.5f, 2.5f);
 
-    private Vector3 basePosition;
-    private float elapsedTime;
+    private Rigidbody body;
+    private bool hasStartedMoving;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        basePosition = transform.position;
-        elapsedTime = 0f;
+        body = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        elapsedTime += Time.deltaTime;
+        if (!RoundController.IsPlaying ||
+            RoundController.IsPaused)
+        {
+            return;
+        }
 
-        float wave = Mathf.Sin(
-            elapsedTime * floatFrequency * Mathf.PI * 2f);
+        if (!hasStartedMoving)
+        {
+            StartMoving();
+            hasStartedMoving = true;
+        }
 
-        float offsetY = wave * floatAmplitude;
+        KeepInsideBounds();
+    }
 
-        transform.position = 
-            basePosition + Vector3.up * offsetY;
+    private void StartMoving()
+    {
+        float angle = Random.Range(0f, Mathf.PI * 2f);
+
+        Vector3 direction = new Vector3(
+            Mathf.Cos(angle),
+            Mathf.Sin(angle),
+            0f);
+
+        body.linearVelocity = direction * moveSpeed;
+    }
+
+    private void KeepInsideBounds()
+    {
+        Vector3 position = body.position;
+        Vector3 velocity = body.linearVelocity;
+
+        bool crossedBoundary = false;
+
+        if (position.x < xRange.x)
+        {
+            position.x = xRange.x;
+            velocity.x = Mathf.Abs(velocity.x);
+            crossedBoundary = true;
+        }
+        else if (position.x > xRange.y)
+        {
+            position.x = xRange.y;
+            velocity.x = -Mathf.Abs(velocity.x);
+            crossedBoundary = true;
+        }
+
+        if (position.y < yRange.x)
+        {
+            position.y = yRange.x;
+            velocity.y = Mathf.Abs(velocity.y);
+            crossedBoundary = true;
+        }
+        else if (position.y > yRange.y)
+        {
+            position.y = yRange.y;
+            velocity.y = -Mathf.Abs(velocity.y);
+            crossedBoundary = true;
+        }
+
+        if (crossedBoundary)
+        {
+            body.position = position;
+            body.linearVelocity = velocity;
+        }
     }
 }
