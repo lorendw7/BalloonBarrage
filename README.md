@@ -1,6 +1,6 @@
 # BalloonBarrage
 
-A Unity paint-blaster prototype set in a warm graffiti studio. The intended game combines unrestricted shooting, on-beat bonuses, and roguelite upgrades. Windows keyboard/mouse solo comes first; rhythm judging, waves, upgrades, and local co-op are planned.
+A Unity paint-blaster prototype set in a warm graffiti studio. The intended game combines unrestricted shooting, on-beat bonuses, and roguelite upgrades. Windows keyboard/mouse solo comes first; solo rhythm judging is saved, while waves, upgrades, and local co-op are planned.
 
 [Website](https://lorendw7.github.io/BalloonBarrage/en/) · [Game releases](https://github.com/lorendw7/BalloonBarrage/releases) · [Development roadmap](Docs/Design/ROADMAP.md)
 
@@ -11,11 +11,13 @@ A Unity paint-blaster prototype set in a warm graffiti studio. The intended game
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Read the instructions and click Start. Aim with the mouse and hold the left button to fire. Esc pauses; Resume continues and Quit exits.
 
-The saved scene uses a **90-second round**. Start/instructions, pause/resume, Quit, results, cleanup and score reset are implemented. Before Start, countdown, target spawning, firing and scoring are gated. Play Again reloads the scene and returns to the start menu. Automated flow checks pass; current GUI interaction still needs a manual start-menu pass. The prototype includes multiple targets, held fire, projectile collision and original music playback. Beat judging, waves and upgrades are pending. See the [validation record](Docs/Project/VALIDATION.md) for evidence and limitations.
+For the latest concept-inspired studio, open `Assets/Scenes/StudioConceptDetail.unity` instead. It adds a warm mineral floor, coordinated color accents, detailed paint supplies, leaning canvases and peripheral pigment marks. It retains V12's six balloon pigments/three silhouettes, rounded gun, random initial themes and matching paint effects. See [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md) for previews, tuning and automated-check limits.
+
+PrototypeScene now uses the complete **Goin' Under song (about 123.429 seconds)**, with interface/game music switching and one scheduled DSP origin for countdown and settlement. Canvas start/pause/HUD/results/retry, score capture and release/pointer guards are saved. An isolated natural full-song/pause/retry check passes; audible and physical-input acceptance remain necessary. Local source now loads the 93-event chart and schedules balloon previews 0.8 seconds early, with the old automatic three-target refill disabled. These latest changes were inspected in source/scene, not independently playtested. Target binding/expiry and matched-target firing-time rewards are also saved, with user-reported 10/20-point playtests passed. The countdown, enlarged on-beat burst, golden glow and reward-text display/automatic hiding have user-reported acceptance. Full-song rhythm regression, calibration, performance and a fresh Windows package remain pending. See [Game design](Docs/Design/GAME_DESIGN.md), [Roadmap](Docs/Design/ROADMAP.md) and [Validation](Docs/Project/VALIDATION.md) for scope and evidence.
 
 ## Music and charts
 
-Three public StepMania song/chart packs are included under `Assets/StreamingAssets/Rhythm/StepMania` for noncommercial development packages, with original credits, source manifest and a usage notice. The current prototype still plays its original synthesized music; song selection, chart loading and rhythm judgement are not implemented. Read the [music and chart guide](Docs/Design/MUSIC_AND_CHARTS.md) for contents and restrictions.
+Three public StepMania song/chart packs are included under `Assets/StreamingAssets/Rhythm/StepMania` for noncommercial development packages, with original credits, manifest and notices. PrototypeScene plays original studio music on interfaces and the separate imported Goin' Under copy during a round. Its 93-event Beginner timeline now drives advance spawning in local source; event lifecycle and solo rhythm bonuses are saved with user-reported playtests. See the validation record for independent-check limits. Read the [music and chart guide](Docs/Design/MUSIC_AND_CHARTS.md) for preparation and restrictions.
 
 ## Documentation
 
@@ -28,11 +30,19 @@ All project documentation is maintained in English. The website and planned game
 - [Website and releases](Docs/Project/WEBSITE_AND_RELEASES.md): build, download, and packaging workflow.
 - [Art direction](Docs/Art/ART_DIRECTION.md) and [asset catalog](Docs/Art/ASSET_CATALOG.md): current art and specialist guides.
 - [Cover finish V9](Docs/Art/COVER_FINISH_V9.md): latest actual-scene finish, saved lighting and runtime-camera preview.
+- [Camera and lighting V10](Docs/Art/CAMERA_LIGHTING_V10.md): independent scene study, before/after game-camera renders, baked target probes and verification limits.
+- [Material and model appearance V11](Docs/Art/MATERIAL_APPEARANCE_V11.md): reviewed balloon/floor samples, copied surface and weapon assets, raised paint, and before/after renders under the same camera and lights.
+- [Concept variants V12](Docs/Art/CONCEPT_VARIANTS_V12.md): six-color/three-silhouette balloons, new concept gun, random coordinated gun/paint themes and Unity preview evidence.
+- [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md): latest room, mineral floor, richer pigment/strip/rug palette, modeled studio supplies and fixed-camera comparison.
 - [Interface V2](Docs/Art/INTERFACE_V2.md): new UI assets, preview gallery and lessons for wiring Start, Quit, Resume and score displays.
-- [Paint-pop lesson](Docs/Art/PAINT_POP_LESSON.md): the next small gameplay exercise, with prepared effect prefabs and a manual acceptance checklist.
+- [UI clarity and resolution support](Docs/Art/INTERFACE_V2.md#october-14-clarity-and-resolution-support): bundled fonts, text refresh and checked 720p/1080p/1440p, 4:3 and ultrawide layouts.
+- [First rhythm lesson](Docs/Design/RHYTHM_FIRST_LESSON.md): switch interface/game music and initialize the round from the full downloaded song before adding its DSP chart timeline.
+- [Chart-reading lesson](Docs/Design/RHYTHM_CHART_LESSON.md): load the prepared 93-event timeline and verify its first event before scheduling targets.
+- [Controller preparation](Docs/Design/CONTROLLER_SETUP.md): prepared input actions and Xbox/Beitong checks for the planned P1 mouse plus P2 gamepad mode.
+- [Paint-pop lesson](Docs/Art/PAINT_POP_LESSON.md): connected burst assets and their manual acceptance checklist; later surface paint follows the rhythm checkpoint.
 - [Credits](CREDITS.md): attribution and provenance.
 
-The creator plans an October 31, 2026 showcase as a Qpic member. The roadmap targets an October 27 candidate; booth and hours remain unconfirmed. A source archive is not a playable game. Check Releases for actual Windows packages.
+The [official Kyudaisai site](https://kyudaisai.jp/79th/) lists October 31–November 1, 2026. The roadmap targets an October 27 rhythm-demo candidate; the creator's booth/location remains unconfirmed. A source archive is not a playable game. Check Releases for actual Windows packages.
 
 ## Website preview
 

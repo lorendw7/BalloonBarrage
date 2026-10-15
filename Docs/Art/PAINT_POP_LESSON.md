@@ -53,10 +53,26 @@ This lesson is Inspector wiring and acceptance, because the underlying code is a
 
 If nothing appears, inspect the prefab actually referenced by BalloonSpawner, the Balloon component's effect assignment, root ParticleSystem and Console. Editing an inactive scene template or a different color variant will not change what the spawner instantiates. If effects vanish too early, check that they were not parented to the balloon. If they persist while paused, that is expected scaled-time behavior; count cleanup time after resuming.
 
+## Prepared color and pattern choices
+
+The creator requested multiple balloon colors, patterned explosions and paint across scene geometry on October 13. Asset preparation is separate from runtime selection: the current production balloon remains teal.
+
+| Balloon appearance | Matching existing pop | Suggested existing surface pattern |
+|---|---|---|
+| SurfacesV6/Materials/TealLatex.mat | ExhibitionV8/Prefabs/PaintPop_Teal.prefab | SprayPrefabs/Teal_Spray.prefab |
+| BalloonColors/CoralLatex.mat | ExhibitionV8/Prefabs/PaintPop_Coral.prefab | SprayPrefabs/Coral_Burst.prefab |
+| BalloonColors/GoldLatex.mat | ExhibitionV8/Prefabs/PaintPop_Gold.prefab | SprayPrefabs/Yellow_Drip.prefab |
+
+All paths above are relative to `Assets/StudioArtPack`. The two new latex materials copy the existing opaque URP/Lit latex finish and change only name/base color; no scene or gameplay prefab is reassigned. Additional existing shapes are Turquoise_Burst, Pink_Brush and Indigo_Swoosh. Their original generated atlas/prompt provenance remains in [Spray assets](SPRAY_ASSETS.md).
+
+For a visual-only trial, select the balloon's visible MeshRenderer in a test prefab variant and assign one matching material; assign its matching root ParticleSystem to the existing Pop Effect Prefab field. This tests one color at a time. Simultaneous random colors require learner-authored selection of a matching material/effect/pattern entry. Do not tint a shared material in place for individual spawned balloons.
+
+These sprite prefabs are flat marks; they are not projection decals and are not automatically emitted by the pop. Surface placement, pattern selection, general curved-surface support, fading and the shared mark budget are future gameplay work described in [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion).
+
 ## Next paint lesson: projectile hits leave surface marks
 
 Flying particles and persistent wall marks are separate systems. These particles do not paint walls automatically.
 
 The requested next paint increment will reuse one existing [spray prefab](SPRAY_ASSETS.md) when a projectile hits an eligible wall or floor. Use the projectile's existing hit point and surface normal to place a small decorative mark just clear of that surface, then register it with a round-owned collection. Balloon hits still trigger the burst above. Start with a maximum of 40 visible surface marks (remove the oldest), and clear all marks on restart. Keep marks low contrast and without colliders. Surface marks are planned learner work; the current PaintProjectile only pops balloons and destroys itself on a hit. Do not add render-texture painting or particle collision painting before this bounded version passes.
 
-After that, continue the [Canvas integration lessons](INTERFACE_V2.md), Japanese readability and a fresh Windows build. Do not wait for rhythm judgement or roguelite upgrades to validate this exhibition loop.
+The Canvas flow is now connected. The required festival rhythm checkpoint takes priority over new surface-paint work; begin with the [music ownership lesson](../Design/RHYTHM_FIRST_LESSON.md) and follow the [roadmap](../Design/ROADMAP.md). Keep the existing burst while adding clock, judgement and impact bonus. Surface fading and other feedback follow the accepted rhythm loop.

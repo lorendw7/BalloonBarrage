@@ -24,10 +24,22 @@ CoverFinishV9 adds mathematical mineral-plaster and leaf-vein textures, procedur
 
 The courtyard is fictional and is not official Kyushu University or Qpic imagery. Frames, props, curved leaves, alcoves, refined gun/balloon surfaces, ropes and meshes use Unity primitives or procedural geometry. Native woven, normal and surface maps are mathematical patterns; fine oak retains its generated-image provenance. Room reflections and prototype previews are Unity camera captures.
 
+ConceptVariantsV12 references the three original website concept images without editing them. Its gun, rounded beams and two additional balloon body silhouettes are native procedural geometry; the existing attributed pear/knot and prior weapon are retained. Wall paint textures derive from the existing GraffitiSpray atlas's stroke detail and alpha. Original artwork, attribution and exact recorded prompts are preserved. No new image generation or external download is introduced; new lightmaps/reflection/previews are Unity outputs. See [Concept variants V12](Docs/Art/CONCEPT_VARIANTS_V12.md).
+
+V12's `StudioGunLit.shader` derives from Unity's installed URP 17.0.4 `Shaders/Lit.shader`, with a renamed shader and the forward-pass SSAO variant omitted for held-gun rendering. Its source SHA-256 and changes are recorded in `ConceptVariantsV12/Shaders/Provenance.txt`; the package's Unity Companion License is copied verbatim alongside it. This derivative retains Unity's license conditions and is not represented as CC0.
+
+ConceptDetailV13 adds deterministic procedural mineral-floor texture data and native rounded/lathed art supplies, using Unity's sphere for small organic details. Saved canvas/floor marks reuse the V12 relief and original spray-alpha derivatives. Wood/woven surfaces and all earlier concepts retain their provenance and prompts. No new AI image or external download was introduced. Its lightmaps, reflection and preview images are Unity outputs. See [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md).
+
 The five current WAVs in `Assets/Audio/Music` are original synthesized compositions produced with `Tools/Audio/compose_studio_music.py`. They use no third-party recordings, samples or songs. This statement applies to those files only and does not change any existing asset license.
+
+## UI fonts
+
+The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukasz Dziedzic / tyPoland, distributed under SIL Open Font License 1.1. Font binaries, the complete OFL notice and pinned source URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts`. Google Fonts revision: `5d3b76120a319730fda218cc7410174a462b32cb`. Source: [Google Fonts Lato](https://github.com/google/fonts/tree/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato). This license applies to the included font software; it does not alter song/model licenses. Lato fixes the current Latin-script UI; Japanese/Chinese font coverage remains separate localization work.
 
 ## Downloaded rhythm study references
 
 [StepMania](https://github.com/stepmania/stepmania) supplies the public reference packs Goin' Under (NegaRen), Mecha-Tribe Assault (Kommisar), and Springtime (Kommisar). Upstream describes included songs as CC-NC, without a precise license version in its README. Chart-level credits remain in the original files.
 
 At the user's request, the original collection is included in `Assets/StreamingAssets/Rhythm/StepMania` for noncommercial development packages. The upstream README, chart credits, source manifest and NOTICE.txt accompany the unmodified files. Do not sell packages containing these songs or claim commercial clearance; upstream does not specify a precise CC license version. The local reference directory remains a download cache. See [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md) for provenance and packaging details.
+
+The October 13 prepared gameplay track uses Goin' Under by NegaRen, dance-single Beginner chart by Fraxtil. `Assets/Audio/Music/StepMania/GoinUnder.ogg` is a byte-identical runtime copy of the pinned audio. `Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json` is a derived event timeline: simultaneous tap lanes become one target event, with original lane metadata retained. It records the source revision, URLs, SHA-256 hashes and adaptation. No source audio or chart was edited; the same noncommercial restrictions and original notices apply. Asset preparation does not establish runtime integration.

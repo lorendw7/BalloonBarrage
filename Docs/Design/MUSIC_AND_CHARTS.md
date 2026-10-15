@@ -1,6 +1,6 @@
 # Music and chart resources
 
-Retrieved: October 11, 2026. The user authorized including this public collection in noncommercial development packages. The files are bundled as data; playback selection and chart judgement are not implemented.
+Retrieved: October 11, 2026; status updated October 14. The creator authorized this collection for noncommercial development packages and selected downloaded music for gameplay. Studio music belongs to interfaces. Runtime switching and a complete-song DSP timer are saved; chart loading/scheduling and judgement remain pending.
 
 ## Downloaded collection
 
@@ -32,22 +32,38 @@ The [osu! Featured Artists catalog](https://osu.ppy.sh/beatmaps/artists) is anot
 
 Public availability is separate from a distribution license. For a release candidate, record track/composer, chart author, source URL, license text/version, attribution requirements, permission to edit/distribute, audio format, timing metadata and hash. Resolve each component before adding it to `Assets`.
 
-## Recommended first implementation
+## Required festival implementation
 
-Use the project's existing `StudioDaylight_Loop.wav`: original synthesis, 108 BPM, 32 bars, approximately 71.111 seconds. Reuse the existing file rather than importing a duplicate. A simple beat grid avoids an external chart importer for the first demo. Verify first-beat alignment by listening and measurement; metadata BPM alone does not confirm playable synchronization.
+The creator selected one complete song per round, starting at audio time zero and settling at its end; no 90-second crop or game-song loop. Retain StudioDaylight_Loop.wav as interface music. Start with Goin' Under / dance-single Beginner: NegaRen (artist), Fraxtil (chart), constant 210 BPM, OFFSET 0, complete audio duration 123.428571 seconds. This chart uses taps only; the other available starter charts include holds/mines or chart-specific tempo changes.
 
-Proposed project metadata: stable track ID, audio asset reference, BPM, first-beat offset in seconds, loop length, calibration offset, and optional beat-indexed intensity markers. This is a design proposal, not an implemented file format.
+Prepared assets:
 
-1. Learn phrase lengths and note-density changes from the local references.
-2. Define explicit project offset semantics and a single audio timeline.
-3. Display a beat cue and compare manual taps/held fire.
-4. Judge at firing, carry the result to impact, and grant a single hit bonus.
-5. Test pause/resume, loop boundaries, calibration and retry before adding waves/upgrades.
+| Asset | Purpose |
+|---|---|
+| Assets/Audio/Music/StepMania/GoinUnder.ogg | Byte-identical copy imported as an AudioClip outside StreamingAssets |
+| Assets/Audio/Music/StepMania/GameMusic_GoinUnder.prefab | Assigned game AudioSource: non-looping, no autoplay, 2D, pitch 1 |
+| Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json | Complete 93-event timeline derived from 95 lane taps, including two merged chords; source links/hashes and credits |
+| Assets/Audio/Music/StepMania/NOTICE.txt | Runtime-copy provenance and reference to the preserved original notices |
 
-If an importer is later justified, begin with one format and fixtures for BPM changes, stops, negative offsets, subdivisions, chart-specific timing and malformed input. Convert into a neutral beat/time representation; lane notes do not automatically define balloon placement or player aim. Reject unsupported timing explicitly rather than silently shifting events. See the [roadmap](ROADMAP.md) for sequencing.
+The first event is beat 32 / 9.142857 seconds; the last is beat 416 / 118.857143 seconds. Keep the introductory and ending passages. Timing data is relative to the unchanged complete audio. The JSON records sample count 5,443,200 and sample rate 44,100, source revision, original audio/chart paths, hashes, URLs, chart author and adaptation. Lanes are retained as provenance and are not balloon coordinates.
+
+Reproduce and test preparation with Python 3 from the repository root:
+
+```powershell
+python Tools/Rhythm/prepare_exhibition_track.py
+python -m unittest discover -s Tools/Rhythm -p 'test_*.py' -v
+```
+
+The tool validates the pinned source hashes and refuses changed prepared destinations. It handles only constant-tempo 4/4 dance-single Beginner tap rows and rejects unsupported tempo changes, stops, delays, warps, fake regions, holds, mines and malformed rows. It honors chart timing overrides. One same-time tap row becomes one balloon event, preserving original lanes. A general SSC/SM importer is not implemented.
+
+For this subset, event time is `beat * 60 / BPM - source OFFSET`; the project first-beat offset has the opposite sign. [StepMania's timing implementation](https://github.com/stepmania/stepmania/blob/5_1-new/src/TimingData.cpp) initializes beat-zero elapsed time from the negative source offset. [Its SSC format notes](https://github.com/stepmania/stepmania/blob/5_1-new/Docs/SimfileFormats/ssc_msd5.txt) distinguish song and chart timing sections. No StepMania global user calibration is copied into project data.
+
+Load prepared JSON at runtime from Application.streamingAssetsPath; [Unity copies StreamingAssets without standard asset import](https://docs.unity3d.com/6000.0/Documentation/Manual/StreamingAssets.html), so it is not a drag-in TextAsset. The separate audio copy is intentionally importable and can be assigned in the Inspector. Original audio/charts/notices remain unchanged in the bundle.
+
+Begin with the [menu/game music lesson](RHYTHM_FIRST_LESSON.md), then use one scheduled DSP timeline for song time, target previews, accepted-shot event judgement, carried rewards and song-end settlement. The [design](GAME_DESIGN.md) defines behavior and the [roadmap](ROADMAP.md) defines gates. Runtime integration remains learner work; prepared files alone do not make a playable rhythm game.
 
 ## Windows development package
 
-Unity copies this directory to BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania. NOTICE.txt explains provenance and noncommercial restrictions; source-manifest.json records original hashes. The active scene continues using its original studio music. This milestone bundles data only; it does not convert SM/SSC charts or implement a song menu.
+Unity copies the original directory to BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania and the prepared timeline to StreamingAssets/Rhythm/Prepared. NOTICE.txt explains restrictions; source-manifest.json records original hashes. The imported AudioClip is wired through the saved scene. The controller switches interface/game music and uses scheduled DSP timing; the song menu and runtime chart targets/judgement remain pending.
 
 See [the build guide](../Project/WEBSITE_AND_RELEASES.md) for the isolated Windows development build and package verification command.

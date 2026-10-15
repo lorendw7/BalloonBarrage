@@ -1,0 +1,4 @@
+Unity 6000.0.77f1; isolated scene build and reload; 2026-10-14 Asia/Tokyo.
+New static details/materials only. Existing gameplay/physics/camera/light component serialization and collider transforms match V12. No added decorative colliders or runtime scripts.
+Saved lightmaps present; nine camera/muzzle paths and complete target-motion framing passed. Actual 1600x900 game-camera captures use the same fixed three-target layout before/after. Human input, complete rounds, sound, performance and releases unverified.
+Full Unity project audit passed: missingScripts=0, unsupportedVolumeScripts=0, unresolved=0. Detailed inspection captures temporarily reposition the same game camera and restore it without saving.

@@ -1,0 +1,16 @@
+Unity 6000.0.77f1 / URP 17.0.4; isolated current-source project, 2026-10-13.
+Editor compilation, bake and final saved-scene reload exit codes: 0.
+Play Mode projectile/respawn/retry checks exit code: 0; synthetic mouse shooting remains unverified.
+Logs/CameraLightingV10.log
+CAMERA_LIGHTING_COPY_OK: gameplay/UI/colliders preserved; independent bake required.
+CAMERA_LIGHTING_SAVED_OK: reloaded scene; 1 lightmaps; 75 probes; aim projection and shot paths checked.
+Logs/CameraLightingV10-Final.log
+CAMERA_LIGHTING_SAVED_OK: reloaded scene; 1 lightmaps; 75 probes; aim projection and shot paths checked.
+Logs/CameraLightingV10-Play.log
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+CAMERA_LIGHTING_PLAY_SCENE_OK Source score=10
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+CAMERA_LIGHTING_PLAY_SCENE_OK CameraLighting copy score=10
+CAMERA_LIGHTING_PLAY_OK: source and copied scene; three natural spawns, projectile hit/score, respawn, retry. See PlayCheck.txt for mouse-input limitations.
+Repository static audit: 731 unique asset GUIDs, paired metadata and 19 documentation files checked.
+Scene preservation audit: 9 explicit physics/Canvas records identical to source; concurrent prefab overrides retained.

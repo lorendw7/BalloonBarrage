@@ -1,0 +1,9 @@
+Unity 6000.0.77f1; isolated Play Mode, synthetic input/method-driven checks.
+No human playtest, natural full round, frame-time acceptance or release.
+48 balloon initializations varied (6 colors, 3 silhouettes). All 18 combinations preserve colliders, Rigidbody and points; gameplay Random state unchanged.
+48 gun initializations varied (6 themes). All 6 region palettes/muzzle pigments passed; shared material assets and gameplay Random state unchanged.
+Already-emitted burst particles recolored without changing count, alpha or remaining lifetime.
+Accepted method-driven synthetic shot created the existing projectile; every projectile renderer and muzzle spray matched the selected gun pigment. Gun color remained stable.
+Existing swept projectile hit the aimed target; exactly +10 points. Natural respawn pending.
+Three-target refill passed. Actual duplicate Hit calls scored once; spawned fragment/paint particle pigments matched the rose balloon.
+Saved build-index-based retry reloaded V12: Start gate, zero score and no targets restored; gun initialized again.

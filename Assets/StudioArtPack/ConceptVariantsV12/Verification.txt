@@ -1,0 +1,6 @@
+Unity 6000.0.77f1; isolated project.
+Saved scene reloaded; lightmaps present; no missing scripts; nine camera/muzzle paths and complete motion framing passed.
+Six pigments / three silhouettes; six gun themes. Fixed visual layouts are real 1600x900 Unity game-camera renders, not gameplay captures.
+Creation compares learner settings (one visual prefab-reference exception), scene colliders and camera/light settings to V11. Human input, complete rounds, performance and a playable release remain unverified.
+V12 direct asset references: 1901 checked, zero unresolved.
+October 14, 2026 renderer-reference repair: full Unity project audit passed with zero missing scripts, zero unsupported VolumeProfile script records and zero unresolved GUIDs. All 11 inherited references resolved; protected scene/source/pipeline-global-setting/metadata hashes preserved. Before/after room and gun renders visually unchanged, mean RGB difference 0.002077/255 each. See Docs/Project/VALIDATION.md and Logs/RenderReferenceRepair-After.log.

@@ -1,0 +1,3 @@
+Final user request limited the remaining work to prop placement. Colors and detail geometry retained.
+Moved left study ahead of its crate; moved right study between cart and cabinet and reduced its lean. Right crate now sits left of the cabinet instead of inside it; loose tins are separated from cabinet/stage/crates. Paint tubes rest on the existing cabinet worktop.
+Fresh Unity editor process reloaded the saved mesh assets, rebaked lighting/reflection and captured final game/inspection views. Full reference and aim/framing audit passed. Existing camera, lights, physics and gameplay retained.

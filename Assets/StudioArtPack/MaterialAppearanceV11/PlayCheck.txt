@@ -1,0 +1,10 @@
+Automated Play Mode check with synthetic mouse input; no human playtest or release acceptance.
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+Programmatic launch of unchanged projectile prefab: hit/pop/score passed. Mouse input remains unverified.
+Source: three natural spawns; aimed target popped; score 10; three targets restored by normal respawn.
+Retry: start gate restored, score zero, no targets.
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+Programmatic launch of unchanged projectile prefab: hit/pop/score passed. Mouse input remains unverified.
+CameraLighting copy: three natural spawns; aimed target popped; score 10; three targets restored by normal respawn.
+Retry: start gate restored, score zero, no targets.
+For this reused check helper, Source = Assets/Scenes/StudioCameraLighting.unity; CameraLighting copy = Assets/Scenes/StudioMaterialAppearance.unity. The labels do not refer to the original PrototypeScene in this run.

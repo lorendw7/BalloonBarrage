@@ -16,6 +16,13 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack/InterfaceV2 | New menu background, nine sliced sprites, five UI presentation prefabs and Unity previews |
 | Assets/StudioArtPack/RoomFinishV7 | Oak floor texture and world-scale UV mesh, cream walls, ivory ceiling and prior room reflection |
 | Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
+| Assets/StudioArtPack/BalloonColors | Earlier prepared coral/gold latex materials; V12 connects its own six-pigment runtime set |
+| Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
+| Assets/StudioArtPack/Runtime | Authorized cosmetic selection/tint components; no new score, movement or rhythm rules |
+| Assets/Scenes/StudioConceptVariants.unity | V12 cosmetic variant scene; paired lighting folder and appended Build Settings entry |
+| Assets/StudioArtPack/ConceptDetailV13 | Copied room pigments/strip/rug materials, procedural mineral floor, batched art supplies/paint studies, reflection and actual Unity previews |
+| Assets/Scenes/StudioConceptDetail.unity | Latest room-detail scene; paired lighting folder and appended Build Settings entry |
+| Assets/Settings/Gameplay/ExhibitionControls.inputactions | Prepared mouse/gamepad actions; runtime controller/co-op support is not connected |
 | Assets/StudioArtPack/CoverFinishV9 | Current plaster, rounded joinery, botanical foliage, sideboard, color grade, lightmap-ready mesh copies and game-camera captures |
 | Assets/Scenes/PrototypeScene | Saved V9 lighting data, directional lightmap pair and bake-generated reflection |
 | Assets/Localization | 25 UI keys in three languages; runtime switching pending |
@@ -24,11 +31,14 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 
 - [Studio art pack](STUDIO_ART_PACK.md): current V6 surfaces, earlier dependencies, music and recorded prompts.
 - [Cover finish V9](COVER_FINISH_V9.md): current environment finish, offline lighting, tuning and capture evidence.
+- [Concept variants V12](CONCEPT_VARIANTS_V12.md): random cosmetic initialization, gun model and verified Unity capture/Play Mode scope.
+- [Concept studio detail V13](CONCEPT_DETAIL_V13.md): latest room color/detail pass, batched native supplies, mineral floor and comparison evidence.
 - [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals and muzzle effects.
 - [Balloon pop](BALLOON_POP_V2.md): latex-fragment particles.
 - [Paint-pop lesson](PAINT_POP_LESSON.md): connect combined fragments and paint droplets through the existing learner hook.
 - [Spray assets](SPRAY_ASSETS.md): wall decoration atlas and prefabs.
 - [Interface V2](INTERFACE_V2.md): current UI prefabs, score/timer display and learner integration steps.
+- [On-beat feedback](INTERFACE_V2.md#on-beat-feedback-handoff): bounded golden ring/sparkle prefab and a separate hidden reward Text for learner integration.
 - [Menu assets](MENU_ASSETS.md): original V1 background, slices and preserved prompts.
 - [Localization](LOCALIZATION.md): text, font and runtime requirements.
 - [Music and charts](../Design/MUSIC_AND_CHARTS.md): external study downloads.

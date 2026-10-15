@@ -2,6 +2,10 @@
 
 The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
 
+This publication updates English documentation and the trilingual website. Saved learner gameplay and scene work remain local; published progress describes that local checkpoint rather than a new committed gameplay revision or Windows release. Referenced documentation evidence is included so repository links resolve.
+
+The October 16 website update records saved chart-driven spawning, target cleanup, 10/20-point impact rewards, a beat countdown, golden glow and a creator-selected 1.45-second reward label. It distinguishes creator-reported spot playtests from pending full-song rhythm/calibration/performance acceptance and from published Windows packages. The dated prototype image remains an archive. Delivery scope and ownership are maintained in [Roadmap](../Design/ROADMAP.md); website dates are targets, not evidence that a gameplay acceptance gate passed. A website-only publication commits only its reviewed files, preserving concurrent learner source, art and scene changes.
+
 ## Build and preview
 
 Use Node.js 22 or newer; no dependency installation is required. From the repository root:

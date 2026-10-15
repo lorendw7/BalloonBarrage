@@ -1,0 +1,67 @@
+Unity: 6000.0.77f1
+URP asset: Assets/Settings/PC_RPAsset.asset
+Color space: Linear
+Camera: (0.00, 0.10, -8.80), Euler (2.00, 0.00, 0.00), FOV 45
+Existing lightmaps: 1
+Existing probes: 0
+Light: Directional Light, Directional, Realtime, intensity 1.4, shadows Soft, position (0.00, 3.00, 0.00)
+Light: FrontFillLight, Point, Realtime, intensity 7, shadows None, position (0.00, 1.00, -2.00)
+Light: WindowDaylight, Spot, Realtime, intensity 135, shadows Soft, position (-6.20, 2.20, 3.00)
+Light: NicheWarmLight, Spot, Realtime, intensity 12, shadows None, position (-5.10, 2.30, 9.15)
+Light: NicheWarmLight, Spot, Realtime, intensity 12, shadows None, position (5.10, 2.30, 9.15)
+Light: BakedWindowSoftbox, Rectangle, Baked, intensity 4, shadows None, position (-6.50, 1.00, 5.30)
+Light: BakedSkylightBounce, Rectangle, Baked, intensity 2.5, shadows None, position (0.00, 3.80, 4.40)
+Material: Assets/Art/BlasterKit/blaster-m.fbx | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/PaintBlaster/Materials/Teal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/PaintBlaster/Materials/Gold.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/PaintBlaster/Assembled/PaintParticles.mat | shader Universal Render Pipeline/Particles/Unlit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/CreamEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/CharcoalRubber.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/SatinBrass.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/BrushedSteel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/TealEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/CoralEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/OchreEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/MineralCreamPlaster.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/RoomFinishV7/Materials/NaturalOakFloor.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/RoomFinishV7/Materials/IvoryCeiling.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/NaturalJoinery.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/SatinOak.mat | shader Universal Render Pipeline/Lit
+Material: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat | shader Universal Render Pipeline/2D/Sprite-Unlit-Default
+Material: Assets/StudioArtPack/SurfacesV6/Materials/TealLatex.mat | shader Universal Render Pipeline/Lit
+Material: Assets/Art/Materials/M_String_Dark.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/ExhibitionV1/Materials/WindowView.mat | shader Universal Render Pipeline/Unlit
+Material: Assets/StudioArtPack/Generated/Charcoal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/ExhibitionV1/Materials/BalloonPoster.mat | shader Universal Render Pipeline/Unlit
+Material: Assets/StudioArtPack/Generated/Coral.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/Generated/Cream.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/Generated/Teal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/Generated/Gold.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/Generated/Terracotta.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/Generated/Leaf.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/FoliageSage.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/FoliageForest.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/Graphite.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/LavenderPaint.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/DeepTeal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/TealTube.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/CoralTube.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/CreamPaint.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/IndigoPaint.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/UnprimedCanvas.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/Woven_IndigoPaint.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/Woven_CoralEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/Woven_OchreEnamel.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/AtmosphereV3/Materials/InkPaint.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/LuminousSkylight.mat | shader Universal Render Pipeline/Unlit
+Material: Assets/StudioArtPack/ReferenceV4/Materials/NicheTeal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/ReferenceV4/Materials/GlazedTerracotta.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/WovenOatLinen.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/DetailsV5/Materials/DrawingPaper.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/IvoryGlaze.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/SurfacesV6/Materials/CoffeeSurface.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/DetailsV5/Materials/WarmCork.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/DetailsV5/Materials/PaperEdges.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/CabinetTeal.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/AgedBrass.mat | shader Universal Render Pipeline/Lit
+Material: Assets/StudioArtPack/CoverFinishV9/Materials/VineStems.mat | shader Universal Render Pipeline/Lit

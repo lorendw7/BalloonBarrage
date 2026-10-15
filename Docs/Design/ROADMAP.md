@@ -1,53 +1,80 @@
 # Development roadmap
 
-Updated: October 12, 2026 (Asia/Tokyo). This is the single delivery plan; [game design](GAME_DESIGN.md) defines intended behavior.
+Updated: October 16, 2026 (Asia/Tokyo). This is the single delivery plan; [game design](GAME_DESIGN.md) defines behavior and feedback tuning.
 
 ## Current baseline and next lesson
 
-Saved implementation includes continuous aim, held fire (five shots/second), flying paint with swept collision, one-time scoring, target tracking/refill (three targets), configured respawn delay, and background music. Balloons now use random initial XY rigidbody motion, collision bounce and rectangle bounds; the learner has saved the upper-boundary correction. The old entrance animation is disabled. RoundController is attached with a saved 90-second duration; shooting, refill, and scoring check its play state.
+Saved implementation includes continuous aim, held fire (five shots/second), swept projectile collision and one-time scoring. The old three-target refill loop is disabled; prepared chart events now call Spawn, which has no active-count gate. Unused refill delay/count fields remain for later cleanup. Balloons use XY rigidbody motion, bounce and corrected bounds; the old entrance animation is disabled. RoundController now switches interface/game audio and derives the complete timer from a scheduled DSP origin; the fixed 90-second field is removed. Shooting, chart scheduling and scoring check its play state.
 
-Results, Play Again, Esc pause/resume, Resume, Quit and start/instructions are saved. The learner reports results/retry, pause-panel interaction and editor Quit passed manual testing. Review corrected one initialization value: IsPlaying is false while waiting for Start. Latest isolated checks pass for waiting-state timer/spawn/held-fire/score gates, BeginRound, pause/resume, end cleanup and retry returning to the start menu. These checks drive methods and simulated mouse state; visual Start/Resume/Quit interaction still needs manual acceptance. No beat judgement, wave director, upgrades or controller pairing is implemented.
+All four Canvas screens, live score/time, final score and Start/Resume/Quit/Play Again callbacks are saved. The learner reports pause, HUD and results playtests passed; isolated flow checks cover the saved transitions and retry. The new release/pointer checks are saved in PlayerShooter and the scene disables the legacy PaintGunVfx component. Solo firing-time judgement and matched-target impact rewards are now saved; the learner reports ordinary hits score 10 and on-beat hits score 20. These latest rewards have source review and user playtest evidence, not an independent Unity test. Physical input and audible output still need final exhibition acceptance. The song-clock countdown and enlarged on-beat pigment burst are saved, with learner-reported playtests passed. Golden glow and temporary ON BEAT reward Text are now connected; the learner reports glow, text display and automatic hiding passed. The creator has confirmed 1.45 seconds as the intended reward-text duration, matching saved source; pause freezes the timer and another rewarded hit restarts it. Full-song calibration, independent end-to-end regression, performance and packaging remain pending. Waves and upgrades are deferred.
 
-Next, at the learner's request: integrate live score/time HUD, then Canvas results and Japanese instructions. StartScreen, PauseScreen, their Start/Resume/Quit callbacks and an Input System EventSystem are saved; method-driven start/pause/resume/retry checks pass, and the learner reports a successful pause playtest. PlayerShooter's taught release/pointer safeguards are still missing and must be accepted before menu integration is complete. Follow the [interface lessons](../Art/INTERFACE_V2.md). Projectile-created paint on MainWall, capped at 40 with retry cleanup, follows UI; the saved PaintPop_Teal burst connection is already checked. Spawn-spacing work remains deferred unless playtests show that overlap blocks the exhibition experience. Build a fresh Windows package after accepting this flow; the existing development ZIP retains its older five-second test scene.
+The creator requires interface music separate from downloaded gameplay songs, with one complete song per round. Goin' Under / Beginner (about 123.429 seconds), an imported clip, non-looping prefab and 93 events are prepared. The reader loads events and schedules previews 0.8 seconds early on the saved song clock. Spawn initializes Balloon event id/time; active-frame cleanup retains unanswered targets until event time plus the configured delay, default 3.1 seconds. PlayerShooter compares the accepted firing time with the aimed target's original event time, then initializes the projectile with the result and target id. Impact requires a matching nonnegative id and an on-beat result for the additional 10 points. Balloon's existing guard resolves base plus bonus once. The 3.1-second cleanup delay is separate from the timing window or formal Miss statistics. The connected RhythmCue now counts toward chart-event time using a cue index separate from the preview-spawn index. The prepared [glow and temporary reward Text](../Art/INTERFACE_V2.md#on-beat-feedback-handoff) are connected with user-reported display/hide acceptance. Next validate the complete song and final event, pause near event times, repeated hits, settlement and retry; then measure audible/input timing before adding calibration code. The older local five-second Windows ZIP must be rebuilt; no public Windows release was listed when checked on October 15.
 
 ## Exhibition schedule
 
-The project records October 31 as the creator's intended Qpic showcase date. On October 12, this leaves 19 calendar days, with a candidate due October 27. This is a project planning assumption, not independently verified festival scheduling; booth and hours are pending. Dates below are delivery targets, not completed-feature claims.
+The [official 79th Kyudaisai site](https://kyudaisai.jp/79th/), checked October 16, lists October 31–November 1, 2026. There are 15 calendar days until opening and 11 until the October 27 internal candidate deadline as of October 16. Reserve October 28–30 for the exhibition PC and backup. The creator's booth/location remains unconfirmed. Dates below are targets, not completion claims.
 
 | Dates in 2026 | Deliverable | Acceptance |
 |---|---|---|
-| October 11–13 | Paint-pop feedback and bounded wall paint | One burst/score per hit; effects clear; marks have a fixed cap and reset each round |
-| October 14–16 | Canvas start/help, HUD, pause/results, Japanese font | Readable score/time; correct panel transitions; no menu click-through; glyphs render |
-| October 17–20 | Fresh Windows build and complete solo loop | New player starts without coaching; ten retries; pause/resume/quit; offline launch |
-| October 21–24 | Playtests and measured fixes | Creator arranges Qpic playtests; ten rounds and a 30-minute soak on exhibition PC; record frame times/object counts |
-| October 25–27 | Candidate package | Full ZIP, version, controls, known issues, SHA-256, offline startup, correct website download |
+| October 13–14 checkpoint | Interface/game music switch and scheduled song clock | Saved implementation and isolated complete-song checks exist; physical/audio acceptance is still required |
+| October 15–16 | Target event identity, preview and missed-target lifecycle | Pass the original event id/time to each target; preserve the 0.8-second preview; expire unanswered events without skipping scheduled notes; pause holds all event timing |
+| October 17–19 | Shot judgement, impact reward and visible timing feedback | Accepted firing carries event/player identity and judgement; qualifying hits award once regardless of distance; timing cue uses the same song clock |
+| October 20 | Solo rhythm checkpoint and first fresh Windows demo | Complete natural song, final chart event, song-end settlement, pause/resume and retry stay aligned; standalone works offline; capture the first performance baseline |
+| October 21–23 | Conditional controller/co-op, Japanese instructions and early measured fixes | Accept one-gamepad input first; P1 mouse plus P2 pad only after solo passes; verify simultaneous hits, disconnect/reconnect and retry by October 23 |
+| October 24–26 | Performance lesson, playtests and measured fixes | Profile a Windows build on the exhibition PC; apply measured fixes; ten rounds and a 30-minute soak; record frame times/object counts and audio/input alignment |
+| October 27 | Candidate package | Full ZIP, version, controls, known issues, SHA-256, offline startup and accurate download link |
 | October 28–30 | Exhibition-PC validation and backup | Verify audio, window, input, exit and backup ZIP; fix blockers only |
-| October 31 | Showcase | Use verified build and collect feedback |
+| October 31–November 1 | Festival | Use the verified build and collect feedback |
 
-Keep the existing scene and freeze broad art changes after the four-wall pass. If behind, reduce target/effect counts and optional polish while protecting results, retry, readable instructions, and stable play. If the solo package is already accepted by October 20, trial only a small original-track beat bonus with a separate regression pass; otherwise rhythm follows the showcase. Waves, upgrades, external chart import, language switching and controllers/co-op stay outside the exhibition minimum. Do not replace the engine or broaden level scope.
+Freeze broad environment/art expansion now. The October 20 gate must include audible downloaded music, actual chart-driven targets/cues, firing-time judgement and hit rewards with the accepted UI loop. If timing work slips, defer cosmetics while continuing the rhythm work. Prepare controller configuration/hardware checks alongside lessons. Co-op may enter the candidate only if solo rhythm passes by October 20 and shared-screen input, simultaneous hits, pause/disconnect and retry pass by October 23; otherwise retain the accepted solo song mode. Waves, upgrades, general chart import, song selection, two-gamepad play and language switching follow the festival. Use the prepared single constant-tempo Beginner chart; a general importer is not a prerequisite.
 
-Budget approximately 6–8 remaining small lessons for the exhibition package: boundary correction and paint acceptance 1, bounded projectile paint 1, Canvas integration 1–2, Japanese font/instructions 1, packaging 1, playtests/fixes 1–2. Most sessions can target 45–90 minutes, but acceptance rather than lesson count controls readiness.
+Target identity/lifecycle, solo firing-time judgement and matched impact rewards are saved with user-reported cleanup and 10/20-point playtests. The main solo feature hookup is complete with incremental user-reported playtests; this is not a release acceptance claim. Remaining required work is the pointer-following gameplay reticle, complete-song synchronization/calibration, independent regression checks, Japanese readability, performance acceptance and packaging. Teach each core increment in small edits, then review it as one working checkpoint; a tiny snippet is not a complete feature or a promised lesson count. Use focused 45–90-minute work sessions where possible. Optional co-op adds device pairing, independent aiming/firing, shared outcomes and disconnect recovery; these must not consume the required solo acceptance window.
 
-## Rhythm and roguelite milestones
+## Lesson order and acceptance
+
+The next small learner lesson is a pointer-following gameplay reticle. The assistant prepares its transparent UI artwork; the learner connects its screen position and cursor state. Keep the existing mouse aim and shot judgement. Show the reticle and hide the system pointer only during active, unpaused play; restore the pointer on menus, pause, results, disable and focus loss. The Image must not intercept UI raycasts. Verify screen alignment at the supported resolutions and restore visibility across retry. A separate player-colored gamepad reticle belongs to the conditional input/co-op stage, not this presentation increment.
+
+The following two small lessons add requested firing feedback before the complete-song regression: a short paint/air shot sound below music volume, then restrained recoil of an explicit weapon visual child. Trigger both only after an accepted shot actually spawns. Do not move the gameplay camera, aiming root, muzzle or projectile direction for cosmetic recoil. Recover toward a cached resting local pose, bound repeated kicks and reset on pause/disable/retry. Prepare licensed audio with provenance and cap simultaneous shot voices so five-shots-per-second held fire does not mask timing cues. These are requested plans, not saved implementation; complete-song acceptance and the October 20 gate still take priority if integration causes regressions.
 
 | Order | Small increment | Exit criterion |
 |---|---|---|
-| 1 | Original-track clock and beat grid | Stable beat phase across the loop; explicit BPM/start/offset data; pause/retry reset together |
-| 2 | Beat feedback and shot judgement | Manual taps and held shots produce explainable early/on-time/late results at different frame rates |
-| 3 | Hit bonus and calibration | Judge on fire, award once on hit; distance does not shift judgement; hardware offset can be adjusted |
-| 4 | Three to five waves | Bounded spawning, completion and restart without leaked objects |
-| 5 | Three eligible upgrades | One-of-three selection, caps, correct reset and bounded interactions |
-| 6 | Integrated demo | One track, complete run/results/retry, stable Windows package and accurate documentation |
+| 1 | Menu/game switch and scheduled song clock | Interface studio loop; Start schedules downloaded song; the same origin drives full duration, pause and settlement; retry resets it |
+| 2 | Chart loading and cue on the song timeline | Prepared event times and cue use that origin; first-beat offset is explicit; no judgement before audio start |
+| 3 | Prepared chart previews/targets and accepted-shot judgement | Replace random refill with bounded chart scheduling; intro has no invented notes; UI/cadence rejections are not judged |
+| 4 | Carry event judgement to impact | Existing hit guard resolves once; one bonus per player per event; projectile distance does not shift judgement |
+| 5 | Song-end, pause, retry and calibration | Play the complete 123.429-second song and final event; pause around an event, retry repeatedly and measure signed calibration |
+| 6 | Selected feedback and Japanese readability | Apply only the approved small visual changes; demonstrate readable controls/timing and bounded effects |
+| 7 | Fresh Windows build | Complete song/chart round, offline audio/input and working pause/results/retry/quit |
+| 8 | Performance lesson, exhibition acceptance and candidate | Profile the standalone build, verify measured fixes, new-player tests, ten retries, 30-minute soak, versioned package and backup |
 
-Use the [downloaded chart references](MUSIC_AND_CHARTS.md) to study phrasing, density, tempo and offset conventions. Do not make a general-purpose importer a prerequisite for the first rhythm demo.
+Use the [prepared downloaded chart](MUSIC_AND_CHARTS.md) for the first runtime song. The preprocessing tool validates the pinned constant-tempo tap subset; unsupported timing/note types are rejected.
 
-After the exhibition baseline, estimate another 7–11 small lessons for the first one-track rhythm/roguelite demo: clock/judgement/bonus/calibration 3–4, waves/outcomes 1–2, upgrades/selection/reset 2–3, integrated playtests/fixes 1–2. This excludes additional songs, chart import, co-op and release polish. Adjust scope after acceptance; it is not a completion-date promise.
+Performance teaching is required before candidate packaging. Follow the [performance approach](GAME_DESIGN.md#performance-approach): measure a standalone build during a complete song first, distinguish CPU/GPU or allocation spikes, then teach one measured fix at a time and compare again. Check effect cleanup and bounded object counts across retries. Teach shadow/effect/render-cost tuning when GPU measurements justify it, and pooling only when repeated creation/destruction is a measured bottleneck. Keep 1080p/60 FPS as the exhibition target; 1440p is optional pending actual hardware measurements. Resolution compatibility checks do not prove sustained frame rate.
+
+Run [controller hardware preparation](CONTROLLER_SETUP.md) alongside the core lessons. After solo rhythm acceptance, teach one-player gamepad reticle/fire, then the second player with explicit pairing and shared outcomes. The October 23 acceptance gate, rather than a promised two-lesson implementation, determines whether co-op ships.
+
+The creator explicitly authorized the [concept variants V12](../Art/CONCEPT_VARIANTS_V12.md) cosmetic pass: multiple balloon colors/forms, matching particle pigment, random initial gun palettes and matching spray/flying paint are saved in the new scene. Projected/patterned surface impacts and fading remain learner follow-ups. See [game design](GAME_DESIGN.md#planned-paint-and-color-expansion) for behavior. Broad surface coverage and new cosmetic effects do not take priority over rhythm or controller acceptance.
+
+After the festival, extend the accepted foundation with general surface painting, remaining co-op work, waves, eligible upgrades and additional songs. These require separate acceptance.
 
 ## Working and release gates
 
 The learner writes core gameplay; the assistant maintains tools, configuration, assets, tests, documentation and website. Teach one playable increment at a time. Publishing a saved checkpoint does not authorize implementing missing gameplay.
 
-- Complete solo start/play/results/retry and pause/quit.
+| Owner | Work |
+|---|---|
+| Learner | Assets/Scripts gameplay: connect the pointer-following reticle with gameplay/menu cursor visibility, complete full-song/pause/retry verification, finish measured synchronization/calibration and optional input/pairing |
+| Assistant | Prepare UI/presentation assets and Japanese instruction text, preserve scene/configuration references, maintain input-action assets and editor/build tools, review saved increments, automate relevant checks, maintain English documentation, publish the website and package an accepted candidate |
+| Learner on actual hardware, assisted by checklists | Audible timing, physical Xbox/Beitong input, exhibition PC performance and new-player playtests |
+
+Reduce switching costs: one lesson changes one small core area, then the assistant checks the saved version and updates evidence. Reuse the four accepted Canvas screens and bound chart targets through their event lifecycle; keep original music for interfaces and the prepared downloaded song for gameplay. Stop broad art revisions until the candidate is stable. No gameplay is silently added by preparation tools.
+
+For each handoff, the learner saves the script and scene and reports the observed result. The assistant checks the saved implementation, supplies the next small edit and prepares non-gameplay work that does not depend on unfinished core logic. Hookup instructions must name the component/field and expected output. Record source review, user playtest and automated checks separately; website publication never marks a gameplay gate passed. Preserve all concurrent learner/art changes and publish only the intended website files for a website-only update.
+
+The required exhibition package is one full song, solo mouse/keyboard aim/fire, chart previews, target expiry, visible timing feedback, firing-time rhythm bonus resolved once on impact, working title/instructions/HUD/pause/results/retry/quit, Japanese controls, and accepted offline Windows operation. Measured performance, ten retries and a 30-minute soak are release gates. Additional room polish, arbitrary-surface painting/patterns, waves, upgrades, multiple songs and in-game language switching are deferred. Cosmetic entrance/recoil/squash effects ship only if already stable and regression-free.
+
+- Complete a solo rhythm start/play/results/retry loop and pause/quit, with accepted firing-time judgement and hit rewards.
+- Verify audible cue/chart alignment, full-song end, duplicate-hit protection and synchronized reset at different target distances/frame rates.
 - Verify target Windows hardware, Japanese glyphs, sound, input and offline launch.
 - Investigate inherited rendering-reference failures recorded in [Validation](../Project/VALIDATION.md).
 - Resolve asset licenses and retain attribution before release.

@@ -1,0 +1,28 @@
+Unity 6000.0.77f1 / URP 17.0.4; isolated current-source project; 2026-10-13.
+Baseline: Assets/Scenes/StudioCameraLighting.unity.
+Study: Assets/Scenes/StudioMaterialAppearance.unity.
+Sample render/review precedes promotion. Final saved-scene reload and nine aim-path checks passed.
+Play Mode: natural three-target spawn, programmatic existing-projectile hit/pop/+10 score, normal respawn and retry passed in both scenes. Synthetic mouse shooting remains unverified.
+Logs/MaterialAppearanceV11-Samples.log
+MATERIAL_SAMPLES_OK: one unchanged balloon mesh, metallic 0/smoothness .42; existing oak, 20 cm boards, aligned normal map and restrained gloss. Camera/lights/postprocessing unchanged.
+Logs/MaterialAppearanceV11-Refine.log
+MATERIAL_SAMPLE_REFINED_OK: .48 soft latex gloss, camera/light settings unchanged.
+Logs/MaterialAppearanceV11-Promote.log
+MATERIAL_APPEARANCE_SAVED_OK: reloaded study; unchanged camera/lights/postprocessing, 75 probes, cloned latex prefab, cream plaster, dry oak, three raised paint meshes and four-color weapon.
+Logs/MaterialAppearanceV11-ModelReview.log
+MATERIAL_APPEARANCE_SAVED_OK: reloaded study; unchanged camera/lights/postprocessing, 75 probes, cloned latex prefab, cream plaster, dry oak, three raised paint meshes and four-color weapon.
+MATERIAL_MODEL_REVIEW_OK: smooth alpha contours with physical paint rims; original rounded grip geometry retained with teal color; no blur/Bloom change.
+Logs/MaterialAppearanceV11-Grip.log
+MATERIAL_APPEARANCE_SAVED_OK: reloaded study; unchanged camera/lights/postprocessing, 75 probes, cloned latex prefab, cream plaster, dry oak, three raised paint meshes and four-color weapon.
+MATERIAL_GRIP_POLISH_OK: continuous teal grip/rear trim; no triangle-level dark material boundary or exaggerated micro-normal.
+Logs/MaterialAppearanceV11-Play.log
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+CAMERA_LIGHTING_PLAY_SCENE_OK Source score=10
+Synthetic mouse check did not fire/hit: playing=True, shooterEnabled=True, pointerOverUI=False, projectiles=0, currentMouseMatches=True.
+CAMERA_LIGHTING_PLAY_SCENE_OK CameraLighting copy score=10
+CAMERA_LIGHTING_PLAY_OK: source and copied scene; three natural spawns, projectile hit/score, respawn, retry. See PlayCheck.txt for mouse-input limitations.
+Logs/MaterialAppearanceV11-Final.log
+MATERIAL_APPEARANCE_SAVED_OK: reloaded study; unchanged camera/lights/postprocessing, 75 probes, cloned latex prefab, cream plaster, dry oak, three raised paint meshes and four-color weapon.
+MATERIAL_FINAL_OK: final reflection, saved scene, complete target motion bounds and nine camera/muzzle sphere-cast paths checked.
+Repository static audit: 806 unique asset GUIDs, paired metadata and 22 documentation files checked.
+Scope audit: 26 camera/light/render-settings/transform/physics/Canvas records identical to the V10 baseline; the cloned balloon visual reference is the intentional gameplay serialization exception.

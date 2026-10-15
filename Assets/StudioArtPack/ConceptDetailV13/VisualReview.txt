@@ -1,0 +1,4 @@
+Compared original CozyGraffitiStudio_Concept.png with fixed-layout before/after Unity game-camera renders.
+Warm mineral floor restores concept-style color separation and broad window-shadow shapes. Tins, crates, brushes, leaned paint studies and restrained peripheral floor pigment add workshop detail.
+First trial's white-clipped strip cores were rejected. Final cores use .60 emission gain with saturated teal/coral pigments, unchanged Bloom and existing lights; main splats use coordinated richer pigment copies.
+Original scene, source artwork, previous materials, camera/framing, gameplay and collision remain available. Added pieces are combined into 20 material batches, with no runtime behaviours or decorative colliders.

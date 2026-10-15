@@ -2,7 +2,62 @@
 
 The new pack is in `Assets/StudioArtPack/InterfaceV2`. Open `InterfaceGallery.unity` to inspect the layouts. The production gameplay scene is still `Assets/Scenes/PrototypeScene.unity`.
 
-**Status:** StartScreen and PauseScreen are instantiated in PrototypeScene with saved controller references and Start, Resume and Quit callbacks. Isolated method-driven checks pass for start, pause/resume and retry; the learner also reports a successful pause playtest. Results, score and time still use OnGUI. GameplayHUD and ResultsScreen remain presentation assets with sample text; their gameplay integration is pending. PlayerShooter's release/pointer checks are not saved. Do not add the gallery scene to the game build as a playable level.
+**Status:** StartScreen, PauseScreen, GameplayHUD and ResultsScreen are connected in PrototypeScene. Start/Resume/Quit/Play Again callbacks and live score/time/final-score Text values are saved; the old OnGUI display is removed. Isolated checks cover the Canvas flow, and the learner reports pause, HUD and new results playtests passed. PlayerShooter now has release/pointer guards, and the scene disables legacy PaintGunVfx. Final physical-input acceptance remains pending; prepared gamepad actions are not connected to gameplay. See the [validation record](../Project/VALIDATION.md) for evidence and limits. Do not add the gallery scene to the game build as a playable level.
+
+## On-beat feedback handoff
+
+The October 15 feedback assets are in `Assets/StudioArtPack/RhythmFeedback`. `OnBeatGlow.prefab` combines an expanding golden ring with twelve small sparkles. It uses an original procedural URP additive shader, without a texture download, realtime light, collider or runtime script. Visible particles last at most 0.42 seconds; emission is non-looping and uses scaled time so pause freezes the effect. Bloom is not required. Asset rendering and particle checks do not establish exhibition performance or gameplay integration.
+
+The learner owns the gameplay connection. In Balloon, add a serialized ParticleSystem reference named `onBeatGlowPrefab`. Inside the existing `bonusPoints > 0` impact branch, instantiate it at `effectPosition` with identity rotation and schedule its object for destruction after one second. Assign the new prefab on the actual PlayableBalloon prefab used by the spawner. Keep the existing pigment burst reference. This branch follows the accepted shot/target-id check and the balloon's one-hit guard; firing alone must not show the reward effect. Current nesting also requires the existing paint-burst reference to remain assigned.
+
+`OnBeatFeedback.prefab` is a separate, initially disabled UnityEngine.UI.Text component with the literal label `ON BEAT +20`, bundled Lato Bold and Raycast Target off. Its root stays active; the saved learner receiver shows the Text component after a rewarded impact, hides it after the creator-selected 1.45 seconds of active play, freezes its timer during pause, and resets it on retry. The asset does not implement that behavior. Parent it to GameplayHUD with bottom-center anchors, local scale (1, 1, 1), anchored position (0, 168), and size 440 x 64. Keep the countdown at (0, 80) and do not reuse its Text for reward feedback.
+
+`RhythmFeedbackBuilder` prepares missing assets only and refuses to overwrite existing feedback prefabs. Its scene-render verification is restricted to batch mode in an isolated project. The new shader/materials and particle settings were authored in code, with no new image-generation prompt or third-party image. Existing Lato licensing remains in Fonts/OFL.txt and [Credits](../../CREDITS.md). Production scene and learner source remain unchanged by asset preparation.
+
+October 16 connection checkpoint: the learner's event receiver and pause-aware timer are saved in RhythmChartReader; the creator has confirmed its saved 1.45-second duration. The assistant added the reward prefab instance to PrototypeScene's GameplayHUD with the rectangle above and connected onBeatFeedbackText to that scene Text. A direct reference to the Project prefab asset would not display the scene label. The component is hidden initially by design; inspect its Rect Transform through the Hierarchy instance, and confirm visible behavior with an on-beat impact after reloading the updated scene. See [Validation](../Project/VALIDATION.md) for check limits and backup details.
+
+## October 14 clarity and resolution support
+
+The five delivered prefabs now use bundled, dynamic Lato Regular/Bold fonts. A small CanvasTextResolutionRefresh presentation component requests appropriately sized glyphs and dirties text when the canvas pixel size/scale changes or a panel is re-enabled. Existing UnityEngine.UI.Text components and their IDs remain, so the controller's score/time/final-score references and button callbacks are compatible. No learner gameplay source or scene was changed in this pass.
+
+The reported screenshot shows soft text while the UI artwork remains sharper. An isolated 2560 x 1440 baseline render with the previous font was already clear: the exact live-editor artifact was not reproduced, and the old font was dynamic, not a fixed bitmap. This pass supplies deterministic embedded fonts and explicit resolution-change refreshing; the creator must check the originally affected Game view after import/restart.
+
+Keep one layout with Scale With Screen Size, reference 1600 x 900 and Match Width Or Height 0.5. Reference Resolution defines design coordinates, not the maximum rendering resolution. The full-screen background uses Envelope Parent, score/time retain upper-corner anchors, and central panels retain center anchors.
+
+- Checked render sizes: 1280 x 720, 1920 x 1080, 2560 x 1440, 1280 x 960 (4:3) and 3440 x 1440 (ultrawide). All five prefabs pass text-fit and viewport checks at each size; previews use the equivalent Canvas Scaler calculation in a camera render.
+- Windows defaults now allow window resizing and use a 1920 x 1080 windowed fallback. Existing full-screen-window mode remains, using the display's native desktop size. An in-game resolution picker is not implemented.
+- Editor Game-view fixed resolution and Scale are separate. 1x displays original pixels and may show scrollbars when the target is larger than the pane; use a fit zoom or Play Maximized to inspect the whole layout. Raising the target resolution does not add detail to the original background/button raster artwork.
+- An isolated Play Mode check passed glyph growth at scale factors 0.8, 1.2 and 1.6, plus saved Start/HUD/Resume/results/retry behavior. A [2K preview](../../Assets/StudioArtPack/InterfaceV2/Previews/StartScreen_1440p_clarity.png) is an actual render, not a live screenshot of the creator's Editor.
+
+Font license, pinned source URLs and hashes are in Fonts/OFL.txt and Fonts/provenance.json, with [Credits](../../CREDITS.md). Lato covers this Latin UI; Japanese/Chinese font coverage remains separate. [Unity Canvas Scaler](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/script-CanvasScaler.html) describes reference resolution and scaling.
+
+## Rhythm cue handoff
+
+`Prefabs/RhythmCue.prefab` is a passive UI plaque prepared for the next learner hookup. It reuses the existing cream/wood sprite and bundled Lato Bold, with a centered `BeatCueText` child initially displaying `READY`. The root is anchored bottom-center at (0, 80), size 400 x 84 in the existing reference canvas; text is 360 x 56 at 30 points. Both graphics have Raycast Target off, so the plaque does not block shooting. It has no scripts or Canvas of its own and introduces no judgement, timer or hit logic.
+
+In Edit Mode, drag this prefab under the existing GameplayHUD root, without adding another Canvas. After parenting, explicitly set the RhythmCue instance's anchor min/max to (0.5, 0), pivot (0.5, 0.5), anchored position (0, 80), local Z 0, scale (1, 1, 1) and size 400 x 84. Hierarchy dragging can leave instance transform overrides; do not assume the prefab defaults are still effective. Add `using UnityEngine.UI;` and a serialized `Text beatCueText` field in RhythmChartReader, then drag the plaque's BeatCueText child into that field. Save the scene. At this handoff the visible READY text is a placeholder; a later learner increment drives it from the original chart event time and the same song clock. Maintain a separate cue-event index: nextEventIndex already advances at the preview-spawn time, 0.8 seconds before the beat.
+
+Source-asset checks cover the prefab's eight object/component records, internal file references, reused sprite/font GUIDs, disabled raycasts and paired new metadata. The new plaque has not been rendered or independently imported in Unity in this pass; check READY placement in Play Mode before adding timing code. No existing HUD prefab, scene or Assets/Scripts file was changed to create it. Distinct on-beat text/flash feedback remains a later hookup from accepted impact, not from the firing log.
+
+The creator's subsequent Game-view screenshot showed the cue clipped at the lower left. PrototypeScene had the correct GameplayHUD parent and anchors but instance overrides at anchored X -800, Y 50 and scale 0.625. At the creator's explicit request, only these five values were corrected to X 0, Y 80 and scale 1; the full pre-edit scene is backed up under ignored .local-backups. Scene comparison confirmed all other lines unchanged. Reference-canvas calculations place the corrected rectangle inside 720p/1080p/1440p, 4:3 and ultrawide viewports; this is a geometry check, not a new Unity render or live Play Mode verification. Reload the saved scene after leaving Play Mode to see the disk correction.
+
+The subsequent learner source now implements UpdateBeatCue and calls it after the reader's pause/data guards. Its separate nextCueEventIndex advances on original event times; NEXT shows remaining song-clock seconds with one decimal, and ENDING covers the song tail after the last event. The Text reference is saved. The earlier READY-only description records the initial handoff; dynamic countdown code is now present, with live countdown/pause/retry confirmation still pending.
+
+## Current connection map
+
+| Scene object | Saved connection | Remaining work |
+|---|---|---|
+| StartScreen | startScreen; StartButton → BeginRound; QuitButton → QuitGame | Final physical-input acceptance |
+| PauseScreen | pauseScreen; ResumeButton → ResumeRound; QuitButton → QuitGame | Final physical-input acceptance |
+| GameplayHUD | gameplayHUD; ScoreValue → scoreText; TimeValue → timeText | Final graphical/full-round acceptance |
+| ResultsScreen | resultsScreen; FinalScoreValue → finalScoreText; hidden in Start and shown/written in EndRound | Final graphical/full-round acceptance |
+| ResultsScreen/Dialog/PlayAgainButton | RestartRound callback to the scene controller | Final physical-input acceptance |
+
+The finished state now shows ResultsScreen and its captured final score. The asset's sample 001250 is replaced by EndRound before the panel appears. Play Again reloads the scene and returns to Start. Unused DrawStartMenu/DrawPauseMenu methods remain in the learner source but do not render by themselves.
+
+There is one EventSystem and one controller. The four screen roots own separate canvases; no wrapper Canvas is needed. Keep RoundController outside UI roots that can be disabled. HUD raycast targets are off. The saved shooter uses its release flag and UI-pointer guard.
+
+The older PaintGunVfx remains in the gun prefab but is disabled on the production scene instance. Saved PlayerShooter guards control accepted projectiles and muzzle feedback. Do not add another raw-input effect listener.
 
 ## What changed
 
@@ -46,7 +101,7 @@ Import settings are already saved: Sprite, Multiple for the atlas, input alpha, 
 
 Every prefab has a Screen Space Overlay Canvas, Canvas Scaler set to Scale With Screen Size, reference 1600 × 900 and match 0.5. The start background uses Envelope Parent to fill other aspect ratios. HUD plaques anchor to the upper corners. Most decorative Images and all Text objects have Raycast Target off; buttons and modal dimmers retain it.
 
-Labels currently use Unity's built-in LegacyRuntime font through `UnityEngine.UI.Text`. This is deliberate so the examples need no font download or TMP import. A Chinese/Japanese version needs a suitable font and a fresh layout check; see [Localization](LOCALIZATION.md).
+Labels use bundled Lato Regular/Bold through UnityEngine.UI.Text; the clarity pass preserves existing Text component references. The earlier LegacyRuntime-font implementation is superseded. A Chinese/Japanese version still requires font coverage and layout checks; see [Localization](LOCALIZATION.md).
 
 ## Lesson 1: inspect and customize the start screen
 
@@ -61,7 +116,7 @@ Acceptance: title and instructions remain readable; Start and Quit retain their 
 
 ## Lesson 2: connect the existing start and quit actions
 
-Do this in a duplicate of PrototypeScene first. The following steps are learner work; they have not been applied to Assets/Scripts.
+The Start/Quit baseline below is already saved in PrototypeScene. Use these steps as reference when a connection is missing; do not add duplicate roots or listeners.
 
 1. Drag StartScreen.prefab into the scene as a root object. It already contains a Canvas: do not put it inside another Canvas.
 2. Create one EventSystem if none exists. Use **Input System UI Input Module**, with its default UI actions assigned. Keep only one active EventSystem.
@@ -77,7 +132,7 @@ Acceptance: the countdown, spawning and scoring wait for Start; the start screen
 
 ## Lesson 3: wire pause and results
 
-Add PauseScreen, ResultsScreen and GameplayHUD as separate root prefabs. Initially enable StartScreen only. Wire references to the actual scene instances.
+PauseScreen, GameplayHUD and ResultsScreen are connected. The following table describes their saved visibility rules. Use the remaining lesson steps as reference rather than adding duplicate roots or listeners. Initially enable StartScreen only.
 
 | State | Start | HUD | Pause | Results |
 |---|---|---|---|---|
