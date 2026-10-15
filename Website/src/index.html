@@ -39,7 +39,16 @@
         <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div></dl></div>
         <p class="scene-note">{{sceneNote}}</p>
       </div>
-      <div class="development-note"><h3>{{developmentTitle}}</h3><div><p>{{developmentBody}}</p><p class="small">{{laterBody}}</p></div></div>
+      <div class="development-note"><h3>{{developmentTitle}}</h3><div>
+        <p class="small development-updated"><time datetime="2026-10-15">{{developmentUpdated}}</time></p>
+        <p>{{developmentBody}}</p>
+        <dl class="progress-list">
+          <div><dt>{{savedTitle}}</dt><dd>{{savedBody}}</dd></div>
+          <div><dt>{{nextTitle}}</dt><dd>{{nextBody}}</dd></div>
+          <div><dt>{{checkpointTitle}}</dt><dd>{{checkpointBody}}</dd></div>
+        </dl>
+        <p>{{performanceBody}}</p><p class="small">{{laterBody}}</p>
+      </div></div>
     </section>
     <section class="festival-section" id="festival" aria-labelledby="festival-title">
       <div class="section festival-grid">

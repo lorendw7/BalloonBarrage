@@ -60,6 +60,11 @@ figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap
 .development-note { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
 .development-note p { color: var(--muted); }
 .development-note .small { margin-top: .8rem; }
+.development-note .development-updated { margin: 0 0 .8rem; }
+.progress-list { margin: 1.2rem 0; }
+.progress-list > div { padding: .8rem 0; border-top: 1px solid var(--line); }
+.progress-list dt { font-weight: 600; }
+.progress-list dd { margin-top: .3rem; color: var(--muted); }
 .festival-section { background: #e5ece0; }
 .festival-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; align-items: start; padding-top: 3rem; padding-bottom: 3rem; }
 .festival-copy p { margin-top: 1rem; }
