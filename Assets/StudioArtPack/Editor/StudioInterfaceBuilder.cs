@@ -21,7 +21,8 @@ public static class StudioInterfaceBuilder
     static readonly string[] SpriteNames = { "Button_Coral", "Button_Teal", "Button_Cream", "Panel_Paper", "Plaque_Score", "Plaque_Timer", "Icon_Play", "Icon_Pause", "Icon_Quit" };
     static Color Ink => Hex("303C39");
     static Color Muted => Hex("62574B");
-    static Font Font => Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+    static Font Font => AssetDatabase.LoadAssetAtPath<Font>(Root + "/Fonts/Lato-Regular.ttf");
+    static Font BoldFont => AssetDatabase.LoadAssetAtPath<Font>(Root + "/Fonts/Lato-Bold.ttf");
 
     [MenuItem("Tools/Balloon Studio/Build Interface V2 Assets")]
     public static void Build()
@@ -196,8 +197,9 @@ public static class StudioInterfaceBuilder
     }
     static Text Label(Transform parent,string name,string value,float x,float y,float w,float h,int size,Color color,FontStyle style=FontStyle.Normal)
     {
-        var text=Rect(parent,name,x,y,w,h).gameObject.AddComponent<Text>(); text.text=value; text.font=Font; text.fontSize=size;
-        text.color=color; text.fontStyle=style; text.alignment=TextAnchor.MiddleCenter; text.raycastTarget=false;
+        bool bold = style == FontStyle.Bold || style == FontStyle.BoldAndItalic;
+        var text=Rect(parent,name,x,y,w,h).gameObject.AddComponent<Text>(); text.text=value; text.font=bold?BoldFont:Font; text.fontSize=size;
+        text.color=color; text.fontStyle=bold?(style==FontStyle.BoldAndItalic?FontStyle.Italic:FontStyle.Normal):style; text.alignment=TextAnchor.MiddleCenter; text.raycastTarget=false;
         text.horizontalOverflow=HorizontalWrapMode.Wrap; text.verticalOverflow=VerticalWrapMode.Truncate; return text;
     }
     static void Action(Transform parent,string name,string title,string sprite,float x,float y,float w,float h)

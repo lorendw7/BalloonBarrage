@@ -18,7 +18,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
 | Assets/StudioArtPack/BalloonColors | Earlier prepared coral/gold latex materials; V12 connects its own six-pigment runtime set |
 | Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
-| Assets/StudioArtPack/Runtime | Authorized cosmetic selection/tint components; no new score, movement or rhythm rules |
+| Assets/StudioArtPack/Runtime | Cosmetic selection/tint components and one-time explicit static-room batching; no new score, movement or rhythm rules |
 | Assets/Scenes/StudioConceptVariants.unity | V12 cosmetic variant scene; paired lighting folder and appended Build Settings entry |
 | Assets/StudioArtPack/ConceptDetailV13 | Copied room pigments/strip/rug materials, procedural mineral floor, batched art supplies/paint studies, reflection and actual Unity previews |
 | Assets/Scenes/StudioConceptDetail.unity | Latest room-detail scene; paired lighting folder and appended Build Settings entry |
@@ -33,15 +33,20 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 - [Cover finish V9](COVER_FINISH_V9.md): current environment finish, offline lighting, tuning and capture evidence.
 - [Concept variants V12](CONCEPT_VARIANTS_V12.md): random cosmetic initialization, gun model and verified Unity capture/Play Mode scope.
 - [Concept studio detail V13](CONCEPT_DETAIL_V13.md): latest room color/detail pass, batched native supplies, mineral floor and comparison evidence.
-- [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals and muzzle effects.
+- [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals, muzzle effects and the prepared paint-shot audio/framing handoff.
 - [Balloon pop](BALLOON_POP_V2.md): latex-fragment particles.
 - [Paint-pop lesson](PAINT_POP_LESSON.md): connect combined fragments and paint droplets through the existing learner hook.
 - [Spray assets](SPRAY_ASSETS.md): wall decoration atlas and prefabs.
 - [Interface V2](INTERFACE_V2.md): current UI prefabs, score/timer display and learner integration steps.
+- [Aim reticle](INTERFACE_V2.md#aim-reticle-handoff): original native-UI prefab, prepared hidden HUD instance and explicit editor connection command; runtime following remains learner work.
 - [On-beat feedback](INTERFACE_V2.md#on-beat-feedback-handoff): bounded golden ring/sparkle prefab and a separate hidden reward Text for learner integration.
 - [Menu assets](MENU_ASSETS.md): original V1 background, slices and preserved prompts.
 - [Localization](LOCALIZATION.md): text, font and runtime requirements.
 - [Music and charts](../Design/MUSIC_AND_CHARTS.md): external study downloads.
+
+## Current website captures
+
+The website uses `Assets/Art/Previews/PrototypeScene_20261016.png` (2K room render, without UI or balloons) and the expandable `CreatorStats_20261016.png` (creator-provided gameplay/Stats screenshot). The October 10 capture remains an archive. Existing concept artwork and recorded prompts remain unchanged; see [Credits](../../CREDITS.md).
 
 ## Wall and reference import
 

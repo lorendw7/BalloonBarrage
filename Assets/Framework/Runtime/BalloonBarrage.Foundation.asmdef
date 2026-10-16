@@ -1,7 +1,7 @@
 {
     "name": "BalloonBarrage.Foundation",
     "rootNamespace": "BalloonBarrage.Foundation",
-    "references": [],
+    "references": ["Unity.ugui"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

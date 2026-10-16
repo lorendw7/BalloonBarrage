@@ -10,6 +10,16 @@ public class PaintProjectile : MonoBehaviour
 
     [SerializeField] private float lifetime = 2f;
 
+    public bool ShotWasOnBeat {  get; private set; }
+
+    public int TargetEventId { get; private set; } = -1;
+
+    public void InitializeShot(bool isOnBeat, int targetEventId)
+    {
+        ShotWasOnBeat = isOnBeat;
+        TargetEventId = targetEventId;
+    }
+
     private void Start()
     {
         Destroy(gameObject, lifetime);
@@ -36,7 +46,16 @@ public class PaintProjectile : MonoBehaviour
 
             if (balloon != null)
             {
-                balloon.Hit();
+                int bonusPoints = 0;
+
+                if (ShotWasOnBeat &&
+                    TargetEventId >= 0 &&
+                    balloon.EventId == TargetEventId)
+                {
+                    bonusPoints = 10;
+                }
+
+                balloon.Hit(bonusPoints);
             }
 
             Destroy(gameObject);

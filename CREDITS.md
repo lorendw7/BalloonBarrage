@@ -32,6 +32,8 @@ ConceptDetailV13 adds deterministic procedural mineral-floor texture data and na
 
 The five current WAVs in `Assets/Audio/Music` are original synthesized compositions produced with `Tools/Audio/compose_studio_music.py`. They use no third-party recordings, samples or songs. This statement applies to those files only and does not change any existing asset license.
 
+`Assets/Audio/SFX/PaintShot_AirPuff.wav` is original mathematical synthesis from `Tools/Audio/synthesize_paint_shot.py`, using fixed seed 20261016. The accompanying JSON records format, measured levels and the output hash. It contains no external recordings, song samples or AI-generated audio. Existing music/model restrictions are unchanged.
+
 ## UI fonts
 
 The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukasz Dziedzic / tyPoland, distributed under SIL Open Font License 1.1. Font binaries, the complete OFL notice and pinned source URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts`. Google Fonts revision: `5d3b76120a319730fda218cc7410174a462b32cb`. Source: [Google Fonts Lato](https://github.com/google/fonts/tree/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato). This license applies to the included font software; it does not alter song/model licenses. Lato fixes the current Latin-script UI; Japanese/Chinese font coverage remains separate localization work.
@@ -43,3 +45,7 @@ The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukas
 At the user's request, the original collection is included in `Assets/StreamingAssets/Rhythm/StepMania` for noncommercial development packages. The upstream README, chart credits, source manifest and NOTICE.txt accompany the unmodified files. Do not sell packages containing these songs or claim commercial clearance; upstream does not specify a precise CC license version. The local reference directory remains a download cache. See [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md) for provenance and packaging details.
 
 The October 13 prepared gameplay track uses Goin' Under by NegaRen, dance-single Beginner chart by Fraxtil. `Assets/Audio/Music/StepMania/GoinUnder.ogg` is a byte-identical runtime copy of the pinned audio. `Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json` is a derived event timeline: simultaneous tap lanes become one target event, with original lane metadata retained. It records the source revision, URLs, SHA-256 hashes and adaptation. No source audio or chart was edited; the same noncommercial restrictions and original notices apply. Asset preparation does not establish runtime integration.
+
+## October 16 development captures
+
+`Assets/Art/Previews/PrototypeScene_20261016.png` is an unedited 2560 × 1440 Unity camera render of the saved studio after fixed-room batching, without UI or balloons. `CreatorStats_20261016.png` is the creator-supplied Unity Game-view screenshot showing gameplay and Editor Stats. These are development evidence, not generated concept art or a standalone benchmark. All depicted assets retain their existing attribution and recorded prompts.

@@ -1,0 +1,1 @@
+Added source mesh parts: 241; final material batches: 20; added colliders: 0; added runtime behaviours: 0.

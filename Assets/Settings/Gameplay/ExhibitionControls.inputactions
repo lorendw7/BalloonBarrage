@@ -1,0 +1,145 @@
+{
+  "controlSchemes": [
+    {
+      "devices": [
+        {
+          "isOR": false,
+          "devicePath": "<Keyboard>",
+          "isOptional": false
+        },
+        {
+          "isOR": false,
+          "devicePath": "<Mouse>",
+          "isOptional": false
+        }
+      ],
+      "name": "KeyboardMouse",
+      "bindingGroup": "KeyboardMouse"
+    },
+    {
+      "devices": [
+        {
+          "isOR": false,
+          "devicePath": "<Gamepad>",
+          "isOptional": false
+        }
+      ],
+      "name": "Gamepad",
+      "bindingGroup": "Gamepad"
+    }
+  ],
+  "name": "ExhibitionControls",
+  "maps": [
+    {
+      "bindings": [
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Mouse>/position",
+          "processors": "",
+          "action": "AimPointer",
+          "groups": "KeyboardMouse",
+          "isComposite": false,
+          "name": "",
+          "id": "8540ef4c-e2fe-486d-bc74-98bb75c16d49"
+        },
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Gamepad>/rightStick",
+          "processors": "",
+          "action": "AimStick",
+          "groups": "Gamepad",
+          "isComposite": false,
+          "name": "",
+          "id": "d220bfe0-5001-4475-a941-b967f31042a9"
+        },
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Mouse>/leftButton",
+          "processors": "",
+          "action": "Fire",
+          "groups": "KeyboardMouse",
+          "isComposite": false,
+          "name": "",
+          "id": "b9d79adb-be18-4e22-bd7f-505631daa709"
+        },
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Gamepad>/rightTrigger",
+          "processors": "",
+          "action": "Fire",
+          "groups": "Gamepad",
+          "isComposite": false,
+          "name": "",
+          "id": "8b8e4a93-9439-496d-ba70-cbb3cfe47364"
+        },
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Keyboard>/escape",
+          "processors": "",
+          "action": "Pause",
+          "groups": "KeyboardMouse",
+          "isComposite": false,
+          "name": "",
+          "id": "9f4111b1-51d0-44cd-9eb6-42ce489fd480"
+        },
+        {
+          "interactions": "",
+          "isPartOfComposite": false,
+          "path": "<Gamepad>/start",
+          "processors": "",
+          "action": "Pause",
+          "groups": "Gamepad",
+          "isComposite": false,
+          "name": "",
+          "id": "b4115f87-a19b-4a86-bc53-a6230a9eadf5"
+        }
+      ],
+      "name": "Gameplay",
+      "id": "8215d170-b475-458d-a992-b558f4dc598c",
+      "actions": [
+        {
+          "initialStateCheck": true,
+          "expectedControlType": "Vector2",
+          "interactions": "",
+          "processors": "",
+          "type": "Value",
+          "name": "AimPointer",
+          "id": "9ce35147-1107-489e-8ef9-d1dcc1af70ea"
+        },
+        {
+          "initialStateCheck": true,
+          "expectedControlType": "Vector2",
+          "interactions": "",
+          "processors": "",
+          "type": "Value",
+          "name": "AimStick",
+          "id": "e0263898-0c20-405d-9a22-2d2a657e1774"
+        },
+        {
+          "initialStateCheck": false,
+          "expectedControlType": "Button",
+          "interactions": "",
+          "processors": "",
+          "type": "Button",
+          "name": "Fire",
+          "id": "f08e6039-060d-45ec-8a51-092dd9f13641"
+        },
+        {
+          "initialStateCheck": false,
+          "expectedControlType": "Button",
+          "interactions": "",
+          "processors": "",
+          "type": "Button",
+          "name": "Pause",
+          "id": "5b641382-c99a-4cbe-b896-22b72bbb47da"
+        }
+      ]
+    }
+  ]
+}
+

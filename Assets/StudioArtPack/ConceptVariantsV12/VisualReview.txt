@@ -1,0 +1,4 @@
+Reviewed original website studio/balloon/gun concept files and actual Unity room/gallery renders.
+New horizontal clear reservoir, cream receiver, thick open muzzle and gold straps accepted as closer silhouettes.
+Realtime shadow reception toggle did not resolve near-field stippling. A temporary SSAO-off comparison did; final custom URP Lit derivative omits AO sampling for the held gun only, retaining room AO and normal lighting/shadows.
+Copied beam bounds recomputed and front-beam visual placed ahead of cream column caps; original collider fields/transforms retained. Original scenes and assets retained. Glass/latex remain approximations; physical input and performance unverified.

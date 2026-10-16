@@ -1,0 +1,774 @@
+{
+  "title": "Goin' Under",
+  "artist": "NegaRen",
+  "chartAuthor": "Fraxtil",
+  "difficulty": "Beginner",
+  "stepType": "dance-single",
+  "bpm": 210.0,
+  "sourceOffsetSeconds": 0.0,
+  "firstBeatOffsetSeconds": -0.0,
+  "events": [
+    {
+      "id": 0,
+      "beat": 32.0,
+      "timeSeconds": 9.142857143,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 1,
+      "beat": 35.0,
+      "timeSeconds": 10.0,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "beat": 40.0,
+      "timeSeconds": 11.428571429,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "beat": 43.0,
+      "timeSeconds": 12.285714286,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "beat": 48.0,
+      "timeSeconds": 13.714285714,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "beat": 51.0,
+      "timeSeconds": 14.571428571,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "beat": 56.0,
+      "timeSeconds": 16.0,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "beat": 59.0,
+      "timeSeconds": 16.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "beat": 64.0,
+      "timeSeconds": 18.285714286,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 9,
+      "beat": 67.0,
+      "timeSeconds": 19.142857143,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "beat": 72.0,
+      "timeSeconds": 20.571428571,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 11,
+      "beat": 75.0,
+      "timeSeconds": 21.428571429,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "beat": 80.0,
+      "timeSeconds": 22.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 13,
+      "beat": 83.0,
+      "timeSeconds": 23.714285714,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 14,
+      "beat": 88.0,
+      "timeSeconds": 25.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 15,
+      "beat": 91.0,
+      "timeSeconds": 26.0,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 16,
+      "beat": 96.0,
+      "timeSeconds": 27.428571429,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 17,
+      "beat": 100.0,
+      "timeSeconds": 28.571428571,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 18,
+      "beat": 104.0,
+      "timeSeconds": 29.714285714,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 19,
+      "beat": 108.0,
+      "timeSeconds": 30.857142857,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 20,
+      "beat": 112.0,
+      "timeSeconds": 32.0,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 21,
+      "beat": 116.0,
+      "timeSeconds": 33.142857143,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 22,
+      "beat": 120.0,
+      "timeSeconds": 34.285714286,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 23,
+      "beat": 128.0,
+      "timeSeconds": 36.571428571,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 24,
+      "beat": 132.0,
+      "timeSeconds": 37.714285714,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 25,
+      "beat": 136.0,
+      "timeSeconds": 38.857142857,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 26,
+      "beat": 140.0,
+      "timeSeconds": 40.0,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 27,
+      "beat": 144.0,
+      "timeSeconds": 41.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 28,
+      "beat": 148.0,
+      "timeSeconds": 42.285714286,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 29,
+      "beat": 152.0,
+      "timeSeconds": 43.428571429,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 30,
+      "beat": 160.0,
+      "timeSeconds": 45.714285714,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 31,
+      "beat": 164.0,
+      "timeSeconds": 46.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 32,
+      "beat": 168.0,
+      "timeSeconds": 48.0,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 33,
+      "beat": 172.0,
+      "timeSeconds": 49.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 34,
+      "beat": 176.0,
+      "timeSeconds": 50.285714286,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 35,
+      "beat": 180.0,
+      "timeSeconds": 51.428571429,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 36,
+      "beat": 184.0,
+      "timeSeconds": 52.571428571,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 37,
+      "beat": 188.0,
+      "timeSeconds": 53.714285714,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 38,
+      "beat": 192.0,
+      "timeSeconds": 54.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 39,
+      "beat": 196.0,
+      "timeSeconds": 56.0,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 40,
+      "beat": 200.0,
+      "timeSeconds": 57.142857143,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 41,
+      "beat": 204.0,
+      "timeSeconds": 58.285714286,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 42,
+      "beat": 208.0,
+      "timeSeconds": 59.428571429,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 43,
+      "beat": 212.0,
+      "timeSeconds": 60.571428571,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 44,
+      "beat": 216.0,
+      "timeSeconds": 61.714285714,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 45,
+      "beat": 220.0,
+      "timeSeconds": 62.857142857,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 46,
+      "beat": 224.0,
+      "timeSeconds": 64.0,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 47,
+      "beat": 228.0,
+      "timeSeconds": 65.142857143,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 48,
+      "beat": 232.0,
+      "timeSeconds": 66.285714286,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 49,
+      "beat": 236.0,
+      "timeSeconds": 67.428571429,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 50,
+      "beat": 240.0,
+      "timeSeconds": 68.571428571,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 51,
+      "beat": 244.0,
+      "timeSeconds": 69.714285714,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 52,
+      "beat": 248.0,
+      "timeSeconds": 70.857142857,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 53,
+      "beat": 256.0,
+      "timeSeconds": 73.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 54,
+      "beat": 260.0,
+      "timeSeconds": 74.285714286,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 55,
+      "beat": 264.0,
+      "timeSeconds": 75.428571429,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 56,
+      "beat": 268.0,
+      "timeSeconds": 76.571428571,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 57,
+      "beat": 272.0,
+      "timeSeconds": 77.714285714,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 58,
+      "beat": 276.0,
+      "timeSeconds": 78.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 59,
+      "beat": 280.0,
+      "timeSeconds": 80.0,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 60,
+      "beat": 288.0,
+      "timeSeconds": 82.285714286,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 61,
+      "beat": 291.0,
+      "timeSeconds": 83.142857143,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 62,
+      "beat": 296.0,
+      "timeSeconds": 84.571428571,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 63,
+      "beat": 299.0,
+      "timeSeconds": 85.428571429,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 64,
+      "beat": 304.0,
+      "timeSeconds": 86.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 65,
+      "beat": 307.0,
+      "timeSeconds": 87.714285714,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 66,
+      "beat": 312.0,
+      "timeSeconds": 89.142857143,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 67,
+      "beat": 315.0,
+      "timeSeconds": 90.0,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 68,
+      "beat": 320.0,
+      "timeSeconds": 91.428571429,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 69,
+      "beat": 323.0,
+      "timeSeconds": 92.285714286,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 70,
+      "beat": 328.0,
+      "timeSeconds": 93.714285714,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 71,
+      "beat": 331.0,
+      "timeSeconds": 94.571428571,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 72,
+      "beat": 336.0,
+      "timeSeconds": 96.0,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 73,
+      "beat": 339.0,
+      "timeSeconds": 96.857142857,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 74,
+      "beat": 344.0,
+      "timeSeconds": 98.285714286,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 75,
+      "beat": 347.0,
+      "timeSeconds": 99.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 76,
+      "beat": 352.0,
+      "timeSeconds": 100.571428571,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 77,
+      "beat": 356.0,
+      "timeSeconds": 101.714285714,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 78,
+      "beat": 360.0,
+      "timeSeconds": 102.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 79,
+      "beat": 364.0,
+      "timeSeconds": 104.0,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 80,
+      "beat": 368.0,
+      "timeSeconds": 105.142857143,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 81,
+      "beat": 372.0,
+      "timeSeconds": 106.285714286,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 82,
+      "beat": 376.0,
+      "timeSeconds": 107.428571429,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 83,
+      "beat": 380.0,
+      "timeSeconds": 108.571428571,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 84,
+      "beat": 384.0,
+      "timeSeconds": 109.714285714,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 85,
+      "beat": 388.0,
+      "timeSeconds": 110.857142857,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 86,
+      "beat": 392.0,
+      "timeSeconds": 112.0,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 87,
+      "beat": 396.0,
+      "timeSeconds": 113.142857143,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 88,
+      "beat": 400.0,
+      "timeSeconds": 114.285714286,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 89,
+      "beat": 404.0,
+      "timeSeconds": 115.428571429,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 90,
+      "beat": 408.0,
+      "timeSeconds": 116.571428571,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 91,
+      "beat": 412.0,
+      "timeSeconds": 117.714285714,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 92,
+      "beat": 416.0,
+      "timeSeconds": 118.857142857,
+      "lanes": [
+        0,
+        3
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "trackId": "stepmania-goin-under-beginner",
+  "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
+  "durationSeconds": 123.428571429,
+  "audioSampleCount": 5443200,
+  "audioSampleRate": 44100,
+  "loop": false,
+  "sourceRevision": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
+  "sourceAudioPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/Goin' Under/Goin' Under.ogg",
+  "sourceChartPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/Goin' Under/Goin' Under.ssc",
+  "sourceAudioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+  "sourceChartSha256": "d29fa1147bb9018b04ab1bfdbb7ef867d70baa2a1f4d748b54af7c00c377dac5",
+  "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ogg",
+  "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ssc",
+  "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared.",
+  "adaptation": "Full song. One timed balloon event per tap row; simultaneous lanes share one event. Original lanes retained as provenance, not screen coordinates. Gameplay not implemented."
+}

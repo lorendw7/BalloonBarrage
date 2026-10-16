@@ -1,0 +1,82 @@
+Unity 6000.0.77f1
+Source Assets/Scenes/StudioCameraLighting.unity
+Retain camera, lighting and postprocessing. Original asset bytes are not modified.
+Mesh Original_Blaster_M | enabled False | mesh blaster-m | vertices 574 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.08, 0.17, 0.31) | world scale (0.50, 0.50, 0.50)
+Material colormap | Universal Render Pipeline/Lit | metallic 0 | smoothness 0
+Mesh PaintReservoir | enabled False | mesh Capsule | vertices 550 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 1.00, 0.50) | world scale (0.06, 0.05, 0.06)
+Material Teal | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.48
+Mesh Lid | enabled False | mesh Cylinder | vertices 88 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 1.00, 0.50) | world scale (0.06, 0.01, 0.06)
+Material Gold | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.48
+Mesh CanisterMount | enabled False | mesh Cube | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.05, 0.03, 0.05)
+Mesh PaintNozzle | enabled False | mesh Cylinder | vertices 88 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 1.00, 0.50) | world scale (0.02, 0.01, 0.02)
+Mesh CreamEnamel | enabled True | mesh Gun_CreamEnamel | vertices 1452 | local bounds Center: (0.00, 0.11, -0.07), Extents: (0.07, 0.13, 0.16) | world scale (0.50, 0.50, 0.50)
+Material CreamEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh CharcoalRubber | enabled True | mesh Gun_CharcoalRubber | vertices 12342 | local bounds Center: (0.00, -0.03, -0.10), Extents: (0.08, 0.15, 0.15) | world scale (0.50, 0.50, 0.50)
+Material CharcoalRubber | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh SatinBrass | enabled True | mesh Gun_SatinBrass | vertices 14357 | local bounds Center: (0.00, 0.06, 0.07), Extents: (0.08, 0.26, 0.27) | world scale (0.50, 0.50, 0.50)
+Material SatinBrass | Universal Render Pipeline/Lit | metallic 0.9 | smoothness 1
+Mesh BrushedSteel | enabled True | mesh Gun_BrushedSteel | vertices 7822 | local bounds Center: (0.00, 0.04, 0.07), Extents: (0.08, 0.11, 0.27) | world scale (0.50, 0.50, 0.50)
+Material BrushedSteel | Universal Render Pipeline/Lit | metallic 0.9 | smoothness 1
+Mesh TealEnamel | enabled True | mesh Gun_TealEnamel | vertices 1972 | local bounds Center: (0.00, 0.16, -0.08), Extents: (0.07, 0.15, 0.09) | world scale (0.50, 0.50, 0.50)
+Material TealEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh CoralEnamel | enabled True | mesh Gun_CoralEnamel | vertices 1452 | local bounds Center: (0.00, 0.22, -0.11), Extents: (0.02, 0.01, 0.00) | world scale (0.50, 0.50, 0.50)
+Material CoralEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh OchreEnamel | enabled True | mesh Gun_OchreEnamel | vertices 726 | local bounds Center: (0.00, 0.22, -0.11), Extents: (0.00, 0.01, 0.00) | world scale (0.50, 0.50, 0.50)
+Material OchreEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh MainWall | enabled True | mesh 000_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (14.00, 8.00, 0.20)
+Material MineralCreamPlaster | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.12
+Mesh Floor | enabled True | mesh 001_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (14.00, 0.20, 12.00)
+Material NaturalOakFloor | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.26
+Mesh LeftWall | enabled True | mesh 002_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.20, 8.00, 12.00)
+Mesh RightWall | enabled True | mesh 003_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.20, 8.00, 12.00)
+Material IvoryCeiling | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.1
+Material NaturalJoinery | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material SatinOak | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Sprite Graffiti_Cyan_Back | sprite GraffitiSplats_Atlas_1 | position (-3.35, 1.35, 9.89) | bounds Center: (-3.35, 1.35, 9.89), Extents: (1.25, 1.25, 0.05)
+Material Sprite-Unlit-Default | Universal Render Pipeline/2D/Sprite-Unlit-Default | metallic -1 | smoothness -1
+Sprite Graffiti_Yellow_Brush | sprite GraffitiSplats_Atlas_6 | position (3.00, -1.50, 9.88) | bounds Center: (3.00, -1.50, 9.88), Extents: (1.18, 1.18, 0.05)
+Sprite Graffiti_Red_Dots | sprite GraffitiSplats_Atlas_4 | position (3.20, 1.65, 9.87) | bounds Center: (3.20, 1.65, 9.87), Extents: (0.98, 0.98, 0.04)
+Material TealLatex | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.64
+Material M_String_Dark | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.5
+Material WindowView | Universal Render Pipeline/Unlit | metallic -1 | smoothness -1
+Material Charcoal | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.22
+Material BalloonPoster | Universal Render Pipeline/Unlit | metallic -1 | smoothness -1
+Material Coral | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.58
+Material Cream | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.2
+Material Teal | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.58
+Material Gold | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.5
+Material Terracotta | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.22
+Material Leaf | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.22
+Material FoliageSage | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.32
+Material FoliageForest | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.32
+Material Graphite | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.38
+Material LavenderPaint | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.27
+Material DeepTeal | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.28
+Material TealTube | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.35
+Material CoralTube | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.35
+Material CreamPaint | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.27
+Material IndigoPaint | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.27
+Material UnprimedCanvas | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material Woven_IndigoPaint | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material Woven_CoralEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material Woven_OchreEnamel | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Mesh FloorPaint | enabled True | mesh 015_LightmapMesh | vertices 544 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.70, 0.01, 0.95)
+Material InkPaint | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.27
+Material LuminousSkylight | Universal Render Pipeline/Unlit | metallic -1 | smoothness -1
+Material NicheTeal | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.22
+Material GlazedTerracotta | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.32
+Material WovenOatLinen | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material DrawingPaper | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.12
+Material IvoryGlaze | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.68
+Material CoffeeSurface | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.76
+Material WarmCork | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.08
+Material PaperEdges | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.08
+Mesh TrayFloor | enabled True | mesh 004_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (1.15, 0.07, 0.67)
+Mesh OakWallSkirting | enabled True | mesh 004_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.12, 0.24, 10.00)
+Mesh BackWall | enabled True | mesh 089_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (14.00, 8.00, 0.20)
+Mesh LeftWallReturn | enabled True | mesh 090_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.20, 8.00, 7.90)
+Mesh RightWallReturn | enabled True | mesh 091_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (0.20, 8.00, 7.90)
+Mesh FloorReturn | enabled True | mesh 092_LightmapMesh | vertices 24 | local bounds Center: (0.00, 0.00, 0.00), Extents: (0.50, 0.50, 0.50) | world scale (14.00, 0.20, 7.90)
+Material CabinetTeal | Universal Render Pipeline/Lit | metallic 0 | smoothness 1
+Material AgedBrass | Universal Render Pipeline/Lit | metallic 0.9 | smoothness 1
+Material VineStems | Universal Render Pipeline/Lit | metallic 0 | smoothness 0.3

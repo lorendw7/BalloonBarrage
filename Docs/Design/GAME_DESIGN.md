@@ -8,6 +8,19 @@ BalloonBarrage combines free shooting, balloon crowds, beat bonuses, and rogueli
 
 Windows solo is the first acceptance baseline. A fixed camera and shared gallery avoid movement and split-screen complexity. The creator selected P1 keyboard/mouse plus P2 one gamepad, and owns one Xbox and one Beitong controller. Prepare input support alongside the rhythm lessons; integrate shared-screen co-op after the solo rhythm checkpoint. Mobile, online multiplayer, independent dual mice and split-screen are outside current scope.
 
+## Whole-game loop and mode boundaries
+
+The accepted foundation is title/instructions → one complete song → results → retry/title. Keep free aiming, optional held fire, musical bonuses and visible paint feedback readable throughout that loop. The intended later game adds song/difficulty selection and local records; a separate run mode can connect complete-song stages through upgrade choices. These additions remain proposals until implemented and accepted through the roadmap.
+
+| Mode | Intended experience | State and scoring boundary |
+|---|---|---|
+| Exhibition / standard song | One selected complete song, initially the prepared Goin' Under chart | Existing base/on-beat score rules; no run upgrades; complete-song end owns settlement |
+| Local co-op | Two independently controlled reticles in the same studio and song | Shared score and one consumed target outcome; projectile player identity supports later contribution statistics |
+| Roguelite run | Short sequence of complete-song stages with a small upgrade pool | Upgrade choices between songs; run state resets on retry; records separated from standard songs |
+| Practice / free paint | Possible later place to learn aim or decorate without score pressure | Separate from chart accuracy and competitive records; not a prerequisite for the first release |
+
+Color, sound, light and paint should make an accepted action easier to understand. They must not silently alter timing rules, move the logical muzzle through the environment or obscure the next target. Settings, localization and records support the accepted loop rather than requiring an online service. The [roadmap](ROADMAP.md) owns milestones, dependencies, priorities and release gates.
+
 ## Exhibition slice
 
 The required October showcase is a playable rhythm shooting demo using downloaded music and a prepared chart. Studio music belongs to interfaces; gameplay uses one complete non-looping song. Start with Goin' Under / Beginner, about 123.429 seconds. Switching, full-song DSP timing, 0.8-second chart previews, target binding/cleanup, solo firing-time judgement and matched-target impact rewards are saved. The learner reports cleanup and ordinary/on-beat 10/20-point playtests passed; no independent Unity check of these latest increments is recorded. The separate-index countdown and 35-percent enlarged on-beat paint burst are also saved, with learner-reported playtests passed. Golden ring/sparkle and temporary reward Text are now connected with learner-reported display/automatic-hide acceptance. The creator selected a 1.45-second display duration, matching the saved timer; full-song calibration and independent acceptance remain pending. Keep free aiming/held fire, Japanese instructions, pause/resume, results, quit and retry. Reset score, event judgements, audio origin and targets/projectiles each round. The older local Windows ZIP still uses its five-second test scene.
@@ -32,9 +45,9 @@ Pause/resume and retry must restore song, timer and chart scheduling together. D
 
 ## Feedback and aiming targets
 
-The creator requested a pointer-following reticle, matching paint-shot audio and gentle weapon recoil on October 16. These remain planned learner increments. Reticle visibility follows active/unpaused play while the system pointer returns for menus, pause, results and focus loss. Short shot audio plays below the music only after accepted firing; bound overlapping voices. Recoil moves only an explicit weapon visual child and restores its resting pose, preserving the camera, aiming root, muzzle and projectile direction. Verify held fire, pause and retry before including these in the exhibition build. See the roadmap for teaching order.
+The pointer-following reticle, cursor lifecycle and matching paint-shot audio are saved, with creator-reported spot playtests passed. Cosmetic recoil is also saved: cache the resting local pose in Awake, apply a bounded 0.035 m backward displacement and 6-degree local pitch per accepted shot, and recover in LateUpdate with exponential smoothing at rate 18. Pause holds recovery. Explicit pose restoration on disable/end is not yet implemented, and physical-input recoil acceptance remains pending. Reticle visibility follows active/unpaused play while the system pointer returns for menus, pause, results and focus loss. Short shot audio plays below the music only after accepted firing; bound overlapping voices. Recoil moves only an explicit weapon visual child and restores its resting pose, preserving the camera, aiming root, muzzle and projectile direction. Verify held fire, pause and retry before including these in the exhibition build. See the roadmap for teaching order.
 
-These are planned learner changes, except the connected burst and current physics motion. Keep Rigidbody motion and collision on the root. Cosmetic transforms belong to explicit visual children; never restore a root transform-position oscillator over the existing dynamic Rigidbody.
+The additional balloon animation and surface-paint behaviors below remain planned, beyond the connected burst, saved recoil and current physics motion. Keep Rigidbody motion and collision on the root. Cosmetic transforms belong to explicit visual children; never restore a root transform-position oscillator over the existing dynamic Rigidbody.
 
 | Effect | Proposed implementation and initial tuning | Acceptance |
 |---|---|---|
@@ -46,13 +59,23 @@ These are planned learner changes, except the connected burst and current physic
 
 Existing PaintPop variants emit at most 32 particles per burst, have short non-looping lifetimes and a two-second fallback cleanup. Retain bounded firing/refill, measure concurrent effects and only add pooling or further effects if measured object counts/frame times justify them. If behind schedule, defer entrance/hit squash, extra surfaces and additional art while protecting the playable rhythm loop.
 
-## First rhythm/roguelite demo
+## Post-festival rhythm/roguelite prototype
 
-Proposed scope: one track, three to five waves, at least three eligible upgrades, and a complete results/retry loop. Between waves, pause combat for one-of-three upgrade selection. Start with normal one-hit balloons; introduce armored, splitter, chain, and elite targets incrementally.
+Proposed first slice: about three complete-song stages, initially reusing one approved song if necessary, a small pool that can offer three eligible upgrades, and a complete run-results/retry loop. Start with normal one-hit balloons, then introduce one clearly signaled armored or bounded splitter/chain rule at a time. A larger library, elite encounters and additional combinations follow playtesting rather than defining the minimum prototype.
+
+Musical encounter phases may follow authored phrases within a song, but the audio and chart clock continue uninterrupted. Show one-of-three upgrade selection between complete-song stages. Do not pause a song mid-phrase to offer an upgrade menu or treat randomly inserted targets as original chart notes. The exhibition standard-song mode remains available without run upgrades.
 
 Candidate upgrades include cadence, spread, piercing, chains, area burst, freeze, critical hits, and shields. Define caps, eligible offers, ownership, and chain termination before adding combinations. Reset run upgrades on retry; initially persist only settings and best scores. A recorded random seed may aid debugging without promising cross-version determinism.
 
-Escaped-target pressure and final-wave victory are proposals for later playtests. They are not rules of the timed exhibition challenge.
+The initial run can end after its authored stages with a final score; health, escaped-target pressure and elimination are later design proposals, not existing timed-challenge rules. Secondary projectiles/chains must not duplicate the primary event's rhythm reward. Define co-op ownership and shared/global effect budgets before applying upgrades to both players.
+
+## Songs, results and local progression
+
+A proposed compact content target is two or three rights-checked songs with approachable and standard chart choices. Reuse the accepted track while testing the selection workflow. Song, chart, difficulty and rules version need stable identities so the audio, event list, attribution and saved record always agree. Preserve complete-song intros/endings and the existing timing subset until additional timing/note types are explicitly supported.
+
+Later results can distinguish ordinary hits, on-beat hits and unanswered chart events, with each event resolved once. A missed projectile and an unanswered chart event are different statistics. Current cleanup is not a formal Miss counter, and current scoring does not implement combo or accuracy. Define their denominators, ordering and thresholds before displaying them; judge firing time first but commit a successful reward only after the matching impact. Recheck those rules for target travel, co-op and chain/piercing upgrades.
+
+Persist only intended settings and records, separated by song/chart, difficulty, solo/co-op/run mode and scoring rules. Missing or damaged save data must fall back safely. Unlocks, currency and permanent upgrades are optional future decisions; they must not block replaying the small accepted content set. Commercial song clearance remains separate from availability in the authorized noncommercial development bundle.
 
 ## Co-op and localization
 
@@ -75,6 +98,6 @@ Retain source artwork and attribution. V12's authorized cosmetic selection is is
 
 ## Performance approach
 
-Target 1080p at 60 FPS on the exhibition PC, subject to measurement. Measure concurrent chart-driven targets after event-window expiry is implemented, including dense sections and unanswered notes. Higher-count trials are experiments, not proven capacity; the lesson removing the fixed count cap does not prove performance or implement cleanup.
+The creator's current performance target is 2560 x 1440 at 120 FPS on the exhibition PC, an 8.33 ms frame budget, subject to sustained measurement. Distinguish Editor Game-view observations from standalone-player CPU/GPU timings and confirm dense passages, held fire, repeated effects and frame-time spikes. October 16 creator screenshots show 36.7 FPS before fixed-room batching and 452.9 FPS afterward at 2K; the latest snapshot exceeds the target, while whole-song stability and standalone acceptance remain pending. Higher-count trials are experiments, not proven capacity; removing the fixed count cap does not prove performance or implement cleanup.
 
 Record CPU/GPU frame time, allocations, live object counts, audio voices, and particle/decal counts. Cap targets and feedback first; add pooling only when a measured bottleneck justifies it. Pooling must reset scale, collider state, pop flags, and ownership. Resolve simultaneous hits once and bound chains. Decorative strings and props should not add gameplay colliders or unnecessary realtime shadows.

@@ -2,9 +2,7 @@
 
 The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
 
-This publication updates English documentation and the trilingual website. Saved learner gameplay and scene work remain local; published progress describes that local checkpoint rather than a new committed gameplay revision or Windows release. Referenced documentation evidence is included so repository links resolve.
-
-The October 16 website update records saved chart-driven spawning, target cleanup, 10/20-point impact rewards, a beat countdown, golden glow and a creator-selected 1.45-second reward label. It distinguishes creator-reported spot playtests from pending full-song rhythm/calibration/performance acceptance and from published Windows packages. The dated prototype image remains an archive. Delivery scope and ownership are maintained in [Roadmap](../Design/ROADMAP.md); website dates are targets, not evidence that a gameplay acceptance gate passed. A website-only publication commits only its reviewed files, preserving concurrent learner source, art and scene changes.
+The October 16 source publication includes all saved gameplay, scenes, assets, tools, English documentation and the trilingual website authorized by the creator. It does not create or accept a new Windows release. The site separates saved implementation, creator-reported playtests, Editor performance observations and delivery targets. [Roadmap](../Design/ROADMAP.md) owns scope and deadlines; [Validation](VALIDATION.md) owns evidence.
 
 ## Build and preview
 
@@ -18,7 +16,7 @@ node Website/scripts/serve.mjs
 
 Preview at http://127.0.0.1:4173/. Add `--offline` to the build command when release lookup is unavailable. Offline/API-failure status is unknown, not proof that no release exists. Generated `Website/dist` stays ignored.
 
-`Website/assets.json` selects canonical project artwork, including the October 10 prototype camera capture. The build rejects LFS pointers and copies images into output without adding another committed source copy. Label concepts as concepts; the runtime camera capture excludes UI. Website strings live in `Website/src/strings.mjs`, separately from game strings.
+`Website/assets.json` selects canonical project artwork, including the October 16 2K studio camera render and creator-provided Game-view Stats screenshot. The build rejects LFS pointers and copies images into output without adding another committed source copy. Label concepts as concepts; the studio render excludes UI and balloons, while the expandable Game-view screenshot includes the actual HUD and Stats. FPS numbers are individual Editor observations, not sustained standalone claims. Website strings live in `Website/src/strings.mjs`, separately from game strings.
 
 ## Publication and download selection
 

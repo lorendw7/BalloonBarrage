@@ -19,6 +19,24 @@ Reuse existing wall splats and latex fragments. Paint impact and balloon rupture
 Recorded prompts below describe the concept, then the effects atlas.
 
 
+## Paint-shot sound and held-gun framing
+
+The October 16 handoff supplies `Assets/Audio/SFX/PaintShot_AirPuff.wav`: an original 175 ms mono PCM16/44.1 kHz trigger-and-paint sound, currently revision 3. `Tools/Audio/synthesize_paint_shot.py` records its fixed seed, processing, level measurements and SHA-256 in the accompanying `PaintShot_Provenance.json`, retaining earlier revision hashes. It uses no external recordings or song samples. This is a firing sound; balloon rupture and surface-impact sounds remain separate.
+
+In PrototypeScene, `PaintGun_M/PaintShotAudio` is a dedicated AudioSource with the clip assigned: volume 0.50, pitch 1, Spatial Blend 0, Doppler 0, reverb mix 0, Play On Awake off, Loop off, and Ignore Listener Pause off. Import uses PCM, Decompress On Load and preloaded audio. One short source with `Play()` bounds this lesson's playback to one voice at the existing five shots per second. Listening against the actual song and physical-input acceptance remain required.
+
+Revision 3 adds a brief 1.75/2.87 kHz mechanism click, a descending wet body, a short pressure resonance, filtered air and three liquid transients. A 0.6 ms attack keeps the onset immediate; a 22 ms end fade leaves a 25 ms gap at five shots per second. Soft saturation gives the body presence while retaining headroom: -14.33 dBFS RMS and -2.16 dBFS peak, with source volume still 0.50. The same filename/GUID retains existing references. Local single/burst and song-mix previews live under the ignored `.local-reference/PaintShotV3` directory; they are development auditions, not listening acceptance. Confirm clarity against the actual song on the exhibition output device before accepting the mix.
+
+The saved camera-child gun pose is local position `(0.40, -0.30, 1.30)`, uniform scale `0.65`. It frames the complete silhouette while preserving the logical muzzle relationship. The saved cosmetic recoil is described below.
+
+PlayerShooter's `shotAudioSource` references the scene PaintShotAudio child. Its Play call follows projectile creation and rhythm initialization, after all play/pause/UI/release/cadence guards. **Tools > BalloonBarrage > Connect Paint Shot Audio** can repair a missing scene reference after compilation; it does not write gameplay. Do not add a second cadence timer or raw-input audio listener. The creator reports the revised firing sound passed; whole-song/exhibition-device balance and fresh-package acceptance remain separate gates in [Validation](../Project/VALIDATION.md).
+
+## Cosmetic recoil handoff
+
+PrototypeScene's assembled gun has a separate active `RefinedGunVisual` mesh child. The logical `Muzzle/MuzzleSpray` branch and shot audio are outside it. **Tools > BalloonBarrage > Connect Gun Recoil Visual** connects the saved gunVisual field to that scene child and marks the scene dirty for explicit saving. It refuses a conflicting reference or an unsafe hierarchy and does not create gameplay fields or animation.
+
+The learner has saved the visual reference, Awake rest-pose cache, accepted-shot KickGun and LateUpdate recovery. Current tuning is 0.035 m backward, -6 degrees pitch and smoothing rate 18; pause holds recovery. Each kick derives from the cached rest pose, so held fire does not accumulate offsets. Only the cosmetic child moves; the aiming root, camera and logical muzzle remain independent. Explicit pose restoration on disable/end is still a learner follow-up. Recoil playtest acceptance remains pending; see [Validation](../Project/VALIDATION.md) and the [lesson queue](../Design/ROADMAP.md#immediate-lesson-queue).
+
 ## Recorded generation prompts
 
 ```text

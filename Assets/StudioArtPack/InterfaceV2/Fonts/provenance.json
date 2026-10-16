@@ -1,0 +1,26 @@
+{
+  "revision": "5d3b76120a319730fda218cc7410174a462b32cb",
+  "license": "SIL Open Font License 1.1",
+  "source": "https://github.com/google/fonts/tree/main/ofl/lato",
+  "files": [
+    {
+      "sha256": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
+      "bytes": 656568,
+      "url": "https://raw.githubusercontent.com/google/fonts/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato/Lato-Regular.ttf",
+      "file": "Lato-Regular.ttf"
+    },
+    {
+      "sha256": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1",
+      "bytes": 656544,
+      "url": "https://raw.githubusercontent.com/google/fonts/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato/Lato-Bold.ttf",
+      "file": "Lato-Bold.ttf"
+    },
+    {
+      "sha256": "74ba064d03f1f1c4a952da936c3eb71866c34404916734de3cae73b34357e59e",
+      "bytes": 4407,
+      "url": "https://raw.githubusercontent.com/google/fonts/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato/OFL.txt",
+      "file": "OFL.txt"
+    }
+  ],
+  "retrieved": "2026-10-14"
+}

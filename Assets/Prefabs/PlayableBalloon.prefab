@@ -404,7 +404,10 @@ MonoBehaviour:
   popSound: {fileID: 8300000, guid: b8ae541a4dbe7be44bea956ba8b18bd8, type: 3}
   popVolume: 0.5
   popEffectPrefab: {fileID: 928517576936858472, guid: 7eeeb4a095cf1434cb3a5f8e3b1b352e, type: 3}
+  onBeatGlowPrefab: {fileID: 2969724939019509008, guid: 11bdb868f9a58d94a862a79ddbf219da, type: 3}
   popPoint: {fileID: 0}
+  cleanupDelaySeconds: 3.1
+  rhythmWindowsSeconds: 0.1
 --- !u!114 &8428113125174779938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.6
+  xRange: {x: -3.5, y: 3.5}
+  yRange: {x: -2.5, y: 2.5}
 --- !u!54 &654622638241705721
 Rigidbody:
   m_ObjectHideFlags: 0

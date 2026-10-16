@@ -1,0 +1,30 @@
+{
+  "asset": "PaintShot_AirPuff.wav",
+  "origin": "Original mathematical synthesis for BalloonBarrage; no external audio, samples or AI audio generation.",
+  "generator": "Tools/Audio/synthesize_paint_shot.py",
+  "seed": 20261016,
+  "format": "mono PCM16 WAV, 44100 Hz",
+  "duration_seconds": 0.17498866213151928,
+  "sha256": "aad3a57f3ac7887915c3b6f5545a2145f62a6acdc4b00d5ff723795952d7be56",
+  "peak_dbfs": -2.16,
+  "rms_dbfs": -14.33,
+  "revision": 3,
+  "processing": "Original mechanism click, descending wet body, band-limited pressure/air and three liquid transients. Tanh drive 3.40 after unit-peak normalization; final peak 0.78; 0.6 ms attack and 22 ms end fade.",
+  "prior_revisions": [
+    {
+      "revision": 1,
+      "sha256": "2c6bd8ebbfdd682b3ab0c3f57c4d6a000738e4a84d45e46e664de702cbf98c3f",
+      "rms_dbfs": -20.97,
+      "scene_volume": 0.38
+    },
+    {
+      "revision": 2,
+      "sha256": "1378d5eea215d3430f15ba0cf5224f06ae0d7a73e463c719a0752ad6d842772d",
+      "rms_dbfs": -14.99,
+      "scene_volume": 0.5
+    }
+  ],
+  "revision_reason": "Creator requested a clearer, more distinct firing sound after the louder air-puff revision.",
+  "scene_volume": 0.5,
+  "notes": "175 ms, shorter than the current 200 ms shot interval. Fixed source pitch for rhythm clarity. Same Unity GUID/reference. No song/model license is changed."
+}

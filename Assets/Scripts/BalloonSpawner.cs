@@ -41,31 +41,24 @@ public class BalloonSpawner : MonoBehaviour
     private void Update()
     {
         activeBalloons.RemoveAll(balloon => balloon == null);
-
-        if (!RoundController.IsPlaying ||
-    RoundController.IsPaused)
-        {
-            return;
-        }
-
-        if (activeBalloons.Count >= maxBalloons)
-        {
-            remainingDelay = spawnSettings.RespawnDelay;
-            return;
-        }
-
-        remainingDelay -= Time.deltaTime;
-
-        if (remainingDelay > 0f)
-        {
-            return;
-        }
-
-        Spawn();
-        remainingDelay = spawnSettings.RespawnDelay;
     }
 
-    private void Spawn()
+    public void CheckExpiredBalloons(double songTime)
+    {
+        foreach (GameObject balloonObject in activeBalloons)
+        {
+            if(balloonObject == null)
+            {
+                continue;
+            }
+
+            Balloon balloon = balloonObject.GetComponent<Balloon>();
+            balloon.CheckExpiry(songTime);
+        }
+    }
+
+
+    public void Spawn(RhythmEventData eventData)
     {
         Vector3 position = new Vector3(
             Random.Range(xRange.x, xRange.y),
@@ -78,6 +71,9 @@ public class BalloonSpawner : MonoBehaviour
             position,
             balloonPrefab.transform.rotation
         );
+        Balloon balloon = newBalloon.GetComponent<Balloon>();
+        balloon.InitializeRhythm( eventData );
+        Debug.Log($"Initialized balloon {balloon.EventId}; beat at {balloon.EventTimeSeconds:F3}s.");
 
         activeBalloons.Add(newBalloon);
     }    

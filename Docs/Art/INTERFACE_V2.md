@@ -4,11 +4,23 @@ The new pack is in `Assets/StudioArtPack/InterfaceV2`. Open `InterfaceGallery.un
 
 **Status:** StartScreen, PauseScreen, GameplayHUD and ResultsScreen are connected in PrototypeScene. Start/Resume/Quit/Play Again callbacks and live score/time/final-score Text values are saved; the old OnGUI display is removed. Isolated checks cover the Canvas flow, and the learner reports pause, HUD and new results playtests passed. PlayerShooter now has release/pointer guards, and the scene disables legacy PaintGunVfx. Final physical-input acceptance remains pending; prepared gamepad actions are not connected to gameplay. See the [validation record](../Project/VALIDATION.md) for evidence and limits. Do not add the gallery scene to the game build as a playable level.
 
+## Aim reticle handoff
+
+Prepared on October 16: `Assets/StudioArtPack/InterfaceV2/Reticle/AimReticle.prefab` is now a hidden child of PrototypeScene's GameplayHUD. It has centered anchors/pivot, local scale (1, 1, 1), position (0, 0), and a 36 x 36 reference rectangle. Four small cream UI Image bars with dark teal Outline components leave the center open. All Raycast Target flags are off. There is no texture, new Canvas, collider, camera, runtime aiming script or AI-generated bitmap; the shapes are original native Unity UI geometry and remain resolution-independent. Keep the existing overlay HUD/scaler configuration.
+
+The learner's PlayerShooter aims with Mouse.current.position and ScreenPointToRay. Its serialized RectTransform field `aimReticle`, state gating and screen-position following are now saved and connected, with learner-reported following/pause-hide acceptance. This presentation block runs at the start of the existing Update, before its mouse early return. With this Screen Space Overlay HUD, Transform.position accepts the mouse pixel coordinates directly; do not assign them to anchoredPosition or divide by the scaler. A future camera/world-space HUD would need explicit coordinate conversion.
+
+After saving/compiling the field, use **Tools > BalloonBarrage > Connect Aim Reticle** and save the scene. The editor helper assigns only the actual scene RectTransform, preserves an existing different reference, and supports Undo through SerializedObject. It logs a warning if the learner field does not exist and does not write gameplay. Do not drag the Project prefab into a scene-object field. Reload the externally prepared scene first; preserve any unsaved work before reloading.
+
+Following, pause hiding and system-pointer hiding/restoration have creator-reported acceptance. Saved code assigns Cursor.visible = !showReticle outside the nullable-reference block and retains the guarded active/position update. RestorePointer shows the system pointer and hides the reticle on disable and application-focus loss. Normal Update restores gameplay state after focus returns. Add `aimReticle != null` to showReticle as a missing-reference fallback. Do not lock the cursor because this mode uses absolute mouse coordinates. Independent standalone title/pause/results/retry, resize, focus and quit acceptance remains part of the build gate. Static authoring previews show sample HUD numbers rather than a live song/playtest: [1080p](../../Assets/StudioArtPack/InterfaceV2/Reticle/Previews/Reticle_1080p.png), [1440p](../../Assets/StudioArtPack/InterfaceV2/Reticle/Previews/Reticle_1440p.png).
+
+`StudioReticleBuilder` builds missing assets only. Its scene setup/render checks require an isolated batch project; the production menu does not automatically open/save scenes. No existing gameplay source or original UI prefab was replaced.
+
 ## On-beat feedback handoff
 
 The October 15 feedback assets are in `Assets/StudioArtPack/RhythmFeedback`. `OnBeatGlow.prefab` combines an expanding golden ring with twelve small sparkles. It uses an original procedural URP additive shader, without a texture download, realtime light, collider or runtime script. Visible particles last at most 0.42 seconds; emission is non-looping and uses scaled time so pause freezes the effect. Bloom is not required. Asset rendering and particle checks do not establish exhibition performance or gameplay integration.
 
-The learner owns the gameplay connection. In Balloon, add a serialized ParticleSystem reference named `onBeatGlowPrefab`. Inside the existing `bonusPoints > 0` impact branch, instantiate it at `effectPosition` with identity rotation and schedule its object for destruction after one second. Assign the new prefab on the actual PlayableBalloon prefab used by the spawner. Keep the existing pigment burst reference. This branch follows the accepted shot/target-id check and the balloon's one-hit guard; firing alone must not show the reward effect. Current nesting also requires the existing paint-burst reference to remain assigned.
+The saved Balloon onBeatGlowPrefab reference is connected on the actual PlayableBalloon used by the spawner. Its positive-bonus impact branch instantiates the glow at effectPosition and schedules destruction after one second. Keep the existing pigment burst reference. This branch follows the accepted shot/target-id check and the balloon's one-hit guard; firing alone must not show the reward effect. Current nesting also requires the existing paint-burst reference to remain assigned.
 
 `OnBeatFeedback.prefab` is a separate, initially disabled UnityEngine.UI.Text component with the literal label `ON BEAT +20`, bundled Lato Bold and Raycast Target off. Its root stays active; the saved learner receiver shows the Text component after a rewarded impact, hides it after the creator-selected 1.45 seconds of active play, freezes its timer during pause, and resets it on retry. The asset does not implement that behavior. Parent it to GameplayHUD with bottom-center anchors, local scale (1, 1, 1), anchored position (0, 168), and size 440 x 64. Keep the countdown at (0, 80) and do not reuse its Text for reward feedback.
 
@@ -33,15 +45,9 @@ Font license, pinned source URLs and hashes are in Fonts/OFL.txt and Fonts/prove
 
 ## Rhythm cue handoff
 
-`Prefabs/RhythmCue.prefab` is a passive UI plaque prepared for the next learner hookup. It reuses the existing cream/wood sprite and bundled Lato Bold, with a centered `BeatCueText` child initially displaying `READY`. The root is anchored bottom-center at (0, 80), size 400 x 84 in the existing reference canvas; text is 360 x 56 at 30 points. Both graphics have Raycast Target off, so the plaque does not block shooting. It has no scripts or Canvas of its own and introduces no judgement, timer or hit logic.
+`Prefabs/RhythmCue.prefab` is the passive UI plaque used by the saved countdown. It reuses the existing cream/wood sprite and bundled Lato Bold, with a centered `BeatCueText` child initially displaying `READY`. The root is anchored bottom-center at (0, 80), size 400 x 84 in the existing reference canvas; text is 360 x 56 at 30 points. Both graphics have Raycast Target off, so the plaque does not block shooting. It has no scripts or Canvas of its own and introduces no judgement, timer or hit logic.
 
-In Edit Mode, drag this prefab under the existing GameplayHUD root, without adding another Canvas. After parenting, explicitly set the RhythmCue instance's anchor min/max to (0.5, 0), pivot (0.5, 0.5), anchored position (0, 80), local Z 0, scale (1, 1, 1) and size 400 x 84. Hierarchy dragging can leave instance transform overrides; do not assume the prefab defaults are still effective. Add `using UnityEngine.UI;` and a serialized `Text beatCueText` field in RhythmChartReader, then drag the plaque's BeatCueText child into that field. Save the scene. At this handoff the visible READY text is a placeholder; a later learner increment drives it from the original chart event time and the same song clock. Maintain a separate cue-event index: nextEventIndex already advances at the preview-spawn time, 0.8 seconds before the beat.
-
-Source-asset checks cover the prefab's eight object/component records, internal file references, reused sprite/font GUIDs, disabled raycasts and paired new metadata. The new plaque has not been rendered or independently imported in Unity in this pass; check READY placement in Play Mode before adding timing code. No existing HUD prefab, scene or Assets/Scripts file was changed to create it. Distinct on-beat text/flash feedback remains a later hookup from accepted impact, not from the firing log.
-
-The creator's subsequent Game-view screenshot showed the cue clipped at the lower left. PrototypeScene had the correct GameplayHUD parent and anchors but instance overrides at anchored X -800, Y 50 and scale 0.625. At the creator's explicit request, only these five values were corrected to X 0, Y 80 and scale 1; the full pre-edit scene is backed up under ignored .local-backups. Scene comparison confirmed all other lines unchanged. Reference-canvas calculations place the corrected rectangle inside 720p/1080p/1440p, 4:3 and ultrawide viewports; this is a geometry check, not a new Unity render or live Play Mode verification. Reload the saved scene after leaving Play Mode to see the disk correction.
-
-The subsequent learner source now implements UpdateBeatCue and calls it after the reader's pause/data guards. Its separate nextCueEventIndex advances on original event times; NEXT shows remaining song-clock seconds with one decimal, and ENDING covers the song tail after the last event. The Text reference is saved. The earlier READY-only description records the initial handoff; dynamic countdown code is now present, with live countdown/pause/retry confirmation still pending.
+The saved instance is connected under GameplayHUD at (0, 80), with bottom-center anchors/pivot and unit scale. RhythmChartReader.UpdateBeatCue uses a separate nextCueEventIndex driven by original chart event times: NEXT shows remaining song-clock seconds with one decimal, and ENDING covers the song tail. Keep the cue index separate from the preview-spawn index, which advances 0.8 seconds early. The creator reports countdown acceptance; latest whole-song/pause/retry regression remains pending. See [Validation](../Project/VALIDATION.md).
 
 ## Current connection map
 
@@ -103,77 +109,13 @@ Every prefab has a Screen Space Overlay Canvas, Canvas Scaler set to Scale With 
 
 Labels use bundled Lato Regular/Bold through UnityEngine.UI.Text; the clarity pass preserves existing Text component references. The earlier LegacyRuntime-font implementation is superseded. A Chinese/Japanese version still requires font coverage and layout checks; see [Localization](LOCALIZATION.md).
 
-## Lesson 1: inspect and customize the start screen
+## Maintain the connected interface
 
-1. Save your current scene, then open InterfaceGallery.
-2. Select StartScreen/StartButton/Label. Change the **Text** field, not the PNG.
-3. Select StartButton. Inspect **Source Image**, **Image Type: Sliced**, and Button **Transition: Color Tint**.
-4. Inspect StartScreen/ControlsPanel/ControlsText. Instructions are live text.
-5. Preview at 1280 × 720 and 1920 × 1080. Keep the title inside the center region.
-6. Open the StartScreen prefab in Prefab Mode to make a reusable change, or use a prefab variant for experiments.
+Use the connection map above to repair a missing reference; do not add duplicate Canvas roots, EventSystems or button listeners. Assign objects from the scene Hierarchy rather than their Project prefab assets. Start/Quit, Resume/Quit and Play Again already target the scene controller.
 
-Acceptance: title and instructions remain readable; Start and Quit retain their outlines when resized. Buttons have no callbacks at this stage.
+Keep score and time as live Text values: score/final score use `ToString("D6")`, while time displays ceiling-rounded remaining seconds as minutes and seconds. The initial timer comes from the complete song (about 02:04 when rounded), rather than the superseded 90-second lesson. EndRound captures the score before writing ResultsScreen. Retry reloads the scene, returns to Start and resets score, song origin and display state. Do not restore the removed OnGUI labels.
 
-## Lesson 2: connect the existing start and quit actions
-
-The Start/Quit baseline below is already saved in PrototypeScene. Use these steps as reference when a connection is missing; do not add duplicate roots or listeners.
-
-1. Drag StartScreen.prefab into the scene as a root object. It already contains a Canvas: do not put it inside another Canvas.
-2. Create one EventSystem if none exists. Use **Input System UI Input Module**, with its default UI actions assigned. Keep only one active EventSystem.
-3. Expose the existing no-argument BeginRound and QuitGame methods for the Inspector. Change their access modifier from private to public; retain their existing bodies. Guard BeginRound against a second start while a round is already active.
-4. On StartScreen/StartButton, add one **On Click()** listener. Drag the scene object containing RoundController, then choose **RoundController → BeginRound()**.
-5. Wire QuitButton to **RoundController → QuitGame()**. Quit leaves Play Mode in the Editor and exits the standalone application.
-6. Add a serialized GameObject reference for startScreen to RoundController. Assign the scene's StartScreen instance. Hide it when BeginRound succeeds; show it when the scene initializes.
-7. Remove the old start-menu drawing branch from OnGUI only after the Canvas version is connected. Do not render both menus at once.
-
-Private methods do not appear in Button's event dropdown. Drag the **scene component**, not the C# file. A Button listener does not automatically hide a Canvas or advance a round.
-
-Acceptance: the countdown, spawning and scoring wait for Start; the start screen disappears after one click; Quit works; Play Again returns to the start screen as it already does. Check that the click used on a UI button does not fire a projectile into the room. When introducing Canvas UI, block gameplay mouse input while the pointer is over an interactive UI element (EventSystem.current.IsPointerOverGameObject), while preserving the existing play/pause gates.
-
-## Lesson 3: wire pause and results
-
-PauseScreen, GameplayHUD and ResultsScreen are connected. The following table describes their saved visibility rules. Use the remaining lesson steps as reference rather than adding duplicate roots or listeners. Initially enable StartScreen only.
-
-| State | Start | HUD | Pause | Results |
-|---|---|---|---|---|
-| Waiting for Start | On | Off | Off | Off |
-| Playing | Off | On | Off | Off |
-| Paused | Off | On | On | Off |
-| Finished | Off | Off | Off | On |
-
-- Keep the existing Esc handling and TogglePause logic. Update panel visibility whenever the state changes.
-- PauseScreen/Dialog/ResumeButton should call a public ResumeRound wrapper that calls TogglePause only when IsPlaying and IsPaused are both true. Repeated clicks should not pause again.
-- PauseScreen/Dialog/QuitButton uses the same QuitGame method.
-- ResultsScreen/PlayAgainButton calls the existing RestartRound method after making it public. It reloads to the start screen; it does not immediately begin another round.
-- InstructionsScreen is an optional visual layout. Its BackButton has no corresponding existing controller action. Keep it inactive until you implement help navigation. The StartScreen already includes the essential instructions.
-- After each replacement is working, remove the corresponding old OnGUI branch to avoid duplicate controls.
-
-Do not put RoundController on an object that is disabled to hide a panel. Hide the UI roots only. Time.timeScale must remain zero during pause, but Unity UI clicks must still work.
-
-## Lesson 4: show live score and time
-
-These are **Text** components, so use `using UnityEngine.UI;` in your learner-owned script. Introduce serialized Text references and assign:
-
-| Controller reference | Hierarchy object |
-|---|---|
-| scoreText | GameplayHUD/ScorePlaque/ScoreValue |
-| timeText | GameplayHUD/TimerPlaque/TimeValue |
-| finalScoreText | ResultsScreen/Dialog/FinalScorePlaque/FinalScoreValue |
-
-Read the existing values; do not create a second score counter:
-
-```csharp
-scoreText.text = Score.Value.ToString("D6");
-int seconds = Mathf.CeilToInt(remainingTime);
-timeText.text = $"{seconds / 60:00}:{seconds % 60:00}";
-finalScoreText.text = finalScore.ToString("D6");
-```
-
-Put final-score assignment in EndRound **after** finalScore is captured. Refresh the HUD at initialization and while playing; the existing pause early return naturally holds the display. Do not place the first HUD refresh only after a playing-state early return, or the initial values may retain the sample text. Replace or remove Score.OnGUI and the timer GUI.Label once the new display works. Keep the score limit/layout in mind if later gameplay can exceed six digits.
-
-For the current incremental HUD lesson, the learner can use a single LateUpdate method in RoundController: set GameplayHUD active from IsPlaying and refresh score/time from the existing values every frame. Start has already initialized those values before LateUpdate. Pause holds remainingTime and blocks score changes, so the display stays stable. Keep OnGUI results until the separate results lesson.
-
-Acceptance: new game displays 000000 and 01:30; a hit changes score once; pause freezes time; the result equals the captured score; replay resets score and returns to Start.
+For visual adjustments, open InterfaceGallery or Prefab Mode, edit Label/ControlsText rather than the PNG, and retain sliced button frames. Gallery buttons have no production callbacks. Verify text/layout at supported aspect ratios before saving changes to the game scene.
 
 ## Visual checks before calling integration complete
 

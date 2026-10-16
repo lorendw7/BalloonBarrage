@@ -1,0 +1,187 @@
+using UnityEngine;
+using System;
+using System.IO;
+using UnityEngine.UI;
+
+
+
+[Serializable]
+public class RhythmEventData
+{
+    public int id;
+    public double timeSeconds;
+}
+
+[Serializable]
+public class RhythmChartData
+{
+    public string title;
+    public float bpm;
+    public double durationSeconds;
+    public RhythmEventData[] events;
+}
+
+
+public class RhythmChartReader : MonoBehaviour
+{
+    private RhythmChartData chart;
+
+    private int nextEventIndex = 0;
+
+    private int nextCueEventIndex = 0;
+
+    [SerializeField]
+    private RoundController roundController;
+
+    [SerializeField]
+    private double currentSongTime;
+
+    [SerializeField]
+    private BalloonSpawner balloonSpawner;
+
+    [SerializeField]
+    private double spawnLeadSeconds = 0.8d;
+
+    [SerializeField]
+    private Text beatCueText;
+
+    [SerializeField]
+    private Text onBeatFeedbackText;
+
+    private float feedbackRemaining;
+
+    private void ShownOnBeatFeedback(int awardPoints)
+    {
+        if (onBeatFeedbackText == null ||
+            !RoundController.IsPlaying ||
+            RoundController.IsPaused)
+        {
+            return;
+        }
+
+        onBeatFeedbackText.text = $"ON BEAT +{awardPoints}";
+        onBeatFeedbackText.enabled = true;
+        feedbackRemaining = 1.45f;
+    }
+
+    private void OnEnable()
+    {
+        Balloon.OnBeatHit += ShownOnBeatFeedback;
+    }
+
+    private void OnDisable()
+    {
+        Balloon.OnBeatHit -= ShownOnBeatFeedback;
+
+        feedbackRemaining = 0f;
+
+        if (onBeatFeedbackText != null )
+        {
+            onBeatFeedbackText.enabled = false;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (onBeatFeedbackText == null)
+        {
+            return;
+        }
+
+        if(!RoundController.IsPlaying)
+        {
+            feedbackRemaining = 0f;
+        } else if(!RoundController.IsPaused)
+        {
+            feedbackRemaining = Mathf.Max(
+                0f, feedbackRemaining - Time.deltaTime);
+        }
+
+        onBeatFeedbackText.enabled = feedbackRemaining > 0f; 
+     }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        string path = Path.Combine(
+            Application.streamingAssetsPath,
+            "Rhythm/Prepared/GoinUnder_Beginner.json");
+
+        if (!File.Exists(path))
+        {
+            Debug.LogError("Chart file is missing: " + path);
+            return;
+        }
+
+        string json = File.ReadAllText(path);
+        chart = JsonUtility.FromJson<RhythmChartData>(json);
+
+        if (chart == null || chart.events == null ||
+            chart.events.Length == 0)
+        {
+            Debug.LogError("Chart has no events.");
+            return;
+        }
+        Debug.Log($"Loaded {chart.title}: {chart.events.Length} events.");
+        Debug.Log("Chart file read successfully.");
+        RhythmEventData firstEvent = chart.events[0];
+        Debug.Log($"First event: {firstEvent.timeSeconds:F3}s.");
+    }
+
+    private void UpdateBeatCue()
+    {
+        if (beatCueText == null)
+        {
+            return;
+        }
+
+        while (nextCueEventIndex < chart.events.Length &&
+            currentSongTime > chart.events[nextCueEventIndex].timeSeconds)
+        {
+            nextCueEventIndex++;
+        }
+
+        if (nextCueEventIndex >= chart.events.Length)
+        {
+            beatCueText.text = "ENDING";
+            return;
+        }
+
+        double remaining =
+            chart.events[nextCueEventIndex].timeSeconds - currentSongTime;
+
+        beatCueText.text = $"NEXT {remaining:F1}s";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (roundController == null ||
+            balloonSpawner == null)
+        {
+            return;
+        }
+
+        currentSongTime = roundController.SongTimeSeconds;
+
+        if (!RoundController.IsPlaying || RoundController.IsPaused ||
+            chart == null || chart.events == null || 
+            chart.events.Length == 0)
+        {
+            return;
+        }
+
+        UpdateBeatCue();
+        balloonSpawner.CheckExpiredBalloons(currentSongTime);
+        while (nextEventIndex < chart.events.Length
+            && currentSongTime >= 
+            chart.events[nextEventIndex].timeSeconds - spawnLeadSeconds)
+        {
+            RhythmEventData currentEvent = chart.events[nextEventIndex];
+
+            Debug.Log($"Chart event {currentEvent.id} reached.");
+            balloonSpawner.Spawn(currentEvent);
+            nextEventIndex++;
+        }
+    }
+}

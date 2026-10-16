@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class RoundController : MonoBehaviour
 {
-    [SerializeField, Min(1f)]
-    private float roundDuration = 90f;
+    private float songDuration;
+    private double songStartDspTime;
 
     private float remainingTime;
 
@@ -18,6 +18,17 @@ public class RoundController : MonoBehaviour
 
     public static bool IsPaused { get; private set; }
 
+    public double SongTimeSeconds
+    {
+        get
+        {
+            if (!IsPlaying)
+            {
+                return 0d;
+            }
+            return System.Math.Max(0d, AudioSettings.dspTime - songStartDspTime);
+        }
+    }
     [SerializeField]
     private GameObject startScreen;
 
@@ -33,6 +44,17 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     private Text timeText;
 
+    [SerializeField]
+    private GameObject resultsScreen;
+
+    [SerializeField]
+    private Text finalScoreText;
+
+    [SerializeField]
+    private AudioSource menuMusic;
+
+    [SerializeField]
+    private AudioSource gameMusic;
 
     private void Start()
     {
@@ -40,7 +62,11 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.pause = false;
         Score.ResetScore();
-        remainingTime = roundDuration;
+
+        songDuration = gameMusic != null && gameMusic.clip != null 
+            ? gameMusic.clip.length : 0f;
+        remainingTime = songDuration;
+
         IsPlaying = false;
         hasStarted = false;
 
@@ -51,6 +77,22 @@ public class RoundController : MonoBehaviour
         if (pauseScreen != null)
         {
             pauseScreen.SetActive(false);
+        }
+
+        if (resultsScreen != null)
+        {
+            resultsScreen.SetActive(false);
+        }
+
+        if (gameMusic != null)
+        {
+            gameMusic.Stop();
+        }
+
+        if (menuMusic != null)
+        {
+            menuMusic.Stop();
+            menuMusic.Play();
         }
     }
 
@@ -80,8 +122,18 @@ public class RoundController : MonoBehaviour
             return;
         }
 
+        if (gameMusic == null || gameMusic.clip == null ||
+            gameMusic.clip.loadState != AudioDataLoadState.Loaded)
+        {
+            Debug.LogWarning("Game music is missing or not loaded yet.");
+            return;
+        }
+
         Score.ResetScore();
-        remainingTime = roundDuration;
+
+        songDuration = gameMusic.clip.length;
+        remainingTime = songDuration;
+
         hasStarted = true;
         IsPlaying = true;
 
@@ -89,6 +141,15 @@ public class RoundController : MonoBehaviour
         {
             startScreen.SetActive(false);
         }
+        if (menuMusic != null)
+        {
+            menuMusic.Stop();
+        }
+
+        gameMusic.Stop();
+
+        songStartDspTime = AudioSettings.dspTime + 0.2d;
+        gameMusic.PlayScheduled(songStartDspTime);
     }
 
     private void TogglePause()
@@ -136,8 +197,11 @@ public class RoundController : MonoBehaviour
 
         }
 
+        float elapsed = Mathf.Max(
+            0f, (float)(AudioSettings.dspTime - songStartDspTime));
+
         remainingTime = Mathf.Max(
-            0f, remainingTime - Time.deltaTime);
+            0f, songDuration - elapsed);
 
         if (remainingTime > 0f )
         {
@@ -161,6 +225,26 @@ public class RoundController : MonoBehaviour
         IsPlaying = false;
         finalScore = Score.Value;
 
+        if (gameMusic != null)
+        {
+            gameMusic.Stop();
+        }
+
+        if (menuMusic != null)
+        {
+            menuMusic.Play();
+        }
+
+        if (finalScoreText != null)
+        {
+            finalScoreText.text = finalScore.ToString("D6");
+        }
+
+        if (resultsScreen != null)
+        {
+            resultsScreen.SetActive(true);
+        }
+
         foreach (PaintProjectile projectile in 
             FindObjectsByType<PaintProjectile>(FindObjectsSortMode.None))
         {
@@ -178,47 +262,12 @@ public class RoundController : MonoBehaviour
         Debug.Log($"本局结束，最终分数：{finalScore}");
     }
 
-    private void RestartRound()
+    public void RestartRound()
     {
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void OnGUI()
-    {
-        if (IsPaused)
-        {
-            return;
-        }
-
-        if (!hasStarted)
-        {
-            return;
-        }
-
-        if (IsPlaying)
-        {
-            return;
-        }
-
-        float left = (Screen.width - 260f) / 2f;
-        float top = (Screen.height - 160f) / 2f;
-
-        GUI.Box(
-            new Rect(left, top, 260, 160),
-            "Round Finished");
-
-        GUI.Label(
-            new Rect(left + 20, top + 45, 220, 30),
-            $"Final Score: {finalScore}");
-
-        if (GUI.Button(
-            new Rect(left + 20,  top + 95, 220, 40),
-            $"Play Again"))
-        {
-            RestartRound();
-        }
-    }
 
     private void DrawPauseMenu()
     {

@@ -10,7 +10,8 @@ for (const link of document.querySelectorAll("[data-art]")) {
     const enlarged = dialog.querySelector("img");
     enlarged.src = link.href;
     enlarged.alt = image.alt;
-    dialog.querySelector("p").textContent = link.closest("figure").querySelector("figcaption span").textContent;
+    dialog.querySelector("p").textContent =
+      link.closest("figure")?.querySelector("figcaption span")?.textContent ?? image.alt;
     dialog.showModal();
   });
 }

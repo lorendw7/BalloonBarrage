@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototypeScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/StudioCameraLighting.unity
+    guid: 67d0b105e80eeee4f8ea52f3a19621ca
+  - enabled: 1
+    path: Assets/Scenes/StudioMaterialAppearance.unity
+    guid: dd06add79a7a41e4b80c44a43d5b8dde
+  - enabled: 1
+    path: Assets/Scenes/StudioConceptVariants.unity
+    guid: b252157d88f35bd4fbe381ba16cedfda
+  - enabled: 1
+    path: Assets/Scenes/StudioConceptDetail.unity
+    guid: 3d4bc36bb02a32a44a80d2e01b7f442f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
