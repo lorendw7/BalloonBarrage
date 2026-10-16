@@ -57,6 +57,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void OnDisable()
     {
+        ResetGunPose();
         RestorePointer();
     }
 
@@ -82,8 +83,24 @@ public class PlayerShooter : MonoBehaviour
     
     }
 
+    private void ResetGunPose()
+    {
+        if(gunVisual == null)
+        {  return; }
+
+        gunVisual.localPosition = gunRestLocalPosition;
+        gunVisual.localRotation = gunRestLocalRotation;
+    }
+
     private void LateUpdate()
     {
+
+        if (!RoundController.IsPlaying)
+        {
+            ResetGunPose();
+            return;
+        }
+
         if (gunVisual == null ||
             RoundController.IsPaused) {
             return;
