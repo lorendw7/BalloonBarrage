@@ -29,9 +29,10 @@ namespace BalloonBarrage.EditorTools
             File.WriteAllText(Path.Combine(output, "README.txt"),
                 "BalloonBarrage noncommercial development snapshot\n" +
                 "Click Start, aim with the mouse and hold left click to fire. Play Again returns to the start menu.\n" +
-                "The current scene uses a 90-second round. Esc pauses; Resume continues; Quit or Alt+F4 exits.\n" +
-                "StepMania songs and charts are included as data; song selection, chart loading and beat judgement are not implemented.\n" +
-                "Original studio music remains active. See BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania/NOTICE.txt.\n" +
+                "Each round plays the complete Goin' Under song (about 123.429 seconds), from the beginning to natural settlement.\n" +
+                "The Beginner chart schedules 93 target events. Ordinary hits award 10 points; on-beat shots hitting their matching target award 20.\n" +
+                "Esc pauses; Resume continues; Quit or Alt+F4 exits. Menus use original studio music; gameplay uses the imported song.\n" +
+                "See BalloonBarrage_Data/StreamingAssets/Rhythm/StepMania/NOTICE.txt for the original songs/charts and notices.\n" +
                 "Included songs carry upstream noncommercial restrictions. Do not sell this package.\n" +
                 "This is not an exhibition-ready release. Target-PC playtesting remains required.\n");
             UnityEngine.Debug.Log("BALLOON_WINDOWS_BUILD_OK: " + output);

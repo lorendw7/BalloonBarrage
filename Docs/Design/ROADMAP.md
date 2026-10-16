@@ -1,6 +1,6 @@
 # Development roadmap
 
-Updated: October 16, 2026 (Asia/Tokyo). This is the single delivery plan for BalloonBarrage, from the exhibition demo to a fuller game. [Game design](GAME_DESIGN.md) owns gameplay rules and tuning; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the project entry point.
+Updated: October 17, 2026 (Asia/Tokyo). This is the single delivery plan for BalloonBarrage, from the exhibition demo to a fuller game. [Game design](GAME_DESIGN.md) owns gameplay rules and tuning; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the project entry point.
 
 ## Direction and scope
 
@@ -25,21 +25,21 @@ This publication includes all saved gameplay, scenes, art, tools, documentation 
 
 | Area | Evidence available | Remaining gate |
 |---|---|---|
-| Title, pause, HUD, results and retry | Saved; creator reports incremental passes; earlier isolated flow checks exist | Latest complete-song rhythm regression and standalone physical input |
+| Title, pause, HUD, results and retry | Saved; latest isolated natural-song/results/retry and second-first-hit checks passed; creator reports one normal round and near-end pause pass | Detailed standalone physical-input/listening acceptance |
 | Song switch and complete-song clock | Saved; an earlier isolated natural-song/pause/retry run passed | Audible alignment and latest chart/reward integration on the exhibition PC |
 | Chart previews, event identity and unanswered-target cleanup | Saved; source review and creator-reported cleanup pass | Dense/unanswered passages, final event and pause near scheduled events |
 | Ordinary/on-beat rewards and countdown | Saved; source review and creator-reported 10/20-point and countdown passes | Different distances/frame rates, held fire versus taps, duplicate-resolution checks |
 | Paint burst, golden glow and temporary reward text | Saved; creator-reported display/hide passes; isolated asset/layout/reference checks | Confirm complete-song behavior, pause, repeated hits and retry with the selected 1.45-second text setting |
-| Reticle, firing sound and visual recoil | Reticle/cursor lifecycle and revised firing sound have creator-reported passes; full gun framed. Cosmetic rest-pose cache, bounded kick/recovery and immediate nonplaying/disable reset saved; creator reports recoil and settlement/retry reset passed. Latest start/pause/resume spot check reported normal | Lowered-gun physical-input confirmation, natural song end, second round and full-song clarity checks |
+| Reticle, firing sound and visual recoil | Creator reports reticle/audio/recoil/reset and lowered-gun framing passed; isolated full-song/last-hit/retry check passed | Standalone clarity/input checks, dense passages and target-PC performance |
 | Xbox/Beitong and co-op | Input actions prepared; Beitong hardware preparation reported successful | Gameplay integration, explicit pairing and physical-device acceptance |
 | Surface paint, patterned pops, song selection, runs and upgrades | Planned; cosmetic variants exist in separate art scenes | Separate gameplay milestones below |
-| Windows performance and current demo package | Fixed-room batching connected; creator's 2K Editor snapshot improved from 36.7 to 452.9 FPS; older local ZIP is a short test snapshot | Sustained whole-song frame times, fresh full-song package, target-PC standalone/offline acceptance |
+| Windows performance and current demo package | Local Windows x64 full-song build generated; file/report/chart checks passed and a local review ZIP is prepared. Editor batching snapshot remains separate | Standalone complete-round/input/Quit acceptance, intended build mode, sustained frame times and offline/soak checks |
 
 Do not assign a percentage or fixed remaining lesson count to this checkpoint. Connected features, creator playtests, automated checks and release acceptance are different forms of evidence.
 
 ## Exhibition calendar and decisions
 
-The [official 79th Kyudaisai site](https://kyudaisai.jp/79th/), checked October 16, lists October 31–November 1, 2026. The creator plans to exhibit on October 31; booth and demo hours remain unconfirmed. As of October 16 there are 15 calendar days to opening and 11 to the October 27 internal candidate target.
+The [official 79th Kyudaisai site](https://kyudaisai.jp/79th/), checked October 16, lists October 31–November 1, 2026. The creator plans to exhibit on October 31; booth and demo hours remain unconfirmed. As of October 17 there are 14 calendar days to opening and 10 to the October 27 internal candidate target.
 
 | Target | Learner's core work | Assistant's parallel preparation | Exit criterion |
 |---|---|---|---|
@@ -69,7 +69,7 @@ Teach each row through small edits, normally one field/method or one hookup at a
 | 8 | Conditional gamepad/co-op | Follow the October 23 gate and M1 checks; a spare pad cannot take control accidentally |
 | 9 | Performance and candidate | Profile, teach one measured fix, compare again, then finish the release gates |
 
-The next lesson checks the natural song ending, final event, settlement and a second round. Reticle/audio/recoil/reset have incremental creator reports; the latest start/pause/resume spot check was reported normal. Do not treat this as full-song acceptance or repeat the completed hookups. Reticle and recoil are presentation exercises, not a switch to camera-centered FPS aiming. Recoil must not move the logical muzzle through furniture or change which chart target a shot judges. Hide/reset cosmetic state when disabled; pause holds its animation and retry restores the resting pose. The selected reward-label duration remains 1.45 seconds unless the creator changes it.
+The latest isolated natural-song check passed all 93 events, last-event 20-point impact, natural settlement, saved retry callback and the second round's first 10-point hit; see [Validation](../Project/VALIDATION.md#latest-natural-song-end-and-second-round-check). The creator then completed one full round and reported it appeared normal, followed by an explicit near-end pause/resume pass. A local Windows x64 build is now generated and under review; next accept its controls, audio, full-song results/retry and Quit on the actual machine; measured listening/calibration, repeated held-fire and exhibition-PC checks remain part of acceptance. The creator confirmed the lowered gun position; reticle/audio/recoil/reset and start/pause/resume have incremental creator reports. Standalone/exhibition acceptance remains separate. Reticle and recoil are presentation exercises, not a switch to camera-centered FPS aiming. Recoil must not move the logical muzzle through furniture or change which chart target a shot judges. Hide/reset cosmetic state when disabled; pause holds its animation and retry restores the resting pose. The selected reward-label duration remains 1.45 seconds unless the creator changes it.
 
 Performance work now accompanies the recoil lesson. The requested target is 2K/120 FPS (8.33 ms). Creator screenshots show 36.7 FPS/1,671 batches before fixed-room batching and 452.9 FPS/285 batches afterward, with the scene's appearance and core gameplay retained. This latest Editor snapshot exceeds the target; verify whole-song held fire, dense passages, frame-time spikes and the intended standalone player before claiming sustained acceptance. Diagnostic logs, unchanged-value HUD formatting and pooling remain profiling candidates if measured issues recur. Early checks do not replace the final exhibition-PC soak/build gate.
 

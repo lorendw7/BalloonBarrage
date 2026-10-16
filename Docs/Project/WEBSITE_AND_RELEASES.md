@@ -26,7 +26,15 @@ Accept a nonempty uploaded Windows-labelled ZIP from this repository's HTTPS `re
 
 Read [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases) for live availability; documentation is not a live release listing.
 
+## Current local Windows checkpoint
+
+The October 16 manual build is in `Builds/Windows-x64-Solo-20261016`: run **BalloonShooter.exe** and keep **BalloonShooter_Data** plus every accompanying runtime file. The filename reflects the current Unity product name. Only PrototypeScene is enabled; four art-study scenes remain saved but excluded. A byte-verified local review ZIP was prepared on October 17 with English README/credits, excluding Burst DoNotShip diagnostics. Build/cache/file checks and recorded startup are separate from complete graphical standalone acceptance. See [Validation](VALIDATION.md#windows-package-review-october-17) for hashes, build mode and limitations. Neither the folder nor ZIP is committed, and no public Release attachment was created.
+
+For the creator's first standalone test: start a round, fire, pause/resume, let the complete song settle, use Play Again, start a second round and quit through the game button. Report issues separately from Editor playtests. Retain original song notices and mark review packages as noncommercial development content.
+
 ## Windows package checklist
+
+For the first manual build in Unity 6000.0.77f1, exit Play Mode, save the scene and open **File > Build Profiles**. Select Windows and activate it if needed. In the active scene list, include only `Assets/Scenes/PrototypeScene.unity` at index zero; uncheck the four art-study scenes without deleting their assets. A custom profile can use **Override Global Scene List** to keep a separate scene selection. Target Intel/AMD 64-bit. Check these settings before the build-options/output-folder lesson. See [Unity Build Profiles](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles-reference.html) and [scene selection](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profile-scene-list.html).
 
 1. Complete the [roadmap gates](../Design/ROADMAP.md), including asset clearance and target-PC playtests.
 2. Build Windows x86_64 without Development Build, including the prototype scene, into ignored `Builds/Windows`.
