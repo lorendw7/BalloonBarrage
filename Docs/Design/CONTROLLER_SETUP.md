@@ -1,6 +1,8 @@
 # Controller preparation
 
-Updated: October 13, 2026. The creator selected P1 keyboard/mouse plus P2 one gamepad and owns one Xbox and one Beitong controller. Gameplay support is **not connected yet**. This guide supplies configuration and a hardware-check sequence; [game design](GAME_DESIGN.md#co-op-and-localization) defines behavior and [roadmap](ROADMAP.md) defines delivery gates.
+Updated: October 17, 2026. The creator selected P1 keyboard/mouse plus P2 one gamepad and owns one Xbox and one Beitong controller. Gameplay support is **not connected yet**. This guide supplies configuration and a hardware-check sequence; [game design](GAME_DESIGN.md#co-op-and-localization) defines behavior and [roadmap](ROADMAP.md) defines delivery gates.
+
+Controller and co-op work is **deferred at the creator’s request**. The previous October 23 gate is retired. Preserve the prepared assets and this reference; hardware checks are not the next lesson. Resume after solo polish/performance is accepted and this work is rescheduled in the roadmap.
 
 ## Prepared input asset
 

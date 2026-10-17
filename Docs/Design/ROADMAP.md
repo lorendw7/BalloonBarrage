@@ -10,11 +10,11 @@ The exhibition demo and the later game are separate milestones. Adding an item t
 
 | Horizon | Deliverable | Boundary |
 |---|---|---|
-| M0: exhibition | One complete song, dependable solo controls, rhythm rewards, accepted UI loop and offline Windows package | Required by the October 27 candidate target; co-op has a separate earlier decision gate |
-| M1: stable controls and co-op | Accepted one-pad play, then P1 keyboard/mouse plus P2 one gamepad | Retain the solo mode and shared fixed camera; finish after the festival if its gate is missed |
+| M0: exhibition | One complete song, dependable solo controls, rhythm rewards, accepted UI loop and offline Windows package | Required by the October 27 candidate target; controller/co-op work is deferred |
+| M1: stable controls and co-op | Accepted one-pad play, then P1 keyboard/mouse plus P2 one gamepad | Deferred at the creator’s request; reschedule after solo polish and performance acceptance |
 | M2: painting and readable variety | Projectile-created surface marks, coordinated balloon colors and patterned pops | General opaque-surface support first; cosmetic paint does not change target timing |
 | M3: song and score progression | Small cleared song library, selection/difficulty flow, results breakdown and local records | Add songs through validated data and attribution, not hardcoded scene duplicates |
-| M4: roguelite vertical slice | A short run with musical encounter phases, a few target types and three bounded upgrade choices | Build on accepted rhythm/co-op/paint foundations; choices occur between songs |
+| M4: roguelite vertical slice | A short run with musical encounter phases, a few target types and three bounded upgrade choices | Build on accepted solo rhythm/paint foundations; co-op upgrades follow later; choices occur between songs |
 | M5: compact first release | Integrated modes, settings/accessibility, localization, performance and distribution quality | Ship a small accepted feature set before expanding content |
 
 No post-festival calendar date is committed yet. Review one milestone after its predecessor passes and schedule the next one from actual progress. Online play, independent dual mice, split-screen, mobile, user accounts and an online leaderboard are outside this roadmap's initial release.
@@ -31,7 +31,7 @@ This publication includes all saved gameplay, scenes, art, tools, documentation 
 | Ordinary/on-beat rewards and countdown | Saved; source review and creator-reported 10/20-point and countdown passes | Different distances/frame rates, held fire versus taps, duplicate-resolution checks |
 | Paint burst, golden glow and temporary reward text | Saved; creator-reported display/hide passes; isolated asset/layout/reference checks | Confirm complete-song behavior, pause, repeated hits and retry with the selected 1.45-second text setting |
 | Reticle, firing sound and visual recoil | Creator reports reticle/audio/recoil/reset and Windows core input flow passed; isolated full-song/last-hit/retry check passed | Dense passages and target-PC performance |
-| Xbox/Beitong and co-op | Input actions prepared; Beitong hardware preparation reported successful | Gameplay integration, explicit pairing and physical-device acceptance |
+| Xbox/Beitong and co-op | Input actions prepared; Beitong hardware preparation reported successful; deferred October 17 | Reschedule after solo work; no current hardware-check or exhibition deadline |
 | Surface paint, patterned pops, song selection, runs and upgrades | Planned; cosmetic variants exist in separate art scenes | Separate gameplay milestones below |
 | Windows performance and current demo package | Public Windows solo prerelease v0.1.0-demo.1 preserves the tested build; file/report/chart/archive checks passed; creator reports the standalone core flow passed. Editor batching evidence remains separate | Sustained frame times, ten retries, fresh-extraction/offline checks, soak and final non-development candidate |
 
@@ -45,13 +45,13 @@ The [official 79th Kyudaisai site](https://kyudaisai.jp/79th/), checked October 
 |---|---|---|---|
 | October 16–19 | Reticle, short firing feedback, then complete-song rhythm regression | Reticle artwork, original synthesized firing sound, hierarchy/reference checks, Japanese instructions and test preparation | No blocked UI, drifting weapon, duplicate bonus or timing regression; finish the natural song |
 | October 20 | Resolve solo rhythm blockers and measured timing issues | Build/package the accepted checkpoint, verify bundled audio/chart and capture first performance baseline | Solo title → complete song → results → retry works offline in a fresh Windows build |
-| October 21–23 | One-pad aiming/fire, then conditional P2 integration | Controller assets, player-colored UI, physical-device checklist and Japanese text/font checks | Explicit pairing, simultaneous hits, pause, reconnect and retry pass by October 23 |
+| October 21–23 | Finish the small solo results increment if stable; address measured solo issues | Japanese instructions/fonts, new-player readability, standalone performance capture and regression checks | Clear solo instructions; best score persists if included; core song loop remains accepted |
 | October 24–26 | Measured fixes and new-player playtests | Profiling setup, repeatable stress checks, cleanup/reference checks and package preparation | Target-PC performance, ten retries and a 30-minute soak accepted |
 | October 27 | Confirm gameplay and known issues | Versioned ZIP, complete runtime files, SHA-256, controls, notices and verified download | A reproducible candidate that launches offline |
 | October 28–30 | Exhibition-PC rehearsal and blocker fixes | Backup ZIP, recovery instructions and accurate website/download information | Fresh extraction, sound, display, devices, quit and fallback all verified |
 | October 31–November 1 | Use the verified build and observe players | Maintain release information and consolidate feedback | Record observed problems without introducing untested booth-time changes |
 
-Solo acceptance on October 20 is the prerequisite for exhibition co-op. Co-op ships only if its physical-device and shared-round checks pass by October 23; otherwise ship solo and finish co-op in M1. If a small cosmetic increment causes regression, return to the last accepted presentation and preserve the music/input/retry work. Do not trade the performance/package window for new room decoration or additional modes.
+The creator deferred controller and local co-op work on October 17. The previous October 23 co-op decision gate is retired; the exhibition plan now prioritizes keyboard/mouse solo. Reschedule device preparation and M1 only after solo polish and performance acceptance, with no new date promised. If a small increment causes regression, return to the accepted solo checkpoint. Preserve the performance/package window and defer additional modes or major environment changes.
 
 ## Immediate lesson queue
 
@@ -59,19 +59,15 @@ Teach each row through small edits, normally one field/method or one hookup at a
 
 | Order | Increment | Acceptance before moving on |
 |---|---|---|
-| 1 | Reticle and cursor lifecycle — creator-reported pass | Pointer and reticle agree at supported resolutions; reticle Image does not block raycasts; menus/pause/results/focus loss restore the system pointer |
-| 2 | Clear paint-shot sound — creator-reported pass | Only an accepted shot that spawns a projectile produces the sound; held fire remains below music/cue volume; bounded voices and no stuck audio |
-| 3 | Visual-child recoil and reset — creator-reported passes | Only the weapon model moves; aim root, logical muzzle, camera and projectile direction stay stable; repeated kicks are bounded and return to a cached resting pose |
-| 4 | Full-song and event-boundary regression | Natural song and last event finish; unanswered targets clear; pause near events and repeated rewarded hits do not skip/duplicate events or scores |
-| 5 | Listening and input calibration | Measure signed early/late error on the actual setup before adding an offset; keep audio, chart and firing-time judgement on one clock |
-| 6 | Exhibition instructions and readability | A new player can understand aim, fire, rhythm bonus, pause and retry; Japanese glyphs render; text remains clear at target resolution |
-| 7 | Fresh Windows solo build | Complete round, controls, audio, results, retry and quit work after fresh extraction without Unity or a network connection |
-| 8 | Conditional gamepad/co-op | Follow the October 23 gate and M1 checks; a spare pad cannot take control accidentally |
-| 9 | Performance and candidate | Profile, teach one measured fix, compare again, then finish the release gates |
+| 1 | Local solo best score — next learner lesson, planned | Current song/chart/solo/rules-specific record defaults to zero; a higher completed-round score persists, a lower score cannot overwrite it; retry resets only the round score; confirm quit/relaunch persistence |
+| 2 | Exhibition instructions and readability — assistant preparation alongside lesson 1 | Short Japanese instructions and suitable font coverage; a new player understands aim, fire, rhythm bonus, pause and retry; readable title/HUD/results |
+| 3 | Measured smoothness and timing | Capture standalone CPU/GPU frame times and signed audible/input error; teach one supported optimization at a time and compare again; 2K/120 FPS remains a target |
+| 4 | Repeated-play and package regression | Ten retries and a 30-minute soak; counts/memory remain bounded; fresh extraction and offline start/audio/results/retry/Quit pass on the exhibition PC |
+| 5 | Exhibition candidate and rehearsal | Intended non-development build, versioned ZIP/hash/notices, verified website download and offline backup; target October 27, rehearse October 28–30 |
 
-The latest isolated natural-song check covered all 93 events, last-event reward, settlement, retry and the second round's first hit. On October 17 the creator explicitly reported Windows start, shooting, pause/resume, whole-song results, retry and Quit passed. The tested runtime is now packaged as public prerelease v0.1.0-demo.1; see [Validation](../Project/VALIDATION.md#public-windows-demo-v010-demo1).
+Start the best-score lesson with one persistent key and a zero-default read, then teach the higher-score comparison at settlement, persistence and a separate results label through small changes. The assistant prepares the label/layout and checks; the learner writes gameplay. This is planned work, not a shipped feature or permission for the assistant to implement it. It is a small optional M3 slice: defer it if it threatens core-flow or performance acceptance. Do not add combo/accuracy statistics or additional songs to this increment.
 
-Next teach one small controller-preparation step: verify the Xbox right stick, RT and Start in Input Debugger, then integrate a single explicitly paired pad before adding P2. The assistant maintains packaging, notices, Japanese instruction/font preparation, site and checks; the learner continues gameplay. Keep measured timing, fresh extraction/offline play, ten retries, sustained performance and the 30-minute soak as explicit remaining gates. A public development prerelease does not accept the final exhibition candidate.
+The latest isolated natural-song check covered all 93 events, last-event reward, settlement, retry and the second round's first hit. On October 17 the creator reported Windows start, shooting, pause/resume, whole-song results, retry and Quit passed. Public prerelease v0.1.0-demo.1 preserves that tested runtime; see [Validation](../Project/VALIDATION.md#public-windows-demo-v010-demo1). It does not yet include best-score saving, Japanese UI or controller gameplay. A public development prerelease does not accept the final exhibition candidate.
 
 ## Workstreams, ownership and dependencies
 
@@ -87,7 +83,7 @@ Next teach one small controller-preparation step: verify the Xbox right stick, R
 
 The learner retains Assets/Scripts gameplay. Preparing a helper, prefab, test or settings asset does not silently complete its gameplay integration. The creator uses the real mouse, Xbox/Beitong, audio output and exhibition PC for physical acceptance; synthetic tests support but do not replace it. Existing Unity GUIDs, paired metadata, original song files/notices and recorded image prompts remain intact.
 
-Dependency chain: accepted song clock → event lifecycle and once-only rewards → solo controls/feedback → complete-song Windows baseline → co-op and bounded impact paint → content/stat progression → run/upgrades → integrated release checks. Asset preparation, translation and test tools can proceed alongside the relevant learner step without adding unrequested gameplay.
+Dependency chain: accepted song clock → event lifecycle and once-only rewards → solo controls/feedback → complete-song Windows baseline → solo results/readability/performance → bounded impact paint and content progression → run/upgrades → integrated release checks. Deferred co-op is a later branch, not a prerequisite for solo improvements. Asset preparation, translation and test tools can proceed alongside the relevant learner step without adding unrequested gameplay.
 
 ## M0: exhibition acceptance
 
@@ -108,7 +104,7 @@ Use a Development build to investigate a measured problem, then confirm the inte
 
 ## M1: dependable input and shared-screen co-op
 
-If cut from M0, finish this after the festival without compromising the accepted solo build. Use [Controller preparation](CONTROLLER_SETUP.md) rather than duplicating device setup here.
+Deferred at the creator’s request on October 17. Remove this work from the immediate lesson queue and exhibition calendar; resume only when rescheduled after solo polish/performance. Preserve the accepted solo build. Use [Controller preparation](CONTROLLER_SETUP.md) rather than duplicating device setup here.
 
 | Increment | Deliverable / exit criterion |
 |---|---|
@@ -190,14 +186,14 @@ No online services, analytics, monetization or broad platform port is a dependen
 |---|---|
 | Timing feels inconsistent despite numerical judgement | Measure physical audio/input latency, compare taps and held fire, inspect one DSP origin and target-distance independence before tuning windows |
 | Extra feedback makes the song harder to read/hear | Lower shot audio and effect density, reduce recoil/flash and keep cosmetic transforms separate; return to accepted feedback if necessary |
-| Co-op disrupts solo input or duplicate-hit protection | Preserve a solo entry/fallback, explicit device pairing and one consumed-target outcome; miss the October 23 gate and move co-op to M1 |
+| Co-op disrupts solo input or duplicate-hit protection | Preserve a solo entry/fallback, explicit device pairing and one consumed-target outcome; keep M1 deferred and protect the accepted solo path |
 | Paint obscures targets or costs too much | Start on one wall, use a shared budget/fade, reject unsuitable receivers and profile before expanding |
 | Song rights or timing format are unsuitable | Keep the accepted song and notices; replace/defer the content, never imply commercial clearance |
 | Too many upgrades or target behaviors | Finish one short run and a tiny eligible pool first; add combinations only after bounded-effects and scoring tests |
 | Standalone performance unverified | Treat 2K/120 as a target, not a claim; compare against the initial 36.7 FPS Editor observation, retain profiling/soak time and discuss any necessary quality tradeoff from measured data |
 | Learning overload | One small core change per handoff, one next action, explain code and keep a runnable checkpoint; prepare assets/docs/tests in parallel |
 | Exact combo, accuracy, difficulty and progression rules | Decide during M3 from observed play; keep proposals out of advertised current features |
-| Which post-festival feature comes first | Default to M1 → M2 → M3 → M4; adjust after festival feedback and dependency review |
+| Which post-festival feature comes first | Finish solo polish/performance first; M2/M3 can proceed while M1 is deferred. Reschedule co-op from creator priorities and actual capacity |
 
 ## Working agreement and evidence
 

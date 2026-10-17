@@ -42,7 +42,7 @@ All project documentation is maintained in English. The website and planned game
 - [UI clarity and resolution support](Docs/Art/INTERFACE_V2.md#october-14-clarity-and-resolution-support): bundled fonts, text refresh and checked 720p/1080p/1440p, 4:3 and ultrawide layouts.
 - [First rhythm lesson](Docs/Design/RHYTHM_FIRST_LESSON.md): switch interface/game music and initialize the round from the full downloaded song before adding its DSP chart timeline.
 - [Chart-reading lesson](Docs/Design/RHYTHM_CHART_LESSON.md): load the prepared 93-event timeline and verify its first event before scheduling targets.
-- [Controller preparation](Docs/Design/CONTROLLER_SETUP.md): prepared input actions and Xbox/Beitong checks for the planned P1 mouse plus P2 gamepad mode.
+- [Controller preparation](Docs/Design/CONTROLLER_SETUP.md): deferred input actions and Xbox/Beitong reference for the later P1 mouse plus P2 gamepad mode.
 - [Paint-pop lesson](Docs/Art/PAINT_POP_LESSON.md): connected burst assets and their manual acceptance checklist; later surface paint follows the rhythm checkpoint.
 - [Credits](CREDITS.md): attribution and provenance.
 
