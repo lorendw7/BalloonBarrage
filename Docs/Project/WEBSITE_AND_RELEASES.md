@@ -20,7 +20,7 @@ Preview at http://127.0.0.1:4173/. Add `--offline` to the build command when rel
 
 ## Publication and download selection
 
-`.github/workflows/website.yml` builds, tests and publishes on configured main-branch paths, release events and manual dispatch. Use GitHub Actions as the Pages source. Build-time release lookup produces a public, token-free snapshot; visitors do not call the GitHub API.
+`.github/workflows/website.yml` builds, tests and publishes on configured main-branch paths and manual dispatch from main. Release events request a fresh main-branch run through `workflow_dispatch`; the tag job does not deploy directly. The refresh job alone has `actions: write`, and deployment retains the existing main-only Pages environment rules. This avoids a release tag being rejected by those rules without weakening environment protection. Use GitHub Actions as the Pages source. Build-time release lookup produces a public, token-free snapshot; visitors do not call the GitHub API. For an older tag that predates this workflow change, dispatch `website.yml` from main after editing or withdrawing its attachments.
 
 Accept a nonempty uploaded Windows-labelled ZIP from this repository's HTTPS `releases/download` URLs. Reject drafts; prefer stable releases, otherwise label prereleases. Lookup examines the latest 100 releases. Source-code archives are not playable packages. Preserve the release-list link for empty or unknown states.
 

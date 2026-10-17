@@ -23,7 +23,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  refresh-release:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Refresh release availability from the main branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run website.yml --ref main --repo "$GH_REPO"
   build:
+    if: github.event_name != 'release' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
