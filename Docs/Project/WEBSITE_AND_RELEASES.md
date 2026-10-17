@@ -2,7 +2,7 @@
 
 The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
 
-The October 16 source publication includes all saved gameplay, scenes, assets, tools, English documentation and the trilingual website authorized by the creator. It does not create or accept a new Windows release. The site separates saved implementation, creator-reported playtests, Editor performance observations and delivery targets. [Roadmap](../Design/ROADMAP.md) owns scope and deadlines; [Validation](VALIDATION.md) owns evidence.
+The October 17 public prerelease **v0.1.0-demo.1** packages the creator-tested Windows solo build without changing its runtime. The creator reports start, shooting, pause/resume, whole-song results, retry and Quit passed. It is a noncommercial development demo, separate from the final exhibition/performance candidate. The site distinguishes those reports from automated checks and targets. [Roadmap](../Design/ROADMAP.md) owns scope; [Validation](VALIDATION.md) owns evidence.
 
 ## Build and preview
 
@@ -26,15 +26,25 @@ Accept a nonempty uploaded Windows-labelled ZIP from this repository's HTTPS `re
 
 Read [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases) for live availability; documentation is not a live release listing.
 
-## Current local Windows checkpoint
+## Published Windows checkpoint
 
-The October 16 manual build is in `Builds/Windows-x64-Solo-20261016`: run **BalloonShooter.exe** and keep **BalloonShooter_Data** plus every accompanying runtime file. The filename reflects the current Unity product name. Only PrototypeScene is enabled; four art-study scenes remain saved but excluded. A byte-verified local review ZIP was prepared on October 17 with English README/credits, excluding Burst DoNotShip diagnostics. Build/cache/file checks and recorded startup are separate from complete graphical standalone acceptance. See [Validation](VALIDATION.md#windows-package-review-october-17) for hashes, build mode and limitations. Neither the folder nor ZIP is committed, and no public Release attachment was created.
+[v0.1.0-demo.1](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.1) uses the October 16 build in ignored `Builds/Windows-x64-Solo-20261016`. Run **BalloonShooter.exe** and keep **BalloonShooter_Data** plus every runtime file. Only PrototypeScene is enabled; art-study scenes are excluded. The ZIP preserves all 299 distributable runtime/source files, excluding the Burst DoNotShip directory. English controls, linked credits, a per-file runtime hash manifest, full font/model/CC0 notices and the Unity shader license accompany it. Original StepMania files/notices remain unchanged.
 
-For the creator's first standalone test: start a round, fire, pause/resume, let the complete song settle, use Play Again, start a second round and quit through the game button. Report issues separately from Editor playtests. Retain original song notices and mark review packages as noncommercial development content.
+The creator reported the complete Windows core-flow test passed on October 17. This is physical-playtest feedback, not independent graphical automation or sustained performance acceptance. The reviewed build report includes Development; this prerelease is a development snapshot. Japanese UI, gamepad/co-op, performance capture, fresh-extraction/offline confirmation, ten retries and a 30-minute soak remain separate gates.
+
+To reproduce packaging without rebuilding or modifying runtime files:
+
+```powershell
+python Tools/Release/package_windows_demo.py --source Builds/Windows-x64-Solo-20261016 --output Builds/BalloonBarrage-Windows-x64-v0.1.0-demo.1.zip --tag v0.1.0-demo.1
+```
+
+The tool refuses existing outputs, verifies every archive entry and checks runtime hashes against the source again after packaging. Upload the ZIP and its `.sha256` sidecar to the matching prerelease. Do not overwrite an already published artifact; use the next demo version for a changed package. Package evidence and hashes are in [Validation](VALIDATION.md#public-windows-demo-v010-demo1).
 
 ## Windows package checklist
 
 For the first manual build in Unity 6000.0.77f1, exit Play Mode, save the scene and open **File > Build Profiles**. Select Windows and activate it if needed. In the active scene list, include only `Assets/Scenes/PrototypeScene.unity` at index zero; uncheck the four art-study scenes without deleting their assets. A custom profile can use **Override Global Scene List** to keep a separate scene selection. Target Intel/AMD 64-bit. Check these settings before the build-options/output-folder lesson. See [Unity Build Profiles](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profiles-reference.html) and [scene selection](https://docs.unity3d.com/6000.0/Documentation/Manual/build-profile-scene-list.html).
+
+For the final exhibition candidate, beyond the current development prerelease:
 
 1. Complete the [roadmap gates](../Design/ROADMAP.md), including asset clearance and target-PC playtests.
 2. Build Windows x86_64 without Development Build, including the prototype scene, into ignored `Builds/Windows`.

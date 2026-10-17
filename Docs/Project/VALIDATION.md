@@ -8,7 +8,7 @@ The creator authorized publication of all saved game progress, scenes, assets, t
 
 | Area | Saved implementation | Creator-reported acceptance |
 |---|---|---|
-| Round and interface | Start, pause, Resume, Quit, HUD, captured final score, results and retry; complete-song DSP clock | Incremental pause, score/time, results/retry and editor Quit passes |
+| Round and interface | Start, pause, Resume, Quit, HUD, captured final score, results and retry; complete-song DSP clock | Incremental passes; October 17 Windows start, shooting, pause/resume, whole-song results, retry and Quit explicitly reported passed |
 | Rhythm | 93 prepared events, 0.8-second previews, target identity, expiry at event time + 3.1 seconds, firing-time ±0.1-second judgement, matching impact bonus | Cleanup, ordinary 10 / on-beat 20 points and countdown passed |
 | Hit feedback | Enlarged paint burst, golden ring/sparkles, ON BEAT +20 notification/receiver; selected duration 1.45 seconds | Burst/glow and text display/automatic hiding passed incrementally; no separate full-song acceptance at the selected duration |
 | Reticle and pointer | Nonblocking overlay reticle follows mouse; play/pause/focus gate; pointer restored by disable/focus-loss helpers | Reticle following, pause hiding and pointer hiding/restoration passed |
@@ -18,26 +18,30 @@ The creator authorized publication of all saved game progress, scenes, assets, t
 
 The saved recoil visual is `RefinedGunVisual`, scene Transform 2100042000. The logical muzzle, spray and audio are outside that branch. `OnDisable` resets the weapon pose and restores the pointer. LateUpdate resets immediately when IsPlaying is false, before the existing pause/recovery guards. Restart reloads the scene and recreates the cached pose. The optional `aimReticle != null` visibility guard also remains unimplemented. Diagnostic shot/chart/spawn logs and unused spawner fields remain in learner source; no gameplay cleanup was silently applied during publication.
 
+## Public Windows demo v0.1.0-demo.1
+
+On October 17 the creator explicitly reported Windows-player **start, shooting, pause/resume, whole-song results, retry and Quit passed**, and requested public distribution. This accepts the reported core flow on the creator's machine; it does not establish measured latency, minimum hardware, offline/fresh-extraction acceptance or sustained 2K/120 FPS.
+
+Source review covered RoundController's scheduled DSP clock/pause/settlement/reload, RhythmChartReader event/cue indices and feedback subscription, PlayerShooter input/release/recoil gates, PaintProjectile event-matched bonus, Balloon once-only pop/expiry and Score's nonplaying/pause guard. No new release-blocking issue was found in this unchanged checkpoint. Learner gameplay and scene files were not edited. Diagnostic firing/spawn logs, repeated HUD formatting and existing unused spawner fields remain candidates for measured optimization, not silently completed gameplay work.
+
+The public prerelease [v0.1.0-demo.1](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.1) preserves the October 16 tested build:
+
+- `BalloonBarrage-Windows-x64-v0.1.0-demo.1.zip`: **81,889,007 bytes**, **306 files**, SHA-256 **`9d0f1932d2ed7dfe5faf7cdcead51aaf2ceb19348e30b016a745e5f71184a7c1`**. The `.sha256` sidecar accompanies the ZIP.
+- All **299 original distributable runtime/source files** match both the build folder and the earlier reviewed file manifest by SHA-256. `BalloonShooter_BurstDebugInformation_DoNotShip` is excluded. English README, linked credits, runtime manifest and four complete license notices are added. Runtime binaries/configuration are unchanged.
+- The executable is **BalloonShooter.exe**, with **BalloonShooter_Data**. Its AMD64 PE header and SHA-256 `d69d59ff27e36f4f1128d7584b83d106d2938ecbf2fc3ce90d444d1ac916d062` match the tested original. Assembly-CSharp.dll matches the build-cache DLL: `531231654ae48973d134d95568ef3c9cb8872d6462ca9cd2bc5ad0d1d87f768f`.
+- BuildReport: StandaloneWindows64, Succeeded, 0 errors, 2 existing CS0414 unused-field warnings, 107.241 seconds. The recorded options include Development; this is a development prerelease, not final non-development performance acceptance. Only PrototypeScene is enabled.
+- All sixteen original StepMania files and provenance notices pass bundle verification. Packaged JSON matches source: **93 events**, duration **123.428571429 seconds**, SHA-256 `a4c019ed6cf9ec0d92b03689fd7363d14aac1b5e9c854ce477807c7eb7f68549`. Original music restrictions are retained.
+- Packaging verified every ZIP entry's CRC and SHA-256, then rechecked source runtime hashes to detect concurrent edits. All six website tests passed; metadata/documentation-link audit passed 1,015 GUIDs and 25 documentation files. These checks support packaging/site integrity rather than replacing the creator's physical playtest.
+
 ## Windows package review, October 17
 
-The creator completed a local Windows build on October 16. Its actual executable is `Builds/Windows-x64-Solo-20261016/BalloonShooter.exe`, with `BalloonShooter_Data`; the product name is still BalloonShooter. Do not assume the filename is BalloonBarrage.exe or rename one file without its data relationship.
-
-- The copied Unity BuildReport identifies StandaloneWindows64, Succeeded, 0 errors, 2 warnings and a 107.241-second build. The editor log contains the existing unused-field CS0414 warnings for BalloonSpawner.remainingDelay/maxBalloons. Reported size is 213,795,413 bytes. Its options include Development, so these checks do not establish final non-development performance; verify intended build options before performance acceptance.
-- Executable and UnityPlayer.dll PE headers identify AMD64. Executable SHA-256: `d69d59ff27e36f4f1128d7584b83d106d2938ecbf2fc3ce90d444d1ac916d062`. The packaged gameplay DLL matches the latest build-cache DLL byte-for-byte.
-- Bundle verification passed all sixteen original StepMania files/notices. The packaged prepared JSON matches the source byte-for-byte: 93 events, duration 123.428571429 seconds, SHA-256 `a4c019ed6cf9ec0d92b03689fd7363d14aac1b5e9c854ce477807c7eb7f68549`.
-- The existing graphical Player.log shows Unity 6000.0.77f1, Direct3D 11 on the NVIDIA RTX 5070 Ti Laptop GPU, the 93-event chart/first-event log and accepted firing logs through 3.576 seconds. This proves only that recorded startup/short firing path, not an independently observed complete round or Quit-button result.
-- A fresh review copy preserved 299 runtime/source files, excluded the Burst DoNotShip diagnostic directory and added an English README plus CREDITS.md. Original build binaries remain unchanged. ZIP integrity and per-file SHA-256 checks passed for `Builds/BalloonBarrage-Windows-x64-local-review-20261017.zip`: 82,171,375 bytes, 301 files, SHA-256 `b44d23d5bfb6d47a1ef46965518b026eeed734456c57204282f96854146b5603`. It remains local/ignored; no GitHub Releases attachment was created.
-- A headless startup of the fresh copy read the 93-event chart. The supplied quit argument did not terminate this player; the owned test process was stopped after observation. Temporary-allocation lifetime warnings appeared in that headless run. This is not a normal graphical Quit test or a clean-exit/performance acceptance result.
-- Windows Computer Use launch approval timed out, so independent graphical input/listening/complete-round/retry/Quit acceptance remains pending creator feedback. An optional attempt to inspect packaged serialized metadata directly caused the isolated editor to exit; that diagnostic is not relied on. Neither attempt edited the original build or gameplay.
-- The first isolated build-report/resource audit compiled current source and passed with zero missing scripts, unsupported Volume Profile entries or unresolved YAML references. Saved URP changes include build-generated prefilter/runtime-settings serialization; render scale 1, 50 m shadow distance and four cascades are retained. GraphicsSettings changes normalize YAML formatting. Only PrototypeScene is enabled in the saved build scene list. Original GUIDs are preserved.
-
-Reports, file manifest, copied build report and local logs are under ignored `.local-backups/windows-check-20261017`. These package/startup checks are separate from the earlier complete-song Editor flow check. A request for the creator's actual Windows control-flow result remains pending; do not turn a successful website deployment into Windows acceptance.
+The earlier local review is superseded by the public package above; raw report, manifest and logs remain ignored under `.local-backups/windows-check-20261017`. It confirmed build files, chart and a recorded graphical startup. An additional headless run and failed optional serialized-metadata diagnostic are not relied on for graphical control-flow acceptance. The later creator report supplies the explicit Windows core-flow result.
 
 ## Latest natural song-end and second-round check
 
 The creator confirmed the lowered gun position and requested a check of the natural song ending, last event, settlement and second round. Unity 6000.0.77f1 ran the latest saved PrototypeScene and gameplay in the ignored isolated copy. The method-driven Play Mode diagnostic exited with code 0, without changing the clip, song origin, playback speed or gameplay timeline to shorten the run.
 
-The creator subsequently completed one full round and reported that it appeared normal, then explicitly reported the near-end pause/resume test passed. Record these as creator-reported playtests, without assuming every individual audio, score, retry or timing criterion was explicitly rechecked. Standalone acceptance remains pending. Source review after these reports found no gameplay or scene changes since the automated run.
+The creator subsequently completed one full round and reported that it appeared normal, then explicitly reported the near-end pause/resume test passed. Record these as creator-reported playtests, without assuming every individual audio, score, retry or timing criterion was explicitly rechecked. The subsequent October 17 Windows core-flow report is recorded separately below. Source review after these reports found no gameplay or scene changes since the automated run.
 
 - The complete 123.4286-second song played naturally beyond the former 90-second cutoff. All 93 events spawned exactly once, within the checked preview interval; both chart and cue indices reached 93. The last event is at 118.857143 seconds, and its target spawned at 118.072 seconds in this run.
 - Synthetic mouse input went through the existing PlayerShooter Update and actual projectile collision for the last event. The stored firing-time judgement and matching event id produced one 20-point award and one reward notification. The label appeared; the song continued through the tail. Remaining unanswered targets cleared before song end, and the cue displayed ENDING.
@@ -106,10 +110,10 @@ The older ignored Windows development ZIP, `Builds/BalloonBarrage-Windows-x64-rh
 
 ## Outstanding gates
 
-- Detailed physical-input/listening confirmation and repeated-hit/held-fire regression. The latest natural-song and second-first-hit automated checks are recorded above; lowered gun framing, a complete-round smoke check and near-end pause/resume now have creator feedback.
+- Repeated-hit/held-fire regression and measured listening/latency calibration beyond the creator-reported Windows core-flow pass.
 - Audible/input timing and signed latency calibration on the actual exhibition setup.
 - Japanese instructions and font coverage; new-player readability, UI input and quit in a standalone player.
-- Complete graphical/offline acceptance of the new local Windows package, intended non-development build confirmation, ten retries and a 30-minute exhibition-PC soak with CPU/GPU frame times, allocations and object/effect counts.
+- Fresh-extraction/offline confirmation of the public ZIP, a final non-development candidate, ten retries and a 30-minute exhibition-PC soak with CPU/GPU frame times, allocations and object/effect counts. Windows start/shoot/pause/results/retry/Quit are creator-reported passes, not a measured benchmark.
 - Paired controller and co-op integration only after solo acceptance, according to the roadmap cutoff.
 - Asset clearance for the intended distribution. Bundled StepMania material remains noncommercial development content; commercial rights are not claimed.
 

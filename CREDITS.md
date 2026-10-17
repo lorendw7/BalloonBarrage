@@ -4,17 +4,17 @@
 
 | Asset | Recorded creator/source | Recorded license | Verification status |
 |---|---|---|---|
-| Balloon | Poly by Google, via [Poly Pizza](https://poly.pizza) | CC-BY | Preserve attribution; exact original page/version and full text still need verification |
-| Blaster Kit | [Kenney](https://kenney.nl) | CC0 | Existing project declaration; exact download record still needs verification |
-| Impact Sounds | [Kenney](https://kenney.nl) | CC0 | Existing project declaration; exact download record still needs verification |
+| Balloon | Poly by Google, via [Poly Pizza](https://poly.pizza/m/d1gDDhM7pTf) | [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/) | October 17 page metadata identifies Balloon, Poly by Google, 1,048 triangles and CC-BY 3.0; title/creator/topology agree with the retained OBJ. Original download archive/hash is unavailable. |
+| Blaster Kit | [Kenney](https://kenney.nl/assets/blaster-kit) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | Official pack page checked October 17; exact historical download record remains unavailable. |
+| Impact Sounds | [Kenney](https://kenney.nl/assets/impact-sounds) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | Official pack page checked October 17; exact historical download record remains unavailable. |
 
-These retained declarations are not a new independent license audit. Do not describe all project assets as CC0. Preserve model/palette packages and third-party notices.
+The Balloon is adapted with project materials, coloring and presentation; the original creator does not endorse this game. This source identification is supported by page metadata, not an independent byte-identical redownload. Full CC-BY 3.0 and CC0 texts are retained in `Tools/Release/Notices`, downloaded from the official Creative Commons legal-code URLs. Do not describe all project assets as CC0. Preserve model/palette packages and third-party notices.
 
 ## Project-created content
 
 Studio textures, sprays, menu images, latex fragments and paint concepts use built-in image generation. Exact recorded prompts are retained in the [art guides](Docs/Art/ASSET_CATALOG.md). Older concept/splat prompts are unavailable. Concept images do not establish licenses for imported models.
 
-The October 11 Interface V2 background and transparent sprite sheet use built-in image generation; their exact prompts are recorded in [Interface V2](Docs/Art/INTERFACE_V2.md). UI layouts are editable Unity Canvas prefabs, with Unity's built-in LegacyRuntime font. Their preview PNGs are Unity camera renders, and displayed scores are illustrative samples.
+The October 11 Interface V2 background and transparent sprite sheet use built-in image generation; their exact prompts are recorded in [Interface V2](Docs/Art/INTERFACE_V2.md). UI layouts are editable Unity Canvas prefabs; the original LegacyRuntime font was subsequently replaced by the Lato clarity pass described below. Their preview PNGs are Unity camera renders, and displayed scores are illustrative samples.
 
 RoomFinishV7 adds a generated oak-plank albedo texture, with its exact prompt in [Studio art pack](Docs/Art/STUDIO_ART_PACK.md). Cream wall and ivory ceiling materials are native Unity material settings. Floor UVs reuse the existing mesh shape; the refreshed reflection is a Unity bake.
 
