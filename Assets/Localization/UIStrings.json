@@ -1,6 +1,10 @@
 {
   "locales": ["zh-Hans", "ja", "en"],
   "entries": [
+    {"key":"instructions.aim","zhHans":"移动鼠标瞄准，按住左键射击。","ja":"マウスで狙い、左クリック長押しで連射。","en":"Aim with the mouse. Hold left click to fire."},
+    {"key":"instructions.rhythm","zhHans":"跟随气球倒计时射击，命中对应气球可得节奏奖励。","ja":"風船のカウントダウンに合わせて撃ち、同じ風船に当てるとボーナス。","en":"Fire as a balloon countdown reaches zero. Hit that balloon for a rhythm bonus."},
+    {"key":"instructions.pause","zhHans":"Esc：暂停或继续。","ja":"Esc：一時停止・再開。","en":"Esc: pause or resume."},
+    {"key":"instructions.results","zhHans":"完整歌曲结束后结算。点击重试再玩一局。","ja":"曲が終わると結果を表示。リトライでもう一度。","en":"Results appear at the end of the song. Choose Retry to play again."},
     {"key":"menu.start","zhHans":"开始游戏","ja":"ゲーム開始","en":"Start Game"},
     {"key":"menu.solo","zhHans":"单人模式","ja":"ソロプレイ","en":"Solo"},
     {"key":"menu.coop","zhHans":"本地双人","ja":"ローカル協力プレイ","en":"Local Co-op"},

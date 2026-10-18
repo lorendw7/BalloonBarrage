@@ -1,5 +1,11 @@
 # Interface V2: assets and learner integration
 
+## October 18 author credit
+
+StartScreen now includes `Created by 何单东 Shandong He` at the bottom right, using deep green lettering over a cream backing plate. Both presentation objects ignore raycasts. A small renamed Noto CJK font subset covers printable ASCII and the exact name characters; its complete OFL notice and pinned provenance are bundled in `Fonts/AuthorCredit`. This is author-credit coverage only, not general Chinese/Japanese localization.
+
+Isolated native checks passed glyph availability, text fit, viewport bounds and nonoverlap at 720p, 1080p, 1440p, 4:3 and ultrawide, plus production-scene inheritance and the retained Start callback. `Previews/Start_AuthorCredit_1080p.png` is the visually reviewed native layout preview. Preparation never saves the production scene. Existing UI artwork, button callbacks and learner gameplay are retained.
+
 The new pack is in `Assets/StudioArtPack/InterfaceV2`. Open `InterfaceGallery.unity` to inspect the layouts. The production gameplay scene is still `Assets/Scenes/PrototypeScene.unity`.
 
 **Status:** StartScreen, PauseScreen, GameplayHUD and ResultsScreen are connected in PrototypeScene. Start/Resume/Quit/Play Again callbacks and live score/time/final-score Text values are saved; the old OnGUI display is removed. Isolated checks cover the Canvas flow, and the learner reports pause, HUD and new results playtests passed. PlayerShooter now has release/pointer guards, and the scene disables legacy PaintGunVfx. Final physical-input acceptance remains pending; prepared gamepad actions are not connected to gameplay. See the [validation record](../Project/VALIDATION.md) for evidence and limits. Do not add the gallery scene to the game build as a playable level.
@@ -146,3 +152,9 @@ Use case: stylized-concept. Asset type: production game UI sprite atlas on trans
 Use case: stylized-concept. Asset type: full-bleed landscape 16:9 production main-menu background for BalloonBarrage, no interface baked in. An inviting contemporary artisan balloon-painting studio, refined hand-painted 3D illustration, warm daylight from a tall left window, matte cream plaster, honey oak and walnut furniture, restrained deep teal cabinets and coral paint accents. Straight-on camera, credible material depth and soft contact shadows. A few shiny teal and coral pear-shaped balloons on the far left, thin strings; brushes, ceramic paint pots and folded linen on a low left desk; a narrow plant and framed abstract balloon print at the far right. Delicate painted splashes only at peripheral corners. The middle 60 percent is a calm softly illuminated pale plaster wall, entirely unobstructed for a live title, instructions and two buttons. Keep central empty space tall and wide from 12 to 88 percent height. Decorative props hug the bottom and outer side margins. Sophisticated cozy indie game atmosphere, strong clean silhouettes, low noise, subtle grain, not childish, no heavy outlines. Palette ivory #F4E6D0, walnut #70503A, teal #287E80, muted coral #CE6B58, tiny brass highlights. NO text, letters, numbers, typography, logos, watermarks, GUI, button shapes, frames around the canvas, or people. Opaque background. This is artwork to use directly behind editable Unity UI.
 ```
 
+
+## October 17 best-score results row
+
+The existing ResultsScreen prefab now includes Dialog/BestScoreRow with a BEST SCORE caption and a BestScoreValue legacy Text. It uses the existing dynamic Lato Bold font, a centered 350 × 26 row at (0, -64), right-aligned size-21 record value and nonblocking raycast settings. The saved `------` is a placeholder. The learner's best-score read/higher-only save are saved; the new Text field and display assignment remain learner work in the [Best-score lesson](../Design/BEST_SCORE_LESSON.md).
+
+The [native preview](../../Assets/StudioArtPack/InterfaceV2/Previews/Results_BestScore_1080p.png) uses illustrative scores. Five resolution checks passed fit, viewport and nonoverlap, and the production scene retained its retry callback. Original prefab object ids, controls and references remain intact; only the Dialog child list and new presentation objects were added. No new raster generation, font or external download was introduced, and the original recorded artwork prompts and font license remain unchanged.

@@ -10,6 +10,8 @@ public class PaintProjectile : MonoBehaviour
 
     [SerializeField] private float lifetime = 2f;
 
+    [SerializeField] private GameObject paintMarkPrefab; 
+
     public bool ShotWasOnBeat {  get; private set; }
 
     public int TargetEventId { get; private set; } = -1;
@@ -56,6 +58,19 @@ public class PaintProjectile : MonoBehaviour
                 }
 
                 balloon.Hit(bonusPoints);
+            }
+            else if (paintMarkPrefab != null &&
+                    (hit.collider.name == "MainWall" ||
+             hit.collider.name == "Floor" ||
+             hit.collider.name == "LeftWall" ||
+             hit.collider.name == "RightWall"))
+            {
+                Vector3 position = hit.point + hit.normal * 0.005f;
+
+                Quaternion rotation = Quaternion.LookRotation(hit.normal);
+
+                Instantiate(paintMarkPrefab, position, rotation);
+
             }
 
             Destroy(gameObject);

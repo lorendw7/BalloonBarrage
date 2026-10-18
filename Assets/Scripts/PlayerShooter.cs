@@ -222,7 +222,7 @@ public class PlayerShooter : MonoBehaviour
 
         bool isOnBeat = targetBalloon != null &&
             targetBalloon.IsOnBeat(shotTime);
-        Debug.Log($"Shot at {shotTime:F3}s; on beat: {isOnBeat}.");
+        // Debug.Log($"Shot at {shotTime:F3}s; on beat: {isOnBeat}.");
 
         PaintProjectile projectile = Instantiate(
             paintProjectilePrefab,

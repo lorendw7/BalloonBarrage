@@ -221,3 +221,4 @@ MonoBehaviour:
   speed: 35
   radius: 0.08
   lifetime: 2
+  paintMarkPrefab: {fileID: 7850021937777270413, guid: 964280d564dbcb8419bccd31ebb8b031, type: 3}

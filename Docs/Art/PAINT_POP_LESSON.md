@@ -67,12 +67,8 @@ All paths above are relative to `Assets/StudioArtPack`. The two new latex materi
 
 For a visual-only trial, select the balloon's visible MeshRenderer in a test prefab variant and assign one matching material; assign its matching root ParticleSystem to the existing Pop Effect Prefab field. This tests one color at a time. Simultaneous random colors require learner-authored selection of a matching material/effect/pattern entry. Do not tint a shared material in place for individual spawned balloons.
 
-These sprite prefabs are flat marks; they are not projection decals and are not automatically emitted by the pop. Surface placement, pattern selection, general curved-surface support, fading and the shared mark budget are future gameplay work described in [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion).
+These sprite prefabs are flat marks; they are not projection decals and are not automatically emitted by the pop. Surface placement, pattern selection, general curved-surface support, fading and general-surface integration are future gameplay work; no paint-count cap is planned at the creator’s request described in [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion).
 
-## Next paint lesson: projectile hits leave surface marks
+## Projectile surface paint and color follow-up
 
-Flying particles and persistent wall marks are separate systems. These particles do not paint walls automatically.
-
-The requested next paint increment will reuse one existing [spray prefab](SPRAY_ASSETS.md) when a projectile hits an eligible wall or floor. Use the projectile's existing hit point and surface normal to place a small decorative mark just clear of that surface, then register it with a round-owned collection. Balloon hits still trigger the burst above. Start with a maximum of 40 visible surface marks (remove the oldest), and clear all marks on restart. Keep marks low contrast and without colliders. Surface marks are planned learner work; the current PaintProjectile only pops balloons and destroys itself on a hit. Do not add render-texture painting or particle collision painting before this bounded version passes.
-
-The Canvas flow is now connected. The required festival rhythm checkpoint takes priority over new surface-paint work; begin with the [music ownership lesson](../Design/RHYTHM_FIRST_LESSON.md) and follow the [roadmap](../Design/ROADMAP.md). Keep the existing burst while adding clock, judgement and impact bonus. Surface fading and other feedback follow the accepted rhythm loop.
+The creator reports first MainWall marks and eight-second recycling passed. [Surface paint lesson](SURFACE_PAINT_LESSON.md) owns that code and later optional fade/round cleanup, without a count cap. [Three-color balloons](BALLOON_COLOR_LESSON.md) are now connected, with creator-reported matching-burst and 10/20-point passes. The next core step is [Local best score](../Design/BEST_SCORE_LESSON.md). General surface receivers, colors for gun/wall paint and patterned bursts remain later work under [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion).

@@ -16,8 +16,9 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack/InterfaceV2 | New menu background, nine sliced sprites, five UI presentation prefabs and Unity previews |
 | Assets/StudioArtPack/RoomFinishV7 | Oak floor texture and world-scale UV mesh, cream walls, ivory ceiling and prior room reflection |
 | Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
-| Assets/StudioArtPack/BalloonColors | Earlier prepared coral/gold latex materials; V12 connects its own six-pigment runtime set |
+| Assets/StudioArtPack/BalloonColors | Coral/gold latex materials and a current-source three-color prefab connected in PrototypeScene, with creator-reported color/scoring passes; V12 keeps its separate six-pigment set |
 | Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
+| Assets/StudioArtPack/SurfacePaint | Prepared small teal projectile wall-mark prefab/material, existing atlas provenance and native close-up preview; first-wall/eight-second integration saved with creator-reported pass |
 | Assets/StudioArtPack/Runtime | Cosmetic selection/tint components and one-time explicit static-room batching; no new score, movement or rhythm rules |
 | Assets/Scenes/StudioConceptVariants.unity | V12 cosmetic variant scene; paired lighting folder and appended Build Settings entry |
 | Assets/StudioArtPack/ConceptDetailV13 | Copied room pigments/strip/rug materials, procedural mineral floor, batched art supplies/paint studies, reflection and actual Unity previews |
@@ -28,6 +29,10 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/Localization | 25 UI keys in three languages; runtime switching pending |
 
 ## Integration guides
+
+- [Balloon color lesson](BALLOON_COLOR_LESSON.md): current-source three-color prefab, one spawner hookup and matched-burst acceptance.
+
+- [Surface paint lesson](SURFACE_PAINT_LESSON.md): current learner increment; connect the prepared small wall mark before adding the projectile hit branch.
 
 - [Studio art pack](STUDIO_ART_PACK.md): current V6 surfaces, earlier dependencies, music and recorded prompts.
 - [Cover finish V9](COVER_FINISH_V9.md): current environment finish, offline lighting, tuning and capture evidence.

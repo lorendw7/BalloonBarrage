@@ -1,0 +1,10 @@
+{
+  "licenseUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/LICENSE",
+  "fontUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+  "commit": "f8d157532fbfaeda587e826d4cd5b21a49186f7c",
+  "prepared": "2026-10-18",
+  "sourceSha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+  "derivedSha256": "778dbd14602d53cf78b7093cce484f25a90a788d52f1bb911ed7143d4cce39a4",
+  "derivative": "Renamed subset Balloon Credit Sans Regular; printable ASCII plus U+4F55 U+5355 U+4E1C. Prepared with fontTools 4.60.1. Original license/copyright retained.",
+  "scope": "Author-credit label only; does not establish general Chinese or Japanese UI font coverage."
+}

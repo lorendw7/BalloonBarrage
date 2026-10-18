@@ -21,7 +21,13 @@ def main():
     parser.add_argument("--source", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--tag", required=True)
+    parser.add_argument("--release-info", type=Path,
+                        help="JSON with date, features, verification and limits for this build")
     args = parser.parse_args()
+    info = json.loads(args.release_info.read_text(encoding="utf-8-sig")) if args.release_info else None
+    if info and not all(isinstance(info.get(key), str) and info[key].strip()
+                        for key in ("date", "features", "verification", "limits")):
+        parser.error("Release info requires nonempty date, features, verification and limits strings")
     if not re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+-demo\.[0-9]+", args.tag):
         parser.error("Use a versioned demo tag, for example v0.1.0-demo.1")
     source, output = args.source.resolve(), args.output.resolve()
@@ -56,6 +62,14 @@ def main():
 
     credits = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", source_link,
                      (ROOT / "CREDITS.md").read_text(encoding="utf-8"))
+    verification = info["verification"] if info else """The creator reports Windows start, shooting, pause/resume, whole-song results,
+retry and Quit passed on October 17, 2026. This is creator-reported acceptance,
+not an independently operated physical-input test on every machine."""
+    limits = info["limits"] if info else """Keyboard/mouse solo only; English game UI; no song selection,
+arbitrary-surface painting or co-op. Sustained 2K/120 FPS, ten retries and a
+30-minute exhibition-PC soak are not accepted. This tested build is a
+development snapshot, not the final non-development exhibition candidate."""
+    features = info["features"] if info else "Original creator-tested solo checkpoint."
     extra = {
         "README.txt": f"""BalloonBarrage {args.tag} - Windows x64 solo development demo
 
@@ -69,14 +83,11 @@ Quit: close the game. Release fire after using menus or resuming.
 Goin' Under: about 123.429 seconds, 93 target events.
 Ordinary hit: 10 points. On-beat shot hitting its matching target: 20 points.
 
-The creator reports Windows start, shooting, pause/resume, whole-song results,
-retry and Quit passed on October 17, 2026. This is creator-reported acceptance,
-not an independently operated physical-input test on every machine.
+{features}
 
-Known limits: keyboard/mouse solo only; English game UI; no song selection,
-arbitrary-surface painting or co-op. Sustained 2K/120 FPS, ten retries and a
-30-minute exhibition-PC soak are not accepted. This tested build is a
-development snapshot, not the final non-development exhibition candidate.
+{verification}
+
+Known limits: {limits}
 
 Noncommercial development demo: bundled StepMania music is not commercially
 cleared. Do not sell this package. Individual assets retain their own licenses.
@@ -98,13 +109,19 @@ RuntimeFiles.json records SHA-256 for every unchanged original runtime file.
         "UnityCompanionLicense.md": ROOT / "Assets/StudioArtPack/ConceptVariantsV12/Shaders/UnityCompanionLicense.md",
     }.items():
         extra[f"ThirdPartyNotices/{name}"] = path.read_bytes()
+    if info:
+        extra["ThirdPartyNotices/NotoCredit-OFL.txt"] = (
+            ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/AuthorCredit/OFL.txt").read_bytes()
+        extra["ThirdPartyNotices/NotoCredit-Provenance.json"] = (
+            ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/AuthorCredit/Provenance.json").read_bytes()
     if files.keys() & extra.keys():
         parser.error("A package notice would overwrite a source runtime file")
     files.update(extra)
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "x", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for name, data in files.items():
-            entry = zipfile.ZipInfo(name, date_time=(2026, 10, 17, 0, 0, 0))
+            stamp = tuple(map(int, info["date"].split("-"))) if info else (2026, 10, 17)
+            entry = zipfile.ZipInfo(name, date_time=(*stamp, 0, 0, 0))
             entry.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(entry, data, compresslevel=9)
     with zipfile.ZipFile(output) as archive:

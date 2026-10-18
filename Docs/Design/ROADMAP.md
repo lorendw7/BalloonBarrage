@@ -12,7 +12,7 @@ The exhibition demo and the later game are separate milestones. Adding an item t
 |---|---|---|
 | M0: exhibition | One complete song, dependable solo controls, rhythm rewards, accepted UI loop and offline Windows package | Required by the October 27 candidate target; controller/co-op work is deferred |
 | M1: stable controls and co-op | Accepted one-pad play, then P1 keyboard/mouse plus P2 one gamepad | Deferred at the creator’s request; reschedule after solo polish and performance acceptance |
-| M2: painting and readable variety | Projectile-created surface marks, coordinated balloon colors and patterned pops | General opaque-surface support first; cosmetic paint does not change target timing |
+| M2: painting and readable variety | Round-persistent projectile/pop surface paint, coordinated balloon colors and patterned pops | Start on the existing wall, then eligible opaque surfaces; cosmetic paint does not change target timing |
 | M3: song and score progression | Small cleared song library, selection/difficulty flow, results breakdown and local records | Add songs through validated data and attribution, not hardcoded scene duplicates |
 | M4: roguelite vertical slice | A short run with musical encounter phases, a few target types and three bounded upgrade choices | Build on accepted solo rhythm/paint foundations; co-op upgrades follow later; choices occur between songs |
 | M5: compact first release | Integrated modes, settings/accessibility, localization, performance and distribution quality | Ship a small accepted feature set before expanding content |
@@ -21,7 +21,7 @@ No post-festival calendar date is committed yet. Review one milestone after its 
 
 ## Current checkpoint
 
-This publication includes all saved gameplay, scenes, art, tools, documentation and website progress authorized by the creator. A committed source checkpoint is separate from a tested Windows package. Read the validation record before treating an earlier automated check as acceptance of newer code.
+The working checkpoint now includes saved wall paint and the connected three-color balloon. Public Windows prerelease v0.1.0-demo.1 predates those additions. Saved work, creator-reported playtests, isolated checks and an accepted new Windows package remain separate; read the validation record before treating an earlier check as acceptance of newer code.
 
 | Area | Evidence available | Remaining gate |
 |---|---|---|
@@ -32,7 +32,10 @@ This publication includes all saved gameplay, scenes, art, tools, documentation 
 | Paint burst, golden glow and temporary reward text | Saved; creator-reported display/hide passes; isolated asset/layout/reference checks | Confirm complete-song behavior, pause, repeated hits and retry with the selected 1.45-second text setting |
 | Reticle, firing sound and visual recoil | Creator reports reticle/audio/recoil/reset and Windows core input flow passed; isolated full-song/last-hit/retry check passed | Dense passages and target-PC performance |
 | Xbox/Beitong and co-op | Input actions prepared; Beitong hardware preparation reported successful; deferred October 17 | Reschedule after solo work; no current hardware-check or exhibition deadline |
-| Surface paint, patterned pops, song selection, runs and upgrades | Planned; cosmetic variants exist in separate art scenes | Separate gameplay milestones below |
+| MainWall projectile paint | Saved round-persistent marks; October 18 isolated collision/retention/pause/settlement-callback/retry checks passed | Three-color pop deposits on MainWall/Floor/LeftWall/RightWall pass isolated geometry/lifecycle checks; full-song load/performance and full-song shooting/readability acceptance remain open; no count cap planned |
+| Three-color balloons and matching bursts | Production spawner connected; creator reports all three colors, same-color bursts and 10/20-point scoring passed; isolated configuration checks passed | Include these additions in the next Windows build and complete regression |
+| Best score | Saved; creator-reported save/retry/display passes plus independent synthetic standalone higher/lower/retry/relaunch/display checks | Include in the next accepted exhibition package; diagnostic scores are not physical shooting tests |
+| Patterned pops, song selection, runs and upgrades | Planned | Separate gameplay increments below; not features of the public package |
 | Windows performance and current demo package | Public Windows solo prerelease v0.1.0-demo.1 preserves the tested build; file/report/chart/archive checks passed; creator reports the standalone core flow passed. Editor batching evidence remains separate | Sustained frame times, ten retries, fresh-extraction/offline checks, soak and final non-development candidate |
 
 Do not assign a percentage or fixed remaining lesson count to this checkpoint. Connected features, creator playtests, automated checks and release acceptance are different forms of evidence.
@@ -43,9 +46,9 @@ The [official 79th Kyudaisai site](https://kyudaisai.jp/79th/), checked October 
 
 | Target | Learner's core work | Assistant's parallel preparation | Exit criterion |
 |---|---|---|---|
-| October 16–19 | Reticle, short firing feedback, then complete-song rhythm regression | Reticle artwork, original synthesized firing sound, hierarchy/reference checks, Japanese instructions and test preparation | No blocked UI, drifting weapon, duplicate bonus or timing regression; finish the natural song |
+| October 17–19 | Read/save a local best score in small steps, then display it; keep accepted paint/color/scoring behavior | Best-score UI preparation, Japanese instructions/font/readability work and source/reference review | A higher completed-round record persists, a lower result cannot erase it, retry/relaunch retains it |
 | October 20 | Resolve solo rhythm blockers and measured timing issues | Build/package the accepted checkpoint, verify bundled audio/chart and capture first performance baseline | Solo title → complete song → results → retry works offline in a fresh Windows build |
-| October 21–23 | Finish the small solo results increment if stable; address measured solo issues | Japanese instructions/fonts, new-player readability, standalone performance capture and regression checks | Clear solo instructions; best score persists if included; core song loop remains accepted |
+| October 21–23 | Complete the small solo best-score increment if stable; address measured solo issues | Japanese instructions/fonts, new-player readability, standalone performance capture and regression checks | Clear solo instructions; optional record persistence and existing paint-lifetime/reset behavior pass; core song loop remains accepted |
 | October 24–26 | Measured fixes and new-player playtests | Profiling setup, repeatable stress checks, cleanup/reference checks and package preparation | Target-PC performance, ten retries and a 30-minute soak accepted |
 | October 27 | Confirm gameplay and known issues | Versioned ZIP, complete runtime files, SHA-256, controls, notices and verified download | A reproducible candidate that launches offline |
 | October 28–30 | Exhibition-PC rehearsal and blocker fixes | Backup ZIP, recovery instructions and accurate website/download information | Fresh extraction, sound, display, devices, quit and fallback all verified |
@@ -59,15 +62,15 @@ Teach each row through small edits, normally one field/method or one hookup at a
 
 | Order | Increment | Acceptance before moving on |
 |---|---|---|
-| 1 | Local solo best score — next learner lesson, planned | Current song/chart/solo/rules-specific record defaults to zero; a higher completed-round score persists, a lower score cannot overwrite it; retry resets only the round score; confirm quit/relaunch persistence |
-| 2 | Exhibition instructions and readability — assistant preparation alongside lesson 1 | Short Japanese instructions and suitable font coverage; a new player understands aim, fire, rhythm bonus, pause and retry; readable title/HUD/results |
-| 3 | Measured smoothness and timing | Capture standalone CPU/GPU frame times and signed audible/input error; teach one supported optimization at a time and compare again; 2K/120 FPS remains a target |
-| 4 | Repeated-play and package regression | Ten retries and a 30-minute soak; counts/memory remain bounded; fresh extraction and offline start/audio/results/retry/Quit pass on the exhibition PC |
+| 1 | Local solo best-score results display — standalone diagnostic passed | Independent synthetic-score checks pass higher-only save, retry/relaunch read, lower-result retention and six-digit display; see Validation for method and release limits |
+| 2 | Exhibition instructions and readability — assistant preparation alongside core lessons | Short Japanese instructions and suitable font coverage; a new player understands aim, fire, rhythm bonus, pause and retry; readable title/HUD/results |
+| 3 | Measured smoothness and timing | Capture standalone CPU/GPU frame times and signed audible/input error; teach one measured optimization at a time and compare again; 2K/120 FPS remains a target |
+| 4 | Repeated-play and package regression | Ten retries and a 30-minute soak; verify saved round-persistent paint and scene-reload cleanup; fresh extraction and offline core flow pass on the exhibition PC |
 | 5 | Exhibition candidate and rehearsal | Intended non-development build, versioned ZIP/hash/notices, verified website download and offline backup; target October 27, rehearse October 28–30 |
 
-Start the best-score lesson with one persistent key and a zero-default read, then teach the higher-score comparison at settlement, persistence and a separate results label through small changes. The assistant prepares the label/layout and checks; the learner writes gameplay. This is planned work, not a shipped feature or permission for the assistant to implement it. It is a small optional M3 slice: defer it if it threatens core-flow or performance acceptance. Do not add combo/accuracy statistics or additional songs to this increment.
+The creator reports MainWall paint/eight-second recycling, three-color balloons, matching bursts and ordinary/on-beat 10/20-point playtests passed. Source/reference review confirms the production spawner uses the prepared three-color prefab. The creator also reports best-score saving/retry reading and results display passed. Source/reference review confirms the saved results Text hookup and six-digit assignment. Independent standalone checks now pass the lower-result and quit/relaunch cases in [Local best score](BEST_SCORE_LESSON.md). A rendered no-fire 2K baseline and software chart/audio-clock measurements are recorded in Validation; held-fire load, acoustic latency and sustained exhibition performance remain open. The creator requested continued gameplay teaching: MainWall persistence now passes a focused lifecycle check; the next small exercise connects the balloon-pop color palette in [Surface paint](../Art/SURFACE_PAINT_LESSON.md#saved-learner-increment-expose-the-pop-mark-palette), followed by balloon-pop deposits. Teaching this exercise does not accept it for the exhibition package. The creator explicitly declined a paint-count limit: no simultaneous-count cap or oldest-first removal is scheduled. The October 17 paint plan replaces timed surface-mark removal with round persistence and adds balloon-pop deposits in M2; MainWall persistence is saved with a focused October 18 lifecycle pass; full-song load regression remains required before exhibition packaging. General surfaces and persistent paint are not prerequisites for best-score teaching. Controller/co-op stays deferred.
 
-The latest isolated natural-song check covered all 93 events, last-event reward, settlement, retry and the second round's first hit. On October 17 the creator reported Windows start, shooting, pause/resume, whole-song results, retry and Quit passed. Public prerelease v0.1.0-demo.1 preserves that tested runtime; see [Validation](../Project/VALIDATION.md#public-windows-demo-v010-demo1). It does not yet include best-score saving, Japanese UI or controller gameplay. A public development prerelease does not accept the final exhibition candidate.
+The latest isolated natural-song check covered all 93 events, last-event reward, settlement, retry and the second round's first hit. On October 17 the creator reported Windows start, shooting, pause/resume, whole-song results, retry and Quit passed. Public prerelease v0.1.0-demo.1 preserves that tested runtime; see [Validation](../Project/VALIDATION.md#public-windows-demo-v010-demo1). It does not yet include projectile surface painting, best-score saving, Japanese UI or controller gameplay. A public development prerelease does not accept the final exhibition candidate.
 
 ## Workstreams, ownership and dependencies
 
@@ -76,7 +79,7 @@ The latest isolated natural-song check covered all 93 events, last-event reward,
 | Rhythm and scoring | Scheduling, target lifecycle, firing judgement, collision resolution, later combo/stat rules | Prepared chart validation, focused regression checks, review and documentation | Shared song clock and once-only event resolution |
 | Aim and input | Reticle movement, fire/release gates, player/device pairing | Input actions, reticle art, menu glyphs and setup checks | Solo accepted before P2; logical aim independent of cosmetic recoil |
 | Weapon feel and effects | Accepted-shot triggers, visual recoil, impact behavior | Licensed/generated assets, audio editing, material/prefab setup and bounded particle assets | No phantom feedback on rejected input; preserve aim and musical cues |
-| Painting and target variety | Eligible hit placement, fade/budget lifecycle, target rules | Decal/splat materials, patterns, palette entries and receiver checks | Correct impact position/normal, bounded counts and readable targets |
+| Painting and target variety | Eligible projectile/pop placement, round-owned paint lifecycle, target rules | Decal/splat materials, patterns, palette entries and receiver checks | Correct surface contact, round reset, measured rendering/memory cost and readable targets |
 | Content and progression | Selection flow, run state, upgrades and local records | Chart conversion checks, attribution, data/configuration scaffolding and UI assets | Rights and timing subset verified before a song is offered |
 | UI and localization | State transitions and data bindings | Layout, fonts, translations, resolution checks and scene-reference repair | UI never fires into the game; no duplicate clocks or scores |
 | Performance and shipping | Fixes that touch gameplay; physical playtests | Profiling guidance, build tools, meaningful automated checks, packaging and website | Measured improvement on the target PC, complete offline package |
@@ -119,16 +122,21 @@ Individual contribution statistics can follow shared-score acceptance. Two-gamep
 
 ## M2: paint the studio and add visual variety
 
+MainWall marks/eight-second cleanup and three-color balloons/matching bursts now have creator-reported passes. The October 17 design update adds paint deposited by balloon explosions and retains projectile/pop surface paint for the whole song and results. MainWall projectile-mark persistence is now saved and passed a focused October 18 lifecycle check; six-direction matching pop deposits on MainWall, Floor, LeftWall and RightWall now pass isolated geometry/lifecycle checks. Direct projectile marks on MainWall/Floor/LeftWall/RightWall now pass isolated actual-collision/lifecycle checks. The next learner step is full-song coverage/readability and measured load before further expansion. The creator declined a paint-count limit; M0 shipping gates and the current best-score lesson still take priority. No new delivery date is committed.
+
 Cosmetic balloon/gun palette work exists in separate art variants; it does not implement projectile-created paint on scene surfaces. Follow the behavior/budgets in [Planned paint and color expansion](GAME_DESIGN.md#planned-paint-and-color-expansion).
 
 | Increment | Deliverable / exit criterion |
 |---|---|
 | First wall mark | Actual projectile impact position/normal, small depth offset, no mark collider; no mark from a UI click or a flying projectile |
+| Round-persistent wall paint | Saved MainWall retention passed focused pause/settlement-callback/retry checks; measure full-song coverage/load before accepting it for exhibition packaging |
+| Balloon-pop deposits | Then keep transient burst cleanup and add matching-color deposits on the existing wall through bounded surface queries; no floating marks, extra scoring or deposits from expired unanswered targets |
 | Eligible scene surfaces | Walls, floor and opaque furniture; verify sloped/curved/thin geometry and material receivers; glass/transparent receivers need a separately scoped fallback |
 | Coordinated patterns | One palette entry selects balloon appearance, pigment and burst pattern; projected marks contact eligible surfaces rather than floating in space |
-| Lifecycle and readability | Round-owned global paint budget, oldest-first removal, fade and retry clear; both players share the budget; targets remain readable |
+| Lifecycle and readability | No explicit paint-count limit, oldest-first removal or timed fading; retain accumulated paint through results and clear between rounds; assess target contrast and overlapping paint; cross-session artwork saving is outside this increment |
+| Rendering strategy | Profile the complete song with held fire and dense pops; if independent marks exceed measured rendering/memory capacity, evaluate batching or surface-texture accumulation while retaining earlier paint; choose from evidence before expanding density |
 | Presentation polish | Add visual-child entrance/bob/squash only with collider alignment and bounded cleanup; compare repeated/dense effects before increasing counts |
-| Acceptance | Dense passages and two-player fire, then pause/retry/soak; correct placement, stable counts and measured render cost |
+| Acceptance | Full solo song: first deposits still visible at results, correct wall/floor placement, pause/resume, once-only score, ten retries and soak without cross-round object/memory growth; measure standalone frame times and transient cleanup. Repeat with two-player fire after M1 is accepted |
 
 Preserve the cozy room's composition. More paint must not turn the center into an opaque overlay, change physics layers accidentally or recolor entire shared materials on impact.
 
@@ -187,7 +195,7 @@ No online services, analytics, monetization or broad platform port is a dependen
 | Timing feels inconsistent despite numerical judgement | Measure physical audio/input latency, compare taps and held fire, inspect one DSP origin and target-distance independence before tuning windows |
 | Extra feedback makes the song harder to read/hear | Lower shot audio and effect density, reduce recoil/flash and keep cosmetic transforms separate; return to accepted feedback if necessary |
 | Co-op disrupts solo input or duplicate-hit protection | Preserve a solo entry/fallback, explicit device pairing and one consumed-target outcome; keep M1 deferred and protect the accepted solo path |
-| Paint obscures targets or costs too much | Start on one wall, use a shared budget/fade, reject unsuitable receivers and profile before expanding |
+| Paint obscures targets or costs too much | Start on one wall and profile a full song before expanding; reject unsuitable receivers and evaluate paint-preserving batching/texture accumulation when measured costs require it. No count cap or timed fading is planned; retain the accepted M0 checkpoint until M2 passes |
 | Song rights or timing format are unsuitable | Keep the accepted song and notices; replace/defer the content, never imply commercial clearance |
 | Too many upgrades or target behaviors | Finish one short run and a tiny eligible pool first; add combinations only after bounded-effects and scoring tests |
 | Standalone performance unverified | Treat 2K/120 as a target, not a claim; compare against the initial 36.7 FPS Editor observation, retain profiling/soak time and discuss any necessary quality tradeoff from measured data |

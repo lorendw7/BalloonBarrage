@@ -2,7 +2,7 @@
 
 Project documentation is English only, including future updates. Player-facing text separately targets Simplified Chinese (`zh-Hans`), Japanese (`ja`) and English (`en`).
 
-`Assets/Localization/UIStrings.json` holds 25 stable keys with three translations. It is not a Unity Localization String Table and has no runtime language switching yet. Teach a loader or migrate to formal tables as a later implementation step. Website translations live separately in `Website/src/strings.mjs`.
+`Assets/Localization/UIStrings.json` holds 29 stable keys with three translations. Four instruction keys cover aiming/firing, the target countdown rhythm bonus, pause and complete-song results/retry. They are prepared copy, not connected runtime labels. It is not a Unity Localization String Table and has no runtime language switching yet. Teach a loader or migrate to formal tables as a later implementation step. Website translations live separately in `Website/src/strings.mjs`.
 
 Use shared text-free menu and VFX images. Keep keys such as `menu.start` stable and preserve placeholders such as `{0}` across locales. Switching language must refresh existing UI and persist the preference.
 

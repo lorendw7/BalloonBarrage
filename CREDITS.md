@@ -49,3 +49,13 @@ The October 13 prepared gameplay track uses Goin' Under by NegaRen, dance-single
 ## October 16 development captures
 
 `Assets/Art/Previews/PrototypeScene_20261016.png` is an unedited 2560 × 1440 Unity camera render of the saved studio after fixed-room batching, without UI or balloons. `CreatorStats_20261016.png` is the creator-supplied Unity Game-view screenshot showing gameplay and Editor Stats. These are development evidence, not generated concept art or a standalone benchmark. All depicted assets retain their existing attribution and recorded prompts.
+
+## October 17 surface-paint lesson assets
+
+`Assets/StudioArtPack/SurfacePaint` reuses the existing GraffitiSpray_Atlas_v3 Teal_Spray slice without changing image pixels, import settings or the exact recorded prompt. The new material is a native copy of SprayUnlit, using the installed unmodified URP sprite-unlit shader. The small SpriteRenderer prefab and close-up preview are native Unity outputs; no new external download or generated image is introduced. Source paths/hashes and preparation settings are in its `Provenance.json`; the original prompt remains in [Spray assets](Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts). The preview is an asset placement render, not a recorded gameplay hit.
+
+The three-color balloon lesson prefab is a native copy of the current production balloon with the existing cosmetic appearance component, one retained mesh and the already prepared teal/coral/gold latex materials. It adds no image, model, external download or new generated prompt. Original Poly by Google attribution and all prior provenance remain unchanged.
+
+The October 17 best-score results row is native editable Unity UI using existing Lato Bold, colors and panel artwork. Results_BestScore_1080p.png is a Unity layout render with illustrative score values, not a recorded result. No new generated image, font, download or prompt was introduced; all original UI art prompts and Lato notices remain applicable.
+
+The October 18 author credit reads **何单东 Shandong He**. Its Balloon Credit Sans Regular font is a renamed, approximately 19 KB subset of the official Noto Sans CJK SC Regular, retaining printable ASCII and the three name characters only. Original copyright and SIL Open Font License 1.1 are retained in `Assets/StudioArtPack/InterfaceV2/Fonts/AuthorCredit/OFL.txt`; pinned upstream commit/URLs, source/derived SHA-256 and fontTools preparation details are in its `Provenance.json`. The original download stays in ignored `.local-reference/Fonts/NotoCredit`. This narrow font does not establish general Chinese or Japanese UI coverage. The cream backing plate and author label are native Unity UI, with no new generated image or changed art prompt.

@@ -12,6 +12,14 @@ public class RoundController : MonoBehaviour
 
     private int finalScore;
 
+    private const string BestScoreKey = "BestScore.GoinUnder.Beginner.Solo.v1";
+
+    private int bestScore;
+
+    private int displayedScore = int.MinValue;
+    private int displayedSeconds = int.MinValue;
+
+
     private bool hasStarted;
 
     public static bool IsPlaying { get; private set; }
@@ -51,6 +59,9 @@ public class RoundController : MonoBehaviour
     private Text finalScoreText;
 
     [SerializeField]
+    private Text bestScoreText;
+
+    [SerializeField]
     private AudioSource menuMusic;
 
     [SerializeField]
@@ -62,6 +73,9 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.pause = false;
         Score.ResetScore();
+
+        bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
+        Debug.Log($"Best score loaded: {bestScore}");
 
         songDuration = gameMusic != null && gameMusic.clip != null 
             ? gameMusic.clip.length : 0f;
@@ -98,21 +112,27 @@ public class RoundController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (gameplayHUD != null)
+        if (gameplayHUD != null && gameplayHUD.activeSelf != IsPlaying)
         {
             gameplayHUD.SetActive(IsPlaying);
         }
 
-        if (scoreText != null)
+        int currentScore = Score.Value;
+        if (scoreText != null && displayedScore != currentScore)
         {
-            scoreText.text = Score.Value.ToString("D6");
+            displayedScore = currentScore;
+            scoreText.text = currentScore.ToString("D6");
         }
 
         if (timeText != null)
         {
             int seconds = Mathf.CeilToInt(remainingTime);
 
-            timeText.text = $"{seconds / 60:00}:{seconds % 60:00}";
+            if (displayedSeconds != seconds)
+            {
+                displayedSeconds = seconds;
+                timeText.text = $"{seconds / 60:00}:{seconds % 60:00}";
+            }
         }
     }
     public void BeginRound()
@@ -225,6 +245,13 @@ public class RoundController : MonoBehaviour
         IsPlaying = false;
         finalScore = Score.Value;
 
+        if(finalScore > bestScore)
+        {
+            bestScore = finalScore;
+            PlayerPrefs.SetInt(BestScoreKey, bestScore);
+            PlayerPrefs.Save();
+        }
+
         if (gameMusic != null)
         {
             gameMusic.Stop();
@@ -238,6 +265,11 @@ public class RoundController : MonoBehaviour
         if (finalScoreText != null)
         {
             finalScoreText.text = finalScore.ToString("D6");
+        }
+
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = bestScore.ToString("D6");
         }
 
         if (resultsScreen != null)

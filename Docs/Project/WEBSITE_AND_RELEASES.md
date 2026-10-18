@@ -2,7 +2,9 @@
 
 The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
 
-The October 17 public prerelease **v0.1.0-demo.1** packages the creator-tested Windows solo build without changing its runtime. The creator reports start, shooting, pause/resume, whole-song results, retry and Quit passed. It is a noncommercial development demo, separate from the final exhibition/performance candidate. The site distinguishes those reports from automated checks and targets. [Roadmap](../Design/ROADMAP.md) owns scope; [Validation](VALIDATION.md) owns evidence.
+The October 18 prerelease **v0.1.0-demo.2** packages the new non-Development Windows solo build with persistent four-surface paint, three-color balloons, local records, author credit and HUD formatting optimization. Its instrumented diagnostic checks and clean-package integrity checks are separate from physical acceptance; final clean-package graphical smoke testing was interrupted. The creator explicitly requested pushing it with those limits recorded. The earlier **v0.1.0-demo.1** preserves the creator-tested rollback checkpoint. Both remain noncommercial development demos, separate from final exhibition acceptance. [Roadmap](../Design/ROADMAP.md) owns scope; [Validation](VALIDATION.md) owns evidence and package hashes.
+
+For the current package, run `Tools/Release/package_windows_demo.py` with the versioned source/output/tag and `--release-info` pointing to a JSON object containing nonempty `date`, `features`, `verification` and `limits` strings. The tool includes the author-font OFL/provenance when this metadata is supplied. `WindowsReleaseBuild.Build` requires an empty absolute `BALLOON_BUILD_OUTPUT`, builds only PrototypeScene with options None, and writes an optional `BALLOON_BUILD_REPORT`. Run it in an isolated copy; diagnostic probes must be removed for the distributed build. Keep published packages immutable and use a new version for changes.
 
 ## Build and preview
 

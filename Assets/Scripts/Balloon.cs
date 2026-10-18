@@ -35,6 +35,9 @@ public class Balloon : MonoBehaviour
     [SerializeField]
     private double rhythmWindowsSeconds = 0.1d;
 
+    [SerializeField]
+    private GameObject[] wallPaintPrefabs; 
+
 
     public void InitializeRhythm(RhythmEventData eventData)
     {
@@ -98,6 +101,8 @@ public class Balloon : MonoBehaviour
             balloonCollider.enabled = false;
         }
 
+        LeaveWallPaint();
+
         if (popEffectPrefab != null)
         {
             Vector3 effectPosition = transform.position;
@@ -152,5 +157,70 @@ public class Balloon : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void LeaveWallPaint()
+    {
+        StudioBalloonAppearance appearance = GetComponent<StudioBalloonAppearance>();
+
+        if (appearance == null || wallPaintPrefabs == null)
+        {
+            return;
+        }
+
+        int index = appearance.ColorIndex;
+
+
+        if (index < 0 || index >= wallPaintPrefabs.Length ||
+            wallPaintPrefabs[index] == null)
+        {
+            return;
+        }
+        Vector3[] directions =
+        {
+            Vector3.forward,
+            Vector3.back,
+            Vector3.left,
+            Vector3.right,
+            Vector3.up,
+            Vector3.down
+        };
+
+        foreach(Vector3 direction in directions)
+        {
+            bool hasHit = Physics.Raycast(
+                transform.position,
+                direction,
+                out RaycastHit hit,
+                3f,
+                Physics.DefaultRaycastLayers,
+                QueryTriggerInteraction.Ignore
+             );
+
+            if (!hasHit)
+            {
+                continue;
+            }
+
+            string surfaceName = hit.collider.name;
+
+            bool canReceivePaint = surfaceName == "MainWall" ||
+                surfaceName == "Floor" ||
+                surfaceName == "LeftWall" ||
+                surfaceName == "RightWall";
+
+            if (!canReceivePaint)
+            {
+                continue;
+            }
+
+            Vector3 position = hit.point + hit.normal * 0.005f;
+
+
+            Quaternion rotation = Quaternion.LookRotation(hit.normal);
+
+            Instantiate(wallPaintPrefabs[index], position, rotation);
+        }
+
     }
 }

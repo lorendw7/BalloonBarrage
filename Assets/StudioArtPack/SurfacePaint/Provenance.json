@@ -1,0 +1,60 @@
+{
+  "prepared": "2026-10-17",
+  "kind": "Existing atlas slice and native Unity prefab/material; no new generated image or external download",
+  "sources": [
+    {
+      "path": "Assets/StudioArtPack/Textures/GraffitiSpray_Atlas_v3.png",
+      "sha256": "abeb3270da5d697f4530a864edd21f9a80db43dadfc0c3675cacb3402daaa1a4",
+      "slice": "Teal_Spray",
+      "rectUnityBottomLeft": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts"
+    },
+    {
+      "path": "Assets/StudioArtPack/SprayPrefabs/Teal_Spray.prefab",
+      "sha256": "8bd53196dcb84f727be5e3deba4ae081aaeeacad08b70c9e2bdc81675de6bd7d"
+    },
+    {
+      "path": "Assets/StudioArtPack/SprayPrefabs/SprayUnlit.mat",
+      "sha256": "16e6c438c47fe2a91a8d640cdebb7ff470489fdd794fd0a3c5ad7c0d2d45f606"
+    }
+  ],
+  "settings": {
+    "pixelsPerUnit": 200,
+    "prefabScale": 0.18,
+    "footprintMeters": 0.4608,
+    "alpha": 0.9,
+    "colliders": 0,
+    "runtimeScripts": 0,
+    "layer": "Ignore Raycast",
+    "castsShadows": false,
+    "receivesShadows": false
+  },
+  "preview": "Native Unity render with a temporary wall mark; no production scene saved and no runtime hit claimed",
+  "rights": "Retains the original atlas provenance and recorded prompt; material uses the installed URP sprite-unlit shader without shader-source modification.",
+  "popPalettePreparation": {
+    "date": "2026-10-18",
+    "kind": "Copies of the existing mark prefab; no new image generation or download",
+    "indexOrder": [
+      "Teal",
+      "Coral",
+      "Gold"
+    ],
+    "sources": [
+      {
+        "sha256": "148d20ebfaa7616c3caf254ead9c0a05406876509fd07d1dedebee10fa56f6b9",
+        "path": "Assets/StudioArtPack/SprayPrefabs/Coral_Burst.prefab"
+      },
+      {
+        "sha256": "530071d19227bef19bd831d6b0606a52ba8fae3249bd4cdef3d0779e59a9881a",
+        "path": "Assets/StudioArtPack/SprayPrefabs/Yellow_Drip.prefab"
+      }
+    ],
+    "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts",
+    "runtime": "No pop-deposit implementation or production reference hookup"
+  }
+}
