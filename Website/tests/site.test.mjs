@@ -85,6 +85,23 @@ test("built pages have valid local links, scripts, styles and artwork", async ()
   }
 });
 
+test("new pages bypass legacy cached CSS and JS with content-addressed files", async () => {
+  for (const locale of languages) {
+    const directory = locale === "zh-Hans" ? path.join(site, "dist") : path.join(site, "dist", locale);
+    const html = await readFile(path.join(directory, "index.html"), "utf8");
+    for (const file of ["styles.css", "app.js"]) {
+      const source = await readFile(path.join(site, "src", file));
+      const extension = path.extname(file);
+      const hash = createHash("sha256").update(source).digest("hex").slice(0, 12);
+      const name = `${path.basename(file, extension)}.${hash}${extension}`;
+      assert.ok(html.includes(name), `${locale} must load the matching ${file} version`);
+      assert.ok(!html.includes(`/${file}"`), "Never refer new pages to a previously cached stable filename");
+      assert.deepEqual(await readFile(path.join(site, "dist", name)), source);
+    }
+    assert.ok(html.indexOf('id="download"') < html.indexOf('id="art"'), "Keep the demo before the concept gallery");
+  }
+});
+
 test("preview serves language directory roots and blocks paths outside dist", { timeout: 10000 }, async (t) => {
   const server = spawn(process.execPath, [path.join(site, "scripts/serve.mjs")], {
     env: { ...process.env, PORT: "0" }, stdio: ["ignore", "pipe", "pipe"], windowsHide: true

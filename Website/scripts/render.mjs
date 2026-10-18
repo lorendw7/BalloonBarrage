@@ -5,7 +5,7 @@ export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 }
 
-export function renderPage(template, locale, release) {
+export function renderPage(template, locale, release, staticFiles = {}) {
   const text = strings[locale];
   if (!text) throw new Error(`Unsupported language: ${locale}`);
   const base = locale === "zh-Hans" ? "./" : "../";
@@ -23,6 +23,7 @@ export function renderPage(template, locale, release) {
     ? `${text.downloadPreviewLabel} · ${release.tag}`
     : (release.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
   const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanel,
+    styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/gameplay-share.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (key in special) return special[key];

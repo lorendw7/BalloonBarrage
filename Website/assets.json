@@ -46,5 +46,9 @@
   {
     "source": "Website/media/gameplay-share.jpg",
     "output": "gameplay-share.jpg"
+  },
+  {
+    "source": "Website/media/menu-background.webp",
+    "output": "menu-background.webp"
   }
 ]

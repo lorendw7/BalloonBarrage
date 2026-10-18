@@ -1,5 +1,16 @@
 [
   {
+    "source": "Assets/StudioArtPack/Menu/MenuBackground_v1.png",
+    "source_sha256": "20b7d52bf6e5051d2c473d09099abf878601e56377e82386b9d423235ea6acf6",
+    "output": "Website/media/menu-background.webp",
+    "output_sha256": "d12f72b67f023e2650b46c1f771fa1583c45a1ec895e617da2fd5fb38d7aa644",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
     "source": "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg",
     "source_sha256": "7624cebbc07c34d240705ed36bcee4dcac1d58c3737420ebae76452196a4beab",
     "output": "Website/media/gameplay-demo2.webp",
