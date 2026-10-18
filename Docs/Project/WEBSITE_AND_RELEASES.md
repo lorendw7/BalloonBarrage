@@ -18,7 +18,13 @@ node Website/scripts/serve.mjs
 
 Preview at http://127.0.0.1:4173/. Add `--offline` to the build command when release lookup is unavailable. Offline/API-failure status is unknown, not proof that no release exists. Generated `Website/dist` stays ignored.
 
-`Website/assets.json` selects canonical project artwork, including the October 16 2K studio camera render and creator-provided Game-view Stats screenshot. The build rejects LFS pointers and copies images into output without adding another committed source copy. Label concepts as concepts; the studio render excludes UI and balloons, while the expandable Game-view screenshot includes the actual HUD and Stats. FPS numbers are individual Editor observations, not sustained standalone claims. Website strings live in `Website/src/strings.mjs`, separately from game strings.
+`Website/assets.json` selects canonical project artwork and prepared web derivatives. The first screen uses the October 18 **actual v0.1.0-demo.2 Windows gameplay capture**, with its original JPEG available on enlargement. It replaces the UI-free room render as the main visual. The October 16 Editor Stats capture remains separately labelled in the expandable performance record; its readings are instantaneous observations, not sustained standalone claims. Website strings live in `Website/src/strings.mjs`, separately from game strings.
+
+The desktop opening pairs the game image with the demo entry point; phones stack them. Gameplay essentials stay visible, while longer development/performance records use native expandable sections. Chinese, Japanese and English share the same structure and build-time GitHub release lookup. The introductory download copy avoids pinning an obsolete package; the version badge and actual ZIP link come from that lookup. Unknown/empty release states retain their explicit fallback.
+
+The opening WebP is 116,746 bytes; concept thumbnails also use WebP and load lazily. Full-resolution originals, attributions and exact generation prompts remain unchanged. `python Website/scripts/prepare-images.py` regenerates the committed web derivatives with Pillow; `Website/media/provenance.json` records source/output hashes and preparation settings. CI requires no imaging dependency. The image validator checks PNG, JPEG and WebP signatures. Canonical language URLs and Open Graph metadata use a 1200 × 675 JPEG of actual gameplay; social clients may cache or ignore this metadata.
+
+For this refresh, local build/tests and browser checks precede the main-branch Pages deployment. Verify the live first screen, three languages, image dialog and demo ZIP URL afterward. If the page, images or release entry fails, append a revert commit for this website refresh and let the same Pages workflow redeploy; do not reset or rewrite history. These checks do not accept Unity gameplay or exhibition performance.
 
 ## Publication and download selection
 

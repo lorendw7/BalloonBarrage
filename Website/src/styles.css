@@ -34,18 +34,32 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .language-nav a { padding: .35rem .6rem; text-decoration: none; min-height: 40px; display: grid; place-items: center; border-radius: 4px; }
 .language-nav a[aria-current="page"] { color: var(--white); background: var(--teal); }
 .language-nav a:hover:not([aria-current="page"]) { background: #eee4cb; }
-.hero { display: grid; place-items: center; min-height: 620px; padding: 4rem 2rem; background: url("assets/menu-background.png") center/cover no-repeat; }
-.hero-inner { text-align: center; max-width: 590px; width: 100%; }
+.hero { display: grid; grid-template-columns: .85fr 1.4fr; align-items: center; gap: 3rem; max-width: 1440px; margin: auto; padding: 4.5rem 4%; }
+.hero-inner { max-width: 500px; width: 100%; min-width: 0; }
+.hero-figure { min-width: 0; }
+.hero-figure img { width: 100%; border-radius: 12px; box-shadow: 0 15px 45px #233d3a25; }
+.hero-figure figcaption { font-size: .75rem; }
+.release-status { display: inline-block; margin-top: 1.1rem; color: var(--teal); font-size: .8rem; font-weight: 600; }
 .eyebrow { font-size: .9rem; letter-spacing: .06em; }
-.wordmark { font-family: "Arial Black", "Trebuchet MS", sans-serif; font-size: clamp(3.2rem, 7.6vw, 6rem); font-weight: 900; line-height: .95; letter-spacing: -.06em; margin: 1.2rem auto 1.5rem; text-shadow: 2px 3px 0 #fff9e9; }
+.wordmark { font-family: "Arial Black", "Trebuchet MS", sans-serif; font-size: clamp(2.7rem, 5.3vw, 5.3rem); font-weight: 900; line-height: .95; letter-spacing: -.06em; margin: 1rem 0 1.4rem; }
 .wordmark span { display: block; color: var(--teal); }
-.hero-description { max-width: 440px; margin: 0 auto; font-size: 1.05rem; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; justify-content: center; margin: 1.8rem 0 1.2rem; }
+.hero-description { max-width: 440px; font-size: 1.05rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; align-items: center; margin: 1.2rem 0 1rem; }
 .button { display: inline-flex; align-items: center; justify-content: center; padding: .7rem 1.4rem; border: 1px solid var(--teal); border-radius: 5px; font-weight: 600; text-decoration: none; min-height: 48px; transition: background .15s; }
 .button-teal { background: var(--teal); color: white; }
 .button:hover { background: #075552; }
 .text-link { font-size: .95rem; }
 .prototype-note { font-size: .85rem; color: #43534a; }
+.game-section { border-top: 1px solid var(--line); }
+.game-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.game-facts > div { border-top: 3px solid var(--teal); padding: 1rem 0; }
+.game-facts > div:nth-child(2) { border-color: #c96b50; }
+.game-facts > div:nth-child(3) { border-color: #c79a36; }
+.game-facts dt { font-weight: 700; }
+.game-facts dd { font-size: .9rem; color: var(--muted); margin-top: .4rem; }
+.development-details, .performance-details { border-top: 1px solid var(--line); margin-top: 2rem; }
+.development-details > summary, .performance-details > summary { cursor: pointer; padding: 1rem 0; font-weight: 600; min-height: 48px; }
+.development-details > summary span { display: inline-block; font-size: .8rem; font-weight: 400; color: var(--muted); margin-left: .7rem; }
 .section-heading { max-width: 700px; margin-bottom: 2rem; }
 .section-heading p { margin-top: 1rem; color: var(--muted); }
 .art-open { display: block; }
@@ -57,7 +71,7 @@ figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap
 .controls dl div { display: flex; gap: 1rem; padding: .25rem 0; }
 .controls dt { flex: 0 0 8rem; font-weight: 600; }
 .scene-note { color: var(--muted); font-size: .95rem; }
-.development-note { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
+.development-note { padding: .5rem 0 1.5rem; max-width: 850px; }
 .development-note p { color: var(--muted); }
 .development-note .small { margin-top: .8rem; }
 .development-note .development-updated { margin: 0 0 .8rem; }
@@ -121,8 +135,7 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 @media (max-width: 1000px) {
   .site-header { flex-wrap: wrap; gap: .5rem 1rem; }
   .main-nav { order: 3; justify-content: center; width: 100%; }
-  .hero-inner { background: #fff4dcf2; padding: 2rem; border-radius: 4px; }
-  .hero { min-height: 590px; }
+  .hero { gap: 2rem; padding: 3rem 1.5rem; }
   .section { padding: 3.5rem 1.5rem; }
   .festival-grid, .download-grid { gap: 2rem; }
   .art-heading { display: block; }
@@ -134,8 +147,8 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
   .brand img { width: 26px; height: 26px; }
   .language-nav a { padding: .35rem .45rem; }
   .main-nav { gap: .5rem 1.3rem; font-size: .85rem; }
-  .hero { min-height: 510px; padding: 2rem 1rem; }
-  .hero-inner { padding: 2rem 1rem; }
+  .hero { grid-template-columns: 1fr; gap: 1.6rem; padding: 2rem 1.25rem; }
+  .hero-inner { max-width: none; }
   .wordmark { font-size: clamp(2.7rem, 12vw, 4.3rem); }
   .hero-description { font-size: 1rem; }
   .hero-actions { gap: 1rem; }
@@ -144,6 +157,7 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
   .development-note { gap: .8rem; }
   .performance-panel { padding: 1.25rem; }
   .performance-metrics { grid-template-columns: 1fr; }
+  .game-facts { grid-template-columns: 1fr; gap: .5rem; }
   .festival-date { padding: 1.25rem 0 0; border-left: none; border-top: 1px solid #b8c7b3; }
   .art-wide { grid-column: auto; }
   .download-card { padding-left: 1.25rem; }

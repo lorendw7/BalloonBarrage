@@ -6,9 +6,20 @@
   <meta name="description" content="{{description}}">
   <meta name="theme-color" content="#fff4dc">
   <title>{{title}}</title>
+  <link rel="canonical" href="{{canonicalUrl}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BalloonBarrage">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonicalUrl}}">
+  <meta property="og:image" content="{{shareImageUrl}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="{{prototypeAlt}}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="{{base}}favicon.svg">
   <link rel="stylesheet" href="{{base}}styles.css">
-  <link rel="preload" as="image" href="{{base}}assets/menu-background.png">
+  <link rel="preload" as="image" href="{{base}}assets/gameplay-demo2.webp">
   {{alternateLinks}}
   <script type="module" src="{{base}}app.js"></script>
 </head>
@@ -25,22 +36,23 @@
         <p class="eyebrow">{{eyebrow}}</p>
         <h1 class="wordmark" id="hero-title">BALLOON<span>BARRAGE</span></h1>
         <p class="hero-description">{{intro}}</p>
-        <div class="hero-actions"><a class="button button-teal" href="#game">{{heroMore}}</a><a class="text-link" href="#download">{{heroDownload}}</a></div>
+        <p class="release-status">{{heroReleaseStatus}}</p>
+        <div class="hero-actions"><a class="button button-teal" href="#download">{{heroDownload}}</a><a class="text-link" href="#game">{{heroMore}}</a></div>
         <p class="prototype-note">{{prototype}}</p>
       </div>
+      <figure class="hero-figure">
+        <a class="art-open" href="{{base}}assets/gameplay-demo2.jpg" data-art aria-label="{{artOpen}}: {{prototypeCaption}}"><img src="{{base}}assets/gameplay-demo2.webp" fetchpriority="high" width="1600" height="900" alt="{{prototypeAlt}}"></a>
+        <figcaption><span>{{prototypeCaption}}</span><time datetime="2026-10-18">2026.10.18</time></figcaption>
+      </figure>
     </section>
     <section class="section game-section" id="game" aria-labelledby="game-title">
       <div class="section-heading"><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
-      <figure class="prototype-figure">
-        <a class="art-open" href="{{base}}assets/prototype-scene.png" data-art aria-label="{{artOpen}}: {{prototypeCaption}}"><img src="{{base}}assets/prototype-scene.png" loading="lazy" decoding="async" width="2560" height="1440" alt="{{prototypeAlt}}"></a>
-        <figcaption><span>{{prototypeCaption}}</span><time datetime="2026-10-16">2026.10.16</time></figcaption>
-      </figure>
+      <dl class="game-facts"><div><dt>{{factSong}}</dt><dd>{{factSongBody}}</dd></div><div><dt>{{factPaint}}</dt><dd>{{factPaintBody}}</dd></div><div><dt>{{factScore}}</dt><dd>{{factScoreBody}}</dd></div></dl>
       <div class="play-notes">
         <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
         <p class="scene-note">{{sceneNote}}</p>
       </div>
-      <div class="development-note"><h3>{{developmentTitle}}</h3><div>
-        <p class="small development-updated"><time datetime="2026-10-17">{{developmentUpdated}}</time></p>
+      <details class="development-details"><summary>{{developmentTitle}} <span>{{developmentUpdated}}</span></summary><div class="development-note"><div>
         <p>{{developmentBody}}</p>
         <dl class="progress-list">
           <div><dt>{{savedTitle}}</dt><dd>{{savedBody}}</dd></div>
@@ -50,13 +62,13 @@
           <div><dt>{{checkpointTitle}}</dt><dd>{{checkpointBody}}</dd></div>
         </dl>
         <p class="small">{{laterBody}}</p>
-      </div></div>
-      <aside class="performance-panel" aria-labelledby="performance-title">
+      </div></div></details>
+      <details class="performance-details"><summary>{{performanceTitle}}</summary><aside class="performance-panel" aria-labelledby="performance-title">
         <div class="performance-heading"><h3 id="performance-title">{{performanceTitle}}</h3><p><strong>{{performanceTarget}}</strong><span>{{performanceTargetLabel}}</span></p></div>
         <dl class="performance-metrics"><div><dt>{{performanceBeforeLabel}}</dt><dd>{{performanceBefore}}</dd></div><div><dt>{{performanceAfterLabel}}</dt><dd>{{performanceAfter}}</dd></div></dl>
         <p class="small">{{performanceBody}}</p>
         <details class="performance-evidence"><summary>{{performanceEvidence}}</summary><a class="art-open" href="{{base}}assets/gameplay-stats.png" data-art aria-label="{{artOpen}}: {{performanceEvidence}}"><img src="{{base}}assets/gameplay-stats.png" loading="lazy" decoding="async" width="1347" height="829" alt="{{performanceAlt}}"></a></details>
-      </aside>
+      </aside></details>
     </section>
     <section class="festival-section" id="festival" aria-labelledby="festival-title">
       <div class="section festival-grid">
@@ -67,9 +79,9 @@
     <section class="section art-section" id="art" aria-labelledby="art-title">
       <div class="art-heading"><h2 id="art-title">{{artTitle}}</h2><p>{{artIntro}}</p></div>
       <div class="art-grid">
-        <figure class="art-card art-wide"><a class="art-open" href="{{base}}assets/studio-concept.png" data-art aria-label="{{artOpen}}: {{artStudio}}"><img src="{{base}}assets/studio-concept.png" loading="lazy" decoding="async" width="1672" height="941" alt="{{studioAlt}}"></a><figcaption><span>{{artStudio}}</span><span>{{artLabel}}</span></figcaption></figure>
-        <figure class="art-card"><a class="art-open" href="{{base}}assets/paint-blaster-concept.png" data-art aria-label="{{artOpen}}: {{artGun}}"><img src="{{base}}assets/paint-blaster-concept.png" loading="lazy" decoding="async" width="1536" height="1024" alt="{{gunAlt}}"></a><figcaption><span>{{artGun}}</span><span>{{artLabel}}</span></figcaption></figure>
-        <figure class="art-card"><a class="art-open" href="{{base}}assets/balloon-concept.png" data-art aria-label="{{artOpen}}: {{artBalloon}}"><img src="{{base}}assets/balloon-concept.png" loading="lazy" decoding="async" width="1536" height="1024" alt="{{balloonAlt}}"></a><figcaption><span>{{artBalloon}}</span><span>{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card art-wide"><a class="art-open" href="{{base}}assets/studio-concept.png" data-art aria-label="{{artOpen}}: {{artStudio}}"><img src="{{base}}assets/studio-concept.webp" loading="lazy" decoding="async" width="1672" height="941" alt="{{studioAlt}}"></a><figcaption><span>{{artStudio}}</span><span>{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card"><a class="art-open" href="{{base}}assets/paint-blaster-concept.png" data-art aria-label="{{artOpen}}: {{artGun}}"><img src="{{base}}assets/paint-blaster-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{gunAlt}}"></a><figcaption><span>{{artGun}}</span><span>{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card"><a class="art-open" href="{{base}}assets/balloon-concept.png" data-art aria-label="{{artOpen}}: {{artBalloon}}"><img src="{{base}}assets/balloon-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{balloonAlt}}"></a><figcaption><span>{{artBalloon}}</span><span>{{artLabel}}</span></figcaption></figure>
       </div>
     </section>
     <section class="download-section" id="download" aria-labelledby="download-title">

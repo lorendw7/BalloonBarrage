@@ -50,6 +50,10 @@ The October 13 prepared gameplay track uses Goin' Under by NegaRen, dance-single
 
 `Assets/Art/Previews/PrototypeScene_20261016.png` is an unedited 2560 × 1440 Unity camera render of the saved studio after fixed-room batching, without UI or balloons. `CreatorStats_20261016.png` is the creator-supplied Unity Game-view screenshot showing gameplay and Editor Stats. These are development evidence, not generated concept art or a standalone benchmark. All depicted assets retain their existing attribution and recorded prompts.
 
+## October 18 standalone gameplay capture
+
+`Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg` is the unmodified 2560 × 1440 Windows capture taken from `Builds/Windows-x64-v0.1.0-demo.2/BalloonShooter.exe` after starting a round. It shows actual balloons, weapon and HUD, with no reconstructed or generated gameplay pixels. Capture SHA-256: `7624cebbc07c34d240705ed36bcee4dcac1d58c3737420ebae76452196a4beab`; captured build's `Assembly-CSharp.dll`: `b3deaa2df189bd650cbc69a161194a4b43597395d8432c464a3d867e6dc3595a`. Resized/compressed web copies and unchanged concept-image derivatives retain their existing asset attribution and prompts; preparation settings and hashes are in `Website/media/provenance.json`. No new image generation or external art import occurred. This capture establishes the displayed scene, not full-song physical acceptance or sustained performance.
+
 ## October 17 surface-paint lesson assets
 
 `Assets/StudioArtPack/SurfacePaint` reuses the existing GraffitiSpray_Atlas_v3 Teal_Spray slice without changing image pixels, import settings or the exact recorded prompt. The new material is a native copy of SprayUnlit, using the installed unmodified URP sprite-unlit shader. The small SpriteRenderer prefab and close-up preview are native Unity outputs; no new external download or generated image is introduced. Source paths/hashes and preparation settings are in its `Provenance.json`; the original prompt remains in [Spray assets](Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts). The preview is an asset placement render, not a recorded gameplay hit.

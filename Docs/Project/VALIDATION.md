@@ -203,3 +203,10 @@ node --test Website/tests/site.test.mjs
 ```
 
 Use Unity Test Runner for the foundation EditMode tests. `ProjectValidation.Run` checks scenes/prefabs/YAML in an isolated Unity project without saving them. Metadata/site checks never replace runtime/build acceptance. Logs and temporary verification projects stay ignored.
+## October 18 website and released-demo capture
+
+- Opened the existing clean `Builds/Windows-x64-v0.1.0-demo.2/BalloonShooter.exe`, started a round and captured actual gameplay at 2560 × 1440. The unmodified JPEG is `Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg`. The local executable's gameplay assembly hash matches the assembly inside the immutable demo.2 ZIP; capture/build hashes are recorded in [Credits](../../CREDITS.md#october-18-standalone-gameplay-capture).
+- This was a screenshot session, not a full-song physical playtest, pause/retry acceptance, fresh-machine check or performance benchmark. Earlier diagnostic and acceptance limits remain applicable.
+- The trilingual website now leads with that screenshot, current release availability and the demo entry point. Longer progress/performance records are expandable; concept art remains labelled and separate from gameplay. All depicted assets retain attribution and recorded generation prompts.
+- Eight website tests passed locally, covering translation parity, release fallback/security states, canonical/share metadata, source/derivative hashes, the opening-image size budget, built references and preview routes/MIME types. The networked build selected public `v0.1.0-demo.2` (68.1 MB); website checks do not validate Unity gameplay.
+- Local browser inspection covered the desktop first screen, all three languages at 390 × 844 with no horizontal overflow, English at 320 × 720, and opening/closing the actual-image dialog. The opening WebP is 116,746 bytes; share JPEG is 1200 × 675. Metadata is supplied for social previews, but rendering by WeChat or any other social client is unverified.

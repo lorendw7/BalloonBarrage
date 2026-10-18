@@ -51,7 +51,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 
 ## Current website captures
 
-The website uses `Assets/Art/Previews/PrototypeScene_20261016.png` (2K room render, without UI or balloons) and the expandable `CreatorStats_20261016.png` (creator-provided gameplay/Stats screenshot). The October 10 capture remains an archive. Existing concept artwork and recorded prompts remain unchanged; see [Credits](../../CREDITS.md).
+The website opens with `Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg`, an unmodified 2560 × 1440 capture of the released Windows demo running with actual HUD, balloons and weapon. Its smaller WebP/JPEG web derivatives are prepared by `Website/scripts/prepare-images.py`, with hashes/settings in `Website/media/provenance.json`. The expandable `CreatorStats_20261016.png` retains its original date and Editor label. Earlier UI-free room renders remain archived. Existing concept artwork and recorded prompts remain unchanged; see [Credits](../../CREDITS.md).
 
 ## Wall and reference import
 

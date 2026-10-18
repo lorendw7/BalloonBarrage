@@ -22,5 +22,29 @@
   {
     "source": "Assets/Art/Previews/CreatorStats_20261016.png",
     "output": "gameplay-stats.png"
+  },
+  {
+    "source": "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg",
+    "output": "gameplay-demo2.jpg"
+  },
+  {
+    "source": "Website/media/gameplay-demo2.webp",
+    "output": "gameplay-demo2.webp"
+  },
+  {
+    "source": "Website/media/studio-concept.webp",
+    "output": "studio-concept.webp"
+  },
+  {
+    "source": "Website/media/paint-blaster-concept.webp",
+    "output": "paint-blaster-concept.webp"
+  },
+  {
+    "source": "Website/media/balloon-concept.webp",
+    "output": "balloon-concept.webp"
+  },
+  {
+    "source": "Website/media/gameplay-share.jpg",
+    "output": "gameplay-share.jpg"
   }
 ]

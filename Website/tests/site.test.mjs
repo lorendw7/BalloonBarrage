@@ -4,6 +4,7 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import { languages, strings } from "../src/strings.mjs";
 import { selectDownload, repositoryUrl } from "../scripts/releases.mjs";
 import { renderPage } from "../scripts/render.mjs";
@@ -44,6 +45,28 @@ test("ready, empty and API-failure pages render safely in all languages", () => 
   assert.ok(html.includes("&lt;script&gt;"));
   assert.ok(!html.includes('<script>alert("x")'));
 });
+
+test("sharing uses language-specific canonical URLs and the actual demo image", async () => {
+  const base = "https://lorendw7.github.io/BalloonBarrage/";
+  for (const locale of languages) {
+    const html = renderPage(template, locale, selectDownload([release]));
+    const canonical = base + (locale === "zh-Hans" ? "" : `${locale}/`);
+    assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`));
+    assert.ok(html.includes(`<meta property="og:url" content="${canonical}">`));
+    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/gameplay-share.jpg">`));
+    assert.ok(!html.includes("v0.1.0-demo.1"), "Introductory copy must not advertise an obsolete package");
+  }
+  assert.ok((await stat(path.join(site, "media/gameplay-demo2.webp"))).size < 200_000,
+    "Keep the first-screen gameplay image below 200 KB");
+});
+
+test("web derivatives retain recorded source and output hashes", async () => {
+  const records = JSON.parse(await readFile(path.join(site, "media/provenance.json"), "utf8"));
+  for (const record of records) for (const [file, expected] of [[record.source, record.source_sha256], [record.output, record.output_sha256]]) {
+    const data = await readFile(path.resolve(site, "..", file));
+    assert.equal(createHash("sha256").update(data).digest("hex"), expected, file);
+  }
+});
 test("built pages have valid local links, scripts, styles and artwork", async () => {
   const output = path.join(site, "dist");
   for (const locale of languages) {
@@ -58,7 +81,7 @@ test("built pages have valid local links, scripts, styles and artwork", async ()
   for (const item of assets) {
     const source = await readFile(path.resolve(site, "..", item.source));
     const outputAsset = await readFile(path.join(output, "assets", item.output));
-    assert.deepEqual(source, outputAsset, "Website artwork must come from the canonical game asset");
+    assert.deepEqual(source, outputAsset, "Website images must match their manifest source");
   }
 });
 
@@ -83,6 +106,8 @@ test("preview serves language directory roots and blocks paths outside dist", { 
     assert.ok((await response.text()).includes(`<html lang="${locale}">`));
   }
   assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
+  assert.equal((await fetch(base + "/assets/gameplay-demo2.webp")).headers.get("content-type"), "image/webp");
+  assert.equal((await fetch(base + "/assets/gameplay-share.jpg")).headers.get("content-type"), "image/jpeg");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
 });

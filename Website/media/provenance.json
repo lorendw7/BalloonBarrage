@@ -1,0 +1,57 @@
+[
+  {
+    "source": "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg",
+    "source_sha256": "7624cebbc07c34d240705ed36bcee4dcac1d58c3737420ebae76452196a4beab",
+    "output": "Website/media/gameplay-demo2.webp",
+    "output_sha256": "638adf31825c35c7c3c2af0fce32251c310ee85b75277c4303cf84fce5b79d1b",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
+    "source": "Assets/Art/Concepts/CozyGraffitiStudio_Concept.png",
+    "source_sha256": "394599652d351959813aa3effe7e31ad9d39e2a2a5dce1b690f96204705180ba",
+    "output": "Website/media/studio-concept.webp",
+    "output_sha256": "d8d5e57969122b6299c61729f453cd4af81d276defda1fed251af4e284635ae8",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/Concepts/PaintBlaster_Concept_v1.png",
+    "source_sha256": "a5d8d637fb41ee3b861fe92443ecc7fbb61dee870fcc3f8a1f4116d74741ccc9",
+    "output": "Website/media/paint-blaster-concept.webp",
+    "output_sha256": "542af2acb6a84792479ce7010ef60d917a1fc36e79a415debea5bcb0d28a9276",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
+    "source": "Assets/Art/Concepts/Balloon_Readability_v2.png",
+    "source_sha256": "b1bbe2ba928a224128178f54a4aff887f688690ad2769a07137e9ff9dc0ecaf6",
+    "output": "Website/media/balloon-concept.webp",
+    "output_sha256": "3ccb5dd49f2632a07559e3838f447efaf01f472008e83e45bb3253913c4d1f06",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
+    "source": "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg",
+    "source_sha256": "7624cebbc07c34d240705ed36bcee4dcac1d58c3737420ebae76452196a4beab",
+    "output": "Website/media/gameplay-share.jpg",
+    "output_sha256": "72bb537e9fb56792aa1f3ce3bb725683d566b00d2c2f6bc9bbfe4a697ab5a2a2",
+    "dimensions": [
+      1200,
+      675
+    ],
+    "preparation": "1200x675 Lanczos; RGB JPEG quality 88, optimized"
+  }
+]

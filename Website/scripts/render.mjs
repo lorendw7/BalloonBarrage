@@ -17,7 +17,13 @@ export function renderPage(template, locale, release) {
   const releasePanel = release.available
     ? `<div class="release-panel"><h3>${e(text.downloadReady)}</h3>${release.prerelease ? `<p class="badge badge-yellow">${e(text.downloadPreview)}</p>` : ""}<div class="release-meta"><span>${e(text.downloadBuild)}: ${e(release.tag)}</span><span>${e(text.downloadSize)}: ${(release.size / 1024 / 1024).toFixed(1)} MB</span></div><a class="button button-teal" href="${e(release.url)}">${e(text.downloadReady)}</a><p class="small">${e(text.downloadInstructions)}</p><p><a href="${e(release.notes)}">${e(text.downloadNotes)}</a></p></div>`
     : `<div class="release-panel" data-release-status="${release.status}"><h3>${e(release.status === "empty" ? text.downloadEmpty : text.downloadUnknown)}</h3><p>${e(release.status === "empty" ? text.downloadEmptyBody : text.downloadUnknownBody)}</p><a class="button button-teal" href="${repositoryUrl}/releases">${e(text.downloadRelease)}</a></div>`;
-  const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanel };
+  const siteUrl = "https://lorendw7.github.io/BalloonBarrage/";
+  const canonicalUrl = siteUrl + (locale === "zh-Hans" ? "" : `${locale}/`);
+  const heroReleaseStatus = release.available
+    ? `${text.downloadPreviewLabel} · ${release.tag}`
+    : (release.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
+  const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanel,
+    canonicalUrl, shareImageUrl: `${siteUrl}assets/gameplay-share.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (key in special) return special[key];
     if (!(key in text)) throw new Error(`Missing translation: ${locale}.${key}`);

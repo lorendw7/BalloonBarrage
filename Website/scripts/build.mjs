@@ -17,7 +17,11 @@ for (const asset of assets) {
   if (!source.startsWith(root + path.sep) || path.basename(asset.output) !== asset.output) throw new Error("Invalid asset manifest path");
   const data = await readFile(source);
   if (data.subarray(0, 80).toString().includes("git-lfs.github.com/spec")) throw new Error(`Fetch Git LFS assets first: ${asset.source}`);
-  if (!data.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) throw new Error(`Expected PNG artwork: ${asset.source}`);
+  const png = data.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  const webp = data.toString("ascii", 0, 4) === "RIFF" && data.toString("ascii", 8, 12) === "WEBP";
+  const jpeg = data[0] === 255 && data[1] === 216 && data[2] === 255;
+  const valid = { ".png": png, ".webp": webp, ".jpg": jpeg };
+  if (!valid[path.extname(asset.source)] || !valid[path.extname(asset.output)]) throw new Error(`Invalid artwork format: ${asset.source}`);
   await copyFile(source, path.join(output, "assets", asset.output));
 }
 for (const locale of languages) {
@@ -28,4 +32,4 @@ for (const locale of languages) {
 for (const file of ["styles.css", "app.js", "favicon.svg"]) await copyFile(path.join(site, "src", file), path.join(output, file));
 await writeFile(path.join(output, ".nojekyll"), "");
 await writeFile(path.join(output, "release.json"), JSON.stringify(release, null, 2) + "\n");
-console.log(`Built ${languages.length} language pages using ${assets.length} canonical project artworks. Release status: ${release.status}.`);
+console.log(`Built ${languages.length} language pages using ${assets.length} project images. Release status: ${release.status}.`);
