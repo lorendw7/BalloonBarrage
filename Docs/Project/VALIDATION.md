@@ -218,3 +218,7 @@ The creator supplied a page screenshot with the new gameplay image stacked over 
 At the creator's request, the original illustrated balloon-studio background is retained. The title and buttons occupy it, while the actual gameplay capture is a separate figure below. The original PNG and recorded prompts remain unchanged; the compressed WebP derivative records its source/output hashes in Website/media/provenance.json. Widths are aligned, downloads precede concept art, and the gallery is compact. Website tests and responsive browser checks are separate from gameplay acceptance.
 
 Nine website checks passed locally. Browser checks of the final retained-background layout covered all three languages at widths 320, 768 and 2560 pixels: no horizontal overflow, original background present, gameplay outside the hero and screenshot successfully loaded. A 390-pixel mobile screenshot was also visually inspected.
+
+## October 18 wide-screen correction
+
+The fixed-height cover background cropped the frame on the creator's 2560-pixel screenshot. Desktop layout now fits the full original illustration and shares a 1760-pixel width with the main content; large-screen text is 18 pixels. Local browser checks covered Chinese, Japanese and English at widths 320, 768, 1280, 1920, 2560 and 3440 with no horizontal overflow. The 2560 by 1271 view was visually inspected: full frame visible, hero and content both 1760 pixels wide. These are website layout checks, not gameplay validation.

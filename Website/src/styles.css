@@ -6,6 +6,8 @@
   --muted: #53615a;
   --line: #d5d4bd;
   --white: #fffdf6;
+  --content-width: 1760px;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
@@ -19,12 +21,12 @@ h2 { font-size: clamp(1.6rem, 2.7vw, 2.3rem); letter-spacing: -.025em; }
 h3 { font-size: 1.1rem; }
 p { overflow-wrap: anywhere; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
-.section { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+.section { max-width: var(--content-width); margin: 0 auto; padding: 4rem var(--page-gutter); }
 .small { font-size: .875rem; }
 .skip-link { position: fixed; top: .5rem; left: .5rem; transform: translateY(-160%); z-index: 20; padding: .5rem 1rem; background: var(--white); border: 2px solid var(--ink); }
 .skip-link:focus { transform: none; }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; max-width: 1200px; margin: auto; padding: .9rem 2rem; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; max-width: var(--content-width); margin: auto; padding: .9rem var(--page-gutter); }
 .brand { display: flex; gap: .5rem; align-items: center; text-decoration: none; font-size: 1.15rem; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
 .brand-color { color: var(--teal); }
 .main-nav, .language-nav { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.4rem; }
@@ -130,6 +132,15 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .art-dialog img { max-height: 72vh; object-fit: contain; margin-top: .8rem; }
 .art-dialog p { margin-top: .7rem; font-size: .9rem; }
 .dialog-close { display: block; margin-left: auto; border: 1px solid var(--ink); border-radius: 4px; background: var(--paper); padding: .4rem .7rem; cursor: pointer; }
+@media (min-width: 1001px) {
+  .hero { width: 100%; max-width: var(--content-width); margin-inline: auto; aspect-ratio: 1672 / 941; min-height: 0; background-size: contain; }
+}
+@media (min-width: 1600px) {
+  html { font-size: 18px; }
+  .section-heading { max-width: 48rem; }
+  .hero-inner { max-width: 680px; }
+  .hero-description { max-width: 32rem; }
+}
 @media (max-width: 1000px) {
   .header-inner { flex-wrap: wrap; gap: .5rem 1rem; padding-inline: 1.5rem; }
   .main-nav { order: 3; justify-content: center; width: 100%; }

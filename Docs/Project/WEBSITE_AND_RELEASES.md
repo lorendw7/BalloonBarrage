@@ -70,3 +70,7 @@ For a development snapshot, set `BALLOON_BUILD_OUTPUT` to an empty absolute dire
 ## Recovery
 
 Revert a faulty website commit or redeploy a known good revision. Withdraw broken game attachments and rebuild the website snapshot. Preserve normal main history. Keep an offline backup of the accepted exhibition ZIP.
+
+## Wide-screen layout
+
+On desktop widths above 1000 pixels, the illustrated hero fits its original 1672:941 aspect ratio with contain sizing instead of cropping into a fixed-height strip. Header, hero and content share a 1760-pixel maximum width. At 1600 pixels and above the base text size is 18 pixels. The existing narrow-screen layout and original source artwork remain unchanged. CSS filenames continue to change with their content.
