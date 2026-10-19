@@ -8,12 +8,15 @@ import hashlib
 import json
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
 MEDIA = ROOT / "Website/media"
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
+DEVELOPMENT_CAPTURE = "Assets/Art/Previews/Gameplay_Development_20261019.png"
+DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
 SOURCES = {
+    "gameplay-development-20261019": DEVELOPMENT_CAPTURE,
     "palette": "Assets/Art/Previews/Palette_20261019.png",
     "menu-background": "Assets/StudioArtPack/Menu/MenuBackground_v1.png",
     "gameplay-demo2": CAPTURE,
@@ -40,6 +43,8 @@ def main():
                         "output": output.relative_to(ROOT).as_posix(),
                         "output_sha256": digest(output), "dimensions": list(image.size),
                         "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"})
+        if relative == DEVELOPMENT_CAPTURE:
+            records[-1]["attribution"] = DEVELOPMENT_ATTRIBUTION
     image = Image.open(ROOT / CAPTURE).convert("RGB")
     image = image.resize((1200, 675), Image.Resampling.LANCZOS)
     output = MEDIA / "gameplay-share.jpg"
@@ -48,6 +53,16 @@ def main():
                     "output": output.relative_to(ROOT).as_posix(),
                     "output_sha256": digest(output), "dimensions": list(image.size),
                     "preparation": "1200x675 Lanczos; RGB JPEG quality 88, optimized"})
+    image = ImageOps.pad(Image.open(ROOT / DEVELOPMENT_CAPTURE).convert("RGB"),
+                         (1200, 675), method=Image.Resampling.LANCZOS, color="#fff4dc")
+    output = MEDIA / "gameplay-development-share-20261019.jpg"
+    image.save(output, "JPEG", quality=88, optimize=True)
+    records.append({"source": DEVELOPMENT_CAPTURE,
+                    "source_sha256": digest(ROOT / DEVELOPMENT_CAPTURE),
+                    "output": output.relative_to(ROOT).as_posix(),
+                    "output_sha256": digest(output), "dimensions": list(image.size),
+                    "preparation": "Fit entire capture within 1200x675 with centered cream padding, no crop or distortion; Lanczos; RGB JPEG quality 88, optimized",
+                    "attribution": DEVELOPMENT_ATTRIBUTION})
     (MEDIA / "provenance.json").write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
     for record in records:
         print(record["output"], (ROOT / record["output"]).stat().st_size)

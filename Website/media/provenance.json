@@ -75,5 +75,29 @@
       850
     ],
     "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
+  },
+  {
+    "source": "Assets/Art/Previews/Gameplay_Development_20261019.png",
+    "source_sha256": "e477a425b713b7d48b620bd3626212ea28c88413f52cbd41f2668600f436ace3",
+    "output": "Website/media/gameplay-development-20261019.webp",
+    "output_sha256": "b3e85d531f035131588608141c52c8c58ac793454f567bdfa94eb2f6d009009c",
+    "dimensions": [
+      1347,
+      753
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
+  },
+  {
+    "source": "Assets/Art/Previews/Gameplay_Development_20261019.png",
+    "source_sha256": "e477a425b713b7d48b620bd3626212ea28c88413f52cbd41f2668600f436ace3",
+    "output": "Website/media/gameplay-development-share-20261019.jpg",
+    "output_sha256": "cb64cec659f5bd8b9548bc0a2cf7edf2d48c8951f1d58c4e1a5ad0e1fd74553b",
+    "dimensions": [
+      1200,
+      675
+    ],
+    "preparation": "Fit entire capture within 1200x675 with centered cream padding, no crop or distortion; Lanczos; RGB JPEG quality 88, optimized",
+    "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
   }
 ]

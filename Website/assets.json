@@ -1,5 +1,17 @@
 [
   {
+    "source": "Assets/Art/Previews/Gameplay_Development_20261019.png",
+    "output": "gameplay-development-20261019.png"
+  },
+  {
+    "source": "Website/media/gameplay-development-20261019.webp",
+    "output": "gameplay-development-20261019.webp"
+  },
+  {
+    "source": "Website/media/gameplay-development-share-20261019.jpg",
+    "output": "gameplay-development-share-20261019.jpg"
+  },
+  {
     "source": "Assets/StudioArtPack/Menu/MenuBackground_v1.png",
     "output": "menu-background.png"
   },
