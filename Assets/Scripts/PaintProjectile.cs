@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PaintProjectile : MonoBehaviour
 {
+    // Cosmetic selection must not consume the spawn/movement random stream.
+    private static readonly System.Random pigmentRandom = new System.Random();
+
     [SerializeField] private float speed = 35f;
 
     [SerializeField] private float radius = 0.08f;
@@ -11,6 +14,29 @@ public class PaintProjectile : MonoBehaviour
     [SerializeField] private float lifetime = 2f;
 
     [SerializeField] private GameObject paintMarkPrefab; 
+
+    [SerializeField] private Material[] pigments;
+
+    [SerializeField] private GameObject[] paintMarkVariants;
+
+    private void Awake()
+    {
+        // Use one palette index for both the flying paint and its surface mark.
+        if (pigments == null || paintMarkVariants == null ||
+            pigments.Length == 0 || pigments.Length != paintMarkVariants.Length)
+        {
+            return;
+        }
+
+        int index = pigmentRandom.Next(pigments.Length);
+        if (pigments[index] == null || paintMarkVariants[index] == null)
+        {
+            return;
+        }
+
+        StudioPaintTint.Effect(gameObject, pigments[index].GetColor("_BaseColor"));
+        paintMarkPrefab = paintMarkVariants[index];
+    }
 
     public bool ShotWasOnBeat {  get; private set; }
 

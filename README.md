@@ -45,7 +45,7 @@ All project documentation is maintained in English. The website and planned game
 - [Controller preparation](Docs/Design/CONTROLLER_SETUP.md): deferred input actions and Xbox/Beitong reference for the later P1 mouse plus P2 gamepad mode.
 - [Paint-pop lesson](Docs/Art/PAINT_POP_LESSON.md): connected burst assets and their manual acceptance checklist; later surface paint follows the rhythm checkpoint.
 - [Surface paint lesson](Docs/Art/SURFACE_PAINT_LESSON.md): saved round-persistent MainWall marks with an isolated lifecycle pass; next lesson connects the balloon-pop color palette, with no count cap planned.
-- [Balloon color lesson](Docs/Art/BALLOON_COLOR_LESSON.md): connected three-color balloon with creator-reported matching-burst and 10/20-point passes.
+- [Balloon and projectile palette](Docs/Art/BALLOON_COLOR_LESSON.md): eight saved colors with matching bursts and persistent marks; public demo.2 retains its original three-color palette.
 - [Local best-score lesson](Docs/Design/BEST_SCORE_LESSON.md): saved read/save/display with independent synthetic standalone higher/lower/retry/relaunch checks; see the validation record for limits.
 - [Credits](CREDITS.md): attribution and provenance.
 

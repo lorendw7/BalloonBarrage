@@ -55,6 +55,15 @@
         <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
         <p class="scene-note">{{sceneNote}}</p>
       </div>
+      <aside class="palette-panel" aria-labelledby="palette-title">
+        <p class="eyebrow">{{paletteStatus}}</p>
+        <h3 id="palette-title">{{paletteTitle}}</h3>
+        <p>{{paletteBody}}</p>
+        <figure>
+          <a class="art-open" href="{{base}}assets/palette.png" data-art aria-label="{{artOpen}}: {{paletteTitle}}"><img src="{{base}}assets/palette.webp" loading="lazy" decoding="async" width="1600" height="850" alt="{{paletteAlt}}"></a>
+          <figcaption><span>{{paletteCaption}}</span><time datetime="2026-10-19">2026.10.19</time></figcaption>
+        </figure>
+      </aside>
       <details class="development-details"><summary>{{developmentTitle}} <span>{{developmentUpdated}}</span></summary><div class="development-note"><div>
         <p>{{developmentBody}}</p>
         <dl class="progress-list">

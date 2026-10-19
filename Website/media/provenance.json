@@ -64,5 +64,16 @@
       675
     ],
     "preparation": "1200x675 Lanczos; RGB JPEG quality 88, optimized"
+  },
+  {
+    "source": "Assets/Art/Previews/Palette_20261019.png",
+    "source_sha256": "0c5705833cd8d63deb7dc476a8c23feb4d88832e9e95f00e6f8947ef0f44a57f",
+    "output": "Website/media/palette.webp",
+    "output_sha256": "457bf2430e6e7e4ebda0a10e5db14d10c4d2f84ce956aa5d3befb45979c9aeed",
+    "dimensions": [
+      1600,
+      850
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"
   }
 ]

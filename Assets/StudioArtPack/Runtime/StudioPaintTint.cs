@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>Cosmetic tinting only; retains shared assets and particle timing/alpha.</summary>
@@ -5,10 +6,17 @@ public static class StudioPaintTint
 {
     static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
     static readonly int ColorId = Shader.PropertyToID("_Color");
+    // Unity copies property blocks on SetPropertyBlock. These main-thread buffers
+    // avoid allocating wrappers/component arrays for each projectile and burst.
+    static readonly MaterialPropertyBlock TintBlock = new MaterialPropertyBlock();
+    static readonly List<Renderer> Renderers = new List<Renderer>(8);
+    static readonly List<ParticleSystem> Particles = new List<ParticleSystem>(4);
+    static ParticleSystem.Particle[] liveParticles = new ParticleSystem.Particle[32];
 
     public static void Set(Renderer renderer, Color color, int materialIndex = -1)
     {
-        var block = new MaterialPropertyBlock();
+        var block = TintBlock;
+        block.Clear();
         if (materialIndex < 0) renderer.GetPropertyBlock(block);
         else renderer.GetPropertyBlock(block, materialIndex);
         block.SetColor(BaseColor, color);
@@ -46,9 +54,12 @@ public static class StudioPaintTint
 
     public static void Effect(GameObject root, Color color)
     {
-        foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+        root.GetComponentsInChildren(true, Renderers);
+        foreach (var renderer in Renderers)
             if (!(renderer is ParticleSystemRenderer)) Set(renderer, color);
-        foreach (var particle in root.GetComponentsInChildren<ParticleSystem>(true))
+        Renderers.Clear();
+        root.GetComponentsInChildren(true, Particles);
+        foreach (var particle in Particles)
         {
             var main = particle.main;
             main.startColor = Recolor(main.startColor, color);
@@ -58,7 +69,9 @@ public static class StudioPaintTint
             // Tint any already-emitted particles as well without restarting the effect.
             if (particle.particleCount > 0)
             {
-                var live = new ParticleSystem.Particle[particle.particleCount];
+                if (liveParticles.Length < particle.particleCount)
+                    System.Array.Resize(ref liveParticles, Mathf.NextPowerOfTwo(particle.particleCount));
+                var live = liveParticles;
                 int count = particle.GetParticles(live);
                 for (int i = 0; i < count; i++)
                 {
@@ -68,5 +81,6 @@ public static class StudioPaintTint
                 particle.SetParticles(live, count);
             }
         }
+        Particles.Clear();
     }
 }

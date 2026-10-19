@@ -50,5 +50,13 @@
   {
     "source": "Website/media/menu-background.webp",
     "output": "menu-background.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Palette_20261019.png",
+    "output": "palette.png"
+  },
+  {
+    "source": "Website/media/palette.webp",
+    "output": "palette.webp"
   }
 ]

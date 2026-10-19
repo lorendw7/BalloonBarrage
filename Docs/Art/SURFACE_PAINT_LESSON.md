@@ -1,6 +1,6 @@
 # Lesson: projectile impacts leave wall paint
 
-Updated: October 18, 2026. Persistent three-color balloon-pop marks and direct projectile marks now pass isolated checks on MainWall, Floor, LeftWall and RightWall. The next learner step checks complete-song coverage and readability before measured load. Controller/co-op remains deferred. [Roadmap](../Design/ROADMAP.md) owns scheduling and [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion) owns surface eligibility and lifecycle policy.
+Updated: October 19, 2026. Persistent balloon-pop marks and direct projectile marks pass isolated checks on MainWall, Floor, LeftWall and RightWall. The saved palette now has eight colors; the [palette guide](BALLOON_COLOR_LESSON.md) owns their indexed references, art provenance and verification status. The next learner step checks complete-song coverage and readability before measured load. Controller/co-op remains deferred. [Roadmap](../Design/ROADMAP.md) owns scheduling and [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion) owns surface eligibility and lifecycle policy.
 
 ## Reviewed starting point
 

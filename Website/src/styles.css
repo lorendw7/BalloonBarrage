@@ -40,6 +40,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .hero { display: grid; place-items: center; min-height: 640px; padding: 4rem 2rem; background: url("assets/menu-background.webp") center/cover no-repeat; }
 .hero-inner { text-align: center; max-width: 590px; width: 100%; min-width: 0; padding: 1.5rem; }
 .gameplay-figure { margin-bottom: 2.5rem; }
+.palette-panel { margin-block: 2rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #b8c7b3; border-radius: 8px; background: #faf5e8; }
+.palette-panel h3 { margin-block: .4rem .8rem; }
+.palette-panel > p { max-width: 65ch; }
+.palette-panel figure { margin: 1.25rem 0 0; }
+.palette-panel img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .gameplay-figure img { width: 100%; border-radius: 8px; box-shadow: 0 12px 35px #233d3a20; }
 .gameplay-figure figcaption { font-size: .8rem; }
 .release-status { display: inline-block; margin-top: 1.1rem; color: var(--teal); font-size: .8rem; font-weight: 600; }

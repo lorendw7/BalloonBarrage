@@ -35,7 +35,7 @@
     "receivesShadows": false
   },
   "preview": "Native Unity render with a temporary wall mark; no production scene saved and no runtime hit claimed",
-  "rights": "Retains the original atlas provenance and recorded prompt; material uses the installed URP sprite-unlit shader without shader-source modification.",
+  "rights": "Retains original atlas provenance and recorded prompts. Original three marks use the installed URP sprite shader. Five additional pigments use the project-authored PalettePaint.shader with the same atlas sprite.",
   "popPalettePreparation": {
     "date": "2026-10-18",
     "kind": "Copies of the existing mark prefab; no new image generation or download",
@@ -55,6 +55,45 @@
       }
     ],
     "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts",
-    "runtime": "No pop-deposit implementation or production reference hookup"
+    "runtime": "Historical preparation of the first three marks; current hookup and verification are recorded in Docs/Art/BALLOON_COLOR_LESSON.md."
+  },
+  "paletteExpansion": {
+    "date": "2026-10-19",
+    "kind": "Five copied latex materials and five recolored mark prefabs; no new image generation or download",
+    "sources": [
+      {
+        "path": "Assets/StudioArtPack/BalloonColors/CoralLatex.mat",
+        "sha256": "707b1d6ff7d571926bf215530b5363fa023e91c47766233a4c2bc8cf22811231"
+      },
+      {
+        "path": "Assets/StudioArtPack/SurfacePaint/SurfacePaint_Teal.prefab",
+        "sha256": "871508581dd19fa6c43e00da3738a1d2dbae03cea1d64af3b5743e12489ae080"
+      },
+      {
+        "path": "Assets/StudioArtPack/SurfacePaint/SurfacePaint_Teal.mat",
+        "sha256": "1aba8eea48cc2dbd3bc94477d78d62df4a84e2af21d482954fc5d4d91dd98679"
+      }
+    ],
+    "indexOrder": [
+      "Teal",
+      "Coral",
+      "Gold",
+      "SkyBlue",
+      "Violet",
+      "Rose",
+      "Lime",
+      "Tangerine"
+    ],
+    "newPigmentSRGB": {
+      "SkyBlue": "#489DEC",
+      "Violet": "#9A6DE0",
+      "Rose": "#EB71A6",
+      "Lime": "#91C94F",
+      "Tangerine": "#EF903C"
+    },
+    "shader": "Assets/StudioArtPack/SurfacePaint/PalettePaint.shader",
+    "recolor": "Preserve original Teal_Spray alpha; brightest RGB channel becomes monochrome shading multiplied by the new pigment.",
+    "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts",
+    "guide": "Docs/Art/BALLOON_COLOR_LESSON.md"
   }
 }

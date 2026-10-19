@@ -1,6 +1,16 @@
 # Validation record
 
-Updated: October 18, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 19, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+
+## Eight-color development palette and tint buffers, October 19
+
+The saved production balloon/projectile prefabs now share eight indexed pigments and matching persistent surface marks. The original prefab GUIDs, one balloon mesh, collision setup, song/chart, 10/20 scoring and paint lifetime are retained. Balloons use their own pigment for explosions/deposits; direct surface impacts use the projectile pigment. Projectile color selection has its own System.Random stream. See the [palette guide](../Art/BALLOON_COLOR_LESSON.md) for assets and provenance.
+
+Focused isolated Unity 6000.0.77f1 Editor Play Mode checks passed eight colors on four actual production receivers for both pop deposits and projectile SphereCasts, including obstruction/rejection, score branches, persistent marks, pause/results and retry cleanup. Sampling 256 projectile instances reached all eight colors and matched their renderer tints to selected mark prefabs. Native rendering after material-buffer updates showed all eight balloon/projectile/mark palettes. This is not a new standalone release or full-song human/readability acceptance.
+
+StudioPaintTint now reuses one MaterialPropertyBlock, component lists and a growing particle buffer. The reusable PaintTintAcceptance batch fixture passed indexed/default property preservation, independence between renderers, unchanged shared materials, live-particle RGB/alpha/lifetime and 65-to-3 particle buffer reuse. The source removes repeated buffer construction; no whole-game FPS or quantified GC-byte improvement is claimed. An allocation-counter experiment failed its positive control and was discarded. Evidence is ignored under `.local-backups/palette-20261019` and `.local-backups/palette-publish-20261019`.
+
+The website adds a lazy-loaded 50,156-byte palette preview in Chinese, Japanese and English, explicitly separate from the downloadable three-color demo.2. Its nine checks cover translations, release states, image provenance, local references/cache filenames and local preview behavior. Existing published gameplay images remain intact. The current release ZIP and hash are unchanged. If the deployed page loses language/assets/download access, revert the website commit normally and redeploy; do not rewrite history.
 
 ## v0.1.0-demo.2 author credit, performance and package, October 18
 

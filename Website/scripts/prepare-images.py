@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MEDIA = ROOT / "Website/media"
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
 SOURCES = {
+    "palette": "Assets/Art/Previews/Palette_20261019.png",
     "menu-background": "Assets/StudioArtPack/Menu/MenuBackground_v1.png",
     "gameplay-demo2": CAPTURE,
     "studio-concept": "Assets/Art/Concepts/CozyGraffitiStudio_Concept.png",
