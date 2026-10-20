@@ -23,6 +23,15 @@ SOURCES = {
     "studio-concept": "Assets/Art/Concepts/CozyGraffitiStudio_Concept.png",
     "paint-blaster-concept": "Assets/StudioArtPack/PaintBlaster/Concepts/PaintBlaster_Concept_v1.png",
     "balloon-concept": "Assets/Art/Concepts/Balloon_Readability_v2.png",
+    "surface-patterns-20261019": "Assets/Art/Previews/SurfacePatterns_20261019.png",
+    "paint-blaster-model-20261019": "Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019/Previews/After_Model.png",
+    "start-screen-20261019": "Assets/StudioArtPack/InterfaceV2/Previews/Start_AuthorCredit_1080p.png",
+}
+
+PREVIEW_ATTRIBUTIONS = {
+    "surface-patterns-20261019": "Native Unity asset-sheet preview, 2026-10-19. Eight colors and six patterns; not recorded gameplay or a public release. Existing atlas attribution and recorded generation prompts remain unchanged.",
+    "paint-blaster-model-20261019": "Native Unity model-inspection render, 2026-10-19. Temporary enlarged inspection pose, Canvas hidden; not recorded gameplay. Native procedural geometry, no new generative image editing.",
+    "start-screen-20261019": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged.",
 }
 
 
@@ -43,7 +52,9 @@ def main():
                         "output": output.relative_to(ROOT).as_posix(),
                         "output_sha256": digest(output), "dimensions": list(image.size),
                         "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"})
-        if relative == DEVELOPMENT_CAPTURE:
+        if name in PREVIEW_ATTRIBUTIONS:
+            records[-1]["attribution"] = PREVIEW_ATTRIBUTIONS[name]
+        elif relative == DEVELOPMENT_CAPTURE:
             records[-1]["attribution"] = DEVELOPMENT_ATTRIBUTION
     image = Image.open(ROOT / CAPTURE).convert("RGB")
     image = image.resize((1200, 675), Image.Resampling.LANCZOS)

@@ -99,5 +99,41 @@
     ],
     "preparation": "Fit entire capture within 1200x675 with centered cream padding, no crop or distortion; Lanczos; RGB JPEG quality 88, optimized",
     "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
+  },
+  {
+    "source": "Assets/Art/Previews/SurfacePatterns_20261019.png",
+    "source_sha256": "94aa717ee7173d273cbddaf9938ef649c0660323fe482a1c649bb67e51198493",
+    "output": "Website/media/surface-patterns-20261019.webp",
+    "output_sha256": "e55b5e18a1b6e0498435fa8abd11f4c5a5c78de877475df75ee2261c0b066524",
+    "dimensions": [
+      1500,
+      1200
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Native Unity asset-sheet preview, 2026-10-19. Eight colors and six patterns; not recorded gameplay or a public release. Existing atlas attribution and recorded generation prompts remain unchanged."
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019/Previews/After_Model.png",
+    "source_sha256": "fb8c46b5e4d44391ee9a60ffc11e2b71592c3404a909f1f888accbb3490312d8",
+    "output": "Website/media/paint-blaster-model-20261019.webp",
+    "output_sha256": "508503688c31ed41384491e1b785a99817de8ed2bfb6525dd78d48054ba92b37",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Native Unity model-inspection render, 2026-10-19. Temporary enlarged inspection pose, Canvas hidden; not recorded gameplay. Native procedural geometry, no new generative image editing."
+  },
+  {
+    "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_AuthorCredit_1080p.png",
+    "source_sha256": "384855433a6e24cbdcd7e9ac5bc2441c12fa5e785c0aeee5faf7797a3046e332",
+    "output": "Website/media/start-screen-20261019.webp",
+    "output_sha256": "95fac4b9db2b357d86b3029b9c9f255156ca7591a6690a451e55f8b243126a6a",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged."
   }
 ]

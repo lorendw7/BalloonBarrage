@@ -8,6 +8,14 @@ For the current package, run `Tools/Release/package_windows_demo.py` with the ve
 
 ## Build and preview
 
+### October 20 presentation refresh
+
+The existing illustrated opening now summarizes round length, platform and controls, with a clearer download link in navigation. The desktop palette panel uses a compact text/image layout. A trilingual Studio notes section follows downloads, showing the 48-pattern asset sheet, the enlarged paint-blaster inspection render and the refreshed start-screen creator plaque. Each image is explicitly labelled as a development asset, model or interface preview outside the current three-color demo. It does not announce a new game package or accepted exhibition build. The footer includes the original creator name in a matching small plaque.
+
+The three previews use lazy-loaded WebP derivatives (approximately 74, 122 and 140 KB), full-image enlargement and recorded source/output SHA-256 values and attribution in `Website/media/provenance.json`. Original image bytes, paired Unity metadata and existing image-generation prompts are retained. The gallery/model source files are included as website reference images; this website commit does not publish the unrelated pending gameplay or model implementation. Only the opening background is preloaded; below-the-fold gameplay and preview images load lazily.
+
+Local validation uses the existing nine site checks, a current release snapshot and browser inspection of language navigation, desktop/mobile layout and the image dialog. Site checks do not validate Unity gameplay. After pushing main, verify the matching Pages workflow and the live trilingual preview/download routes. Keep the previous immutable demo ZIP and normal Git history.
+
 Use Node.js 22 or newer; no dependency installation is required. From the repository root:
 
 ```powershell

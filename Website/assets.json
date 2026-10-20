@@ -70,5 +70,29 @@
   {
     "source": "Website/media/palette.webp",
     "output": "palette.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/SurfacePatterns_20261019.png",
+    "output": "surface-patterns-20261019.png"
+  },
+  {
+    "source": "Website/media/surface-patterns-20261019.webp",
+    "output": "surface-patterns-20261019.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019/Previews/After_Model.png",
+    "output": "paint-blaster-model-20261019.png"
+  },
+  {
+    "source": "Website/media/paint-blaster-model-20261019.webp",
+    "output": "paint-blaster-model-20261019.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_AuthorCredit_1080p.png",
+    "output": "start-screen-20261019.png"
+  },
+  {
+    "source": "Website/media/start-screen-20261019.webp",
+    "output": "start-screen-20261019.webp"
   }
 ]
