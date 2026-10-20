@@ -1,5 +1,15 @@
 # Website and desktop releases
 
+## October 20 scene and mixed-pigment previews
+
+The trilingual studio-notes section now includes a large native Unity room preview with plaster walls, a mineral floor, side-wall paint and the updated gun. The gun card uses the latest enlarged mixed-pigment reservoir render. Copy distinguishes static marbled pigment from fluid simulation or next-projectile prediction; these previews are separate from the unchanged public `v0.1.0-demo.2` Windows package.
+
+Canonical PNGs are `MixedPigment20261020/Previews/After.png` and `After_Model.png` under `Assets/StudioArtPack/PaintBlaster`. WebP derivatives are 105,206 and 118,282 bytes, with hashes and native-render attribution in `Website/media/provenance.json`. `prepare-images.py --only` updates selected derivatives without rewriting unrelated media. Original concepts, prompts and the creator-supplied gameplay capture remain intact.
+
+Nine website checks passed. Browser inspection at 390-pixel width found no horizontal overflow in Chinese, Japanese or English. Website publication includes these preview images and their metadata, not pending Unity gameplay, scene or model implementation.
+
+## Distribution
+
 The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
 
 The October 18 prerelease **v0.1.0-demo.2** packages the new non-Development Windows solo build with persistent four-surface paint, three-color balloons, local records, author credit and HUD formatting optimization. Its instrumented diagnostic checks and clean-package integrity checks are separate from physical acceptance; final clean-package graphical smoke testing was interrupted. The creator explicitly requested pushing it with those limits recorded. The earlier **v0.1.0-demo.1** preserves the creator-tested rollback checkpoint. Both remain noncommercial development demos, separate from final exhibition acceptance. [Roadmap](../Design/ROADMAP.md) owns scope; [Validation](VALIDATION.md) owns evidence and package hashes.

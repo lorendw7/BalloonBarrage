@@ -94,5 +94,21 @@
   {
     "source": "Website/media/start-screen-20261019.webp",
     "output": "start-screen-20261019.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
+    "output": "studio-refresh-20261020.png"
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
+    "output": "mixed-pigment-model-20261020.png"
+  },
+  {
+    "source": "Website/media/studio-refresh-20261020.webp",
+    "output": "studio-refresh-20261020.webp"
+  },
+  {
+    "source": "Website/media/mixed-pigment-model-20261020.webp",
+    "output": "mixed-pigment-model-20261020.webp"
   }
 ]

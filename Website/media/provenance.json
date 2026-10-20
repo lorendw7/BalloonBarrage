@@ -135,5 +135,29 @@
     ],
     "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
     "attribution": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged."
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
+    "source_sha256": "b00b32003ff171a895c9db8040d8485e2f53fb7bb7c5ffc046934b6046d8bffb",
+    "output": "Website/media/studio-refresh-20261020.webp",
+    "output_sha256": "b4dbfb93ee238c2140920e88802b59806a8b8e9429bab0336f9d1683e4cfb8de",
+    "dimensions": [
+      1600,
+      900
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Native Unity saved-camera scene inspection, 2026-10-20. Plaster walls, mineral floor, side-wall pigments and mixed-color reservoir. UI temporarily hidden; not recorded gameplay or a new public release. No generative image editing."
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
+    "source_sha256": "9b645a5fa9d455b7469171539600e9af002dd5a8b159152fab9d03542bef3100",
+    "output": "Website/media/mixed-pigment-model-20261020.webp",
+    "output_sha256": "dab6f41f044ecf87bef00f830fbbe2e3553ce807567fd6cffe376002d8500872",
+    "dimensions": [
+      1600,
+      1000
+    ],
+    "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6",
+    "attribution": "Native Unity enlarged model inspection, 2026-10-20. Static eight-hue marbled pigment and reservoir calibration marks. Temporary inspection pose, UI hidden; not fluid simulation or a preview of the next projectile color. No generative image editing."
   }
 ]

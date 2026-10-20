@@ -151,6 +151,10 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .updates-heading .eyebrow { color: var(--teal); font-size: .75rem; font-weight: 700; margin-bottom: .5rem; }
 .updates-heading time { color: var(--muted); font-size: .8rem; white-space: nowrap; }
 .updates-intro { max-width: 68ch; color: var(--muted); margin-top: 1rem; }
+.studio-feature { margin-top: 2rem; background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.studio-feature img { display: block; width: 100%; height: auto; }
+.studio-feature .eyebrow { color: var(--teal); font-size: .75rem; margin-bottom: .5rem; }
+.studio-feature .update-copy { max-width: 80ch; }
 .updates-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
 .update-card { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .update-card .art-open { padding: .6rem; background: #f6f0df; }
