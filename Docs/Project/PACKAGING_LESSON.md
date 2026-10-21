@@ -13,11 +13,11 @@ A successful website build does not accept the Unity player. A ZIP made from unt
 
 ## Automated Windows and macOS candidates
 
-`.github/workflows/desktop-build.yml` is a manually dispatched GitHub Actions workflow. Its matrix builds Windows x64 on `windows-2022` and macOS Universal on `macos-15-intel` with Unity `6000.0.77f1`. Both jobs call `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`, package the output with `Tools/Release/package_desktop_demo.py`, and upload ZIP plus SHA-256 workflow artifacts. Publication is optional and runs only after both builds succeed.
+`.github/workflows/desktop-build.yml` is a manually dispatched GitHub Actions workflow. Its serialized matrix builds Windows x64 on `windows-2022` and cross-builds the Mono macOS Universal player on `ubuntu-22.04` with Unity `6000.0.77f1`. Serialization prevents the two ephemeral runners from competing for the same Personal license. Both jobs call `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`, package the output with `Tools/Release/package_desktop_demo.py`, and upload ZIP plus SHA-256 workflow artifacts. Publication is optional and runs only after both builds succeed.
 
 The repository must define GitHub Actions secrets `UNITY_LICENSE`, `UNITY_EMAIL`, and `UNITY_PASSWORD` for the licensed Unity account. Set them in **Settings > Secrets and variables > Actions**; never commit or paste their values into project files, logs or chat. Missing secrets stop the workflow before Unity starts.
 
-The macOS output is deliberately described as unsigned and unnotarized. A successful cloud build does not prove launch, input, audio or performance on either Intel or Apple-silicon hardware. Test the exact extracted ZIP on real Macs before treating it as accepted. Windows remains the Kyudaisai target and `v0.1.0-demo.2` remains the rollback package until a newer exact ZIP is accepted.
+The macOS output is deliberately described as unsigned and unnotarized. The Linux-hosted Mono cross-build retains executable modes in the ZIP, but a successful cloud build does not prove launch, input, audio or performance on either Intel or Apple-silicon hardware. Test the exact extracted ZIP on real Macs before treating it as accepted. Windows remains the Kyudaisai target and `v0.1.0-demo.2` remains the rollback package until a newer exact ZIP is accepted.
 
 To package an already-built directory locally without changing runtime files:
 
