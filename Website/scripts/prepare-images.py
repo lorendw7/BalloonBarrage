@@ -13,6 +13,8 @@ from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
 MEDIA = ROOT / "Website/media"
+WEB_MAX_SIZE = (2560, 1440)
+WEBP_QUALITY = 92
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
 DEVELOPMENT_CAPTURE = "Assets/Art/Previews/Gameplay_Development_20261019.png"
 DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
@@ -55,13 +57,13 @@ def main():
             continue
         source = ROOT / relative
         image = Image.open(source).convert("RGB")
-        image.thumbnail((1600, 1200), Image.Resampling.LANCZOS)
+        image.thumbnail(WEB_MAX_SIZE, Image.Resampling.LANCZOS, reducing_gap=3.0)
         output = MEDIA / f"{name}.webp"
-        image.save(output, "WEBP", quality=85, method=6)
+        image.save(output, "WEBP", quality=WEBP_QUALITY, method=6)
         records.append({"source": relative, "source_sha256": digest(source),
                         "output": output.relative_to(ROOT).as_posix(),
                         "output_sha256": digest(output), "dimensions": list(image.size),
-                        "preparation": "RGB, fit within 1600x1200, Lanczos; WebP quality 85, method 6"})
+                        "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"})
         if name in PREVIEW_ATTRIBUTIONS:
             records[-1]["attribution"] = PREVIEW_ATTRIBUTIONS[name]
         elif relative == DEVELOPMENT_CAPTURE:

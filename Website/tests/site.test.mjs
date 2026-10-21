@@ -98,12 +98,16 @@ test("sharing uses language-specific canonical URLs and the development capture"
     assert.ok(html.includes(`<meta property="og:image" content="${base}assets/gameplay-development-share-20261019.jpg">`));
     assert.ok(!html.includes("v0.1.0-demo.1"), "Introductory copy must not advertise an obsolete package");
   }
-  assert.ok((await stat(path.join(site, "media/gameplay-development-20261019.webp"))).size < 200_000,
-    "Keep the first-screen gameplay image below 200 KB");
+  assert.ok((await stat(path.join(site, "media/gameplay-development-20261019.webp"))).size < 300_000,
+    "Keep the high-quality first-screen gameplay image below 300 KB");
 });
 
 test("web derivatives retain recorded source and output hashes", async () => {
   const records = JSON.parse(await readFile(path.join(site, "media/provenance.json"), "utf8"));
+  for (const record of records.filter(({ output }) => output.endsWith(".webp"))) {
+    assert.match(record.preparation, /source resolution up to 2560x1440/);
+    assert.match(record.preparation, /WebP quality 92/);
+  }
   for (const record of records) for (const [file, expected] of [[record.source, record.source_sha256], [record.output, record.output_sha256]]) {
     const data = await readFile(path.resolve(site, "..", file));
     assert.equal(createHash("sha256").update(data).digest("hex"), expected, file);
