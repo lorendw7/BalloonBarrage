@@ -19,6 +19,8 @@ The repository must define GitHub Actions secrets `UNITY_LICENSE`, `UNITY_EMAIL`
 
 The macOS output is deliberately described as unsigned and unnotarized. The Linux-hosted Mono cross-build retains executable modes in the ZIP, but a successful cloud build does not prove launch, input, audio or performance on either Intel or Apple-silicon hardware. Test the exact extracted ZIP on real Macs before treating it as accepted. Windows remains the Kyudaisai target and `v0.1.0-demo.2` remains the rollback package until a newer exact ZIP is accepted.
 
+Run `39607132305` confirmed the Windows path and uploaded its private candidate artifact. The macOS job reached the correct Linux editor image but Unity account login returned HTTP 400 and no access token on five attempts, before project compilation. The same credentials activated successfully on Windows and the jobs were serialized. This currently matches open GameCI issue [game-ci/docker#268](https://github.com/game-ci/docker/issues/268); do not describe the macOS candidate as built until a later run produces and verifies the ZIP.
+
 To package an already-built directory locally without changing runtime files:
 
 ```powershell
