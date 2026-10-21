@@ -1,124 +1,188 @@
-# Packaging desktop demos
+# Desktop release runbook
 
-This guide packages a tested BalloonBarrage build; it does not decide whether gameplay is ready. [Game design](../Design/GAME_DESIGN.md) owns behavior, the [Roadmap](../Design/ROADMAP.md) owns delivery gates, and [Validation](VALIDATION.md) records evidence.
+This is the operational source for building, staging and publishing BalloonBarrage desktop packages. [Game design](../Design/GAME_DESIGN.md) owns behavior, the [Roadmap](../Design/ROADMAP.md) owns delivery gates, [Validation](VALIDATION.md) records evidence, and [Website and releases](WEBSITE_AND_RELEASES.md) explains how published assets reach the site.
 
-## The four separate outcomes
+## Release model
 
-1. **Build:** Unity writes a complete Windows or macOS player to a new directory.
-2. **Accept:** the creator tests that exact directory on the intended PC.
-3. **Package:** the release tool copies the accepted files into an immutable ZIP, adds notices and writes SHA-256.
-4. **Publish:** GitHub Releases hosts the ZIP; the website reads the published release separately.
+Keep these outcomes separate:
 
-A successful website build does not accept the Unity player. A ZIP made from untested output is only an unaccepted development candidate.
+1. **Build:** Unity writes a Windows x64 player or macOS Universal application.
+2. **Package:** the release tool verifies the structure, adds notices, creates an immutable ZIP and writes SHA-256.
+3. **Stage:** a GitHub Draft Release stores both candidates without exposing them on the website.
+4. **Accept:** the exact extracted ZIP is tested on its target operating system and the evidence is recorded.
+5. **Publish:** the draft becomes a prerelease or release; the website then discovers its platform-labelled assets.
 
-## Automated Windows and macOS candidates
+A successful compilation, ZIP check or website test is not a physical playtest. Never replace an existing published asset: rebuild under a new version.
 
-`.github/workflows/desktop-build.yml` is a manually dispatched GitHub Actions workflow. Its serialized matrix builds Windows x64 on `windows-2022` and cross-builds the Mono macOS Universal player on `ubuntu-22.04` with Unity `6000.0.77f1`. Serialization prevents the two ephemeral runners from competing for the same Personal license. Both jobs call `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`, package the output with `Tools/Release/package_desktop_demo.py`, and upload ZIP plus SHA-256 workflow artifacts. Publication is optional and runs only after both builds succeed.
+## Primary path: local dual-platform build
 
-The repository must define GitHub Actions secrets `UNITY_LICENSE`, `UNITY_EMAIL`, and `UNITY_PASSWORD` for the licensed Unity account. Set them in **Settings > Secrets and variables > Actions**; never commit or paste their values into project files, logs or chat. Missing secrets stop the workflow before Unity starts.
+Local Unity builds are the default because they use the creator's activated Unity Hub installation and avoid the unresolved Linux-container login failure recorded in [Validation](VALIDATION.md#desktop-delivery-pipeline-checkpoint-october-21). GitHub Actions remains a Windows-only fallback and never publishes a release automatically.
 
-The macOS output is deliberately described as unsigned and unnotarized. The Linux-hosted Mono cross-build retains executable modes in the ZIP, but a successful cloud build does not prove launch, input, audio or performance on either Intel or Apple-silicon hardware. Test the exact extracted ZIP on real Macs before treating it as accepted. Windows remains the Kyudaisai target and `v0.1.0-demo.2` remains the rollback package until a newer exact ZIP is accepted.
+### Prerequisites
 
-Run `39607132305` confirmed the Windows path and uploaded its private candidate artifact. The macOS job reached the correct Linux editor image but Unity account login returned HTTP 400 and no access token on five attempts, before project compilation. The same credentials activated successfully on Windows and the jobs were serialized. This currently matches open GameCI issue [game-ci/docker#268](https://github.com/game-ci/docker/issues/268); do not describe the macOS candidate as built until a later run produces and verifies the ZIP.
+- Unity Editor **6000.0.77f1**, activated through Unity Hub.
+- **Mac Build Support (Mono)** added to that exact Editor installation.
+- Windows support included with the Windows Editor. **Windows Build Support (IL2CPP)** is optional unless the project explicitly switches to IL2CPP.
+- Git LFS content downloaded, Python 3 available, and GitHub CLI authenticated before upload.
+- A named commit pushed to the repository and a separate clean checkout of that exact commit. Do not build a release from the learner's active working directory.
+- Enough free space for both Unity outputs, package ZIPs and a second project Library.
 
-To package an already-built directory locally without changing runtime files:
+The macOS output is Universal (Intel 64-bit plus Apple silicon), unsigned and unnotarized. It remains a candidate until tested after fresh extraction on a real Mac.
 
-```powershell
-python Tools/Release/package_desktop_demo.py `
-  --source <build-directory> `
-  --output <new-versioned-zip> `
-  --tag v0.1.0-demo.3 `
-  --platform windows
-```
+### Prepare an isolated checkout
 
-Use `--platform macos` for an output containing `BalloonBarrage.app`. The tool rejects existing output, requires the expected player structure, excludes Unity `DoNotShip` and backup payloads, preserves macOS executable bits, embeds notices and writes a `.zip.sha256` sidecar.
-
-## Before building
-
-- Use Unity `6000.0.77f1`, the version recorded in `ProjectSettings/ProjectVersion.txt`.
-- Preserve the current working tree. For a release candidate, build from a named commit in an isolated copy so active learner edits and diagnostic probes cannot change during the build.
-- Choose a new version such as `v0.1.0-demo.3`. Never overwrite an existing published ZIP or checksum.
-- Create a new empty output directory outside any earlier build. Example: `Builds/Windows-x64-v0.1.0-demo.3`.
-- Confirm only `Assets/Scenes/PrototypeScene.unity` is enabled for the player.
-- Confirm Windows x86-64 and a non-Development build for a release candidate. Development builds are diagnostics, not final candidates.
-- Confirm the bundled StepMania notice and source manifest remain unchanged. The songs are authorized only for noncommercial development packages and must not be described as commercially cleared.
-
-## Build in the Unity editor
-
-1. Exit Play Mode and save the intended scene.
-2. Open **File > Build Profiles**.
-3. Select and activate **Windows**. Install the Windows Build Support module through Unity Hub if Unity reports it missing.
-4. In the active scene list, enable only `Assets/Scenes/PrototypeScene.unity` at index 0.
-5. Set the architecture to Intel 64-bit / x86-64.
-6. Leave **Development Build** disabled for a release candidate.
-7. Click **Build** and save the player as `BalloonShooter.exe` inside the new empty versioned directory. The current packaging tool checks that exact executable name.
-8. Do not rename, remove or separate the executable, `UnityPlayer.dll`, data directory or other generated runtime files.
-
-The repository retains `BalloonBarrage.EditorTools.WindowsReleaseBuild.Build` to reproduce the historical `0.1.0-demo.2` process. New versioned automation uses the parameterized `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`; it requires explicit target, version and output arguments and refuses a nonempty output directory.
-
-## Accept the exact build directory
-
-From the new build directory, test before creating the ZIP:
-
-- launch offline;
-- title/instructions and Start;
-- unrestricted-duration held fire, ordinary hits and on-beat hits;
-- complete-song settlement;
-- pause, resume, focus loss and release-before-fire behavior;
-- retry with cleared score, balloons, projectiles and paint;
-- best-score persistence after relaunch;
-- Quit;
-- music/SFX balance and readable targets/cue during dense paint;
-- intended resolution and at least the planned target-PC soak.
-
-Record failures and the environment in [Validation](VALIDATION.md). Fixes require a new build directory and a repeated affected check. Do not patch files inside an already accepted directory.
-
-Run the structural preflight before and after packaging. Use `-ReleasePackage` for the extracted ZIP so credits/readme are also required:
+Choose the version before building, for example `0.1.0-demo.3`. Confirm the active repository is clean, then create a detached worktree outside it from the intended commit:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File Tools/Exhibition/Test-ExhibitionPackage.ps1 `
-  -BuildPath Builds/Windows-x64-v0.1.0-demo.3
+$commit = "REPLACE_WITH_COMMIT_SHA"
+git status --short
+git worktree add --detach D:\CS\Build\BalloonBarrage-v0.1.0-demo.3 $commit
+git -C D:\CS\Build\BalloonBarrage-v0.1.0-demo.3 lfs pull
 ```
 
-The preflight checks the executable/data/runtime pairing, bundled StepMania notice and manifest, Unity backup payload exclusions and optional release notices. It does not launch or play the game. Follow the [exhibition operator runbook](EXHIBITION_RUNBOOK.md) for the accepted primary/fallback rehearsal.
+Keep the worktree and build logs until both packages are accepted or rejected. Do not copy uncommitted gameplay files into it.
 
-## Create release metadata
+### Build both players
 
-Create an ignored local JSON file, for example `.local-reference/release-v0.1.0-demo.3.json`:
+Close Unity Editor instances using the isolated checkout. Run the following from PowerShell, changing only the version and paths. Every output directory must be new or empty.
+
+```powershell
+$version = "0.1.0-demo.3"
+$unity = "D:\Software\Unity Editor\6000.0.77f1\Editor\Unity.exe"
+$project = "D:\CS\Build\BalloonBarrage-v$version"
+$output = "D:\CS\Build\BalloonBarrage-v$version-output"
+New-Item -ItemType Directory -Path $output
+
+& $unity -batchmode -quit `
+  -projectPath $project `
+  -buildTarget StandaloneWindows64 `
+  -executeMethod BalloonBarrage.EditorTools.DesktopReleaseBuild.Build `
+  -balloonTarget windows `
+  -balloonVersion $version `
+  -balloonOutput "$output\windows" `
+  -logFile "$output\windows-build.log"
+if ($LASTEXITCODE -ne 0) { throw "Windows build failed with exit code $LASTEXITCODE" }
+
+& $unity -batchmode -quit `
+  -projectPath $project `
+  -buildTarget StandaloneOSX `
+  -executeMethod BalloonBarrage.EditorTools.DesktopReleaseBuild.Build `
+  -balloonTarget macos `
+  -balloonVersion $version `
+  -balloonOutput "$output\macos" `
+  -logFile "$output\macos-build.log"
+if ($LASTEXITCODE -ne 0) { throw "macOS build failed with exit code $LASTEXITCODE" }
+```
+
+`DesktopReleaseBuild.Build` includes only `Assets/Scenes/PrototypeScene.unity`, disables Development Build and refuses a nonempty output. The macOS architecture is set to Universal for the build and restored afterward. Do not rename or separate generated runtime files.
+
+### Create release evidence
+
+Write an ignored JSON file such as `D:\CS\Build\BalloonBarrage-v0.1.0-demo.3-output\release-info.json`:
 
 ```json
 {
-  "date": "2026-10-27",
-  "features": "Short factual list of what is saved in this build.",
-  "verification": "Exact creator playtests and automated checks completed for this build.",
-  "limits": "Known unverified behavior, unsupported devices and noncommercial music restriction."
+  "date": "2026-10-21",
+  "features": "Short factual list of saved behavior in this commit.",
+  "verification": "Compilation and checks completed for these exact outputs.",
+  "limits": "Physical playtests still required; macOS is unsigned and unnotarized; bundled music is noncommercial only."
 }
 ```
 
-Do not describe a planned feature as implemented, an automated check as a physical playtest, or an Editor screenshot as sustained player performance.
+Record only completed evidence. Planned behavior, Editor screenshots and static website tests are not standalone-player acceptance.
 
-## Package without modifying runtime files
+### Package immutable candidates
 
-Run from the repository root, replacing the example version and paths:
+Run the packager from the isolated checkout:
 
 ```powershell
-python Tools/Release/package_windows_demo.py `
-  --source Builds/Windows-x64-v0.1.0-demo.3 `
-  --output Builds/BalloonBarrage-Windows-x64-v0.1.0-demo.3.zip `
-  --tag v0.1.0-demo.3 `
-  --release-info .local-reference/release-v0.1.0-demo.3.json
+python "$project\Tools\Release\package_desktop_demo.py" `
+  --source "$output\windows" `
+  --output "$output\BalloonBarrage-Windows-x64-v$version.zip" `
+  --tag "v$version" `
+  --platform windows `
+  --release-info "$output\release-info.json"
+
+python "$project\Tools\Release\package_desktop_demo.py" `
+  --source "$output\macos" `
+  --output "$output\BalloonBarrage-macOS-Universal-v$version.zip" `
+  --tag "v$version" `
+  --platform macos `
+  --release-info "$output\release-info.json"
 ```
 
-The tool refuses to overwrite an existing ZIP or checksum, excludes `*_DoNotShip`, embeds credits/notices and a per-runtime-file manifest, verifies every archived entry, detects concurrent source-build changes and writes a `.sha256` sidecar.
+The tool refuses existing outputs, checks required player paths, excludes Unity `DoNotShip` and backup payloads, embeds notices and a runtime manifest, and writes a `.zip.sha256` sidecar. For a macOS player produced on Windows, it detects Mach-O binaries and writes their executable permissions into the ZIP.
 
-Check the printed file count and digest. Then extract the ZIP into a fresh folder and repeat the short launch/start/fire/pause/results/retry/quit smoke test. The full acceptance remains attached to the original identical runtime manifest; extraction confirms the package is usable.
+Run the focused packager tests whenever the tool changes:
 
-## Publish and update the website
+```powershell
+python Tools/Release/test_package_desktop_demo.py
+```
 
-1. Create the matching Git tag and GitHub prerelease/release from the accepted commit.
-2. Upload the ZIP and `.sha256`; do not upload only GitHub's source archives.
-3. Keep earlier accepted packages immutable as fallbacks.
-4. Dispatch or observe `.github/workflows/website.yml` from `main`. The site selects a nonempty Windows-labelled ZIP from this repository's trusted GitHub Release URL.
-5. Verify the live Chinese, Japanese and English routes, version, size, download URL and release notes.
+### Stage a Draft Release
 
-If a package is wrong, withdraw the attachment, fix from a new versioned build and publish a new version. If only the site is wrong, append a website fix or revert commit and let Pages redeploy. Never rewrite repository history for release recovery.
+Do not publish directly from a build command. Upload both ZIPs and checksums to a draft so the website continues showing only previously published packages:
+
+```powershell
+$tag = "v$version"
+$commit = "REPLACE_WITH_COMMIT_SHA"
+$notes = "D:\CS\Build\release-notes-v$version.md"
+gh release create $tag `
+  "$output\BalloonBarrage-Windows-x64-v$version.zip" `
+  "$output\BalloonBarrage-Windows-x64-v$version.zip.sha256" `
+  "$output\BalloonBarrage-macOS-Universal-v$version.zip" `
+  "$output\BalloonBarrage-macOS-Universal-v$version.zip.sha256" `
+  --repo lorendw7/BalloonBarrage `
+  --target $commit `
+  --draft `
+  --prerelease `
+  --title "BalloonBarrage v$version desktop candidates" `
+  --notes-file $notes
+```
+
+Drafts are private staging records, not playable public releases. Keep the noncommercial music restriction and macOS signing/testing limits in the notes.
+
+## Acceptance of the exact ZIPs
+
+Verify the checksum before testing, extract to a fresh directory and run the packaged copy rather than the uncompressed build output.
+
+For Windows, test on the intended exhibition PC:
+
+- offline launch and readable title/instructions;
+- complete-song start, held fire, ordinary/on-beat hits and settlement;
+- pause, resume, focus loss, retry, best-score persistence and quit;
+- readable targets/cue during dense paint, music/SFX balance and intended resolution;
+- repeated sessions and the planned exhibition soak.
+
+For macOS, test the exact ZIP on at least an available Apple-silicon Mac; add an Intel Mac when practical. Fully extract it, then Control-click **BalloonBarrage.app** and choose **Open** if Gatekeeper warns about the unsigned application. Verify launch, audio, input, complete-song results, Retry and Quit. Record the macOS version and hardware. Signing/notarization is a later distribution task, not implied by a successful unsigned test.
+
+Record all completed checks and failures in [Validation](VALIDATION.md). A fix requires a new versioned build and package.
+
+## Publish and refresh the website
+
+After the required platform checks pass, edit the release notes to match the evidence and publish the draft. Use a prerelease for development candidates. Publication triggers `.github/workflows/website.yml`, which rebuilds the static site from `main` and discovers the uploaded Windows/macOS assets independently.
+
+Verify afterward:
+
+1. The release contains both intended ZIPs and matching `.sha256` files.
+2. The Chinese, Japanese and English website routes display the correct version, size and platform link.
+3. macOS retains its unsigned/unnotarized warning.
+4. The previous accepted package remains available as a rollback.
+
+If a package is wrong, return the release to draft or remove the bad attachment, build a new version and republish only after acceptance. Never rewrite Git history or replace an already accepted ZIP in place.
+
+## GitHub Actions fallback
+
+`.github/workflows/desktop-build.yml` is a manually dispatched **Windows-only fallback**. It uses `game-ci/unity-builder`, requires `UNITY_LICENSE`, `UNITY_EMAIL` and `UNITY_PASSWORD`, runs the packager tests, and uploads a private workflow artifact. It has no publication job.
+
+`.github/workflows/release-tools.yml` runs the focused Python packager tests when release tooling changes. This checks packaging behavior only; it does not compile or launch Unity.
+
+The previous Linux-hosted macOS matrix path is intentionally disabled because Unity account activation returned HTTP 400 before compilation. Historical logs and the exact Windows artifact hash remain in [Validation](VALIDATION.md). Reintroduce cloud macOS building only after a verified licensing fix or a persistent licensed macOS runner; do not treat a workflow retry as a substitute for real-Mac acceptance.
+
+## Recovery and cleanup
+
+- Preserve the accepted ZIPs, checksums, release notes and validation record on backup storage.
+- Preserve build logs until the version is accepted or abandoned.
+- Keep the prior public release available during rollout.
+- Remove the isolated worktree only after confirming its commit and evidence are retained; use its exact path with `git worktree remove`.
+- For website-only failures, append a fix or revert commit and let Pages redeploy. Do not rebuild a game package for a static-site defect.

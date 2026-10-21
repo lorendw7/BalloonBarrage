@@ -1,0 +1,32 @@
+name: Verify release tools
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Tools/Release/**'
+      - 'CREDITS.md'
+      - '.github/workflows/release-tools.yml'
+  pull_request:
+    paths:
+      - 'Tools/Release/**'
+      - 'CREDITS.md'
+      - '.github/workflows/release-tools.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-tests:
+    name: Desktop package tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python Tools/Release/test_package_desktop_demo.py

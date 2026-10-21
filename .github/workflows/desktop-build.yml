@@ -1,4 +1,4 @@
-name: Build desktop candidates
+name: Build fallback Windows candidate
 
 on:
   workflow_dispatch:
@@ -7,43 +7,25 @@ on:
         description: Version without the v prefix
         required: true
         default: 0.1.0-demo.3
-      publish_prerelease:
-        description: Publish a GitHub prerelease only after both builds succeed
-        required: true
-        type: boolean
-        default: false
 
 permissions:
   contents: read
 
 concurrency:
-  group: desktop-build-${{ inputs.version }}
+  group: fallback-windows-build-${{ inputs.version }}
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: ${{ matrix.label }} candidate
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        include:
-          - id: windows
-            label: Windows x64
-            runner: windows-2022
-            target: StandaloneWindows64
-            package: BalloonBarrage-Windows-x64
-          - id: macos
-            label: macOS Universal
-            runner: ubuntu-22.04
-            target: StandaloneOSX
-            package: BalloonBarrage-macOS-Universal
-    runs-on: ${{ matrix.runner }}
+  build-windows:
+    name: Windows x64 fallback candidate
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
         with:
           lfs: true
           persist-credentials: false
+      - name: Verify release packager
+        run: python Tools/Release/test_package_desktop_demo.py
       - name: Require Unity activation secrets
         shell: bash
         env:
@@ -57,62 +39,46 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: Library
-          key: Unity-${{ runner.os }}-${{ matrix.target }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: Unity-${{ runner.os }}-${{ matrix.target }}-
+          key: Unity-${{ runner.os }}-StandaloneWindows64-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Unity-${{ runner.os }}-StandaloneWindows64-
       - name: Build with Unity 6000.0.77f1
-        uses: game-ci/unity-builder@v4
+        uses: game-ci/unity-builder@v6
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           unityVersion: 6000.0.77f1
-          targetPlatform: ${{ matrix.target }}
+          targetPlatform: StandaloneWindows64
           buildMethod: BalloonBarrage.EditorTools.DesktopReleaseBuild.Build
           customParameters: >-
-            -balloonTarget ${{ matrix.id }}
+            -balloonTarget windows
             -balloonVersion ${{ inputs.version }}
-            -balloonOutput "DesktopBuild/${{ matrix.id }}"
-      - name: Write release evidence
+            -balloonOutput "DesktopBuild/windows"
+      - name: Write candidate evidence
         shell: bash
         run: |
           mkdir -p .release
-          printf '%s\n' '{"verification":"GitHub Actions Unity build and package structure completed. Physical input, audio, complete-song and target-hardware acceptance remain required."}' > .release/info.json
+          printf '%s\n' '{"verification":"GitHub Actions compiled and packaged this Windows fallback candidate. Physical input, audio, complete-song and target-PC acceptance remain required."}' > .release/info.json
       - name: Package immutable candidate
         shell: bash
         run: >-
           python Tools/Release/package_desktop_demo.py
-          --source "DesktopBuild/${{ matrix.id }}"
-          --output "Artifacts/${{ matrix.package }}-v${{ inputs.version }}.zip"
+          --source "DesktopBuild/windows"
+          --output "Artifacts/BalloonBarrage-Windows-x64-v${{ inputs.version }}.zip"
           --tag "v${{ inputs.version }}"
-          --platform "${{ matrix.id }}"
+          --platform windows
           --release-info .release/info.json
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.package }}-v${{ inputs.version }}
+          name: BalloonBarrage-Windows-x64-v${{ inputs.version }}
           path: |
-            Artifacts/${{ matrix.package }}-v${{ inputs.version }}.zip
-            Artifacts/${{ matrix.package }}-v${{ inputs.version }}.zip.sha256
+            Artifacts/BalloonBarrage-Windows-x64-v${{ inputs.version }}.zip
+            Artifacts/BalloonBarrage-Windows-x64-v${{ inputs.version }}.zip.sha256
           if-no-files-found: error
-
-  publish:
-    if: ${{ inputs.publish_prerelease }}
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: BalloonBarrage-*-v${{ inputs.version }}
-          path: release-assets
-          merge-multiple: true
-      - name: Create immutable prerelease
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          gh release create "v${{ inputs.version }}" release-assets/* \
-            --repo "$GH_REPO" --prerelease \
-            --title "BalloonBarrage v${{ inputs.version }} desktop candidates" \
-            --notes "Windows x64 and unsigned, unnotarized macOS Universal development candidates. Noncommercial music restrictions apply. macOS and exhibition-PC physical acceptance remain pending."
+      - name: Record workflow limit
+        shell: bash
+        run: >-
+          echo "This workflow uploads a private Windows workflow artifact only.
+          Local builds, Draft Releases and physical acceptance remain the primary release path."
+          >> "$GITHUB_STEP_SUMMARY"

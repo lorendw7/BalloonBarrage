@@ -26,10 +26,31 @@ def archive_name(path: Path, source: Path) -> str:
     return path.relative_to(source).as_posix()
 
 
-def write_file(archive: zipfile.ZipFile, path: Path, name: str) -> None:
+MACH_O_MAGICS = {
+    b"\xfe\xed\xfa\xce",  # 32-bit, big endian
+    b"\xce\xfa\xed\xfe",  # 32-bit, little endian
+    b"\xfe\xed\xfa\xcf",  # 64-bit, big endian
+    b"\xcf\xfa\xed\xfe",  # 64-bit, little endian
+    b"\xca\xfe\xba\xbe",  # universal, 32-bit table
+    b"\xbe\xba\xfe\xca",
+    b"\xca\xfe\xba\xbf",  # universal, 64-bit table
+    b"\xbf\xba\xfe\xca",
+}
+
+
+def is_mach_o(path: Path) -> bool:
+    with path.open("rb") as handle:
+        return handle.read(4) in MACH_O_MAGICS
+
+
+def write_file(archive: zipfile.ZipFile, path: Path, name: str, force_executable: bool = False) -> None:
     info = zipfile.ZipInfo.from_file(path, name)
-    if os.name != "nt" and path.stat().st_mode & stat.S_IXUSR:
-        info.external_attr = (path.stat().st_mode & 0xFFFF) << 16
+    if os.name != "nt" or force_executable:
+        mode = path.stat().st_mode & 0xFFFF
+        if force_executable:
+            mode |= stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+        info.create_system = 3
+        info.external_attr = mode << 16
     with path.open("rb") as handle:
         archive.writestr(info, handle.read(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
 
@@ -95,7 +116,12 @@ Do not sell this package. Read CREDITS.md and the bundled StepMania NOTICE.txt.
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "x", allowZip64=True) as archive:
         for path in files:
-            write_file(archive, path, archive_name(path, source))
+            write_file(
+                archive,
+                path,
+                archive_name(path, source),
+                force_executable=args.platform == "macos" and is_mach_o(path),
+            )
         archive.writestr("README.txt", readme)
         archive.write(ROOT / "CREDITS.md", "CREDITS.md", zipfile.ZIP_DEFLATED)
         for notice in ("CC-BY-3.0.txt", "CC0-1.0.txt"):

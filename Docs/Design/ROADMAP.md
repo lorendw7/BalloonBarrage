@@ -35,7 +35,7 @@ October 19–20 time included art and learner paint work. Earlier scheduled coun
 | P1: simple success summary | Successful-hit count, then on-beat subset if the once-only outcome/reset checks pass | Results-first, not another live HUD requirement; internal unanswered-event accounting is diagnostic, not a public failure measure |
 | P2: one tactile refinement | Tune existing pop/ring/sound first; add one visual-child entrance or squash only if time permits | No root/collider animation, global hit stop, mandatory camera shake or competing effect labels |
 | Optional: cut first | Forgiving streak, milestone flourishes, extra bob, new-record animation, further art/reflection bake | Only after P0/P1 acceptance; none is required for the festival |
-| Parallel delivery experiment | macOS Universal cloud packaging may be prepared alongside Windows | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
+| Parallel delivery experiment | A local macOS Universal candidate may be built and staged beside Windows from the same commit | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
 | After festival | Song selection, accessibility/calibration settings, controller/co-op, macOS signing/notarization and broader support | Separate small milestones; no assumed festival-ready Mac port |
 | Exploratory only | Roguelite runs, upgrades, armored/splitter/chain targets | Reassess against the relaxing rhythm identity before committing; not the default product promise |
 
@@ -121,7 +121,7 @@ The learner owns event outcomes/counters, trigger calls, animation integration a
 
 No new gameplay is authorized by this planning request. Preserve concurrent work, GUIDs/meta, original audio/attribution/restrictions and recorded image prompts. Documentation is English; player-facing website and game translations are separate. Append commits normally; never rewrite history.
 
-The [desktop packaging lesson](../Project/PACKAGING_LESSON.md) separates the Unity build, fresh-extraction acceptance, immutable ZIP/hash creation and publication. The creator authorized a GitHub Actions macOS packaging attempt. That automation produces only an unsigned, unnotarized candidate; real-Mac testing and any signing/notarization remain separate work and are not a festival commitment.
+The [desktop release runbook](../Project/PACKAGING_LESSON.md) makes local Windows/macOS builds, immutable ZIP/hash creation, Draft Release staging, target-platform acceptance and publication separate gates. GitHub Actions is a private Windows fallback after the Linux-hosted macOS activation failure; real-Mac testing and any signing/notarization remain separate work and are not a festival commitment.
 
 ## Cut order and later direction
 
