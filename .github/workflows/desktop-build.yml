@@ -71,7 +71,7 @@ jobs:
           customParameters: >-
             -balloonTarget ${{ matrix.id }}
             -balloonVersion ${{ inputs.version }}
-            -balloonOutput "${{ github.workspace }}/DesktopBuild/${{ matrix.id }}"
+            -balloonOutput "DesktopBuild/${{ matrix.id }}"
           cacheUnityInstallationOnMac: true
       - name: Write release evidence
         shell: bash
