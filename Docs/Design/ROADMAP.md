@@ -1,150 +1,119 @@
 # Development roadmap
 
-Updated: October 19, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior and tuning, [Validation](../Project/VALIDATION.md) owns evidence, and [README](../../README.md) is the entry point.
+Updated: October 21, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the entry point.
 
 ## Exhibition product direction
 
-The creator prioritizes gameplay experience and effects, with approximately **4–6 hours available per day**. Build a short, satisfying paint-blaster performance: popping feels tactile, on-beat hits feel distinctly better, successive successes build anticipation, and the final score/painted studio makes another attempt appealing.
+**A casual, relaxing rhythm game about popping balloons and painting a sunlit studio.** The player promise is: aim freely, hold fire for as long as desired, enjoy the visible color trail and catch the beat when it feels good. Rhythm is an audible and visible invitation, not permission to shoot or a requirement to finish.
 
-Keep the complete existing song, free aiming and held fire. The festival build should deepen this loop rather than add several shallow modes. The selected experience work is **hit statistics and forgiving hit streaks, visual-child entrance/hit animation, clearer on-beat effects/sound, and meaningful results**. These are planned, not shipped features. Gameplay remains learner-owned; planning does not authorize the assistant to implement it.
+The creator has approximately 4–6 hours per day. Prioritize comfortable input, a readable musical cue, satisfying ordinary hits, an audible on-beat accent and a welcoming finish. A score chase is optional. Do not make combo maintenance, accuracy, upgrades or content volume the exhibition's main attraction.
 
-The official [79th Kyudaisai date and venue](https://kyudaisai.jp/79th/en/about/), checked October 18, lists October 31–November 1, 2026 at Kyushu University Ito Campus. The creator intends to exhibit October 31. Booth, opening hours, number of PCs and attendance on November 1 remain unconfirmed. The internal candidate target stays October 27.
+The [official festival page](https://kyudaisai.jp/79th/en/about/), checked October 20, lists October 31–November 1, 2026 at Kyushu University Ito Campus. The creator plans October 31; booth, hours, PC count and November 1 participation remain unconfirmed. Internal gates: feature freeze October 24, candidate October 27, distribution freeze October 30.
 
-## Current baseline and evidence
+## Current baseline: do not confuse source, previews and release
 
-**v0.1.0-demo.2** is the published Windows x64 non-Development prerelease and the starting source checkpoint. v0.1.0-demo.1 remains an earlier rollback option, subject to rehearsal on the actual exhibition machine.
-
-| Area | Current evidence | Still open |
+| Area | Saved or observed evidence | Still required |
 |---|---|---|
-| Complete song and solo loop | Saved 123.429-second song, 93 events, 10/20 rewards, title/pause/results/retry, pointer/audio/recoil | Physical input/listening alignment and latest clean-package core-flow acceptance on the exhibition PC |
-| Painting and colors | Three-color balloons, same-color pop marks and teal projectile marks on MainWall/Floor/LeftWall/RightWall; isolated actual-collision/lifecycle checks | Human judgement of full-song coverage, target contrast and edge clipping |
-| Unreleased color expansion | Eight pigments for balloons and random projectile colors, matching marks and reusable tint buffers; focused Unity checks and native palette preview | New package, complete-song readability and target-PC load |
-| Records and credit | Local best score passed synthetic higher/lower/retry/relaunch checks; author credit and exact name glyphs passed native layout checks | Exhibition-machine save/relaunch and unfamiliar-player readability |
-| Performance | Authorized HUD cache optimization; instrumented 2K held-fire full song passed, with 610 marks, mean 2.140 ms / p95 3.050 ms, plus frame-time spikes | Clean target-PC measurements, sustained 120 FPS, allocations and soak |
-| Repeated play | Ten diagnostic reload/callback retries cleared paint and retained records | Repeated complete-song play and at least 30 minutes on actual hardware |
-| Package and website | Published demo.2 ZIP/hash, original notices, verified live download | Final clean-package graphical smoke test was interrupted; fresh extraction/offline rehearsal must be completed |
-| New experience features | Statistics, hit streaks, new animation/result feedback are planned | No implementation or acceptance claimed |
-| Localization/co-op | Some translation/input preparation exists | Japanese exhibit copy/font coverage; controllers/co-op remain deferred |
+| Public package | Windows x64 non-Development v0.1.0-demo.2; complete 123.429-second song, 93 events, 10/20 rewards, three-color paint, local best score | Fresh-extraction core-flow and listening acceptance on the exhibition PC |
+| Current source | Eight pigments, matching pop/projectile marks, six pattern families, random pattern/rotation/scale | Latest combined-source complete-song and clean-package checks; configurable-angle revision has source review only |
+| Current art | Brighter side walls, six-color murals, plaster/mineral floor, multicolor reservoir, author plaque; isolated native renders and component checks | In-play target contrast, latest combined-build load and actual-machine performance; indirect lighting/reflections have not been rebaked |
+| Input/feedback | Saved pointer, firing audio, bounded recoil and on-beat cue; creator-reported earlier spot checks | Tapping versus held-fire listening test, pause/focus/retry on final hardware |
+| Statistics/results | Score and local best score saved; no hit/on-beat counters or streak implementation found in current source review | Teach only the minimum useful addition; do not promise counters or combo as shipped |
+| Performance | Earlier instrumented full song with 610 marks; ten diagnostic reloads; earlier Editor snapshots | At least 30 minutes of real full-song/retry use, memory/object trends, target-PC frame times |
+| Website | Latest native room/gun previews published separately from demo.2 | Publish only tested package claims; web checks are not Unity acceptance |
 
-The author-credit font covers only the exact name and ASCII. It is not a Japanese UI solution. Detailed checks and limitations live in Validation rather than being repeated here.
+October 19–20 time included art and learner paint work. Earlier scheduled counter/streak sessions are not treated as completed. Do not compress missed scope into the remaining days.
 
 ## Scope and cuts
 
-| Priority | Deliverable | Boundary |
+| Priority | Exhibition outcome | Boundary |
 |---|---|---|
-| Core baseline | Dependable complete solo song; existing scoring, persistent paint, records and controls | Preserve song/chart, 0.1-second judgement window, 3.1-second unanswered cleanup, 10/20 rewards and existing 1.45-second reward text unless a separate measured change is accepted |
-| Experience priority 1 | Correct hit/on-beat/missed-event counts, forgiving hit streak and maximum streak; small live counter and clear results | Rules in [Exhibition experience design](GAME_DESIGN.md#exhibition-experience-design); no score multiplier, health, currency or permanent upgrades |
-| Experience priority 2 | Visual-child entrance and short hit squash; clearer distinction between ordinary/on-beat feedback | Root Rigidbody/colliders and musical clock stay stable; no global hit stop or compulsory camera shake |
-| Experience priority 3 | Tune existing pigment burst/ring/audio; one new-record/result emphasis | Reuse existing assets first, retain matching pigment, prevent overlapping feedback and loudness masking |
-| Required finishing | Short Japanese instructions/buttons/result labels with verified glyphs; readable aim/timing cues; one-page booth controls | Static exhibition language is sufficient; runtime three-language switching is deferred |
-| Optional, cut first | Gentle extra bob, several streak milestone flourishes, additional result decoration | Only after the core experience passes; no extension of the freeze date |
-| After the festival | Armored/splitter/chain targets, song selection, upgrades, runs, controllers/co-op, screenshot export, general curved-surface paint | No implementation in the festival window |
+| P0: finishable and welcoming | One complete song; free aim and unrestricted-duration held fire; ordinary hits reward; pause/retry/quit reliable | No health, ammunition, reload, heat, elimination, score subtraction, restart-on-miss or color-matching obligation; retain a finite technical projectile cadence |
+| P0: music and comfort | First-time players understand the action, hear the track and perceive the beat bonus | Preserve existing chart/0.1-second window/3.1-second cleanup/10–20 scoring until a separate measured tuning decision; do not infer accuracy from held fire |
+| P0: delivery | Short Japanese instructions, verified glyphs, clean offline package and rehearsed fallback | Static Japanese exhibit language is enough; no new language-switching system |
+| P1: warm ending | Existing score/best score plus a positive completion line and visible painted room; clear Retry | No grades, red Miss total, mandatory ranking or automatic restart; do not block exit or handoff |
+| P1: simple success summary | Successful-hit count, then on-beat subset if the once-only outcome/reset checks pass | Results-first, not another live HUD requirement; internal unanswered-event accounting is diagnostic, not a public failure measure |
+| P2: one tactile refinement | Tune existing pop/ring/sound first; add one visual-child entrance or squash only if time permits | No root/collider animation, global hit stop, mandatory camera shake or competing effect labels |
+| Optional: cut first | Forgiving streak, milestone flourishes, extra bob, new-record animation, further art/reflection bake | Only after P0/P1 acceptance; none is required for the festival |
+| After festival | Song selection, accessibility/calibration settings, controller/co-op, macOS packaging lesson | Separate small milestones; no assumed festival port |
+| Exploratory only | Roguelite runs, upgrades, armored/splitter/chain targets | Reassess against the relaxing rhythm identity before committing; not the default product promise |
 
-The paint-count limit remains explicitly declined. Do not solve coverage/performance by silently deleting old marks, fading them or adding a count cap. Preserve round persistence; reduce new decorative work or choose a measured paint-preserving rendering change if necessary.
+Round-persistent paint remains required. The creator declined a count cap: no timed fade, oldest-first removal or silent deletion. If measured cost is high, reduce new decorative effects or evaluate paint-preserving rendering changes.
 
-## Capacity and daily working method
+## Remaining schedule and gates
 
-October 19–24 reserves six main experience sessions, **24–36 learner hours**. October 25–26 reserves **8–12 hours** for regression and targeted fixes. October 27 is the candidate gate; October 28–30 are rehearsal/buffer days. October 18 is planning and baseline handoff, not another assumed full workday.
+Dates are targets, not completion claims. Do not borrow the testing buffer to finish optional features.
 
-For a four-hour day, use roughly 2.5 hours for one small learner implementation, one hour for hands-on comparison/regression, and 30 minutes for explanation, review and a runnable checkpoint. Extra time on a six-hour day goes to tuning, observing players and fixing measured issues, not automatically adding features. Assistant asset/layout/test preparation can proceed independently; it does not consume or replace learner acceptance.
+| Date | Main outcome | Evidence / cut rule |
+|---|---|---|
+| Oct 20 | Rebaseline the plan; play one complete current-source round; check ordinary hits, tapping/held fire, dense paint and the new gun | Record concrete comfort/readability issues; confirm booth hardware/audio logistics. Do not add more major art work |
+| Oct 21 | Fix the largest input/music/readability issue; teach a successful-hit counter only after the core flow works | Keep one DSP origin and existing scoring. A wall shot or duplicate contact must not count |
+| Oct 22 | Add on-beat subset and a minimal positive result summary if stable; tune existing ordinary/on-beat sound and visual contrast | Both casual held fire and optional timed taps must feel worthwhile. If accounting is unreliable, retain score/best and a completion message |
+| Oct 23 | Japanese-first instructions/buttons/result text; verify fonts; optionally one short visual-child animation | Prefer readable instructions over squash or combo. No new timing rule or mode |
+| Oct 24 | Observe three unfamiliar players if available, including someone who rarely plays rhythm games; make small fixes | **Freeze new features at day's end.** Remove optional effects that obscure targets or feel stressful; if participants are unavailable, record the missing evidence |
+| Oct 25 | Exhibition-PC full-song/retry session, pause/focus checks and frame/memory capture | At least 30 minutes of actual play and ten consecutive retries; record how many were full-song runs. Callback loops are not substitutes |
+| Oct 26 | Fix only observed blockers; build/extract a clean candidate; rehearse offline/audio/display/save/retry | Repeat affected checks after each fix; no new art systems or gameplay rules |
+| Oct 27 | Accept one candidate and a tested fallback | New immutable versioned ZIP/hash/notices, accurate release page/download. Use a reduced feature set if necessary; demo.2 is not automatically hardware-accepted |
+| Oct 28–29 | Rehearse newcomer instructions, player handoff, volume, restart and backup recovery | Main/fallback launch from fresh extraction. Patch only demonstrated blockers; use new versions |
+| Oct 30 | Final equipment/package rehearsal and distribution freeze | Verify executable/hash, mouse surface, display, power, audio and operator sheet. No speculative last-minute polish |
+| Oct 31 | Exhibit the rehearsed build and collect short anonymous observations | Staff handles handoff/recovery; no untested booth-time changes |
+| Nov 1 | Continue only if participation is confirmed | Same tested package; no assumed second-day commitment |
 
-Teach one field, helper, call site or Inspector hookup at a time. Review saved code before another step. A daily deliverable may require several exchanges; there is no promised fixed lesson count or completion percentage.
-
-## Calendar and gates
-
-All dates are internal Asia/Tokyo targets. If a task slips, cut optional scope rather than borrowing the final test window.
-
-| Date | Main learner outcome | Assistant preparation / evidence | Cut or exit rule |
-|---|---|---|---|
-| Oct 18 | Confirm experience scope and save the published baseline | Refresh this plan and design rules; retain demo.2 and demo.1 backups | No new gameplay in this planning task |
-| Oct 19 | First 30 minutes: verify clean demo.2 start/fire/pause/results/retry/quit; then implement once-only hit and on-beat counts | Event-outcome fixtures, result-row assets, Japanese copy/font preparation | Counts update only on accepted impacts; new-game state resets |
-| Oct 20 | Complete event outcomes and forgiving hit streak / maximum streak | Counter layout and subtle pulse; duplicate/expiry/end-of-song cases | If streak resolution is unreliable by day's end, remove streak from this candidate and retain proven hit/on-beat counts |
-| Oct 21 | Add one visual-child entrance, then a short hit squash | Preserve prefab/physics references; prepare animation curve samples | Repeat contacts score once, logical collider/muzzle stay unchanged; cut squash if it destabilizes lifecycle |
-| Oct 22 | Tune ordinary versus on-beat pigment/ring/sound contrast | Reuse current assets, check voice/particle overlap and recorded mix | Player can distinguish feedback while still hearing music and seeing the next target |
-| Oct 23 | Integrate result counts/max streak and a new-record emphasis; connect prepared Japanese exhibit labels | Layout/glyph checks and readable instruction card | No letter-grade/accuracy percentage without definitions; no unverified glyphs |
-| Oct 24 | Three unfamiliar-player trials if available; tune aiming/readability and strongest feedback | Collect observations, compare dense paint before/after, triage issues | **Freeze new features at end of day.** Optional effects are cut if the simpler version reads/plays better |
-| Oct 25 | Continuous full-song/retry session on the exhibition PC | Frame-time/object/memory capture and once-only outcome checks | At least 30 minutes and ten retries followed by complete-song play; callback loops alone do not satisfy this gate |
-| Oct 26 | Fix observed blockers and run full regression on the intended clean build | Fresh extraction, offline/audio/display/save checks; package candidate | No new target rules or modes; repeat affected checks after each fix |
-| Oct 27 | Accept one candidate and a rehearsal-tested fallback | New immutable versioned ZIP/hash/notices, matched website text and verified download | If optional additions fail, package the latest tested reduced scope; demo.2 is not automatically accepted on a new PC |
-| Oct 28 | Rehearse player handoff, sound, display, resolution and restart | Local backup/USB copy, short recovery sheet and download QR | Both main and fallback packages launch from fresh extraction |
-| Oct 29 | Fix only blockers demonstrated during rehearsal | Recheck complete flow and affected performance/records | Do not overwrite published packages; use a new patch version if needed |
-| Oct 30 | Final rehearsal and freeze distribution | Confirm executable/hash, equipment, cables, audio and staff instructions | No speculative polish or untested booth-time build |
-| Oct 31 | Exhibit the rehearsed package and observe players | Keep recovery files available; record anonymous feedback | Staff handles retry/next-player handoff; no untested changes |
-| Nov 1 | Continue only if the creator confirms participation | Maintain the same tested package and collect feedback | Official festival second day is not assumed creator attendance |
-
-If clean demo.2 fails the opening smoke check, resolve that blocker before attaching new experience work. Keep the feature scope reduced if it cannot be repaired promptly.
+Five remaining implementation/tuning dates (October 20–24) provide at most 20–30 hours if fully available; today's elapsed work is not extra capacity. Reserve October 25–26's 8–12 hours for verification/fixes. In a four-hour session, use about 2.5 hours for one small change, one hour for real play/comparison and 30 minutes for review/checkpoint. Extra time goes to evidence, not automatic scope expansion.
 
 ## Immediate teaching queue
 
-Rules are defined in Game design; this table owns delivery order.
+The learner owns Assets/Scripts. Explain one field/helper/call site at a time, let the learner write it, then review saved code before continuing. The creator deferred further paint-scale parameter lessons.
 
-| Order | Small increment | Acceptance before moving on |
+1. Run the [continuous-fire and paint-loop lesson](CONTINUOUS_FIRE_LESSON.md). Confirm the existing held input has no resource or forced downtime and report sound/readability/performance observations before changing its cadence.
+2. Address beat-cue clarity. Follow the [beat-cue handoff](../Art/BEAT_CUE_HANDOFF.md): improve existing cue readability, then teach one serialized graphic field. The approach graphic is prepared separately; dynamic timing and target association remain learner work.
+3. If stable, teach the current-round successful-hit field and once-only accepted-impact increment. Verify reset and wall/duplicate exclusions.
+4. Add the on-beat subset through the existing matched-event bonus path. Verify five hits including two on-beat hits give 70 points, not seven hits.
+5. Bind only the accepted counters to results, with a friendly completion line and clear Retry. Keep the painted room visible.
+6. Tune the existing ordinary/on-beat burst and sound; add at most one visual-child animation if it improves feel.
+7. Complete Japanese copy, unfamiliar-player trials and package gates.
+
+A streak is no longer a prerequisite or the next automatic lesson. If requested after these checks, use the optional rules in Game design; defer it if the remaining schedule is tight. Asset/layout preparation can proceed independently but does not replace the learner's integration or manual judgement.
+
+## Experience acceptance
+
+Use the [short creator playtest and reply template](../Project/EXHIBITION_PLAYTEST.md) for the first current-source report. A Japanese-first printable control card is linked there; font/print acceptance on exhibition hardware remains open.
+
+These are planning targets for a small formative test, not statistical or medical claims.
+
+| Question | Procedure | Acceptance direction |
 |---|---|---|
-| 1 | Current-round successful-hit count | Exactly one valid chart event increments on actual accepted impact; wall shots and duplicate hits do not |
-| 2 | On-beat subset and mutually exclusive event outcomes | On-beat hits are part of total hits; expiry/settlement resolve each event once; no new score values |
-| 3 | Streak and maximum streak | Ordinary and on-beat successes extend; unresolved-target expiry resets; missed bullets do not; pause/retry behave correctly |
-| 4 | Live counter and result bindings | One clear counter, no stacked labels; totals and reset agree with event data |
-| 5 | Visual-child entrance, then hit squash | Independent visual scale, once-only score/feedback, no root/collider animation or leaked delayed object |
-| 6 | Tune existing ordinary/on-beat effects and sound | Distinct but non-obscuring; existing reward-text duration respected; dense/held-fire comparison passes |
-| 7 | Result/new-record emphasis and exhibit copy | No misleading result percentages; record saved once at settlement; verified Japanese glyphs |
-| 8 | New-player tuning, freeze, target-PC candidate | Measured stability and complete clean-package flow, then versioned release |
-
-If a later cosmetic step can be prepared independently, the assistant may prepare its assets first. The learner's integration and acceptance still follow the queue.
-
-## Experience playtests and release acceptance
-
-| Question / gate | Procedure | Planning acceptance target |
-|---|---|---|
-| Does the first interaction make sense? | Observe three new players with the short instructions, without an oral walkthrough | Aim/fire within 30 seconds; the original musical intro is retained, and shooting can already paint during it |
-| Is musical success recognizable? | Ask after a round what earned the extra reward | At least two of three can explain the on-beat bonus and distinguish its feedback; otherwise simplify cues before adding effects |
-| Is there a reason to retry? | Offer another attempt without pressure; ask what they would improve | At least two can name a concrete goal such as more hits, a streak or a record; voluntary retries are evidence, not a promised conversion rate |
-| Is paint still readable? | Compare the first and final dense passage and results | Targets/reticle/timing feedback remain distinguishable; no persistent flicker or floating deposits |
-| Are outcomes trustworthy? | Run the exact synthetic and manual cases in Game design | Each of 93 events resolves once; counts, score and reset agree |
-| Does it feel synchronized? | Compare tapping and held fire with the exhibition audio device | Listen and record signed timing observations; preserve one DSP origin; tune only from evidence |
-| Is it stable? | At least 30 minutes of actual complete-song play and ten consecutive retries; include pause/focus loss | No exceptions, soft locks, ghost fire, accumulating cross-round paint/effects or unexplained record loss |
-| Is it smooth? | Capture intended clean player's CPU/GPU frame times, long frames, allocations, live objects, audio voices and paint/particles | 2K/120 FPS remains a target, not an accepted guarantee; fix measured spikes or agree and label a tested fallback setting |
-| Is the package ready? | Fresh extraction on the actual PC, offline launch, sound, score, pause, retry and quit | Correct immutable ZIP/hash/notices, verified download, rehearsed fallback and controls |
-
-Do not claim all gates passed from an Editor screenshot, a website test or the instrumented 610-mark run. Ten short callback retries are useful diagnostics, not ten complete-song retries.
+| Is it easy to start? | Three unfamiliar players read the short card without an oral walkthrough | Aim/fire within 30 seconds; explain that shooting can already paint during the original intro |
+| Is ordinary play satisfying? | Let a novice hold fire and ignore the bonus | Can finish the song, enjoys pops/colors, no perceived need to restart after misses |
+| Is it still a rhythm game? | Invite optional timed taps; ask what the cue and extra accent mean | At least two of three identify that timing earns an extra reward; if not, simplify cues/mix before adding combo |
+| Is it relaxing? | Ask for comfort/fun and perceived pressure on 1–5 scales, then ask what caused the answer | Seek comfort/fun at least 4 and pressure at most 2 for most participants; any discomfort or perceived punishment triggers review, not an averaged-away pass |
+| Is audio comfortable? | Listen during the densest held-fire section on the intended device | Music remains audible; no piercing or startling repeated accent; agree an appropriate venue volume |
+| Is it readable? | Compare early and late paint-heavy passages | Reticle, balloons and timing cue remain distinguishable; no persistent flicker or distracting flash |
+| Is the ending welcoming? | Observe results without prompting | Player can find Retry/exit, see their painted room, and describe an enjoyable moment; voluntary retry is a useful signal, not a quota |
+| Are statistics correct if included? | Run Game design's event-accounting cases | Accepted hits counted once, on-beat subset valid, reset correct; no misleading accuracy |
+| Is the build dependable? | Fresh extraction, offline launch, full song, pause/focus/retry, record persistence, quit | No exceptions/soft locks/ghost fire/cross-round accumulation; tested fallback available |
+| Is it smooth? | Measure clean-player CPU/GPU frame times, long frames, memory, live paint/effects and voices | 2K/120 FPS remains a target. Use and document a tested fallback if needed; no claim from a single Editor screenshot |
 
 ## Exhibit session and recovery
 
-Plan around a **3–4 minute turn**: brief controls, one complete 123.429-second song, a short results/paint moment and an existing Retry handoff. This is a staffing estimate, not a promised queue capacity. Do not crop/speed the song or insert an upgrade menu to shorten a line.
+Plan a 3–4 minute turn: a brief explanation, the complete 123.429-second song and a short results/paint moment. Do not crop/speed the song or add an upgrade menu to manage the line. Let casual players simply enjoy it; an operator can mention the optional beat reward after they understand aiming.
 
-Use a Japanese-first control card, optional English support and the author credit. List mouse aim, held fire, countdown-based rhythm bonus, Esc pause and retry. Avoid account entry and a new leaderboard/name-input flow. Keep the anonymous per-round feedback focused on fun, aiming, timing and effect clarity.
+Use a Japanese-first card with mouse aim, held fire, optional countdown-timed bonus, Esc pause and Retry. Check a Japanese-capable font: the existing name-credit font only covers the exact name and ASCII. No account entry, public name leaderboard or compulsory score comparison.
 
-The creator confirms booth, PCs/display, power, mouse surface, audio output, venue audio rules and an operator. These unknowns do not block code/asset preparation but must be settled before rehearsal. Staff use the existing menus to pause/retry; keep a rehearsed backup ZIP and a short restart/recovery sheet locally. The earlier public build is a fallback candidate, not an automatic acceptance substitute.
+Confirm booth/PC/display/power/audio rules and an operator before rehearsal. Keep the accepted ZIP, rehearsal-tested fallback, hashes/notices and short recovery sheet locally and on backup storage. A prior public build is a fallback candidate until tested on the actual machine.
 
-## Ownership and scope control
+## Ownership and evidence
 
-| Work | Learner owns | Assistant owns/prepares |
-|---|---|---|
-| Gameplay | Event outcomes, counters/streaks, triggering animation/effects and result bindings in Assets/Scripts | Explanation, source/reference review, meaningful isolated fixtures |
-| Presentation | Hookup and manual feel judgement | Visual-child prefab preparation, animation/effect assets, fonts/copy/layout and audio variants |
-| Playtesting | Physical mouse/audio and unfamiliar/exhibition-PC players | Capture methods, observation sheet, issue triage and comparisons |
-| Shipping | Final gameplay acceptance and choosing tested settings | Build/ZIP/hash/notices, source publication and accurate website updates when requested |
+The learner owns event outcomes/counters, trigger calls, animation integration and result bindings in Assets/Scripts. The assistant prepares/reviews art, editor tools, fonts/copy/layout, meaningful checks and packaging when requested. Source changes, automated checks, creator reports, unfamiliar-player observations and final-device acceptance are distinct evidence.
 
-The planning request authorizes design/documentation, not silent implementation of new learner gameplay. Preserve concurrent edits, GUIDs, paired metadata, original song files, restrictions, attribution and exact image prompts. Append normal commits; do not rewrite history.
+No new gameplay is authorized by this planning request. Preserve concurrent work, GUIDs/meta, original audio/attribution/restrictions and recorded image prompts. Documentation is English; player-facing website and game translations are separate. Append commits normally; never rewrite history.
 
-## Cut lines and escalation
+The Windows packaging lesson is now documented in [Packaging a Windows demo](../Project/PACKAGING_LESSON.md). It separates the Unity build, fresh-extraction acceptance, immutable ZIP/hash creation and publication. macOS modules, architecture, signing/notarization and real-Mac testing remain a later lesson, not a festival commitment.
 
-- Scoring correctness, a complete song and a working retry outrank every new effect. An unreliable new streak is removed rather than patched around at the booth.
-- If the October 20 outcome/streak gate fails, ship reliable counters plus the existing score and focus the remaining experience days on visual/audio feel.
-- If delayed hit animation causes duplicate scores or lifecycle races, restore immediate destruction and retain a better independent burst.
-- If cues or sound mask targets/music, remove optional overlays/voices, reduce decorative effect intensity and keep same-color paint readable. No full-screen flash or mandatory camera shake is required.
-- If scope slips, cut extra bob/milestones/result ornament first, then new-record emphasis, then the new streak if necessary. Keep a clear hit/on-beat summary when reliable. Do not cut the Oct 25–27 verification window.
-- If performance cost is measured, investigate the actual expensive pass/object class. Do not add pooling, lower resolution, delete persistent paint or rewrite rendering speculatively.
-- If a new asset/song has unsuitable rights or timing, keep the current authorized noncommercial bundle and notices; do not promise commercial clearance.
-- After October 24, only evidenced blocking fixes enter the candidate; cosmetic improvements wait until after the festival.
+## Cut order and later direction
 
-## Later milestones
+Cut streak/milestones, extra bob and result ornament first; then entrance/squash or new-record flourish. If new counters are not trustworthy, ship the proven score/best plus welcoming completion copy. Never cut the complete song, reliable input/reset, readable cue, original notices or the October 25–27 verification window.
 
-| Milestone | Direction after the festival | Boundary |
-|---|---|---|
-| M1 | Explicitly paired one-pad solo, then keyboard/mouse P1 plus gamepad P2 | Remains deferred; no new controller deadline |
-| M2 | Richer eligible paint surfaces and target presentation | Four flat receivers are saved; curved/transparent projection needs its own design and measured capacity |
-| M3 | Small rights-checked song/difficulty library, expanded results and local progression | Event statistics/streak slice is pulled forward above; song selection is not |
-| M4 | A short run of complete songs with a tiny pool of bounded upgrades/target rules | Upgrade choices between songs; no new festival combat system |
-| M5 | Integrate the accepted subset with settings, accessibility, localization and distribution | No online services, monetization or platform port is required |
+Do not widen timing windows or change reward values silently to appear more casual: first test the existing generous base-hit path and cue clarity; a judged-rule change needs an explicit measured decision and record-version treatment. Do not add pooling, delete paint or lower resolution speculatively.
 
-See [Game design](GAME_DESIGN.md), [music and charts](MUSIC_AND_CHARTS.md), [controller preparation](CONTROLLER_SETUP.md), [credits](../../CREDITS.md) and [website/releases](../Project/WEBSITE_AND_RELEASES.md) for their respective sources. Do not duplicate their detailed rules or treat later planning targets as released features.
+After the festival, prioritize approachable song/chart choices, audio/display calibration and comfort options, then device support/co-op and the packaging lesson. More surfaces and content follow measured demand. Roguelite/upgrade experiments are optional branches that must preserve the casual standard-song mode, not an obligation to make the game harder.

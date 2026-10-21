@@ -1,22 +1,38 @@
 # Game design
 
-Updated: October 18, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). Exhibition experience additions below are planned, not implemented features of v0.1.0-demo.2.
+Updated: October 21, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). Exhibition experience additions below are planned, not implemented features of v0.1.0-demo.2.
 
 ## Confirmed direction
 
-BalloonBarrage combines free shooting, balloon crowds, beat bonuses, and roguelite variety in a warm graffiti studio. Players can fire at any time, including held fire. Accurate rhythm earns an additional score or damage benefit; it does not unlock permission to shoot. The learner implements gameplay.
+BalloonBarrage is a **casual, relaxing rhythm game** about popping balloons and painting a warm studio. Free aiming, tactile pops, colorful marks and an inviting musical pulse are the core identity. Players can fire at any time, including held fire; ordinary hits remain satisfying and timed hits earn an optional score bonus. Missing the beat does not block shooting, reduce score, eliminate the player or require a restart. The learner implements gameplay.
+
+The festival promise is a comfortable complete-song experience, not an accuracy exam or compulsory combo chase. Rhythm must remain legible through the existing chart-driven appearances, timing cue and audible/visual bonus; relaxation does not mean replacing the chart with unrelated random targets. Roguelite upgrades are exploratory post-festival ideas, not a defining feature or current commitment.
 
 Windows solo is the first acceptance baseline. A fixed camera and shared gallery avoid movement and split-screen complexity. The selected later co-op remains P1 keyboard/mouse plus P2 one gamepad; the creator owns one Xbox and one Beitong controller. Controller/co-op integration remains deferred beyond the exhibition experience work. Mobile, online multiplayer, independent dual mice and split-screen are outside current scope.
 
+## Inspiration and originality boundary
+
+Splatoon is a useful reference for three abstract qualities: firing paint visibly changes the space, color makes input consequences immediately readable, and shooting the environment can be pleasurable even without defeating an opponent. BalloonBarrage translates those qualities into its own fixed-camera rhythm studio: the room becomes a record of the player's two-minute performance, balloons provide readable focal targets, and the beat adds an optional accent. The official Splatoon reference is [Nintendo's gameplay overview](https://splatoon.nintendo.com/en/gameplay/); it is design research, not a source asset or a feature checklist.
+
+Do not copy Splatoon characters, names, UI, maps, weapon silhouettes, sound, music, team rules, turf scoring, ink-swimming movement or visual assets. BalloonBarrage's identity remains balloons, a warm indoor art studio, a complete-song rhythm structure, persistent personal paint and a calm solo exhibition experience. No Nintendo material is included or implied to be licensed.
+
+## Continuous-fire contract
+
+“Unrestricted continuous fire” means the player may hold the fire input for the whole playable round. There is no ammunition pool, magazine, reload, heat meter, stamina cost, rhythm permission gate or forced downtime. Empty shots and surface painting do not punish the player. Releasing and pressing again is a choice, not a resource-reset requirement.
+
+The simulation must still emit a finite, tuned number of projectiles per second. The saved `PlayerShooter` currently exposes `shotsPerSecond` with a default of 5 and repeats while the mouse button is held. That cadence is a technical control for feedback clarity, audio overlap, collision load and persistent-paint growth; it is not an in-world firing restriction. Tune the one serialized value through playtests rather than deleting the gate or creating a projectile every frame. Menus, pause and focus changes may require the button to be released once before firing resumes so UI clicks do not become accidental shots.
+
+The first learner exercise is [Continuous-fire and paint-loop lesson](CONTINUOUS_FIRE_LESSON.md). It begins with observation rather than a code rewrite because the saved input path already satisfies the no-ammo/no-reload contract.
+
 ## Whole-game loop and mode boundaries
 
-The accepted foundation is title/instructions → one complete song → results → retry/title. Keep free aiming, optional held fire, musical bonuses and visible paint feedback readable throughout that loop. The intended later game adds song/difficulty selection and local records; a separate run mode can connect complete-song stages through upgrade choices. These additions remain proposals until implemented and accepted through the roadmap.
+The accepted foundation is title/instructions → one complete song → results → retry/title. Keep free aiming, unrestricted held fire, musical bonuses and visible paint feedback readable throughout that loop. The intended later game adds song/difficulty selection and local records; a separate run mode can connect complete-song stages through upgrade choices. These additions remain proposals until implemented and accepted through the roadmap.
 
 | Mode | Intended experience | State and scoring boundary |
 |---|---|---|
 | Exhibition / standard song | One selected complete song, initially the prepared Goin' Under chart | Existing base/on-beat score rules; no run upgrades; complete-song end owns settlement |
 | Local co-op | Two independently controlled reticles in the same studio and song | Shared score and one consumed target outcome; projectile player identity supports later contribution statistics |
-| Roguelite run | Short sequence of complete-song stages with a small upgrade pool | Upgrade choices between songs; run state resets on retry; records separated from standard songs |
+| Roguelite run (exploratory) | A possible later branch, only if it supports the relaxing core experience | Not a committed milestone; keep standard songs available without upgrades or pressure |
 | Practice / free paint | Possible later place to learn aim or decorate without score pressure | Separate from chart accuracy and competitive records; not a prerequisite for the first release |
 
 Color, sound, light and paint should make an accepted action easier to understand. They must not silently alter timing rules, move the logical muzzle through the environment or obscure the next target. Settings, localization and records support the accepted loop rather than requiring an online service. The [roadmap](ROADMAP.md) owns milestones, dependencies, priorities and release gates.
@@ -37,23 +53,27 @@ Use the prepared importable audio, non-looping AudioSource prefab and derived ev
 
 Saved solo defaults: a hit awards 10 points; an accepted shot within 100 milliseconds of its aimed target's chart event can add 10 points if it hits that event's balloon. PlayerShooter reads song time after its fire gates; InitializeShot carries the judgement result and target event id. Collision checks the on-beat flag, nonnegative id and matching target id before passing the bonus to Balloon. Its single-hit guard resolves base plus bonus once. Explicit player identity is still required before co-op integration. Off-time or mismatched-target hits retain base points. Window and reward tuning remain subject to listening/playtests; user-reported 10/20 scoring is not complete-song acceptance.
 
-Show a small beat cue and a timing ring/countdown on each chart-driven target, plus readable timing feedback. Preview the next event sufficiently early to aim; the saved initial lead is 0.8 seconds, subject to playtest tuning. The creator requested removing the fixed three-target cap. Continuous random refill is disabled; each prepared event calls Spawn once, with no active-count gate. Saved cleanup retains unanswered targets until the event time plus a configurable delay, default 3.1 seconds at the creator's request, then deactivates/destroys without scoring. This retention is separate from the proposed timing window and does not yet count a formal Miss. Bound concurrent targets through lifecycle cleanup rather than skipping chart events at a count cap. Merge simultaneous source lanes into one target event; lane metadata is provenance, not automatic world coordinates. Keep each event playable once and mark unanswered events missed after the accepted window. Judge when a shot passes input/cadence gates and fires, so travel distance does not shift judgement; retain the matched target/event identity until impact. A timed shot already in flight needs a short impact-resolution grace bounded by projectile lifetime, rather than expiring its target before arrival. Define firstBeatOffset relative to scheduled start and positive inputCalibration as an addition to shot time. Source StepMania offset is converted with the opposite sign.
+The saved cue is the global numeric NEXT countdown in RhythmChartReader, plus accepted on-beat feedback. Per-target timing rings/countdowns are proposed, not implemented; the global cue does not identify a particular balloon. A graphical approach indicator is the next presentation exercise, with target association requiring a separate learner increment. Preview the next event sufficiently early to aim; the saved initial lead is 0.8 seconds, subject to playtest tuning. The creator requested removing the fixed three-target cap. Continuous random refill is disabled; each prepared event calls Spawn once, with no active-count gate. Saved cleanup retains unanswered targets until the event time plus a configurable delay, default 3.1 seconds at the creator's request, then deactivates/destroys without scoring. This retention is separate from the proposed timing window and does not yet count a formal Miss. Bound concurrent targets through lifecycle cleanup rather than skipping chart events at a count cap. Merge simultaneous source lanes into one target event; lane metadata is provenance, not automatic world coordinates. Keep each event playable once and mark unanswered events missed after the accepted window. Judge when a shot passes input/cadence gates and fires, so travel distance does not shift judgement; retain the matched target/event identity until impact. A timed shot already in flight needs a short impact-resolution grace bounded by projectile lifetime, rather than expiring its target before arrival. Define firstBeatOffset relative to scheduled start and positive inputCalibration as an addition to shot time. Source StepMania offset is converted with the opposite sign.
 
-Held-fire cadence can repeatedly miss the beat even when the player starts accurately. Compare manual taps with held fire during playtests before choosing bonus and combo rules. Keep baseline free shooting useful, provide visible timing feedback, and tune accessibility independently of damage.
+Held-fire cadence can repeatedly miss the beat even when the player starts accurately. Compare manual taps with held fire during playtests before choosing bonus and combo rules. Keep baseline free shooting useful, provide visible timing feedback, and tune accessibility independently of damage. Do not solve this tension with ammo, reload, heat, forced tapping or a permission-to-fire window.
 
 Pause/resume and retry must restore song, timer and chart scheduling together. Derive all gameplay timing from scheduled audio origin; stop the song and show results at the complete audio duration, then return to interface music. Measure latency on the exhibition PC. This prepared constant-tempo chart is the first supported subset; a general SSC importer, tempo changes, holds and mines are later work.
 
-October 19 saved palette expansion: eight balloon pigments, eight random per-shot projectile pigments and matching surface marks are now configured. Balloon explosions retain the balloon pigment; direct surface impacts retain the projectile pigment. Color matching is not a scoring condition. See the [palette guide](../Art/BALLOON_COLOR_LESSON.md) for indexed assets, provenance and verification limits. This expansion is not in the public v0.1.0-demo.2 package.
+October 19 learner rewrite checkpoint: eight balloon pigments and random per-shot projectile colors are configured. Balloon explosions retain the balloon pigment. The learner has restored random index selection, color reading, projectile tinting and same-index mark assignment; direct surface impacts now retain the projectile pigment. Focused isolated checks passed eight colors on four receivers. The learner has now saved independent group-local pattern selection; focused isolated checks passed all 48 patterns on four receivers. The learner has also saved configurable in-plane rotation (paintRotationRange defaults to 20 degrees, applied in both directions) and uniform instance scale at 0.8–1.2 times the prefab scale; further scale-range lessons are deferred as requested by the creator, and the roadmap owns the next gameplay lesson. The configurable-angle revision has source review only; previous runtime checks covered the earlier full-circle formula. Color matching is not a scoring condition. See the [palette guide](../Art/BALLOON_COLOR_LESSON.md) for indexed assets, provenance and verification limits. This expansion is not in the public v0.1.0-demo.2 package.
+
+The October 19 pattern-art follow-up prepares six silhouette families per pigment (48 collider-free prefab resources) and varies the eight already-connected defaults. Group-local pattern selection, configurable rotation and uniform random scale are now learner-written and saved, with the verification limits stated above; see the [palette guide](../Art/BALLOON_COLOR_LESSON.md#six-pattern-families-prepared-for-learner-integration). Asset preparation itself did not implement learner gameplay.
 
 ## Exhibition experience design
 
-**Planning status, October 18:** the creator prioritizes gameplay feel and effects and can spend approximately 4–6 hours per day. Deepen the existing solo loop with a reason to sustain a good run and replay. Calendar, cuts and ownership live in the [roadmap](ROADMAP.md). This section defines proposed behavior, not saved code.
+**Planning status, October 21:** the creator confirms a casual, relaxing rhythm-game direction, unrestricted held fire and approximately 4–6 hours per day. Prioritize comfort, ordinary-hit satisfaction, readable rhythm, visible transformation of the room and a positive finish. Small result counters are conditional additions; streaks and milestone effects are optional, not festival requirements. Calendar, cuts and ownership live in the [roadmap](ROADMAP.md). This section defines proposed behavior, not saved code.
 
 ### Player promise and pacing
 
 The intended rhythm is aim → fire → immediate accepted hit → pigment burst/paint → readable success/streak response → next target. On-beat success has a recognizable extra accent; ordinary hits still feel worthwhile. Preserve the unshortened song and roughly nine-second first-event intro. Players can already shoot/paint during the intro; explain this rather than adding off-chart tutorial targets.
 
-After the song, show a concrete hit/streak/record result that suggests another attempt. Do not add health, ammunition, elimination, score multipliers, mid-song upgrades, random target rules or an online leaderboard in this slice.
+After the song, keep the painted studio visible behind a compact, friendly summary. Lead with a positive completion line, then the existing score/best score and, only if accepted, successful/on-beat hit counts. Retry is clear but optional. Do not foreground unanswered targets, accuracy grades, rankings or a broken combo. No health, ammunition, elimination, score subtraction, score multipliers, mid-song upgrades, random target rules or online leaderboard is required.
+
+Exhibition copy should invite play without promising a medical stress-relief effect. Proposed short Japanese copy: "音楽に合わせて、気ままに風船を割ろう。" Controls should explicitly allow held fire and explain timed shots as an extra reward, with no need to hit every beat. Verify all glyphs before integration; this text is not yet saved game UI.
 
 ### Event outcomes and statistics — planned
 
@@ -71,13 +91,14 @@ Preserve complete-song end, 3.1-second cleanup and two-second projectile lifetim
 
 At a natural completed round require `successfulHits + missedEvents = chartEventCount`, `onBeatHits <= successfulHits`, and `ordinaryHits = successfulHits - onBeatHits`. With unchanged rewards, `finalScore = 10 * successfulHits + 10 * onBeatHits`. Five hits including two on-beat hits mean three ordinary hits and 70 points, not seven hits. No accuracy percentage or S/A/B grade is required.
 
-### Forgiving hit streak — planned
+### Forgiving hit streak — optional, deferred until the core experience passes
 
 - Start current and maximum streak at zero. Accepted ordinary/on-beat event hits increment current and update maximum, in actual resolution order rather than trigger-pull order.
 - Accepted unanswered-target expiry resets current streak. Merely passing the scheduled beat does not: preserve the saved cleanup/grace behavior.
 - Empty shots, surface paint, ordinary off-beat hits, held fire and pause do not independently break a streak.
 - Duplicate Hit, expiry and settlement callbacks cannot advance/reset an already resolved event again. Results show maximum streak rather than a misleading current streak after final missed-event resolution.
 - No streak score multiplier: existing best-score rules/key remain comparable. Any later reward/window change needs a separate scoring-version decision.
+- If trialled, a reset is quiet: no red warning, buzzer, camera jolt or lost accumulated score. Hide or omit the live streak if it encourages anxious monitoring. Do not name this field a rhythm combo: ordinary hits also extend it.
 
 Acceptance example: three hits give current/max 3; an unanswered-event expiry gives current 0/max 3; the next hit gives current 1/max 3. Duplicate Hit and surface-only shots do not change these outcomes twice. Natural results/retry must satisfy the count identities above.
 
@@ -93,7 +114,7 @@ These are starting trials, not accepted final values. Improve silhouette, timing
 | On-beat hit | Matching pigment plus clearer small gold ring/sparkle and an optional brief audio accent | Initially preserve existing 35% burst enlargement and selected 1.45-second reward text; no full-screen flash or extra paint queries |
 | Streak | One small count with a restrained approximately 0.12-second scale pulse | No text object spawned per hit; keep aim/next-event cue visible |
 | Milestone | Trial accents at streak 5, 10 and 20 using existing palette/effects | Replace/retrigger one slot, never queue labels or overlapping accent voices; optional polish is cut first |
-| Results/new record | Final score, best score, hits/event total, on-beat subset, maximum streak; one strict-improvement emphasis | Determine new-record status before updating storage; save once at settlement; ties/lower results are not new records |
+| Results/new record | Positive completion line, visible painted studio, score/best, and reliable hit/on-beat counts if included; maximum streak only if that optional feature ships | No failure-focused Miss count or grade. Save strict record improvement once; ties/lower results still get a welcoming finish |
 
 Animate explicit visual children. Do not animate the dynamic root or stop global time for hit stop. Logical muzzle, aim, collisions and music remain independent. Moving the burst to the exact projectile hit point is a later refinement if it needs another API/call-site change; it must not delay accepting a simpler squash.
 
@@ -105,7 +126,7 @@ Keep persistent paint through results, without a count cap, timed fade or oldest
 
 Use concise Japanese-first instructions with checked glyphs: mouse aim, held fire, fire near countdown zero for a matching-target bonus, Esc pause and Retry. Static exhibit copy is sufficient; runtime language selection is not required. The small author-credit font does not cover Japanese instructions.
 
-Observe unfamiliar players before adding more effects. Ask whether the bonus is recognizable, the next target stays visible against paint, and a concrete replay goal is apparent. Change one parameter at a time. Native layout checks, synthetic outcomes, manual feel reports and clean-player measurements remain distinct evidence. All statistics, streaks, entrance/squash and new-record flourishes in this section remain unimplemented until saved and accepted.
+Observe unfamiliar players before adding more effects, including someone who rarely plays rhythm games. Ask whether ordinary popping feels good, timing adds a recognizable bonus, targets remain visible and anything feels tiring or punishing. A relaxed completed round matters more than a higher score or a forced retry. Change one parameter at a time. Native layout checks, synthetic outcomes, manual feel reports and clean-player measurements remain distinct evidence. All new statistics, streaks, entrance/squash and record flourishes remain unimplemented until saved and accepted.
 
 ## Feedback and aiming targets
 
@@ -123,9 +144,9 @@ Projectile marks and matching pop deposits are saved on MainWall, Floor, LeftWal
 
 Existing PaintPop variants emit at most 32 particles per burst, have short non-looping lifetimes and a two-second fallback cleanup. Retain bounded firing/refill, measure concurrent effects and only add pooling or further effects if measured object counts/frame times justify them. If behind schedule, defer entrance/hit squash, extra surfaces and additional art while protecting the playable rhythm loop.
 
-## Post-festival rhythm/roguelite prototype
+## Optional post-festival rhythm/roguelite exploration
 
-Proposed first slice: about three complete-song stages, initially reusing one approved song if necessary, a small pool that can offer three eligible upgrades, and a complete run-results/retry loop. Start with normal one-hit balloons, then introduce one clearly signaled armored or bounded splitter/chain rule at a time. A larger library, elite encounters and additional combinations follow playtesting rather than defining the minimum prototype.
+This is an exploratory branch, not the next committed release or the game's main positioning. Reassess whether upgrades or tougher targets add enjoyable variety without undermining the relaxing standard-song mode. If selected later, a possible slice is three complete-song stages and a small between-song upgrade pool; define and test one additional rule at a time. A larger library, elite encounters and combinations do not define the exhibition or minimum game.
 
 Musical encounter phases may follow authored phrases within a song, but the audio and chart clock continue uninterrupted. Show one-of-three upgrade selection between complete-song stages. Do not pause a song mid-phrase to offer an upgrade menu or treat randomly inserted targets as original chart notes. The exhibition standard-song mode remains available without run upgrades.
 
@@ -137,7 +158,7 @@ The initial run can end after its authored stages with a final score; health, es
 
 A proposed compact content target is two or three rights-checked songs with approachable and standard chart choices. Reuse the accepted track while testing the selection workflow. Song, chart, difficulty and rules version need stable identities so the audio, event list, attribution and saved record always agree. Preserve complete-song intros/endings and the existing timing subset until additional timing/note types are explicitly supported.
 
-The exhibition plan pulls forward the event outcomes, forgiving hit streak and result summary defined in [Exhibition experience design](#exhibition-experience-design). These remain planned: saved cleanup is not a formal Miss counter, and current scoring has no streak or accuracy. A missed projectile and an unanswered event are different statistics. Judge firing time first but commit success only after matching impact. More elaborate accuracy, grades, co-op and chain/piercing statistics require separate design/testing.
+The exhibition plan conditionally includes a small positive result summary and successful/on-beat counts defined in [Exhibition experience design](#exhibition-experience-design); a hit streak is optional. These remain planned: saved cleanup is not a formal Miss counter, and current scoring has no streak or accuracy. Unanswered-event totals support internal correctness checks, not a failure-focused results screen. Judge firing time first but commit success only after matching impact. More elaborate statistics require separate design/testing.
 
 Local best score for Goin' Under / Beginner / solo / the current scoring-rules version is saved in v0.1.0-demo.2 with isolated higher/lower/retry/relaunch/display checks. Missing data defaults to zero; persist only a strict completed-round improvement and retain it on retry. Exhibition-PC acceptance remains separate. The new-record flourish above is planned; v0.1.0-demo.1 does not contain this record feature.
 

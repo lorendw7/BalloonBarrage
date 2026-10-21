@@ -1,6 +1,6 @@
 # BalloonBarrage
 
-A Unity paint-blaster prototype set in a warm graffiti studio. The intended game combines unrestricted shooting, on-beat bonuses, and roguelite upgrades. Windows keyboard/mouse solo comes first; solo rhythm judging is saved, while waves, upgrades, and local co-op are planned.
+A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop balloons, leave colorful paint and catch the beat for an extra reward. Free aiming and unrestricted-duration held fire keep ordinary play approachable; a finite projectile cadence preserves feedback clarity and performance without adding ammo, reload or heat. Windows keyboard/mouse solo is the exhibition focus. See the [game design](Docs/Design/GAME_DESIGN.md) for the player promise and [roadmap](Docs/Design/ROADMAP.md) for delivery.
 
 [Website](https://lorendw7.github.io/BalloonBarrage/en/) · [Game releases](https://github.com/lorendw7/BalloonBarrage/releases) · [Development roadmap](Docs/Design/ROADMAP.md)
 
@@ -11,7 +11,7 @@ A Unity paint-blaster prototype set in a warm graffiti studio. The intended game
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Read the instructions and click Start. Aim with the mouse and hold the left button to fire. Esc pauses; Resume continues and Quit exits.
 
-For the latest concept-inspired studio, open `Assets/Scenes/StudioConceptDetail.unity` instead. It adds a warm mineral floor, coordinated color accents, detailed paint supplies, leaning canvases and peripheral pigment marks. It retains V12's six balloon pigments/three silhouettes, rounded gun, random initial themes and matching paint effects. See [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md) for previews, tuning and automated-check limits.
+The current production scene includes the [October 20 wall/lighting and material refresh](Docs/Art/STUDIO_COLOR_REFRESH.md) and [mixed-pigment gun](Docs/Art/CONCEPT_GUN_REFINEMENT.md). `Assets/Scenes/StudioConceptDetail.unity` remains a separate earlier V13 art study, with its own six-pigment variants and modeled supplies; see [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md). Native previews do not establish acceptance of the latest combined playable build.
 
 The Windows solo prerelease **[v0.1.0-demo.2](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.2)** adds three-color balloons, matching pop marks and projectile paint on the main wall, floor and side walls, round-persistent paint, local best scores, the author credit **何单东 Shandong He**, and reduced redundant HUD formatting. It is a non-Development build with the complete Goin' Under song (about 123.429 seconds), 93 events and the existing 10/20-point solo loop. Extract the whole Windows ZIP and run **BalloonShooter.exe**, retaining every accompanying file. Unity is not required. The package remains a free noncommercial development demo with original song restrictions and notices.
 
@@ -29,15 +29,18 @@ All project documentation is maintained in English. The website and planned game
 
 - [Game design](Docs/Design/GAME_DESIGN.md): scope and proposed rhythm rules.
 - [Roadmap](Docs/Design/ROADMAP.md): priorities, exhibition schedule, and acceptance criteria.
+- [Continuous-fire lesson](Docs/Design/CONTINUOUS_FIRE_LESSON.md): first learner checkpoint for the no-ammo/no-reload paint loop.
 - [Structure and contribution rules](Docs/Project/STRUCTURE.md): ownership and repository layout.
 - [Validation](Docs/Project/VALIDATION.md): completed checks and outstanding gates.
 - [Website and releases](Docs/Project/WEBSITE_AND_RELEASES.md): build, download, and packaging workflow.
+- [Windows packaging lesson](Docs/Project/PACKAGING_LESSON.md): build, accept, archive, hash and publish a versioned demo.
 - [Art direction](Docs/Art/ART_DIRECTION.md) and [asset catalog](Docs/Art/ASSET_CATALOG.md): current art and specialist guides.
 - [Cover finish V9](Docs/Art/COVER_FINISH_V9.md): latest actual-scene finish, saved lighting and runtime-camera preview.
 - [Camera and lighting V10](Docs/Art/CAMERA_LIGHTING_V10.md): independent scene study, before/after game-camera renders, baked target probes and verification limits.
 - [Material and model appearance V11](Docs/Art/MATERIAL_APPEARANCE_V11.md): reviewed balloon/floor samples, copied surface and weapon assets, raised paint, and before/after renders under the same camera and lights.
 - [Concept variants V12](Docs/Art/CONCEPT_VARIANTS_V12.md): six-color/three-silhouette balloons, new concept gun, random coordinated gun/paint themes and Unity preview evidence.
 - [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md): latest room, mineral floor, richer pigment/strip/rug palette, modeled studio supplies and fixed-camera comparison.
+- [Concept-style gun refinement](Docs/Art/CONCEPT_GUN_REFINEMENT.md): production gun with a horizontal clear reservoir, cream/teal body and coral bell nozzle; native previews and verification limits.
 - [Interface V2](Docs/Art/INTERFACE_V2.md): new UI assets, preview gallery and lessons for wiring Start, Quit, Resume and score displays.
 - [UI clarity and resolution support](Docs/Art/INTERFACE_V2.md#october-14-clarity-and-resolution-support): bundled fonts, text refresh and checked 720p/1080p/1440p, 4:3 and ultrawide layouts.
 - [First rhythm lesson](Docs/Design/RHYTHM_FIRST_LESSON.md): switch interface/game music and initialize the round from the full downloaded song before adding its DSP chart timeline.

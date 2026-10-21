@@ -32,6 +32,23 @@ The learner owns `Assets/Scripts` gameplay. The assistant maintains side-effect-
 
 Keep Assets, Packages and ProjectSettings at the Unity root. The active local checkout is `D:/CS/Code/BalloonBarrage`; retired checkouts are not authoritative.
 
+## Current gameplay code map
+
+This map organizes responsibilities without moving or rewriting learner-owned scripts during concurrent work.
+
+| Script | Current responsibility | Keep separate from |
+|---|---|---|
+| `PlayerShooter.cs` | Pointer/reticle, aim ray, held-fire cadence, shot-time judgement, projectile creation and immediate gun feedback | Score settlement, chart loading and projectile collision |
+| `PaintProjectile.cs` | Projectile travel/collision, matched-target bonus transfer and cosmetic surface-mark selection | Input polling, round UI and balloon spawning |
+| `Balloon.cs` | One-time accepted hit, base/bonus score and balloon pop feedback | Shot timing and chart scheduling |
+| `BalloonSpawner.cs` | Chart-event target creation and unanswered-target cleanup | Input and result presentation |
+| `RhythmChartReader.cs` | Chart loading, shared song-time scheduling, NEXT cue and spawn requests | Projectile movement and score persistence |
+| `RoundController.cs` | Round/menu/pause/results state, audio start/end, timer and local best-score settlement | Per-shot collision and pigment selection |
+| `Score.cs` | Minimal round score store | Event statistics and UI orchestration |
+| `PaintGunVfx.cs` | Additional gun presentation | Authoritative projectile creation |
+
+The most valuable cleanup is responsibility-by-responsibility, not a broad rename or folder churn before the exhibition. Make one learner-owned gameplay change at a time, preserve serialized field names unless a migration is planned, and verify scene/prefab references after any later move. The [continuous-fire lesson](../Design/CONTINUOUS_FIRE_LESSON.md) is the current entry point.
+
 ## Maintenance rules
 
 Write all current and future project documentation in English. Keep player-facing translations in their existing data files. Update the authoritative document and link to it rather than duplicating plans or status narratives. Keep source attribution, recorded prompts and unresolved validation issues when condensing documentation.

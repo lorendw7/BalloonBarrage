@@ -21,6 +21,18 @@ test("all three translations have the same complete, nonempty key set", () => {
     for (const value of Object.values(strings[locale])) assert.ok(value.trim());
   }
 });
+
+test("all languages explain unrestricted-duration held fire without promising per-frame spawning", () => {
+  const required = {
+    "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限射速"],
+    ja: ["長押し", "弾数", "リロード", "オーバーヒート", "一定間隔"],
+    en: ["Hold", "ammo", "reload", "overheat", "finite tuned cadence"]
+  };
+  for (const locale of languages) {
+    const copy = `${strings[locale].description} ${strings[locale].gameIntro}`;
+    for (const phrase of required[locale]) assert.ok(copy.includes(phrase), `${locale}: ${phrase}`);
+  }
+});
 test("release selection rejects drafts, source-only releases and untrusted downloads", () => {
   assert.equal(selectDownload([{ ...release, draft: true }]).available, false);
   assert.equal(selectDownload([{ ...release, assets: [] }]).available, false);

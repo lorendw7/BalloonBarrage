@@ -1,5 +1,13 @@
 # Website and desktop releases
 
+The current design update keeps held fire available for the whole round without ammunition, reload or overheat, while retaining a finite technical projectile cadence for clarity and performance. The trilingual website describes this as continuous held fire and visible paint accumulation; it does not claim a new downloadable build. Follow [Packaging a Windows demo](PACKAGING_LESSON.md) for the build → acceptance → ZIP/hash → publication sequence.
+
+## October 21 continuous-fire positioning refresh
+
+Chinese, Japanese and English hero/gameplay/next-step copy now explains unrestricted-duration held fire, the absence of ammo/reload/overheat systems and the finite technical cadence. The public-download copy remains tied to `v0.1.0-demo.2`; this content update does not announce a new Unity package or completed playtest.
+
+The offline build generated all three language routes and 28 project images. Ten website tests passed after local-port access was enabled, covering translation parity, the continuous-fire wording contract, release selection, output escaping, canonical/share metadata, recorded media hashes, local links/assets, content-addressed CSS/JS and preview route/path safety. Desktop visual inspection covered Chinese, Japanese and English hero/gameplay copy. These checks validate the static site only, not the Unity game, a narrow-screen layout or a live GitHub Pages deployment.
+
 ## October 20 scene and mixed-pigment previews
 
 The trilingual studio-notes section now includes a large native Unity room preview with plaster walls, a mineral floor, side-wall paint and the updated gun. The gun card uses the latest enlarged mixed-pigment reservoir render. Copy distinguishes static marbled pigment from fluid simulation or next-projectile prediction; these previews are separate from the unchanged public `v0.1.0-demo.2` Windows package.
