@@ -1,0 +1,6 @@
+MIXED_PIGMENT_OK
+Existing combined teal liquid separated by verified triangle count; body retained.
+Eight cosmetic mesh batches; no new runtime scripts or colliders.
+Saved gameplay component data, existing local poses, muzzle and recoil references preserved.
+9 aspect/aim near-plane checks passed.
+Native scene and enlarged inspection renders; not a live fluid simulation, projectile-color preview, playtest or release build.

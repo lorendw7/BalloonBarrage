@@ -95,5 +95,51 @@
     "recolor": "Preserve original Teal_Spray alpha; brightest RGB channel becomes monochrome shading multiplied by the new pigment.",
     "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts",
     "guide": "Docs/Art/BALLOON_COLOR_LESSON.md"
+  },
+  "patternPreparation": {
+    "date": "2026-10-19",
+    "kind": "Eight pigments x six existing atlas slices; no new image generation or download",
+    "sources": [
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Teal_Spray.prefab",
+        "sha256": "8bd53196dcb84f727be5e3deba4ae081aaeeacad08b70c9e2bdc81675de6bd7d",
+        "style": "Spray"
+      },
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Coral_Burst.prefab",
+        "sha256": "148d20ebfaa7616c3caf254ead9c0a05406876509fd07d1dedebee10fa56f6b9",
+        "style": "Burst"
+      },
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Yellow_Drip.prefab",
+        "sha256": "530071d19227bef19bd831d6b0606a52ba8fae3249bd4cdef3d0779e59a9881a",
+        "style": "Drip"
+      },
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Indigo_Swoosh.prefab",
+        "sha256": "419dd47825367127b5acc0c16bac1f297e5bea6162a2720122dc9f9e37a4e29d",
+        "style": "Swoosh"
+      },
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Pink_Brush.prefab",
+        "sha256": "b724d00a786cc39d65a3cd076eff2160cb77b86819fed4b8d99aac7e9b0229cd",
+        "style": "Brush"
+      },
+      {
+        "path": "Assets/StudioArtPack/SprayPrefabs/Turquoise_Burst.prefab",
+        "sha256": "ffa2f043a07797930106e65f4b569c4a8d53ebba385a76474e5068aef4f35275",
+        "style": "Starburst"
+      }
+    ],
+    "atlas": "Assets/StudioArtPack/Textures/GraffitiSpray_Atlas_v3.png",
+    "atlasSha256": "abeb3270da5d697f4530a864edd21f9a80db43dadfc0c3675cacb3402daaa1a4",
+    "prompt": "Docs/Art/SPRAY_ASSETS.md#recorded-generation-prompts",
+    "manifest": "Assets/StudioArtPack/SurfacePaint/Patterns/PatternManifest.json",
+    "runtime": "Eight groups of six patterns are connected. Learner-written per-projectile group-local random selection is saved and passed focused isolated checks. Random rotation and size remain the next learner increment.",
+    "preview": {
+      "path": "Assets/Art/Previews/SurfacePatterns_20261019.png",
+      "sha256": "94aa717ee7173d273cbddaf9938ef649c0660323fe482a1c649bb67e51198493",
+      "kind": "Native Unity asset render; deterministic preview-only scale/angle variation; not gameplay capture"
+    }
   }
 }

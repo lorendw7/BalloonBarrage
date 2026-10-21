@@ -15,9 +15,13 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack | Generated textures, props, materials, VFX and preview scenes |
 | Assets/StudioArtPack/InterfaceV2 | New menu background, nine sliced sprites, five UI presentation prefabs and Unity previews |
 | Assets/StudioArtPack/RoomFinishV7 | Oak floor texture and world-scale UV mesh, cream walls, ivory ceiling and prior room reflection |
+| Assets/StudioArtPack/ColorRefresh20261020 | Two native side-wall mural meshes, six pigment materials, independent brighter color grade and before/after Unity inspection renders; see [color refresh](STUDIO_COLOR_REFRESH.md) |
+| Assets/StudioArtPack/SurfaceRefresh20261020 | Original procedural plaster/mineral-floor PBR maps, two materials, ten render-mesh UV variants and native Unity before/after inspection renders; see [surface pass](STUDIO_COLOR_REFRESH.md#plaster-and-mineral-floor-materials) |
 | Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
 | Assets/StudioArtPack/BalloonColors | Coral/gold latex materials and a current-source three-color prefab connected in PrototypeScene, with creator-reported color/scoring passes; V12 keeps its separate six-pigment set |
 | Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
+| Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019 | Native production gun shell, six mesh/material batches, concept-style horizontal reservoir, source hashes and Unity before/after inspection renders |
+| Assets/StudioArtPack/PaintBlaster/MixedPigment20261020 | Production multicolor marbled liquid, separated teal body mesh, reservoir calibration marks and native Unity previews; eight cosmetic batches in the updated gun |
 | Assets/StudioArtPack/SurfacePaint | Prepared small teal projectile wall-mark prefab/material, existing atlas provenance and native close-up preview; first-wall/eight-second integration saved with creator-reported pass |
 | Assets/StudioArtPack/Runtime | Cosmetic selection/tint components and one-time explicit static-room batching; no new score, movement or rhythm rules |
 | Assets/Scenes/StudioConceptVariants.unity | V12 cosmetic variant scene; paired lighting folder and appended Build Settings entry |
@@ -39,6 +43,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 - [Concept variants V12](CONCEPT_VARIANTS_V12.md): random cosmetic initialization, gun model and verified Unity capture/Play Mode scope.
 - [Concept studio detail V13](CONCEPT_DETAIL_V13.md): latest room color/detail pass, batched native supplies, mineral floor and comparison evidence.
 - [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals, muzzle effects and the prepared paint-shot audio/framing handoff.
+- [Concept-style gun refinement](CONCEPT_GUN_REFINEMENT.md): latest production shell, preserved recoil/muzzle integration and inspection evidence.
 - [Balloon pop](BALLOON_POP_V2.md): latex-fragment particles.
 - [Paint-pop lesson](PAINT_POP_LESSON.md): connect combined fragments and paint droplets through the existing learner hook.
 - [Spray assets](SPRAY_ASSETS.md): wall decoration atlas and prefabs.

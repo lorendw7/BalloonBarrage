@@ -1,0 +1,11 @@
+{
+  "asset": "Textures/PaintSprayStyle_Atlas_v2.png",
+  "created": "2026-10-21",
+  "generator": "OpenAI built-in image generation",
+  "mode": "new transparent raster generation",
+  "sourceOutput": "C:/Users/lorendw7/.codex/generated_images/01a15d6f-902b-76d3-9f26-b8f17ca5f572/exec-3af18232-8b9a-4da4-a066-b775e647a8e7.png",
+  "sha256": "C8BA7F87013C014A1802422A8649DD80CAF413BE1AB70F88E89E2DC23DE31C29",
+  "dimensions": [1254, 1254],
+  "status": "Prepared candidate art; not connected to gameplay or prefabs.",
+  "prompt": "Create a production-ready transparent Unity VFX sprite atlas for an original energetic paint-shooter game aesthetic. Square canvas, exactly 2 columns by 2 rows, four clearly separated independent elements with wide transparent gutters and no overlap. Neutral white and light-gray glossy liquid only so the game can tint it at runtime.\n\nTop-left: a short conical nozzle spray jet pointing horizontally to the right, soft rounded liquid body, three small detached droplets.\nTop-right: a stretched viscous paint streak pointing right, broad rounded leading edge and tapered tail, two tiny satellite drops.\nBottom-left: a compact cluster of five rounded airborne droplets with strong size variation and a clear forward direction.\nBottom-right: a front-facing irregular wet impact splash with chunky rounded lobes, hollow negative-space gaps, and several satellite droplets.\n\nStyle: playful, kinetic, bold silhouette, chunky liquid volume, crisp readable edges, subtle internal glossy highlight, minimal soft shading, suitable for a colorful third-person action game. Every shape must be newly designed and visually distinct. Do not include characters, creatures, squid silhouettes, weapons, logos, text, typography, UI panels, icons, recognizable franchise motifs, copied shapes, ground-coverage diagrams, or scenery. True transparent background with clean alpha; no checkerboard, no colored backdrop, no shadow outside the shapes."
+}

@@ -1,15 +1,35 @@
-# Packaging a Windows demo
+# Packaging desktop demos
 
 This guide packages a tested BalloonBarrage build; it does not decide whether gameplay is ready. [Game design](../Design/GAME_DESIGN.md) owns behavior, the [Roadmap](../Design/ROADMAP.md) owns delivery gates, and [Validation](VALIDATION.md) records evidence.
 
 ## The four separate outcomes
 
-1. **Build:** Unity writes a complete Windows player to a new directory.
+1. **Build:** Unity writes a complete Windows or macOS player to a new directory.
 2. **Accept:** the creator tests that exact directory on the intended PC.
 3. **Package:** the release tool copies the accepted files into an immutable ZIP, adds notices and writes SHA-256.
 4. **Publish:** GitHub Releases hosts the ZIP; the website reads the published release separately.
 
-A successful website build does not accept the Unity player. A ZIP made from untested output is not a release candidate.
+A successful website build does not accept the Unity player. A ZIP made from untested output is only an unaccepted development candidate.
+
+## Automated Windows and macOS candidates
+
+`.github/workflows/desktop-build.yml` is a manually dispatched GitHub Actions workflow. Its matrix builds Windows x64 on `windows-2022` and macOS Universal on `macos-15-intel` with Unity `6000.0.77f1`. Both jobs call `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`, package the output with `Tools/Release/package_desktop_demo.py`, and upload ZIP plus SHA-256 workflow artifacts. Publication is optional and runs only after both builds succeed.
+
+The repository must define GitHub Actions secrets `UNITY_LICENSE`, `UNITY_EMAIL`, and `UNITY_PASSWORD` for the licensed Unity account. Set them in **Settings > Secrets and variables > Actions**; never commit or paste their values into project files, logs or chat. Missing secrets stop the workflow before Unity starts.
+
+The macOS output is deliberately described as unsigned and unnotarized. A successful cloud build does not prove launch, input, audio or performance on either Intel or Apple-silicon hardware. Test the exact extracted ZIP on real Macs before treating it as accepted. Windows remains the Kyudaisai target and `v0.1.0-demo.2` remains the rollback package until a newer exact ZIP is accepted.
+
+To package an already-built directory locally without changing runtime files:
+
+```powershell
+python Tools/Release/package_desktop_demo.py `
+  --source <build-directory> `
+  --output <new-versioned-zip> `
+  --tag v0.1.0-demo.3 `
+  --platform windows
+```
+
+Use `--platform macos` for an output containing `BalloonBarrage.app`. The tool rejects existing output, requires the expected player structure, excludes Unity `DoNotShip` and backup payloads, preserves macOS executable bits, embeds notices and writes a `.zip.sha256` sidecar.
 
 ## Before building
 
@@ -32,7 +52,7 @@ A successful website build does not accept the Unity player. A ZIP made from unt
 7. Click **Build** and save the player as `BalloonShooter.exe` inside the new empty versioned directory. The current packaging tool checks that exact executable name.
 8. Do not rename, remove or separate the executable, `UnityPlayer.dll`, data directory or other generated runtime files.
 
-The repository also contains `BalloonBarrage.EditorTools.WindowsReleaseBuild.Build` for isolated batch builds. Its saved version is currently pinned to `0.1.0-demo.2`, so do not use it for a new version until the learner/maintainer intentionally updates and reviews that tool. A manual candidate build avoids silently publishing the wrong embedded version.
+The repository retains `BalloonBarrage.EditorTools.WindowsReleaseBuild.Build` to reproduce the historical `0.1.0-demo.2` process. New versioned automation uses the parameterized `BalloonBarrage.EditorTools.DesktopReleaseBuild.Build`; it requires explicit target, version and output arguments and refuses a nonempty output directory.
 
 ## Accept the exact build directory
 
@@ -50,6 +70,15 @@ From the new build directory, test before creating the ZIP:
 - intended resolution and at least the planned target-PC soak.
 
 Record failures and the environment in [Validation](VALIDATION.md). Fixes require a new build directory and a repeated affected check. Do not patch files inside an already accepted directory.
+
+Run the structural preflight before and after packaging. Use `-ReleasePackage` for the extracted ZIP so credits/readme are also required:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Tools/Exhibition/Test-ExhibitionPackage.ps1 `
+  -BuildPath Builds/Windows-x64-v0.1.0-demo.3
+```
+
+The preflight checks the executable/data/runtime pairing, bundled StepMania notice and manifest, Unity backup payload exclusions and optional release notices. It does not launch or play the game. Follow the [exhibition operator runbook](EXHIBITION_RUNBOOK.md) for the accepted primary/fallback rehearsal.
 
 ## Create release metadata
 

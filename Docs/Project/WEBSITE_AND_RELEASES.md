@@ -1,6 +1,12 @@
 # Website and desktop releases
 
-The current design update keeps held fire available for the whole round without ammunition, reload or overheat, while retaining a finite technical projectile cadence for clarity and performance. The trilingual website describes this as continuous held fire and visible paint accumulation; it does not claim a new downloadable build. Follow [Packaging a Windows demo](PACKAGING_LESSON.md) for the build → acceptance → ZIP/hash → publication sequence.
+The current design update keeps held fire available for the whole round without ammunition, reload or overheat, while retaining a finite technical projectile cadence for clarity and performance. The trilingual website describes this as continuous held fire and visible paint accumulation; it does not claim a new downloadable build. Follow [Packaging desktop demos](PACKAGING_LESSON.md) for the build → acceptance → ZIP/hash → publication sequence.
+
+## October 21 desktop download and automation refresh
+
+The download section now presents independent Windows and macOS cards in Chinese, Japanese and English. Windows continues to resolve the established public ZIP. macOS remains an honest unavailable state until a matching real ZIP exists; when present, it carries the unsigned, unnotarized and real-hardware-testing notice. The release selector accepts only nonempty uploaded platform-labelled ZIPs from this repository's trusted GitHub Release URLs.
+
+The offline build and all 12 site checks passed, including both platform states and the local preview/path-safety test. `.github/workflows/desktop-build.yml`, `DesktopReleaseBuild.cs` and `package_desktop_demo.py` prepare the two candidates without making physical-acceptance claims. The Actions workflow still requires the repository's Unity activation secrets before its first run. The locally built Windows `v0.1.0-demo.3` ZIP is an unplayed candidate and is not described as a public release.
 
 ## October 21 continuous-fire positioning refresh
 
@@ -18,7 +24,7 @@ Nine website checks passed. Browser inspection at 390-pixel width found no horiz
 
 ## Distribution
 
-The static website uses GitHub Pages; playable Windows packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only.
+The static website uses GitHub Pages; playable desktop packages use GitHub Releases. The site has Chinese, Japanese and English pages. Project documentation is English only. Windows and macOS have separate download cards and trusted asset selection; an absent macOS package is shown as unavailable rather than inferred from source archives.
 
 The October 18 prerelease **v0.1.0-demo.2** packages the new non-Development Windows solo build with persistent four-surface paint, three-color balloons, local records, author credit and HUD formatting optimization. Its instrumented diagnostic checks and clean-package integrity checks are separate from physical acceptance; final clean-package graphical smoke testing was interrupted. The creator explicitly requested pushing it with those limits recorded. The earlier **v0.1.0-demo.1** preserves the creator-tested rollback checkpoint. Both remain noncommercial development demos, separate from final exhibition acceptance. [Roadmap](../Design/ROADMAP.md) owns scope; [Validation](VALIDATION.md) owns evidence and package hashes.
 
@@ -58,7 +64,9 @@ For this refresh, local build/tests and browser checks precede the main-branch P
 
 `.github/workflows/website.yml` builds, tests and publishes on configured main-branch paths and manual dispatch from main. Release events request a fresh main-branch run through `workflow_dispatch`; the tag job does not deploy directly. The refresh job alone has `actions: write`, and deployment retains the existing main-only Pages environment rules. This avoids a release tag being rejected by those rules without weakening environment protection. Use GitHub Actions as the Pages source. Build-time release lookup produces a public, token-free snapshot; visitors do not call the GitHub API. For an older tag that predates this workflow change, dispatch `website.yml` from main after editing or withdrawing its attachments.
 
-Accept a nonempty uploaded Windows-labelled ZIP from this repository's HTTPS `releases/download` URLs. Reject drafts; prefer stable releases, otherwise label prereleases. Lookup examines the latest 100 releases. Source-code archives are not playable packages. Preserve the release-list link for empty or unknown states.
+Accept nonempty uploaded Windows- or macOS-labelled ZIPs from this repository's HTTPS `releases/download` URLs. Select each platform independently, reject drafts, prefer stable releases and otherwise label prereleases. Lookup examines the latest 100 releases. Source-code archives are not playable packages. Preserve the release-list link for empty or unknown states.
+
+`.github/workflows/desktop-build.yml` prepares Windows x64 and unsigned, unnotarized macOS Universal candidates on manual dispatch. It requires the three Unity activation secrets documented in [Packaging desktop demos](PACKAGING_LESSON.md). Workflow artifacts are not public releases unless the dispatch explicitly enables prerelease publication, and neither cloud compilation nor packaging is physical acceptance.
 
 Read [GitHub Releases](https://github.com/lorendw7/BalloonBarrage/releases) for live availability; documentation is not a live release listing.
 

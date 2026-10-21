@@ -33,6 +33,8 @@ Preferred feel at the current cadence: too slow / comfortable / too busy
 
 ## Next lesson, after the report
 
-If the baseline works, change only the `shotsPerSecond` value and compare one alternative against the saved value. Do not remove the cadence check and do not add ammo or an overheat system. The learner makes that gameplay change; the assistant reviews the saved diff and the same observation set before another parameter changes.
+On October 21 the creator reported no obvious issue in the baseline and requested a more energetic paint-shooter feel. This is a useful direction report, but it is not a structured complete-song or exhibition-PC acceptance.
+
+The next learner change is the one-variable comparison in [Spray feel and cadence lesson](SPRAY_FEEL_LESSON.md): change the scene's `shotsPerSecond` from 5 to 6 through the Inspector, save the scene, and compare it against 5. Do not remove the cadence check and do not add ammo or an overheat system. The assistant reviews the saved diff and report before any particle parameter changes.
 
 If the baseline fails, diagnose that single failure first. Do not combine a firing-rate change with beat-cue, scoring, paint-rendering or result-screen work.

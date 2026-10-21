@@ -1,6 +1,6 @@
 # BalloonBarrage
 
-A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop balloons, leave colorful paint and catch the beat for an extra reward. Free aiming and unrestricted-duration held fire keep ordinary play approachable; a finite projectile cadence preserves feedback clarity and performance without adding ammo, reload or heat. Windows keyboard/mouse solo is the exhibition focus. See the [game design](Docs/Design/GAME_DESIGN.md) for the player promise and [roadmap](Docs/Design/ROADMAP.md) for delivery.
+A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop balloons, leave colorful paint and catch the beat for an extra reward. Free aiming and unrestricted-duration held fire keep ordinary play approachable; a finite projectile cadence preserves feedback clarity and performance without adding ammo, reload or heat. Windows keyboard/mouse solo remains the exhibition focus; the repository also prepares an unsigned, unnotarized macOS Universal development candidate. See the [game design](Docs/Design/GAME_DESIGN.md) for the player promise and [roadmap](Docs/Design/ROADMAP.md) for delivery.
 
 [Website](https://lorendw7.github.io/BalloonBarrage/en/) · [Game releases](https://github.com/lorendw7/BalloonBarrage/releases) · [Development roadmap](Docs/Design/ROADMAP.md)
 
@@ -30,10 +30,12 @@ All project documentation is maintained in English. The website and planned game
 - [Game design](Docs/Design/GAME_DESIGN.md): scope and proposed rhythm rules.
 - [Roadmap](Docs/Design/ROADMAP.md): priorities, exhibition schedule, and acceptance criteria.
 - [Continuous-fire lesson](Docs/Design/CONTINUOUS_FIRE_LESSON.md): first learner checkpoint for the no-ammo/no-reload paint loop.
+- [Spray feel and cadence lesson](Docs/Design/SPRAY_FEEL_LESSON.md): one-variable 5-versus-6 shots-per-second comparison, followed only after acceptance by a cosmetic muzzle-particle comparison.
 - [Structure and contribution rules](Docs/Project/STRUCTURE.md): ownership and repository layout.
 - [Validation](Docs/Project/VALIDATION.md): completed checks and outstanding gates.
 - [Website and releases](Docs/Project/WEBSITE_AND_RELEASES.md): build, download, and packaging workflow.
-- [Windows packaging lesson](Docs/Project/PACKAGING_LESSON.md): build, accept, archive, hash and publish a versioned demo.
+- [Desktop packaging lesson](Docs/Project/PACKAGING_LESSON.md): build, accept, archive, hash and publish versioned Windows and macOS candidates.
+- [Exhibition operator runbook](Docs/Project/EXHIBITION_RUNBOOK.md): offline setup, player handoff, package preflight and rehearsed recovery.
 - [Art direction](Docs/Art/ART_DIRECTION.md) and [asset catalog](Docs/Art/ASSET_CATALOG.md): current art and specialist guides.
 - [Cover finish V9](Docs/Art/COVER_FINISH_V9.md): latest actual-scene finish, saved lighting and runtime-camera preview.
 - [Camera and lighting V10](Docs/Art/CAMERA_LIGHTING_V10.md): independent scene study, before/after game-camera renders, baked target probes and verification limits.
@@ -41,6 +43,7 @@ All project documentation is maintained in English. The website and planned game
 - [Concept variants V12](Docs/Art/CONCEPT_VARIANTS_V12.md): six-color/three-silhouette balloons, new concept gun, random coordinated gun/paint themes and Unity preview evidence.
 - [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md): latest room, mineral floor, richer pigment/strip/rug palette, modeled studio supplies and fixed-camera comparison.
 - [Concept-style gun refinement](Docs/Art/CONCEPT_GUN_REFINEMENT.md): production gun with a horizontal clear reservoir, cream/teal body and coral bell nozzle; native previews and verification limits.
+- [Original paint-spray style candidate](Docs/Art/PAINT_SPRAY_STYLE.md): a new transparent, runtime-tintable VFX atlas kept separate from gameplay until the cadence lesson is accepted.
 - [Interface V2](Docs/Art/INTERFACE_V2.md): new UI assets, preview gallery and lessons for wiring Start, Quit, Resume and score displays.
 - [UI clarity and resolution support](Docs/Art/INTERFACE_V2.md#october-14-clarity-and-resolution-support): bundled fonts, text refresh and checked 720p/1080p/1440p, 4:3 and ultrawide layouts.
 - [First rhythm lesson](Docs/Design/RHYTHM_FIRST_LESSON.md): switch interface/game music and initialize the round from the full downloaded song before adding its DSP chart timeline.
@@ -52,7 +55,7 @@ All project documentation is maintained in English. The website and planned game
 - [Local best-score lesson](Docs/Design/BEST_SCORE_LESSON.md): saved read/save/display with independent synthetic standalone higher/lower/retry/relaunch checks; see the validation record for limits.
 - [Credits](CREDITS.md): attribution and provenance.
 
-The [official Kyudaisai site](https://kyudaisai.jp/79th/) lists October 31–November 1, 2026. The roadmap targets an October 27 rhythm-demo candidate; the creator's booth/location remains unconfirmed. A source archive is not a playable game. Check Releases for actual Windows packages.
+The [official Kyudaisai site](https://kyudaisai.jp/79th/) lists October 31–November 1, 2026. The roadmap targets an October 27 Windows rhythm-demo candidate; the creator's booth/location remains unconfirmed. A source archive is not a playable game. Check Releases for actual desktop packages; a macOS button appears only after a real package is uploaded.
 
 ## Website preview
 

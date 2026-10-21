@@ -1,0 +1,5 @@
+BEAT_CUE_ASSETS_OK
+Existing cue Text/file ID retained; no learner scripts or timing/scoring changed.
+Live cue contrast and heading polished. Separate approach guide is not connected to gameplay.
+Layout checked at 1280x720, 1920x1080 and 2560x1440.
+Preview fill and text values are static demonstration data, not a timed runtime test.

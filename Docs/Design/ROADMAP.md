@@ -35,7 +35,8 @@ October 19–20 time included art and learner paint work. Earlier scheduled coun
 | P1: simple success summary | Successful-hit count, then on-beat subset if the once-only outcome/reset checks pass | Results-first, not another live HUD requirement; internal unanswered-event accounting is diagnostic, not a public failure measure |
 | P2: one tactile refinement | Tune existing pop/ring/sound first; add one visual-child entrance or squash only if time permits | No root/collider animation, global hit stop, mandatory camera shake or competing effect labels |
 | Optional: cut first | Forgiving streak, milestone flourishes, extra bob, new-record animation, further art/reflection bake | Only after P0/P1 acceptance; none is required for the festival |
-| After festival | Song selection, accessibility/calibration settings, controller/co-op, macOS packaging lesson | Separate small milestones; no assumed festival port |
+| Parallel delivery experiment | macOS Universal cloud packaging may be prepared alongside Windows | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
+| After festival | Song selection, accessibility/calibration settings, controller/co-op, macOS signing/notarization and broader support | Separate small milestones; no assumed festival-ready Mac port |
 | Exploratory only | Roguelite runs, upgrades, armored/splitter/chain targets | Reassess against the relaxing rhythm identity before committing; not the default product promise |
 
 Round-persistent paint remains required. The creator declined a count cap: no timed fade, oldest-first removal or silent deletion. If measured cost is high, reduce new decorative effects or evaluate paint-preserving rendering changes.
@@ -44,11 +45,12 @@ Round-persistent paint remains required. The creator declined a count cap: no ti
 
 Dates are targets, not completion claims. Do not borrow the testing buffer to finish optional features.
 
+Work through the gates in order. A later calendar date does not waive an earlier gate: if the current-source playtest is not recorded, fix or describe that blocker before adding counters; if feature-freeze acceptance is incomplete, cut optional work rather than moving it into the packaging window.
+
 | Date | Main outcome | Evidence / cut rule |
 |---|---|---|
-| Oct 20 | Rebaseline the plan; play one complete current-source round; check ordinary hits, tapping/held fire, dense paint and the new gun | Record concrete comfort/readability issues; confirm booth hardware/audio logistics. Do not add more major art work |
-| Oct 21 | Fix the largest input/music/readability issue; teach a successful-hit counter only after the core flow works | Keep one DSP origin and existing scoring. A wall shot or duplicate contact must not count |
-| Oct 22 | Add on-beat subset and a minimal positive result summary if stable; tune existing ordinary/on-beat sound and visual contrast | Both casual held fire and optional timed taps must feel worthwhile. If accounting is unreliable, retain score/best and a completion message |
+| Oct 21 | **Gate A — lock the current core.** Accept 6 shots per second, choose 6 or 8 muzzle particles, verify new paint covers old paint/background art, then finish one complete song with pause/resume and Retry | Paint-order source compiles in isolation; visual overwrite and complete-song behavior still require the creator's report. Fix only the strongest input/music/readability failure. Do not add counters until this gate is clean |
+| Oct 22 | **Gate B — smallest results improvement.** Teach a successful-hit counter; add the on-beat subset and a positive result line only if each once-only/reset check passes | Keep one DSP origin and existing scoring. Wall shots and duplicate contacts must not count. If accounting is unreliable, ship score/best plus the completion line |
 | Oct 23 | Japanese-first instructions/buttons/result text; verify fonts; optionally one short visual-child animation | Prefer readable instructions over squash or combo. No new timing rule or mode |
 | Oct 24 | Observe three unfamiliar players if available, including someone who rarely plays rhythm games; make small fixes | **Freeze new features at day's end.** Remove optional effects that obscure targets or feel stressful; if participants are unavailable, record the missing evidence |
 | Oct 25 | Exhibition-PC full-song/retry session, pause/focus checks and frame/memory capture | At least 30 minutes of actual play and ten consecutive retries; record how many were full-song runs. Callback loops are not substitutes |
@@ -59,17 +61,28 @@ Dates are targets, not completion claims. Do not borrow the testing buffer to fi
 | Oct 31 | Exhibit the rehearsed build and collect short anonymous observations | Staff handles handoff/recovery; no untested booth-time changes |
 | Nov 1 | Continue only if participation is confirmed | Same tested package; no assumed second-day commitment |
 
-Five remaining implementation/tuning dates (October 20–24) provide at most 20–30 hours if fully available; today's elapsed work is not extra capacity. Reserve October 25–26's 8–12 hours for verification/fixes. In a four-hour session, use about 2.5 hours for one small change, one hour for real play/comparison and 30 minutes for review/checkpoint. Extra time goes to evidence, not automatic scope expansion.
+Four remaining implementation/tuning dates (October 21–24) provide at most 16–24 hours if fully available. Reserve October 25–26's 8–12 hours for verification/fixes. In a four-hour session, use about 2.5 hours for one small change, one hour for real play/comparison and 30 minutes for review/checkpoint. Extra time goes to evidence, not automatic scope expansion.
+
+### Parallel production lanes through feature freeze
+
+| Lane | October 21–24 outcome | Owner / stop rule |
+|---|---|---|
+| Core learning | Paint overwrite acceptance, full-song baseline, then at most one results or beat-cue increment at a time | Learner writes gameplay; stop on the first unresolved regression |
+| Presentation | Japanese-first static copy/font checks and only already-prepared cue/art hookups that survive the baseline | Maintainer prepares assets/tools; no new rule or mode |
+| Delivery | Package preflight, operator runbook, primary/fallback rehearsal and evidence templates | Maintainer prepares; creator accepts the exact package/hardware |
+| Verification | Oct 24 feature freeze, Oct 25 soak/retries, Oct 26 blocker fixes, Oct 27 immutable candidate | No optional feature may borrow this time |
 
 ## Immediate teaching queue
 
 The learner owns Assets/Scripts. Explain one field/helper/call site at a time, let the learner write it, then review saved code before continuing. The creator deferred further paint-scale parameter lessons.
 
-1. Run the [continuous-fire and paint-loop lesson](CONTINUOUS_FIRE_LESSON.md). Confirm the existing held input has no resource or forced downtime and report sound/readability/performance observations before changing its cadence.
-2. Address beat-cue clarity. Follow the [beat-cue handoff](../Art/BEAT_CUE_HANDOFF.md): improve existing cue readability, then teach one serialized graphic field. The approach graphic is prepared separately; dynamic timing and target association remain learner work.
-3. If stable, teach the current-round successful-hit field and once-only accepted-impact increment. Verify reset and wall/duplicate exclusions.
-4. Add the on-beat subset through the existing matched-event bonus path. Verify five hits including two on-beat hits give 70 points, not seven hits.
-5. Bind only the accepted counters to results, with a friendly completion line and clear Retry. Keep the painted room visible.
+October 21 direction report: the creator noticed no obvious baseline issue and requested a clearer paint-sticker beat cue plus a more energetic spray feel. The live cue's presentation-only asset pass is prepared. The creator subsequently reported the firing rate decided, and the saved PrototypeScene confirms 6 shots per second; this is user-reported tuning acceptance rather than an automated playtest. The learner has now saved monotonic Sprite sorting for direct-impact marks plus an `AfterSceneLoad` reset for Retry, and an isolated compile has zero errors. Visual acceptance of later paint over earlier paint/background graffiti and the short full-song baseline remain pending; compilation is not visual acceptance. The creator next requested result-page and beat-cue improvements. Extend the already-bound `ResultsScreen` rather than creating a duplicate, and integrate the prepared cue graphic one learner increment at a time.
+
+1. **Observe before editing.** Run the [continuous-fire and paint-loop lesson](CONTINUOUS_FIRE_LESSON.md), then continue to the end of the same song using the [short exhibition playtest](../Project/EXHIBITION_PLAYTEST.md). Report the strongest issue; do not change several Inspector values during the observation.
+2. **Connect the prepared cue safely.** If held fire, music, pause or Retry fails, diagnose that single failure first. Otherwise use the [beat-cue handoff](../Art/BEAT_CUE_HANDOFF.md) and teach one serialized graphic field before any scene hookup or timing formula.
+3. **Count accepted hits once.** Teach one current-round successful-hit field and increment it only at the accepted balloon outcome. Verify reset plus wall-shot and duplicate-contact exclusions before adding another statistic.
+4. **Count the on-beat subset.** Reuse the existing matched-event bonus path. Verify five hits including two on-beat hits give 70 points, five successful hits and two on-beat hits—not seven successful hits.
+5. **Extend the existing result page with accepted data.** Bind the verified counters to the current score/best-score/Retry screen with a friendly completion line. Keep the painted room visible. If either counter is unreliable, omit it rather than show misleading data; do not build a second result screen.
 6. Tune the existing ordinary/on-beat burst and sound; add at most one visual-child animation if it improves feel.
 7. Complete Japanese copy, unfamiliar-player trials and package gates.
 
@@ -108,7 +121,7 @@ The learner owns event outcomes/counters, trigger calls, animation integration a
 
 No new gameplay is authorized by this planning request. Preserve concurrent work, GUIDs/meta, original audio/attribution/restrictions and recorded image prompts. Documentation is English; player-facing website and game translations are separate. Append commits normally; never rewrite history.
 
-The Windows packaging lesson is now documented in [Packaging a Windows demo](../Project/PACKAGING_LESSON.md). It separates the Unity build, fresh-extraction acceptance, immutable ZIP/hash creation and publication. macOS modules, architecture, signing/notarization and real-Mac testing remain a later lesson, not a festival commitment.
+The [desktop packaging lesson](../Project/PACKAGING_LESSON.md) separates the Unity build, fresh-extraction acceptance, immutable ZIP/hash creation and publication. The creator authorized a GitHub Actions macOS packaging attempt. That automation produces only an unsigned, unnotarized candidate; real-Mac testing and any signing/notarization remain separate work and are not a festival commitment.
 
 ## Cut order and later direction
 

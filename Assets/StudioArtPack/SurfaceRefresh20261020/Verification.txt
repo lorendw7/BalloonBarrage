@@ -1,0 +1,7 @@
+SURFACE_REFRESH_OK
+Ten saved surface assignments: eight plaster, two mineral floor.
+Native seamless 1024px albedo, tangent-normal and metallic/smoothness maps.
+World-scale UV0 and tangents updated; geometry, triangle topology and lightmap UV2 retained.
+Existing gameplay, collider, camera, UI, light and MonoBehaviour component data and transforms unchanged.
+Saved scene reloaded and rendered at 1920x1080 with UI temporarily hidden.
+Existing baked lighting and reflections retained; no rebake, standalone test or performance benchmark.

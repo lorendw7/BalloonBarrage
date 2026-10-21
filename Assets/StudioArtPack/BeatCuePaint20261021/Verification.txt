@@ -1,0 +1,7 @@
+BEAT_CUE_PAINT_STYLE_OK
+RhythmCue GUID and existing BeatCueText binding retained.
+Project-owned paint sprite reused as an original teal sticker silhouette.
+No learner scripts, judgement values, chart timing or scoring changed.
+Separate approach guide remains disconnected from production gameplay.
+Layout and non-raycast checks passed at 1280x720, 1920x1080 and 2560x1440.
+Preview fill is demonstration data, not a runtime timing test.

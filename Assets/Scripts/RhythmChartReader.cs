@@ -46,6 +46,9 @@ public class RhythmChartReader : MonoBehaviour
     private Text beatCueText;
 
     [SerializeField]
+    private Image beatApproachFill;
+
+    [SerializeField]
     private Text onBeatFeedbackText;
 
     private float feedbackRemaining;
@@ -144,12 +147,22 @@ public class RhythmChartReader : MonoBehaviour
         if (nextCueEventIndex >= chart.events.Length)
         {
             beatCueText.text = "ENDING";
+            if (beatApproachFill != null)
+            {
+                beatApproachFill.fillAmount = 0f;
+            }
             return;
         }
 
         double remaining =
             chart.events[nextCueEventIndex].timeSeconds - currentSongTime;
 
+        if(beatApproachFill != null && spawnLeadSeconds > 0d)
+        {
+            float curProgress = 1f - (float)(remaining / spawnLeadSeconds);
+
+            beatApproachFill.fillAmount = Mathf.Clamp01(curProgress);
+        }
         beatCueText.text = $"NEXT {remaining:F1}s";
     }
 

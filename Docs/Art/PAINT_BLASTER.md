@@ -1,6 +1,6 @@
 # Paint blaster assets
 
-The source BlasterKit contains eighteen gun variants. The assembled `Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M.prefab` references blaster-m, a reservoir, nozzle and muzzle particles. Preserve the original FBX and `colormap.png` relationship. The current V6 visible shell is described in the [studio guide](STUDIO_ART_PACK.md).
+The source BlasterKit contains eighteen gun variants. The assembled `Assets/StudioArtPack/PaintBlaster/Assembled/PaintGun_M.prefab` retains blaster-m and its original helpers. Its production visual uses the [October 19 concept-style refinement](CONCEPT_GUN_REFINEMENT.md), with a horizontal clear reservoir, cream body and coral bell nozzle. Preserve the original FBX and `colormap.png` relationship. The earlier V6 shell remains as inactive cosmetic children; its authoring is described in the [studio guide](STUDIO_ART_PACK.md).
 
 | Directory | Contents |
 |---|---|

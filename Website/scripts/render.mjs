@@ -14,15 +14,28 @@ export function renderPage(template, locale, release, staticFiles = {}) {
   const languageLinks = languages.map((language) => `<a href="${route(language)}" lang="${language}" hreflang="${language}" data-language="${language}"${locale === language ? ' aria-current="page"' : ""}>${labels[language]}</a>`).join("");
   const alternateLinks = languages.map((language) => `<link rel="alternate" hreflang="${language}" href="${route(language)}">`).join("\n  ");
   const e = escapeHtml;
-  const releasePanel = release.available
-    ? `<div class="release-panel"><h3>${e(text.downloadReady)}</h3>${release.prerelease ? `<p class="badge badge-yellow">${e(text.downloadPreview)}</p>` : ""}<div class="release-meta"><span>${e(text.downloadBuild)}: ${e(release.tag)}</span><span>${e(text.downloadSize)}: ${(release.size / 1024 / 1024).toFixed(1)} MB</span></div><a class="button button-teal" href="${e(release.url)}">${e(text.downloadReady)}</a><p class="small">${e(text.downloadInstructions)}</p><p><a href="${e(release.notes)}">${e(text.downloadNotes)}</a></p></div>`
-    : `<div class="release-panel" data-release-status="${release.status}"><h3>${e(release.status === "empty" ? text.downloadEmpty : text.downloadUnknown)}</h3><p>${e(release.status === "empty" ? text.downloadEmptyBody : text.downloadUnknownBody)}</p><a class="button button-teal" href="${repositoryUrl}/releases">${e(text.downloadRelease)}</a></div>`;
+  const snapshots = release.windows ? release : {
+    windows: release,
+    macos: { available: false, status: release.status === "unknown" ? "unknown" : "empty" }
+  };
+  const platformPanel = (platform, snapshot) => {
+    const isMac = platform === "macos";
+    const platformName = isMac ? text.downloadMacPlatform : text.downloadPlatform;
+    const ready = isMac ? text.downloadMacReady : text.downloadReady;
+    const instructions = isMac ? text.downloadMacInstructions : text.downloadInstructions;
+    const emptyBody = isMac ? text.downloadMacEmptyBody : text.downloadEmptyBody;
+    const notice = isMac ? `<p class="platform-notice">${e(text.downloadMacNotice)}</p>` : "";
+    return snapshot.available
+      ? `<article class="download-card"><p class="platform">${e(platformName)}</p><div class="release-panel"><h3>${e(ready)}</h3>${snapshot.prerelease ? `<p class="badge badge-yellow">${e(text.downloadPreview)}</p>` : ""}<div class="release-meta"><span>${e(text.downloadBuild)}: ${e(snapshot.tag)}</span><span>${e(text.downloadSize)}: ${(snapshot.size / 1024 / 1024).toFixed(1)} MB</span></div><a class="button button-teal" href="${e(snapshot.url)}">${e(ready)}</a><p class="small">${e(instructions)}</p>${notice}<p><a href="${e(snapshot.notes)}">${e(text.downloadNotes)}</a></p></div></article>`
+      : `<article class="download-card" data-release-status="${snapshot.status}"><p class="platform">${e(platformName)}</p><div class="release-panel"><h3>${e(snapshot.status === "empty" ? text.downloadEmpty : text.downloadUnknown)}</h3><p>${e(snapshot.status === "empty" ? emptyBody : text.downloadUnknownBody)}</p>${notice}<a class="button button-teal" href="${repositoryUrl}/releases">${e(text.downloadRelease)}</a></div></article>`;
+  };
+  const releasePanels = platformPanel("windows", snapshots.windows) + platformPanel("macos", snapshots.macos);
   const siteUrl = "https://lorendw7.github.io/BalloonBarrage/";
   const canonicalUrl = siteUrl + (locale === "zh-Hans" ? "" : `${locale}/`);
-  const heroReleaseStatus = release.available
-    ? `${text.downloadPreviewLabel} · ${release.tag}`
-    : (release.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
-  const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanel,
+  const heroReleaseStatus = snapshots.windows.available
+    ? `${text.downloadPreviewLabel} · ${snapshots.windows.tag}${snapshots.macos.available ? ` · macOS ${snapshots.macos.tag}` : ""}`
+    : (snapshots.windows.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
+  const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanels,
     styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/gameplay-development-share-20261019.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {

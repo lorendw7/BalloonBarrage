@@ -1,0 +1,17 @@
+Paint spray style candidate verification
+Date: 2026-10-21
+
+Saved implementation:
+- PaintSprayStyle_Atlas_v2.png is a new 1254 x 1254 RGBA image.
+- The Unity importer defines four equal 627 x 627 sprite cells.
+- Alpha is enabled, mipmaps are disabled, and no fallback physics shapes are generated.
+- The source SHA-256 is C8BA7F87013C014A1802422A8649DD80CAF413BE1AB70F88E89E2DC23DE31C29.
+
+Automated static checks:
+- Pixel format reported Format32bppArgb.
+- An 8-pixel sampling grid found 195 distinct alpha values and 17,768 fully transparent samples.
+
+Limits:
+- This file is candidate art only and is not connected to MuzzleSpray, projectiles, impacts, scoring, or surface-paint rules.
+- Unity import and in-game tint/readability still require editor verification.
+- No playtest or Unity test is claimed by these static checks.

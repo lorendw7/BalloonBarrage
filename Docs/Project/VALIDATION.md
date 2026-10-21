@@ -1,6 +1,28 @@
 # Validation record
 
-Updated: October 19, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 21, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+
+## Desktop delivery pipeline checkpoint, October 21
+
+The repository now contains a manually dispatched GitHub Actions matrix for Windows x64 and macOS Universal candidates, a parameterized Unity batch-build method and a cross-platform ZIP/SHA-256 packager. The workflow has not yet run on GitHub because the repository has no recorded `UNITY_LICENSE`, `UNITY_EMAIL` or `UNITY_PASSWORD` Actions secrets. No macOS player, launch or hardware acceptance is claimed. The macOS design is explicitly unsigned and unnotarized; Windows remains the exhibition target and public `v0.1.0-demo.2` remains the rollback package.
+
+Unity `6000.0.77f1` compiled the current saved source in an ignored isolated copy and completed a non-Development Windows x64 build: `Succeeded`, zero errors, two warnings, 183,597,770 reported bytes and 120.774 seconds. The new `NamedBuildTarget` architecture calls then compiled with exit code zero and no desktop-build-script warnings. `package_desktop_demo.py` excluded the generated Burst `*_DoNotShip` directory. Fresh extraction passed executable/data/runtime, StepMania notice/manifest, backup exclusion, packaged readme and credits checks. Local candidate: **72,622,588 bytes**, **193 runtime files / 198 extracted files**, SHA-256 **`e8a3aef99a90b6f96c5663561132cab1e69ab2d39e2e8a0fce9b67d4f20a8684`**. This is structural and compilation evidence only; the exact ZIP still requires launch, physical input, audio, complete-song, Retry and target-PC acceptance before publication.
+
+The trilingual website now selects Windows and macOS release assets independently and displays the macOS limitations beside that platform. Its offline build and all 12 Node checks passed, including translation parity, trusted platform-specific release selection, HTML escaping, media provenance, local assets, content-addressed CSS/JS and loopback preview/path safety. These checks do not validate either Unity player.
+
+## Direct-paint overwrite ordering checkpoint, October 21
+
+The learner saved a shared Sprite sorting counter for direct-impact paint marks. It starts at 100, resets during Unity subsystem registration and assigns the same increasing order to every SpriteRenderer under each newly instantiated mark. Existing background-graffiti orders are 0–2, so the saved intent is for player paint to draw above the background and for later direct hits to draw above earlier direct hits. The spatial contact offset, collision eligibility, projectile destruction, scoring and pigment/pattern selection are unchanged by this increment.
+
+The latest `PaintProjectile.cs` was copied into the existing ignored isolated project. A .NET build of the Unity-generated `Assembly-CSharp.csproj` succeeded with zero errors. It reported the two existing unused `BalloonSpawner` field warnings plus one expected compiler-only warning for a private serialized pattern-group field; Unity serialization supplies that field in the saved prefab. An attempted Unity batch check did not complete licensing initialization and is discarded rather than counted as a pass.
+
+Review found that `SubsystemRegistration` resets the counter at application/Play initialization but not on the current Retry scene reload. Unity 6 documents `Renderer.sortingOrder` as limited to -32,768 through 32,767, so a long exhibition session could eventually exhaust the range even though a single song cannot. The next learner correction changes only the runtime initialization argument to `AfterSceneLoad`, matching the existing scene-reload cleanup. Visual overwrite, all four receiver orientations, Retry reset and sustained ordering remain unverified until that correction compiles and the creator tests the current Unity scene.
+
+## Author-name plaque polish, October 19
+
+At the creator's request, StartScreen's author credit is now a rounded warm-cream plaque with a fine brown outline, muted teal accent, a small CREATED BY heading and the larger original Chinese/English name. The existing author Text/component IDs, prefab and preview GUIDs, font and attribution remain intact. Only presentation assets and the editor preparation/verification helper changed; all learner gameplay source hashes remained unchanged.
+
+Isolated Unity 6000.0.77f1 compilation and native layout checks passed at 1280 × 720, 1920 × 1080, 2560 × 1440, 1280 × 960 and 3440 × 1440. Assertions cover exact glyphs, text fit inside the plaque, heading/name separation, viewport bounds, no footer/button overlap, disabled raycast targets, production-scene inheritance and the original Start/Quit callbacks. The 1080p native preview was visually inspected before copying the verified prefab and preview back. Evidence is ignored under `.local-backups/author-credit-polish-20261019/unity.log`; the preview is linked from [Interface V2](../Art/INTERFACE_V2.md). No production scene was saved. This is not a new standalone package, physical-input acceptance or full-song test.
 
 ## Eight-color development palette and tint buffers, October 19
 

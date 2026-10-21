@@ -19,23 +19,39 @@ public class PaintProjectile : MonoBehaviour
 
     [SerializeField] private GameObject[] paintMarkVariants;
 
+    [SerializeField] private float paintRotationRange = 20f;
+
+    [System.Serializable]
+    private class PaintPatternGroup
+    {
+        public GameObject[] prefabs;
+    }
+
+    [SerializeField]
+    private PaintPatternGroup[] paintPatternGroups;
+
+    private const int FirstPaintSortingOrder = 100;
+    private static int nextPaintSortingOrder = FirstPaintSortingOrder;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void ResetPaintSortingOrder()
+    {
+        nextPaintSortingOrder = FirstPaintSortingOrder;
+    }
+
     private void Awake()
     {
-        // Use one palette index for both the flying paint and its surface mark.
-        if (pigments == null || paintMarkVariants == null ||
-            pigments.Length == 0 || pigments.Length != paintMarkVariants.Length)
-        {
-            return;
-        }
-
         int index = pigmentRandom.Next(pigments.Length);
-        if (pigments[index] == null || paintMarkVariants[index] == null)
-        {
-            return;
-        }
 
-        StudioPaintTint.Effect(gameObject, pigments[index].GetColor("_BaseColor"));
-        paintMarkPrefab = paintMarkVariants[index];
+        Color color = pigments[index].GetColor("_BaseColor");
+
+        StudioPaintTint.Effect(gameObject, color);
+
+        GameObject[] patterns = paintPatternGroups[index].prefabs;
+
+        int patternIndex = pigmentRandom.Next(patterns.Length);
+
+        paintMarkPrefab = patterns[patternIndex];
     }
 
     public bool ShotWasOnBeat {  get; private set; }
@@ -95,7 +111,22 @@ public class PaintProjectile : MonoBehaviour
 
                 Quaternion rotation = Quaternion.LookRotation(hit.normal);
 
-                Instantiate(paintMarkPrefab, position, rotation);
+                GameObject mark = Instantiate(paintMarkPrefab, position, rotation);
+
+                int sortingOrder = nextPaintSortingOrder++;
+
+                foreach(SpriteRenderer spriteRenderer
+                    in mark.GetComponentsInChildren<SpriteRenderer>(true)) {
+                    spriteRenderer.sortingOrder = sortingOrder;
+                }
+
+                float angle = ((float)pigmentRandom.NextDouble() * 2f - 1f) * paintRotationRange;
+
+                mark.transform.Rotate(0f, 0f, angle, Space.Self);
+
+                float scaleMultiplier = 0.8f + (float)pigmentRandom.NextDouble() * 0.4f;
+
+                mark.transform.localScale *= scaleMultiplier;
 
             }
 

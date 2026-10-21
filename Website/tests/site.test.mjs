@@ -6,13 +6,14 @@ import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { languages, strings } from "../src/strings.mjs";
-import { selectDownload, repositoryUrl } from "../scripts/releases.mjs";
+import { getReleaseSnapshot, selectDownload, selectDownloads, repositoryUrl } from "../scripts/releases.mjs";
 import { renderPage } from "../scripts/render.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
 const template = await readFile(path.join(site, "src/index.html"), "utf8");
 const asset = { name: "BalloonBarrage-Windows-x64.zip", size: 1024, state: "uploaded", browser_download_url: `${repositoryUrl}/releases/download/v1/demo.zip` };
-const release = { tag_name: "v1", published_at: "2026-10-08T00:00:00Z", prerelease: false, draft: false, assets: [asset] };
+const macAsset = { name: "BalloonBarrage-macOS-Universal.zip", size: 2048, state: "uploaded", browser_download_url: `${repositoryUrl}/releases/download/v1/demo-macos.zip` };
+const release = { tag_name: "v1", published_at: "2026-10-08T00:00:00Z", prerelease: false, draft: false, assets: [asset, macAsset] };
 
 test("all three translations have the same complete, nonempty key set", () => {
   const expected = Object.keys(strings.en).sort();
@@ -44,16 +45,45 @@ test("stable Windows packages are preferred; prerelease demos remain available",
   assert.equal(selectDownload([preview, release]).tag, "v1");
   assert.equal(selectDownload([preview]).prerelease, true);
 });
+test("desktop release selection keeps Windows and macOS assets separate", () => {
+  const downloads = selectDownloads([release]);
+  assert.equal(downloads.windows.url, asset.browser_download_url);
+  assert.equal(downloads.macos.url, macAsset.browser_download_url);
+  assert.equal(downloads.windows.tag, "v1");
+  assert.equal(downloads.macos.tag, "v1");
+});
+test("offline release lookup returns explicit unknown states for both platforms", async () => {
+  assert.deepEqual(await getReleaseSnapshot({ offline: true }), {
+    windows: { available: false, status: "unknown" },
+    macos: { available: false, status: "unknown" }
+  });
+});
 test("ready, empty and API-failure pages render safely in all languages", () => {
-  for (const locale of languages) for (const snapshot of [selectDownload([release]), { available: false, status: "empty" }, { available: false, status: "unknown" }]) {
+  const snapshots = [
+    selectDownloads([release]),
+    {
+      windows: { available: false, status: "empty" },
+      macos: { available: false, status: "empty" }
+    },
+    {
+      windows: { available: false, status: "unknown" },
+      macos: { available: false, status: "unknown" }
+    }
+  ];
+  for (const locale of languages) for (const snapshot of snapshots) {
     const html = renderPage(template, locale, snapshot);
     assert.ok(html.includes(`<html lang="${locale}">`));
     assert.ok(!html.includes("{{"));
     assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1);
-    assert.equal(html.includes(asset.browser_download_url), snapshot.available);
-    if (!snapshot.available) assert.ok(html.includes(`data-release-status="${snapshot.status}"`));
+    assert.equal(html.includes(asset.browser_download_url), snapshot.windows.available);
+    assert.equal(html.includes(macAsset.browser_download_url), snapshot.macos.available);
+    if (!snapshot.windows.available) assert.ok(html.includes(`data-release-status="${snapshot.windows.status}"`));
   }
-  const html = renderPage(template, "en", { ...selectDownload([release]), tag: '<script>alert("x")</script>' });
+  const selected = selectDownloads([release]);
+  const html = renderPage(template, "en", {
+    ...selected,
+    windows: { ...selected.windows, tag: '<script>alert("x")</script>' }
+  });
   assert.ok(html.includes("&lt;script&gt;"));
   assert.ok(!html.includes('<script>alert("x")'));
 });

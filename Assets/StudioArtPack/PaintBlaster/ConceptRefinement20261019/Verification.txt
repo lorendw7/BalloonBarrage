@@ -1,0 +1,5 @@
+Unity 6000.0.77f1; isolated edit-mode verification.
+6 mesh/material batches; 22176 vertices; 33364 triangles.
+Saved recoil root/binding and muzzle pose preserved. Cosmetic hierarchy has only Transform/MeshFilter/MeshRenderer.
+9 aim/aspect combinations checked for camera near-plane clearance; maximum top viewport 0.4138.
+Native camera renders are model/scene inspections, not physical input, full-song playtests, performance benchmarks or a new Windows release.

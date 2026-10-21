@@ -43,4 +43,7 @@ for (const locale of languages) {
 for (const file of ["styles.css", "app.js", "favicon.svg"]) await copyFile(path.join(site, "src", file), path.join(output, file));
 await writeFile(path.join(output, ".nojekyll"), "");
 await writeFile(path.join(output, "release.json"), JSON.stringify(release, null, 2) + "\n");
-console.log(`Built ${languages.length} language pages using ${assets.length} project images. Release status: ${release.status}.`);
+console.log(
+  `Built ${languages.length} language pages using ${assets.length} project images. ` +
+  `Release status: Windows=${release.windows.status}, macOS=${release.macos.status}.`
+);

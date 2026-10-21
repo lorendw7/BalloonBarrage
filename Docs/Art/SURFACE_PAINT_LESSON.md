@@ -1,6 +1,6 @@
 # Lesson: projectile impacts leave wall paint
 
-Updated: October 19, 2026. Persistent balloon-pop marks and direct projectile marks pass isolated checks on MainWall, Floor, LeftWall and RightWall. The saved palette now has eight colors; the [palette guide](BALLOON_COLOR_LESSON.md) owns their indexed references, art provenance and verification status. The next learner step checks complete-song coverage and readability before measured load. Controller/co-op remains deferred. [Roadmap](../Design/ROADMAP.md) owns scheduling and [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion) owns surface eligibility and lifecycle policy.
+Updated: October 21, 2026. Persistent balloon-pop marks and direct projectile marks pass earlier isolated checks on MainWall, Floor, LeftWall and RightWall. The saved palette now has eight colors; the [palette guide](BALLOON_COLOR_LESSON.md) owns their indexed references, art provenance and verification status. The current learner step verifies deterministic direct-paint overwrite ordering before complete-song coverage and measured load. Controller/co-op remains deferred. [Roadmap](../Design/ROADMAP.md) owns scheduling and [game design](../Design/GAME_DESIGN.md#planned-paint-and-color-expansion) owns surface eligibility and lifecycle policy.
 
 ## Reviewed starting point
 
@@ -107,6 +107,14 @@ This increment is now saved and passes isolated actual-projectile collision chec
 ## Next learner increment: full-song paint coverage and readability
 
 Run one complete original song without changing duration or clock speed. Place recognizable early projectile marks on reachable approved surfaces, then play normally with held fire and balloon pops. Pause/resume once. At natural results, confirm early marks remain, later marks do not flicker or float, and accumulated paint has not made balloons/countdowns unreadable. Retry and confirm old marks are gone and current score resets while best score remains. Record placement/clarity failures separately from object counts and frame times. Editor observations are not standalone performance acceptance; capture standalone CPU/GPU frame-time data, repeated retries and soak according to the roadmap before packaging. Do not add timed fading or count-cap removal as an unmeasured workaround.
+
+## Current learner increment: deterministic direct-paint overwrite
+
+The learner saved a static order counter beginning at 100, resets it through a runtime initialization method, and assigns each newly created direct-impact mark's SpriteRenderers an increasing `sortingOrder`. This gives later direct hits a deterministic draw priority above background decoration at orders 0–2. The copied source builds with zero errors in the isolated generated project. Visual acceptance is still required.
+
+Review found one festival-duration boundary before acceptance: the saved reset currently uses `SubsystemRegistration`, so Retry scene loads do not reset the counter. Unity 6 restricts `Renderer.sortingOrder` to -32,768 through 32,767. Change only the existing initialization argument to `RuntimeInitializeLoadType.AfterSceneLoad`; the current Retry reload removes all old marks, so resetting to 100 after that load is safe. At the accepted six shots per second, one complete 123.429-second song can create at most about 741 direct-shot orders, well below the range. Do not add a paint-count cap or increase spatial offsets for this fix.
+
+This increment orders direct projectile marks only. Balloon-pop deposits still use their saved renderer order. First accept direct-hit overwrite on the central wall, side walls and floor; teach shared ordering for pop deposits later only if a visible conflict remains.
 
 ## Verified asset evidence and limits
 

@@ -1,0 +1,5 @@
+Saved scene reloaded and rendered at 1920x1080.
+Existing gameplay/physics/UI/camera components and their transforms unchanged.
+Two decorative meshes, six pigment materials, no added colliders/scripts/lights.
+Existing baked lightmaps retained; realtime fill, ambient colors and independent grade adjusted.
+Not a standalone release or interactive playtest.

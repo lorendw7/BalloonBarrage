@@ -1,10 +1,10 @@
 # Interface V2: assets and learner integration
 
-## October 18 author credit
+## October 19 author credit
 
-StartScreen now includes `Created by 何单东 Shandong He` at the bottom right, using deep green lettering over a cream backing plate. Both presentation objects ignore raycasts. A small renamed Noto CJK font subset covers printable ASCII and the exact name characters; its complete OFL notice and pinned provenance are bundled in `Fonts/AuthorCredit`. This is author-credit coverage only, not general Chinese/Japanese localization.
+StartScreen now presents the bottom-right author credit as a rounded warm-cream plaque with a fine brown outline, a muted teal accent, a small `CREATED BY` heading and a larger `何单东 Shandong He` name. At the Canvas reference size, the plaque is 320 × 82 with 32 units of right margin and 30 units of bottom margin. All four presentation objects ignore raycasts. Existing author Text/component IDs and the prefab GUID are preserved. A small renamed Noto CJK font subset covers printable ASCII and the exact name characters; its complete OFL notice and pinned provenance are bundled in `Fonts/AuthorCredit`. This is author-credit coverage only, not general Chinese/Japanese localization.
 
-Isolated native checks passed glyph availability, text fit, viewport bounds and nonoverlap at 720p, 1080p, 1440p, 4:3 and ultrawide, plus production-scene inheritance and the retained Start callback. `Previews/Start_AuthorCredit_1080p.png` is the visually reviewed native layout preview. Preparation never saves the production scene. Existing UI artwork, button callbacks and learner gameplay are retained.
+Isolated Unity 6000.0.77f1 native checks passed glyph availability, both text blocks fitting within the plaque, viewport bounds, no overlap with the footer/buttons, and disabled raycast targets at 720p, 1080p, 1440p, 4:3 and ultrawide. Production-scene inheritance and the retained Start/Quit callbacks also passed. `Previews/Start_AuthorCredit_1080p.png` is the visually reviewed native layout preview. Evidence is ignored under `.local-backups/author-credit-polish-20261019/unity.log`. Preparation never saves the production scene; learner gameplay source hashes remained unchanged. This is layout acceptance, not a standalone gameplay or release test.
 
 The new pack is in `Assets/StudioArtPack/InterfaceV2`. Open `InterfaceGallery.unity` to inspect the layouts. The production gameplay scene is still `Assets/Scenes/PrototypeScene.unity`.
 
