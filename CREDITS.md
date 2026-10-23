@@ -40,7 +40,9 @@ The five current WAVs in `Assets/Audio/Music` are original synthesized compositi
 
 ## UI fonts
 
-The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukasz Dziedzic / tyPoland, distributed under SIL Open Font License 1.1. Font binaries, the complete OFL notice and pinned source URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts`. Google Fonts revision: `5d3b76120a319730fda218cc7410174a462b32cb`. Source: [Google Fonts Lato](https://github.com/google/fonts/tree/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato). This license applies to the included font software; it does not alter song/model licenses. Lato fixes the current Latin-script UI; Japanese/Chinese font coverage remains separate localization work.
+The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukasz Dziedzic / tyPoland, distributed under SIL Open Font License 1.1. Font binaries, the complete OFL notice and pinned source URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts`. Google Fonts revision: `5d3b76120a319730fda218cc7410174a462b32cb`. Source: [Google Fonts Lato](https://github.com/google/fonts/tree/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato). This license applies to the included font software; it does not alter song/model licenses.
+
+The October 22 Japanese/English UI preparation adds unmodified M+ 1c Regular by Coji Morishita / M+ FONTS PROJECT under SIL Open Font License 1.1. The font, complete license and pinned URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts/Japanese`. Source revision: `0d4459efc913a91f33c3f08b219a5a95d282c7b8`; source: [M+ Fonts for Google Fonts](https://github.com/rayshan/mplus-fonts/tree/0d4459efc913a91f33c3f08b219a5a95d282c7b8). The asset is prepared for Japanese and Latin UI; runtime hookup, Unity glyph rendering and layout acceptance remain separate work. It does not establish Simplified Chinese UI acceptance.
 
 ## Downloaded rhythm study references
 

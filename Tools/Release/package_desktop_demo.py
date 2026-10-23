@@ -124,8 +124,14 @@ Do not sell this package. Read CREDITS.md and the bundled StepMania NOTICE.txt.
             )
         archive.writestr("README.txt", readme)
         archive.write(ROOT / "CREDITS.md", "CREDITS.md", zipfile.ZIP_DEFLATED)
-        for notice in ("CC-BY-3.0.txt", "CC0-1.0.txt"):
-            archive.write(ROOT / "Tools/Release/Notices" / notice, f"ThirdPartyNotices/{notice}", zipfile.ZIP_DEFLATED)
+        notices = {
+            "CC-BY-3.0.txt": ROOT / "Tools/Release/Notices/CC-BY-3.0.txt",
+            "CC0-1.0.txt": ROOT / "Tools/Release/Notices/CC0-1.0.txt",
+            "MPlus1C-OFL.txt": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/OFL.txt",
+            "MPlus1C-Provenance.json": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/provenance.json",
+        }
+        for notice, path in notices.items():
+            archive.write(path, f"ThirdPartyNotices/{notice}", zipfile.ZIP_DEFLATED)
         archive.writestr("RuntimeFiles.json", json.dumps(runtime_files, ensure_ascii=False, indent=2) + "\n")
 
     digest = sha256(output)

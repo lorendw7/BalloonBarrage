@@ -22,7 +22,7 @@ Use this runbook for the accepted Windows package at the Kyudaisai booth. It cov
    ```
 
 4. Disconnect or block network access if the venue run is intended to be offline, then launch `BalloonShooter.exe`.
-5. Complete Start, held fire, one ordinary hit, one timed bonus, Esc pause/resume, natural results, Retry and Quit. Confirm music remains audible during held fire.
+5. Complete Start, Japanese/English switching, held fire, one ordinary hit, one timed bonus, Esc pause/resume, natural results with trusted counters/streak, Retry and Quit. Confirm music remains audible and the custom spray feedback remains readable during held fire.
 6. Keep the accepted primary and fallback folders unchanged after this check. Record which package/hash passed.
 
 ## Player handoff

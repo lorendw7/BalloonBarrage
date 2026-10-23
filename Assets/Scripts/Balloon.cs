@@ -57,6 +57,8 @@ public class Balloon : MonoBehaviour
             return;
         }
 
+        Score.RegisterExpiredTarget();
+
         isPoping = true;
         gameObject.SetActive(false);
         Destroy(gameObject);
@@ -89,6 +91,7 @@ public class Balloon : MonoBehaviour
     {
         isPoping = true;
         Score.Add(points + bonusPoints);
+        Score.RegisterSuccessfulHit(bonusPoints > 0);
 
         if (bonusPoints > 0)
         {

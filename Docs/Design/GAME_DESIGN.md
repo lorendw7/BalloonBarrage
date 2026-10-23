@@ -1,6 +1,6 @@
 # Game design
 
-Updated: October 21, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). Exhibition experience additions below are planned, not implemented features of v0.1.0-demo.2.
+Updated: October 23, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). Current source saves the first statistics/streak/result-summary increment; public v0.1.0-demo.3 predates it. Bilingual switching and the new effect increments remain planned.
 
 ## Confirmed direction
 
@@ -15,6 +15,10 @@ Windows solo is the first acceptance baseline. A fixed camera and shared gallery
 Splatoon is a useful reference for three abstract qualities: firing paint visibly changes the space, color makes input consequences immediately readable, and shooting the environment can be pleasurable even without defeating an opponent. BalloonBarrage translates those qualities into its own fixed-camera rhythm studio: the room becomes a record of the player's two-minute performance, balloons provide readable focal targets, and the beat adds an optional accent. The official Splatoon reference is [Nintendo's gameplay overview](https://splatoon.nintendo.com/en/gameplay/); it is design research, not a source asset or a feature checklist.
 
 Do not copy Splatoon characters, names, UI, maps, weapon silhouettes, sound, music, team rules, turf scoring, ink-swimming movement or visual assets. BalloonBarrage's identity remains balloons, a warm indoor art studio, a complete-song rhythm structure, persistent personal paint and a calm solo exhibition experience. No Nintendo material is included or implied to be licensed.
+
+After Kyudaisai, design study may compare multiple games, including Splatoon, at the level of abstract mechanics, interaction clarity, pacing, camera language and environmental feedback. Each lesson must identify what player problem a reference solves, then create and test a BalloonBarrage-specific answer with original code, layouts, art and audio. A reference is evidence for a design question, not permission to reproduce its content or combine feature lists without a player-experience reason.
+
+An explorable 3D map is a post-festival teaching direction, not an exhibition promise. The first experiment should live in a separate graybox scene and preserve the accepted fixed-camera complete-song mode as a working baseline. It may investigate movement, camera control, landmarks, navigable studio spaces and paintable surfaces one system at a time. It should advance only if testing shows that exploration supports the relaxing rhythm-and-paint identity without making aiming, musical timing, comfort or performance less readable.
 
 ## Continuous-fire contract
 
@@ -65,19 +69,21 @@ The October 19 pattern-art follow-up prepares six silhouette families per pigmen
 
 ## Exhibition experience design
 
-**Planning status, October 21:** the creator confirms a casual, relaxing rhythm-game direction, unrestricted held fire and approximately 4–6 hours per day. Prioritize comfort, ordinary-hit satisfaction, readable rhythm, visible transformation of the room and a positive finish. Small result counters are conditional additions; streaks and milestone effects are optional, not festival requirements. Calendar, cuts and ownership live in the [roadmap](ROADMAP.md). This section defines proposed behavior, not saved code.
+**Implementation status, October 23:** the creator confirms a casual, relaxing rhythm-game direction, unrestricted held fire and approximately 4–6 hours per day. The first successful-hit, on-beat-hit, forgiving-streak and result-summary increment is saved in current source. Its focused accounting/Retry/layout acceptance remains open. Japanese/English switching and a bounded original ink-spray feedback pass remain pre-festival commitments. Milestone flourishes and extra variants remain optional. Calendar, cuts and ownership live in the [roadmap](ROADMAP.md).
 
 ### Player promise and pacing
 
 The intended rhythm is aim → fire → immediate accepted hit → pigment burst/paint → readable success/streak response → next target. On-beat success has a recognizable extra accent; ordinary hits still feel worthwhile. Preserve the unshortened song and roughly nine-second first-event intro. Players can already shoot/paint during the intro; explain this rather than adding off-chart tutorial targets.
 
-After the song, keep the painted studio visible behind a compact, friendly summary. Lead with a positive completion line, then the existing score/best score and, only if accepted, successful/on-beat hit counts. Retry is clear but optional. Do not foreground unanswered targets, accuracy grades, rankings or a broken combo. No health, ammunition, elimination, score subtraction, score multipliers, mid-song upgrades, random target rules or online leaderboard is required.
+After the song, keep the painted studio visible behind a compact, friendly summary. Lead with a positive completion line, then score, best score, successful hits, on-beat hits and maximum streak. Retry is clear but optional. Do not foreground unanswered targets, accuracy grades, rankings or a broken combo. No health, ammunition, elimination, score subtraction, score multipliers, mid-song upgrades, random target rules or online leaderboard is required.
 
 Exhibition copy should invite play without promising a medical stress-relief effect. Proposed short Japanese copy: "音楽に合わせて、気ままに風船を割ろう。" Controls should explicitly allow held fire and explain timed shots as an extra reward, with no need to hit every beat. Verify all glyphs before integration; this text is not yet saved game UI.
 
-### Event outcomes and statistics — planned
+### Event outcomes and statistics — partially saved
 
 Use the loaded chart's valid event identities as the denominator: 93 for this chart, not shots, paint marks or original lane taps. Each event starts unresolved and commits one terminal outcome: ordinary hit, on-beat hit or missed/unanswered event. A shared accepted resolution keeps score, counters and streak consistent and retains the existing target hit guard. Unknown/unbound ids do not contribute to chart statistics; duplicate outcomes cannot emit another success/effect.
+
+The October 23 source checkpoint increments successful hits and current/maximum streak only after `Balloon.Hit` passes the balloon's existing one-pop guard; the saved positive bonus selects the on-beat subset. An unresolved balloon reaching the existing cleanup deadline resets current streak, and `Score.ResetScore` clears all round values. This does not yet implement the proposed missed-event total, a separate event-outcome registry or final settlement accounting. The focused cases below and natural Results/Retry flow remain required before acceptance.
 
 | Value | Definition |
 |---|---|
@@ -91,7 +97,7 @@ Preserve complete-song end, 3.1-second cleanup and two-second projectile lifetim
 
 At a natural completed round require `successfulHits + missedEvents = chartEventCount`, `onBeatHits <= successfulHits`, and `ordinaryHits = successfulHits - onBeatHits`. With unchanged rewards, `finalScore = 10 * successfulHits + 10 * onBeatHits`. Five hits including two on-beat hits mean three ordinary hits and 70 points, not seven hits. No accuracy percentage or S/A/B grade is required.
 
-### Forgiving hit streak — optional, deferred until the core experience passes
+### Forgiving hit streak — committed for the exhibition
 
 - Start current and maximum streak at zero. Accepted ordinary/on-beat event hits increment current and update maximum, in actual resolution order rather than trigger-pull order.
 - Accepted unanswered-target expiry resets current streak. Merely passing the scheduled beat does not: preserve the saved cleanup/grace behavior.
@@ -112,21 +118,21 @@ These are starting trials, not accepted final values. Improve silhouette, timing
 | Arrival | Visual child about 85% → 103% → 100% scale over 0.20 seconds | Fixed root Rigidbody/collider; verify visual/hit alignment and remove overshoot if needed |
 | Ordinary hit | Immediate outcome/score lock and collider disable, then about 0.06-second visual-child squash; independent pigment burst/deposits | Trigger once; delayed visual destruction cannot leave a live target or duplicate score |
 | On-beat hit | Matching pigment plus clearer small gold ring/sparkle and an optional brief audio accent | Initially preserve existing 35% burst enlargement and selected 1.45-second reward text; no full-screen flash or extra paint queries |
-| Streak | One small count with a restrained approximately 0.12-second scale pulse | No text object spawned per hit; keep aim/next-event cue visible |
+| Streak | One small count with a restrained approximately 0.12-second scale pulse | No text object spawned per hit; keep aim/next-event cue visible; no score multiplier |
 | Milestone | Trial accents at streak 5, 10 and 20 using existing palette/effects | Replace/retrigger one slot, never queue labels or overlapping accent voices; optional polish is cut first |
-| Results/new record | Positive completion line, visible painted studio, score/best, and reliable hit/on-beat counts if included; maximum streak only if that optional feature ships | No failure-focused Miss count or grade. Save strict record improvement once; ties/lower results still get a welcoming finish |
+| Results/new record | Positive completion line, visible painted studio, score/best, reliable hit/on-beat counts and maximum streak | No failure-focused Miss count or grade. Save strict record improvement once; ties/lower results still get a welcoming finish |
 
 Animate explicit visual children. Do not animate the dynamic root or stop global time for hit stop. Logical muzzle, aim, collisions and music remain independent. Moving the burst to the exact projectile hit point is a later refinement if it needs another API/call-site change; it must not delay accepting a simpler squash.
 
 Audition sound against music during dense held fire. Keep the accepted base shot audible without masking the track. A new on-beat accent is brief with bounded overlap; do not change music speed/pitch or duck the whole track by default. Retain at most 32 particles per pop and the two-second transient fallback until a measured revision is accepted.
 
-Keep persistent paint through results, without a count cap, timed fade or oldest-first removal. Preserve pigment and actual contact on the four accepted flat receivers. Fix flicker/floating marks/target contrast before adding furniture or curved projection. Extra bob, richer milestone effects and result ornaments are optional cuts.
+Keep persistent paint through results, without a count cap, timed fade or oldest-first removal. Preserve pigment and actual contact on the four accepted flat receivers. The pre-festival spray pass may strengthen custom muzzle spray, liquid projectile motion, impact splat/pop and on-beat/streak accents, but must use original or attributed project assets. It must not reproduce Splatoon assets, UI, fonts, weapon/character designs, sounds or territory-control rules. Fix flicker/floating marks/target contrast before adding extra variants, furniture or curved projection. Extra bob, richer milestone effects and result ornaments are optional cuts.
 
 ### Exhibit communication and acceptance — planned
 
-Use concise Japanese-first instructions with checked glyphs: mouse aim, held fire, fire near countdown zero for a matching-target bonus, Esc pause and Retry. Static exhibit copy is sufficient; runtime language selection is not required. The small author-credit font does not cover Japanese instructions.
+Use concise Japanese-first instructions with checked glyphs: mouse aim, held fire, fire near countdown zero for a matching-target bonus, Esc pause and Retry. The exhibition UI defaults to Japanese and offers English from the same screen hierarchy, with a persisted choice and refreshed dynamic labels. Simplified Chinese data may remain prepared but is not part of the festival runtime commitment. The small author-credit font does not cover Japanese instructions; the prepared M+ 1c asset requires Unity glyph/layout acceptance.
 
-Observe unfamiliar players before adding more effects, including someone who rarely plays rhythm games. Ask whether ordinary popping feels good, timing adds a recognizable bonus, targets remain visible and anything feels tiring or punishing. A relaxed completed round matters more than a higher score or a forced retry. Change one parameter at a time. Native layout checks, synthetic outcomes, manual feel reports and clean-player measurements remain distinct evidence. All new statistics, streaks, entrance/squash and record flourishes remain unimplemented until saved and accepted.
+Observe unfamiliar players before accepting the new effects, including someone who rarely plays rhythm games. Ask whether ordinary popping feels good, timing adds a recognizable bonus, targets remain visible and anything feels tiring or punishing. A relaxed completed round matters more than a higher score or a forced retry. Change one parameter at a time. Native layout checks, source/reference checks, synthetic outcomes, manual feel reports and clean-player measurements remain distinct evidence. Saved statistics/streak/result bindings are not accepted until their focused Play Mode cases pass; language switching and new effect increments remain unimplemented.
 
 ## Feedback and aiming targets
 
@@ -158,7 +164,7 @@ The initial run can end after its authored stages with a final score; health, es
 
 A proposed compact content target is two or three rights-checked songs with approachable and standard chart choices. Reuse the accepted track while testing the selection workflow. Song, chart, difficulty and rules version need stable identities so the audio, event list, attribution and saved record always agree. Preserve complete-song intros/endings and the existing timing subset until additional timing/note types are explicitly supported.
 
-The exhibition plan conditionally includes a small positive result summary and successful/on-beat counts defined in [Exhibition experience design](#exhibition-experience-design); a hit streak is optional. These remain planned: saved cleanup is not a formal Miss counter, and current scoring has no streak or accuracy. Unanswered-event totals support internal correctness checks, not a failure-focused results screen. Judge firing time first but commit success only after matching impact. More elaborate statistics require separate design/testing.
+The current source extends the small result summary with successful hits, on-beat hits and maximum streak as defined in [Exhibition experience design](#exhibition-experience-design). The values use the accepted balloon impact and existing cleanup path, but saved cleanup is not yet a formal event-outcome registry and no missed-event total or accuracy exists. Unanswered-event totals support future internal correctness checks, not a failure-focused results screen. Judge firing time first but commit success only after matching impact. Accuracy, grades and more elaborate statistics require separate design/testing.
 
 Local best score for Goin' Under / Beginner / solo / the current scoring-rules version is saved in v0.1.0-demo.2 with isolated higher/lower/retry/relaunch/display checks. Missing data defaults to zero; persist only a strict completed-round improvement and retain it on retry. Exhibition-PC acceptance remains separate. The new-record flourish above is planned; v0.1.0-demo.1 does not contain this record feature.
 
@@ -170,7 +176,7 @@ Controller/co-op work is deferred at the creator’s request; the roadmap owns i
 
 P1 aims with the mouse and fires with the left button. P2 moves a bounded reticle with the right stick and fires with RT; Xbox Menu/Start or keyboard Esc can pause. Menu navigation has a designated owner and must not fire into the scene. Pause on the paired pad's disconnect; reconnect that player's device or return to the title to choose solo. Retain release-before-fire behavior independently on start, resume and reconnect. Resolve simultaneous target hits once through the existing hit guard. Rumble is deferred. See [controller preparation](CONTROLLER_SETUP.md) for the supplied configuration and hardware checks; gameplay integration is still planned.
 
-Game UI targets Chinese, Japanese, and English. Text data exists; runtime switching and font coverage are pending. Exhibition readability prioritizes Japanese. See [localization](../Art/LOCALIZATION.md).
+Translation data targets Chinese, Japanese and English. The festival runtime commitment exposes Japanese and English, defaults to Japanese when no preference exists, and persists switching without duplicating screens. The Japanese/Latin font asset is prepared, while runtime hookup and Unity glyph/layout acceptance remain pending. Simplified Chinese runtime support follows later. See [localization](../Art/LOCALIZATION.md).
 
 ## Planned paint and color expansion
 

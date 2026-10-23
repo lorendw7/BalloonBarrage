@@ -67,6 +67,9 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     private AudioSource gameMusic;
 
+    [SerializeField]
+    private Text resultStatsText;
+
     private void Start()
     {
         IsPaused = false;
@@ -270,6 +273,14 @@ public class RoundController : MonoBehaviour
         if (bestScoreText != null)
         {
             bestScoreText.text = bestScore.ToString("D6");
+        }
+
+        if (resultStatsText != null)
+        {
+            resultStatsText.text =
+                $"Hits: {Score.SuccessfulHits}\n" +
+                $"On-beat Hits: {Score.OnBeatHits}\n" +
+                $"Max Streak: {Score.MaximumStreak}";
         }
 
         if (resultsScreen != null)

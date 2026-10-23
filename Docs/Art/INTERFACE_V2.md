@@ -8,7 +8,13 @@ Isolated Unity 6000.0.77f1 native checks passed glyph availability, both text bl
 
 The new pack is in `Assets/StudioArtPack/InterfaceV2`. Open `InterfaceGallery.unity` to inspect the layouts. The production gameplay scene is still `Assets/Scenes/PrototypeScene.unity`.
 
-**Status:** StartScreen, PauseScreen, GameplayHUD and ResultsScreen are connected in PrototypeScene. Start/Resume/Quit/Play Again callbacks and live score/time/final-score Text values are saved; the old OnGUI display is removed. Isolated checks cover the Canvas flow, and the learner reports pause, HUD and new results playtests passed. PlayerShooter now has release/pointer guards, and the scene disables legacy PaintGunVfx. Final physical-input acceptance remains pending; prepared gamepad actions are not connected to gameplay. See the [validation record](../Project/VALIDATION.md) for evidence and limits. Do not add the gallery scene to the game build as a playable level.
+**Status:** StartScreen, PauseScreen, GameplayHUD and ResultsScreen are connected in PrototypeScene. Start/Resume/Quit/Play Again callbacks and live score/time/final-score Text values are saved; the old OnGUI display is removed. The current source also binds successful hits, on-beat hits and maximum streak to one new ResultsScreen Text. Static reference/layout review is complete, and the creator visually confirmed the populated natural result screen in Unity's 2K Game view. Focused value/Retry checks, other supported layouts and standalone acceptance remain open. Earlier isolated checks cover the Canvas flow, and the learner reports pause, HUD and earlier results playtests passed. PlayerShooter now has release/pointer guards, and the scene disables legacy PaintGunVfx. Final physical-input acceptance remains pending; prepared gamepad actions are not connected to gameplay. See the [validation record](../Project/VALIDATION.md) for evidence and limits. Do not add the gallery scene to the game build as a playable level.
+
+## October 23 result-statistics block
+
+`ResultsScreen/Dialog/ResultStatsText` is one centered, non-raycasting legacy Text block for successful hits, on-beat hits and maximum streak. At the 1600 × 900 reference layout it is 420 × 80 at `(0, -123)`, uses Lato Regular at 21 points and sits between the best-score row and the Play Again button. Play Again is at `(0, -208)` and the return hint is at `(0, -275)`. `RoundController.resultStatsText` references the scene instance and writes the three English lines before showing ResultsScreen.
+
+These saved coordinates and serialized references passed static inspection. The creator's October 23 screenshot shows the populated `ROUND COMPLETE` state at 2560 × 1440 with final/best 000920, 85 hits, 7 on-beat hits and maximum streak 44; the creator described the result as perfect. Treat that as creator-reported visual acceptance of this 2K layout, not proof of the individual accounting cases. Verify Retry reset, the 5/2/70 identity, expiry behavior, other supported aspect ratios and the exact standalone candidate. Runtime localization must replace the hard-coded English formatting rather than duplicate this block.
 
 ## Aim reticle handoff
 
@@ -62,10 +68,10 @@ The saved instance is connected under GameplayHUD at (0, 80), with bottom-center
 | StartScreen | startScreen; StartButton → BeginRound; QuitButton → QuitGame | Final physical-input acceptance |
 | PauseScreen | pauseScreen; ResumeButton → ResumeRound; QuitButton → QuitGame | Final physical-input acceptance |
 | GameplayHUD | gameplayHUD; ScoreValue → scoreText; TimeValue → timeText | Final graphical/full-round acceptance |
-| ResultsScreen | resultsScreen; FinalScoreValue → finalScoreText; hidden in Start and shown/written in EndRound | Final graphical/full-round acceptance |
+| ResultsScreen | resultsScreen; FinalScoreValue → finalScoreText; BestScoreValue → bestScoreText; ResultStatsText → resultStatsText; hidden in Start and shown/written in EndRound | New statistics need natural-end/Retry and supported-layout acceptance |
 | ResultsScreen/Dialog/PlayAgainButton | RestartRound callback to the scene controller | Final physical-input acceptance |
 
-The finished state now shows ResultsScreen and its captured final score. The asset's sample 001250 is replaced by EndRound before the panel appears. Play Again reloads the scene and returns to Start. Unused DrawStartMenu/DrawPauseMenu methods remain in the learner source but do not render by themselves.
+The finished state now shows ResultsScreen with captured final/best scores and the three saved round statistics. The asset's sample values are replaced by EndRound before the panel appears. Play Again reloads the scene and returns to Start. Unused DrawStartMenu/DrawPauseMenu methods remain in the learner source but do not render by themselves.
 
 There is one EventSystem and one controller. The four screen roots own separate canvases; no wrapper Canvas is needed. Keep RoundController outside UI roots that can be disabled. HUD raycast targets are off. The saved shooter uses its release flag and UI-pointer guard.
 
@@ -85,7 +91,7 @@ The V2 art uses cream paper, walnut frames, coral primary actions and teal resum
 | Textures/InterfaceAtlas_v2.png | Original transparent 1254 × 1254 generated sheet, nine named sprites |
 | Prefabs/StartScreen.prefab | Title, short instructions, Start and Quit |
 | Prefabs/PauseScreen.prefab | Dimmed room, Resume and Quit |
-| Prefabs/ResultsScreen.prefab | Final score and Play Again |
+| Prefabs/ResultsScreen.prefab | Final/best scores, successful/on-beat/max-streak summary and Play Again |
 | Prefabs/InstructionsScreen.prefab | Optional separate help layout with Back; navigation is not implemented |
 | Prefabs/GameplayHUD.prefab | Top-left score and top-right remaining time |
 | InterfaceGallery.unity | Presentation sandbox; only StartScreen is initially active |

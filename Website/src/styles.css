@@ -159,7 +159,7 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .studio-feature img { display: block; width: 100%; height: auto; }
 .studio-feature .eyebrow { color: var(--teal); font-size: .75rem; margin-bottom: .5rem; }
 .studio-feature .update-copy { max-width: 80ch; }
-.updates-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.updates-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
 .update-card { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .update-card .art-open { padding: .6rem; background: #f6f0df; }
 .update-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; }
@@ -191,6 +191,7 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 }
 @media (min-width: 621px) and (max-width: 800px) {
   .art-grid { gap: 1rem; }
+  .updates-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   html { scroll-padding-top: 1.5rem; }

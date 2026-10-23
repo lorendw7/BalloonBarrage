@@ -10753,6 +10753,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1008670705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4443584958487403767, guid: 40e55f231beec4e4880938f99bc26073, type: 3}
+  m_PrefabInstance: {fileID: 1008670702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1016191743
 GameObject:
   m_ObjectHideFlags: 0
@@ -12693,6 +12704,7 @@ MonoBehaviour:
   bestScoreText: {fileID: 1241126544}
   menuMusic: {fileID: 43571004}
   gameMusic: {fileID: 1059022383}
+  resultStatsText: {fileID: 1008670705}
 --- !u!4 &1178834978
 Transform:
   m_ObjectHideFlags: 0

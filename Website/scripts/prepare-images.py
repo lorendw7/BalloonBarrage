@@ -18,8 +18,11 @@ WEBP_QUALITY = 92
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
 DEVELOPMENT_CAPTURE = "Assets/Art/Previews/Gameplay_Development_20261019.png"
 DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
+RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
+RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
     "gameplay-development-20261019": DEVELOPMENT_CAPTURE,
+    "results-statistics-20261023": RESULTS_CAPTURE,
     "palette": "Assets/Art/Previews/Palette_20261019.png",
     "menu-background": "Assets/StudioArtPack/Menu/MenuBackground_v1.png",
     "gameplay-demo2": CAPTURE,
@@ -57,17 +60,25 @@ def main():
             continue
         source = ROOT / relative
         image = Image.open(source).convert("RGB")
+        if name == "results-statistics-20261023":
+            image = image.crop((0, 68, image.width, image.height - 34))
         image.thumbnail(WEB_MAX_SIZE, Image.Resampling.LANCZOS, reducing_gap=3.0)
         output = MEDIA / f"{name}.webp"
         image.save(output, "WEBP", quality=WEBP_QUALITY, method=6)
         records.append({"source": relative, "source_sha256": digest(source),
                         "output": output.relative_to(ROOT).as_posix(),
                         "output_sha256": digest(output), "dimensions": list(image.size),
-                        "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"})
+                        "preparation": (
+                            "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 92, method 6"
+                            if name == "results-statistics-20261023"
+                            else "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                        )})
         if name in PREVIEW_ATTRIBUTIONS:
             records[-1]["attribution"] = PREVIEW_ATTRIBUTIONS[name]
         elif relative == DEVELOPMENT_CAPTURE:
             records[-1]["attribution"] = DEVELOPMENT_ATTRIBUTION
+        elif relative == RESULTS_CAPTURE:
+            records[-1]["attribution"] = RESULTS_ATTRIBUTION
     if selected:
         provenance = MEDIA / "provenance.json"
         previous = json.loads(provenance.read_text(encoding="utf-8")) if provenance.exists() else []

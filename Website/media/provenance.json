@@ -159,5 +159,17 @@
     ],
     "preparation": "Fit entire capture within 1200x675 with centered cream padding, no crop or distortion; Lanczos; RGB JPEG quality 88, optimized",
     "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
+  },
+  {
+    "source": "Website/media/results-statistics-20261023.png",
+    "source_sha256": "7f42dc4e9b028602475878f00a0d602d4f374e29fba00d251b0bb4d1b7d58f9e",
+    "output": "Website/media/results-statistics-20261023.webp",
+    "output_sha256": "669c0654a10e6e10df0f4da61c953b4417f004beb70c6888b3a8e328dc53c0e2",
+    "dimensions": [
+      1349,
+      783
+    ],
+    "preparation": "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 92, method 6",
+    "attribution": "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
   }
 ]

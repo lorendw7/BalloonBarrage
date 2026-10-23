@@ -106,6 +106,8 @@ RuntimeFiles.json records SHA-256 for every unchanged original runtime file.
         "CC-BY-3.0.txt": ROOT / "Tools/Release/Notices/CC-BY-3.0.txt",
         "CC0-1.0.txt": ROOT / "Tools/Release/Notices/CC0-1.0.txt",
         "Lato-OFL.txt": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/OFL.txt",
+        "MPlus1C-OFL.txt": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/OFL.txt",
+        "MPlus1C-Provenance.json": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/provenance.json",
         "UnityCompanionLicense.md": ROOT / "Assets/StudioArtPack/ConceptVariantsV12/Shaders/UnityCompanionLicense.md",
     }.items():
         extra[f"ThirdPartyNotices/{name}"] = path.read_bytes()

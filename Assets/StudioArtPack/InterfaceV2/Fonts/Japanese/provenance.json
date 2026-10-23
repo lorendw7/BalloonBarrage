@@ -1,0 +1,20 @@
+{
+  "revision": "0d4459efc913a91f33c3f08b219a5a95d282c7b8",
+  "license": "SIL Open Font License 1.1",
+  "source": "https://github.com/rayshan/mplus-fonts",
+  "files": [
+    {
+      "sha256": "08fa251f274a9f9409746df661cb8ed7eed0da8cfcb679921702f903e1d7d7dc",
+      "bytes": 1664136,
+      "url": "https://raw.githubusercontent.com/rayshan/mplus-fonts/0d4459efc913a91f33c3f08b219a5a95d282c7b8/fonts/mplus-1c-regular.ttf",
+      "file": "MPlus1C-Regular.ttf"
+    },
+    {
+      "sha256": "1bd6eceefce3edcb25cad3d5a4fbec6405d66946a6672daf69fe667c7e52f591",
+      "bytes": 4375,
+      "url": "https://raw.githubusercontent.com/rayshan/mplus-fonts/0d4459efc913a91f33c3f08b219a5a95d282c7b8/OFL.txt",
+      "file": "OFL.txt"
+    }
+  ],
+  "retrieved": "2026-10-22"
+}
