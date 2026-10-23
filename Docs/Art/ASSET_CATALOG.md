@@ -18,7 +18,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack/ColorRefresh20261020 | Two native side-wall mural meshes, six pigment materials, independent brighter color grade and before/after Unity inspection renders; see [color refresh](STUDIO_COLOR_REFRESH.md) |
 | Assets/StudioArtPack/SurfaceRefresh20261020 | Original procedural plaster/mineral-floor PBR maps, two materials, ten render-mesh UV variants and native Unity before/after inspection renders; see [surface pass](STUDIO_COLOR_REFRESH.md#plaster-and-mineral-floor-materials) |
 | Assets/StudioArtPack/ExhibitionV8 | Four-wall closure, refreshed reflection, prepared paint-pop variants and camera previews |
-| Assets/StudioArtPack/BalloonColors | Coral/gold latex materials and a current-source three-color prefab connected in PrototypeScene, with creator-reported color/scoring passes; V12 keeps its separate six-pigment set |
+| Assets/StudioArtPack/BalloonColors | Eight indexed balloon/projectile pigments and matching persistent marks connected in PrototypeScene; focused isolated checks are recorded separately from full-song readability/load |
 | Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
 | Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019 | Native production gun shell, six mesh/material batches, concept-style horizontal reservoir, source hashes and Unity before/after inspection renders |
 | Assets/StudioArtPack/PaintBlaster/MixedPigment20261020 | Production multicolor marbled liquid, separated teal body mesh, reservoir calibration marks and native Unity previews; eight cosmetic batches in the updated gun |
@@ -34,7 +34,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 
 ## Integration guides
 
-- [Balloon color lesson](BALLOON_COLOR_LESSON.md): current-source three-color prefab, one spawner hookup and matched-burst acceptance.
+- [Balloon color lesson](BALLOON_COLOR_LESSON.md): current-source eight-color prefab, indexed projectile/mark hookup, matched bursts and verification limits.
 
 - [Surface paint lesson](SURFACE_PAINT_LESSON.md): current learner increment; connect the prepared small wall mark before adding the projectile hit branch.
 

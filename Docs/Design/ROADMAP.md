@@ -32,13 +32,13 @@ The beat-approach fill is saved and connected to the chart/song clock. The exist
 
 | Area | Saved or observed evidence | Still required |
 |---|---|---|
-| Public package | GitHub prerelease v0.1.0-demo.3 contains locally built Windows x64 and unsigned/unnotarized macOS Universal ZIPs; compilation, structure and hashes are recorded | Windows target-PC core-flow/soak acceptance; real-Mac launch/audio/input/complete-song acceptance. Publication is not acceptance |
+| Public package | GitHub prerelease v0.1.0-demo.4 contains Windows x64 and unsigned/unnotarized macOS Universal ZIPs from `2ad092d`; both compiled with zero errors and passed CRC/manifest/notices/hash checks; fresh Windows extraction passed startup smoke | Windows target-PC full-song/Retry/soak acceptance; real-Mac launch/audio/input/complete-song acceptance. Publication is not acceptance |
 | Current source | Eight pigments, matching pop/projectile marks, six pattern families, random pattern/rotation/scale | Latest combined-source complete-song and clean-package checks; configurable-angle revision has source review only |
 | Current art | Brighter side walls, six-color murals, plaster/mineral floor, multicolor reservoir, author plaque; isolated native renders and component checks | In-play target contrast, latest combined-build load and actual-machine performance; indirect lighting/reflections have not been rebaked |
 | Input/feedback | Saved pointer, firing audio, bounded recoil, on-beat feedback and chart-clock-driven approach fill; creator-reported earlier spot checks | Tapping versus held-fire listening test, cue clarity, pause/focus/Retry on final hardware |
 | Statistics/results | Successful-hit/on-beat counters, current/maximum streak, reset paths and ResultsScreen binding are saved; creator visually confirmed the populated 2K result layout | Focused 5/2/70, duplicate/expiry, Retry, other-layout and exact-package acceptance before freeze; no missed-event denominator yet |
 | Performance | Earlier instrumented full song with 610 marks; ten diagnostic reloads; earlier Editor snapshots | At least 30 minutes of real full-song/retry use, memory/object trends, target-PC frame times |
-| Website | Trilingual site publishes the demo.3 Windows/macOS prerelease links and platform limitations; offline build and link checks passed | Keep prerelease/test limitations accurate; web checks are not Unity acceptance |
+| Website | Trilingual site has current result imagery/copy and resolves both demo.4 platform assets; all 12 local checks passed, deployment completed and the three live routes returned HTTP 200 with the new version/image | Keep release limits accurate; web checks are not Unity acceptance |
 
 October 19–20 time included art and learner paint work. Earlier scheduled counter/streak sessions are not treated as completed. Do not compress missed scope into the remaining days.
 
@@ -53,7 +53,7 @@ October 19–20 time included art and learner paint work. Earlier scheduled coun
 | P1: forgiving streak | Current and maximum streak derived from accepted event outcomes | Accepted target expiry resets; empty shots, wall paint, held fire and pause do not; a quiet reset must not feel punitive |
 | P1: original spray feedback | Coherent custom muzzle spray, projectile liquid motion, impact splat/pop and clearer on-beat/streak accents | Use project-created/attributed assets only. Do not copy Splatoon assets, UI, fonts, weapons, characters, sounds or territory-control rules |
 | Optional: cut first | Extra spray variants, milestone 5/10/20 flourishes, extra bob, new-record animation, further art/reflection bake | Cut ornament before any committed counter, language path or baseline reliability check |
-| Parallel delivery experiment | A local macOS Universal demo.3 candidate is published beside Windows from the same commit | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
+| Parallel delivery experiment | A local macOS Universal demo.4 candidate is published beside Windows from the same commit | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
 | After festival | Song selection, accessibility/calibration settings, multi-game design study, an explorable 3D-map teaching track, controller/co-op, macOS signing/notarization and broader support | Separate small milestones; preserve the accepted fixed-camera mode and make no assumed festival-ready Mac port |
 | Exploratory only | Roguelite runs, upgrades, armored/splitter/chain targets | Reassess against the relaxing rhythm identity before committing; not the default product promise |
 

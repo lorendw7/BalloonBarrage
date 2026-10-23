@@ -2,6 +2,16 @@
 
 Updated: October 23, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
 
+## v0.1.0-demo.4 desktop prerelease and website, October 23
+
+Commit `2ad092dcc99cec7ee61554334b2ab1cacf8e46f9` was pushed to `main` and checked out into a separate detached worktree with complete Git LFS content. Unity `6000.0.77f1` produced non-Development players from that exact commit. Windows x64: **Succeeded**, zero errors, two existing warnings, 183,599,164 reported bytes and 161.130 seconds. macOS Universal: **Succeeded**, zero errors, two existing warnings, 199,632,296 reported bytes and 156.350 seconds. These are compilation reports, not gameplay acceptance.
+
+The immutable Windows ZIP is **72,625,787 bytes**, with 193 runtime files / 200 total entries and SHA-256 **`c10f71ab0a2b7685dd78d3baadd7d061709c1f721ab29106896a761fdd4858e5`**. The macOS ZIP is **81,316,926 bytes**, with 195 runtime files / 202 total entries and SHA-256 **`0286dcfbd2afdfc9864bbf628c3f12715f24e5190ed0ac29c0870b236db143fa`**. Both archives passed full ZIP CRC, required launcher/data paths, runtime-manifest parsing, `DoNotShip`/backup exclusion and presence of README, credits, M+ OFL and pinned M+ provenance. Focused packager tests passed. GitHub's uploaded ZIP sizes and computed SHA-256 digests match the local files.
+
+A fresh Windows ZIP extraction launched for a 15-second startup smoke without early exit. Its player log initialized Direct3D 11, input and physics, loaded best score zero, read Goin' Under successfully and reported 93 events / first event 9.143 seconds. No fatal, crash, null/missing-reference, compile or failed-load pattern matched. The test then deliberately stopped the process; it did not click Start, play audio, finish a song or exercise Retry.
+
+[v0.1.0-demo.4](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.4) was published as a prerelease with Windows/macOS ZIPs and checksum sidecars. Release notes preserve the noncommercial music restriction and explicitly leave focused 5/2/70, expiry/Retry, 30-minute exhibition-PC and real-Mac acceptance open. A networked website build resolved both demo.4 platform assets; the offline trilingual build and all 12 website tests passed, including translation parity, trusted release selection, media provenance/hash checks, built links, content-addressed CSS/JS and preview path safety. The release-triggered GitHub website workflow completed successfully. The deployed Chinese root, `/ja/` and `/en/` each returned HTTP 200 and contained both the demo.4 version and new result-image reference. Web success does not validate either Unity player.
+
 ## Statistics, streak and ResultsScreen source checkpoint, October 23
 
 The learner's saved `Score` source now owns successful-hit, on-beat-hit, current-streak and maximum-streak round values. `Balloon.Pop` registers a successful hit after the existing one-pop guard and uses the already accepted positive bonus to select the on-beat subset. `Balloon.CheckExpiry` resets current streak for an unresolved target after the existing 3.1-second cleanup deadline. `ResetScore` clears score and all four new values; maximum streak does not affect score.
@@ -10,7 +20,7 @@ The learner's saved `Score` source now owns successful-hit, on-beat-hit, current
 
 The creator then supplied a 2560 × 1440 Unity Game-view screenshot of the populated `ROUND COMPLETE` screen and described it as perfect. It visibly shows final/best score 000920, 85 hits, 7 on-beat hits, maximum streak 44, Play Again and the return hint without overlap. This is creator-reported natural-result and 2K visual acceptance for the current Unity source, not a standalone-package capture or proof of the focused counter/expiry/Retry identities. The original screenshot and a non-generatively cropped WebP derivative are recorded in website media provenance.
 
-Still open: run five accepted hits including two on-beat hits and confirm 70 points / 5 hits / 2 on-beat; exercise duplicate, wall and empty-shot exclusions; let an unresolved target expire and confirm current resets while maximum remains; Retry and confirm all round values return to zero while best score persists; check other supported layouts and the exact standalone package. No new public package contains this checkpoint yet.
+Still open: run five accepted hits including two on-beat hits and confirm 70 points / 5 hits / 2 on-beat; exercise duplicate, wall and empty-shot exclusions; let an unresolved target expire and confirm current resets while maximum remains; Retry and confirm all round values return to zero while best score persists; check other supported layouts and the exact standalone package. Public demo.4 contains this checkpoint, but publication does not close those acceptance cases.
 
 ## October 22 planning and localization preparation
 
