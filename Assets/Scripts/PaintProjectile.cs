@@ -33,6 +33,10 @@ public class PaintProjectile : MonoBehaviour
     private const int FirstPaintSortingOrder = 100;
     private static int nextPaintSortingOrder = FirstPaintSortingOrder;
 
+    public int PigmentCount => Mathf.Min(
+        pigments?.Length ?? 0,
+        paintPatternGroups?.Length ?? 0);
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void ResetPaintSortingOrder()
     {
@@ -67,6 +71,97 @@ public class PaintProjectile : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, lifetime);
+    }
+
+    public Color GetPigmentColor(int pigmentIndex)
+    {
+        if (PigmentCount <= 0)
+        {
+            return new Color(0.025f, 0.62f, 0.69f, 1f);
+        }
+
+        int safeIndex = Mathf.Clamp(
+            pigmentIndex,
+            0,
+            PigmentCount - 1);
+
+        Material pigment = pigments[safeIndex];
+
+        if (pigment != null && pigment.HasProperty("_BaseColor"))
+        {
+            return pigment.GetColor("_BaseColor");
+        }
+
+        return Color.white;
+    }
+
+    public void SpawnPaintMark(RaycastHit hit)
+    {
+        SpawnPaintMark(hit, 0);
+    }
+
+    public void SpawnPaintMark(RaycastHit hit, int pigmentIndex)
+    {
+        string surfaceName = hit.collider.name;
+
+        bool isPaintableSurface =
+            surfaceName == "MainWall" ||
+            surfaceName == "Floor" ||
+            surfaceName == "LeftWall" ||
+            surfaceName == "RightWall";
+
+        if(!isPaintableSurface ||
+            paintPatternGroups == null ||
+            paintPatternGroups.Length == 0)
+        {
+            return;
+        }
+
+        int groupIndex = Mathf.Clamp(
+            pigmentIndex,
+            0,
+            paintPatternGroups.Length - 1);
+
+        GameObject[] patterns = paintPatternGroups[groupIndex].prefabs;
+
+        if (patterns == null || patterns.Length == 0) { return; }
+
+        int patternIndex = pigmentRandom.Next(patterns.Length);
+
+        GameObject selectedPrefab = patterns[patternIndex];
+
+        if(selectedPrefab == null) { return; }
+
+        Vector3 position = hit.point + hit.normal * 0.005f;
+
+        Quaternion rotation = Quaternion.LookRotation(hit.normal);
+
+        GameObject mark = Instantiate(
+            selectedPrefab, position, rotation);
+
+        int sortingOrder = nextPaintSortingOrder++;
+
+        foreach(SpriteRenderer spriteRenderer in mark.GetComponentsInChildren<SpriteRenderer>(true))
+        {
+            spriteRenderer.sortingOrder = sortingOrder;
+        }
+
+        float angle = ((float)pigmentRandom.NextDouble() * 2f - 1f) * paintRotationRange;
+
+        mark.transform.Rotate(
+            0f,
+            0f,
+            angle,
+            Space.Self);
+
+        float scaleMultiplier = 0.8f + (float)pigmentRandom.NextDouble() * 0.4f;
+
+        mark.transform.localScale *= scaleMultiplier;
+
+        PaintMarkImpactPulse impactPulse =
+            mark.AddComponent<PaintMarkImpactPulse>();
+
+        impactPulse.Initialize(mark.transform.localScale);
     }
 
     private void Update()
@@ -127,6 +222,11 @@ public class PaintProjectile : MonoBehaviour
                 float scaleMultiplier = 0.8f + (float)pigmentRandom.NextDouble() * 0.4f;
 
                 mark.transform.localScale *= scaleMultiplier;
+
+                PaintMarkImpactPulse impactPulse =
+                    mark.AddComponent<PaintMarkImpactPulse>();
+
+                impactPulse.Initialize(mark.transform.localScale);
 
             }
 

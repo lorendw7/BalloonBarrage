@@ -2693,7 +2693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478852827612851137, guid: 987530bb311f6864b921033d4a5fbf82, type: 3}
       propertyPath: popPoint
-      value: 
+      value:
       objectReference: {fileID: 26851631}
     - target: {fileID: 8031993649134300037, guid: 987530bb311f6864b921033d4a5fbf82, type: 3}
       propertyPath: m_Name
@@ -3792,11 +3792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350875471882665149, guid: ae115490440237f4e8b0f3b32e906c87, type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 4300000, guid: f53445f473e7a1b48b6ec49727036952, type: 2}
     - target: {fileID: 446398010919999818, guid: ae115490440237f4e8b0f3b32e906c87, type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 4300000, guid: b468706c171d81148bfa5095d229d277, type: 2}
     - target: {fileID: 1110707604749046170, guid: ae115490440237f4e8b0f3b32e906c87, type: 3}
       propertyPath: m_Name
@@ -3804,7 +3804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292950151043500133, guid: ae115490440237f4e8b0f3b32e906c87, type: 3}
       propertyPath: m_Mesh
-      value: 
+      value:
       objectReference: {fileID: 4300000, guid: b468706c171d81148bfa5095d229d277, type: 2}
     - target: {fileID: 1550342599161593351, guid: ae115490440237f4e8b0f3b32e906c87, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -7279,6 +7279,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3012346255582007363, guid: 5a3163cf9aa0adb469885d1b3314a4b0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value:
+      objectReference: {fileID: 2100000, guid: dc167b1640a6462c96ecfc7519698b4c, type: 2}
+    - target: {fileID: 4984456465883799810, guid: 5a3163cf9aa0adb469885d1b3314a4b0, type: 3}
+      propertyPath: UVModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984456465883799810, guid: 5a3163cf9aa0adb469885d1b3314a4b0, type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984456465883799810, guid: 5a3163cf9aa0adb469885d1b3314a4b0, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value:
+      objectReference: {fileID: 1493620811, guid: 61b461f07fa04d40a11b8cf2e3f65ece, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7317,6 +7333,8 @@ MonoBehaviour:
   muzzleSpray: {fileID: 1941884822}
   shotAudioSource: {fileID: 2024638854}
   shotsPerSecond: 6
+  sprayRadius: 0.3
+  sprayRange: 30
   roundController: {fileID: 1178834977}
   aimReticle: {fileID: 497893559}
   gunVisual: {fileID: 2100042000}

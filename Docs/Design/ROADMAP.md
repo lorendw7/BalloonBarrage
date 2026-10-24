@@ -1,6 +1,6 @@
 # Development roadmap
 
-Updated: October 23, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the entry point.
+Updated: October 24, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the entry point.
 
 ## Exhibition product direction
 
@@ -10,7 +10,7 @@ The creator has approximately 4–6 hours per day. Prioritize comfortable input,
 
 The [official festival site](https://kyudaisai.jp/79th/), checked October 22, lists October 31–November 1, 2026, 09:00–19:00, at Kyushu University Ito Campus. Those are festival-wide hours, not confirmation of this project's booth. The creator plans October 31; booth location, project operating hours, PC count, operator coverage and November 1 participation remain unconfirmed. Revised internal gates: feature freeze October 27, candidate acceptance October 28, distribution freeze October 30. This leaves less verification buffer than the earlier plan, so every implementation day ends with its focused checks.
 
-## October 23 decision board
+## October 24 decision board
 
 The next decision is **whether the current build is dependable**, not how many more features can fit. Work from top to bottom; stop optional work when a higher item is open.
 
@@ -21,7 +21,7 @@ The next decision is **whether the current build is dependable**, not how many m
 | 3 | Forgiving current/maximum streak | Saved in current source; accepted hits increment and unresolved target expiry resets current only | Verify expiry/max behavior, pause/wall/empty-shot exclusions and Retry reset in the natural round flow |
 | 4 | Existing ResultsScreen summary binding | Saved scene reference and three-line legacy Text layout; creator visually confirmed the populated 2K natural-result screen | Verify Retry, focused values, other supported layouts and the exact package without adding a second result screen |
 | 5 | Japanese/English runtime UI | M+ Japanese/Latin font, license and pinned provenance prepared; translation data exists; runtime switching is not connected | One shared UI, persistent language choice, all static and dynamic labels refreshed, glyph/layout checks at exhibition resolutions |
-| 6 | Original energetic ink-spray feedback | Existing projectile, persistent paint, burst, recoil and on-beat accent form the base | Finish a bounded custom muzzle/trail/impact/streak presentation set without copied assets, UI, fonts, weapon shapes or territory rules |
+| 6 | Original energetic ink-spray feedback | Continuous particle stream, immediate bounded hit sampling, coordinated pigment marks and a short impact pulse are saved | Play Mode-check visual/logical alignment, target readability, wall sweeps, fast aim changes, pause/resume and Retry; fix only demonstrated blockers |
 | 7 | Feature freeze | Due October 27 | All committed items must pass focused checks; cut only extra variants, milestones and ornament |
 | 8 | Exact exhibition-PC package acceptance | Open | Fresh extraction, 30 minutes of real play, at least ten Retries, pause/focus/audio/quit and recorded hardware details |
 | 9 | Primary plus fallback rehearsal | Open | Record immutable filenames, hashes and which machine passed; rehearse operator recovery offline |
@@ -33,12 +33,12 @@ The beat-approach fill is saved and connected to the chart/song clock. The exist
 | Area | Saved or observed evidence | Still required |
 |---|---|---|
 | Public package | GitHub prerelease v0.1.0-demo.4 contains Windows x64 and unsigned/unnotarized macOS Universal ZIPs from `2ad092d`; both compiled with zero errors and passed CRC/manifest/notices/hash checks; fresh Windows extraction passed startup smoke | Windows target-PC full-song/Retry/soak acceptance; real-Mac launch/audio/input/complete-song acceptance. Publication is not acceptance |
-| Current source | Eight pigments, matching pop/projectile marks, six pattern families, random pattern/rotation/scale | Latest combined-source complete-song and clean-package checks; configurable-angle revision has source review only |
+| Current source | Eight pigments, six pattern families, continuous spray without spawned gameplay projectiles, forgiving SphereCast hits, coordinated stream/mark color and short mark-impact pulse | Current combined-source Play Mode, complete-song, Retry, performance and clean-package checks; C# compilation alone is not acceptance |
 | Current art | Brighter side walls, six-color murals, plaster/mineral floor, multicolor reservoir, author plaque; isolated native renders and component checks | In-play target contrast, latest combined-build load and actual-machine performance; indirect lighting/reflections have not been rebaked |
-| Input/feedback | Saved pointer, firing audio, bounded recoil, on-beat feedback and chart-clock-driven approach fill; creator-reported earlier spot checks | Tapping versus held-fire listening test, cue clarity, pause/focus/Retry on final hardware |
+| Input/feedback | Saved pointer, firing audio, bounded recoil, on-beat feedback, chart-clock-driven approach fill and concentrated continuous spray; creator-reported earlier spot checks predate the final spray envelope/pulse | Tapping versus held-fire listening test, stream/target readability, pause/focus/Retry and wall-sweep checks on final hardware |
 | Statistics/results | Successful-hit/on-beat counters, current/maximum streak, reset paths and ResultsScreen binding are saved; creator visually confirmed the populated 2K result layout | Focused 5/2/70, duplicate/expiry, Retry, other-layout and exact-package acceptance before freeze; no missed-event denominator yet |
 | Performance | Earlier instrumented full song with 610 marks; ten diagnostic reloads; earlier Editor snapshots | At least 30 minutes of real full-song/retry use, memory/object trends, target-PC frame times |
-| Website | Trilingual site has current result imagery/copy and resolves both demo.4 platform assets; all 12 local checks passed, deployment completed and the three live routes returned HTTP 200 with the new version/image | Keep release limits accurate; web checks are not Unity acceptance |
+| Website | Trilingual site remains at the published demo.4 checkpoint; the creator explicitly deferred a website update for the October 24 spray-source push | Make no site change in this checkpoint; revisit only after a newly accepted package exists |
 
 October 19–20 time included art and learner paint work. Earlier scheduled counter/streak sessions are not treated as completed. Do not compress missed scope into the remaining days.
 
@@ -46,12 +46,12 @@ October 19–20 time included art and learner paint work. Earlier scheduled coun
 
 | Priority | Exhibition outcome | Boundary |
 |---|---|---|
-| P0: finishable and welcoming | One complete song; free aim and unrestricted-duration held fire; ordinary hits reward; pause/retry/quit reliable | No health, ammunition, reload, heat, elimination, score subtraction, restart-on-miss or color-matching obligation; retain a finite technical projectile cadence |
+| P0: finishable and welcoming | One complete song; free aim and unrestricted-duration held fire; ordinary hits reward; pause/retry/quit reliable | No health, ammunition, reload, heat, elimination, score subtraction, restart-on-miss or color-matching obligation; retain a finite technical hit-sampling cadence |
 | P0: music and comfort | First-time players understand the action, hear the track and perceive the beat bonus | Preserve existing chart/0.1-second window/3.1-second cleanup/10–20 scoring until a separate measured tuning decision; do not infer accuracy from held fire |
 | P0: delivery and language | Japanese/English switch on one shared UI, verified glyphs/layouts, clean offline package and rehearsed fallback | Persist the choice; no duplicated screens or dependency on network/system fonts; Simplified Chinese runtime hookup remains later |
 | P1: trusted result summary | Existing score/best plus successful hits, on-beat hits, maximum streak, visible painted room and clear Retry | Commit each chart event once; no grades, red Miss total, mandatory ranking, score multiplier or automatic restart |
 | P1: forgiving streak | Current and maximum streak derived from accepted event outcomes | Accepted target expiry resets; empty shots, wall paint, held fire and pause do not; a quiet reset must not feel punitive |
-| P1: original spray feedback | Coherent custom muzzle spray, projectile liquid motion, impact splat/pop and clearer on-beat/streak accents | Use project-created/attributed assets only. Do not copy Splatoon assets, UI, fonts, weapons, characters, sounds or territory-control rules |
+| P1: original spray feedback | Coherent custom continuous stream, persistent impact splat/pop and clearer on-beat/streak accents | Use project-created/attributed assets only. Do not copy Splatoon assets, UI, fonts, weapons, characters, sounds or territory-control rules |
 | Optional: cut first | Extra spray variants, milestone 5/10/20 flourishes, extra bob, new-record animation, further art/reflection bake | Cut ornament before any committed counter, language path or baseline reliability check |
 | Parallel delivery experiment | A local macOS Universal demo.4 candidate is published beside Windows from the same commit | It must not displace Windows festival acceptance; unsigned/unnotarized output and real-Mac testing remain explicit limits |
 | After festival | Song selection, accessibility/calibration settings, multi-game design study, an explorable 3D-map teaching track, controller/co-op, macOS signing/notarization and broader support | Separate small milestones; preserve the accepted fixed-camera mode and make no assumed festival-ready Mac port |
@@ -111,12 +111,12 @@ Later lessons may study co-op, upgrades or broader maps only after this slice es
 
 The learner owns Assets/Scripts. Explain one field/helper/call site at a time, let the learner write it, then review saved code before continuing. The creator deferred further paint-scale parameter lessons.
 
-The saved source now contains the first four learner increments: accepted-hit counting, the on-beat subset, forgiving current/maximum streak and a three-line binding on the existing ResultsScreen. Static review confirms the scene reference and prefab geometry. The earlier creator report of no apparent issue predates this combined checkpoint and does not accept it. No new results screen is needed.
+The saved source contains the first four learner statistics increments plus the October 24 continuous-spray checkpoint. Static review confirms scene references, paired metadata, bounded hit sampling, coordinated pigment selection, particle envelopes and the short-lived mark pulse. C# compilation completed with zero errors; the earlier creator screenshots and no-apparent-issue report predate the final concentrated stream/envelope/pulse and do not accept it. No new results screen is needed.
 
-1. **Accept the saved statistics increment.** Run the 5-hit/2-on-beat/70-point case, duplicate and wall/empty-shot exclusions, expiry current/max case, natural results and Retry reset. Record the exact revision and device.
-2. **Connect Japanese/English switching.** Use the shared translation keys and prepared Japanese/Latin font. Refresh static labels and dynamic cue/feedback/results, persist the choice, then check both languages at target resolutions.
-3. **Integrate the original spray-feedback minimum.** Review muzzle spray, liquid projectile motion, impact splat/pop, on-beat accent and one restrained streak pulse as separate increments. Keep logical roots/colliders unchanged.
-4. **Run delivery gates.** Complete newcomer, full-song, Retry, performance and exact-package checks before publication.
+1. **Accept the continuous-spray checkpoint before adding another effect.** In Play Mode verify balloon center/edge hits, wall/floor marks, one-color stream/mark agreement, rapid aim changes, release/press, pause/resume and Retry. Record the exact revision, device and 2K frame-time observation.
+2. **Accept the saved statistics increment.** Run the 5-hit/2-on-beat/70-point case, duplicate and wall/empty-shot exclusions, expiry current/max case, natural results and Retry reset.
+3. **Connect Japanese/English switching.** Use the shared translation keys and prepared Japanese/Latin font. Refresh static labels and dynamic cue/feedback/results, persist the choice, then check both languages at target resolutions.
+4. **Run delivery gates.** Complete newcomer, full-song, Retry, performance and exact-package checks before publishing a new demo or updating the website.
 
 Milestone flourishes at streak 5/10/20 remain optional even though the base streak is committed. Asset/layout preparation can proceed independently but does not replace the learner's integration or manual judgement.
 

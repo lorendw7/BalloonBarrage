@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PlayerShooter : MonoBehaviour
 {
+    // Cosmetic color selection must not alter Unity's gameplay random stream.
+    private static readonly System.Random sprayPigmentRandom =
+        new System.Random();
 
     [SerializeField] private Transform muzzle;
 
@@ -16,6 +19,14 @@ public class PlayerShooter : MonoBehaviour
 
     [SerializeField, Min(0.1f)]
     private float shotsPerSecond = 5f;
+
+    [SerializeField, Min(0f)]
+    private float sprayRadius = 0.3f;
+
+    [SerializeField, Min(0.1f)]
+    private float sprayRange = 30f;
+
+    private int sprayPigmentIndex;
 
     private float nextShotTime;
 
@@ -34,8 +45,68 @@ public class PlayerShooter : MonoBehaviour
 
     private Quaternion gunRestLocalRotation;
 
+    private void SetSprayVisual(bool shouldPlay)
+    {
+        if (muzzleSpray == null)
+        {
+            return;
+        }
+
+
+        if(shouldPlay && !muzzleSpray.isPlaying)
+        {
+            muzzleSpray.Play();
+        }
+        else if (!shouldPlay && muzzleSpray.isPlaying)
+        {
+            muzzleSpray.Stop(
+                true, ParticleSystemStopBehavior.StopEmitting);
+        }
+    }
+
+    private bool TryGetSprayHit(
+        Vector3 direction,
+        out RaycastHit sprayHit)
+    {
+        return Physics.SphereCast(
+            muzzle.position,
+            sprayRadius,
+            direction,
+            out sprayHit,
+            sprayRange,
+            Physics.DefaultRaycastLayers,
+            QueryTriggerInteraction.Ignore);
+    }
+
+    private void ConfigureSprayPigment()
+    {
+        if (paintProjectilePrefab == null)
+        {
+            return;
+        }
+
+        int pigmentCount = paintProjectilePrefab.PigmentCount;
+
+        if (pigmentCount <= 0)
+        {
+            return;
+        }
+
+        sprayPigmentIndex = sprayPigmentRandom.Next(pigmentCount);
+
+        if (muzzleSpray != null)
+        {
+            ParticleSystem.MainModule main = muzzleSpray.main;
+            main.startColor = paintProjectilePrefab.GetPigmentColor(
+                sprayPigmentIndex);
+        }
+    }
+
+
     private void Awake()
     {
+        ConfigureSprayPigment();
+
         if (gunVisual == null)
         {
             return;
@@ -57,6 +128,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void OnDisable()
     {
+        SetSprayVisual(false);
         ResetGunPose();
         RestorePointer();
     }
@@ -116,6 +188,7 @@ public class PlayerShooter : MonoBehaviour
         gunVisual.localRotation = Quaternion.Slerp(
             gunVisual.localRotation,
             gunRestLocalRotation, t);
+
     }
     // Update is called once per frame
     void Update()
@@ -142,8 +215,19 @@ public class PlayerShooter : MonoBehaviour
 
         if (Mouse.current == null)
         {
+            SetSprayVisual(false);
             return;
         }
+
+        bool shouldSpray =
+        RoundController.IsPlaying &&
+        !RoundController.IsPaused &&
+        !waitingForFireRelease &&
+        Mouse.current.leftButton.isPressed &&
+        (EventSystem.current == null ||
+         !EventSystem.current.IsPointerOverGameObject());
+
+        SetSprayVisual(shouldSpray);
 
         Camera mainCamera = Camera.main;
 
@@ -203,9 +287,10 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (roundController == null || muzzle == null || paintProjectilePrefab == null)
+        if (roundController == null || muzzle == null)
         {
-            Debug.LogWarning("Connect RoundController, Muzzle and projectile prefab.");
+            Debug.LogWarning(
+                "Connect RoundController and Muzzle.");
             return;
         }
 
@@ -213,33 +298,25 @@ public class PlayerShooter : MonoBehaviour
 
         double shotTime = roundController.SongTimeSeconds;
 
-        Balloon targetBalloon = null;
-
-        if (hit.collider != null)
+        if (TryGetSprayHit(direction, out RaycastHit sprayHit))
         {
-            targetBalloon = hit.collider.GetComponentInParent<Balloon>();
+            Balloon sprayedBalloon = sprayHit.collider.GetComponentInParent<Balloon>();
+
+            if (sprayedBalloon != null)
+            {
+                bool isOnBeat = sprayedBalloon.IsOnBeat(shotTime);
+
+                int bonusPoints = isOnBeat ? 10 : 0;
+
+                sprayedBalloon.Hit(bonusPoints);
+            }
+            else if (paintProjectilePrefab != null)
+            {
+                paintProjectilePrefab.SpawnPaintMark(
+                    sprayHit,
+                    sprayPigmentIndex);
+            }
         }
-
-        bool isOnBeat = targetBalloon != null &&
-            targetBalloon.IsOnBeat(shotTime);
-        // Debug.Log($"Shot at {shotTime:F3}s; on beat: {isOnBeat}.");
-
-        PaintProjectile projectile = Instantiate(
-            paintProjectilePrefab,
-            muzzle.position,
-            Quaternion.LookRotation(direction)
-            );
-
-        int targetEventId = -1;
-
-        if (targetBalloon != null)
-        {
-            targetEventId = targetBalloon.EventId;
-        }
-
-        projectile.InitializeShot(isOnBeat, targetEventId);
-
-        GetComponent<StudioGunAppearance>()?.ColorizeShot(projectile.gameObject);
 
         nextShotTime = Time.time + 1f / Mathf.Max(0.1f, shotsPerSecond);
 
@@ -247,10 +324,6 @@ public class PlayerShooter : MonoBehaviour
         if (shotAudioSource != null)
         {
             shotAudioSource.Play();
-        }
-        if (muzzleSpray != null)
-        {
-            muzzleSpray.Play();
         }
     }
 }

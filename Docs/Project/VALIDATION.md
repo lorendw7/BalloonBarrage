@@ -1,6 +1,16 @@
 # Validation record
 
-Updated: October 23, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 24, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+
+## Continuous-spray source checkpoint, October 24
+
+The saved source replaces spawned gameplay projectiles in `PlayerShooter` with a looping visual particle stream and a finite six-samples-per-second production cadence. Each accepted sample performs an immediate 0.3-radius SphereCast from the muzzle over 30 units. Balloon hits retain the existing 10/20 score path; accepted non-balloon contacts on the four saved receivers instantiate a persistent pattern from the session's coordinated pigment group. The legacy projectile prefab remains referenced as pigment/pattern data and as a recoverable presentation fallback; it is not instantiated by the current shooter path.
+
+The production muzzle particle system now uses the original generated `ViscousStreakTopRight` atlas sprite, a dedicated transparent material, 160 particles per second, a 0.8-degree cone, 0.006-unit emitter radius, 0.22–0.32-second lifetime, 28–36-unit speed, restrained stretched-billboard scaling, a size envelope and an end-of-life alpha fade. New surface marks receive a 0.14-second visual-only scale pulse; the component removes itself after settling and does not remove the persistent mark. Stream and direct-mark pigment selection use a cosmetic random source separate from Unity's gameplay random stream.
+
+Static checks found paired `.meta` files and one unique metadata definition for each new script/material GUID. The repository maintenance audit passed 1,223 unique metadata GUIDs and 37 documentation files. `git diff --check` reported no content error; the only message is the existing LF-to-CRLF notice for the art guide. A .NET build of the Unity-generated `Assembly-CSharp.csproj`, explicitly including the new pulse script, succeeded with zero warnings and zero errors. The foundation EditorTests project also built with zero warnings and zero errors; this command did not execute Unity Test Runner cases and is not recorded as an EditMode pass. An attempted Unity batch check was discarded because the project was already open in another editor instance.
+
+Still open: current Unity import/reload, physical Play Mode center/edge balloon hits, stream-to-mark pigment agreement, wall/floor contact, rapid aim sweeps, release/press, pause/resume, Retry cleanup, target/cue readability, full-song behavior, sustained 2K frame time and exact-package acceptance. Earlier creator screenshots predate the final concentrated cone, size/alpha envelope and mark pulse. No website files or deployed site were changed for this source checkpoint, at the creator's request.
 
 ## v0.1.0-demo.4 desktop prerelease and website, October 23
 
