@@ -1,6 +1,6 @@
 # Short exhibition playtest
 
-Use the current saved `Assets/Scenes/PrototypeScene.unity` for the latest implementation review. The public demo.4 Windows/macOS files are prerelease candidates, not target-hardware-accepted festival builds. Record the exact source commit or package filename and hash; do not combine their results. [Roadmap](../Design/ROADMAP.md) owns dates and acceptance gates; [Game design](../Design/GAME_DESIGN.md) owns behavior.
+Use the current saved `Assets/Scenes/PrototypeScene.unity` for the latest implementation review. The public demo.5 Windows/macOS files are prerelease candidates, not target-hardware-accepted festival builds. Record the exact source commit or package filename and hash; do not combine their results. [Roadmap](../Design/ROADMAP.md) owns dates and acceptance gates; [Game design](../Design/GAME_DESIGN.md) owns behavior.
 
 ## Creator session: about five minutes
 
