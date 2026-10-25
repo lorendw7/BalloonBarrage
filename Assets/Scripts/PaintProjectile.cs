@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class PaintProjectile : MonoBehaviour
 {
+    private static readonly int[] WallSprayPatternIndices =
+    {
+        0, 0, 0, 0, // Spray: broad wet coverage
+        1, 1,       // Burst: smaller impact punctuation
+        2           // Drip: occasional vertical gravity cue
+    };
+
+    private static readonly int[] FlatSprayPatternIndices =
+    {
+        0, 0, 0, // Spray
+        1, 1     // Burst; no wall-style drips on floors
+    };
+
     // Cosmetic selection must not consume the spawn/movement random stream.
     private static readonly System.Random pigmentRandom = new System.Random();
 
@@ -126,7 +139,9 @@ public class PaintProjectile : MonoBehaviour
 
         if (patterns == null || patterns.Length == 0) { return; }
 
-        int patternIndex = pigmentRandom.Next(patterns.Length);
+        int patternIndex = SelectDirectSprayPattern(
+            patterns.Length,
+            hit.normal);
 
         GameObject selectedPrefab = patterns[patternIndex];
 
@@ -154,7 +169,7 @@ public class PaintProjectile : MonoBehaviour
             angle,
             Space.Self);
 
-        float scaleMultiplier = 0.8f + (float)pigmentRandom.NextDouble() * 0.4f;
+        float scaleMultiplier = GetDirectSprayScale(patternIndex);
 
         mark.transform.localScale *= scaleMultiplier;
 
@@ -162,6 +177,45 @@ public class PaintProjectile : MonoBehaviour
             mark.AddComponent<PaintMarkImpactPulse>();
 
         impactPulse.Initialize(mark.transform.localScale);
+    }
+
+    private static int SelectDirectSprayPattern(
+        int patternCount,
+        Vector3 surfaceNormal)
+    {
+        if (patternCount < 6)
+        {
+            return pigmentRandom.Next(patternCount);
+        }
+
+        bool isVerticalSurface = Mathf.Abs(surfaceNormal.y) < 0.5f;
+
+        int[] weightedPatterns = isVerticalSurface
+            ? WallSprayPatternIndices
+            : FlatSprayPatternIndices;
+
+        return weightedPatterns[
+            pigmentRandom.Next(weightedPatterns.Length)];
+    }
+
+    private static float GetDirectSprayScale(int patternIndex)
+    {
+        float randomValue = (float)pigmentRandom.NextDouble();
+
+        switch (patternIndex)
+        {
+            case 0: // Spray
+                return 0.95f + randomValue * 0.45f;
+
+            case 1: // Burst
+                return 0.8f + randomValue * 0.35f;
+
+            case 2: // Drip
+                return 0.9f + randomValue * 0.25f;
+
+            default:
+                return 1f;
+        }
     }
 
     private void Update()

@@ -5,10 +5,6 @@ using UnityEngine.EventSystems;
 
 public class PlayerShooter : MonoBehaviour
 {
-    // Cosmetic color selection must not alter Unity's gameplay random stream.
-    private static readonly System.Random sprayPigmentRandom =
-        new System.Random();
-
     [SerializeField] private Transform muzzle;
 
     [SerializeField] private PaintProjectile paintProjectilePrefab;
@@ -26,7 +22,31 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField, Min(0.1f)]
     private float sprayRange = 30f;
 
-    private int sprayPigmentIndex;
+    [SerializeField, Min(1f)]
+    private float sprayVisualSpeed = 32f;
+
+    [SerializeField, Min(0f)]
+    private float sprayVisualEndpointInset = 0.12f;
+
+    [SerializeField]
+    private int sprayVisualSortingOrder = 10000;
+
+    [SerializeField, Min(0)]
+    private int sprayPigmentIndex = 0;
+
+    private ParticleSystem.Particle[] sprayParticleBuffer;
+
+    private Camera aimCamera;
+
+    private bool sprayVisualActive;
+
+    private float lastSprayVisualLength = -1f;
+
+    private float lastSprayLifetime = -1f;
+
+    private bool reticleVisible;
+
+    private bool cursorVisible;
 
     private float nextShotTime;
 
@@ -45,22 +65,88 @@ public class PlayerShooter : MonoBehaviour
 
     private Quaternion gunRestLocalRotation;
 
-    private void SetSprayVisual(bool shouldPlay)
+    private void SetSprayVisual(
+        bool shouldPlay,
+        float hitDistance = 0f)
     {
         if (muzzleSpray == null)
         {
             return;
         }
 
+        if (!shouldPlay)
+        {
+            if (sprayVisualActive)
+            {
+                muzzleSpray.Stop(
+                    true,
+                    ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
 
-        if(shouldPlay && !muzzleSpray.isPlaying)
+            sprayVisualActive = false;
+            lastSprayVisualLength = -1f;
+            lastSprayLifetime = -1f;
+            return;
+        }
+
+        float visualLength = Mathf.Max(
+            0.05f,
+            hitDistance - sprayVisualEndpointInset);
+
+        float lifetime = visualLength /
+            Mathf.Max(1f, sprayVisualSpeed);
+
+        if (Mathf.Abs(lifetime - lastSprayLifetime) > 0.0005f)
+        {
+            ParticleSystem.MainModule main = muzzleSpray.main;
+            main.startLifetime = lifetime;
+            lastSprayLifetime = lifetime;
+        }
+
+        if (!sprayVisualActive)
         {
             muzzleSpray.Play();
+            sprayVisualActive = true;
         }
-        else if (!shouldPlay && muzzleSpray.isPlaying)
+
+        if (lastSprayVisualLength >= 0f &&
+            visualLength < lastSprayVisualLength - 0.01f)
         {
-            muzzleSpray.Stop(
-                true, ParticleSystemStopBehavior.StopEmitting);
+            TrimSprayParticles(visualLength);
+        }
+
+        lastSprayVisualLength = visualLength;
+    }
+
+    private void TrimSprayParticles(float visualLength)
+    {
+        if (sprayParticleBuffer == null ||
+            sprayParticleBuffer.Length == 0)
+        {
+            return;
+        }
+
+        int particleCount = muzzleSpray.GetParticles(
+            sprayParticleBuffer);
+
+        bool changed = false;
+
+        for (int index = 0; index < particleCount; index++)
+        {
+            if (sprayParticleBuffer[index].position.z <= visualLength)
+            {
+                continue;
+            }
+
+            sprayParticleBuffer[index].remainingLifetime = 0f;
+            changed = true;
+        }
+
+        if (changed)
+        {
+            muzzleSpray.SetParticles(
+                sprayParticleBuffer,
+                particleCount);
         }
     }
 
@@ -92,7 +178,10 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        sprayPigmentIndex = sprayPigmentRandom.Next(pigmentCount);
+        sprayPigmentIndex = Mathf.Clamp(
+            sprayPigmentIndex,
+            0,
+            pigmentCount - 1);
 
         if (muzzleSpray != null)
         {
@@ -102,9 +191,45 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
+    private void ConfigureSprayPresentation()
+    {
+        if (muzzleSpray == null)
+        {
+            return;
+        }
+
+        ParticleSystem.MainModule main = muzzleSpray.main;
+        main.simulationSpace = ParticleSystemSimulationSpace.Local;
+        main.startSpeed = sprayVisualSpeed;
+
+        ParticleSystem.CollisionModule collision =
+            muzzleSpray.collision;
+        collision.enabled = false;
+
+        ParticleSystemRenderer sprayRenderer =
+            muzzleSpray.GetComponent<ParticleSystemRenderer>();
+
+        if (sprayRenderer != null)
+        {
+            sprayRenderer.sortingOrder = sprayVisualSortingOrder;
+        }
+
+        sprayParticleBuffer = new ParticleSystem.Particle[
+            Mathf.Max(1, main.maxParticles)];
+    }
+
 
     private void Awake()
     {
+        aimCamera = Camera.main;
+        cursorVisible = Cursor.visible;
+
+        if (aimReticle != null)
+        {
+            reticleVisible = aimReticle.gameObject.activeSelf;
+        }
+
+        ConfigureSprayPresentation();
         ConfigureSprayPigment();
 
         if (gunVisual == null)
@@ -118,11 +243,16 @@ public class PlayerShooter : MonoBehaviour
 
     private void RestorePointer()
     {
-        Cursor.visible = true;
+        if (!cursorVisible)
+        {
+            Cursor.visible = true;
+            cursorVisible = true;
+        }
 
         if (aimReticle != null)
         {
             aimReticle.gameObject.SetActive(false);
+            reticleVisible = false;
         }
     }
 
@@ -193,51 +323,71 @@ public class PlayerShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool showReticle = Mouse.current != null &&
+        Mouse mouse = Mouse.current;
+
+        Vector2 pointerPosition = mouse != null
+            ? mouse.position.ReadValue()
+            : default;
+
+        bool showReticle = mouse != null &&
             RoundController.IsPlaying &&
             !RoundController.IsPaused &&
             Application.isFocused;
 
-        Cursor.visible = !showReticle;
+        bool shouldShowCursor = !showReticle;
+
+        if (cursorVisible != shouldShowCursor)
+        {
+            Cursor.visible = shouldShowCursor;
+            cursorVisible = shouldShowCursor;
+        }
 
         if (aimReticle != null)
         {
-            
-            aimReticle.gameObject.SetActive(showReticle);
+            if (reticleVisible != showReticle)
+            {
+                aimReticle.gameObject.SetActive(showReticle);
+                reticleVisible = showReticle;
+            }
 
             if (showReticle )
             {
                 aimReticle.position =
-                    Mouse.current.position.ReadValue();
+                    pointerPosition;
             }
         }
 
 
-        if (Mouse.current == null)
+        if (mouse == null)
         {
             SetSprayVisual(false);
             return;
         }
 
+        EventSystem eventSystem = EventSystem.current;
+
+        bool pointerOverUi = eventSystem != null &&
+            eventSystem.IsPointerOverGameObject();
+
         bool shouldSpray =
         RoundController.IsPlaying &&
         !RoundController.IsPaused &&
         !waitingForFireRelease &&
-        Mouse.current.leftButton.isPressed &&
-        (EventSystem.current == null ||
-         !EventSystem.current.IsPointerOverGameObject());
+        mouse.leftButton.isPressed &&
+        !pointerOverUi;
 
-        SetSprayVisual(shouldSpray);
-
-        Camera mainCamera = Camera.main;
-
-        if (mainCamera == null)
+        if (aimCamera == null)
         {
+            aimCamera = Camera.main;
+        }
+
+        if (aimCamera == null)
+        {
+            SetSprayVisual(false);
             return;
         }
 
-        Ray aimRay = mainCamera.ScreenPointToRay(
-            Mouse.current.position.ReadValue());
+        Ray aimRay = aimCamera.ScreenPointToRay(pointerPosition);
 
         Vector3 aimPoint = aimRay.GetPoint(20f);
 
@@ -253,6 +403,19 @@ public class PlayerShooter : MonoBehaviour
 
         transform.LookAt(aimPoint);
 
+        if (shouldSpray && muzzle != null)
+        {
+            float visualDistance = Mathf.Min(
+                sprayRange,
+                Vector3.Distance(muzzle.position, aimPoint));
+
+            SetSprayVisual(true, visualDistance);
+        }
+        else
+        {
+            SetSprayVisual(false);
+        }
+
         if (!RoundController.IsPlaying ||
             RoundController.IsPaused)
         {
@@ -260,8 +423,7 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (EventSystem.current != null &&
-            EventSystem.current.IsPointerOverGameObject())
+        if (pointerOverUi)
         {
             waitingForFireRelease = true;
             return;
@@ -269,7 +431,7 @@ public class PlayerShooter : MonoBehaviour
 
         if (waitingForFireRelease)
         {
-            if (!Mouse.current.leftButton.isPressed)
+            if (!mouse.leftButton.isPressed)
             {
                 waitingForFireRelease = false;
             }
@@ -277,7 +439,7 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (!Mouse.current.leftButton.isPressed)
+        if (!mouse.leftButton.isPressed)
         {
             return;
         }
@@ -294,7 +456,8 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        Vector3 direction = (aimPoint - muzzle.position).normalized;
+        Vector3 direction =
+            (aimPoint - muzzle.position).normalized;
 
         double shotTime = roundController.SongTimeSeconds;
 

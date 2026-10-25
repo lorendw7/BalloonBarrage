@@ -183,5 +183,17 @@
     ],
     "preparation": "RGBA with preserved transparency, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
     "attribution": "Original transparent 2-by-2 paint-VFX candidate generated with OpenAI built-in image generation on 2026-10-25. Neutral white artwork is prepared for runtime tinting and is not connected gameplay. Exact prompt, source path and source hash are retained in the canonical asset folder."
+  },
+  {
+    "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_Localized_ZhHans_1440p.png",
+    "source_sha256": "efd25b1a202ad28221519aba1eeb19c0a3fc051821957b3fe16220480f4ab893",
+    "output": "Website/media/start-localized-zh-hans-20261025.webp",
+    "output_sha256": "7e529e5b7bf0d8f621bdefd6aba0b2b8ebb6bd3552e43684d7f392e91ba95255",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 2560x1440 Simplified Chinese start-screen render, 2026-10-25. Captured by the project localization preview tool after the fixed Medium font and contrast-color pass; not a standalone-package capture. Original menu-art attribution and prompts remain unchanged. No generative editing."
   }
 ]

@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 2176187469247616954}
   - component: {fileID: 552156763781886847}
   - component: {fileID: 3588304169150014181}
+  - component: {fileID: 5236151834577142636}
   m_Layer: 5
   m_Name: BeatCueHeading
   m_TagString: Untagged
@@ -254,6 +255,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OPTIONAL  BEAT  BONUS
+--- !u!114 &5236151834577142636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429663800269486959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: cue.optionalBonus
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2317769058545029926
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +749,7 @@ GameObject:
   - component: {fileID: 805040499581930762}
   - component: {fileID: 4671817764373200185}
   - component: {fileID: 8590033749012576223}
+  - component: {fileID: 531469009852773161}
   m_Layer: 5
   m_Name: BeatCueText
   m_TagString: Untagged
@@ -799,3 +818,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: READY
+--- !u!114 &531469009852773161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174414386731841341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bf58110b2c46bdb9bc391849402bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}

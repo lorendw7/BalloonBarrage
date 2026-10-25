@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3851757755985884794}
   - component: {fileID: 4029206930469377864}
   - component: {fileID: 2108160925607875525}
+  - component: {fileID: 8946313480528792059}
   m_Layer: 5
   m_Name: BestScoreCaption
   m_TagString: Untagged
@@ -79,6 +80,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BEST SCORE
+--- !u!114 &8946313480528792059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414518373178786014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.bestScore
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3310591413151021553
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +224,7 @@ GameObject:
   - component: {fileID: 2704323945859452550}
   - component: {fileID: 1436124907786668496}
   - component: {fileID: 4443584958487403767}
+  - component: {fileID: 2414466312140417144}
   m_Layer: 5
   m_Name: ResultStatsText
   m_TagString: Untagged
@@ -278,6 +297,20 @@ MonoBehaviour:
     On-beat Hits: 0
 
     Max Streak: 0'
+--- !u!114 &2414466312140417144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894049176477198228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bf58110b2c46bdb9bc391849402bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
 --- !u!1 &3954288546292400557
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +359,7 @@ GameObject:
   - component: {fileID: 1919659176611990647}
   - component: {fileID: 842086788915412669}
   - component: {fileID: 1585924819709232635}
+  - component: {fileID: 217273464907251841}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -394,6 +428,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Play Again
+--- !u!114 &217273464907251841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153371995963646786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.playAgain
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4756216755182787895
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +456,7 @@ GameObject:
   - component: {fileID: 5194684056745587937}
   - component: {fileID: 5418837224377673738}
   - component: {fileID: 4546966863899175675}
+  - component: {fileID: 2973075470492900748}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -473,6 +525,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Color well spent!
+--- !u!114 &2973075470492900748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756216755182787895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.colorWellSpent
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4913782376069411404
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +632,7 @@ GameObject:
   - component: {fileID: 8386928070734287018}
   - component: {fileID: 401458822535020699}
   - component: {fileID: 6611929534563474163}
+  - component: {fileID: 8478140290070756132}
   m_Layer: 5
   m_Name: ScoreCaption
   m_TagString: Untagged
@@ -631,6 +701,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: FINAL SCORE
+--- !u!114 &8478140290070756132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5622434500595456878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.finalScore
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5753194745050899563
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +885,7 @@ GameObject:
   - component: {fileID: 6748391100407287771}
   - component: {fileID: 8975111581363732209}
   - component: {fileID: 4548667330409827646}
+  - component: {fileID: 2442991597886645763}
   m_Layer: 5
   m_Name: Eyebrow
   m_TagString: Untagged
@@ -866,6 +954,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: ROUND COMPLETE
+--- !u!114 &2442991597886645763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026348630669927674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.complete
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7102842407549419951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1260,7 @@ GameObject:
   - component: {fileID: 4554983743220930260}
   - component: {fileID: 6622335901448719539}
   - component: {fileID: 7384696877892183746}
+  - component: {fileID: 1786178592526343889}
   m_Layer: 5
   m_Name: ReplayHint
   m_TagString: Untagged
@@ -1223,3 +1329,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Returns to the start screen.
+--- !u!114 &1786178592526343889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785618098335104842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: result.returnHint
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}

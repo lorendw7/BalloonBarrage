@@ -20,6 +20,14 @@
       "bytes": 1296,
       "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssc/METADATA.pb",
       "file": "METADATA.pb"
+    },
+    {
+      "sha256": "1d507dcf40625bd66d71dba6e48a075b3e016912f6a2d54489c02a246817e660",
+      "bytes": 10589132,
+      "file": "NotoSansSC-Medium.ttf",
+      "derivedFrom": "NotoSansSC-Variable.ttf",
+      "derivation": "fontTools varLib.instancer wght=500",
+      "weight": 500
     }
   ],
   "retrieved": "2026-10-25"

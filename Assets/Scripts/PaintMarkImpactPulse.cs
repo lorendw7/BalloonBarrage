@@ -6,10 +6,10 @@ using UnityEngine;
 /// </summary>
 public sealed class PaintMarkImpactPulse : MonoBehaviour
 {
-    private const float Duration = 0.14f;
-    private const float StartScale = 0.55f;
-    private const float OvershootScale = 1.12f;
-    private const float OvershootTime = 0.65f;
+    private const float Duration = 0.16f;
+    private const float StartScale = 0.48f;
+    private const float OvershootScale = 1.14f;
+    private const float OvershootTime = 0.58f;
 
     private Vector3 settledScale;
     private float elapsed;

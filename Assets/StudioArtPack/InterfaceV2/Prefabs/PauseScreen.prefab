@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 2921247753529090628}
   - component: {fileID: 5936308671423489412}
   - component: {fileID: 2300885301458318086}
+  - component: {fileID: 6298361869140537864}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -195,6 +196,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Take a breather
+--- !u!114 &6298361869140537864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246990653449095103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: pause.title
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3022007880309371638
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +500,7 @@ GameObject:
   - component: {fileID: 5307056710246135156}
   - component: {fileID: 4982642760053684137}
   - component: {fileID: 1290291132055942894}
+  - component: {fileID: 3903757675701868774}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -550,6 +569,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Quit
+--- !u!114 &3903757675701868774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348518646490857621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: menu.quit
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5705070859830188896
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +793,7 @@ GameObject:
   - component: {fileID: 5221237645854393614}
   - component: {fileID: 7211214771780636510}
   - component: {fileID: 3703814873904422742}
+  - component: {fileID: 6960630061454373568}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -825,6 +862,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Resume
+--- !u!114 &6960630061454373568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343707799560895094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: pause.resume
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8393879321623002955
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +890,7 @@ GameObject:
   - component: {fileID: 6359235120884370859}
   - component: {fileID: 5442451418452850982}
   - component: {fileID: 899114899848996109}
+  - component: {fileID: 7972837322134769042}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -906,3 +961,20 @@ MonoBehaviour:
   m_Text: 'Your round is paused.
 
     Press Esc or choose Resume.'
+--- !u!114 &7972837322134769042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393879321623002955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: pause.message
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}

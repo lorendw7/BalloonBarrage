@@ -54,6 +54,8 @@ class DesktopPackageTests(unittest.TestCase):
                 self.assertEqual((info.external_attr >> 16) & 0o111, 0o111)
                 self.assertIn("ThirdPartyNotices/MPlus1C-OFL.txt", archive.namelist())
                 self.assertIn("ThirdPartyNotices/MPlus1C-Provenance.json", archive.namelist())
+                self.assertIn("ThirdPartyNotices/NotoSansSC-OFL.txt", archive.namelist())
+                self.assertIn("ThirdPartyNotices/NotoSansSC-Provenance.json", archive.namelist())
 
     def test_refuses_to_overwrite_existing_package(self) -> None:
         with tempfile.TemporaryDirectory(dir=ROOT) as temporary:

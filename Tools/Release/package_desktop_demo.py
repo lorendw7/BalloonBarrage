@@ -129,6 +129,8 @@ Do not sell this package. Read CREDITS.md and the bundled StepMania NOTICE.txt.
             "CC0-1.0.txt": ROOT / "Tools/Release/Notices/CC0-1.0.txt",
             "MPlus1C-OFL.txt": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/OFL.txt",
             "MPlus1C-Provenance.json": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Japanese/provenance.json",
+            "NotoSansSC-OFL.txt": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Chinese/OFL.txt",
+            "NotoSansSC-Provenance.json": ROOT / "Assets/StudioArtPack/InterfaceV2/Fonts/Chinese/provenance.json",
         }
         for notice, path in notices.items():
             archive.write(path, f"ThirdPartyNotices/{notice}", zipfile.ZIP_DEFLATED)

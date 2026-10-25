@@ -1,6 +1,6 @@
 # BalloonBarrage
 
-A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop balloons, leave colorful paint and catch the beat for an extra reward. Free aiming and unrestricted-duration held fire keep ordinary play approachable; a finite projectile cadence preserves feedback clarity and performance without adding ammo, reload or heat. Windows keyboard/mouse solo remains the exhibition focus; the repository also prepares an unsigned, unnotarized macOS Universal development candidate. See the [game design](Docs/Design/GAME_DESIGN.md) for the player promise and [roadmap](Docs/Design/ROADMAP.md) for delivery.
+A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop balloons, leave colorful paint and catch the beat for an extra reward. Free aiming and unrestricted-duration held fire keep ordinary play approachable; a finite hit-sampling cadence preserves feedback clarity and performance without adding ammo, reload or heat. Windows keyboard/mouse solo remains the exhibition focus; the repository also prepares an unsigned, unnotarized macOS Universal development candidate. See the [game design](Docs/Design/GAME_DESIGN.md) for the player promise and [roadmap](Docs/Design/ROADMAP.md) for delivery.
 
 [Website](https://lorendw7.github.io/BalloonBarrage/en/) · [Game releases](https://github.com/lorendw7/BalloonBarrage/releases) · [Development roadmap](Docs/Design/ROADMAP.md)
 
@@ -13,11 +13,11 @@ A casual, relaxing rhythm-game prototype set in a warm graffiti studio: pop ball
 
 The current production scene includes the [October 20 wall/lighting and material refresh](Docs/Art/STUDIO_COLOR_REFRESH.md) and [mixed-pigment gun](Docs/Art/CONCEPT_GUN_REFINEMENT.md). `Assets/Scenes/StudioConceptDetail.unity` remains a separate earlier V13 art study, with its own six-pigment variants and modeled supplies; see [Concept studio detail V13](Docs/Art/CONCEPT_DETAIL_V13.md). Native previews do not establish acceptance of the latest combined playable build.
 
-The current source records successful hits, the on-beat subset, current/maximum streak and writes the three summary values to the existing ResultsScreen. The creator visually confirmed the natural result layout in Unity's 2K Game view. These additions are included in public v0.1.0-demo.4; focused accounting, expiry/reset behavior, Retry and target-hardware acceptance remain open. See [Validation](Docs/Project/VALIDATION.md).
+The current source records successful hits, the on-beat subset, current/maximum streak and writes the three summary values to the existing ResultsScreen. It also connects one shared Simplified Chinese/Japanese/English UI and the continuous-spray presentation. These changes postdate public v0.1.0-demo.4; focused accounting, expiry/reset behavior, three-language standalone flow, Retry and target-hardware acceptance remain open. See [Validation](Docs/Project/VALIDATION.md).
 
 The desktop prerelease **[v0.1.0-demo.4](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.4)** provides locally compiled Windows x64 and unsigned, unnotarized macOS Universal candidates from commit `2ad092d`. Both archives passed compilation, structure, CRC, notice, manifest and checksum checks; a fresh Windows extraction also passed a 15-second startup smoke. Complete-song/Retry acceptance on the exhibition PC and real-Mac launch/audio/input testing remain pending, so this is not final exhibition acceptance. Extract the complete platform ZIP before running **BalloonShooter.exe** or opening **BalloonBarrage.app**. The package remains a free noncommercial development demo with original song restrictions and notices. **[v0.1.0-demo.3](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.3)** remains the previous desktop rollback package.
 
-The creator's October 17 physical-playtest report applies to the earlier v0.1.0-demo.1 core flow. The October 18 checkpoint has separate isolated collision/lifecycle checks and an instrumented full-song standalone trial with synthetic held fire, natural results, 610 retained marks and ten reload/callback retries. These do not establish ten complete-song playthroughs, listening calibration or a 30-minute soak. Final clean-package graphical smoke testing was interrupted; do not treat diagnostic checks as physical acceptance of the distributed executable. Controller/co-op and Japanese game UI remain deferred. See [Validation](Docs/Project/VALIDATION.md) and [Roadmap](Docs/Design/ROADMAP.md).
+The creator's October 17 physical-playtest report applies to the earlier v0.1.0-demo.1 core flow. The October 18 checkpoint has separate isolated collision/lifecycle checks and an instrumented full-song standalone trial with synthetic held fire, natural results, 610 retained marks and ten reload/callback retries. These do not establish ten complete-song playthroughs, listening calibration or a 30-minute soak. Final clean-package graphical smoke testing was interrupted; do not treat diagnostic checks as physical acceptance of the distributed executable. Controller/co-op remains deferred, and the connected trilingual UI still needs exact-package acceptance. See [Validation](Docs/Project/VALIDATION.md) and [Roadmap](Docs/Design/ROADMAP.md).
 
 Fixed-room batching is connected. The creator's 2560 × 1440 Editor screenshot reports 452.9 FPS / 285 batches versus 36.7 FPS / 1,671 batches before optimization. **Sustained Windows 2K/120 FPS remains a target**, with ten retries and a 30-minute exhibition-PC soak still pending.
 
@@ -27,7 +27,7 @@ Three public StepMania song/chart packs are included under `Assets/StreamingAsse
 
 ## Documentation
 
-All project documentation is maintained in English. The website and planned game UI have separate Chinese, Japanese, and English translations.
+All project documentation is maintained in English. The website and current shared game UI have separate Simplified Chinese, Japanese and English translations.
 
 - [Game design](Docs/Design/GAME_DESIGN.md): scope and proposed rhythm rules.
 - [Roadmap](Docs/Design/ROADMAP.md): priorities, exhibition schedule, and acceptance criteria.

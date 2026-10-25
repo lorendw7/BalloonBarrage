@@ -70,6 +70,24 @@ public class RoundController : MonoBehaviour
     [SerializeField]
     private Text resultStatsText;
 
+    private void OnEnable()
+    {
+        LanguageSettings.LanguageChanged += OnLanguageChanged;
+    }
+
+    private void OnDisable()
+    {
+        LanguageSettings.LanguageChanged -= OnLanguageChanged;
+    }
+
+    private void OnLanguageChanged(UILanguage language)
+    {
+        if (resultsScreen != null && resultsScreen.activeSelf)
+        {
+            RefreshResultStats();
+        }
+    }
+
     private void Start()
     {
         IsPaused = false;
@@ -275,13 +293,7 @@ public class RoundController : MonoBehaviour
             bestScoreText.text = bestScore.ToString("D6");
         }
 
-        if (resultStatsText != null)
-        {
-            resultStatsText.text =
-                $"Hits: {Score.SuccessfulHits}\n" +
-                $"On-beat Hits: {Score.OnBeatHits}\n" +
-                $"Max Streak: {Score.MaximumStreak}";
-        }
+        RefreshResultStats();
 
         if (resultsScreen != null)
         {
@@ -303,6 +315,22 @@ public class RoundController : MonoBehaviour
         }
 
         Debug.Log($"本局结束，最终分数：{finalScore}");
+    }
+
+    private void RefreshResultStats()
+    {
+        if (resultStatsText == null)
+        {
+            return;
+        }
+
+        resultStatsText.text =
+            LocalizationManager.Format(
+                "result.successfulHits", Score.SuccessfulHits) + "\n" +
+            LocalizationManager.Format(
+                "result.onBeatHits", Score.OnBeatHits) + "\n" +
+            LocalizationManager.Format(
+                "result.maxStreak", Score.MaximumStreak);
     }
 
     public void RestartRound()

@@ -53,6 +53,13 @@
     {"key":"result.maxStreak","zhHans":"最高连击：{0}","ja":"最高連続ヒット：{0}","en":"Max Streak: {0}"},
     {"key":"language.simplifiedChinese","zhHans":"简体中文","ja":"簡体字中国語","en":"Simplified Chinese"},
     {"key":"language.japanese","zhHans":"日语","ja":"日本語","en":"Japanese"},
-    {"key":"language.english","zhHans":"英语","ja":"英語","en":"English"}
+    {"key":"language.english","zhHans":"英语","ja":"英語","en":"English"},
+    {"key":"menu.createdBy","zhHans":"设计与制作","ja":"制作","en":"Created by"},
+    {"key":"instructions.goal","zhHans":"在时间结束前击破气球。","ja":"制限時間内に風船を割ろう。","en":"Pop balloons before time runs out."},
+    {"key":"instructions.fire","zhHans":"按住鼠标左键持续喷射颜料。","ja":"左クリック長押しでペイントを連射。","en":"Hold the left mouse button to fire."},
+    {"key":"instructions.stepAim","zhHans":"01  瞄准","ja":"01  ねらう","en":"01  AIM"},
+    {"key":"instructions.stepPaint","zhHans":"02  喷漆","ja":"02  ペイント","en":"02  PAINT"},
+    {"key":"instructions.stepPause","zhHans":"03  暂停","ja":"03  ポーズ","en":"03  PAUSE"},
+    {"key":"instructions.startSummary","zhHans":"移动鼠标瞄准 / 按住左键射击\nEsc：暂停或继续\n在时间结束前击破气球。","ja":"マウスで狙う / 左クリック長押しで連射\nEsc：一時停止・再開\n制限時間内に風船を割ろう。","en":"Mouse to aim / Hold left click to fire\nEsc to pause or resume\nPop balloons before time runs out."}
   ]
 }

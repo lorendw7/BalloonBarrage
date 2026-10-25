@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8059131172240088036}
   - component: {fileID: 6606018256761544450}
   - component: {fileID: 7442989763461726775}
+  - component: {fileID: 6360649294690222007}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -200,6 +201,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: How to play
+--- !u!114 &6360649294690222007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385700025116783143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: menu.howToPlay
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2715320027033816703
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +345,7 @@ GameObject:
   - component: {fileID: 5395114981404344969}
   - component: {fileID: 5239192620537531307}
   - component: {fileID: 2337598474311890208}
+  - component: {fileID: 8987561833692738911}
   m_Layer: 5
   m_Name: Goal
   m_TagString: Untagged
@@ -395,6 +414,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Pop balloons before the time runs out.
+--- !u!114 &8987561833692738911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857108020708201033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.goal
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4956028095403817891
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +442,7 @@ GameObject:
   - component: {fileID: 4999914946922126215}
   - component: {fileID: 3496655900320813267}
   - component: {fileID: 4033100480668467039}
+  - component: {fileID: 1196525891864430742}
   m_Layer: 5
   m_Name: StepCopy0
   m_TagString: Untagged
@@ -474,6 +511,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Move your mouse to aim the blaster.
+--- !u!114 &1196525891864430742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956028095403817891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.aim
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5018671190114221234
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +614,7 @@ GameObject:
   - component: {fileID: 3749421424031171000}
   - component: {fileID: 6386696242521359730}
   - component: {fileID: 558977033709727783}
+  - component: {fileID: 6390190527113308616}
   m_Layer: 5
   m_Name: StepCopy2
   m_TagString: Untagged
@@ -628,6 +683,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Press Esc to pause or resume.
+--- !u!114 &6390190527113308616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782222540357218181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.pause
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5855125284119950431
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +711,7 @@ GameObject:
   - component: {fileID: 7489646589459780546}
   - component: {fileID: 8376776008842660350}
   - component: {fileID: 110368880868864345}
+  - component: {fileID: 529934713957092176}
   m_Layer: 5
   m_Name: Step1
   m_TagString: Untagged
@@ -707,6 +780,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 02   PAINT
+--- !u!114 &529934713957092176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5855125284119950431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.stepPaint
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6888564811844715013
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +808,7 @@ GameObject:
   - component: {fileID: 4901000357857659151}
   - component: {fileID: 5290827349046340339}
   - component: {fileID: 8738076552428191493}
+  - component: {fileID: 846971268013212866}
   m_Layer: 5
   m_Name: Step2
   m_TagString: Untagged
@@ -786,6 +877,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 03   PAUSE
+--- !u!114 &846971268013212866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888564811844715013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.stepPause
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7210061877082077013
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +905,7 @@ GameObject:
   - component: {fileID: 6991319374208252525}
   - component: {fileID: 8945469306275072702}
   - component: {fileID: 956724278339017278}
+  - component: {fileID: 5520584754986997800}
   m_Layer: 5
   m_Name: StepCopy1
   m_TagString: Untagged
@@ -865,6 +974,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hold the left mouse button to fire.
+--- !u!114 &5520584754986997800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7210061877082077013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.fire
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7404765664206166875
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +1086,7 @@ GameObject:
   - component: {fileID: 4766067557535357880}
   - component: {fileID: 3517343271312168004}
   - component: {fileID: 3323675706135669334}
+  - component: {fileID: 1982215215096077981}
   m_Layer: 5
   m_Name: Step0
   m_TagString: Untagged
@@ -1028,6 +1155,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 01   AIM
+--- !u!114 &1982215215096077981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442528200994948179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: instructions.stepAim
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8981067715432786101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1183,7 @@ GameObject:
   - component: {fileID: 7521608772471151909}
   - component: {fileID: 3102982752524520328}
   - component: {fileID: 8972090546636512656}
+  - component: {fileID: 3619846392267620731}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -1107,3 +1252,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Back
+--- !u!114 &3619846392267620731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8981067715432786101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f468c9c559b8314582df41ff046977f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: menu.back
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}
+  useSimplifiedChineseColor: 0
+  simplifiedChineseColor: {r: 0, g: 0, b: 0, a: 0}

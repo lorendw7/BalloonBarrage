@@ -24,7 +24,8 @@ public class BalloonSpawner : MonoBehaviour
     [SerializeField, Min(1)]
     private int maxBalloons = 3;
 
-    private List<GameObject> activeBalloons = new List<GameObject>();
+    private readonly List<Balloon> activeBalloons =
+        new List<Balloon>();
 
     private void Start()
     {
@@ -38,21 +39,20 @@ public class BalloonSpawner : MonoBehaviour
         remainingDelay = 0f;
     }
 
-    private void Update()
-    {
-        activeBalloons.RemoveAll(balloon => balloon == null);
-    }
-
     public void CheckExpiredBalloons(double songTime)
     {
-        foreach (GameObject balloonObject in activeBalloons)
+        for (int index = activeBalloons.Count - 1;
+            index >= 0;
+            index--)
         {
-            if(balloonObject == null)
+            Balloon balloon = activeBalloons[index];
+
+            if (balloon == null)
             {
+                activeBalloons.RemoveAt(index);
                 continue;
             }
 
-            Balloon balloon = balloonObject.GetComponent<Balloon>();
             balloon.CheckExpiry(songTime);
         }
     }
@@ -75,6 +75,6 @@ public class BalloonSpawner : MonoBehaviour
         balloon.InitializeRhythm( eventData );
         Debug.Log($"Initialized balloon {balloon.EventId}; beat at {balloon.EventTimeSeconds:F3}s.");
 
-        activeBalloons.Add(newBalloon);
+        activeBalloons.Add(balloon);
     }    
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9191745178301320613}
   - component: {fileID: 2678886298313827559}
   - component: {fileID: 2177850008698340108}
+  - component: {fileID: 1546620150317360635}
   m_Layer: 5
   m_Name: OnBeatFeedback
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: ON BEAT +20
+--- !u!114 &1546620150317360635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792798069331563627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bf58110b2c46bdb9bc391849402bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simplifiedChineseFont: {fileID: 12800000, guid: f6f86714709e0254fb178a8c8e6594fc, type: 3}
+  japaneseFont: {fileID: 12800000, guid: 327721f94de34c1dbe104da6aa5bbe7e, type: 3}

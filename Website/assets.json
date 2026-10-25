@@ -96,12 +96,12 @@
     "output": "paint-blaster-model-20261019.webp"
   },
   {
-    "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_AuthorCredit_1080p.png",
-    "output": "start-screen-20261019.png"
+    "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_Localized_ZhHans_1440p.png",
+    "output": "start-localized-zh-hans-20261025.png"
   },
   {
-    "source": "Website/media/start-screen-20261019.webp",
-    "output": "start-screen-20261019.webp"
+    "source": "Website/media/start-localized-zh-hans-20261025.webp",
+    "output": "start-localized-zh-hans-20261025.webp"
   },
   {
     "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",

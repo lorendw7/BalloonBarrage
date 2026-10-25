@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour
 {
+    private static readonly Vector3[] PaintDirections =
+    {
+        Vector3.forward,
+        Vector3.back,
+        Vector3.left,
+        Vector3.right,
+        Vector3.up,
+        Vector3.down
+    };
+
     public static event System.Action<int> OnBeatHit;
 
 
@@ -179,17 +189,7 @@ public class Balloon : MonoBehaviour
         {
             return;
         }
-        Vector3[] directions =
-        {
-            Vector3.forward,
-            Vector3.back,
-            Vector3.left,
-            Vector3.right,
-            Vector3.up,
-            Vector3.down
-        };
-
-        foreach(Vector3 direction in directions)
+        foreach(Vector3 direction in PaintDirections)
         {
             bool hasHit = Physics.Raycast(
                 transform.position,

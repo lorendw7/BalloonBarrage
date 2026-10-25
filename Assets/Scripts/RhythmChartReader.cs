@@ -53,6 +53,12 @@ public class RhythmChartReader : MonoBehaviour
 
     private float feedbackRemaining;
 
+    private int displayedCueTenths = int.MinValue;
+
+    private bool showingEndingCue;
+
+    private int lastAwardPoints;
+
     private void ShownOnBeatFeedback(int awardPoints)
     {
         if (onBeatFeedbackText == null ||
@@ -62,7 +68,9 @@ public class RhythmChartReader : MonoBehaviour
             return;
         }
 
-        onBeatFeedbackText.text = $"ON BEAT +{awardPoints}";
+        lastAwardPoints = awardPoints;
+        onBeatFeedbackText.text = LocalizationManager.Format(
+            "feedback.onBeat", awardPoints);
         onBeatFeedbackText.enabled = true;
         feedbackRemaining = 1.45f;
     }
@@ -70,17 +78,31 @@ public class RhythmChartReader : MonoBehaviour
     private void OnEnable()
     {
         Balloon.OnBeatHit += ShownOnBeatFeedback;
+        LanguageSettings.LanguageChanged += OnLanguageChanged;
     }
 
     private void OnDisable()
     {
         Balloon.OnBeatHit -= ShownOnBeatFeedback;
+        LanguageSettings.LanguageChanged -= OnLanguageChanged;
 
         feedbackRemaining = 0f;
 
         if (onBeatFeedbackText != null )
         {
             onBeatFeedbackText.enabled = false;
+        }
+    }
+
+    private void OnLanguageChanged(UILanguage language)
+    {
+        displayedCueTenths = int.MinValue;
+        showingEndingCue = false;
+
+        if (onBeatFeedbackText != null && feedbackRemaining > 0f)
+        {
+            onBeatFeedbackText.text = LocalizationManager.Format(
+                "feedback.onBeat", lastAwardPoints);
         }
     }
 
@@ -146,7 +168,14 @@ public class RhythmChartReader : MonoBehaviour
 
         if (nextCueEventIndex >= chart.events.Length)
         {
-            beatCueText.text = "ENDING";
+            if (!showingEndingCue)
+            {
+                beatCueText.text =
+                    LocalizationManager.GetText("cue.ending");
+                showingEndingCue = true;
+                displayedCueTenths = int.MinValue;
+            }
+
             if (beatApproachFill != null)
             {
                 beatApproachFill.fillAmount = 0f;
@@ -163,7 +192,22 @@ public class RhythmChartReader : MonoBehaviour
 
             beatApproachFill.fillAmount = Mathf.Clamp01(curProgress);
         }
-        beatCueText.text = $"NEXT {remaining:F1}s";
+        int remainingTenths = Mathf.Max(
+            0,
+            Mathf.RoundToInt((float)(remaining * 10d)));
+
+        if (showingEndingCue ||
+            displayedCueTenths != remainingTenths)
+        {
+            string remainingText =
+                (remainingTenths / 10f).ToString(
+                    "F1",
+                    System.Globalization.CultureInfo.InvariantCulture);
+            beatCueText.text = LocalizationManager.Format(
+                "cue.next", remainingText);
+            displayedCueTenths = remainingTenths;
+            showingEndingCue = false;
+        }
     }
 
     // Update is called once per frame
