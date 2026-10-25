@@ -118,5 +118,13 @@
   {
     "source": "Website/media/mixed-pigment-model-20261020.webp",
     "output": "mixed-pigment-model-20261020.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintSprayStyle20261025/Textures/PaintSprayVfx_Atlas_v3.png",
+    "output": "paint-spray-vfx-20261025.png"
+  },
+  {
+    "source": "Website/media/paint-spray-vfx-20261025.webp",
+    "output": "paint-spray-vfx-20261025.webp"
   }
 ]

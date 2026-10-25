@@ -25,12 +25,23 @@ test("all three translations have the same complete, nonempty key set", () => {
 
 test("all languages explain unrestricted-duration held fire without promising per-frame spawning", () => {
   const required = {
-    "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限射速"],
+    "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限", "采样"],
     ja: ["長押し", "弾数", "リロード", "オーバーヒート", "一定間隔"],
-    en: ["Hold", "ammo", "reload", "overheat", "finite tuned cadence"]
+    en: ["Hold", "ammo", "reload", "overheat", "finite tuned sampling cadence"]
   };
   for (const locale of languages) {
     const copy = `${strings[locale].description} ${strings[locale].gameIntro}`;
+    for (const phrase of required[locale]) assert.ok(copy.includes(phrase), `${locale}: ${phrase}`);
+  }
+});
+test("all languages distinguish prepared VFX art from learner-owned runtime integration", () => {
+  const required = {
+    "zh-Hans": ["候选", "尚未接入", "青绿色"],
+    ja: ["候補", "未接続", "ティール"],
+    en: ["candidate", "not connected", "teal"]
+  };
+  for (const locale of languages) {
+    const copy = `${strings[locale].sprayBody} ${strings[locale].sprayRuntimeStatus} ${strings[locale].paletteBody}`;
     for (const phrase of required[locale]) assert.ok(copy.includes(phrase), `${locale}: ${phrase}`);
   }
 });
@@ -171,6 +182,7 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
   assert.equal((await fetch(base + "/assets/gameplay-development-20261019.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/assets/gameplay-development-share-20261019.jpg")).headers.get("content-type"), "image/jpeg");
+  assert.equal((await fetch(base + "/assets/paint-spray-vfx-20261025.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
 });

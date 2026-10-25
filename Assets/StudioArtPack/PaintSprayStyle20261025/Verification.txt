@@ -1,0 +1,6 @@
+PAINT_SPRAY_VFX_V3_PREPARED
+Generated 2026-10-25 with the recorded built-in image-generation prompt.
+PNG: 1254 x 1254 RGBA, alpha range 0-255.
+SHA-256: 2F4AA9D768516C948A2DEB808DE0AF9B4B102E804A14ED75F94CDCB3CB6975CE
+Importer: multiple Sprite, four 627 x 627 cells, sRGB, alpha transparency, no mipmaps, clamp, bilinear.
+Status: candidate art only; not connected to the production material, particle system or gameplay.

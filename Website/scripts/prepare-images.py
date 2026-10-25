@@ -34,6 +34,7 @@ SOURCES = {
     "start-screen-20261019": "Assets/StudioArtPack/InterfaceV2/Previews/Start_AuthorCredit_1080p.png",
     "studio-refresh-20261020": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
     "mixed-pigment-model-20261020": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
+    "paint-spray-vfx-20261025": "Assets/StudioArtPack/PaintSprayStyle20261025/Textures/PaintSprayVfx_Atlas_v3.png",
 }
 
 PREVIEW_ATTRIBUTIONS = {
@@ -42,6 +43,7 @@ PREVIEW_ATTRIBUTIONS = {
     "surface-patterns-20261019": "Native Unity asset-sheet preview, 2026-10-19. Eight colors and six patterns; not recorded gameplay or a public release. Existing atlas attribution and recorded generation prompts remain unchanged.",
     "paint-blaster-model-20261019": "Native Unity model-inspection render, 2026-10-19. Temporary enlarged inspection pose, Canvas hidden; not recorded gameplay. Native procedural geometry, no new generative image editing.",
     "start-screen-20261019": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged.",
+    "paint-spray-vfx-20261025": "Original transparent 2-by-2 paint-VFX candidate generated with OpenAI built-in image generation on 2026-10-25. Neutral white artwork is prepared for runtime tinting and is not connected gameplay. Exact prompt, source path and source hash are retained in the canonical asset folder.",
 }
 
 
@@ -59,7 +61,8 @@ def main():
         if selected and name not in selected:
             continue
         source = ROOT / relative
-        image = Image.open(source).convert("RGB")
+        preserve_alpha = name == "paint-spray-vfx-20261025"
+        image = Image.open(source).convert("RGBA" if preserve_alpha else "RGB")
         if name == "results-statistics-20261023":
             image = image.crop((0, 68, image.width, image.height - 34))
         image.thumbnail(WEB_MAX_SIZE, Image.Resampling.LANCZOS, reducing_gap=3.0)
@@ -71,7 +74,11 @@ def main():
                         "preparation": (
                             "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 92, method 6"
                             if name == "results-statistics-20261023"
-                            else "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                            else (
+                                "RGBA with preserved transparency, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                                if preserve_alpha
+                                else "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                            )
                         )})
         if name in PREVIEW_ATTRIBUTIONS:
             records[-1]["attribution"] = PREVIEW_ATTRIBUTIONS[name]

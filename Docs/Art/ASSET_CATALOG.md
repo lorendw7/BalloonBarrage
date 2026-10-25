@@ -22,6 +22,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/StudioArtPack/ConceptVariantsV12 | Six latex pigments, three balloon forms, copied playable balloon, new rounded gun meshes, wall-paint derivatives, reflection and Unity previews |
 | Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019 | Native production gun shell, six mesh/material batches, concept-style horizontal reservoir, source hashes and Unity before/after inspection renders |
 | Assets/StudioArtPack/PaintBlaster/MixedPigment20261020 | Production multicolor marbled liquid, separated teal body mesh, reservoir calibration marks and native Unity previews; eight cosmetic batches in the updated gun |
+| Assets/StudioArtPack/PaintSprayStyle20261025 | Original transparent four-cell neutral VFX atlas prepared for runtime tinting; exact built-in generation prompt, source path, hash and importer settings are stored beside the PNG; candidate art is not connected to gameplay |
 | Assets/StudioArtPack/SurfacePaint | Prepared small teal projectile wall-mark prefab/material, existing atlas provenance and native close-up preview; first-wall/eight-second integration saved with creator-reported pass |
 | Assets/StudioArtPack/Runtime | Cosmetic selection/tint components and one-time explicit static-room batching; no new score, movement or rhythm rules |
 | Assets/Scenes/StudioConceptVariants.unity | V12 cosmetic variant scene; paired lighting folder and appended Build Settings entry |
@@ -30,7 +31,7 @@ Canonical assets stay in Unity directories. `Website/assets.json` references sel
 | Assets/Settings/Gameplay/ExhibitionControls.inputactions | Prepared mouse/gamepad actions; runtime controller/co-op support is not connected |
 | Assets/StudioArtPack/CoverFinishV9 | Current plaster, rounded joinery, botanical foliage, sideboard, color grade, lightmap-ready mesh copies and game-camera captures |
 | Assets/Scenes/PrototypeScene | Saved V9 lighting data, directional lightmap pair and bake-generated reflection |
-| Assets/Localization | 25 UI keys in three languages; runtime switching pending |
+| Assets/Localization | 53 UI keys in three languages; runtime switching pending |
 
 ## Integration guides
 

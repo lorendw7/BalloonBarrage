@@ -18,6 +18,8 @@ The Balloon is adapted with project materials, coloring and presentation; the or
 
 Studio textures, sprays, menu images, latex fragments and paint concepts use built-in image generation. Exact recorded prompts are retained in the [art guides](Docs/Art/ASSET_CATALOG.md). Older concept/splat prompts are unavailable. Concept images do not establish licenses for imported models.
 
+The October 25 tintable paint-VFX candidate in `Assets/StudioArtPack/PaintSprayStyle20261025` was created with OpenAI built-in image generation as a new transparent raster. Its exact prompt, source output path, dimensions and SHA-256 are retained in the folder's `Provenance.json`; the prompt explicitly requires original shapes and excludes recognizable designs from named games. It remains unconnected candidate art until learner integration and Unity visual acceptance.
+
 The October 11 Interface V2 background and transparent sprite sheet use built-in image generation; their exact prompts are recorded in [Interface V2](Docs/Art/INTERFACE_V2.md). UI layouts are editable Unity Canvas prefabs; the original LegacyRuntime font was subsequently replaced by the Lato clarity pass described below. Their preview PNGs are Unity camera renders, and displayed scores are illustrative samples.
 
 RoomFinishV7 adds a generated oak-plank albedo texture, with its exact prompt in [Studio art pack](Docs/Art/STUDIO_ART_PACK.md). Cream wall and ivory ceiling materials are native Unity material settings. Floor UVs reuse the existing mesh shape; the refreshed reflection is a Unity bake.
@@ -43,6 +45,8 @@ The five current WAVs in `Assets/Audio/Music` are original synthesized compositi
 The October 14 interface clarity pass uses unmodified Lato Regular/Bold by Lukasz Dziedzic / tyPoland, distributed under SIL Open Font License 1.1. Font binaries, the complete OFL notice and pinned source URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts`. Google Fonts revision: `5d3b76120a319730fda218cc7410174a462b32cb`. Source: [Google Fonts Lato](https://github.com/google/fonts/tree/5d3b76120a319730fda218cc7410174a462b32cb/ofl/lato). This license applies to the included font software; it does not alter song/model licenses.
 
 The October 22 Japanese/English UI preparation adds unmodified M+ 1c Regular by Coji Morishita / M+ FONTS PROJECT under SIL Open Font License 1.1. The font, complete license and pinned URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts/Japanese`. Source revision: `0d4459efc913a91f33c3f08b219a5a95d282c7b8`; source: [M+ Fonts for Google Fonts](https://github.com/rayshan/mplus-fonts/tree/0d4459efc913a91f33c3f08b219a5a95d282c7b8). The asset is prepared for Japanese and Latin UI; runtime hookup, Unity glyph rendering and layout acceptance remain separate work. It does not establish Simplified Chinese UI acceptance.
+
+The October 25 Simplified Chinese UI preparation adds unmodified Noto Sans SC Variable from Google Fonts under SIL Open Font License 1.1. The font, complete license, upstream metadata and pinned URLs/SHA-256 hashes are in `Assets/StudioArtPack/InterfaceV2/Fonts/Chinese`. Google Fonts revision: `e7db6ca603fd4862010383ff17ffd6cc4ffac1c0`; source: [Google Fonts Noto Sans SC](https://github.com/google/fonts/tree/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanssc). Source-level inspection covers the current Simplified Chinese UI strings; runtime hookup, connected Unity rendering and layout acceptance remain separate work.
 
 ## Downloaded rhythm study references
 

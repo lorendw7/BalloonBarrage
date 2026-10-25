@@ -1,0 +1,11 @@
+{
+  "asset": "Textures/PaintSprayVfx_Atlas_v3.png",
+  "created": "2026-10-25",
+  "generator": "OpenAI built-in image generation",
+  "mode": "new transparent raster generation",
+  "sourceOutput": "C:/Users/lorendw7/.codex/generated_images/01a16e84-401a-7241-8e3c-3a5f900e597f/exec-a8134054-c787-44d3-a649-6038c2439925.png",
+  "sha256": "2F4AA9D768516C948A2DEB808DE0AF9B4B102E804A14ED75F94CDCB3CB6975CE",
+  "dimensions": [1254, 1254],
+  "status": "Prepared original candidate art; not connected to gameplay or prefabs.",
+  "prompt": "Use case: stylized-concept\nAsset type: Unity game VFX texture atlas with four equal cells\nPrimary request: create an original 2-by-2 atlas of energetic liquid-paint effects for a cheerful rhythm paint-shooter. Top-left: compact forward nozzle jet. Top-right: viscous directional stream dash. Bottom-left: loose cluster of rounded airborne droplets. Bottom-right: broad readable surface-impact splash with a few satellite drops.\nStyle/medium: hand-painted graphic game VFX, chunky wet liquid silhouettes, slightly irregular edges, playful and polished, strong silhouette readability at small size.\nComposition/framing: square canvas divided conceptually into four equal cells; one centered effect per cell; generous transparent padding; no cell borders; no effect crosses into another cell.\nColor palette: neutral white and very light gray volume only, designed for clean runtime tinting to saturated colors.\nConstraints: genuinely transparent background and preserved alpha; no text; no logos; no characters; no weapon; no watermark; entirely original shapes; do not imitate or reproduce assets, iconography, typography, or recognizable designs from Splatoon or any other named game."
+}
