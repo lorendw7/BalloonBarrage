@@ -15,6 +15,14 @@ ROOT = Path(__file__).resolve().parents[2]
 MEDIA = ROOT / "Website/media"
 WEB_MAX_SIZE = (2560, 1440)
 WEBP_QUALITY = 92
+SCREENSHOT_WEBP_QUALITY = 98
+HIGH_CLARITY_SCREENSHOTS = {
+    "gameplay-development-20261019",
+    "results-statistics-20261023",
+    "start-localized-zh-hans-20261025",
+    "studio-refresh-20261020",
+    "surface-paint-coverage-20261027",
+}
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
 DEVELOPMENT_CAPTURE = "Assets/Art/Previews/Gameplay_Development_20261019.png"
 DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
@@ -71,17 +79,18 @@ def main():
             image = image.crop((0, 68, image.width, image.height - 34))
         image.thumbnail(WEB_MAX_SIZE, Image.Resampling.LANCZOS, reducing_gap=3.0)
         output = MEDIA / f"{name}.webp"
-        image.save(output, "WEBP", quality=WEBP_QUALITY, method=6)
+        quality = SCREENSHOT_WEBP_QUALITY if name in HIGH_CLARITY_SCREENSHOTS else WEBP_QUALITY
+        image.save(output, "WEBP", quality=quality, method=6)
         records.append({"source": relative, "source_sha256": digest(source),
                         "output": output.relative_to(ROOT).as_posix(),
                         "output_sha256": digest(output), "dimensions": list(image.size),
                         "preparation": (
-                            "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 92, method 6"
+                            f"Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality {quality}, method 6"
                             if name == "results-statistics-20261023"
                             else (
-                                "RGBA with preserved transparency, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                                f"RGBA with preserved transparency, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality {quality}, method 6"
                                 if preserve_alpha
-                                else "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6"
+                                else f"RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality {quality}, method 6"
                             )
                         )})
         if name in PREVIEW_ATTRIBUTIONS:

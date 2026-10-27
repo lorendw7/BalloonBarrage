@@ -53,9 +53,9 @@ The tests cover translation structure, trusted platform-specific release selecti
 
 Player-facing copy lives in `Website/src/strings.mjs`; project documentation remains English-only. Each language uses the same page structure and distinguishes published builds from development screenshots, concepts and model previews.
 
-`Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives at quality 92 and up to the source resolution, capped at 2560 × 1440. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
+`Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives up to the source resolution, capped at 2560 × 1440. Gameplay, results, interface and coverage screenshots use quality 98 for clearer text and paint edges; other artwork uses quality 92. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
 
-The opening artwork is not enlarged beyond its native width. Large gameplay/studio figures stop at 1600 CSS pixels, while the image dialog may use nearly the full viewport. Only opening media is preloaded; below-the-fold images use lazy loading. Stylesheets and scripts use content-addressed filenames so older cached markup cannot silently mix with a new layout.
+The opening artwork and the 1347-pixel gameplay capture are not enlarged beyond their native widths. Other large gameplay/studio figures stop at 1600 CSS pixels, while the image dialog may use nearly the full viewport. Only opening media is preloaded; below-the-fold images use lazy loading. Stylesheets and scripts use content-addressed filenames so older cached markup cannot silently mix with a new layout.
 
 ## Verification after publication
 

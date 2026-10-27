@@ -115,9 +115,17 @@ test("sharing uses language-specific canonical URLs and the development capture"
 
 test("web derivatives retain recorded source and output hashes", async () => {
   const records = JSON.parse(await readFile(path.join(site, "media/provenance.json"), "utf8"));
+  const highClarityScreenshots = new Set([
+    "gameplay-development-20261019.webp",
+    "results-statistics-20261023.webp",
+    "start-localized-zh-hans-20261025.webp",
+    "studio-refresh-20261020.webp",
+    "surface-paint-coverage-20261027.webp"
+  ]);
   for (const record of records.filter(({ output }) => output.endsWith(".webp"))) {
     assert.match(record.preparation, /source resolution up to 2560x1440/);
-    assert.match(record.preparation, /WebP quality 92/);
+    const quality = highClarityScreenshots.has(path.basename(record.output)) ? 98 : 92;
+    assert.match(record.preparation, new RegExp(`WebP quality ${quality}`));
   }
   for (const record of records) for (const [file, expected] of [[record.source, record.source_sha256], [record.output, record.output_sha256]]) {
     const data = await readFile(path.resolve(site, "..", file));

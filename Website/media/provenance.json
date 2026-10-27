@@ -1,17 +1,5 @@
 [
   {
-    "source": "Assets/Art/Previews/Gameplay_Development_20261019.png",
-    "source_sha256": "e477a425b713b7d48b620bd3626212ea28c88413f52cbd41f2668600f436ace3",
-    "output": "Website/media/gameplay-development-20261019.webp",
-    "output_sha256": "b2b7f8c5109d7ac29a5c264f83cb580188a82e8f3eee2a6b3a49532854a5edce",
-    "dimensions": [
-      1347,
-      753
-    ],
-    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
-  },
-  {
     "source": "Assets/Art/Previews/Palette_20261019.png",
     "source_sha256": "0c5705833cd8d63deb7dc476a8c23feb4d88832e9e95f00e6f8947ef0f44a57f",
     "output": "Website/media/palette.webp",
@@ -114,18 +102,6 @@
     "attribution": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged."
   },
   {
-    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
-    "source_sha256": "b00b32003ff171a895c9db8040d8485e2f53fb7bb7c5ffc046934b6046d8bffb",
-    "output": "Website/media/studio-refresh-20261020.webp",
-    "output_sha256": "e38ca7f42555e32d0ed5f162322698ea753f0b0fbdceb3a67047edd1028244e6",
-    "dimensions": [
-      1920,
-      1080
-    ],
-    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity saved-camera scene inspection, 2026-10-20. Plaster walls, mineral floor, side-wall pigments and mixed-color reservoir. UI temporarily hidden; not recorded gameplay or a new public release. No generative image editing."
-  },
-  {
     "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
     "source_sha256": "9b645a5fa9d455b7469171539600e9af002dd5a8b159152fab9d03542bef3100",
     "output": "Website/media/mixed-pigment-model-20261020.webp",
@@ -161,18 +137,6 @@
     "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
   },
   {
-    "source": "Website/media/results-statistics-20261023.png",
-    "source_sha256": "7f42dc4e9b028602475878f00a0d602d4f374e29fba00d251b0bb4d1b7d58f9e",
-    "output": "Website/media/results-statistics-20261023.webp",
-    "output_sha256": "669c0654a10e6e10df0f4da61c953b4417f004beb70c6888b3a8e328dc53c0e2",
-    "dimensions": [
-      1349,
-      783
-    ],
-    "preparation": "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 92, method 6",
-    "attribution": "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
-  },
-  {
     "source": "Assets/StudioArtPack/PaintSprayStyle20261025/Textures/PaintSprayVfx_Atlas_v3.png",
     "source_sha256": "2f4aa9d768516c948a2deb808de0af9b4b102e804a14ed75f94cdcb3cb6975ce",
     "output": "Website/media/paint-spray-vfx-20261025.webp",
@@ -185,27 +149,63 @@
     "attribution": "Original transparent 2-by-2 paint-VFX candidate generated with OpenAI built-in image generation on 2026-10-25. Neutral white artwork is prepared for runtime tinting and is not connected gameplay. Exact prompt, source path and source hash are retained in the canonical asset folder."
   },
   {
+    "source": "Assets/Art/Previews/Gameplay_Development_20261019.png",
+    "source_sha256": "e477a425b713b7d48b620bd3626212ea28c88413f52cbd41f2668600f436ace3",
+    "output": "Website/media/gameplay-development-20261019.webp",
+    "output_sha256": "fe56fa842b7e808fc75ddf413ea84ee467f04fffcdd590a11486ad2bb18fef3c",
+    "dimensions": [
+      1347,
+      753
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Creator-supplied development gameplay screenshot, received 2026-10-19; exact build and capture environment unverified; not evidence of a new public release. No generative editing."
+  },
+  {
+    "source": "Website/media/results-statistics-20261023.png",
+    "source_sha256": "7f42dc4e9b028602475878f00a0d602d4f374e29fba00d251b0bb4d1b7d58f9e",
+    "output": "Website/media/results-statistics-20261023.webp",
+    "output_sha256": "193612d6e88c32b6fcc14b965e139259084c410eb594b9f372cfa6f89695166c",
+    "dimensions": [
+      1349,
+      783
+    ],
+    "preparation": "Crop Unity editor chrome (top 68 px, bottom 34 px); RGB, preserve source resolution up to 2560x1440; WebP quality 98, method 6",
+    "attribution": "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
+  },
+  {
     "source": "Assets/StudioArtPack/InterfaceV2/Previews/Start_Localized_ZhHans_1440p.png",
     "source_sha256": "efd25b1a202ad28221519aba1eeb19c0a3fc051821957b3fe16220480f4ab893",
     "output": "Website/media/start-localized-zh-hans-20261025.webp",
-    "output_sha256": "7e529e5b7bf0d8f621bdefd6aba0b2b8ebb6bd3552e43684d7f392e91ba95255",
+    "output_sha256": "5263f8ef227e46505d140c557ba9bf75d5a6bc537d666c70103fb14bd392299d",
     "dimensions": [
       2560,
       1440
     ],
-    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
     "attribution": "Native Unity 2560x1440 Simplified Chinese start-screen render, 2026-10-25. Captured by the project localization preview tool after the fixed Medium font and contrast-color pass; not a standalone-package capture. Original menu-art attribution and prompts remain unchanged. No generative editing."
+  },
+  {
+    "source": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
+    "source_sha256": "b00b32003ff171a895c9db8040d8485e2f53fb7bb7c5ffc046934b6046d8bffb",
+    "output": "Website/media/studio-refresh-20261020.webp",
+    "output_sha256": "a8db3d7c82da5e6833e5439b3d4e935f5299e150859cca7c8cf64bb4e7f777d7",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity saved-camera scene inspection, 2026-10-20. Plaster walls, mineral floor, side-wall pigments and mixed-color reservoir. UI temporarily hidden; not recorded gameplay or a new public release. No generative image editing."
   },
   {
     "source": "Assets/StudioArtPack/SurfacePaintCoverage20261027/Previews/DenseCoverage_1000Marks.png",
     "source_sha256": "187d108cda3ee91ddeb2d2676d95618adfc24641a140306873c81d5e236910d5",
     "output": "Website/media/surface-paint-coverage-20261027.webp",
-    "output_sha256": "d39cf08f48b16cbae1ad367b0701b8a74d2896ca42679647a764a406994e7292",
+    "output_sha256": "160a13b0a5d6ddf75cccd45d42090d726fb523cf56bdede37651fa47f551e3a2",
     "dimensions": [
       1920,
       1080
     ],
-    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
     "attribution": "Native Unity 6000.0.77f1 automated coverage fixture, 2026-10-27. Nine prepared static surfaces, eight pigments and 1,000 retained marks; not physical gameplay or standalone-package acceptance. The persistent marks use original generated artwork whose exact prompt and source hash remain in the canonical asset folder. No generative editing was applied to this capture."
   }
 ]

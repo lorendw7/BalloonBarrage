@@ -46,7 +46,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .hero { position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: center; min-height: 640px; padding: 4rem 2rem; background: url("assets/menu-background.webp") center/cover no-repeat; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 7% 22%, #24a2a04d 0 3.5rem, transparent 3.7rem), radial-gradient(circle at 92% 70%, #d66b4f4d 0 4.5rem, transparent 4.7rem), radial-gradient(circle at 82% 12%, #e5b73f52 0 2.2rem, transparent 2.4rem); }
 .hero-inner { text-align: center; max-width: 640px; width: 100%; min-width: 0; padding: clamp(1.5rem, 4vw, 2.5rem); background: #fff4dce8; border: 1px solid #ffffffa8; border-radius: 26px 12px 24px 14px; box-shadow: 0 24px 70px #1735322b; backdrop-filter: blur(7px); }
-.gameplay-figure { max-width: var(--media-width); margin: 0 auto 2.5rem; }
+.gameplay-figure { max-width: min(var(--media-width), 1347px); margin: 0 auto 2.5rem; }
 .palette-panel { margin-block: 2rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #b8c7b3; border-radius: 8px; background: #faf5e8; }
 .palette-panel h3 { margin-block: .4rem .8rem; }
 .palette-panel > p { max-width: 65ch; }
