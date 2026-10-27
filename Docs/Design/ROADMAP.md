@@ -1,6 +1,6 @@
 # Development roadmap
 
-Updated: October 25, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the entry point.
+Updated: October 27, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior; [Validation](../Project/VALIDATION.md) owns evidence; [README](../../README.md) is the entry point.
 
 ## Exhibition product direction
 
@@ -22,10 +22,10 @@ The next decision is **whether the current build is dependable**, not how many m
 | 4 | Existing ResultsScreen summary binding | Saved scene reference and three-line legacy Text layout; creator visually confirmed the populated 2K natural-result screen | Verify Retry, focused values, other supported layouts and the exact package without adding a second result screen |
 | 5 | Simplified Chinese/Japanese/English runtime UI | One shared persistent selector, 31 static bindings and three dynamic labels are connected; exact glyph, runtime-format and 1080p/2K Chinese contrast/layout checks pass | Repeat all three connected languages with real pause input, nonzero results/on-beat feedback and Retry in the exact standalone candidate |
 | 6 | Original energetic ink-spray feedback | Continuous particle stream, immediate bounded hit sampling, coordinated pigment marks and a short impact pulse are saved | Play Mode-check visual/logical alignment, target readability, wall sweeps, fast aim changes, pause/resume and Retry; fix only demonstrated blockers |
-| 7 | Shared-index color switching and prepared-room paint | Learner-owned runtime work is not complete; eight pigment groups and four flat receivers exist | One selected index coordinates stream, impact, deposits and gun accent; every explicitly eligible opaque static receiver paints at contact, with four-receiver fallback preserved |
-| 8 | Feature freeze | Due October 27 | All committed items must pass focused checks; cut the prepared-room stretch, extra variants, milestones and ornament before compromising the stable fallback |
-| 9 | Exact exhibition-PC package acceptance | Open | Fresh extraction, 30 minutes of real play, at least ten Retries, pause/focus/audio/quit and recorded hardware details |
-| 10 | Primary plus fallback rehearsal | Open | Record immutable filenames, hashes and which machine passed; rehearse operator recovery offline |
+| 7 | Shared-index color switching and prepared-room paint | Shared color selection is saved. Nine prepared static opaque receivers carry the explicit `PaintSurface` contract; 32 broad-coverage prefabs provide four silhouettes across eight pigments | Automated 72-contact, pause, 1,000-mark, natural-song and ten-Retry checks passed; retain the four-receiver/legacy-mark fallback data |
+| 8 | Feature freeze | Automated Gate F passed October 27 | Build and test one immutable candidate; do not reopen optional gameplay or ornament |
+| 9 | Exact desktop candidate checks | Next | Fresh extraction, archive/manifest/hash verification and a Windows startup/player-log smoke; real-play feel and venue audio are excluded |
+| 10 | Primary plus fallback record | Next | Record immutable filenames and hashes and preserve demo.5 as rollback; on-site operator rehearsal is outside this automated pass |
 
 The beat-approach fill is saved and connected to the chart/song clock. The existing results screen now receives final score, local best score, successful hits, on-beat hits and maximum streak, and retains Retry. The new accounting and layout are saved source, not accepted gameplay: focused count, expiry, natural-end, Retry and resolution checks remain open. Accuracy, Miss count and grade remain out of scope.
 
@@ -33,12 +33,12 @@ The beat-approach fill is saved and connected to the chart/song clock. The exist
 
 | Area | Saved or observed evidence | Still required |
 |---|---|---|
-| Public package | GitHub prerelease v0.1.0-demo.5 contains Windows x64 and unsigned/unnotarized macOS Universal ZIPs from `0c5db59`; both compiled with zero errors and passed CRC/manifest/font-notice/hash checks; a fresh Windows extraction passed startup and Chinese start/HUD smoke | Windows target-PC full-song/pause/Retry/soak acceptance; real-Mac launch/audio/input/complete-song acceptance. Publication is not acceptance |
-| Current source | Eight indexed pigments, teal production spray, three direct-deposit pattern families, continuous spray without spawned gameplay projectiles, cursor-contact visual length, foreground transparent sorting, forgiving SphereCast hits and short mark-impact pulse | Current combined-source Play Mode, complete-song, Retry, performance and clean-package checks; C# compilation alone is not acceptance |
+| Public package | GitHub prerelease v0.1.0-demo.5 contains Windows x64 and unsigned/unnotarized macOS Universal ZIPs from `0c5db59`; both compiled with zero errors and passed CRC/manifest/font-notice/hash checks; a fresh Windows extraction passed startup and Chinese start/HUD smoke | Preserve as rollback until the new immutable candidate passes automated build/archive/Windows-startup checks |
+| Current source | Eight indexed pigments, shared color switching, three broad direct-deposit families, continuous spray without spawned gameplay projectiles, cursor-contact visual length, foreground transparent sorting, forgiving SphereCast hits, short mark-impact pulse and nine explicitly prepared static receivers | Automated Play Mode contact/pause/1,000-mark/natural-song/ten-Retry acceptance passed; clean desktop build, archive and Windows-package smoke remain |
 | Current art | Brighter side walls, six-color murals, plaster/mineral floor, multicolor reservoir, author plaque; isolated native renders and component checks | In-play target contrast, latest combined-build load and actual-machine performance; indirect lighting/reflections have not been rebaked |
 | Input/feedback | Saved pointer, firing audio, bounded recoil, on-beat feedback, chart-clock-driven approach fill and concentrated continuous spray; creator-reported earlier spot checks predate the final spray envelope/pulse | Tapping versus held-fire listening test, stream/target readability, pause/focus/Retry and wall-sweep checks on final hardware |
 | Statistics/results | Successful-hit/on-beat counters, current/maximum streak, reset paths and ResultsScreen binding are saved; creator visually confirmed the populated 2K result layout | Focused 5/2/70, duplicate/expiry, Retry, other-layout and exact-package acceptance before freeze; no missed-event denominator yet |
-| Performance | Earlier instrumented full song with 610 marks and ten diagnostic reloads; current source removes redundant per-frame UI, input, particle and balloon-list work | Re-measure the latest source in a clean standalone player; at least 30 minutes of real full-song/retry use, memory/object trends and target-PC frame times |
+| Performance | Current automated Editor fixture retained 1,000 marks; forced 2K rendering measured 3.733 ms mean / 6.584 ms p95 and about 5.4 MB additional reported allocation on an RTX 5070 Ti Laptop GPU | Treat as Editor diagnostic evidence, not standalone FPS; physical soak and venue-hardware judgement are excluded from this pass |
 | Website | Trilingual source and deployed Pages site describe connected localization, use the current 2K Simplified Chinese Unity render and expose verified demo.5 Windows/macOS download cards | Preserve truthful platform limits and update only from real uploaded release assets |
 
 October 19–20 time included art and learner paint work. Earlier scheduled counter/streak sessions are not treated as completed. Do not compress missed scope into the remaining days.
@@ -67,7 +67,7 @@ Dates are targets, not completion claims. The creator explicitly accepted a narr
 
 Work through the gates in order. A later calendar date does not waive an earlier gate: if the current-source playtest is not recorded, fix or describe that blocker before adding counters; if feature-freeze acceptance is incomplete, cut optional work rather than moving it into the packaging window.
 
-Current status: the learner has advanced the source portions of Gates B–D through the existing result-page binding. The maintainer has connected the shared trilingual table to static and dynamic UI text and completed Japanese editor flow/layout checks at 2K and 1080p. Gate E still requires the learner-owned shared pigment index plus a three-language standalone-player pass.
+Current status: the learner has advanced the source portions of Gates B–E through shared pigment selection and the existing result-page binding. The maintainer connected the shared trilingual table, all nine prepared static opaque receivers and the original eight-pigment broad-coverage art. Automated Gate F passed all 72 surface/pigment contacts, pause persistence, a 1,000-mark 2K Editor diagnostic, natural complete-song settlement and ten Retry resets. The next deliverable is one immutable desktop candidate. Human feel, venue-volume, unfamiliar-player and real-Mac checks were removed from this pass at the creator's request and are explicitly excluded rather than passed.
 
 | Date | Main outcome | Evidence / cut rule |
 |---|---|---|
@@ -76,7 +76,7 @@ Current status: the learner has advanced the source portions of Gates B–D thro
 | Oct 24 | **Gate C — on-beat subset.** Reuse the existing matched-event judgement and expose an on-beat count only after the hit is accepted | Five accepted hits including two on-beat hits produce 70 points, five successful hits and two on-beat hits; pause and duplicate callbacks change nothing |
 | Oct 25 | **Gate D — forgiving streak/result binding plus presentation repair.** Preserve the learner statistics work; separate the visual spray emitter from the logical muzzle and prepare original tintable VFX art without connecting gameplay | Expiry resets current, not maximum; wall/empty shots do not reset; Retry clears all round values. Held fire must no longer appear to pass through the gun; do not create a second result screen |
 | Oct 26 | **Gate E — trilingual UI and coordinated color.** Finish Simplified Chinese/Japanese/English switching, then let one learner-owned selected pigment index update stream, impact/deposits and gun accent | No copied game content or territory rules. Preserve collider/root timing; switching color changes no score or rhythm state; check all three language layouts |
-| Oct 27 | **Gate F — prepared-room paint and feature freeze.** Expand only through explicit opaque static receivers, run contact/Retry/performance regression and observe unfamiliar players | Keep the stretch only if it passes before freeze. Otherwise ship the four-receiver fallback; arbitrary curved, moving and transparent surfaces remain post-festival |
+| Oct 27 | **Gate F — prepared-room paint and feature freeze.** Expand only through explicit opaque static receivers and run automated contact/Retry/performance regression | Passed: nine receivers × eight pigments, pause persistence, 1,000 retained marks, natural song end and ten Retry resets. Human observation is excluded at the creator's request; arbitrary curved, moving and transparent surfaces remain post-festival |
 | Oct 28 | Exhibition-PC full-song/retry soak, frame/memory capture, build/extract one immutable candidate and retain the last accepted fallback | At least 30 minutes of actual play and ten consecutive Retries; verify both languages, statistics identities, effects, offline notices and exact hash |
 | Oct 29 | Rehearse newcomer instructions, player handoff, volume, restart and backup recovery | Main/fallback launch from fresh extraction. Patch only demonstrated blockers and create a new version if bytes change |
 | Oct 30 | Final equipment/package rehearsal and distribution freeze | Verify executable/hash, mouse surface, display, power, audio and operator sheet. No speculative last-minute polish |
@@ -113,19 +113,19 @@ Later lessons may study co-op, upgrades or broader maps only after this slice es
 
 The learner owns Assets/Scripts and reconfirmed that ownership on October 25. Explain one field/helper/call site at a time, let the learner write it, then review saved code before continuing. The creator deferred further paint-scale parameter lessons.
 
-The saved source contains the first four learner statistics increments plus the October 24 continuous-spray checkpoint. Static review confirms scene references, paired metadata, bounded hit sampling, the teal stream/mark default, the restricted direct-mark family set, local-space endpoint control, foreground transparent sorting and the short-lived mark pulse. The creator's October 25 screenshot demonstrates visual overlap between the stretched spray tail and the gun. The art-only correction moves `MuzzleSpray` forward while leaving the logical `Muzzle` unchanged and shortens the stretched tail; a first-person Play Mode check is still required. The new neutral tintable VFX atlas is prepared candidate art and is not runtime integration. No new results screen is needed.
+The saved source contains the learner's statistics, shared pigment and continuous-spray work. The maintained asset layer now supplies an original broad-coverage atlas, 32 eight-pigment mark prefabs and the nine prepared receivers without changing learner-owned scoring, timing or hit cadence. Automated Unity evidence covers all 72 receiver/pigment contacts, pause persistence, 1,000 retained marks, natural complete-song settlement and ten Retry resets. No new results screen or gameplay rule is needed before packaging.
 
-1. **Record the corrected spray visual checkpoint.** Repeat balloon center/edge, wall/floor, rapid-aim, release/press, pause/resume and Retry checks; verify that the first visible particle begins beyond the nozzle while hit contact remains unchanged.
-2. **Add one deliberate pigment-selection method.** The learner writes one clamped selected-index method that becomes the only source for stream, impact/deposit and gun-accent color. Do not add keyboard/UI cycling in the same increment.
-3. **Prototype one bounded paint-surface contract.** Follow [full-scene paint architecture](FULL_SCENE_PAINT_ARCHITECTURE.md) on a copied graybox wall before expanding to prepared room receivers. Keep scoring unchanged and retain the four-surface baseline.
-4. **Complete standalone localization acceptance.** Check all three languages with real pause input, a nonzero on-beat notification, nonzero result statistics, natural settlement and Retry at 2K and 1080p on the exhibition candidate.
-5. **Freeze and accept the exhibition package.** Keep the prepared-room stretch only if contact, Retry, readability and measured performance pass by October 27; complete newcomer, full-song and exact-package checks before publishing a new demo or updating the website.
+1. **Freeze the saved gameplay.** Do not add optional rules, variants or ornament while packaging.
+2. **Build one immutable desktop candidate.** Use a clean worktree from one pushed commit for Windows x64 and macOS Universal.
+3. **Verify the exact archives.** Check CRC, runtime manifest, notices, prohibited-file exclusions, launcher/data layout, hashes and a fresh Windows-package startup/player log.
+4. **Refresh the trilingual website truthfully.** Show the integrated eight-color, nine-surface automated evidence and preserve the explicit Editor/standalone and unsigned-Mac limits.
+5. **Preserve rollback.** Keep demo.5 available until the new prerelease and website have been verified.
 
 Milestone flourishes at streak 5/10/20 remain optional even though the base streak is committed. Asset/layout preparation can proceed independently but does not replace the learner's integration or manual judgement.
 
-## Experience acceptance
+## Optional future human acceptance — excluded from this automated pass
 
-Use the [short creator playtest and reply template](../Project/EXHIBITION_PLAYTEST.md) for the first current-source report. A Japanese-first printable control card is linked there; font/print acceptance on exhibition hardware remains open.
+The creator asked to cancel checks this environment cannot perform. The following physical-feel, unfamiliar-player, venue-audio and booth-hardware procedures are therefore advisory only and do not block the current automated package pass. They must never be recorded as passed without a real observation. The [short creator playtest and reply template](../Project/EXHIBITION_PLAYTEST.md) remains available if a later on-site session is desired.
 
 These are planning targets for a small formative test, not statistical or medical claims.
 

@@ -1,6 +1,16 @@
 # Validation record
 
-Updated: October 25, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 27, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+
+## Broad-coverage surface paint automated acceptance, October 27
+
+The original `SurfacePaintCoverage20261027` atlas is integrated into 32 persistent-mark prefabs: puddle, smear, burst and bridge variants for all eight coordinated pigments. Direct deposits use the new puddle, burst and bridge silhouettes while retaining the last three legacy slots as fallback data; balloon-pop deposits use the broad burst family. Every mark remains collider-free and script-free. The 1024 compressed atlas has no mipmaps, and its SpriteRenderers disable shadows, light/reflection probes, motion vectors and dynamic occlusion. No score, rhythm, hit cadence or surface-eligibility rule was added by this asset pass.
+
+Unity 6000.0.77f1 compiled and imported the current source, then the automated Play Mode fixture passed 72 contact checks covering eight pigments on all nine prepared `PaintSurface` receivers. Each mark was checked immediately against the actual `Collider.Raycast` hit point and normal. Paint remained present through pause; 1,000 persistent marks survived the dense sample; a natural 123.429-second song reached Results; and ten consecutive Retry reloads each returned to zero retained paint. The saved success marker is `SURFACE_PAINT_COVERAGE_PLAY_OK`.
+
+A forced 2560 × 1440 Editor-camera diagnostic on an NVIDIA GeForce RTX 5070 Ti Laptop GPU measured 2.459 ms mean / 3.525 ms p95 at baseline and 3.733 ms mean / 6.584 ms p95 with 1,000 marks. Reported allocated memory increased from 345,366,009 to 350,760,315 bytes. These figures are Editor fixture diagnostics, not standalone-player FPS, booth-hardware acceptance or a promise about other GPUs. `Assets/StudioArtPack/SurfacePaintCoverage20261027/Validation.json` stores the measurements, and `Previews/DenseCoverage_1000Marks.png` is the corresponding native Unity capture.
+
+At the creator's request, checks that this environment cannot establish objectively were removed rather than left as implied blockers: physical spray feel, venue-volume listening, unfamiliar-player observation and real Apple-hardware launch. They are excluded, not passed. Automated source, build, archive and Windows-package checks continue below.
 
 ## Gun visual, tintable VFX and website art update, October 25
 

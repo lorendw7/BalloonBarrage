@@ -1,0 +1,12 @@
+SURFACE_PAINT_COVERAGE_V1_INTEGRATED
+Generated 2026-10-27 with the recorded built-in image-generation prompt.
+PNG: 1254 x 1254 RGBA, SHA-256 D293A83AEBAD6A30381AF822B8E08D095CC9CF60252B76A1DF45172A3FB11DCA.
+Importer: multiple Sprite, four 627 x 627 cells, 250 pixels per unit, sRGB, alpha transparency, no mipmaps, clamp, bilinear.
+Intent: broader connected centers and shorter chunky lobes that overlap more readily than the existing dry-spray marks.
+Prefabs: 32 collider-free, script-free prefabs: puddle, smear, burst and bridge variants for teal, coral, gold, sky blue, violet, rose, lime and tangerine. They reuse the existing per-pigment tint materials.
+Integration: the first three direct-deposit slots in every pigment group use puddle, burst and bridge; the final three legacy slots remain as recoverable fallback data. Balloon-pop wall-paint references use the new broad burst family.
+Performance configuration: no mipmaps; 1024 maximum texture size; compressed import; shadows, light probes, reflection probes, motion vectors and dynamic occlusion disabled on the mark renderers.
+Automated Unity evidence: all nine prepared PaintSurface receivers accepted all eight pigments; 72 contact checks aligned to the recorded hit point and normal; pause retained paint; 1,000 marks remained present; a natural 123.429-second song reached Results; ten Retry reloads each cleared retained paint.
+Editor 2K diagnostic: forced-camera baseline mean 2.459 ms / p95 3.525 ms; 1,000-mark mean 3.733 ms / p95 6.584 ms; reported allocated-memory delta 5,394,306 bytes. Hardware: NVIDIA GeForce RTX 5070 Ti Laptop GPU; Unity 6000.0.77f1.
+Preview: Previews/DenseCoverage_1000Marks.png, native Unity capture, SHA-256 187D108CDA3EE91DDEB2D2676D95618ADFC24641A140306873C81D5E236910D5.
+Limits: this is automated Editor evidence, not a physical-feel, venue-volume, unfamiliar-player, real-Mac or exact-standalone-package acceptance result. Those human-only checks were excluded at the creator's request.

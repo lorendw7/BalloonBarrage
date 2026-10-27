@@ -195,5 +195,17 @@
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
     "attribution": "Native Unity 2560x1440 Simplified Chinese start-screen render, 2026-10-25. Captured by the project localization preview tool after the fixed Medium font and contrast-color pass; not a standalone-package capture. Original menu-art attribution and prompts remain unchanged. No generative editing."
+  },
+  {
+    "source": "Assets/StudioArtPack/SurfacePaintCoverage20261027/Previews/DenseCoverage_1000Marks.png",
+    "source_sha256": "187d108cda3ee91ddeb2d2676d95618adfc24641a140306873c81d5e236910d5",
+    "output": "Website/media/surface-paint-coverage-20261027.webp",
+    "output_sha256": "d39cf08f48b16cbae1ad367b0701b8a74d2896ca42679647a764a406994e7292",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 automated coverage fixture, 2026-10-27. Nine prepared static surfaces, eight pigments and 1,000 retained marks; not physical gameplay or standalone-package acceptance. The persistent marks use original generated artwork whose exact prompt and source hash remain in the canonical asset folder. No generative editing was applied to this capture."
   }
 ]

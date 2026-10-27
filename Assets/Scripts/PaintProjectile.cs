@@ -34,6 +34,12 @@ public class PaintProjectile : MonoBehaviour
 
     [SerializeField] private float paintRotationRange = 20f;
 
+    [SerializeField, Min(0.1f)]
+    private float paintCoverageMultiplier = 2f;
+
+    [SerializeField, Min(1f)]
+    private float wallPaintWidthMultiplier = 1.35f;
+
     [System.Serializable]
     private class PaintPatternGroup
     {
@@ -115,15 +121,8 @@ public class PaintProjectile : MonoBehaviour
 
     public void SpawnPaintMark(RaycastHit hit, int pigmentIndex)
     {
-        string surfaceName = hit.collider.name;
 
-        bool isPaintableSurface =
-            surfaceName == "MainWall" ||
-            surfaceName == "Floor" ||
-            surfaceName == "LeftWall" ||
-            surfaceName == "RightWall";
-
-        if(!isPaintableSurface ||
+        if (!PaintSurface.CanReceivePaint(hit.collider) ||
             paintPatternGroups == null ||
             paintPatternGroups.Length == 0)
         {
@@ -149,14 +148,20 @@ public class PaintProjectile : MonoBehaviour
 
         Vector3 position = hit.point + hit.normal * 0.005f;
 
-        Quaternion rotation = Quaternion.LookRotation(hit.normal);
+        Quaternion rotation =
+            Quaternion.FromToRotation(
+                Vector3.forward,
+                hit.normal);
 
         GameObject mark = Instantiate(
             selectedPrefab, position, rotation);
 
         int sortingOrder = nextPaintSortingOrder++;
 
-        foreach(SpriteRenderer spriteRenderer in mark.GetComponentsInChildren<SpriteRenderer>(true))
+        SpriteRenderer spriteRenderer =
+            mark.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
         {
             spriteRenderer.sortingOrder = sortingOrder;
         }
@@ -171,7 +176,17 @@ public class PaintProjectile : MonoBehaviour
 
         float scaleMultiplier = GetDirectSprayScale(patternIndex);
 
-        mark.transform.localScale *= scaleMultiplier;
+        Vector3 targetScale = mark.transform.localScale * scaleMultiplier;
+
+        bool isVerticalSurface =
+            Mathf.Abs(hit.normal.y) < 0.5f;
+
+        if (isVerticalSurface)
+        {
+            targetScale.x *= wallPaintWidthMultiplier;
+        }
+
+        mark.transform.localScale = targetScale;
 
         PaintMarkImpactPulse impactPulse =
             mark.AddComponent<PaintMarkImpactPulse>();
@@ -198,20 +213,23 @@ public class PaintProjectile : MonoBehaviour
             pigmentRandom.Next(weightedPatterns.Length)];
     }
 
-    private static float GetDirectSprayScale(int patternIndex)
+    private float GetDirectSprayScale(int patternIndex)
     {
         float randomValue = (float)pigmentRandom.NextDouble();
 
         switch (patternIndex)
         {
             case 0: // Spray
-                return 0.95f + randomValue * 0.45f;
+                return paintCoverageMultiplier *
+                    (0.95f + randomValue * 0.45f);
 
             case 1: // Burst
-                return 0.8f + randomValue * 0.35f;
+                return paintCoverageMultiplier *
+                    (0.8f + randomValue * 0.35f);
 
             case 2: // Drip
-                return 0.9f + randomValue * 0.25f;
+                return paintCoverageMultiplier *
+                    (0.9f + randomValue * 0.25f);
 
             default:
                 return 1f;

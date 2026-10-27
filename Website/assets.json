@@ -126,5 +126,13 @@
   {
     "source": "Website/media/paint-spray-vfx-20261025.webp",
     "output": "paint-spray-vfx-20261025.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/SurfacePaintCoverage20261027/Previews/DenseCoverage_1000Marks.png",
+    "output": "surface-paint-coverage-20261027.png"
+  },
+  {
+    "source": "Website/media/surface-paint-coverage-20261027.webp",
+    "output": "surface-paint-coverage-20261027.webp"
   }
 ]

@@ -36,6 +36,7 @@ SOURCES = {
     "studio-refresh-20261020": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After.png",
     "mixed-pigment-model-20261020": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
     "paint-spray-vfx-20261025": "Assets/StudioArtPack/PaintSprayStyle20261025/Textures/PaintSprayVfx_Atlas_v3.png",
+    "surface-paint-coverage-20261027": "Assets/StudioArtPack/SurfacePaintCoverage20261027/Previews/DenseCoverage_1000Marks.png",
 }
 
 PREVIEW_ATTRIBUTIONS = {
@@ -46,6 +47,7 @@ PREVIEW_ATTRIBUTIONS = {
     "start-screen-20261019": "Native Unity interface preview, 2026-10-19. Refined creator nameplate; not a screenshot of the released demo. Original menu-art attribution and prompts remain unchanged.",
     "start-localized-zh-hans-20261025": "Native Unity 2560x1440 Simplified Chinese start-screen render, 2026-10-25. Captured by the project localization preview tool after the fixed Medium font and contrast-color pass; not a standalone-package capture. Original menu-art attribution and prompts remain unchanged. No generative editing.",
     "paint-spray-vfx-20261025": "Original transparent 2-by-2 paint-VFX candidate generated with OpenAI built-in image generation on 2026-10-25. Neutral white artwork is prepared for runtime tinting and is not connected gameplay. Exact prompt, source path and source hash are retained in the canonical asset folder.",
+    "surface-paint-coverage-20261027": "Native Unity 6000.0.77f1 automated coverage fixture, 2026-10-27. Nine prepared static surfaces, eight pigments and 1,000 retained marks; not physical gameplay or standalone-package acceptance. The persistent marks use original generated artwork whose exact prompt and source hash remain in the canonical asset folder. No generative editing was applied to this capture.",
 }
 
 

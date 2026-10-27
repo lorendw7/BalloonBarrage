@@ -11,6 +11,9 @@ public class PlayerShooter : MonoBehaviour
 
     [SerializeField] private ParticleSystem muzzleSpray;
 
+    [SerializeField]
+    private ParticleSystem impactSprayPrefab;
+
     [SerializeField] private AudioSource shotAudioSource;
 
     [SerializeField, Min(0.1f)]
@@ -61,9 +64,13 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField]
     private Transform gunVisual;
 
+    [SerializeField]
+    private Renderer paintCanisterRenderer;
+
     private Vector3 gunRestLocalPosition;
 
     private Quaternion gunRestLocalRotation;
+
 
     private void SetSprayVisual(
         bool shouldPlay,
@@ -183,13 +190,79 @@ public class PlayerShooter : MonoBehaviour
             0,
             pigmentCount - 1);
 
+        Color selectedColor = paintProjectilePrefab.GetPigmentColor(sprayPigmentIndex);
+
         if (muzzleSpray != null)
         {
             ParticleSystem.MainModule main = muzzleSpray.main;
-            main.startColor = paintProjectilePrefab.GetPigmentColor(
-                sprayPigmentIndex);
+            main.startColor = selectedColor;
+        }
+
+        if (paintCanisterRenderer != null)
+        {
+            Material canisterMaterial = paintCanisterRenderer.material;
+
+            if (canisterMaterial.HasProperty("_BaseColor"))
+            {
+                canisterMaterial.SetColor("_BaseColor", selectedColor);
+            }
         }
     }
+
+    private void SelectNextPigment()
+    {
+        if (paintProjectilePrefab == null ||
+            paintProjectilePrefab.PigmentCount <= 0)
+        {
+            return;
+        }
+
+        sprayPigmentIndex =
+            (sprayPigmentIndex + 1) %
+            paintProjectilePrefab.PigmentCount;
+
+        ConfigureSprayPigment();
+    }
+
+    private void PlayImpactSpray(RaycastHit hit)
+    {
+        if(impactSprayPrefab == null)
+        {
+            return;
+        }
+
+
+        Vector3 position = hit.point + hit.normal * 0.01f;
+
+        Quaternion rotation =
+            Quaternion.LookRotation(hit.normal);
+
+        ParticleSystem effect = Instantiate(
+            impactSprayPrefab, position, rotation);
+
+        effect.Stop(
+            true,
+            ParticleSystemStopBehavior.StopEmittingAndClear);
+
+        Color impactColor = Color.white;
+
+        if (paintProjectilePrefab != null)
+        {
+            impactColor = paintProjectilePrefab.GetPigmentColor(sprayPigmentIndex);
+        }
+
+        ParticleSystem[] particleSystems = effect.GetComponentsInChildren<ParticleSystem>(true);
+
+        foreach (ParticleSystem particle in particleSystems)
+        {
+            ParticleSystem.MainModule main = particle.main;
+            main.startColor = impactColor; 
+        }
+
+        effect.Play(true);
+        Destroy(effect.gameObject, 2f);
+    }
+
 
     private void ConfigureSprayPresentation()
     {
@@ -324,6 +397,16 @@ public class PlayerShooter : MonoBehaviour
     void Update()
     {
         Mouse mouse = Mouse.current;
+
+        Keyboard keyboard = Keyboard.current;
+
+        if (keyboard != null &&
+            keyboard.cKey.wasPressedThisFrame &&
+            RoundController.IsPlaying &&
+            !RoundController.IsPaused)
+        {
+            SelectNextPigment();
+        }
 
         Vector2 pointerPosition = mouse != null
             ? mouse.position.ReadValue()
@@ -478,6 +561,8 @@ public class PlayerShooter : MonoBehaviour
                 paintProjectilePrefab.SpawnPaintMark(
                     sprayHit,
                     sprayPigmentIndex);
+
+                PlayImpactSpray(sprayHit);
             }
         }
 

@@ -34,14 +34,14 @@ test("all languages explain unrestricted-duration held fire without promising pe
     for (const phrase of required[locale]) assert.ok(copy.includes(phrase), `${locale}: ${phrase}`);
   }
 });
-test("all languages distinguish prepared VFX art from learner-owned runtime integration", () => {
+test("all languages describe the integrated eight-color coverage fixture", () => {
   const required = {
-    "zh-Hans": ["候选", "尚未接入", "青绿色"],
-    ja: ["候補", "未接続", "ティール"],
-    en: ["candidate", "not connected", "teal"]
+    "zh-Hans": ["八种颜色", "九个", "1000", "十次 Retry"],
+    ja: ["8色", "9面", "1,000", "10回連続"],
+    en: ["eight pigments", "nine", "1,000", "ten consecutive Retries"]
   };
   for (const locale of languages) {
-    const copy = `${strings[locale].sprayBody} ${strings[locale].sprayRuntimeStatus} ${strings[locale].paletteBody}`;
+    const copy = `${strings[locale].updatesIntro} ${strings[locale].sprayBody} ${strings[locale].sprayPreviewLabel} ${strings[locale].sprayRuntimeStatus}`;
     for (const phrase of required[locale]) assert.ok(copy.includes(phrase), `${locale}: ${phrase}`);
   }
 });
@@ -182,7 +182,7 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
   assert.equal((await fetch(base + "/assets/gameplay-development-20261019.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/assets/gameplay-development-share-20261019.jpg")).headers.get("content-type"), "image/jpeg");
-  assert.equal((await fetch(base + "/assets/paint-spray-vfx-20261025.webp")).headers.get("content-type"), "image/webp");
+  assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
 });

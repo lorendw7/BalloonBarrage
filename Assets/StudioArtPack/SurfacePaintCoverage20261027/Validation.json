@@ -1,0 +1,42 @@
+{
+  "recorded": "2026-10-27",
+  "unityVersion": "6000.0.77f1",
+  "graphicsDevice": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+  "scope": "Automated Unity Editor Play Mode fixture; not a standalone-player benchmark or human playtest.",
+  "surfaceCount": 9,
+  "pigmentCount": 8,
+  "contactChecks": 72,
+  "retainedMarkCount": 1000,
+  "naturalSongDurationSeconds": 123.429,
+  "retryCount": 10,
+  "baselineRender": {
+    "meanMilliseconds": 2.458983333333333,
+    "p95Milliseconds": 3.5252000000000005,
+    "allocatedMemoryBytes": 345366009,
+    "markCount": 0
+  },
+  "denseRender": {
+    "meanMilliseconds": 3.7326400000000006,
+    "p95Milliseconds": 6.5835,
+    "allocatedMemoryBytes": 350760315,
+    "markCount": 1000
+  },
+  "preview": {
+    "path": "Previews/DenseCoverage_1000Marks.png",
+    "sha256": "187D108CDA3EE91DDEB2D2676D95618ADFC24641A140306873C81D5E236910D5"
+  },
+  "passed": [
+    "All nine prepared static surfaces accepted all eight pigments.",
+    "Every contact aligned to its recorded Collider.Raycast hit point and normal.",
+    "Paint persisted while paused.",
+    "One thousand retained marks remained present through the dense render sample.",
+    "The complete song reached Results through natural song time.",
+    "Ten consecutive Retry scene reloads cleared retained paint."
+  ],
+  "excludedAtCreatorRequest": [
+    "Physical spray feel",
+    "Venue-volume listening",
+    "Unfamiliar-player observation",
+    "Real Apple hardware launch"
+  ]
+}

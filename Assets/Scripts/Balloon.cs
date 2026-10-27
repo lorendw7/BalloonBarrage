@@ -205,14 +205,7 @@ public class Balloon : MonoBehaviour
                 continue;
             }
 
-            string surfaceName = hit.collider.name;
-
-            bool canReceivePaint = surfaceName == "MainWall" ||
-                surfaceName == "Floor" ||
-                surfaceName == "LeftWall" ||
-                surfaceName == "RightWall";
-
-            if (!canReceivePaint)
+            if (!PaintSurface.CanReceivePaint(hit.collider))
             {
                 continue;
             }
@@ -220,7 +213,10 @@ public class Balloon : MonoBehaviour
             Vector3 position = hit.point + hit.normal * 0.005f;
 
 
-            Quaternion rotation = Quaternion.LookRotation(hit.normal);
+            Quaternion rotation =
+                 Quaternion.FromToRotation(
+                     Vector3.forward,
+                     hit.normal);
 
             Instantiate(wallPaintPrefabs[index], position, rotation);
         }

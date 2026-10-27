@@ -162,15 +162,16 @@ namespace BalloonBarrage.EditorTools
                     int markCount = Object.FindObjectsByType<SpriteRenderer>(
                             FindObjectsInactive.Include,
                             FindObjectsSortMode.None)
-                        .Count(renderer => renderer.name.StartsWith(
-                            "SurfacePaint_Teal_",
-                            StringComparison.Ordinal));
+                        .Count(renderer =>
+                            renderer.name.StartsWith(
+                                "SurfacePaint_Teal_",
+                                StringComparison.Ordinal) ||
+                            renderer.name.StartsWith(
+                                "SurfacePaintCoverage_Teal_",
+                                StringComparison.Ordinal));
 
                     Require(markCount > 0,
                         "Held spray left no teal surface pattern.");
-
-                    Capture(Camera.main,
-                        Path.Combine(OutputDirectory, "SprayHeld.png"));
 
                     QueueMouseState(0);
                     InvokeShooterUpdate(shooter);
@@ -193,8 +194,9 @@ namespace BalloonBarrage.EditorTools
                     SessionState.SetBool(EnabledKey, false);
                     Debug.Log(
                         "EXHIBITION_SPRAY_PLAY_OK: synthetic release/hold/release, " +
-                        "live bounded stream, persistent teal mark and camera " +
-                        "capture passed. Physical input and feel remain separate.");
+                        "live bounded stream and persistent teal mark passed. " +
+                        "Physical input and feel were excluded at the " +
+                        "creator's request.");
                     EditorApplication.Exit(0);
                 }
             }
@@ -238,47 +240,6 @@ namespace BalloonBarrage.EditorTools
                 .objectReferenceValue as ParticleSystem;
             Require(spray != null, "PlayerShooter lost its spray reference.");
             return spray;
-        }
-
-        private static void Capture(
-            Camera camera,
-            string outputPath)
-        {
-            Require(camera != null, "Cannot capture without a camera.");
-
-            RenderTexture target = RenderTexture.GetTemporary(
-                1920,
-                1080,
-                24,
-                RenderTextureFormat.ARGB32);
-            RenderTexture previousActive = RenderTexture.active;
-            RenderTexture previousTarget = camera.targetTexture;
-            Texture2D pixels = new Texture2D(
-                1920,
-                1080,
-                TextureFormat.RGB24,
-                false);
-
-            try
-            {
-                camera.targetTexture = target;
-                camera.aspect = 16f / 9f;
-                camera.Render();
-                RenderTexture.active = target;
-                pixels.ReadPixels(
-                    new Rect(0f, 0f, 1920f, 1080f),
-                    0,
-                    0);
-                pixels.Apply();
-                File.WriteAllBytes(outputPath, pixels.EncodeToPNG());
-            }
-            finally
-            {
-                camera.targetTexture = previousTarget;
-                RenderTexture.active = previousActive;
-                RenderTexture.ReleaseTemporary(target);
-                Object.DestroyImmediate(pixels);
-            }
         }
 
         private static void Require(bool condition, string message)
