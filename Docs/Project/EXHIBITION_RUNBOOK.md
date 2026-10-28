@@ -27,10 +27,10 @@ Use this runbook for the accepted Windows package at the Kyudaisai booth. It cov
 
 ## Player handoff
 
-Plan an accepted short-candidate turn for about two to two-and-a-half minutes: a short explanation, one 75–90-second song window and a brief results/paint moment. If the selected package is demo.6, plan three to four minutes for its complete 123.429-second song. Do not describe the fallback as the shortened version.
+Plan a verified festival-mode turn for about 90–120 seconds: a short explanation/selection, one approximately 64–65-second profile (within the 60–75-second target) and a brief results/paint moment. Standard mode plays complete recordings and displays their actual durations; use Festival when visitors are waiting. If the selected package is demo.6, plan three to four minutes for its complete 123.429-second song. Do not describe the fallback as the shortened version.
 
 1. Reset to the title/results handoff state agreed during rehearsal.
-2. Point to the Japanese control card. Explain mouse aim and held left-click first; describe the beat bonus as optional.
+2. Point to the Japanese control card. Explain mouse aim and held left-click first; describe the beat bonus as optional. Select Festival mode, then a song. Explain that the three opening hollow outlines are a demonstration; the real balloons that follow can be popped normally. No memorized input or tapping is required.
 3. Let the player finish after misses. Do not restart merely for a low score.
 4. At results, allow a short look at the painted room, then offer a different song/Retry if the accepted package supports selection, or end the turn.
 5. Between players, check pointer control, audio and whether the expected fresh-round state appears.

@@ -6,7 +6,7 @@ Updated: October 29, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 The creator authorized parallel Codex implementation of the festival revision, all-ten-song preparation, updated desktop packages and an ordinary push to `main`. This authorizes the bounded implementation described here; preserve the learner's existing three functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons.
 
-Prepare **v0.1.0-demo.8** with ten songs in two modes:
+The implemented **v0.1.0-demo.8** candidate has ten songs in two modes. All twenty profiles completed automated natural Editor rounds; Windows/macOS builds, exact ZIP checks and fresh Windows startup passed. [Validation](../Project/VALIDATION.md#demo8-natural-rounds-and-desktop-packages--october-29) records scope, hashes and remaining human/target-platform limits.
 
 - **Festival:** 60–75 seconds per song, preferably about 65 seconds, with a clear musical start, contrast and ending. Default to this mode for the booth.
 - **Standard:** each complete recording, with a separate versioned chart/profile identity. Do not overwrite original audio or existing profiles.

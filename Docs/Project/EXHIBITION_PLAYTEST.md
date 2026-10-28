@@ -4,7 +4,7 @@ Use the current saved `Assets/Scenes/PrototypeScene.unity` for the latest implem
 
 ## Creator session: about five minutes
 
-1. Start one complete song. Spend the opening section aiming freely and holding fire; later try a few deliberate timed taps. Continue after misses.
+1. Select one festival profile for a short trial, or Standard for a complete recording. Spend the opening section aiming freely and holding fire; later try a few deliberate timed taps. Continue after misses.
 2. Listen during continuous fire: can you still hear the song and recognize the on-beat accent? Note anything sharp, repetitive or tiring.
 3. Shoot the same wall area repeatedly. Confirm each new direct-hit mark appears above earlier marks and above background graffiti, including once after Retry. Near the end, check whether balloons, reticle and timing cues remain clear against accumulated paint.
 4. Watch the approach fill across several events and the ending state. Let the song finish. Check final score, best score, Retry, one pause/resume and return of the pointer. Report any stuck input or paint surviving into the next round.
@@ -30,14 +30,15 @@ These are user reports, not automated test results. Record them with the tested 
 
 ## Feedback-driven candidate checks
 
-Run these only after the corresponding learner increment is saved. Stop at the first failed dependency and keep demo.6 available.
+Run these against the named festival candidate. Record human observations separately from automated checks and retain the verified fallback.
 
-0. Click Start, choose Goin' Under, Springtime or Mecha-Tribe Assault from the dropdown, hear its short preview, then confirm Play. Check Back restores the title without starting a round. Number-key song shortcuts are removed. During play, press C and confirm the gun/pigment color advances once per press without changing the balloon's assigned color. Confirm increased target visibility, readable row spacing and the 16-target bound.
+0. Click Start, choose Festival or Standard, select one of the ten songs, hear its preview, then confirm Play. Switch modes and check that the song remains matched while its duration/record changes. Check Back restores the title without starting a round. Number-key song shortcuts are removed. During play, press C and confirm the gun/pigment color advances once per press without changing the balloon's assigned color. Confirm increased target visibility, readable row spacing and the 16-target bound.
 1. Reproduce center and edge balloon hits from the center, left and right of the screen. The pigment puff, latex fragments and any gold accent must originate at the accepted contact and remain independent after the balloon disappears; one hit must not emit twice.
-2. Measure the selected round from scheduled gameplay start to natural results. Audio, timer, included events and settlement must agree on 75–90 seconds. Pause for at least five seconds, resume, then Retry and confirm a fresh origin and clean transient effects.
-3. Complete each selectable song twice. Confirm the displayed title/credit, audible track, prepared event set, barrage set, result identity and best record agree; switch songs, Retry and relaunch once to detect mixed state.
+2. Measure the selected round from scheduled gameplay start to natural results. In Festival mode audio, timer, included events and settlement must agree on the selected approximately 64–65-second profile; Standard must use the complete recording duration. Pause for at least five seconds, resume, then Retry and confirm a fresh origin and clean transient effects.
+3. For any observed song/profile, aim for two completed rounds; keep the all-ten catalog check as a separate longer session. Confirm the displayed title/credit, audible track, prepared event set, barrage set, result identity and best record agree; switch songs, Retry and relaunch once to detect mixed state.
 4. Observe the lateral sweep, shallow fan and staggered cluster during held fire and deliberate taps. Each should be recognizable without hiding the reticle, timing cue or next target. Record maximum visible targets and any unavoidable overlap rather than silently accepting skipped events.
-5. During the densest pattern, confirm fragments and pigment variations stay bounded, the song/on-beat accent remains audible and no transient effect survives natural results, Retry or return to title.
+5. At the opening, confirm the three hollow markers cannot be hit and that their sequence matches the real answer balloons. Does it feel like useful anticipation or unnecessary waiting? Held spray must remain valid; no failed-response penalty is introduced.
+6. During the densest pattern, confirm fragments and pigment variations stay bounded, the song/on-beat accent remains audible and no transient effect survives natural results, Retry or return to title.
 
 If segmented playback permission or compatible second-song data is unresolved, do not improvise a crop at the booth. Test the unmodified whole-song candidate or use demo.6.
 

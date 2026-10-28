@@ -1,5 +1,24 @@
 # Validation record
 
+## Demo.8 natural rounds and desktop packages — October 29
+
+Release source is **`2c3df2d494eb201939ebc69b797bed23b87aa464`**, pushed to `main` and checked out separately at `D:/CS/Build/BalloonBarrage-v0.1.0-demo.8`. That clean checkout passed all 22 rhythm tests and Git LFS object verification. Ninety-four saved runtime/scene/data files in each of the three isolated verification projects were compared against this source (normalizing C# text line endings); no differences were found. Two shards began before the commit id was available in their environment, so this explicit source comparison binds their reports to the release source rather than inventing a recorded environment value.
+
+All **20 profiles completed natural DSP playback**, ten festival windows and ten complete recordings, with no clock offsets or runtime errors. Three duration-balanced shards passed 6/6, 7/7 and 7/7 rounds in approximately **696.6, 654.2 and 692.3 seconds**; total musical duration was **2,008.75 seconds (33.48 minutes)**. All **1,435/1,435 chart targets** were admitted and observed once, peak active count stayed at most eleven, and every round passed demonstration/response, five sampled physical casts including two on-beat hits (70 points), duplicate-hit protection, pause/resume, natural results and Retry reset. These are automated Editor sessions, not human aiming, audible calibration, natural held-input trials or standalone-player full-song acceptance.
+
+Unity 6000.0.77f1 built both non-Development players from that named source. Windows x64 succeeded with **zero errors/warnings**, 242,188,457 reported bytes and 80.029 seconds. macOS Universal succeeded with **zero errors/warnings**, 258,825,335 bytes and 22.524 seconds. The Mac main executable has Intel 64-bit and Apple-silicon fat Mach-O entries. The build tool's frame-timing flag and restored default Standalone architecture are the only generated ProjectSettings changes in the build checkout; active learner settings remain unchanged.
+
+| Immutable package | ZIP bytes | SHA-256 | Runtime manifest files |
+|---|---|---|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.8.zip | 121,537,671 | `c882ce7c2db800979a72432361528b2a035e06c01fc92c69af969b4c29d07a42` | 239 |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.8.zip | 130,680,673 | `83bb03d56ac3eb926706520fc64445e1cd0d2f47a6eb40a2a5fdb2abed391deb` | 241 |
+
+Both exact ZIPs passed CRC, duplicate/path checks, every runtime-manifest byte/hash, all sixteen pinned StepMania originals, all twenty derived charts, required launcher paths, notices/credits/font licenses, checksum sidecars and Unity backup exclusion. New Festival/BY-SA notices match the clean source byte-for-byte; the older project-authored StepMania NOTICE has checkout-dependent line endings and was compared to the actual clean build source. Original upstream files remain verified against their recorded hashes. The Mac ZIP preserves executable permissions. GitHub's privately staged ZIP sizes and digests match the local archives.
+
+The freshly extracted Windows package passed the exhibition preflight and a **20-second startup/player-log smoke**, initializing Unity/Direct3D/Input System and loading Goin' Under's 45-event festival profile. It did not exit early or match crash, null/missing-reference or failed-chart patterns before the process was deliberately stopped. This does not establish standalone full-song input/audio/Retry acceptance. macOS is unsigned, unnotarized and untested on a real Mac; venue, human listening/aiming and sustained player-performance observations remain unverified.
+
+Raw reports/logs/screenshots remain in ignored `.local-reference/FestivalVerification20261029*` and `Builds/Desktop-v0.1.0-demo.8`. The downloadable `BalloonBarrage-v0.1.0-demo.8-verification.json` combines the fast/natural reports, exact source comparison, build summaries, package hashes and startup result. [Demo.8](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.8) was published as a prerelease with both ZIPs, checksum sidecars and the [verification JSON](https://github.com/lorendw7/BalloonBarrage/releases/download/v0.1.0-demo.8/BalloonBarrage-v0.1.0-demo.8-verification.json) (SHA-256 `c449df1512143ed1cecc096cc97bd577e6c2d85c09693011420adb5690a2483c`). The tag targets the exact build commit. Website delivery is checked separately from player acceptance. Prior demo.7/demo.6 assets remain immutable and recoverable.
+
 ## October 29 festival phrase revision — source and accelerated runtime
 
 The creator authorized parallel Codex implementation, all-ten-song preparation, updated packaging and an ordinary main-branch push. Three agents prepared catalog data, runtime integration and independent verification. The long-note paint ribbon was explicitly deferred. The learner's `KyudaisaiLearnerCore.cs`, PlayerShooter/paint scoring path, source audio, original charts and notices remain intact.
