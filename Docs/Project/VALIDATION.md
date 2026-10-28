@@ -1,5 +1,22 @@
 # Validation record
 
+## Demo.7 desktop packages — October 29
+
+Both immutable platform packages were built with Unity 6000.0.77f1 from isolated checkout `f4d52636b8612b4da53e9f786fff1c0bd6ffd05b`, after pushing that commit to `main`. Current learner edits made during building were left in the active workspace and are outside these packages. The separate checkout's thirteen rhythm tests and Git LFS object verification pass. Its build tool enables frame-timing statistics and serializes the restored default Standalone architecture; these are build-generated settings, not learner code changes. macOS is built Universal.
+
+| Package | Build result | Bytes | SHA-256 |
+|---|---|---:|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.7.zip | Succeeded; 0 errors, 0 warnings; 172.092 seconds | 121320386 | `5972687b5a091f1410d1d8064a0269b9086402c802e6c84e6fd4f398a28d3916` |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.7.zip | Succeeded; 0 errors, 5 reported warnings; 181.601 seconds | 130459645 | `21392644c73a90e202021844859c6497b8c4c38c25c538aab44831383e0f73b7` |
+
+Both archives pass ZIP CRC, every runtime-manifest size/hash (214 Windows entries, 216 macOS entries), exclusion of backup/DoNotShip payloads, all seven new chart/profile/license bundles, exact original classic MP3 hashes, sixteen unchanged StepMania source files, provenance bytes and SHA-256 sidecars. The Mac archive preserves executable permissions. Full notices remain included, and original classic MP3s stay directly available inside StreamingAssets.
+
+A fresh Windows extraction passes ten structural preflight checks and the StepMania bundle verifier. Its process stayed alive for twenty seconds with graphics initialized and no recognized runtime exception/load/shader errors, then the fixture stopped that exact process. This is hidden batch-mode startup evidence, not a standalone input/listening/full-song playtest. macOS is unsigned, unnotarized and untested on real Mac. New practice-grid phase/encoder-delay calibration and full ten-song human play remain unverified. Demo.6 remains an immutable fallback.
+
+The website's thirteen tests pass. A headless browser separately checks Chinese, Japanese and English at 1440- and 390-pixel widths: all six routes return 200, show ten tracks, have no page exceptions and no horizontal overflow.
+
+Publication completed at **00:35:30 JST on October 29, 2026** as [v0.1.0-demo.7](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.7), a public prerelease with both ZIPs and SHA-256 sidecars. The [release-triggered Pages deployment](https://github.com/lorendw7/BalloonBarrage/actions/runs/40717533513) succeeded from `main`. The live website's `release.json` independently reports demo.7, correct byte lengths and trusted platform URLs for both downloads. All six headless browser checks also pass against the live site. Fresh unauthenticated downloads of both public ZIPs match the exact hashes above. This confirms publication and transfer integrity; it does not expand the gameplay, listening or Mac acceptance boundary.
+
 ## October 29 music and studio expansion — source checks
 
 The [expansion guide](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) records seven added recordings, licenses, original hashes, practice-grid boundaries and production art integration. `Assets/Scripts` is unchanged from `cb2c514`. Unity 6000.0.77f1 completed `OPEN_EXPANSION_SETUP_OK` and `CLASSIC_MUSIC_SETUP_OK`: ten serialized profiles, seven promoted studio prefabs, five Kenney decorations, supported materials and no added decoration colliders/runtime behaviours. Existing gameplay component data other than the song catalog was protected during authoring; original GUIDs and lightmaps remain.
@@ -10,7 +27,7 @@ The updated `KYUDAISAI_RUNTIME_SMOKE_OK` also passes all ten clip/chart selectio
 
 Native scene and 3840×2160 runtime captures were inspected; the website derivatives preserve source/output hashes. No new generative image editing occurred. Human listening calibration, MP3 encoder-delay alignment, full ten-song play, exhibition hardware, sustained player performance and real-Mac acceptance are unverified. The computer-use skill's native pipe was unavailable after retry/reset, so no desktop-UI playtest is claimed. Build/package/publication evidence follows separately for the exact demo.7 outputs.
 
-Updated: October 28, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 29, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
 
 ## External playtest feedback received October 28
 
