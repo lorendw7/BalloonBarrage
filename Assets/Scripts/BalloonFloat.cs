@@ -6,6 +6,9 @@ public class BalloonFloat : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 0.6f;
 
+    [SerializeField, Min(0f)]
+    private float driftDelaySeconds = 3f;
+
     [SerializeField]
     private Vector2 xRange = new Vector2(-3.5f, 3.5f);
 
@@ -14,10 +17,35 @@ public class BalloonFloat : MonoBehaviour
 
     private Rigidbody body;
     private bool hasStartedMoving;
+    private float driftElapsedSeconds;
+    private RigidbodyConstraints originalConstraints;
+    private bool holdingPosition;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
+        originalConstraints = body.constraints;
+    }
+
+    private void OnEnable()
+    {
+        if (hasStartedMoving || driftDelaySeconds <= 0f) return;
+        body.linearVelocity = Vector3.zero;
+        body.angularVelocity = Vector3.zero;
+        body.constraints = originalConstraints | RigidbodyConstraints.FreezePosition;
+        holdingPosition = true;
+    }
+
+    private void OnDisable()
+    {
+        ReleasePosition();
+    }
+
+    private void ReleasePosition()
+    {
+        if (!holdingPosition) return;
+        body.constraints = originalConstraints;
+        holdingPosition = false;
     }
 
     private void FixedUpdate()
@@ -30,6 +58,14 @@ public class BalloonFloat : MonoBehaviour
 
         if (!hasStartedMoving)
         {
+            // Count only active play so pause preserves the initial formation.
+            driftElapsedSeconds += Time.fixedDeltaTime;
+            if (driftElapsedSeconds < driftDelaySeconds)
+            {
+                return;
+            }
+
+            ReleasePosition();
             StartMoving();
             hasStartedMoving = true;
         }

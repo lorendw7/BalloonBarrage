@@ -354,7 +354,13 @@ public static class FestivalRuntimeValidation
         {
             int instance = balloon.GetInstanceID();
             if (SpawnedIds.TryGetValue(balloon.EventId, out int prior)) Require(prior == instance, "Scoring event spawned twice: " + balloon.EventId);
-            else SpawnedIds[balloon.EventId] = instance;
+            else
+            {
+                RhythmEventData chartEvent = Loaded(reader).events.First(e => e.id == balloon.EventId);
+                Require(controller.SongTimeSeconds - reader.GetSpawnTime(chartEvent) < .5d,
+                    "Target admission was delayed by congestion: " + balloon.EventId);
+                SpawnedIds[balloon.EventId] = instance;
+            }
         }
         Current.observedDistinctTargets = SpawnedIds.Count;
         Component cue = controller.GetComponents<Component>().FirstOrDefault(c => c != null && c.GetType().Name == "FestivalDemonstrationCue");

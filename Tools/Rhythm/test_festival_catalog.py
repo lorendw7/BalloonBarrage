@@ -1,5 +1,6 @@
 """Verify the exact twenty-profile festival catalog and its derived-event contract."""
 import struct
+import re
 import unittest
 
 import prepare_festival_catalog as festival
@@ -70,9 +71,18 @@ class FestivalCatalogTests(unittest.TestCase):
             self.assertLess(times[-1], profile["sourceCueOutSeconds"] - 1)
             self.assertTrue(all(b - a >= festival.MIN_GAP - 1e-7 for a, b in zip(times, times[1:])))
             peak = max(sum(0 <= t - previous <= festival.LEAD + festival.CLEANUP for previous in times) for t in times)
-            self.assertLessEqual(peak, 12, profile["title"])
+            self.assertLessEqual(peak, 16, profile["title"])
             self.assertEqual(peak, chart["estimatedPeakActiveWithoutHits"])
             self.assertTrue(all(e["authoredPlacement"] and -2 <= e["placementSlot"] <= 2 for e in events))
+
+    def test_density_estimate_uses_production_prefab_expiry_and_scene_capacity(self):
+        prefab = (festival.ROOT / "Assets/StudioArtPack/BalloonColors/Prefabs/PlayableBalloon_ThreeColors.prefab").read_text()
+        scene = (festival.ROOT / "Assets/Scenes/PrototypeScene.unity").read_text()
+        cleanup = float(re.search(r"cleanupDelaySeconds: ([\d.]+)", prefab)[1])
+        capacity = int(re.search(r"maxBalloons: (\d+)", scene)[1])
+        self.assertEqual(festival.CLEANUP, cleanup)
+        for profile in self.profiles:
+            self.assertLessEqual(self.chart(profile)["estimatedPeakActiveWithoutHits"], capacity)
 
     def test_sections_are_contiguous_and_source_times_are_not_double_shifted(self):
         for profile in self.profiles:

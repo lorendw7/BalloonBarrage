@@ -8,6 +8,8 @@ The creator authorized parallel Codex implementation of the festival revision, a
 
 The implemented **v0.1.0-demo.8** candidate has ten songs in two modes. All twenty profiles completed automated natural Editor rounds; Windows/macOS builds, exact ZIP checks and fresh Windows startup passed. [Validation](../Project/VALIDATION.md#demo8-natural-rounds-and-desktop-packages--october-29) records scope, hashes and remaining human/target-platform limits.
 
+The subsequent creator-requested source adjustment holds each balloon's initial placement for three active seconds before drift and extends unanswered-target cleanup to eight seconds after the beat. The creator also explicitly authorized direct fixes for crowded placement, collision protection during the wait, safe legacy lesson preparation and resolved-target NEXT synchronization. [Game design](GAME_DESIGN.md#required-rhythm-loop) owns behavior; [Validation](../Project/VALIDATION.md) records the checks. Published demo.8 packages have not been rebuilt with these adjustments.
+
 - **Festival:** 60–75 seconds per song, preferably about 65 seconds, with a clear musical start, contrast and ending. Default to this mode for the booth.
 - **Standard:** each complete recording, with a separate versioned chart/profile identity. Do not overwrite original audio or existing profiles.
 

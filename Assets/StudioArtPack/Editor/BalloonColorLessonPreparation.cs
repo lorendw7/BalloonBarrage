@@ -13,7 +13,7 @@ namespace BalloonBarrage.EditorTools
     {
         const string Source = "Assets/Prefabs/PlayableBalloon.prefab";
         const string Folder = "Assets/StudioArtPack/BalloonColors/Prefabs";
-        const string Output = Folder + "/PlayableBalloon_ThreeColors.prefab";
+        const string Output = Folder + "/LessonBalloon_ThreeColors.prefab";
 
         static void Require(bool value, string message)
         {
@@ -24,6 +24,11 @@ namespace BalloonBarrage.EditorTools
         public static void Build()
         {
             Require(!EditorApplication.isPlayingOrWillChangePlaymode, "Leave Play Mode first.");
+            if (File.Exists(Output))
+            {
+                Debug.Log("THREE_COLOR_LESSON_PRESERVED: " + Output);
+                return;
+            }
             Directory.CreateDirectory(Folder);
             AssetDatabase.Refresh();
             var root = PrefabUtility.LoadPrefabContents(Source);
@@ -70,7 +75,9 @@ namespace BalloonBarrage.EditorTools
                 var balloon = instance.GetComponent<Balloon>();
                 var serialized = new SerializedObject(balloon);
                 Require(balloon.points == 10, "Base score changed.");
-                Require(Math.Abs(serialized.FindProperty("cleanupDelaySeconds").doubleValue - 3.1) < .0001,
+                var source = new SerializedObject(AssetDatabase.LoadAssetAtPath<GameObject>(Source).GetComponent<Balloon>());
+                Require(Math.Abs(serialized.FindProperty("cleanupDelaySeconds").doubleValue -
+                    source.FindProperty("cleanupDelaySeconds").doubleValue) < .0001,
                     "Expiry tuning changed.");
                 Require(Math.Abs(serialized.FindProperty("rhythmWindowsSeconds").doubleValue - .1) < .0001,
                     "Judgement window changed.");
@@ -114,7 +121,7 @@ namespace BalloonBarrage.EditorTools
                 foreach (var item in physics)
                     Require(EditorJsonUtility.ToJson(item.Key) == item.Value, "Physics configuration changed.");
                 Debug.Log("THREE_COLOR_BALLOON_VERIFY_OK: current source components preserved; 3 pigment/burst matches; " +
-                    "24 valid spawn selections; one unchanged mesh; score 10, expiry 3.1, window .1 and glow preserved; no scene hookup.");
+                    "24 valid spawn selections; one unchanged mesh; source expiry, score 10, window .1 and glow preserved; separate lesson asset, no scene hookup.");
             }
             finally { Object.DestroyImmediate(instance); }
         }

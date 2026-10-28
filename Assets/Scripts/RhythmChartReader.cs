@@ -57,6 +57,7 @@ public class RhythmChartReader : MonoBehaviour
     private int nextEventIndex = 0;
 
     private int nextCueEventIndex = 0;
+    private readonly HashSet<int> resolvedEventIds = new HashSet<int>();
 
     [SerializeField]
     private RoundController roundController;
@@ -87,6 +88,12 @@ public class RhythmChartReader : MonoBehaviour
 
     private int lastAwardPoints;
 
+    private void OnTargetResolved(int eventId)
+    {
+        resolvedEventIds.Add(eventId);
+        displayedCueTenths = int.MinValue;
+    }
+
     private void ShownOnBeatFeedback(int awardPoints)
     {
         if (onBeatFeedbackText == null ||
@@ -106,6 +113,7 @@ public class RhythmChartReader : MonoBehaviour
     private void OnEnable()
     {
         Balloon.OnBeatHit += ShownOnBeatFeedback;
+        Balloon.OnResolved += OnTargetResolved;
         LanguageSettings.LanguageChanged += OnLanguageChanged;
 
         if (roundController != null)
@@ -117,6 +125,7 @@ public class RhythmChartReader : MonoBehaviour
     private void OnDisable()
     {
         Balloon.OnBeatHit -= ShownOnBeatFeedback;
+        Balloon.OnResolved -= OnTargetResolved;
         LanguageSettings.LanguageChanged -= OnLanguageChanged;
 
         if (roundController != null)
@@ -172,6 +181,7 @@ public class RhythmChartReader : MonoBehaviour
     private void LoadSelectedChart()
     {
         chart = null;
+        resolvedEventIds.Clear();
         if (roundController == null || roundController.SelectedSong == null)
         {
             Debug.LogError("No song profile is available for the chart reader.");
@@ -300,7 +310,8 @@ public class RhythmChartReader : MonoBehaviour
         }
 
         while (nextCueEventIndex < chart.events.Length &&
-            currentSongTime > chart.events[nextCueEventIndex].timeSeconds)
+            (currentSongTime > chart.events[nextCueEventIndex].timeSeconds ||
+             resolvedEventIds.Contains(chart.events[nextCueEventIndex].id)))
         {
             nextCueEventIndex++;
         }

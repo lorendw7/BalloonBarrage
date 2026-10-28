@@ -76,18 +76,7 @@ public class BalloonSpawner : MonoBehaviour
 
         Vector3 position = GetPatternPosition(eventData.pattern, placementSlot, eventData.patternStep);
 
-        // Spread overlapping events across readable rows while retaining their pattern x position.
-        foreach (float row in PlacementRows)
-        {
-            Vector3 candidate = position;
-            candidate.y = Mathf.Clamp(position.y + row, yRange.x, yRange.y);
-            if (!activeBalloons.Exists(other => other != null &&
-                (other.transform.position - candidate).sqrMagnitude < 0.75f * 0.75f))
-            {
-                position = candidate;
-                break;
-            }
-        }
+        if (!TryFindOpenPosition(position, out position)) return false;
 
         GameObject newBalloon = Instantiate(
             balloonPrefab,
@@ -100,6 +89,50 @@ public class BalloonSpawner : MonoBehaviour
 
         activeBalloons.Add(balloon);
         return true;
+    }
+
+    private bool TryFindOpenPosition(Vector3 preferred, out Vector3 position)
+    {
+        // Preserve the authored column whenever a readable row is available.
+        foreach (float row in PlacementRows)
+        {
+            Vector3 candidate = preferred;
+            candidate.y = Mathf.Clamp(preferred.y + row, yRange.x, yRange.y);
+            if (IsPositionOpen(candidate))
+            {
+                position = candidate;
+                return true;
+            }
+        }
+
+        // Search the bounded area for the closest free alternative. Failure
+        // leaves the chart event pending instead of creating an overlap.
+        int columns = Mathf.Clamp(Mathf.CeilToInt((xRange.y - xRange.x) / 0.425f), 1, 32);
+        int rows = Mathf.Clamp(Mathf.CeilToInt((yRange.y - yRange.x) / 0.425f), 1, 32);
+        float closestDistance = float.PositiveInfinity;
+        position = preferred;
+        bool found = false;
+        for (int column = 0; column <= columns; column++)
+        {
+            for (int row = 0; row <= rows; row++)
+            {
+                Vector3 candidate = new Vector3(
+                    Mathf.Lerp(xRange.x, xRange.y, (float)column / columns),
+                    Mathf.Lerp(yRange.x, yRange.y, (float)row / rows), zPosition);
+                float distance = (candidate - preferred).sqrMagnitude;
+                if (distance >= closestDistance || !IsPositionOpen(candidate)) continue;
+                position = candidate;
+                closestDistance = distance;
+                found = true;
+            }
+        }
+        return found;
+    }
+
+    private bool IsPositionOpen(Vector3 candidate)
+    {
+        return !activeBalloons.Exists(other => other != null &&
+            (other.transform.position - candidate).sqrMagnitude < 0.75f * 0.75f);
     }
 
     public Vector3 GetPatternPosition(BarragePattern pattern, int placementSlot, int patternStep)

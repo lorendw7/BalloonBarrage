@@ -1,5 +1,7 @@
 # Balloon and projectile palette
 
+The legacy `Tools/Balloon Studio/Prepare Three-Color Balloon Lesson` command now creates a separate `Assets/StudioArtPack/BalloonColors/Prefabs/LessonBalloon_ThreeColors.prefab`. It preserves an existing lesson asset on repeated invocation and never writes the production prefab below or changes scene references. Its isolated verification compares cleanup against the source lesson prefab instead of hard-coding historical timing. Use the production prefab for the current eight-pigment game; the generated three-color asset is a teaching example.
+
 Updated: October 19, 2026. The creator explicitly authorized adding multiple colors to balloons and projectiles. [Game design](../Design/GAME_DESIGN.md) owns behavior and [roadmap](../Design/ROADMAP.md) owns delivery.
 
 ## Saved configuration

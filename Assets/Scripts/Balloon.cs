@@ -13,6 +13,7 @@ public class Balloon : MonoBehaviour
     };
 
     public static event System.Action<int> OnBeatHit;
+    public static event System.Action<int> OnResolved;
 
 
     [SerializeField]
@@ -73,6 +74,7 @@ public class Balloon : MonoBehaviour
         Score.RegisterExpiredTarget();
 
         isPoping = true;
+        OnResolved?.Invoke(EventId);
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
@@ -118,6 +120,7 @@ public class Balloon : MonoBehaviour
         isPoping = true;
         Score.Add(points + bonusPoints);
         Score.RegisterSuccessfulHit(bonusPoints > 0);
+        OnResolved?.Invoke(EventId);
 
         if (bonusPoints > 0)
         {
