@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "sourceCommit": "2c3df2d494eb201939ebc69b797bed23b87aa464",
+  "fixture": "Assets/Editor/FestivalRuntimeValidation.cs",
+  "records": [
+    {
+      "path": "Assets/Art/Previews/Festival20261029/Selection.png",
+      "sha256": "d8b0ff2b6e0ffdf296621552fe767760e242d308541bf971f2a00396bd6c0792",
+      "originalFixtureFile": "FestivalSelection.png",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "profile": "Goin Under festival selector",
+      "capture": "Native Unity 6000.0.77f1 automated Editor Play Mode capture, natural DSP verification shard 0, October 29 2026. Corresponding demo.8 source; not a standalone-package or physical-playtest capture. Source PNG copied byte-for-byte; no generative editing."
+    },
+    {
+      "path": "Assets/Art/Previews/Festival20261029/Watch.png",
+      "sha256": "95ad438f00b93ec2372fba16e73665cf1c06af2c7c97d700638ca907e763de90",
+      "originalFixtureFile": "FestivalWatch-0.png",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "profile": "cozy-puzzle-1-festival-phrase-v2",
+      "capture": "Native Unity 6000.0.77f1 automated Editor Play Mode capture, natural DSP verification shard 0, October 29 2026. Corresponding demo.8 source; not a standalone-package or physical-playtest capture. Source PNG copied byte-for-byte; no generative editing."
+    },
+    {
+      "path": "Assets/Art/Previews/Festival20261029/Response.png",
+      "sha256": "e04bdec6e724affaf552b93349ed61956c437bf523811be30ee5a2dd27522677",
+      "originalFixtureFile": "FestivalAnswer-0.png",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "profile": "cozy-puzzle-1-festival-phrase-v2",
+      "capture": "Native Unity 6000.0.77f1 automated Editor Play Mode capture, natural DSP verification shard 0, October 29 2026. Corresponding demo.8 source; not a standalone-package or physical-playtest capture. Source PNG copied byte-for-byte; no generative editing."
+    }
+  ],
+  "attribution": "Existing room, model, font, generated-art prompts and music attribution remain in CREDITS.md. Selection has no audio capture; watch/response uses MintoDog CC0 source music in the automated fixture. No new generated artwork."
+}

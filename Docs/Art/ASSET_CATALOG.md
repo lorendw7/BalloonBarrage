@@ -2,7 +2,7 @@
 
 Canonical assets stay in Unity directories. `Website/assets.json` references selected originals and tracked web derivatives; generated deployment copies stay ignored. Asset presence alone does not prove runtime integration.
 
-Updated: October 28, 2026. New art studies remain separate from the demo.6 desktop package. The [studio expansion guide](STUDIO_EXPANSION_20261028.md) records the new pack's contents, prompts and verification; [Roadmap](../Design/ROADMAP.md) owns any production promotion.
+Updated: October 29, 2026. The catalog includes production assets, separate art studies and versioned native captures; each retains its own integration/evidence boundary. The [studio expansion guide](STUDIO_EXPANSION_20261028.md) records the new pack's contents, prompts and verification; [Roadmap](../Design/ROADMAP.md) owns any production promotion.
 
 | Location | Contents |
 |---|---|
@@ -10,7 +10,8 @@ Updated: October 28, 2026. New art studies remain separate from the demo.6 deskt
 | Assets/Art/BlasterKit | 40 FBX models including 18 blasters; keep the original palette |
 | Assets/Art/Concepts | Studio and balloon visual references |
 | Assets/Art/Textures | Original splat atlas and quiet graffiti wall |
-| Assets/Art/Previews | PrototypeScene_20261010 and gun/workbench/balloon closeups |
+| Assets/Art/Previews | Historical scene/gameplay and gun/workbench/balloon closeups |
+| Assets/Art/Previews/Festival20261029 | Three untouched native 4K demo.8-source selection/watch/response captures with [provenance](../../Assets/Art/Previews/Festival20261029/Provenance.json); automated Editor evidence, not standalone recordings |
 | Assets/Audio | Five generic and five glass impact sounds |
 | Assets/Audio/Music | Three original loops, two cues and music metadata |
 | Assets/Prefabs | Playable balloon |

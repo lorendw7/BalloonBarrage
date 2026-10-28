@@ -218,5 +218,33 @@
   {
     "source": "Website/media/studio-integrated-20261029.webp",
     "output": "studio-integrated-20261029.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Selection.png",
+    "output": "festival-selection-20261029.png"
+  },
+  {
+    "source": "Website/media/festival-selection-20261029.webp",
+    "output": "festival-selection-20261029.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Watch.png",
+    "output": "festival-watch-20261029.png"
+  },
+  {
+    "source": "Website/media/festival-watch-20261029.webp",
+    "output": "festival-watch-20261029.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Response.png",
+    "output": "festival-response-20261029.png"
+  },
+  {
+    "source": "Website/media/festival-response-20261029.webp",
+    "output": "festival-response-20261029.webp"
+  },
+  {
+    "source": "Website/media/festival-share-20261029.jpg",
+    "output": "festival-share-20261029.jpg"
   }
 ]

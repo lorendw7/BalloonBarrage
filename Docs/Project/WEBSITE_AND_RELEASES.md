@@ -55,7 +55,15 @@ Player-facing copy lives in `Website/src/strings.mjs`; project documentation rem
 
 `Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives up to the source resolution, capped at 2560 × 1440. Gameplay, results, interface and coverage screenshots use quality 98 for clearer text and paint edges; other artwork uses quality 92. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
 
-The current official captures preserve native 3840 x 2160 Unity PNGs under `Assets/Art/Previews/Official20261028`. The website shows 2560 x 1440 quality-98 WebP derivatives and links to untouched 4K originals; its share image is a 1200 x 675 JPEG. The gameplay image comes from natural Springtime chart events in current development source, separate from published demo.6. Large figures stop at 1600 CSS pixels; the dialog may use most of the viewport. Below-the-fold images are lazy-loaded. Content-addressed CSS/JS prevents stale layout files from being mixed with new pages.
+The current gameplay, mode/song selection and demonstration/response figures use the three native 3840 × 2160 PNGs in `Assets/Art/Previews/Festival20261029`, corresponding to demo.8 source. Their provenance identifies the natural-DSP automated Editor fixture and source commit; they are not recordings of the standalone player or human tests. The two-step guide explains noninteractive outlines followed by real balloons. Earlier captures remain version-labelled in the media archive.
+
+The site shows 2560 × 1440 quality-98 WebP derivatives, links to untouched 4K originals and uses `festival-share-20261029.jpg` as its 1200 × 675 share image. Regenerate only these media with:
+
+```powershell
+python Website/scripts/prepare-images.py --only festival-selection-20261029 festival-watch-20261029 festival-response-20261029
+```
+
+The corresponding provenance records are merged without rewriting unrelated derivatives. Large figures stop at 1600 CSS pixels; the dialog may use most of the viewport. The two-step guide stacks below 800 CSS pixels. Below-the-fold images are lazy-loaded, image dialogs restore keyboard focus, and content-addressed CSS/JS prevents cached layout files from mixing with new pages. Translation checks additionally guard the new guide and delivery fields against Chinese text leaking into Japanese/English pages.
 
 ## Verification after publication
 

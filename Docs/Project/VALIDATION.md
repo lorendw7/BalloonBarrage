@@ -1,5 +1,13 @@
 # Validation record
 
+## October 29 demo.8 website visual refresh
+
+The website now shows native demo.8-source selection/watch/response captures rather than presenting demo.7 images beside the latest mechanics. Three untouched 3840 × 2160 PNGs and paired metadata/provenance are preserved in `Assets/Art/Previews/Festival20261029`; the WebP derivatives and 1200 × 675 share image record exact source/output hashes. No new generative image editing or gameplay changes occurred.
+
+Chinese/Japanese/English copy explains the two lengths, noninteractive demonstration, real response balloons and unrestricted held fire. Five delivery/download fields previously contained Chinese on Japanese/English routes; those translations are corrected, with a regression check for the affected fields and new guidance. The online build resolves both public demo.8 platform downloads, uses 62 image assets, and all **14 website tests pass**.
+
+Headless Edge browser checks covered all three languages at **390 and 1440 CSS pixels**: all referenced images loaded, no horizontal overflow or script errors, both demonstration stages appeared, both download links selected demo.8, and image-dialog opening, Escape dismissal and focus restoration passed. Desktop/mobile guide captures were visually inspected. Logs/screenshots are retained in ignored `Logs/WebsiteDemo8`; the initial browser harness was corrected to exclude the dialog's intentionally empty image placeholder before the final six-case pass. These checks concern website delivery and layout only; they do not add Unity, human aiming/listening or real-Mac acceptance.
+
 ## Demo.8 natural rounds and desktop packages — October 29
 
 Release source is **`2c3df2d494eb201939ebc69b797bed23b87aa464`**, pushed to `main` and checked out separately at `D:/CS/Build/BalloonBarrage-v0.1.0-demo.8`. That clean checkout passed all 22 rhythm tests and Git LFS object verification. Ninety-four saved runtime/scene/data files in each of the three isolated verification projects were compared against this source (normalizing C# text line endings); no differences were found. Two shards began before the commit id was available in their environment, so this explicit source comparison binds their reports to the release source rather than inventing a recorded environment value.

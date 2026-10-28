@@ -339,5 +339,53 @@
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
     "attribution": "Native Unity 2560x1440 Edit Mode render of the integrated production studio, October 28-29 2026. Seven current studio prefabs plus five Kenney CC0 models, imported from Kenney's author-uploaded Furniture Pack. Not gameplay, a new light bake or performance evidence. No generative editing. Existing artwork retains exact prompts and attribution."
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Selection.png",
+    "source_sha256": "d8b0ff2b6e0ffdf296621552fe767760e242d308541bf971f2a00396bd6c0792",
+    "output": "Website/media/festival-selection-20261029.webp",
+    "output_sha256": "1eaeef9b955619a3f26e9531c5d51e823af6630d4f6c9fa9724feef2a28326bc",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity 6000.0.77f1 automated Editor Play Mode 3840x2160 capture, October 29 2026. Demo.8 source commit 2c3df2d494eb201939ebc69b797bed23b87aa464, showing Festival/Standard mode selection and the matching song selector. Not a standalone-package capture or physical playtest. No generative editing; original artwork, prompts, models and font attribution preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Watch.png",
+    "source_sha256": "95ad438f00b93ec2372fba16e73665cf1c06af2c7c97d700638ca907e763de90",
+    "output": "Website/media/festival-watch-20261029.webp",
+    "output_sha256": "15809262f27f0fa2d28eba7877404eaacc16bc6f9413c0f03a4845343cb0da00",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: three noninteractive hollow demonstration markers. Not a standalone-package capture or physical playtest. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Response.png",
+    "source_sha256": "e04bdec6e724affaf552b93349ed61956c437bf523811be30ee5a2dd27522677",
+    "output": "Website/media/festival-response-20261029.webp",
+    "output_sha256": "625e287ff481035756bdeea7afc7a228cb204e98f9f347aaa4422b4562955171",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: real answer balloons following the demonstration. Not a standalone-package capture, human aiming or listening evidence. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Festival20261029/Response.png",
+    "source_sha256": "e04bdec6e724affaf552b93349ed61956c437bf523811be30ee5a2dd27522677",
+    "output": "Website/media/festival-share-20261029.jpg",
+    "output_sha256": "6db3fc54cc0afea035df5e6758bdbe7fe4040c3ca36638bfbd628a5ab9a26da9",
+    "dimensions": [
+      1200,
+      675
+    ],
+    "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
+    "attribution": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: real answer balloons following the demonstration. Not a standalone-package capture, human aiming or listening evidence. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved."
   }
 ]

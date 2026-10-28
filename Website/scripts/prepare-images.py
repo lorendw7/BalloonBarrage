@@ -17,6 +17,7 @@ WEB_MAX_SIZE = (2560, 1440)
 WEBP_QUALITY = 92
 SCREENSHOT_WEBP_QUALITY = 98
 HIGH_CLARITY_SCREENSHOTS = {
+    "festival-selection-20261029", "festival-watch-20261029", "festival-response-20261029",
     "gameplay-official-20261028", "song-selection-20261028", "title-official-20261028",
     "gameplay-development-20261019",
     "results-statistics-20261023",
@@ -32,6 +33,9 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "festival-selection-20261029": "Assets/Art/Previews/Festival20261029/Selection.png",
+    "festival-watch-20261029": "Assets/Art/Previews/Festival20261029/Watch.png",
+    "festival-response-20261029": "Assets/Art/Previews/Festival20261029/Response.png",
     "gameplay-open-music-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/GameplayClassic.png",
     "song-selection-ten-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/SongListTen.png",
     "studio-integrated-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/Studio.png",
@@ -61,6 +65,9 @@ SOURCES = {
 }
 
 PREVIEW_ATTRIBUTIONS = {
+    "festival-selection-20261029": "Native Unity 6000.0.77f1 automated Editor Play Mode 3840x2160 capture, October 29 2026. Demo.8 source commit 2c3df2d494eb201939ebc69b797bed23b87aa464, showing Festival/Standard mode selection and the matching song selector. Not a standalone-package capture or physical playtest. No generative editing; original artwork, prompts, models and font attribution preserved.",
+    "festival-watch-20261029": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: three noninteractive hollow demonstration markers. Not a standalone-package capture or physical playtest. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved.",
+    "festival-response-20261029": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: real answer balloons following the demonstration. Not a standalone-package capture, human aiming or listening evidence. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved.",
     "gameplay-open-music-20261029": "Native Unity 6000.0.77f1 Play Mode 3840x2160 automated capture, October 29 2026. Natural Chaoz Fantasy practice-grid events in the integrated production studio. Corresponding demo.7 source, not standalone capture or human play evidence. No generative editing. Music by ParagonX9, CC BY-SA 3.0; project synchronized-sequence contributions under the same license. Other assets retain original attribution.",
     "song-selection-ten-20261029": "Native Unity 3840x2160 automated Play Mode capture, October 29 2026, showing the ten-song dropdown in corresponding demo.7 source. The bounded list scrolls to reveal additional tracks. No generative editing. Original menu-art prompts and attribution preserved.",
     "studio-integrated-20261029": "Native Unity 2560x1440 Edit Mode render of the integrated production studio, October 28-29 2026. Seven current studio prefabs plus five Kenney CC0 models, imported from Kenney's author-uploaded Furniture Pack. Not gameplay, a new light bake or performance evidence. No generative editing. Existing artwork retains exact prompts and attribution.",
@@ -123,6 +130,16 @@ def main():
         elif relative == RESULTS_CAPTURE:
             records[-1]["attribution"] = RESULTS_ATTRIBUTION
     if selected:
+        if "festival-response-20261029" in selected:
+            relative = SOURCES["festival-response-20261029"]
+            source = ROOT / relative
+            share = Image.open(source).convert("RGB").resize((1200, 675), Image.Resampling.LANCZOS)
+            output = MEDIA / "festival-share-20261029.jpg"
+            share.save(output, "JPEG", quality=92, optimize=True)
+            records.append({"source": relative, "source_sha256": digest(source),
+                "output": output.relative_to(ROOT).as_posix(), "output_sha256": digest(output),
+                "dimensions": [1200, 675], "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
+                "attribution": PREVIEW_ATTRIBUTIONS["festival-response-20261029"]})
         if "gameplay-official-20261028" in selected:
             relative = SOURCES["gameplay-official-20261028"]
             source = ROOT / relative

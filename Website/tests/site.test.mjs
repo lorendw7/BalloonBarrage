@@ -23,6 +23,16 @@ test("all three translations have the same complete, nonempty key set", () => {
   }
 });
 
+test("festival guidance and delivery copy do not fall back to another language", () => {
+  const keys = ["deliveryNowBody", "deliveryNextTitle", "deliveryNextBody", "checkpointBody", "downloadIntro",
+    "watchTitle", "watchBody", "responseTitle", "responseBody", "nextBody"];
+  for (const key of keys) {
+    assert.doesNotMatch(strings.en[key], /[\u3400-\u9fff]/u, `English ${key} contains CJK text`);
+    assert.match(strings.ja[key], /[\u3040-\u30ff]/u, `Japanese ${key} needs its own Japanese copy`);
+    assert.notEqual(strings.ja[key], strings["zh-Hans"][key], `Japanese ${key} duplicates Chinese`);
+  }
+});
+
 test("all languages explain unrestricted-duration held fire without promising per-frame spawning", () => {
   const required = {
     "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限", "采样"],
@@ -99,17 +109,17 @@ test("ready, empty and API-failure pages render safely in all languages", () => 
   assert.ok(!html.includes('<script>alert("x")'));
 });
 
-test("sharing uses language-specific canonical URLs and the development capture", async () => {
+test("sharing uses language-specific canonical URLs and the demo.8 response capture", async () => {
   const base = "https://lorendw7.github.io/BalloonBarrage/";
   for (const locale of languages) {
     const html = renderPage(template, locale, selectDownload([release]));
     const canonical = base + (locale === "zh-Hans" ? "" : `${locale}/`);
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`));
     assert.ok(html.includes(`<meta property="og:url" content="${canonical}">`));
-    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/gameplay-official-share-20261028.jpg">`));
+    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/festival-share-20261029.jpg">`));
     assert.ok(!html.includes("v0.1.0-demo.1"), "Introductory copy must not advertise an obsolete package");
   }
-  assert.ok((await stat(path.join(site, "media/gameplay-official-20261028.webp"))).size < 800_000,
+  assert.ok((await stat(path.join(site, "media/festival-response-20261029.webp"))).size < 800_000,
     "Keep the 2K derivative of native 4K gameplay below 800 KB");
 });
 
@@ -117,6 +127,7 @@ test("web derivatives retain recorded source and output hashes", async () => {
   const records = JSON.parse(await readFile(path.join(site, "media/provenance.json"), "utf8"));
   const highClarityScreenshots = new Set([
     "gameplay-official-20261028.webp", "song-selection-20261028.webp", "title-official-20261028.webp",
+    "festival-selection-20261029.webp", "festival-watch-20261029.webp", "festival-response-20261029.webp",
     "gameplay-development-20261019.webp",
     "results-statistics-20261023.webp",
     "start-localized-zh-hans-20261025.webp",
@@ -192,7 +203,7 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   }
   assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
   assert.equal((await fetch(base + "/assets/gameplay-official-20261028.webp")).headers.get("content-type"), "image/webp");
-  assert.equal((await fetch(base + "/assets/gameplay-official-share-20261028.jpg")).headers.get("content-type"), "image/jpeg");
+  assert.equal((await fetch(base + "/assets/festival-share-20261029.jpg")).headers.get("content-type"), "image/jpeg");
   assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);

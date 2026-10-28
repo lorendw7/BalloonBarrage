@@ -1,5 +1,11 @@
 # Credits and provenance
 
+## October 29 demo.8 website captures
+
+`Assets/Art/Previews/Festival20261029` preserves three native 3840 × 2160 Unity Editor Play Mode captures: mode/song selection, hollow demonstration markers and real response balloons. Files are copied byte-for-byte from the automated natural-DSP verification fixture for demo.8 source commit `2c3df2d494eb201939ebc69b797bed23b87aa464`. They are development-source captures, not standalone-player recordings or human-playtest evidence. [Provenance.json](Assets/Art/Previews/Festival20261029/Provenance.json) records exact hashes, fixture files, dimensions and context.
+
+The website uses quality-98 WebP derivatives and a 1200 × 675 share JPEG. Derivative source/output hashes and settings are in `Website/media/provenance.json`. Existing room/model/font/music attribution and exact recorded artwork prompts remain unchanged. No generative editing or new image generation occurred.
+
 ## October 29 festival phrase adaptations
 
 `Assets/StreamingAssets/Rhythm/Festival20261029` contains project-authored short/full profiles, section/placement arrangements and demonstration-answer notes derived from the preserved ten-song library. Each chart records original source links/hashes, the selected source chart, modifications and license. Selected original StepMania event times are retained; thinned rows and three new answer events are identified as adaptations. No audio file or original chart was changed.
