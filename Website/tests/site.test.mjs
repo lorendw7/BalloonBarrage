@@ -33,6 +33,15 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
+test("demo.9 release copy keeps repair timings and verification scopes explicit", () => {
+  for (const locale of languages) {
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.9"));
+    for (const value of ["3", "8", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
+    assert.ok(strings[locale].rhythmCaptureLabel.includes("demo.8"), "Preserve the actual screenshot source revision");
+    assert.match(strings[locale].checkpointBody, /加速|時刻を進める|accelerated/u);
+  }
+});
+
 test("all languages explain unrestricted-duration held fire without promising per-frame spawning", () => {
   const required = {
     "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限", "采样"],

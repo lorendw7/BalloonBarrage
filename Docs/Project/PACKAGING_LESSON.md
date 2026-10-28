@@ -76,6 +76,8 @@ if ($LASTEXITCODE -ne 0) { throw "macOS build failed with exit code $LASTEXITCOD
 
 `DesktopReleaseBuild.Build` includes only `Assets/Scenes/PrototypeScene.unity`, disables Development Build and refuses a nonempty output. The macOS architecture is set to Universal for the build and restored afterward. Do not rename or separate generated runtime files.
 
+Inspect each `BuildReport.txt` and investigate its build-step warnings before packaging. A successful build with missing-script warnings is a rejected candidate. If a target switch or reused Library produces those warnings, retry the same named source revision in a fresh per-platform checkout with a new Library; keep the rejected output and diagnostics separate. The demo.9 release investigation in [Validation](VALIDATION.md) records this case. Neither a build success nor the presence of a managed DLL proves that its scene/asset script references were retained.
+
 ### Create release evidence
 
 Write an ignored JSON file such as `D:\CS\Build\BalloonBarrage-v0.1.0-demo.3-output\release-info.json`:

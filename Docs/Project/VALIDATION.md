@@ -1,5 +1,22 @@
 # Validation record
 
+## Demo.9 desktop repair release — October 29
+
+Release source is **`405932346f12935a2a6abb3213cc193d2861bdd6`**, pushed to `main`. Windows was built in `D:/CS/Build/BalloonBarrage-v0.1.0-demo.9`; the accepted Mac build used a fresh checkout of the same commit at `D:/CS/Build/BalloonBarrage-v0.1.0-demo.9-macos`. Forty-five gameplay/scene/prefab/catalog files match the isolated test project and both build sources, normalizing C# line endings. Both clean source checkouts passed Git LFS verification; the release source passed all 23 rhythm and two packaging tests.
+
+Unity **6000.0.77f1** built both non-Development players with **zero errors and zero warnings**: Windows x64 reports 242,190,001 bytes and 94.867 seconds; macOS Universal reports 258,826,879 bytes and 209.670 seconds. The initial Mac attempt after switching a reused Windows Library produced five missing-script warnings for four UI roots and the spawn-settings asset, despite reporting success. That candidate and its diagnostics are quarantined under `Builds/Desktop-v0.1.0-demo.9/rejected-macos` and were never uploaded. A fresh per-platform checkout/Library removed all five warnings without changing source. The [release runbook](PACKAGING_LESSON.md) now explicitly rejects missing-script build warnings.
+
+Both final ZIPs passed CRC, unique/safe paths, every runtime-file manifest hash, all sixteen pinned StepMania original hashes, all twenty derived charts, notices/credits/font licenses, checksum sidecars and backup exclusion. The Mac executable has Intel 64-bit and Apple-silicon entries and executable ZIP permissions. Windows was extracted into a fresh directory, passed exhibition preflight and ran for **37.39 seconds**, initializing Direct3D/Input System and loading the default 45-event festival chart without matched crash, null/missing-reference or chart-load errors before deliberate shutdown. These are exact-package integrity and startup checks, not standalone full-song input/audio acceptance.
+
+| Immutable package | ZIP bytes | SHA-256 |
+|---|---|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.9.zip | 121,538,579 | `ba8d7eafe29685b5cabf515a6b841b3293d7d854039319ab137a0d60efb00f89` |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.9.zip | 130,681,588 | `cc776b48b077e45765c6c35bcc8fb2bfaa8fb75a896e9a2c928a76bec6417ed3` |
+
+The current source's twenty-profile accelerated Editor integration and natural fixed-update hold/collision/expiry checks are recorded below. They do not reuse demo.8 natural full-catalog results as acceptance for this revision. Human aiming/listening, venue hardware, sustained player performance and real-Mac launch remain unverified. macOS is unsigned and unnotarized; the mixed StepMania bundle remains noncommercial.
+
+[Demo.9](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.9) preserves the older published assets. Its [verification JSON](https://github.com/lorendw7/BalloonBarrage/releases/download/v0.1.0-demo.9/BalloonBarrage-v0.1.0-demo.9-verification.json) has SHA-256 `54e73174ee33383b8d14e974d9ea75b6acfca0ed35011f2bb61c3a3872edf851`. Build, package, startup, source-comparison and upload records remain under ignored `Builds/Desktop-v0.1.0-demo.9`; website checks are recorded separately from player checks.
+
 ## October 29 balloon placement, hold, preparation and NEXT repairs
 
 The creator explicitly authorized direct implementation and testing of four reviewed issues. Crowded spawns now retain the authored column first, then search the bounded area for a separated fallback; a blocked area leaves the event pending. The initial drift wait freezes Rigidbody position against collisions and restores original constraints on release or disable. The legacy color-lesson tool creates `LessonBalloon_ThreeColors.prefab`, preserves an existing lesson and never replaces the production asset. NEXT skips hit/expired event identities, including early and out-of-order hits, and clears that cue-only state when a chart loads. [Game design](../Design/GAME_DESIGN.md#required-rhythm-loop) owns behavior; the [palette guide](../Art/BALLOON_COLOR_LESSON.md) explains the separate teaching asset.
