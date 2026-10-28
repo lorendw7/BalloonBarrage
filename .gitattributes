@@ -186,4 +186,5 @@ Assets/StreamingAssets/Rhythm/Classics20261029/*.txt -text
 Assets/Audio/Music/OpenMusic20261028/NOTICE.txt -text
 Assets/Audio/Music/Classics20261029/NOTICE.txt -text
 Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/License.txt -text
+Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/source-manifest.json -text
 Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/Models/*.mtl -text
