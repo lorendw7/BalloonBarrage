@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 2,
+  "title": "Chaoz Airflow",
+  "artist": "ParagonX9",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 175,
+  "durationSeconds": 253.77959183673468,
+  "roundDurationSeconds": 64.457142857,
+  "license": "CC-BY-SA-3.0",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Classics20261029/chaoz-airflow.json",
+  "sourceChartSha256": "9c3dc8a1490bbd32a970028f3502cff6c7c47c0c952134baf1894a485cf8267a",
+  "source": {
+    "filename": "ChaozAirflow.mp3",
+    "title": "Chaoz Airflow",
+    "id": "chaoz-airflow",
+    "bpm": 175,
+    "sourcePage": "https://www.newgrounds.com/audio/listen/245921",
+    "downloadEntryPoint": "https://www.newgrounds.com/audio/download/245921",
+    "downloadUrl": "https://audio-download.ngfiles.com/245000/245921_ParagonX9___Chaoz_Airflow.mp3?f1244938398",
+    "published": "2009-06-11",
+    "timingEvidence": "Author description: 175 bpm",
+    "license": "CC-BY-SA-3.0",
+    "author": "ParagonX9",
+    "bytes": 5079688,
+    "sha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b"
+  },
+  "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
+  "audioSha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified. This derived chart and synchronized-sequence contributions are CC BY-SA 3.0.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 7,
+  "minimumEventGapSeconds": 1.028571428,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 10.971428571,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 10.971428571,
+      "endSeconds": 21.942857143,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 21.942857143,
+      "endSeconds": 32.914285714,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 32.914285714,
+      "endSeconds": 43.885714286,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 43.885714286,
+      "endSeconds": 54.857142857,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 54.857142857,
+      "endSeconds": 64.457142857,
+      "pattern": 2,
+      "direction": -1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.371428571,
+      "stepSeconds": 1.371428571,
+      "answerStartSeconds": 6.857142857,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 50.758928572,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 52.130357143,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 53.501785715,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 57.273214286,
+      "sourceBeat": 167,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 58.9875,
+      "sourceBeat": 172,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 60.016071429,
+      "sourceBeat": 175,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 61.730357143,
+      "sourceBeat": 180,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 63.101785715,
+      "sourceBeat": 184,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 64.473214286,
+      "sourceBeat": 188,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 65.501785715,
+      "sourceBeat": 191,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 66.530357143,
+      "sourceBeat": 194,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 68.5875,
+      "sourceBeat": 200,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 71.330357143,
+      "sourceBeat": 208,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 72.701785715,
+      "sourceBeat": 212,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 74.073214286,
+      "sourceBeat": 216,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 75.444642858,
+      "sourceBeat": 220,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 76.816071429,
+      "sourceBeat": 224,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 79.558928572,
+      "sourceBeat": 232,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 82.301785715,
+      "sourceBeat": 240,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 83.673214286,
+      "sourceBeat": 244,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 85.044642858,
+      "sourceBeat": 248,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 87.101785715,
+      "sourceBeat": 254,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 89.158928572,
+      "sourceBeat": 260,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 90.530357143,
+      "sourceBeat": 264,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 91.901785715,
+      "sourceBeat": 268,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 93.273214286,
+      "sourceBeat": 272,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 94.644642858,
+      "sourceBeat": 276,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 95.673214286,
+      "sourceBeat": 279,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 97.3875,
+      "sourceBeat": 284,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 98.416071429,
+      "sourceBeat": 287,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 99.444642858,
+      "sourceBeat": 290,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 101.501785715,
+      "sourceBeat": 296,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 102.873214286,
+      "sourceBeat": 300,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 104.244642858,
+      "sourceBeat": 304,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 105.616071429,
+      "sourceBeat": 308,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 106.9875,
+      "sourceBeat": 312,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35
+    }
+  ],
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+}

@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "method": "Vorbis final EOS granule / original sample rate; MP3 parsed frame sample count / sample rate. FFprobe container estimates and resampled FFmpeg PCM counts are diagnostics, not substitutes for EOS trimming or Unity clip verification.",
+  "knownCorrection": "Mecha-Tribe Assault has an earlier oversized granule of 4692672, but the final EOS granule is 4630500 at 44100Hz, so its playable bound is 105 seconds. Historical prepared metadata used the maximum granule (106.409795918s). Decoded FFmpeg PCM can disagree because of this stream's trimming/timestamp sequence. Original audio and historical source metadata remain byte-identical.",
+  "tracks": [
+    {
+      "trackId": "stepmania-goin-under-beginner",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
+      "audioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+      "playableSampleCount": 5443200,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 123.428571429,
+      "historicalPreparedDurationSeconds": 123.428571429,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 123.428571429,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "123.428571"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "123.428571"
+        }
+      }
+    },
+    {
+      "trackId": "stepmania-springtime-beginner",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/Springtime.mp3",
+      "audioSha256": "97529087ffa2909beac1d78d6756571e85c3c16f468f056760c189793678ea18",
+      "playableSampleCount": 5690880,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 129.044897959,
+      "historicalPreparedDurationSeconds": 129.044897959,
+      "authority": "parsed-mp3-frame-samples",
+      "resampledFfmpegDecodedDurationSeconds": 129.044897959,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "129.044900"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "129.044900"
+        }
+      }
+    },
+    {
+      "trackId": "stepmania-mecha-tribe-beginner",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
+      "audioSha256": "6eb052cf8081ebb01d4b30e8db34e9eeca692635e2c1ed3ba7f7bd131c1b65c3",
+      "playableSampleCount": 4630500,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 105.0,
+      "historicalPreparedDurationSeconds": 106.409795918,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 108.011972789,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "105.000000"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "105.000000"
+        }
+      }
+    },
+    {
+      "trackId": "cozy-puzzle-1",
+      "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_1_bpm118_0.ogg",
+      "audioSha256": "afa440cb8814907b215b285a0503d39b125b6c83d9fca3f686c969107f04c7f7",
+      "playableSampleCount": 5740475,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 130.169501134,
+      "historicalPreparedDurationSeconds": 130.16950113378684,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 130.16952381,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "130.169501"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "130.169501"
+        }
+      }
+    },
+    {
+      "trackId": "cozy-puzzle-2",
+      "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_2_bpm90_0.ogg",
+      "audioSha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7",
+      "playableSampleCount": 5644800,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 128.0,
+      "historicalPreparedDurationSeconds": 128.0,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 128.0,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "128.000000"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "128.000000"
+        }
+      }
+    },
+    {
+      "trackId": "magic-puzzle-1",
+      "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_1_bpm110_0.ogg",
+      "audioSha256": "f94f4a6f895f22669dd5ced4061f932e1b5335e40e36d1e94fe7cfc222a4c2b8",
+      "playableSampleCount": 5388218,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 122.181814059,
+      "historicalPreparedDurationSeconds": 122.18181405895692,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 122.18185941,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "122.181814"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "122.181814"
+        }
+      }
+    },
+    {
+      "trackId": "magic-puzzle-2",
+      "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_2_bpm120_0.ogg",
+      "audioSha256": "dec433015e1a89501595f5dd28dbb4de0e54cb44967be15af2aac161f1d06138",
+      "playableSampleCount": 5292000,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 120.0,
+      "historicalPreparedDurationSeconds": 120.0,
+      "authority": "final-vorbis-eos-granule",
+      "resampledFfmpegDecodedDurationSeconds": 120.0,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "120.000000"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "120.000000"
+        }
+      }
+    },
+    {
+      "trackId": "chaoz-fantasy",
+      "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozFantasy.mp3",
+      "audioSha256": "6102c77d86b7d131dc5d7f4e4eff6e7b0df2c8165bd8bdfc7c63757e486f0e14",
+      "playableSampleCount": 5905152,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 133.903673469,
+      "historicalPreparedDurationSeconds": 133.90367346938777,
+      "authority": "parsed-mp3-frame-samples",
+      "resampledFfmpegDecodedDurationSeconds": 133.903673469,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "133.791800"
+          },
+          {
+            "duration": "133.791800"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "133.791800"
+        }
+      }
+    },
+    {
+      "trackId": "chaoz-airflow",
+      "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
+      "audioSha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b",
+      "playableSampleCount": 11191680,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 253.779591837,
+      "historicalPreparedDurationSeconds": 253.77959183673468,
+      "authority": "parsed-mp3-frame-samples",
+      "resampledFfmpegDecodedDurationSeconds": 253.779591837,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "253.779600"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "253.779600"
+        }
+      }
+    },
+    {
+      "trackId": "chaoz-impact",
+      "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozImpact.mp3",
+      "audioSha256": "4d9d81bb83259f9af35cef7148f4b7875ab16ce1ee863f2ac721028ae75dcbf5",
+      "playableSampleCount": 5095296,
+      "playableSampleRate": 44100,
+      "playableDurationSeconds": 115.539591837,
+      "historicalPreparedDurationSeconds": 115.5395918367347,
+      "authority": "parsed-mp3-frame-samples",
+      "resampledFfmpegDecodedDurationSeconds": 115.539591837,
+      "containerProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "start_time": "0.000000",
+            "duration": "115.539563"
+          }
+        ],
+        "format": {
+          "start_time": "0.000000",
+          "duration": "115.539563"
+        }
+      }
+    }
+  ]
+}

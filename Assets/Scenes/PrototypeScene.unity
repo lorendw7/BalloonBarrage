@@ -13373,6 +13373,7 @@ GameObject:
   - component: {fileID: 1178834978}
   - component: {fileID: 1178834977}
   - component: {fileID: 1178834979}
+  - component: {fileID: 1178834980}
   m_Layer: 0
   m_Name: RoundController
   m_TagString: Untagged
@@ -13403,106 +13404,226 @@ MonoBehaviour:
   menuMusic: {fileID: 43571004}
   gameMusic: {fileID: 1059022383}
   exhibitionSongs:
-  - trackId: stepmania-goin-under-beginner
+  - trackId: stepmania-goin-under-beginner-festival-phrase-v2
     title: Goin' Under
     artist: NegaRen
+    mode: festival
     audioClip: {fileID: 8300000, guid: ca6ecad4fa0e4031ace7f3484d40651b, type: 3}
-    chartRelativePath: Rhythm/Prepared/GoinUnder_Beginner.json
-    sourceCueInSeconds: 9.142857143
-    sourceCueOutSeconds: 91.428571429
-    roundDurationSeconds: 82.285714286
+    chartRelativePath: Rhythm/Festival20261029/stepmania-goin-under-beginner-festival.json
+    sourceCueInSeconds: 18.285714286
+    sourceCueOutSeconds: 83.428571429
+    roundDurationSeconds: 65.142857143
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 68
-  - trackId: stepmania-springtime-beginner
+    sourceEventEndIdExclusive: 45
+  - trackId: stepmania-springtime-beginner-festival-phrase-v2
     title: Springtime
     artist: Kommisar
+    mode: festival
     audioClip: {fileID: 8300000, guid: 2ac7cf1472544d6d82261fe1720539a8, type: 3}
-    chartRelativePath: Rhythm/Prepared/Springtime_Beginner.json
-    sourceCueInSeconds: 5.373870435
-    sourceCueOutSeconds: 89.915797397
-    roundDurationSeconds: 84.541926962
+    chartRelativePath: Rhythm/Festival20261029/stepmania-springtime-beginner-festival.json
+    sourceCueInSeconds: 0.09
+    sourceCueOutSeconds: 64.81741283
+    roundDurationSeconds: 64.72741283
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 147
-  - trackId: stepmania-mecha-tribe-beginner
+    sourceEventEndIdExclusive: 34
+  - trackId: stepmania-mecha-tribe-beginner-festival-phrase-v2
     title: Mecha-Tribe Assault
     artist: Kommisar
+    mode: festival
     audioClip: {fileID: 8300000, guid: 9547bc291198464bb92a289b11538471, type: 3}
-    chartRelativePath: Rhythm/Prepared/MechaTribeAssault_Beginner.json
-    sourceCueInSeconds: 5.361333333
-    sourceCueOutSeconds: 85.361333333
-    roundDurationSeconds: 80
+    chartRelativePath: Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-festival.json
+    sourceCueInSeconds: 32.028
+    sourceCueOutSeconds: 97.361333333
+    roundDurationSeconds: 65.333333333
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 137
-  - trackId: cozy-puzzle-1-practice-v1
+    sourceEventEndIdExclusive: 35
+  - trackId: cozy-puzzle-1-festival-phrase-v2
     title: Cozy Puzzle In-Game 1
     artist: MintoDog
+    mode: festival
     audioClip: {fileID: 8300000, guid: b298c6f6586657346aa4b7de7da961b2, type: 3}
-    chartRelativePath: Rhythm/OpenMusic20261028/cozy-puzzle-1.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 81.35593220338983
-    roundDurationSeconds: 81.35593220338983
+    chartRelativePath: Rhythm/Festival20261029/cozy-puzzle-1-festival.json
+    sourceCueInSeconds: 33.034957627
+    sourceCueOutSeconds: 98.11970339
+    roundDurationSeconds: 65.084745763
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 77
-  - trackId: cozy-puzzle-2-practice-v1
+    sourceEventEndIdExclusive: 50
+  - trackId: cozy-puzzle-2-festival-phrase-v2
     title: Cozy Puzzle In-Game 2
     artist: MintoDog
+    mode: festival
     audioClip: {fileID: 8300000, guid: 59c9f5f97ee325749bf1bf89640133e1, type: 3}
-    chartRelativePath: Rhythm/OpenMusic20261028/cozy-puzzle-2.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 85.33333333333333
-    roundDurationSeconds: 85.33333333333333
+    chartRelativePath: Rhythm/Festival20261029/cozy-puzzle-2-festival.json
+    sourceCueInSeconds: 43.317708334
+    sourceCueOutSeconds: 107.317708334
+    roundDurationSeconds: 64
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 61
-  - trackId: magic-puzzle-1-practice-v1
+    sourceEventEndIdExclusive: 38
+  - trackId: magic-puzzle-1-festival-phrase-v2
     title: Magic Puzzle In-Game 1
     artist: MintoDog
+    mode: festival
     audioClip: {fileID: 8300000, guid: 2b1589d1b99a21542aa3483551e87587, type: 3}
-    chartRelativePath: Rhythm/OpenMusic20261028/magic-puzzle-1.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 87.27272727272727
-    roundDurationSeconds: 87.27272727272727
+    chartRelativePath: Rhythm/Festival20261029/magic-puzzle-1-festival.json
+    sourceCueInSeconds: 17.995738637
+    sourceCueOutSeconds: 83.450284091
+    roundDurationSeconds: 65.454545455
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 77
-  - trackId: magic-puzzle-2-practice-v1
+    sourceEventEndIdExclusive: 47
+  - trackId: magic-puzzle-2-festival-phrase-v2
     title: Magic Puzzle In-Game 2
     artist: MintoDog
+    mode: festival
     audioClip: {fileID: 8300000, guid: 32aea2f58bd363d4d976c24379ca4fd8, type: 3}
-    chartRelativePath: Rhythm/OpenMusic20261028/magic-puzzle-2.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 80
-    roundDurationSeconds: 80
+    chartRelativePath: Rhythm/Festival20261029/magic-puzzle-2-festival.json
+    sourceCueInSeconds: 48.49609375
+    sourceCueOutSeconds: 112.49609375
+    roundDurationSeconds: 64
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 77
-  - trackId: chaoz-fantasy-full-practice-v1
+    sourceEventEndIdExclusive: 51
+  - trackId: chaoz-fantasy-festival-phrase-v2
     title: Chaoz Fantasy
     artist: ParagonX9
+    mode: festival
     audioClip: {fileID: 8300000, guid: 6bb2e8283b454f34c86ea2efaff1fdf1, type: 3}
-    chartRelativePath: Rhythm/Classics20261029/chaoz-fantasy.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 133.90367346938777
-    roundDurationSeconds: 133.90367346938777
+    chartRelativePath: Rhythm/Festival20261029/chaoz-fantasy-festival.json
+    sourceCueInSeconds: 23.713673489
+    sourceCueOutSeconds: 88.759532051
+    roundDurationSeconds: 65.045858562
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 173
-  - trackId: chaoz-airflow-full-practice-v1
+    sourceEventEndIdExclusive: 73
+  - trackId: chaoz-airflow-festival-phrase-v2
     title: Chaoz Airflow
     artist: ParagonX9
+    mode: festival
     audioClip: {fileID: 8300000, guid: e4ee5aa8de7cf004ba34eb4a20b920e4, type: 3}
-    chartRelativePath: Rhythm/Classics20261029/chaoz-airflow.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 253.77959183673468
-    roundDurationSeconds: 253.77959183673468
+    chartRelativePath: Rhythm/Festival20261029/chaoz-airflow-festival.json
+    sourceCueInSeconds: 43.901785715
+    sourceCueOutSeconds: 108.358928572
+    roundDurationSeconds: 64.457142857
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 362
-  - trackId: chaoz-impact-full-practice-v1
+    sourceEventEndIdExclusive: 36
+  - trackId: chaoz-impact-festival-phrase-v2
     title: Chaoz Impact
     artist: ParagonX9
+    mode: festival
     audioClip: {fileID: 8300000, guid: 1bf7ab5cf00537f46be3e57f3eb9b4b9, type: 3}
-    chartRelativePath: Rhythm/Classics20261029/chaoz-impact.json
-    sourceCueInSeconds: 0
-    sourceCueOutSeconds: 115.5395918367347
-    roundDurationSeconds: 115.5395918367347
+    chartRelativePath: Rhythm/Festival20261029/chaoz-impact-festival.json
+    sourceCueInSeconds: 11.284821428
+    sourceCueOutSeconds: 75.741964286
+    roundDurationSeconds: 64.457142857
     sourceEventStartId: 0
-    sourceEventEndIdExclusive: 160
+    sourceEventEndIdExclusive: 34
+  - trackId: stepmania-goin-under-beginner-standard-phrase-v2
+    title: Goin' Under
+    artist: NegaRen
+    mode: standard
+    audioClip: {fileID: 8300000, guid: ca6ecad4fa0e4031ace7f3484d40651b, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/stepmania-goin-under-beginner-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 123.428571429
+    roundDurationSeconds: 123.428571429
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 94
+  - trackId: stepmania-springtime-beginner-standard-phrase-v2
+    title: Springtime
+    artist: Kommisar
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 2ac7cf1472544d6d82261fe1720539a8, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/stepmania-springtime-beginner-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 129.044897959
+    roundDurationSeconds: 129.044897959
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 74
+  - trackId: stepmania-mecha-tribe-beginner-standard-phrase-v2
+    title: Mecha-Tribe Assault
+    artist: Kommisar
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 9547bc291198464bb92a289b11538471, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 105
+    roundDurationSeconds: 105
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 57
+  - trackId: cozy-puzzle-1-standard-phrase-v2
+    title: Cozy Puzzle In-Game 1
+    artist: MintoDog
+    mode: standard
+    audioClip: {fileID: 8300000, guid: b298c6f6586657346aa4b7de7da961b2, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/cozy-puzzle-1-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 130.169501134
+    roundDurationSeconds: 130.169501134
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 111
+  - trackId: cozy-puzzle-2-standard-phrase-v2
+    title: Cozy Puzzle In-Game 2
+    artist: MintoDog
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 59c9f5f97ee325749bf1bf89640133e1, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/cozy-puzzle-2-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 128
+    roundDurationSeconds: 128
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 82
+  - trackId: magic-puzzle-1-standard-phrase-v2
+    title: Magic Puzzle In-Game 1
+    artist: MintoDog
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 2b1589d1b99a21542aa3483551e87587, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/magic-puzzle-1-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 122.181814059
+    roundDurationSeconds: 122.181814059
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 95
+  - trackId: magic-puzzle-2-standard-phrase-v2
+    title: Magic Puzzle In-Game 2
+    artist: MintoDog
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 32aea2f58bd363d4d976c24379ca4fd8, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/magic-puzzle-2-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 120
+    roundDurationSeconds: 120
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 103
+  - trackId: chaoz-fantasy-standard-phrase-v2
+    title: Chaoz Fantasy
+    artist: ParagonX9
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 6bb2e8283b454f34c86ea2efaff1fdf1, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/chaoz-fantasy-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 133.903673469
+    roundDurationSeconds: 133.903673469
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 158
+  - trackId: chaoz-airflow-standard-phrase-v2
+    title: Chaoz Airflow
+    artist: ParagonX9
+    mode: standard
+    audioClip: {fileID: 8300000, guid: e4ee5aa8de7cf004ba34eb4a20b920e4, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/chaoz-airflow-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 253.779591837
+    roundDurationSeconds: 253.779591837
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 152
+  - trackId: chaoz-impact-standard-phrase-v2
+    title: Chaoz Impact
+    artist: ParagonX9
+    mode: standard
+    audioClip: {fileID: 8300000, guid: 1bf7ab5cf00537f46be3e57f3eb9b4b9, type: 3}
+    chartRelativePath: Rhythm/Festival20261029/chaoz-impact-standard.json
+    sourceCueInSeconds: 0
+    sourceCueOutSeconds: 115.539591837
+    roundDurationSeconds: 115.539591837
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 66
   resultStatsText: {fileID: 1008670705}
 --- !u!4 &1178834978
 Transform:
@@ -13538,6 +13659,22 @@ MonoBehaviour:
   beatCueText: {fileID: 932573874}
   beatApproachFill: {fileID: 932573875}
   onBeatFeedbackText: {fileID: 1982160103}
+--- !u!114 &1178834980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178834976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143f57fa5f7444f5b15f7e12d5d5e942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundController: {fileID: 1178834977}
+  chartReader: {fileID: 1178834979}
+  balloonSpawner: {fileID: 553252044}
+  textTemplate: {fileID: 1723074293}
 --- !u!1 &1186580545
 GameObject:
   m_ObjectHideFlags: 0
@@ -20508,6 +20645,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3924240467443277314, guid: c0e26be9f63e7f24bb8c6f4c4c582bd0, type: 3}
   m_PrefabInstance: {fileID: 1723074291}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1723074293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6231796806682664068, guid: c0e26be9f63e7f24bb8c6f4c4c582bd0, type: 3}
+  m_PrefabInstance: {fileID: 1723074291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735391542
 GameObject:
   m_ObjectHideFlags: 0

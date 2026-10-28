@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 2,
+  "title": "Goin' Under",
+  "artist": "NegaRen",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 210.0,
+  "durationSeconds": 123.42857142857143,
+  "roundDurationSeconds": 65.142857143,
+  "license": "Upstream noncommercial restrictions; exact version unspecified",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json",
+  "sourceChartSha256": "a4c019ed6cf9ec0d92b03689fd7363d14aac1b5e9c854ce477807c7eb7f68549",
+  "source": {
+    "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ogg",
+    "sourceAudioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+    "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ssc",
+    "sourceChartSha256": "d29fa1147bb9018b04ab1bfdbb7ef867d70baa2a1f4d748b54af7c00c377dac5",
+    "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared."
+  },
+  "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
+  "audioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 7,
+  "minimumEventGapSeconds": 1.142857142,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 9.142857143,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 9.142857143,
+      "endSeconds": 18.285714286,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 18.285714286,
+      "endSeconds": 27.428571429,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 27.428571429,
+      "endSeconds": 36.571428571,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 36.571428571,
+      "endSeconds": 45.714285714,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 45.714285714,
+      "endSeconds": 54.857142857,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 54.857142857,
+      "endSeconds": 65.142857143,
+      "pattern": 0,
+      "direction": 1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.142857143,
+      "stepSeconds": 1.142857143,
+      "answerStartSeconds": 5.714285714,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 24.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 25.142857143,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 26.285714286,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 29.714285714,
+      "sourceEventId": 18,
+      "sourceBeat": 104.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 30.857142857,
+      "sourceEventId": 19,
+      "sourceBeat": 108.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 32.0,
+      "sourceEventId": 20,
+      "sourceBeat": 112.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 33.142857143,
+      "sourceEventId": 21,
+      "sourceBeat": 116.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 34.285714286,
+      "sourceEventId": 22,
+      "sourceBeat": 120.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 36.571428571,
+      "sourceEventId": 23,
+      "sourceBeat": 128.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 37.714285714,
+      "sourceEventId": 24,
+      "sourceBeat": 132.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 38.857142857,
+      "sourceEventId": 25,
+      "sourceBeat": 136.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 40.0,
+      "sourceEventId": 26,
+      "sourceBeat": 140.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 41.142857143,
+      "sourceEventId": 27,
+      "sourceBeat": 144.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 42.285714286,
+      "sourceEventId": 28,
+      "sourceBeat": 148.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 43.428571429,
+      "sourceEventId": 29,
+      "sourceBeat": 152.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 45.714285714,
+      "sourceEventId": 30,
+      "sourceBeat": 160.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 46.857142857,
+      "sourceEventId": 31,
+      "sourceBeat": 164.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 48.0,
+      "sourceEventId": 32,
+      "sourceBeat": 168.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 49.142857143,
+      "sourceEventId": 33,
+      "sourceBeat": 172.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 50.285714286,
+      "sourceEventId": 34,
+      "sourceBeat": 176.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 51.428571429,
+      "sourceEventId": 35,
+      "sourceBeat": 180.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 52.571428571,
+      "sourceEventId": 36,
+      "sourceBeat": 184.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 53.714285714,
+      "sourceEventId": 37,
+      "sourceBeat": 188.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 54.857142857,
+      "sourceEventId": 38,
+      "sourceBeat": 192.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 56.0,
+      "sourceEventId": 39,
+      "sourceBeat": 196.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 57.142857143,
+      "sourceEventId": 40,
+      "sourceBeat": 200.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 58.285714286,
+      "sourceEventId": 41,
+      "sourceBeat": 204.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 59.428571429,
+      "sourceEventId": 42,
+      "sourceBeat": 208.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 60.571428571,
+      "sourceEventId": 43,
+      "sourceBeat": 212.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 61.714285714,
+      "sourceEventId": 44,
+      "sourceBeat": 216.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 62.857142857,
+      "sourceEventId": 45,
+      "sourceBeat": 220.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 64.0,
+      "sourceEventId": 46,
+      "sourceBeat": 224.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 65.142857143,
+      "sourceEventId": 47,
+      "sourceBeat": 228.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 66.285714286,
+      "sourceEventId": 48,
+      "sourceBeat": 232.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 67.428571429,
+      "sourceEventId": 49,
+      "sourceBeat": 236.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 68.571428571,
+      "sourceEventId": 50,
+      "sourceBeat": 240.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35
+    },
+    {
+      "timeSeconds": 69.714285714,
+      "sourceEventId": 51,
+      "sourceBeat": 244.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 36
+    },
+    {
+      "timeSeconds": 70.857142857,
+      "sourceEventId": 52,
+      "sourceBeat": 248.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 37
+    },
+    {
+      "timeSeconds": 73.142857143,
+      "sourceEventId": 53,
+      "sourceBeat": 256.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 38
+    },
+    {
+      "timeSeconds": 74.285714286,
+      "sourceEventId": 54,
+      "sourceBeat": 260.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 39
+    },
+    {
+      "timeSeconds": 75.428571429,
+      "sourceEventId": 55,
+      "sourceBeat": 264.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 40
+    },
+    {
+      "timeSeconds": 76.571428571,
+      "sourceEventId": 56,
+      "sourceBeat": 268.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 41
+    },
+    {
+      "timeSeconds": 77.714285714,
+      "sourceEventId": 57,
+      "sourceBeat": 272.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 42
+    },
+    {
+      "timeSeconds": 78.857142857,
+      "sourceEventId": 58,
+      "sourceBeat": 276.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 43
+    },
+    {
+      "timeSeconds": 80.0,
+      "sourceEventId": 59,
+      "sourceBeat": 280.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 44
+    }
+  ]
+}

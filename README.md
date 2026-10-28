@@ -6,7 +6,7 @@ A casual, relaxing rhythm-game prototype set in a warm graffiti studio. Aim free
 
 ## Play or open the project
 
-The current desktop candidate is **[v0.1.0-demo.7](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.7)** for Windows x64 and macOS Universal. Extract the complete platform ZIP before running **BalloonShooter.exe** or opening **BalloonBarrage.app**. The Mac candidate is unsigned and unnotarized. The mixed development bundle remains noncommercial because of its original StepMania content. **[demo.6](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.6)** remains the packaged fallback. Source archives are not playable packages. [Validation](Docs/Project/VALIDATION.md) records actual build/package evidence.
+The festival revision targets **v0.1.0-demo.8** for Windows x64 and macOS Universal. Published downloads are listed in [Desktop releases](https://github.com/lorendw7/BalloonBarrage/releases); [Validation](Docs/Project/VALIDATION.md) records each exact build/package. Extract the complete platform ZIP before running **BalloonShooter.exe** or opening **BalloonBarrage.app**. The Mac candidate is unsigned and unnotarized. The mixed development bundle remains noncommercial because of its original StepMania content. **[demo.6](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.6)** remains the published fallback. Source archives are not playable packages.
 
 To open the source:
 
@@ -15,17 +15,17 @@ To open the source:
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Read the instructions and select Start. Aim with the mouse and hold the left button to fire. Press C during a round to cycle the eight pigments. Esc pauses; Resume continues and Quit exits.
 
-The scene connects ten song profiles through Start → song list with preview → Play. Seven short rounds last about 80–87 seconds; three ParagonX9 classics use complete recordings, about 116–254 seconds. Existing continuous spray, eight pigments, persistent marks on nine prepared static receivers, score/best/statistics, 16-target capacity and Chinese/Japanese/English UI remain. New charts are project-authored practice grids with unverified human listening calibration. Learner gameplay remains unchanged. See [game design](Docs/Design/GAME_DESIGN.md), [validation](Docs/Project/VALIDATION.md) and [working agreements](AGENTS.md).
+The revised scene offers Festival (ten rounds of about 64–65 seconds) and Standard (all ten complete recordings), with preview → Play → results. One opening sequence demonstrates three noninteractive outline markers before matching real balloons. Hold fire throughout or add optional timed shots; C cycles eight pigments and Esc pauses. Existing scoring, contact-aware effects, persistent paint and the learner's three functions remain. The paint ribbon is deferred. [Game design](Docs/Design/GAME_DESIGN.md) defines the experience; [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) records durations, preparation and remaining listening/calibration limits.
 
 ## Current work and evidence
 
 The [October 29 open music/studio update](Docs/Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) adds seven recordings and promotes seven current studio prefabs plus five downloaded Kenney CC0 decorations into production. The [October 28 study](Docs/Art/STUDIO_EXPANSION_20261028.md) remains available. Website media distinguishes generated artwork, Unity previews and standalone evidence. The [art catalog](Docs/Art/ASSET_CATALOG.md) links individual assets and earlier studies.
 
-Saved source includes the existing short-round profiles, dropdown selection/preview, deterministic barrage slots, contact-aware pop placement and eight serialized fragment-effect prefabs. This expansion changes catalog data and assets without implementing or modifying learner gameplay.
+The creator authorized this festival implementation by parallel Codex agents. Derived section/placement data and a brief demonstration extend the saved rhythm loop while retaining learner-owned pattern/effect functions. Source-data tests, Unity runtime checks, native captures and exact-package checks are recorded separately in Validation.
 
 The October 27 automated Unity fixture passed 72 receiver/pigment contacts, pause persistence, 1,000 retained marks, natural complete-song settlement and ten Retry resets. demo.6 also passed compilation, exact archive/manifest/hash checks and a fresh Windows-package startup smoke. A startup smoke is not a standalone full-song playtest; Editor frame-time measurements are not guaranteed player FPS. Physical feel, venue audio, unfamiliar-player observation and real-Mac launch were excluded from that automated pass. [Validation](Docs/Project/VALIDATION.md) records the exact checks, revision boundaries and remaining limits.
 
-The [roadmap](Docs/Design/ROADMAP.md) tracks the revised Kyudaisai plan: proposed 60–75-second festival profiles, two curated choices and phrase-driven variety before richer post-festival interactions. [Music-led festival variety](Docs/Design/GAME_DESIGN.md#music-led-festival-variety--proposed) defines the experience. Existing profile durations remain unchanged by this planning update. Full-catalog listening/play and exhibition-device observations remain separate; demo.6 stays a fallback and demo.7 evidence belongs to its own revision and packages.
+The [roadmap](Docs/Design/ROADMAP.md) tracks all-ten-song delivery, automated validation, immutable packaging and the deferred paint-ribbon experiment. [Music-led festival variety](Docs/Design/GAME_DESIGN.md#music-led-festival-variety) owns the interaction rules. Human listening, physical aiming, venue hardware and real-Mac observations remain distinct from automated checks.
 
 ## Music and attribution
 

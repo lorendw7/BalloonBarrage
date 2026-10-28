@@ -4,7 +4,7 @@
     {"key":"instructions.aim","zhHans":"移动鼠标瞄准，按住左键射击。","ja":"マウスで狙い、左クリック長押しで連射。","en":"Aim with the mouse. Hold left click to fire."},
     {"key":"instructions.rhythm","zhHans":"跟随气球倒计时射击，命中对应气球可得节奏奖励。","ja":"風船のカウントダウンに合わせて撃ち、同じ風船に当てるとボーナス。","en":"Fire as a balloon countdown reaches zero. Hit that balloon for a rhythm bonus."},
     {"key":"instructions.pause","zhHans":"Esc：暂停或继续。","ja":"Esc：一時停止・再開。","en":"Esc: pause or resume."},
-    {"key":"instructions.results","zhHans":"完整歌曲结束后结算。点击重试再玩一局。","ja":"曲が終わると結果を表示。リトライでもう一度。","en":"Results appear at the end of the song. Choose Retry to play again."},
+    {"key":"instructions.results","zhHans":"本局音乐片段结束后结算，标准模式播放完整歌曲。","ja":"ショートは曲の一部、スタンダードはフル楽曲を楽しめます。","en":"Festival plays a short song window; Standard plays the complete song."},
     {"key":"menu.start","zhHans":"开始游戏","ja":"ゲーム開始","en":"Start Game"},
     {"key":"menu.solo","zhHans":"单人模式","ja":"ソロプレイ","en":"Solo"},
     {"key":"menu.coop","zhHans":"本地双人","ja":"ローカル協力プレイ","en":"Local Co-op"},
@@ -64,6 +64,10 @@
     {"key":"song.preview","zhHans":"选择后试听片段，准备好后开始。","ja":"選択した曲を試聴できます。準備ができたら開始。","en":"Select a song to preview it, then start when ready."},
     {"key":"song.play","zhHans":"开始演奏","ja":"プレイ開始","en":"Play song"},
     {"key":"song.back","zhHans":"返回","ja":"戻る","en":"Back"},
-    {"key":"instructions.startSummary","zhHans":"移动鼠标瞄准 / 按住左键射击\n点击开始，在列表中选择歌曲\n游戏中：C 切换颜色　Esc 暂停或继续\n在时间结束前击破气球。","ja":"マウスで狙う / 左クリック長押しで連射\n開始を押してリストから曲を選択\nプレイ中：C 色変更　Esc 一時停止・再開\n制限時間内に風船を割ろう。","en":"Mouse to aim / Hold left click to fire\nClick Start, then choose a song from the list\nPlaying: C change color   Esc pause or resume\nPop balloons before time runs out."}
+    {"key":"instructions.startSummary","zhHans":"移动鼠标瞄准 / 按住左键射击\n点击开始，在列表中选择歌曲\n游戏中：C 切换颜色　Esc 暂停或继续\n在时间结束前击破气球。","ja":"マウスで狙う / 左クリック長押しで連射\n開始を押してリストから曲を選択\nプレイ中：C 色変更　Esc 一時停止・再開\n制限時間内に風船を割ろう。","en":"Mouse to aim / Hold left click to fire\nClick Start, then choose a song from the list\nPlaying: C change color   Esc pause or resume\nPop balloons before time runs out."},
+    {"key":"song.mode.festival","zhHans":"九大祭短曲 · 60-75 秒","ja":"九大祭ショート · 60-75 秒","en":"Festival · 60-75 seconds"},
+    {"key":"song.mode.standard","zhHans":"标准模式 · 完整歌曲","ja":"スタンダード · フル楽曲","en":"Standard · complete songs"},
+    {"key":"cue.demonstration.watch","zhHans":"先看示范：空心标记无需射击","ja":"まず見てみよう：ひし形はお手本です","en":"Watch the hollow markers: no need to shoot"},
+    {"key":"cue.demonstration.respond","zhHans":"轮到你了：按相同方向打气球，可按住喷射","ja":"同じ順に風船をねらおう：押し続けてもOK","en":"Your turn: follow the same positions: holding fire is fine"}
   ]
 }

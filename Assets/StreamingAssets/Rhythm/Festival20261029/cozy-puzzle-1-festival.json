@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 2,
+  "title": "Cozy Puzzle In-Game 1",
+  "artist": "MintoDog",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 118,
+  "durationSeconds": 130.16950113378684,
+  "roundDurationSeconds": 65.084745763,
+  "license": "CC0-1.0",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/OpenMusic20261028/cozy-puzzle-1.json",
+  "sourceChartSha256": "9adcdc01eed2ac6e0aacd6d8bcf4902671ae3359b92d03adc1cd40ee742ebb7d",
+  "source": {
+    "filename": "cozy_puzzle_in-game_1_bpm118_0.ogg",
+    "title": "Cozy Puzzle In-Game 1",
+    "id": "cozy-puzzle-1",
+    "bpm": 118,
+    "roundBars": 40,
+    "published": "2026-02-05",
+    "author": "MintoDog",
+    "sourcePage": "https://opengameart.org/content/cozy-puzzle-in-game-1",
+    "downloadUrl": "https://opengameart.org/sites/default/files/cozy_puzzle_in-game_1_bpm118_0.ogg",
+    "license": "CC0-1.0",
+    "bytes": 4036007,
+    "sha256": "afa440cb8814907b215b285a0503d39b125b6c83d9fca3f686c969107f04c7f7"
+  },
+  "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_1_bpm118_0.ogg",
+  "audioSha256": "afa440cb8814907b215b285a0503d39b125b6c83d9fca3f686c969107f04c7f7",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 8,
+  "minimumEventGapSeconds": 1.016949152,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 16.271186441,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 16.271186441,
+      "endSeconds": 32.542372881,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 32.542372881,
+      "endSeconds": 48.813559322,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 48.813559322,
+      "endSeconds": 65.084745763,
+      "pattern": 0,
+      "direction": 1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 2.033898305,
+      "stepSeconds": 1.016949153,
+      "answerStartSeconds": 6.101694915,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 39.136652543,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 40.153601695,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 41.170550848,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 44.729872882,
+      "sourceBeat": 87,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 46.25529661,
+      "sourceBeat": 90,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 47.272245763,
+      "sourceBeat": 92,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 48.797669492,
+      "sourceBeat": 95,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 50.323093221,
+      "sourceBeat": 98,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 51.340042373,
+      "sourceBeat": 100,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 52.356991526,
+      "sourceBeat": 102,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 53.373940678,
+      "sourceBeat": 104,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 54.390889831,
+      "sourceBeat": 106,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 55.407838983,
+      "sourceBeat": 108,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 56.424788136,
+      "sourceBeat": 110,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 57.441737288,
+      "sourceBeat": 112,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 58.458686441,
+      "sourceBeat": 114,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 59.475635593,
+      "sourceBeat": 116,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 60.492584746,
+      "sourceBeat": 118,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 61.509533899,
+      "sourceBeat": 120,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 62.526483051,
+      "sourceBeat": 122,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 63.543432204,
+      "sourceBeat": 124,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 64.560381356,
+      "sourceBeat": 126,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 65.577330509,
+      "sourceBeat": 128,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 66.594279661,
+      "sourceBeat": 130,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 67.611228814,
+      "sourceBeat": 132,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 68.628177966,
+      "sourceBeat": 134,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 69.645127119,
+      "sourceBeat": 136,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 70.662076271,
+      "sourceBeat": 138,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 71.679025424,
+      "sourceBeat": 140,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 72.695974577,
+      "sourceBeat": 142,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 73.712923729,
+      "sourceBeat": 144,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 74.729872882,
+      "sourceBeat": 146,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 75.746822034,
+      "sourceBeat": 148,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 76.763771187,
+      "sourceBeat": 150,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 77.780720339,
+      "sourceBeat": 152,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 78.797669492,
+      "sourceBeat": 154,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35
+    },
+    {
+      "timeSeconds": 79.814618644,
+      "sourceBeat": 156,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 36
+    },
+    {
+      "timeSeconds": 80.831567797,
+      "sourceBeat": 158,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 37
+    },
+    {
+      "timeSeconds": 81.848516949,
+      "sourceBeat": 160,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 38
+    },
+    {
+      "timeSeconds": 82.865466102,
+      "sourceBeat": 162,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 39
+    },
+    {
+      "timeSeconds": 83.882415254,
+      "sourceBeat": 164,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 40
+    },
+    {
+      "timeSeconds": 85.407838983,
+      "sourceBeat": 167,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 41
+    },
+    {
+      "timeSeconds": 86.933262712,
+      "sourceBeat": 170,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 42
+    },
+    {
+      "timeSeconds": 87.950211865,
+      "sourceBeat": 172,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 43
+    },
+    {
+      "timeSeconds": 89.475635593,
+      "sourceBeat": 175,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 44
+    },
+    {
+      "timeSeconds": 91.001059322,
+      "sourceBeat": 178,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 45
+    },
+    {
+      "timeSeconds": 92.018008475,
+      "sourceBeat": 180,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 46
+    },
+    {
+      "timeSeconds": 93.543432204,
+      "sourceBeat": 183,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 47
+    },
+    {
+      "timeSeconds": 95.068855932,
+      "sourceBeat": 186,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 48
+    },
+    {
+      "timeSeconds": 96.085805085,
+      "sourceBeat": 188,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 49
+    }
+  ]
+}

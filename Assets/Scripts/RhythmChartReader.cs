@@ -11,8 +11,29 @@ public class RhythmEventData
 {
     public int id;
     public double timeSeconds;
+    public bool authoredPlacement;
+    public int placementSlot;
     [System.NonSerialized] public BarragePattern pattern;
     [System.NonSerialized] public int patternStep;
+    [System.NonSerialized] public double previewNotBeforeSeconds;
+}
+
+[Serializable]
+public class RhythmSectionData
+{
+    public double startSeconds;
+    public double endSeconds;
+    public int pattern;
+    public int direction = 1;
+}
+
+[Serializable]
+public class RhythmDemonstrationData
+{
+    public double startSeconds;
+    public double stepSeconds;
+    public double answerStartSeconds;
+    public int[] slots;
 }
 
 [Serializable]
@@ -22,6 +43,8 @@ public class RhythmChartData
     public float bpm;
     public double durationSeconds;
     public RhythmEventData[] events;
+    public RhythmSectionData[] sections;
+    public RhythmDemonstrationData[] demonstrations;
 }
 
 
@@ -29,6 +52,7 @@ public class RhythmChartReader : MonoBehaviour
 {
     private RhythmChartData chart;
     public bool IsReady => chart != null && chart.events != null && chart.events.Length > 0;
+    public RhythmChartData LoadedChart => chart;
 
     private int nextEventIndex = 0;
 
@@ -195,14 +219,51 @@ public class RhythmChartReader : MonoBehaviour
                 ? normalizedTime / profile.roundDurationSeconds
                 : 0d;
 
-            shortRoundEvents.Add(new RhythmEventData
+            BarragePattern pattern = KyudaisaiLearnerCore.SelectBarragePattern(
+                System.Math.Max(0d, System.Math.Min(1d, roundProgress)));
+            int direction = 1;
+            if (sourceChart.sections != null)
+            {
+                foreach (RhythmSectionData section in sourceChart.sections)
+                {
+                    if (normalizedTime >= section.startSeconds && normalizedTime < section.endSeconds)
+                    {
+                        pattern = (BarragePattern)Mathf.Clamp(section.pattern, 0, 2);
+                        direction = section.direction < 0 ? -1 : 1;
+                        break;
+                    }
+                }
+            }
+
+            var roundEvent = new RhythmEventData
             {
                 id = sourceEvent.id,
                 timeSeconds = System.Math.Max(0d, normalizedTime),
-                pattern = KyudaisaiLearnerCore.SelectBarragePattern(
-                    System.Math.Max(0d, System.Math.Min(1d, roundProgress))),
+                authoredPlacement = sourceEvent.authoredPlacement,
+                placementSlot = Mathf.Clamp(sourceEvent.placementSlot, -2, 2) * direction,
+                pattern = pattern,
                 patternStep = shortRoundEvents.Count
-            });
+            };
+            // Answer targets become hittable only after the demonstration has finished.
+            // Their musical judgement times and ordinary/on-beat rewards stay unchanged.
+            if (sourceChart.demonstrations != null)
+            {
+                foreach (RhythmDemonstrationData demonstration in sourceChart.demonstrations)
+                {
+                    if (demonstration.slots == null || demonstration.stepSeconds <= 0d) continue;
+                    for (int index = 0; index < demonstration.slots.Length; index++)
+                    {
+                        double answerTime = demonstration.answerStartSeconds + index * demonstration.stepSeconds;
+                        if (Math.Abs(normalizedTime - answerTime) > 0.02d) continue;
+                        roundEvent.authoredPlacement = true;
+                        roundEvent.placementSlot = Mathf.Clamp(demonstration.slots[index], -2, 2);
+                        roundEvent.pattern = BarragePattern.LateralSweep;
+                        roundEvent.previewNotBeforeSeconds = demonstration.startSeconds +
+                            demonstration.slots.Length * demonstration.stepSeconds;
+                    }
+                }
+            }
+            shortRoundEvents.Add(roundEvent);
         }
 
         chart = sourceChart;
@@ -223,6 +284,12 @@ public class RhythmChartReader : MonoBehaviour
         Debug.Log("Chart file read successfully.");
         RhythmEventData firstEvent = chart.events[0];
         Debug.Log($"First event: {firstEvent.timeSeconds:F3}s.");
+    }
+
+    public double GetSpawnTime(RhythmEventData eventData)
+    {
+        return Math.Max(eventData.previewNotBeforeSeconds,
+            eventData.timeSeconds - spawnLeadSeconds);
     }
 
     private void UpdateBeatCue()
@@ -304,7 +371,7 @@ public class RhythmChartReader : MonoBehaviour
         balloonSpawner.CheckExpiredBalloons(currentSongTime);
         while (nextEventIndex < chart.events.Length
             && currentSongTime >= 
-            chart.events[nextEventIndex].timeSeconds - spawnLeadSeconds)
+            GetSpawnTime(chart.events[nextEventIndex]))
         {
             RhythmEventData currentEvent = chart.events[nextEventIndex];
 

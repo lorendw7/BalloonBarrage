@@ -70,22 +70,11 @@ public class BalloonSpawner : MonoBehaviour
     {
         activeBalloons.RemoveAll(balloon => balloon == null || !balloon.gameObject.activeSelf);
         if (activeBalloons.Count >= maxBalloons) return false;
-        int placementSlot = GetPlacementSlot(
-            eventData.pattern,
-            eventData.patternStep);
+        int placementSlot = eventData.authoredPlacement
+            ? Mathf.Clamp(eventData.placementSlot, -2, 2)
+            : GetPlacementSlot(eventData.pattern, eventData.patternStep);
 
-        Vector2 normalizedOffset =
-            KyudaisaiLearnerCore.CalculatePatternOffset(
-                eventData.pattern,
-                placementSlot,
-                eventData.patternStep);
-
-        Vector3 position = new Vector3(
-            Mathf.Lerp(xRange.x, xRange.y,
-                Mathf.Clamp01(normalizedOffset.x * 0.5f + 0.5f)),
-            Mathf.Lerp(yRange.x, yRange.y,
-                Mathf.Clamp01(normalizedOffset.y * 0.5f + 0.5f)),
-            zPosition);
+        Vector3 position = GetPatternPosition(eventData.pattern, placementSlot, eventData.patternStep);
 
         // Spread overlapping events across readable rows while retaining their pattern x position.
         foreach (float row in PlacementRows)
@@ -111,6 +100,23 @@ public class BalloonSpawner : MonoBehaviour
 
         activeBalloons.Add(balloon);
         return true;
+    }
+
+    public Vector3 GetPatternPosition(BarragePattern pattern, int placementSlot, int patternStep)
+    {
+        Vector2 normalizedOffset =
+            KyudaisaiLearnerCore.CalculatePatternOffset(
+                pattern,
+                placementSlot,
+                patternStep);
+
+        return new Vector3(
+            Mathf.Lerp(xRange.x, xRange.y,
+                Mathf.Clamp01(normalizedOffset.x * 0.5f + 0.5f)),
+            Mathf.Lerp(yRange.x, yRange.y,
+                Mathf.Clamp01(normalizedOffset.y * 0.5f + 0.5f)),
+            zPosition);
+
     }
 
     private static int GetPlacementSlot(

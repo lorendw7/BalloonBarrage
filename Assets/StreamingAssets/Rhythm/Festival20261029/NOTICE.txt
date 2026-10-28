@@ -1,0 +1,26 @@
+BalloonBarrage festival/complete-song phrase adaptations — October 29, 2026
+
+No source recording or original chart was modified. See each derived chart's source,
+sourceChart, hashes and adaptation fields, and the original preserved manifests/notices.
+Goin' Under by NegaRen (chart Fraxtil), Springtime by Kommisar (chart Kommisar),
+Mecha-Tribe Assault by Kommisar (chart Wyde): pinned StepMania noncommercial
+development permission only; not commercially cleared. Original notices govern.
+Cozy Puzzle In-Game 1/2 and Magic Puzzle In-Game 1/2 by MintoDog: CC0 1.0.
+Chaoz Fantasy, Chaoz Airflow and Chaoz Impact by ParagonX9: CC BY-SA 3.0.
+https://creativecommons.org/licenses/by-sa/3.0/
+These classics' derived charts and synchronized-sequence contributions are under
+the same CC BY-SA 3.0; retain attribution, modification statements and license.
+No endorsement is implied. Other independent software/assets keep their notices.
+The complete mixed package remains noncommercial due to the StepMania content.
+
+Changes: separate 60–75-second festival windows and complete-song standard profiles;
+source-tempo 8-bar section arrangements, bounded target density, alternating motifs,
+one opening watch/answer motif and explicit spatial placement. Analysis uses
+spectral onset energy to estimate grid phase and select active beat-bounded windows.
+Sections/phrase boundaries are inferred, not human-confirmed musical structure.
+The timing grid for Chaoz Impact remains provisional. Human listening, physical aim,
+venue calibration and exact playback-window quality remain unverified.
+Duration correction: Mecha-Tribe's final Vorbis EOS trims the playable recording
+to 105 seconds; historical maximum-granule metadata counted extra padding.
+See duration-audit.json. Original audio bytes and source charts remain unchanged.
+Demonstration markers do not score; long-note paint ribbon is not implemented.

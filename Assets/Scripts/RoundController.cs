@@ -9,6 +9,7 @@ public sealed class ExhibitionSongProfile
     public string trackId;
     public string title;
     public string artist;
+    public string mode;
     public AudioClip audioClip;
     public string chartRelativePath;
     public double sourceCueInSeconds;
@@ -42,12 +43,19 @@ public class RoundController : MonoBehaviour
     private int selectedSongIndex;
     private GameObject songSelectionPanel;
     private Dropdown songDropdown;
+    private Dropdown songModeDropdown;
+    private string currentSongMode = "festival";
+    private readonly System.Collections.Generic.List<int> visibleSongIndices =
+        new System.Collections.Generic.List<int>();
     private Text songSelectionTitle;
     private Text songSelectionDetails;
     private Button songConfirmButton;
     private Button songBackButton;
     private bool refreshSelectionText;
     public bool IsChoosingSong => songSelectionPanel != null && songSelectionPanel.activeSelf;
+    public string SongMode => currentSongMode;
+    public System.Collections.Generic.IReadOnlyList<ExhibitionSongProfile> SongProfiles =>
+        exhibitionSongs ?? System.Array.Empty<ExhibitionSongProfile>();
 
     public event System.Action SongSelectionChanged;
 
@@ -286,6 +294,13 @@ public class RoundController : MonoBehaviour
             exhibitionSongs.Length - 1);
 
         ExhibitionSongProfile profile = SelectedSong;
+        if (profile.mode == "festival" || profile.mode == "standard")
+        {
+            currentSongMode = profile.mode;
+            if (songModeDropdown != null)
+                songModeDropdown.SetValueWithoutNotify(currentSongMode == "standard" ? 1 : 0);
+        }
+        RefreshSongOptions();
 
         if (gameMusic != null)
         {
@@ -310,11 +325,52 @@ public class RoundController : MonoBehaviour
         }
 
         Debug.Log(
-            $"Selected {profile.title} ({songDuration:F1}s short round).");
+            $"Selected {profile.title} ({songDuration:F1}s, {currentSongMode}).");
+    }
+
+    public void SetSongMode(string mode)
+    {
+        if (hasStarted || (mode != "festival" && mode != "standard") || exhibitionSongs == null) return;
+        string previousTitle = SelectedSong != null ? SelectedSong.title : null;
+        int firstMatch = -1;
+        for (int index = 0; index < exhibitionSongs.Length; index++)
+        {
+            if (exhibitionSongs[index].mode != mode) continue;
+            if (firstMatch < 0) firstMatch = index;
+            if (exhibitionSongs[index].title == previousTitle) { firstMatch = index; break; }
+        }
+        if (firstMatch < 0) return;
+        currentSongMode = mode;
+        SelectSong(firstMatch);
+    }
+
+    private void SelectVisibleSong(int index)
+    {
+        if (index >= 0 && index < visibleSongIndices.Count) SelectSong(visibleSongIndices[index]);
+    }
+
+    private void RefreshSongOptions()
+    {
+        if (songDropdown == null || exhibitionSongs == null) return;
+        songDropdown.Hide();
+        visibleSongIndices.Clear();
+        var options = new System.Collections.Generic.List<string>();
+        for (int index = 0; index < exhibitionSongs.Length; index++)
+        {
+            ExhibitionSongProfile song = exhibitionSongs[index];
+            if (!string.IsNullOrEmpty(song.mode) && song.mode != currentSongMode) continue;
+            visibleSongIndices.Add(index);
+            options.Add($"{song.title}  ·  {song.roundDurationSeconds:0} s");
+        }
+        songDropdown.ClearOptions();
+        songDropdown.AddOptions(options);
+        songDropdown.SetValueWithoutNotify(Mathf.Max(0, visibleSongIndices.IndexOf(selectedSongIndex)));
     }
 
     private static string GetBestScoreKey(string trackId)
     {
+        if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-phrase-v2", System.StringComparison.Ordinal))
+            return $"BestScore.{trackId}.Rhythm.Phrase.v2";
         return $"BestScore.{trackId}.Kyudaisai.Short.v1";
     }
 
@@ -360,7 +416,7 @@ public class RoundController : MonoBehaviour
         if (songSelectionPanel == null) BuildSongSelectionPanel();
         SetStartActionsVisible(false);
         songSelectionPanel.SetActive(true);
-        songDropdown.SetValueWithoutNotify(selectedSongIndex);
+        RefreshSongOptions();
         RefreshSongSelectionText();
         PreviewSelectedSong();
     }
@@ -390,15 +446,33 @@ public class RoundController : MonoBehaviour
         songSelectionPanel.transform.SetParent(sourcePanel.parent, false);
         RectTransform panel = songSelectionPanel.GetComponent<RectTransform>();
         panel.anchoredPosition = new Vector2(0f, -55f);
-        panel.sizeDelta = new Vector2(680f, 320f);
+        panel.sizeDelta = new Vector2(680f, 400f);
         Image background = songSelectionPanel.GetComponent<Image>();
         background.sprite = sourcePanel.GetComponent<Image>().sprite;
         background.type = Image.Type.Sliced;
         background.pixelsPerUnitMultiplier = 1.4f;
 
         Text textTemplate = FindDescendant(startScreen.transform, "ControlsText").GetComponent<Text>();
-        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 105f, 38f, 25);
-        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -30f, 60f, 18);
+        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 155f, 38f, 25);
+        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -40f, 60f, 18);
+
+        GameObject modeObject = DefaultControls.CreateDropdown(new DefaultControls.Resources());
+        modeObject.name = "SongMode";
+        modeObject.transform.SetParent(panel, false);
+        modeObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 95f);
+        modeObject.GetComponent<RectTransform>().sizeDelta = new Vector2(560f, 42f);
+        songModeDropdown = modeObject.GetComponent<Dropdown>();
+        songModeDropdown.ClearOptions();
+        songModeDropdown.AddOptions(new System.Collections.Generic.List<string> { "Festival", "Standard" });
+        songModeDropdown.SetValueWithoutNotify(currentSongMode == "standard" ? 1 : 0);
+        songModeDropdown.onValueChanged.AddListener(index => SetSongMode(index == 1 ? "standard" : "festival"));
+        songModeDropdown.template.sizeDelta = new Vector2(0f, 90f);
+        foreach (Text label in modeObject.GetComponentsInChildren<Text>(true))
+        {
+            label.font = textTemplate.font;
+            label.fontSize = 19;
+            label.color = new Color(0.12f, 0.19f, 0.17f);
+        }
 
         GameObject dropdownObject = DefaultControls.CreateDropdown(new DefaultControls.Resources());
         dropdownObject.name = "SongList";
@@ -419,6 +493,17 @@ public class RoundController : MonoBehaviour
         colors.selectedColor = colors.highlightedColor;
         colors.pressedColor = new Color(0.77f, 0.9f, 0.81f);
         songDropdown.colors = colors;
+        songModeDropdown.colors = colors;
+        songModeDropdown.image.color = new Color(0.12f, 0.29f, 0.25f);
+        songModeDropdown.captionText.color = paper;
+        songModeDropdown.template.GetComponent<Image>().color = new Color(0.8f, 0.87f, 0.75f);
+        Toggle modeToggle = songModeDropdown.itemText.GetComponentInParent<Toggle>(true);
+        modeToggle.colors = colors;
+        if (modeToggle.targetGraphic != null) modeToggle.targetGraphic.color = new Color(0.8f, 0.87f, 0.75f);
+        if (modeToggle.graphic != null) modeToggle.graphic.color = new Color(0.15f, 0.5f, 0.39f);
+        Outline modeBorder = modeObject.AddComponent<Outline>();
+        modeBorder.effectColor = new Color(0.2f, 0.38f, 0.32f, 0.7f);
+        modeBorder.effectDistance = new Vector2(2f, -2f);
         songDropdown.template.GetComponent<Image>().color = new Color(0.8f, 0.87f, 0.75f);
         Outline listBorder = songDropdown.template.gameObject.AddComponent<Outline>();
         listBorder.effectColor = ink;
@@ -433,31 +518,14 @@ public class RoundController : MonoBehaviour
             if (scrollbar.targetGraphic != null) scrollbar.targetGraphic.color = ink;
         }
         songDropdown.ClearOptions();
-        var options = new System.Collections.Generic.List<string>();
-        foreach (ExhibitionSongProfile song in exhibitionSongs)
-            options.Add($"{song.title}  ·  {song.roundDurationSeconds:0} sec");
-        songDropdown.AddOptions(options);
-        songDropdown.onValueChanged.AddListener(SelectSong);
+        songDropdown.onValueChanged.AddListener(SelectVisibleSong);
+        RefreshSongOptions();
         // A long list scrolls inside a bounded panel instead of covering the actions.
         songDropdown.template.sizeDelta = new Vector2(0f, 180f);
         RectTransform itemRect = songDropdown.itemText.transform.parent.GetComponent<RectTransform>();
         itemRect.sizeDelta = new Vector2(itemRect.sizeDelta.x, 36f);
-        Transform arrow = dropdownObject.transform.Find("Arrow");
-        if (arrow != null)
-        {
-            arrow.GetComponent<Image>().enabled = false;
-            for (int index = 0; index < 2; index++)
-            {
-                GameObject stroke = new GameObject("Chevron", typeof(RectTransform), typeof(Image));
-                stroke.transform.SetParent(arrow, false);
-                RectTransform strokeRect = stroke.GetComponent<RectTransform>();
-                strokeRect.sizeDelta = new Vector2(10f, 2.5f);
-                strokeRect.anchoredPosition = new Vector2(index == 0 ? -3f : 3f, 0f);
-                strokeRect.localRotation = Quaternion.Euler(0f, 0f, index == 0 ? -45f : 45f);
-                stroke.GetComponent<Image>().color = paper;
-                stroke.GetComponent<Image>().raycastTarget = false;
-            }
-        }
+        CreateDropdownChevron(dropdownObject.transform.Find("Arrow"), paper);
+        CreateDropdownChevron(modeObject.transform.Find("Arrow"), paper);
         foreach (Text label in dropdownObject.GetComponentsInChildren<Text>(true))
         {
             label.font = textTemplate.font;
@@ -470,6 +538,25 @@ public class RoundController : MonoBehaviour
         songDropdown.captionText.resizeTextMaxSize = 20;
         songConfirmButton = CreateSelectionButton("ConfirmSongButton", "StartButton", -170f, StartSelectedSong);
         songBackButton = CreateSelectionButton("BackFromSongButton", "QuitButton", 170f, CancelSongSelection);
+    }
+
+    private static void CreateDropdownChevron(Transform arrow, Color color)
+    {
+        if (arrow != null)
+        {
+            arrow.GetComponent<Image>().enabled = false;
+            for (int index = 0; index < 2; index++)
+            {
+                GameObject stroke = new GameObject("Chevron", typeof(RectTransform), typeof(Image));
+                stroke.transform.SetParent(arrow, false);
+                RectTransform strokeRect = stroke.GetComponent<RectTransform>();
+                strokeRect.sizeDelta = new Vector2(10f, 2.5f);
+                strokeRect.anchoredPosition = new Vector2(index == 0 ? -3f : 3f, 0f);
+                strokeRect.localRotation = Quaternion.Euler(0f, 0f, index == 0 ? -45f : 45f);
+                stroke.GetComponent<Image>().color = color;
+                stroke.GetComponent<Image>().raycastTarget = false;
+            }
+        }
     }
 
     private Text CreateSelectionLabel(Text template, string objectName, float y, float height, int size)
@@ -494,7 +581,7 @@ public class RoundController : MonoBehaviour
         foreach (LocalizedText localized in buttonObject.GetComponentsInChildren<LocalizedText>(true))
             localized.enabled = false;
         RectTransform rect = buttonObject.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(x, -105f);
+        rect.anchoredPosition = new Vector2(x, -140f);
         rect.sizeDelta = new Vector2(280f, 70f);
         Button button = buttonObject.GetComponent<Button>();
         button.onClick = new Button.ButtonClickedEvent();
@@ -510,6 +597,9 @@ public class RoundController : MonoBehaviour
         Font font = localizedSource != null ? localizedSource.CurrentFont : sourceText.GetComponent<Text>().font;
         foreach (Text label in songSelectionPanel.GetComponentsInChildren<Text>(true)) label.font = font;
         songSelectionTitle.text = LocalizationManager.GetText("song.choose");
+        songModeDropdown.options[0].text = LocalizationManager.GetText("song.mode.festival");
+        songModeDropdown.options[1].text = LocalizationManager.GetText("song.mode.standard");
+        songModeDropdown.RefreshShownValue();
         songSelectionDetails.text = $"{SelectedSong.artist}  ·  {SelectedSong.roundDurationSeconds:0} sec\n" +
             LocalizationManager.GetText("song.preview");
         songConfirmButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.play");

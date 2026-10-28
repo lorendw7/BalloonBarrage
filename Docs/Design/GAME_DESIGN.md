@@ -1,10 +1,10 @@
 # Game design
 
-Updated: October 28, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). Public prerelease v0.1.0-demo.6 packages the saved statistics/streak/result summary, continuous spray, shared Simplified Chinese/Japanese/English UI, controlled eight-pigment switching and nine prepared paint receivers. [Validation](../Project/VALIDATION.md) separates automated evidence from human or target-hardware acceptance. New art studies do not alter the release's behavior.
+Updated: October 29, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). The authorized festival revision prepares ten short profiles and ten complete-song profiles, phrase-based patterns and one brief listen-then-answer motif per profile. Source, scene integration, automated runtime and package evidence are recorded separately; demo.6 remains the complete-song fallback. The long-note paint ribbon is explicitly deferred. [Validation](../Project/VALIDATION.md) separates automated evidence from human or target-hardware acceptance.
 
 ## Confirmed direction
 
-BalloonBarrage is a **casual, relaxing rhythm game** about popping balloons and painting a warm studio. Free aiming, tactile pops, colorful marks and an inviting musical pulse are the core identity. Players can fire at any time, including held fire; ordinary hits remain satisfying and timed hits earn an optional score bonus. Missing the beat does not block shooting, reduce score, eliminate the player or require a restart. The learner implements gameplay.
+BalloonBarrage is a **casual, relaxing rhythm game** about popping balloons and painting a warm studio. Free aiming, tactile pops, colorful marks and an inviting musical pulse are the core identity. Players can fire at any time, including held fire; ordinary hits remain satisfying and timed hits earn an optional score bonus. Missing the beat does not block shooting, reduce score, eliminate the player or require a restart. The learner normally implements gameplay; the creator explicitly authorized Codex to implement this bounded festival revision while preserving the three learner functions.
 
 The festival promise is a comfortable short song session with visible phrase-to-phrase variety, not an accuracy exam or compulsory combo chase. The accepted complete-song build remains the fallback and the standard-song reference. Rhythm must remain legible through chart-driven appearances, timing cues and audible/visual bonuses; variety comes from authored song and pattern data rather than unrelated per-frame random targets. Roguelite upgrades are exploratory post-festival ideas, not a defining feature or current commitment.
 
@@ -30,12 +30,12 @@ The first learner exercise is [Continuous-fire and paint-loop lesson](CONTINUOUS
 
 ## Whole-game loop and mode boundaries
 
-Public demo.6 preserves title/instructions → one complete song → results → retry/title. The current source candidate adds two short song profiles and runtime selection while keeping free aiming, unrestricted held fire, musical bonuses and visible paint feedback. Complete-song standard play remains the packaged fallback/reference. A separate later run mode may connect complete-song stages through upgrade choices. Source wiring is not acceptance; the roadmap still requires learner completion and candidate play/package checks.
+Public demo.6 preserves title/instructions → one complete song → results → retry/title. The revised loop adds a mode selector before the song list: Festival contains ten approximately 64–65-second profiles; Standard contains all ten complete recordings. Both use preview → Play → painted results → retry/title. Separate versioned profile keys keep records apart. The learner's original pattern/effect functions remain intact; explicit section data selects among those pattern families. Source wiring and package acceptance remain distinct; see the roadmap and Validation.
 
 | Mode | Intended experience | State and scoring boundary |
 |---|---|---|
-| Kyudaisai queue (source candidate, unaccepted) | One selected 75–90-second authored song window from Goin' Under or Springtime | Existing base/on-beat score rules; song/round identity owns timing, records and settlement; three learner functions and candidate acceptance remain open |
-| Standard song / fallback | One selected complete song, initially the prepared Goin' Under chart | Existing base/on-beat score rules; complete-song end owns settlement and remains recoverable as demo.6 |
+| Kyudaisai queue | Ten short profiles, each about 64–65 seconds, within the 60–75-second target | Existing base/on-beat rules; separate v2 profile/chart identities isolate records. Festival is the default mode |
+| Standard song / fallback | All ten complete recordings with bounded derived charts; demo.6 retains the original complete Goin' Under reference | Complete recording end owns settlement; standard and festival records cannot mix. Original source charts/audio remain intact |
 | Local co-op | Two independently controlled reticles in the same studio and song | Shared score and one consumed target outcome; explicit input/player identity supports later contribution statistics |
 | Roguelite run (exploratory) | A possible later branch, only if it supports the relaxing core experience | Not a committed milestone; keep standard songs available without upgrades or pressure |
 | Practice / free paint | Possible later place to learn aim or decorate without score pressure | Separate from chart accuracy and competitive records; not a prerequisite for the first release |
@@ -56,13 +56,56 @@ Recent anonymous playtest feedback praised the care in the build while identifyi
 
 | Area | Candidate behavior | Acceptance boundary |
 |---|---|---|
-| Session length | Saved source profiles play 82.286 seconds of Goin' Under, 84.542 seconds of Springtime or 80 seconds of Mecha-Tribe Assault from explicit cue metadata | Pause/Retry, natural results and the handoff still need complete candidate rounds. The unchanged packaged release remains fallback |
-| Song choice | Start opens a list with Goin' Under, Springtime and Mecha-Tribe Assault; selection previews the song; Play confirms and Back returns | Audio, chart window and best-score key change together. See Validation for checks; listening, complete rounds and package acceptance remain separate |
+| Session length | New festival windows last 64.000–65.455 seconds, at unchanged speed/pitch; standard mode plays complete recordings | Beat-bounded windows/sections are inferred from source timing and signal analysis. Human listening and phrase quality remain unverified; see Validation for runtime evidence |
+| Song choice | Festival/Standard mode selector, then ten matching choices with preview, Play and Back | Clip, chart, duration and versioned key change together. The operator may recommend two easy choices; all ten remain available |
 | Balloon barrage | Learner code chooses lateral sweep, shallow fan and staggered cluster; free-row spacing supports up to 16 active targets | Source implementation is saved; complete-round human readability remains unverified |
 | Pop response | Eight bounded fragment prefabs are selected by the learner's color-to-variant mapping, with the original effect as fallback | Source implementation is saved; dense-passage visual acceptance remains unverified |
 | Effect alignment | `PlayerShooter` and `PaintProjectile` pass the sampled contact to `Balloon.HitAt`, and the independent burst uses that point instead of the balloon root | Static source checks confirm both call sites and the serialized world-space effects. Center/edge hits from several screen positions must still be observed; the user-reported offset has not been reproduced or declared fixed |
 
 Original downloaded audio/chart files and notices remain unchanged. A short round should be represented by explicit cue-in/cue-out and event-window metadata at musical phrase boundaries, not by overwriting source audio or changing pitch/speed. Confirm that the intended noncommercial exhibition use permits the chosen playback window; if that cannot be established before freeze, use an unmodified complete track or the demo.6 fallback. See [Music and charts](MUSIC_AND_CHARTS.md) for provenance and technical constraints.
+
+## Music-led festival variety
+
+The design goal is a short musical performance that leaves a personal painting. More songs, denser targets and extra particles alone do not solve uniform play. Music should change where the player aims, when an optional accent feels satisfying, and when a quiet passage allows free painting. The revision consumes explicit section/placement data while preserving the learner's elapsed-thirds fallback. Section boundaries follow source tempo maps or signal-estimated phase; they are not human-confirmed musical form. The table below separates the implemented slice from later ideas.
+
+### Short-round structure
+
+Target **60–75 seconds of gameplay, preferably about 65 seconds**, plus approximately 10–20 seconds for instructions/selection and 10–20 seconds for results/handoff. Aim for a 90–120-second visitor turn. The prepared festival profiles last about 64–65 seconds and preserve old source/profile files. Complete recordings belong to standard play. Do not accelerate the music or end abruptly on a timer.
+
+The following 68-second example illustrates pacing, not verified cue points for any song. Move boundaries to actual phrases after listening; use the audio/chart's tempo map rather than assuming every phrase lasts the same number of seconds.
+
+| Approximate position | Musical role | Player interaction |
+|---|---|---|
+| 0–8 s | Clear opening pulse | A few separated targets introduce aim and the existing beat bonus; avoid a long empty intro |
+| 8–24 s | First theme | A readable lateral sequence invites following the melody across the studio |
+| 24–40 s | Answer / contrasting phrase | Change to a shallow fan or reversed sequence; repeat one recognizable motif so players can anticipate it |
+| 40–56 s | Chorus / strongest phrase | A compact staggered sequence adds directional variety without requiring more simultaneous hits |
+| 56–68 s | Musical resolution | A short reprise ends on an authored final accent, then exposes the painted studio for results |
+
+Prefer fewer meaningful events to compressing the same event count into less time. Preview the first event early enough for aim; retain the current preview lead unless a separate change is tested. Include a sparse phrase for free painting where the music supports it. If no coherent 60–75-second window exists, choose another prepared song or retain the verified fallback instead of making an awkward cut. The first exhibit pair should contrast a spacious, easy-to-read chart with a livelier sequence; choose by listening and aiming evidence rather than track popularity or BPM alone.
+
+### Interaction palette
+
+| Interaction | How music drives play | Rule and scope |
+|---|---|---|
+| Phrase-authored sweep, fan and staggered sequence | Different phrases change aim direction, spacing and recurrence; the returning theme repeats its recognizable pattern | Implemented source/data slice. Reuse the three learner pattern families, one target per derived chart event and existing rewards; timing/phrase listening remains separate |
+| Target-associated approach cue | A shrinking outline or simple shape identifies the target whose beat is next, so the player can connect the sound to the aim | Small follow-up trial. Use the matching event and DSP clock; check overlap, ordinary hits and color-independent readability before adding another HUD layer |
+| Listen, then answer | A brief noninteractive shape/light motif previews a left/center/right sequence; the next phrase supplies matching, normally hittable balloons | Implemented source slice: one opening three-position motif. Markers have no collider/raycast blocking/reward or compulsory memory test. Answers are real authored chart events; preview starts after the demonstration, while judgement time remains fixed |
+| Long-note paint ribbon | During a sustained musical phrase, a visual path invites following it with held spray across an already eligible wall | Explicitly deferred by the creator; no runtime guide in this version. If later selected, first test visual guidance with ordinary deposits and no extra score. Tracking accuracy, duration rewards or new event types require separate rules and record identities; do not reinterpret imported hold tails silently |
+| Chorus relay and final accent | Distinct chart events form a compact readable route, ending with one focal balloon and a restrained musical/visual accent | Later authored-content trial. No simultaneous chord requirement, extra mandatory clicks, boss health or chain scoring. A decorative larger balloon must retain a clear hit silhouette and resolve once |
+| Personal painted ending | Players use spare phrases to decorate, then see their own marks behind the result panel | Existing persistence supports this direction. A quieter result composition is planned; image export, artwork saving and themed mural objectives are later features |
+
+Keep only one new interaction active during an initial trial. Do not add a color-match requirement to C-key switching, shielded targets, hazards, forced rhythm input, or mid-song upgrade choices to the festival slice. Direction, spacing, musical repetition and optional painting provide variety without another control lesson. Show any new invitation with a short localized label and shape, not color alone.
+
+### Phrase data and fairness contract
+
+The versioned derived chart stores sections with round-relative start/end, pattern family and direction; events store source-audio times and authored slots. Demonstrations store round-relative start, step duration, answer start and three slots. The reader subtracts cue-in once, selects the matching section, applies direction once and gates only answer previews until the demonstration ends. The catalog identifies song, mode, audio, chart, window and record key. See [Music and charts](MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) for schema and reproduction. BPM/beat boundaries must be converted through the existing timing map. Review cue-in/out, event inclusion and the musical ending together. New practice grids require listening/offset calibration and phrase review before being described as musically authored charts. Source recordings, original charts and notices remain intact; [Music and charts](MUSIC_AND_CHARTS.md) owns provenance and usage boundaries.
+
+Use the existing one-clock, one-event, one-accepted-pop model. An early ordinary hit consumes that event normally; it cannot return at the beat for a second reward. Held fire remains a valid way to play and may earn the existing bonus when its accepted sample reaches the matching target in the saved window. New cues do not automatically award a bonus, widen the window or invent additional scoring events. Decorative guides and echoes never score. Any future scoring mechanic uses a new rules identity and cannot compete against old records.
+
+Author spatial/event spacing against the actual finite firing cadence and aim travel. Do not require a simultaneous chord or intervals shorter than the player can sample and aim; do not increase shot frequency to rescue a dense chart. Keep the saved 16-target limit as a capacity bound, not a density goal. If a chart fills capacity and delays a pending event beyond its intended cue, reduce authored congestion and recheck timing; do not move the judgement time or silently skip events. Ordinary off-time play must still finish comfortably without a failure state.
+
+Before promoting a trial, compare it against the same short profile with the existing patterns: can a player describe at least one musical/aiming change, identify the next target, and finish without a required extra input? Record timing/readability observations separately from automated clock, score, pause, cleanup and Retry checks. These are criteria for choosing a new design, not claims that existing packages passed human testing or a requirement to repeat unrelated release work.
 
 ## Required rhythm loop
 
@@ -175,7 +218,7 @@ The initial run can end after its authored stages with a final score; health, es
 
 ## Songs, results and local progression
 
-The Kyudaisai source candidate connects Goin' Under, Springtime and Mecha-Tribe Assault through Start → dropdown/preview → Play, with Back returning to title. The title has no separate song buttons or number-key song shortcuts. Mecha-Tribe Assault uses an explicit head-only adaptation; tails/mines are omitted and originals remain intact. Profile lengths are 82.286, 84.542 and 80 seconds. Song, chart, difficulty, window and record identities change together. The learner has saved all three pattern/effect functions. Scene visibility uses a 2.8-second lead, five-second cleanup, a 16-target cap and free-row spacing. Pending chart events wait for capacity rather than being silently discarded. Current-source verification is recorded in Validation; standalone listening/readability acceptance remains separate.
+The revised scene uses Start → Festival/Standard mode → ten-song list/preview → Play, with Back returning to title. Festival defaults to ten short windows; Standard plays the ten complete recordings. [Music and charts](MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) owns durations, provenance and chart preparation. The learner's three pattern/effect functions remain intact. General preview remains 2.8 seconds, unanswered-target cleanup five seconds and capacity sixteen; answer previews start after the demonstration. Pending events wait for capacity, so derived data is authored below that bound. Runtime evidence and human listening/readability remain separate.
 
 The current source extends the small result summary with successful hits, on-beat hits and maximum streak as defined in [Exhibition experience design](#exhibition-experience-design). The values use the accepted balloon impact and existing cleanup path, but saved cleanup is not yet a formal event-outcome registry and no missed-event total or accuracy exists. Unanswered-event totals support future internal correctness checks, not a failure-focused results screen. Judge firing time first but commit success only after matching impact. Accuracy, grades and more elaborate statistics require separate design/testing.
 

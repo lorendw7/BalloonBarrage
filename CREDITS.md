@@ -1,5 +1,11 @@
 # Credits and provenance
 
+## October 29 festival phrase adaptations
+
+`Assets/StreamingAssets/Rhythm/Festival20261029` contains project-authored short/full profiles, section/placement arrangements and demonstration-answer notes derived from the preserved ten-song library. Each chart records original source links/hashes, the selected source chart, modifications and license. Selected original StepMania event times are retained; thinned rows and three new answer events are identified as adaptations. No audio file or original chart was changed.
+
+MintoDog's four recordings remain CC0. ParagonX9's three classics and their derived charts/synchronized-sequence contributions retain CC BY-SA 3.0, attribution, modification notices and included license text. The three original StepMania songs retain their noncommercial development restrictions, so the mixed package remains noncommercial. The directory's NOTICE and [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) link the exact provenance and preparation. Signal analysis estimates phase and activity; human calibration is unverified. No new image generation occurred, and the long-note paint ribbon is not implemented.
+
 ## October 28 official development captures
 
 `Assets/Art/Previews/Official20261028` preserves 3840 x 2160 native Unity Play Mode PNGs for the title, deep-teal song selection and current gameplay. The gameplay frame uses natural Springtime chart events before stress-test targets are inserted. Captures come from the current working source in an isolated verification project, use 4x MSAA and contain no generative edits. UI canvases are rendered to the capture camera; these are automated development captures, not screenshots of the published demo.6 player or evidence of a physical playtest. Existing artwork, model, font and music attribution remains applicable. Website WebP/share derivatives retain exact source/output hashes and preparation settings in `Website/media/provenance.json`.

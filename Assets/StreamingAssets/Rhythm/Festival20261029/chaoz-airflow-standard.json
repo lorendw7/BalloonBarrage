@@ -1,0 +1,1254 @@
+{
+  "schemaVersion": 2,
+  "title": "Chaoz Airflow",
+  "artist": "ParagonX9",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 175,
+  "durationSeconds": 253.77959183673468,
+  "roundDurationSeconds": 253.779591837,
+  "license": "CC-BY-SA-3.0",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Classics20261029/chaoz-airflow.json",
+  "sourceChartSha256": "9c3dc8a1490bbd32a970028f3502cff6c7c47c0c952134baf1894a485cf8267a",
+  "source": {
+    "filename": "ChaozAirflow.mp3",
+    "title": "Chaoz Airflow",
+    "id": "chaoz-airflow",
+    "bpm": 175,
+    "sourcePage": "https://www.newgrounds.com/audio/listen/245921",
+    "downloadEntryPoint": "https://www.newgrounds.com/audio/download/245921",
+    "downloadUrl": "https://audio-download.ngfiles.com/245000/245921_ParagonX9___Chaoz_Airflow.mp3?f1244938398",
+    "published": "2009-06-11",
+    "timingEvidence": "Author description: 175 bpm",
+    "license": "CC-BY-SA-3.0",
+    "author": "ParagonX9",
+    "bytes": 5079688,
+    "sha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b"
+  },
+  "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
+  "audioSha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified. This derived chart and synchronized-sequence contributions are CC BY-SA 3.0.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 7,
+  "minimumEventGapSeconds": 1.028571428,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 10.9875,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 10.9875,
+      "endSeconds": 21.958928572,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 21.958928572,
+      "endSeconds": 32.930357143,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 32.930357143,
+      "endSeconds": 43.901785715,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 43.901785715,
+      "endSeconds": 54.873214286,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 54.873214286,
+      "endSeconds": 65.844642858,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 65.844642858,
+      "endSeconds": 76.816071429,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 76.816071429,
+      "endSeconds": 87.7875,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 87.7875,
+      "endSeconds": 98.758928572,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 98.758928572,
+      "endSeconds": 109.730357143,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 109.730357143,
+      "endSeconds": 120.701785715,
+      "pattern": 2,
+      "direction": 1
+    },
+    {
+      "startSeconds": 120.701785715,
+      "endSeconds": 131.673214286,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 131.673214286,
+      "endSeconds": 142.644642858,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 142.644642858,
+      "endSeconds": 153.616071429,
+      "pattern": 2,
+      "direction": 1
+    },
+    {
+      "startSeconds": 153.616071429,
+      "endSeconds": 164.5875,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 164.5875,
+      "endSeconds": 175.558928572,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 175.558928572,
+      "endSeconds": 186.530357143,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 186.530357143,
+      "endSeconds": 197.501785715,
+      "pattern": 1,
+      "direction": -1
+    },
+    {
+      "startSeconds": 197.501785715,
+      "endSeconds": 208.473214286,
+      "pattern": 2,
+      "direction": 1
+    },
+    {
+      "startSeconds": 208.473214286,
+      "endSeconds": 219.444642858,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 219.444642858,
+      "endSeconds": 230.416071429,
+      "pattern": 1,
+      "direction": -1
+    },
+    {
+      "startSeconds": 230.416071429,
+      "endSeconds": 241.3875,
+      "pattern": 2,
+      "direction": 1
+    },
+    {
+      "startSeconds": 241.3875,
+      "endSeconds": 253.779591837,
+      "pattern": 0,
+      "direction": 1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.3875,
+      "stepSeconds": 1.371428571,
+      "answerStartSeconds": 6.873214286,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 6.873214286,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 8.244642858,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 9.616071429,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 13.730357143,
+      "sourceBeat": 40,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 15.101785715,
+      "sourceBeat": 44,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 16.473214286,
+      "sourceBeat": 48,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 17.844642858,
+      "sourceBeat": 52,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 19.901785715,
+      "sourceBeat": 58,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 21.958928572,
+      "sourceBeat": 64,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 23.330357143,
+      "sourceBeat": 68,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 24.701785715,
+      "sourceBeat": 72,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 26.073214286,
+      "sourceBeat": 76,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 27.444642858,
+      "sourceBeat": 80,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 28.816071429,
+      "sourceBeat": 84,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 30.1875,
+      "sourceBeat": 88,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 31.558928572,
+      "sourceBeat": 92,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 32.930357143,
+      "sourceBeat": 96,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 35.673214286,
+      "sourceBeat": 104,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 37.044642858,
+      "sourceBeat": 108,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 38.416071429,
+      "sourceBeat": 112,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 41.158928572,
+      "sourceBeat": 120,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 43.901785715,
+      "sourceBeat": 128,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 45.273214286,
+      "sourceBeat": 132,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 46.644642858,
+      "sourceBeat": 136,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 48.016071429,
+      "sourceBeat": 140,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 49.3875,
+      "sourceBeat": 144,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 50.758928572,
+      "sourceBeat": 148,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 52.130357143,
+      "sourceBeat": 152,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 53.501785715,
+      "sourceBeat": 156,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 54.873214286,
+      "sourceBeat": 160,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 56.244642858,
+      "sourceBeat": 164,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 57.273214286,
+      "sourceBeat": 167,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 58.9875,
+      "sourceBeat": 172,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 60.016071429,
+      "sourceBeat": 175,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 61.730357143,
+      "sourceBeat": 180,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 63.101785715,
+      "sourceBeat": 184,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35
+    },
+    {
+      "timeSeconds": 64.473214286,
+      "sourceBeat": 188,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 36
+    },
+    {
+      "timeSeconds": 65.501785715,
+      "sourceBeat": 191,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 37
+    },
+    {
+      "timeSeconds": 66.530357143,
+      "sourceBeat": 194,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 38
+    },
+    {
+      "timeSeconds": 68.5875,
+      "sourceBeat": 200,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 39
+    },
+    {
+      "timeSeconds": 71.330357143,
+      "sourceBeat": 208,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 40
+    },
+    {
+      "timeSeconds": 72.701785715,
+      "sourceBeat": 212,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 41
+    },
+    {
+      "timeSeconds": 74.073214286,
+      "sourceBeat": 216,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 42
+    },
+    {
+      "timeSeconds": 75.444642858,
+      "sourceBeat": 220,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 43
+    },
+    {
+      "timeSeconds": 76.816071429,
+      "sourceBeat": 224,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 44
+    },
+    {
+      "timeSeconds": 79.558928572,
+      "sourceBeat": 232,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 45
+    },
+    {
+      "timeSeconds": 82.301785715,
+      "sourceBeat": 240,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 46
+    },
+    {
+      "timeSeconds": 83.673214286,
+      "sourceBeat": 244,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 47
+    },
+    {
+      "timeSeconds": 85.044642858,
+      "sourceBeat": 248,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 48
+    },
+    {
+      "timeSeconds": 87.101785715,
+      "sourceBeat": 254,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 49
+    },
+    {
+      "timeSeconds": 89.158928572,
+      "sourceBeat": 260,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 50
+    },
+    {
+      "timeSeconds": 90.530357143,
+      "sourceBeat": 264,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 51
+    },
+    {
+      "timeSeconds": 91.901785715,
+      "sourceBeat": 268,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 52
+    },
+    {
+      "timeSeconds": 93.273214286,
+      "sourceBeat": 272,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 53
+    },
+    {
+      "timeSeconds": 94.644642858,
+      "sourceBeat": 276,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 54
+    },
+    {
+      "timeSeconds": 95.673214286,
+      "sourceBeat": 279,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 55
+    },
+    {
+      "timeSeconds": 97.3875,
+      "sourceBeat": 284,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 56
+    },
+    {
+      "timeSeconds": 98.416071429,
+      "sourceBeat": 287,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 57
+    },
+    {
+      "timeSeconds": 99.444642858,
+      "sourceBeat": 290,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 58
+    },
+    {
+      "timeSeconds": 101.501785715,
+      "sourceBeat": 296,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 59
+    },
+    {
+      "timeSeconds": 102.873214286,
+      "sourceBeat": 300,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 60
+    },
+    {
+      "timeSeconds": 104.244642858,
+      "sourceBeat": 304,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 61
+    },
+    {
+      "timeSeconds": 105.616071429,
+      "sourceBeat": 308,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 62
+    },
+    {
+      "timeSeconds": 106.9875,
+      "sourceBeat": 312,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 63
+    },
+    {
+      "timeSeconds": 109.730357143,
+      "sourceBeat": 320,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 64
+    },
+    {
+      "timeSeconds": 111.101785715,
+      "sourceBeat": 324,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 65
+    },
+    {
+      "timeSeconds": 112.473214286,
+      "sourceBeat": 328,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 66
+    },
+    {
+      "timeSeconds": 113.844642858,
+      "sourceBeat": 332,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 67
+    },
+    {
+      "timeSeconds": 115.216071429,
+      "sourceBeat": 336,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 68
+    },
+    {
+      "timeSeconds": 116.5875,
+      "sourceBeat": 340,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 69
+    },
+    {
+      "timeSeconds": 117.958928572,
+      "sourceBeat": 344,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 70
+    },
+    {
+      "timeSeconds": 120.701785715,
+      "sourceBeat": 352,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 71
+    },
+    {
+      "timeSeconds": 122.073214286,
+      "sourceBeat": 356,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 72
+    },
+    {
+      "timeSeconds": 123.101785715,
+      "sourceBeat": 359,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 73
+    },
+    {
+      "timeSeconds": 124.816071429,
+      "sourceBeat": 364,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 74
+    },
+    {
+      "timeSeconds": 125.844642858,
+      "sourceBeat": 367,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 75
+    },
+    {
+      "timeSeconds": 126.873214286,
+      "sourceBeat": 370,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 76
+    },
+    {
+      "timeSeconds": 128.5875,
+      "sourceBeat": 375,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 77
+    },
+    {
+      "timeSeconds": 130.301785715,
+      "sourceBeat": 380,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 78
+    },
+    {
+      "timeSeconds": 131.673214286,
+      "sourceBeat": 384,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 79
+    },
+    {
+      "timeSeconds": 133.044642858,
+      "sourceBeat": 388,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 80
+    },
+    {
+      "timeSeconds": 135.7875,
+      "sourceBeat": 396,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 81
+    },
+    {
+      "timeSeconds": 138.530357143,
+      "sourceBeat": 404,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 82
+    },
+    {
+      "timeSeconds": 139.901785715,
+      "sourceBeat": 408,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 83
+    },
+    {
+      "timeSeconds": 141.273214286,
+      "sourceBeat": 412,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 84
+    },
+    {
+      "timeSeconds": 144.016071429,
+      "sourceBeat": 420,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 85
+    },
+    {
+      "timeSeconds": 146.758928572,
+      "sourceBeat": 428,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 86
+    },
+    {
+      "timeSeconds": 149.501785715,
+      "sourceBeat": 436,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 87
+    },
+    {
+      "timeSeconds": 151.558928572,
+      "sourceBeat": 442,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 88
+    },
+    {
+      "timeSeconds": 154.9875,
+      "sourceBeat": 452,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 89
+    },
+    {
+      "timeSeconds": 156.358928572,
+      "sourceBeat": 456,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 90
+    },
+    {
+      "timeSeconds": 157.730357143,
+      "sourceBeat": 460,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 91
+    },
+    {
+      "timeSeconds": 159.101785715,
+      "sourceBeat": 464,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 92
+    },
+    {
+      "timeSeconds": 160.473214286,
+      "sourceBeat": 468,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 93
+    },
+    {
+      "timeSeconds": 161.844642858,
+      "sourceBeat": 472,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 94
+    },
+    {
+      "timeSeconds": 163.216071429,
+      "sourceBeat": 476,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 95
+    },
+    {
+      "timeSeconds": 164.5875,
+      "sourceBeat": 480,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 96
+    },
+    {
+      "timeSeconds": 167.330357143,
+      "sourceBeat": 488,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 97
+    },
+    {
+      "timeSeconds": 168.701785715,
+      "sourceBeat": 492,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 98
+    },
+    {
+      "timeSeconds": 170.073214286,
+      "sourceBeat": 496,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 99
+    },
+    {
+      "timeSeconds": 172.816071429,
+      "sourceBeat": 504,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 100
+    },
+    {
+      "timeSeconds": 175.558928572,
+      "sourceBeat": 512,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 101
+    },
+    {
+      "timeSeconds": 178.301785715,
+      "sourceBeat": 520,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 102
+    },
+    {
+      "timeSeconds": 179.673214286,
+      "sourceBeat": 524,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 103
+    },
+    {
+      "timeSeconds": 181.044642858,
+      "sourceBeat": 528,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 104
+    },
+    {
+      "timeSeconds": 182.416071429,
+      "sourceBeat": 532,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 105
+    },
+    {
+      "timeSeconds": 183.7875,
+      "sourceBeat": 536,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 106
+    },
+    {
+      "timeSeconds": 186.530357143,
+      "sourceBeat": 544,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 107
+    },
+    {
+      "timeSeconds": 187.901785715,
+      "sourceBeat": 548,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 108
+    },
+    {
+      "timeSeconds": 188.930357143,
+      "sourceBeat": 551,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 109
+    },
+    {
+      "timeSeconds": 190.644642858,
+      "sourceBeat": 556,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 110
+    },
+    {
+      "timeSeconds": 191.673214286,
+      "sourceBeat": 559,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 111
+    },
+    {
+      "timeSeconds": 192.701785715,
+      "sourceBeat": 562,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 112
+    },
+    {
+      "timeSeconds": 194.416071429,
+      "sourceBeat": 567,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 113
+    },
+    {
+      "timeSeconds": 196.130357143,
+      "sourceBeat": 572,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 114
+    },
+    {
+      "timeSeconds": 197.158928572,
+      "sourceBeat": 575,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 115
+    },
+    {
+      "timeSeconds": 198.873214286,
+      "sourceBeat": 580,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 116
+    },
+    {
+      "timeSeconds": 200.244642858,
+      "sourceBeat": 584,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 117
+    },
+    {
+      "timeSeconds": 201.616071429,
+      "sourceBeat": 588,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 118
+    },
+    {
+      "timeSeconds": 202.9875,
+      "sourceBeat": 592,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 119
+    },
+    {
+      "timeSeconds": 204.358928572,
+      "sourceBeat": 596,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 120
+    },
+    {
+      "timeSeconds": 205.730357143,
+      "sourceBeat": 600,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 121
+    },
+    {
+      "timeSeconds": 207.101785715,
+      "sourceBeat": 604,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 122
+    },
+    {
+      "timeSeconds": 208.473214286,
+      "sourceBeat": 608,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 123
+    },
+    {
+      "timeSeconds": 209.844642858,
+      "sourceBeat": 612,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 124
+    },
+    {
+      "timeSeconds": 211.216071429,
+      "sourceBeat": 616,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 125
+    },
+    {
+      "timeSeconds": 213.958928572,
+      "sourceBeat": 624,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 126
+    },
+    {
+      "timeSeconds": 216.701785715,
+      "sourceBeat": 632,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 127
+    },
+    {
+      "timeSeconds": 218.073214286,
+      "sourceBeat": 636,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 128
+    },
+    {
+      "timeSeconds": 219.444642858,
+      "sourceBeat": 640,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 129
+    },
+    {
+      "timeSeconds": 220.816071429,
+      "sourceBeat": 644,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 130
+    },
+    {
+      "timeSeconds": 221.844642858,
+      "sourceBeat": 647,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 131
+    },
+    {
+      "timeSeconds": 223.558928572,
+      "sourceBeat": 652,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 132
+    },
+    {
+      "timeSeconds": 224.930357143,
+      "sourceBeat": 656,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 133
+    },
+    {
+      "timeSeconds": 226.301785715,
+      "sourceBeat": 660,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 134
+    },
+    {
+      "timeSeconds": 227.330357143,
+      "sourceBeat": 663,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 135
+    },
+    {
+      "timeSeconds": 229.044642858,
+      "sourceBeat": 668,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 136
+    },
+    {
+      "timeSeconds": 230.073214286,
+      "sourceBeat": 671,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 137
+    },
+    {
+      "timeSeconds": 231.7875,
+      "sourceBeat": 676,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 138
+    },
+    {
+      "timeSeconds": 233.158928572,
+      "sourceBeat": 680,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 139
+    },
+    {
+      "timeSeconds": 234.530357143,
+      "sourceBeat": 684,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 140
+    },
+    {
+      "timeSeconds": 235.901785715,
+      "sourceBeat": 688,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 141
+    },
+    {
+      "timeSeconds": 237.273214286,
+      "sourceBeat": 692,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 142
+    },
+    {
+      "timeSeconds": 238.644642858,
+      "sourceBeat": 696,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 143
+    },
+    {
+      "timeSeconds": 240.016071429,
+      "sourceBeat": 700,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 144
+    },
+    {
+      "timeSeconds": 241.3875,
+      "sourceBeat": 704,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 145
+    },
+    {
+      "timeSeconds": 244.130357143,
+      "sourceBeat": 712,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 146
+    },
+    {
+      "timeSeconds": 245.501785715,
+      "sourceBeat": 716,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 147
+    },
+    {
+      "timeSeconds": 246.873214286,
+      "sourceBeat": 720,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 148
+    },
+    {
+      "timeSeconds": 248.244642858,
+      "sourceBeat": 724,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 149
+    },
+    {
+      "timeSeconds": 250.301785715,
+      "sourceBeat": 730,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 150
+    },
+    {
+      "timeSeconds": 251.673214286,
+      "sourceBeat": 734,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 151
+    }
+  ],
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+}

@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 2,
+  "title": "Chaoz Impact",
+  "artist": "ParagonX9",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 175,
+  "durationSeconds": 115.5395918367347,
+  "roundDurationSeconds": 64.457142857,
+  "license": "CC-BY-SA-3.0",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Classics20261029/chaoz-impact.json",
+  "sourceChartSha256": "33da362230ef2f21192769f160b16578d046facbbc3b0acac967408c4e198432",
+  "source": {
+    "filename": "ChaozImpact.mp3",
+    "title": "Chaoz Impact",
+    "id": "chaoz-impact",
+    "bpm": 175,
+    "sourcePage": "https://www.newgrounds.com/audio/listen/152047",
+    "downloadEntryPoint": "https://www.newgrounds.com/audio/download/152047",
+    "downloadUrl": "https://audio-download.ngfiles.com/152000/152047_ParagonX9___Chaoz_Impact.mp3?f1213815199",
+    "published": "2008-06-18",
+    "timingEvidence": "Provisional 175 BPM practice grid; community timing reference https://osu.ppy.sh/community/forums/topics/122110 ; not author-confirmed or listening-calibrated",
+    "license": "CC-BY-SA-3.0",
+    "author": "ParagonX9",
+    "bytes": 1852729,
+    "sha256": "4d9d81bb83259f9af35cef7148f4b7875ab16ce1ee863f2ac721028ae75dcbf5"
+  },
+  "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozImpact.mp3",
+  "audioSha256": "4d9d81bb83259f9af35cef7148f4b7875ab16ce1ee863f2ac721028ae75dcbf5",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified. This derived chart and synchronized-sequence contributions are CC BY-SA 3.0.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 6,
+  "minimumEventGapSeconds": 1.028571428,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 10.971428571,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 10.971428571,
+      "endSeconds": 21.942857143,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 21.942857143,
+      "endSeconds": 32.914285714,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 32.914285714,
+      "endSeconds": 43.885714286,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 43.885714286,
+      "endSeconds": 54.857142857,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 54.857142857,
+      "endSeconds": 64.457142857,
+      "pattern": 2,
+      "direction": -1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.371428571,
+      "stepSeconds": 1.371428571,
+      "answerStartSeconds": 6.857142857,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 18.141964286,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 19.513392857,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 20.884821428,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 24.65625,
+      "sourceBeat": 71,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 25.684821428,
+      "sourceBeat": 74,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 27.399107143,
+      "sourceBeat": 79,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 28.427678571,
+      "sourceBeat": 82,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 30.141964286,
+      "sourceBeat": 87,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 31.170535714,
+      "sourceBeat": 90,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 33.227678571,
+      "sourceBeat": 96,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 34.599107143,
+      "sourceBeat": 100,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 36.65625,
+      "sourceBeat": 106,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 38.027678571,
+      "sourceBeat": 110,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 39.399107143,
+      "sourceBeat": 114,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 40.770535714,
+      "sourceBeat": 118,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 42.141964286,
+      "sourceBeat": 122,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 43.513392857,
+      "sourceBeat": 126,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 45.570535714,
+      "sourceBeat": 132,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 47.627678571,
+      "sourceBeat": 138,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 48.999107143,
+      "sourceBeat": 142,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 51.05625,
+      "sourceBeat": 148,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 53.799107143,
+      "sourceBeat": 156,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 56.541964286,
+      "sourceBeat": 164,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 57.570535714,
+      "sourceBeat": 167,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 58.599107143,
+      "sourceBeat": 170,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 60.313392857,
+      "sourceBeat": 175,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 62.027678571,
+      "sourceBeat": 180,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 63.05625,
+      "sourceBeat": 183,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 64.770535714,
+      "sourceBeat": 188,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 66.141964286,
+      "sourceBeat": 192,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 68.199107143,
+      "sourceBeat": 198,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 70.25625,
+      "sourceBeat": 204,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 71.627678571,
+      "sourceBeat": 208,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 74.370535714,
+      "sourceBeat": 216,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    }
+  ],
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+}

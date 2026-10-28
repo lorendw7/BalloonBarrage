@@ -1,10 +1,56 @@
 # Music and chart resources
 
-Retrieved: October 11, 2026; status updated October 28. The creator authorized this collection for noncommercial development packages and selected downloaded music for gameplay. Studio music belongs to interfaces. Public demo.6 retains complete-song Goin' Under / Beginner. The current source candidate wires short Goin' Under and Springtime profiles, pre-start selection, cue seeking, event filtering and record isolation; three pattern/effect decisions and candidate play/package acceptance remain open.
+Retrieved: October 11, 2026; status updated October 29. The creator authorized the pinned StepMania collection for noncommercial development packages. Interface music stays separate from gameplay. The new festival revision derives twenty profiles from ten preserved recordings, with bounded charts and an opening listen-then-answer motif. Original files, source manifests and notices remain intact. Runtime, listening and exact-package evidence live in [Validation](../Project/VALIDATION.md).
 
 ## October 29 expansion
 
 The [open music/studio update](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) adds four MintoDog CC0 tracks and three ParagonX9 CC BY-SA 3.0 classics through the existing song selector, for ten choices. New charts are project-authored practice grids with unverified listening calibration. Classics play fully and retain original MP3s, attribution and BY-SA licensing. Existing StepMania files and noncommercial restrictions remain preserved. The update guide owns the new track table, provenance and reproduction commands; [Validation](../Project/VALIDATION.md) owns completed runtime/package evidence.
+
+## Festival and complete-song phrase catalog
+
+`Assets/StreamingAssets/Rhythm/Festival20261029/catalog.json` lists ten festival profiles and ten standard profiles. Festival windows target 60–75 seconds and currently cluster near 65 seconds; standard profiles use the full playable recording. Each has a distinct `*-phrase-v2` identity and separate best-score key. Existing v1 data remains intact. [Game design](GAME_DESIGN.md#music-led-festival-variety) defines the experience; the [roadmap](ROADMAP.md) owns delivery.
+
+| Song | Festival seconds | Complete-recording seconds |
+|---|---|---|
+| Goin' Under | 65.143 | 123.429 |
+| Springtime | 64.727 | 129.045 |
+| Mecha-Tribe Assault | 65.333 | 105.000 |
+| Cozy Puzzle In-Game 1 | 65.085 | 130.170 |
+| Cozy Puzzle In-Game 2 | 64.000 | 128.000 |
+| Magic Puzzle In-Game 1 | 65.455 | 122.182 |
+| Magic Puzzle In-Game 2 | 64.000 | 120.000 |
+| Chaoz Fantasy | 65.046 | 133.904 |
+| Chaoz Airflow | 64.457 | 253.780 |
+| Chaoz Impact | 64.457 | 115.540 |
+
+`duration-audit.json` records the complete-recording duration authority. Mecha-Tribe Assault has a lower final OGG EOS granule than an earlier page; use the final 4,630,500 samples at 44,100 Hz (105 seconds), rather than the historical maximum-granule value of 106.410 seconds. Its decoded PCM count also disagrees and is diagnostic only. Original bytes and historical source metadata remain preserved.
+
+Derived charts use schema version 2:
+
+- Event `timeSeconds` is **source-audio time**; cue-in is subtracted once by the reader. Event ids are unique within that derived chart. `authoredPlacement` and `placementSlot` identify spatial placement; section direction is applied once at runtime.
+- `sections` use **round-relative** start/end times, numeric pattern 0/1/2 and direction ±1. Source tempo maps drive StepMania timing. Other tracks use the documented BPM plus signal-estimated phase.
+- `demonstrations` use round-relative start, step duration, answer start and three slots. Only the three actual answer events score. Their preview waits until the noninteractive outline demonstration ends; musical judgement times remain fixed.
+- Selected StepMania event timestamps remain exact and retain original event ids as provenance; crowded source rows are thinned. Three explicitly project-authored answer notes are additions to the derived chart, not claims about the original chart.
+- New non-StepMania charts use recurring beat motifs and bounded spacing rather than the prior uniform practice grids. These are project-authored arrangements; eight-bar boundaries are inferred from timing and energy, not human-confirmed song form.
+
+`signal-analysis.json` pins the analyzed audio hashes, decoded duration, fixed BPM, estimated phase, per-third disagreement and onset envelope. Its FFT method estimates timing/activity; it cannot establish human musical judgement, perceptual latency or physical aiming comfort. Chaoz Impact's BPM remains provisional. Human listening calibration remains explicitly false for every derived chart until separately observed.
+
+Reproduce the committed data from its analysis snapshot with Python's standard library:
+
+```powershell
+python Tools/Rhythm/prepare_festival_catalog.py
+python -m unittest discover -s Tools/Rhythm -p 'test_*.py' -v
+```
+
+Refreshing signal analysis additionally requires FFmpeg and NumPy:
+
+```powershell
+python Tools/Rhythm/prepare_festival_catalog.py --analyze
+```
+
+The explicit scene integration command is `FestivalExperienceInstaller.Apply` in a separate Unity project. It verifies matching audio/chart paths, twenty unique identities, ten profiles per mode and valid clip windows before saving. `FestivalRuntimeValidation.RunFast` labels controlled-clock traversal as accelerated. `RunFull` follows natural DSP time and supports duration-balanced shards in separate projects; see Validation for completed runs and exact evidence.
+
+Derived classics charts and synchronized-sequence contributions retain CC BY-SA 3.0 attribution, license text and modification statements. MintoDog tracks remain CC0. StepMania source restrictions remain unchanged; the complete mixed package remains noncommercial. The new directory includes its own NOTICE and BY-SA text and links preserved source records. No new download, altered source audio or commercial-clearance claim is implied.
 
 ## Downloaded collection
 
