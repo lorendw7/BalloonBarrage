@@ -24,6 +24,7 @@ public class LocalizedText : MonoBehaviour
     private Text legacyLabel;
     private Font originalLegacyFont;
     private Color originalLegacyColor;
+    public Font CurrentFont => ResolveLegacyFont();
 
     private void Awake()
     {

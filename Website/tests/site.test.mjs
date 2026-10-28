@@ -106,16 +106,17 @@ test("sharing uses language-specific canonical URLs and the development capture"
     const canonical = base + (locale === "zh-Hans" ? "" : `${locale}/`);
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`));
     assert.ok(html.includes(`<meta property="og:url" content="${canonical}">`));
-    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/gameplay-development-share-20261019.jpg">`));
+    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/gameplay-official-share-20261028.jpg">`));
     assert.ok(!html.includes("v0.1.0-demo.1"), "Introductory copy must not advertise an obsolete package");
   }
-  assert.ok((await stat(path.join(site, "media/gameplay-development-20261019.webp"))).size < 300_000,
-    "Keep the high-quality first-screen gameplay image below 300 KB");
+  assert.ok((await stat(path.join(site, "media/gameplay-official-20261028.webp"))).size < 800_000,
+    "Keep the 2K derivative of native 4K gameplay below 800 KB");
 });
 
 test("web derivatives retain recorded source and output hashes", async () => {
   const records = JSON.parse(await readFile(path.join(site, "media/provenance.json"), "utf8"));
   const highClarityScreenshots = new Set([
+    "gameplay-official-20261028.webp", "song-selection-20261028.webp", "title-official-20261028.webp",
     "gameplay-development-20261019.webp",
     "results-statistics-20261023.webp",
     "start-localized-zh-hans-20261025.webp",
@@ -190,8 +191,8 @@ test("preview serves language directory roots and blocks paths outside dist", { 
     assert.ok((await response.text()).includes(`<html lang="${locale}">`));
   }
   assert.equal((await fetch(base + "/styles.css")).headers.get("content-type"), "text/css; charset=utf-8");
-  assert.equal((await fetch(base + "/assets/gameplay-development-20261019.webp")).headers.get("content-type"), "image/webp");
-  assert.equal((await fetch(base + "/assets/gameplay-development-share-20261019.jpg")).headers.get("content-type"), "image/jpeg");
+  assert.equal((await fetch(base + "/assets/gameplay-official-20261028.webp")).headers.get("content-type"), "image/webp");
+  assert.equal((await fetch(base + "/assets/gameplay-official-share-20261028.jpg")).headers.get("content-type"), "image/jpeg");
   assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);

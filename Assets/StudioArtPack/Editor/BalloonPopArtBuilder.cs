@@ -49,9 +49,15 @@ public static class BalloonPopArtBuilder
         Create("BalloonPop_Teal", new Color(.04f,.58f,.7f), material);
         Create("BalloonPop_Coral", new Color(1f,.3f,.25f), material);
         Create("BalloonPop_Gold", new Color(1f,.73f,.12f), material);
+        Create("BalloonPop_SkyBlue", new Color(.282f,.616f,.925f), material);
+        Create("BalloonPop_Violet", new Color(.604f,.427f,.878f), material);
+        Create("BalloonPop_Rose", new Color(.922f,.443f,.651f), material);
+        Create("BalloonPop_Lime", new Color(.569f,.788f,.310f), material);
+        Create("BalloonPop_Tangerine", new Color(.937f,.565f,.235f), material);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        Debug.Log("LATEX_POP_ART_OK: 3 prefabs, shared transparent atlas/material");
+        Validate();
+        Debug.Log("LATEX_POP_ART_OK: 8 prefabs, shared transparent atlas/material");
     }
 
     static void Create(string name, Color color, Material material)
@@ -106,5 +112,27 @@ public static class BalloonPopArtBuilder
             PrefabUtility.SaveAsPrefabAsset(go,path);
         }
         finally { UnityEngine.Object.DestroyImmediate(go); }
+    }
+
+    static void Validate()
+    {
+        string[] names = {
+            "Teal", "Coral", "Gold", "SkyBlue", "Violet", "Rose", "Lime", "Tangerine"
+        };
+        foreach (string name in names)
+        {
+            string path = Root + "/BalloonPop_" + name + ".prefab";
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if (prefab == null) throw new Exception("Missing latex pop prefab: " + path);
+            var particles = prefab.GetComponent<ParticleSystem>();
+            if (particles == null) throw new Exception("Missing root ParticleSystem: " + path);
+            var main = particles.main;
+            if (main.loop || !main.playOnAwake || main.simulationSpace != ParticleSystemSimulationSpace.World ||
+                main.stopAction != ParticleSystemStopAction.Destroy || main.maxParticles > 16)
+                throw new Exception("Unsafe latex pop bounds: " + path);
+            var renderer = prefab.GetComponent<ParticleSystemRenderer>();
+            if (renderer == null || renderer.sharedMaterial == null)
+                throw new Exception("Missing latex pop renderer/material: " + path);
+        }
     }
 }

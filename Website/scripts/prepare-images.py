@@ -17,6 +17,7 @@ WEB_MAX_SIZE = (2560, 1440)
 WEBP_QUALITY = 92
 SCREENSHOT_WEBP_QUALITY = 98
 HIGH_CLARITY_SCREENSHOTS = {
+    "gameplay-official-20261028", "song-selection-20261028", "title-official-20261028",
     "gameplay-development-20261019",
     "results-statistics-20261023",
     "start-localized-zh-hans-20261025",
@@ -31,6 +32,9 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "gameplay-official-20261028": "Assets/Art/Previews/Official20261028/Gameplay.png",
+    "song-selection-20261028": "Assets/Art/Previews/Official20261028/SongSelection.png",
+    "title-official-20261028": "Assets/Art/Previews/Official20261028/Title.png",
     "gameplay-development-20261019": DEVELOPMENT_CAPTURE,
     "results-statistics-20261023": RESULTS_CAPTURE,
     "palette": "Assets/Art/Previews/Palette_20261019.png",
@@ -54,6 +58,9 @@ SOURCES = {
 }
 
 PREVIEW_ATTRIBUTIONS = {
+    "gameplay-official-20261028": "Native Unity 6000.0.77f1 Play Mode capture, 3840x2160, 4x MSAA, October 28 2026. Current source, natural Springtime chart playback, before stress targets were inserted. Automated fixture, not physical play or a demo.6 package capture. No generative editing. Original art attribution remains preserved.",
+    "song-selection-20261028": "Native Unity Play Mode 3840x2160 capture of the current deep-teal selection screen, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved.",
+    "title-official-20261028": "Native Unity Play Mode 3840x2160 title-screen capture, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved.",
     "studio-refresh-20261020": "Native Unity saved-camera scene inspection, 2026-10-20. Plaster walls, mineral floor, side-wall pigments and mixed-color reservoir. UI temporarily hidden; not recorded gameplay or a new public release. No generative image editing.",
     "mixed-pigment-model-20261020": "Native Unity enlarged model inspection, 2026-10-20. Static eight-hue marbled pigment and reservoir calibration marks. Temporary inspection pose, UI hidden; not fluid simulation or a preview of the next projectile color. No generative image editing.",
     "surface-patterns-20261019": "Native Unity asset-sheet preview, 2026-10-19. Eight colors and six patterns; not recorded gameplay or a public release. Existing atlas attribution and recorded generation prompts remain unchanged.",
@@ -110,6 +117,16 @@ def main():
         elif relative == RESULTS_CAPTURE:
             records[-1]["attribution"] = RESULTS_ATTRIBUTION
     if selected:
+        if "gameplay-official-20261028" in selected:
+            relative = SOURCES["gameplay-official-20261028"]
+            source = ROOT / relative
+            share = Image.open(source).convert("RGB").resize((1200, 675), Image.Resampling.LANCZOS)
+            output = MEDIA / "gameplay-official-share-20261028.jpg"
+            share.save(output, "JPEG", quality=92, optimize=True)
+            records.append({"source": relative, "source_sha256": digest(source),
+                "output": output.relative_to(ROOT).as_posix(), "output_sha256": digest(output),
+                "dimensions": [1200, 675], "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
+                "attribution": PREVIEW_ATTRIBUTIONS["gameplay-official-20261028"]})
         provenance = MEDIA / "provenance.json"
         previous = json.loads(provenance.read_text(encoding="utf-8")) if provenance.exists() else []
         outputs = {record["output"] for record in records}

@@ -287,3 +287,10 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+/* Current-source song selection and native screenshot showcase. */
+.song-showcase{margin:2.5rem 0;padding:clamp(1rem,3vw,2rem);background:#e5eddf;border:1px solid #92ac96;border-radius:1rem;color:#213e34}
+.song-showcase figure{margin:1.5rem 0 1rem}
+.song-showcase img{display:block;width:100%;height:auto;border-radius:.6rem}
+.song-showcase figcaption{font-size:.85rem;margin-top:.7rem;color:#3c5a49}
+.song-tracklist{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0}
+.song-tracklist li{padding:.65rem .9rem;background:#214c40;color:#fff0c9;border-radius:.5rem;font-size:.9rem}

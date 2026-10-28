@@ -1,0 +1,1723 @@
+{
+  "title": "Springtime",
+  "artist": "Kommisar",
+  "chartAuthor": "Kommisar",
+  "difficulty": "Beginner",
+  "stepType": "dance-single",
+  "bpm": 181.685,
+  "sourceOffsetSeconds": -0.09,
+  "firstBeatOffsetSeconds": 0.09,
+  "events": [
+    {
+      "id": 0,
+      "beat": 16.0,
+      "timeSeconds": 5.373870435,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 1,
+      "beat": 18.0,
+      "timeSeconds": 6.034354239,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "beat": 20.0,
+      "timeSeconds": 6.694838044,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "beat": 22.0,
+      "timeSeconds": 7.355321848,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "beat": 24.0,
+      "timeSeconds": 8.015805653,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "beat": 26.0,
+      "timeSeconds": 8.676289457,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "beat": 28.0,
+      "timeSeconds": 9.336773261,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 7,
+      "beat": 30.0,
+      "timeSeconds": 9.997257066,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 8,
+      "beat": 32.0,
+      "timeSeconds": 10.65774087,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 9,
+      "beat": 34.0,
+      "timeSeconds": 11.318224675,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "beat": 36.0,
+      "timeSeconds": 11.978708479,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 11,
+      "beat": 38.0,
+      "timeSeconds": 12.639192283,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "beat": 40.0,
+      "timeSeconds": 13.299676088,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 13,
+      "beat": 42.0,
+      "timeSeconds": 13.960159892,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 14,
+      "beat": 44.0,
+      "timeSeconds": 14.620643697,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 15,
+      "beat": 45.0,
+      "timeSeconds": 14.950885599,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 16,
+      "beat": 46.0,
+      "timeSeconds": 15.281127501,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "beat": 47.0,
+      "timeSeconds": 15.611369403,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 18,
+      "beat": 48.0,
+      "timeSeconds": 15.941611305,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 19,
+      "beat": 50.0,
+      "timeSeconds": 16.60209511,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 20,
+      "beat": 52.0,
+      "timeSeconds": 17.262578914,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "beat": 54.0,
+      "timeSeconds": 17.923062718,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 22,
+      "beat": 56.0,
+      "timeSeconds": 18.583546523,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 23,
+      "beat": 58.0,
+      "timeSeconds": 19.244030327,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 24,
+      "beat": 60.0,
+      "timeSeconds": 19.904514132,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 25,
+      "beat": 62.0,
+      "timeSeconds": 20.564997936,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 26,
+      "beat": 64.0,
+      "timeSeconds": 21.22548174,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "beat": 66.0,
+      "timeSeconds": 21.885965545,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 28,
+      "beat": 68.0,
+      "timeSeconds": 22.546449349,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 29,
+      "beat": 70.0,
+      "timeSeconds": 23.206933154,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 30,
+      "beat": 72.0,
+      "timeSeconds": 23.867416958,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 31,
+      "beat": 74.0,
+      "timeSeconds": 24.527900762,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 32,
+      "beat": 76.0,
+      "timeSeconds": 25.188384567,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 33,
+      "beat": 78.0,
+      "timeSeconds": 25.848868371,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 34,
+      "beat": 79.0,
+      "timeSeconds": 26.179110273,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 35,
+      "beat": 80.0,
+      "timeSeconds": 26.509352175,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 36,
+      "beat": 82.0,
+      "timeSeconds": 27.16983598,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 37,
+      "beat": 84.0,
+      "timeSeconds": 27.830319784,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 38,
+      "beat": 86.0,
+      "timeSeconds": 28.490803589,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 39,
+      "beat": 88.0,
+      "timeSeconds": 29.151287393,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 40,
+      "beat": 90.0,
+      "timeSeconds": 29.811771197,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 41,
+      "beat": 92.0,
+      "timeSeconds": 30.472255002,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 42,
+      "beat": 94.0,
+      "timeSeconds": 31.132738806,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 43,
+      "beat": 96.0,
+      "timeSeconds": 31.793222611,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 44,
+      "beat": 98.0,
+      "timeSeconds": 32.453706415,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 45,
+      "beat": 100.0,
+      "timeSeconds": 33.114190219,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 46,
+      "beat": 102.0,
+      "timeSeconds": 33.774674024,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 47,
+      "beat": 104.0,
+      "timeSeconds": 34.435157828,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 48,
+      "beat": 106.0,
+      "timeSeconds": 35.095641632,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 49,
+      "beat": 108.0,
+      "timeSeconds": 35.756125437,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 50,
+      "beat": 109.0,
+      "timeSeconds": 36.086367339,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 51,
+      "beat": 110.0,
+      "timeSeconds": 36.416609241,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 52,
+      "beat": 111.0,
+      "timeSeconds": 36.746851143,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 53,
+      "beat": 112.0,
+      "timeSeconds": 37.077093046,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 54,
+      "beat": 114.0,
+      "timeSeconds": 37.73757685,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 55,
+      "beat": 116.0,
+      "timeSeconds": 38.398060654,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 56,
+      "beat": 118.0,
+      "timeSeconds": 39.058544459,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 57,
+      "beat": 120.0,
+      "timeSeconds": 39.719028263,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 58,
+      "beat": 122.0,
+      "timeSeconds": 40.379512068,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 59,
+      "beat": 124.0,
+      "timeSeconds": 41.039995872,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 60,
+      "beat": 126.0,
+      "timeSeconds": 41.700479676,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 61,
+      "beat": 128.0,
+      "timeSeconds": 42.360963481,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 62,
+      "beat": 130.0,
+      "timeSeconds": 43.021447285,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 63,
+      "beat": 132.0,
+      "timeSeconds": 43.68193109,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 64,
+      "beat": 134.0,
+      "timeSeconds": 44.342414894,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 65,
+      "beat": 136.0,
+      "timeSeconds": 45.002898698,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 66,
+      "beat": 138.0,
+      "timeSeconds": 45.663382503,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 67,
+      "beat": 140.0,
+      "timeSeconds": 46.323866307,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 68,
+      "beat": 141.0,
+      "timeSeconds": 46.654108209,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 69,
+      "beat": 142.0,
+      "timeSeconds": 46.984350111,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 70,
+      "beat": 143.0,
+      "timeSeconds": 47.314592014,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 71,
+      "beat": 144.0,
+      "timeSeconds": 47.644833916,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 72,
+      "beat": 146.0,
+      "timeSeconds": 48.30531772,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 73,
+      "beat": 148.0,
+      "timeSeconds": 48.965801525,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 74,
+      "beat": 150.0,
+      "timeSeconds": 49.626285329,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 75,
+      "beat": 152.0,
+      "timeSeconds": 50.286769133,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 76,
+      "beat": 154.0,
+      "timeSeconds": 50.947252938,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 77,
+      "beat": 156.0,
+      "timeSeconds": 51.607736742,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 78,
+      "beat": 158.0,
+      "timeSeconds": 52.268220547,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 79,
+      "beat": 160.0,
+      "timeSeconds": 52.928704351,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 80,
+      "beat": 162.0,
+      "timeSeconds": 53.589188155,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 81,
+      "beat": 164.0,
+      "timeSeconds": 54.24967196,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 82,
+      "beat": 166.0,
+      "timeSeconds": 54.910155764,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 83,
+      "beat": 168.0,
+      "timeSeconds": 55.570639568,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 84,
+      "beat": 170.0,
+      "timeSeconds": 56.231123373,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 85,
+      "beat": 172.0,
+      "timeSeconds": 56.891607177,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 86,
+      "beat": 173.0,
+      "timeSeconds": 57.221849079,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 87,
+      "beat": 174.0,
+      "timeSeconds": 57.552090982,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 88,
+      "beat": 175.0,
+      "timeSeconds": 57.882332884,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 89,
+      "beat": 176.0,
+      "timeSeconds": 58.212574786,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 90,
+      "beat": 178.0,
+      "timeSeconds": 58.87305859,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 91,
+      "beat": 180.0,
+      "timeSeconds": 59.533542395,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 92,
+      "beat": 182.0,
+      "timeSeconds": 60.194026199,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 93,
+      "beat": 184.0,
+      "timeSeconds": 60.854510004,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 94,
+      "beat": 186.0,
+      "timeSeconds": 61.514993808,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 95,
+      "beat": 188.0,
+      "timeSeconds": 62.175477612,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 96,
+      "beat": 190.0,
+      "timeSeconds": 62.835961417,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 97,
+      "beat": 192.0,
+      "timeSeconds": 63.496445221,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 98,
+      "beat": 194.0,
+      "timeSeconds": 64.156929026,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 99,
+      "beat": 196.0,
+      "timeSeconds": 64.81741283,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 100,
+      "beat": 198.0,
+      "timeSeconds": 65.477896634,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 101,
+      "beat": 200.0,
+      "timeSeconds": 66.138380439,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 102,
+      "beat": 202.0,
+      "timeSeconds": 66.798864243,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 103,
+      "beat": 204.0,
+      "timeSeconds": 67.459348047,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 104,
+      "beat": 205.0,
+      "timeSeconds": 67.78958995,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 105,
+      "beat": 206.0,
+      "timeSeconds": 68.119831852,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 106,
+      "beat": 207.0,
+      "timeSeconds": 68.450073754,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 107,
+      "beat": 208.0,
+      "timeSeconds": 68.780315656,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 108,
+      "beat": 210.0,
+      "timeSeconds": 69.440799461,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 109,
+      "beat": 212.0,
+      "timeSeconds": 70.101283265,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 110,
+      "beat": 214.0,
+      "timeSeconds": 70.761767069,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 111,
+      "beat": 217.0,
+      "timeSeconds": 71.752492776,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 112,
+      "beat": 218.0,
+      "timeSeconds": 72.082734678,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 113,
+      "beat": 220.0,
+      "timeSeconds": 72.743218483,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 114,
+      "beat": 222.0,
+      "timeSeconds": 73.403702287,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 115,
+      "beat": 224.0,
+      "timeSeconds": 74.064186091,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 116,
+      "beat": 226.0,
+      "timeSeconds": 74.724669896,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 117,
+      "beat": 228.0,
+      "timeSeconds": 75.3851537,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 118,
+      "beat": 230.0,
+      "timeSeconds": 76.045637504,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 119,
+      "beat": 232.0,
+      "timeSeconds": 76.706121309,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 120,
+      "beat": 234.0,
+      "timeSeconds": 77.366605113,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 121,
+      "beat": 236.0,
+      "timeSeconds": 78.027088918,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 122,
+      "beat": 238.0,
+      "timeSeconds": 78.687572722,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 123,
+      "beat": 240.0,
+      "timeSeconds": 79.348056526,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 124,
+      "beat": 241.0,
+      "timeSeconds": 79.678298429,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 125,
+      "beat": 242.0,
+      "timeSeconds": 80.008540331,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 126,
+      "beat": 244.0,
+      "timeSeconds": 80.669024135,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 127,
+      "beat": 245.0,
+      "timeSeconds": 80.999266037,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 128,
+      "beat": 246.0,
+      "timeSeconds": 81.32950794,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 129,
+      "beat": 248.0,
+      "timeSeconds": 81.989991744,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 130,
+      "beat": 249.0,
+      "timeSeconds": 82.320233646,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 131,
+      "beat": 250.0,
+      "timeSeconds": 82.650475548,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 132,
+      "beat": 252.0,
+      "timeSeconds": 83.310959353,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 133,
+      "beat": 253.0,
+      "timeSeconds": 83.641201255,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 134,
+      "beat": 254.0,
+      "timeSeconds": 83.971443157,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 135,
+      "beat": 256.0,
+      "timeSeconds": 84.631926961,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 136,
+      "beat": 257.0,
+      "timeSeconds": 84.962168864,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 137,
+      "beat": 258.0,
+      "timeSeconds": 85.292410766,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 138,
+      "beat": 260.0,
+      "timeSeconds": 85.95289457,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 139,
+      "beat": 261.0,
+      "timeSeconds": 86.283136472,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 140,
+      "beat": 262.0,
+      "timeSeconds": 86.613378375,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 141,
+      "beat": 264.0,
+      "timeSeconds": 87.273862179,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 142,
+      "beat": 265.0,
+      "timeSeconds": 87.604104081,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 143,
+      "beat": 266.0,
+      "timeSeconds": 87.934345983,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 144,
+      "beat": 268.0,
+      "timeSeconds": 88.594829788,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 145,
+      "beat": 269.0,
+      "timeSeconds": 88.92507169,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 146,
+      "beat": 270.0,
+      "timeSeconds": 89.255313592,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 147,
+      "beat": 272.0,
+      "timeSeconds": 89.915797397,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 148,
+      "beat": 274.0,
+      "timeSeconds": 90.576281201,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 149,
+      "beat": 276.0,
+      "timeSeconds": 91.236765005,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 150,
+      "beat": 278.0,
+      "timeSeconds": 91.89724881,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 151,
+      "beat": 280.0,
+      "timeSeconds": 92.557732614,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 152,
+      "beat": 282.0,
+      "timeSeconds": 93.218216419,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 153,
+      "beat": 284.0,
+      "timeSeconds": 93.878700223,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 154,
+      "beat": 286.0,
+      "timeSeconds": 94.539184027,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 155,
+      "beat": 288.0,
+      "timeSeconds": 95.199667832,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 156,
+      "beat": 290.0,
+      "timeSeconds": 95.860151636,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 157,
+      "beat": 292.0,
+      "timeSeconds": 96.52063544,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 158,
+      "beat": 294.0,
+      "timeSeconds": 97.181119245,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 159,
+      "beat": 296.0,
+      "timeSeconds": 97.841603049,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 160,
+      "beat": 298.0,
+      "timeSeconds": 98.502086854,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 161,
+      "beat": 300.0,
+      "timeSeconds": 99.162570658,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 162,
+      "beat": 301.0,
+      "timeSeconds": 99.49281256,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 163,
+      "beat": 302.0,
+      "timeSeconds": 99.823054462,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 164,
+      "beat": 303.0,
+      "timeSeconds": 100.153296365,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 165,
+      "beat": 304.0,
+      "timeSeconds": 100.483538267,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 166,
+      "beat": 306.0,
+      "timeSeconds": 101.804498605,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 167,
+      "beat": 308.0,
+      "timeSeconds": 103.125458943,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 168,
+      "beat": 310.0,
+      "timeSeconds": 104.446419281,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 169,
+      "beat": 311.0,
+      "timeSeconds": 105.10689945,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 170,
+      "beat": 312.0,
+      "timeSeconds": 105.437141353,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 171,
+      "beat": 313.0,
+      "timeSeconds": 105.767383255,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 172,
+      "beat": 315.0,
+      "timeSeconds": 106.427867059,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 173,
+      "beat": 317.0,
+      "timeSeconds": 107.088350864,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 174,
+      "beat": 319.0,
+      "timeSeconds": 107.748834668,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 175,
+      "beat": 321.0,
+      "timeSeconds": 108.409318472,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 176,
+      "beat": 323.0,
+      "timeSeconds": 109.069802277,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 177,
+      "beat": 325.0,
+      "timeSeconds": 109.730286081,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 178,
+      "beat": 326.0,
+      "timeSeconds": 110.060527983,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 179,
+      "beat": 327.0,
+      "timeSeconds": 110.390769885,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 180,
+      "beat": 328.0,
+      "timeSeconds": 110.721011788,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 181,
+      "beat": 329.0,
+      "timeSeconds": 111.05125369,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 182,
+      "beat": 331.0,
+      "timeSeconds": 111.711737494,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 183,
+      "beat": 333.0,
+      "timeSeconds": 112.372221299,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 184,
+      "beat": 335.0,
+      "timeSeconds": 113.032705103,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 185,
+      "beat": 337.0,
+      "timeSeconds": 113.693188907,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 186,
+      "beat": 339.0,
+      "timeSeconds": 114.353672712,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 187,
+      "beat": 341.0,
+      "timeSeconds": 115.014156516,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 188,
+      "beat": 342.0,
+      "timeSeconds": 115.344398418,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 189,
+      "beat": 343.0,
+      "timeSeconds": 115.674640321,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 190,
+      "beat": 344.0,
+      "timeSeconds": 116.004882223,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 191,
+      "beat": 345.0,
+      "timeSeconds": 116.335124125,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 192,
+      "beat": 347.0,
+      "timeSeconds": 116.995607929,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 193,
+      "beat": 349.0,
+      "timeSeconds": 117.656091734,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 194,
+      "beat": 351.0,
+      "timeSeconds": 118.316575538,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 195,
+      "beat": 353.0,
+      "timeSeconds": 118.977059342,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 196,
+      "beat": 355.0,
+      "timeSeconds": 119.637543147,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 197,
+      "beat": 357.0,
+      "timeSeconds": 120.298026951,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 198,
+      "beat": 359.0,
+      "timeSeconds": 120.958510756,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 199,
+      "beat": 361.0,
+      "timeSeconds": 121.61899456,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 200,
+      "beat": 363.0,
+      "timeSeconds": 122.279478364,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 201,
+      "beat": 365.0,
+      "timeSeconds": 122.939962169,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 202,
+      "beat": 367.0,
+      "timeSeconds": 123.600445973,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 203,
+      "beat": 369.0,
+      "timeSeconds": 124.260929778,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 204,
+      "beat": 371.0,
+      "timeSeconds": 124.921413582,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 205,
+      "beat": 373.0,
+      "timeSeconds": 125.581897386,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 206,
+      "beat": 374.0,
+      "timeSeconds": 125.912139289,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 207,
+      "beat": 375.0,
+      "timeSeconds": 126.242381191,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 208,
+      "beat": 376.0,
+      "timeSeconds": 126.572623093,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 209,
+      "beat": 377.0,
+      "timeSeconds": 126.902864995,
+      "lanes": [
+        0,
+        3
+      ]
+    }
+  ],
+  "bpmSegments": [
+    {
+      "beat": 0.0,
+      "bpm": 181.685
+    },
+    {
+      "beat": 304.0,
+      "bpm": 90.843
+    },
+    {
+      "beat": 311.0,
+      "bpm": 181.685
+    }
+  ],
+  "schemaVersion": 1,
+  "trackId": "stepmania-springtime-beginner",
+  "audioAssetPath": "Assets/Audio/Music/StepMania/Springtime.mp3",
+  "durationSeconds": 129.044897959,
+  "audioSampleCount": 5690880,
+  "audioSampleRate": 44100,
+  "loop": false,
+  "sourceRevision": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
+  "sourceAudioPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/Springtime/Kommisar - Springtime.mp3",
+  "sourceChartPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/Springtime/Springtime.ssc",
+  "sourceAudioSha256": "97529087ffa2909beac1d78d6756571e85c3c16f468f056760c189793678ea18",
+  "sourceChartSha256": "df30022b90bd1f70d21ae4aca03e1f1236916a35aebc0f7147d82616022b2882",
+  "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/Kommisar%20-%20Springtime.mp3",
+  "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Springtime/Springtime.ssc",
+  "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared.",
+  "adaptation": "Full song. One timed balloon event per tap row using chart-specific BPM segments; simultaneous lanes share one event. Original lanes retained as provenance, not screen coordinates. Gameplay not implemented."
+}

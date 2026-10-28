@@ -1,6 +1,6 @@
 # Short exhibition playtest
 
-Use the current saved `Assets/Scenes/PrototypeScene.unity` for the latest implementation review. The public demo.5 Windows/macOS files are prerelease candidates, not target-hardware-accepted festival builds. Record the exact source commit or package filename and hash; do not combine their results. [Roadmap](../Design/ROADMAP.md) owns dates and acceptance gates; [Game design](../Design/GAME_DESIGN.md) owns behavior.
+Use the current saved `Assets/Scenes/PrototypeScene.unity` for the latest implementation review. Public demo.6 is the current packaged fallback, while any feedback-driven shorter multi-song build is a separate candidate until its own acceptance passes. Record the exact source commit or package filename and hash; do not combine their results. [Roadmap](../Design/ROADMAP.md) owns dates and acceptance gates; [Game design](../Design/GAME_DESIGN.md) owns behavior.
 
 ## Creator session: about five minutes
 
@@ -21,9 +21,25 @@ Do not change several Inspector values during this first observation. Describe t
 - Paint overwrite: later marks above earlier marks and graffiti / describe the failure.
 - Approach fill: clear and synchronized / unclear or stale after pause/Retry.
 - Most noticeable issue: one sentence, with approximate song time if possible.
+- Round length: too short / comfortable / too long; record the selected song/profile and measured playable duration.
+- Barrage variety: sweep, fan and cluster were recognizable / describe any pattern that felt repetitive or unreadable.
+- Pop-effect alignment: center and edge hits stayed attached / describe the screen area and pattern where an offset appeared.
 - Results / Retry / pause: passed / describe the failure.
 
 These are user reports, not automated test results. Record them with the tested revision/package in [Validation](VALIDATION.md) after the creator responds. No successful report is assumed in advance.
+
+## Feedback-driven candidate checks
+
+Run these only after the corresponding learner increment is saved. Stop at the first failed dependency and keep demo.6 available.
+
+0. Click Start, choose Goin' Under, Springtime or Mecha-Tribe Assault from the dropdown, hear its short preview, then confirm Play. Check Back restores the title without starting a round. Number-key song shortcuts are removed. During play, press C and confirm the gun/pigment color advances once per press without changing the balloon's assigned color. Confirm increased target visibility, readable row spacing and the 16-target bound.
+1. Reproduce center and edge balloon hits from the center, left and right of the screen. The pigment puff, latex fragments and any gold accent must originate at the accepted contact and remain independent after the balloon disappears; one hit must not emit twice.
+2. Measure the selected round from scheduled gameplay start to natural results. Audio, timer, included events and settlement must agree on 75–90 seconds. Pause for at least five seconds, resume, then Retry and confirm a fresh origin and clean transient effects.
+3. Complete each selectable song twice. Confirm the displayed title/credit, audible track, prepared event set, barrage set, result identity and best record agree; switch songs, Retry and relaunch once to detect mixed state.
+4. Observe the lateral sweep, shallow fan and staggered cluster during held fire and deliberate taps. Each should be recognizable without hiding the reticle, timing cue or next target. Record maximum visible targets and any unavoidable overlap rather than silently accepting skipped events.
+5. During the densest pattern, confirm fragments and pigment variations stay bounded, the song/on-beat accent remains audible and no transient effect survives natural results, Retry or return to title.
+
+If segmented playback permission or compatible second-song data is unresolved, do not improvise a crop at the booth. Test the unmodified whole-song candidate or use demo.6.
 
 ## Focused checks after the committed additions
 

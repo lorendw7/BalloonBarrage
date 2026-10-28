@@ -30,6 +30,9 @@ public class Balloon : MonoBehaviour
     private ParticleSystem popEffectPrefab;
 
     [SerializeField]
+    private ParticleSystem[] popEffectVariants;
+
+    [SerializeField]
     private ParticleSystem onBeatGlowPrefab;
 
     [SerializeField]
@@ -40,7 +43,7 @@ public class Balloon : MonoBehaviour
     public double EventTimeSeconds { get; private set; }
 
     [SerializeField]
-    private double cleanupDelaySeconds = 3.1d;
+    private double cleanupDelaySeconds = 5d;
 
     [SerializeField]
     private double rhythmWindowsSeconds = 0.1d;
@@ -87,17 +90,30 @@ public class Balloon : MonoBehaviour
         return errorSeconds <= rhythmWindowsSeconds;
     }
 
-   public void Hit(int bonusPoints = 0)
+    public void Hit(int bonusPoints = 0)
     {
         if (isPoping)
         {
             return;
         }
 
-        Pop(bonusPoints);
+        Pop(bonusPoints, false, default);
     }
 
-    private void Pop(int bonusPoints)
+    public void HitAt(Vector3 hitPoint, int bonusPoints = 0)
+    {
+        if (isPoping)
+        {
+            return;
+        }
+
+        Pop(bonusPoints, true, hitPoint);
+    }
+
+    private void Pop(
+        int bonusPoints,
+        bool hasHitPoint,
+        Vector3 hitPoint)
     {
         isPoping = true;
         Score.Add(points + bonusPoints);
@@ -116,21 +132,30 @@ public class Balloon : MonoBehaviour
 
         LeaveWallPaint();
 
-        if (popEffectPrefab != null)
-        {
-            Vector3 effectPosition = transform.position;
+        ParticleSystem selectedPopEffect = SelectPopEffect();
 
-            if (popPoint != null)
+        if (selectedPopEffect != null)
+        {
+            Vector3 effectPosition = hasHitPoint
+                ? hitPoint
+                : transform.position;
+
+            if (!hasHitPoint && popPoint != null)
             {
                 effectPosition = popPoint.position;
             }
 
             ParticleSystem effect = Instantiate(
-                popEffectPrefab,
+                selectedPopEffect,
                 effectPosition,
                 Quaternion.identity);
 
-            GetComponent<StudioBalloonAppearance>()?.ColorizeBurst(effect.gameObject);
+            if (popEffectVariants == null ||
+                popEffectVariants.Length == 0)
+            {
+                GetComponent<StudioBalloonAppearance>()?
+                    .ColorizeBurst(effect.gameObject);
+            }
 
             if (bonusPoints > 0)
             {
@@ -170,6 +195,35 @@ public class Balloon : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private ParticleSystem SelectPopEffect()
+    {
+        if (popEffectVariants == null ||
+            popEffectVariants.Length == 0)
+        {
+            return popEffectPrefab;
+        }
+
+        StudioBalloonAppearance appearance =
+            GetComponent<StudioBalloonAppearance>();
+
+        int colorIndex = appearance != null
+            ? appearance.ColorIndex
+            : 0;
+
+        int requestedIndex =
+            KyudaisaiLearnerCore.SelectExplosionVariant(
+                colorIndex,
+                popEffectVariants.Length);
+
+        int safeIndex = Mathf.Clamp(
+            requestedIndex,
+            0,
+            popEffectVariants.Length - 1);
+
+        ParticleSystem selected = popEffectVariants[safeIndex];
+        return selected != null ? selected : popEffectPrefab;
     }
 
     private void LeaveWallPaint()

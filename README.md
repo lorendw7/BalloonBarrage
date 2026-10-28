@@ -15,19 +15,21 @@ To open the source:
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Read the instructions and select Start. Aim with the mouse and hold the left button to fire. Press C during a round to cycle the eight pigments. Esc pauses; Resume continues and Quit exits.
 
-The saved prototype connects one complete-song chart, continuous spray, eight coordinated pigments, persistent marks on nine prepared opaque static receivers, score/best/statistics, and one shared Simplified Chinese/Japanese/English UI. The learner owns gameplay in `Assets/Scripts`; the assistant maintains supporting assets, tools, checks, documentation and the website. See [working agreements](AGENTS.md).
+The saved working tree connects three selectable 80–85-second candidate profiles through Start → song list with preview → Play, continuous spray, eight coordinated pigments, persistent marks on nine prepared opaque static receivers, score/best/statistics, and one shared Simplified Chinese/Japanese/English UI. The learner has saved the three barrage/effect functions. The updated scene allows up to 16 concurrent targets with longer visibility and staggered placement. See [game design](Docs/Design/GAME_DESIGN.md), [validation](Docs/Project/VALIDATION.md) and [working agreements](AGENTS.md).
 
 ## Current work and evidence
 
 The [October 28 studio expansion](Docs/Art/STUDIO_EXPANSION_20261028.md) adds a separate art-study scene and reusable art resources, with provenance and verification recorded in its guide. It is development material outside the immutable demo.6 packages. The official website distinguishes generated artwork, native Unity previews and released gameplay captures. The [art catalog](Docs/Art/ASSET_CATALOG.md) is the entry point for individual assets and earlier studies.
 
+Feedback-driven source work now includes the Springtime / Beginner chart/audio import, two connected short-round profiles, runtime song buttons, deterministic barrage slots, contact-aware pop placement and eight serialized latex-fragment effect prefabs. Safe defaults keep the source compilable while the three functions in `Assets/Scripts/KyudaisaiLearnerCore.cs` remain intentionally unfinished. This is source and automated setup evidence, not a new package or a completed playtest.
+
 The October 27 automated Unity fixture passed 72 receiver/pigment contacts, pause persistence, 1,000 retained marks, natural complete-song settlement and ten Retry resets. demo.6 also passed compilation, exact archive/manifest/hash checks and a fresh Windows-package startup smoke. A startup smoke is not a standalone full-song playtest; Editor frame-time measurements are not guaranteed player FPS. Physical feel, venue audio, unfamiliar-player observation and real-Mac launch were excluded from that automated pass. [Validation](Docs/Project/VALIDATION.md) records the exact checks, revision boundaries and remaining limits.
 
-The [roadmap](Docs/Design/ROADMAP.md) now covers October 28–31 delivery and dependency-gated work after the festival: comfort/settings, song selection, a measured paint-rendering study, an original explorable studio study and later controller/co-op support. New artwork and website publication do not automatically promote a scene or produce a new desktop release.
+The [roadmap](Docs/Design/ROADMAP.md) tracks the separately gated Kyudaisai candidate: contact-point handoff and short multi-song wiring are saved, while authored pattern behavior, explosion mapping, physical readability and exact-package checks remain open. Demo.6 remains the current packaged fallback; working-tree changes are not a new desktop release until their own checks pass. Post-festival work remains dependency-gated.
 
 ## Music and attribution
 
-Three pinned StepMania song/chart packs are included under `Assets/StreamingAssets/Rhythm/StepMania` for authorized noncommercial development packages, with original credits, manifest and notices. PrototypeScene uses original studio music on interfaces and the separate imported Goin' Under copy during its complete 93-event Beginner chart. The songs are not represented as commercially cleared. See [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md) and [Credits](CREDITS.md).
+Three pinned StepMania song/chart packs are included under `Assets/StreamingAssets/Rhythm/StepMania` for authorized noncommercial development packages, with original credits, manifest and notices. Public demo.6 uses the complete Goin' Under chart; the current source scene additionally wires short Goin' Under and Springtime candidate windows. The songs are not represented as commercially cleared, and segmented-playback permission remains a release gate. See [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md) and [Credits](CREDITS.md).
 
 Preserve Unity GUIDs and paired `.meta` files, original asset attribution and exact recorded generation prompts. New scene props and image studies are not evidence of new gameplay integration.
 

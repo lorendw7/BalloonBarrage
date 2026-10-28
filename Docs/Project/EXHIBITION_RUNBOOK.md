@@ -22,17 +22,17 @@ Use this runbook for the accepted Windows package at the Kyudaisai booth. It cov
    ```
 
 4. Disconnect or block network access if the venue run is intended to be offline, then launch `BalloonShooter.exe`.
-5. Complete Start, Japanese/English switching, held fire, one ordinary hit, one timed bonus, Esc pause/resume, natural results with trusted counters/streak, Retry and Quit. Confirm music remains audible and the custom spray feedback remains readable during held fire.
+5. Complete Start, Japanese/English switching, held fire, one ordinary hit, one timed bonus, Esc pause/resume, natural results with trusted counters/streak, Retry and Quit. Confirm music remains audible and the custom spray feedback remains readable during held fire. For a new short multi-song candidate, complete each song/profile once, exercise every authored barrage family and check center/edge pop-effect alignment before accepting the package for the booth.
 6. Keep the accepted primary and fallback folders unchanged after this check. Record which package/hash passed.
 
 ## Player handoff
 
-Plan one complete turn for about three to four minutes: a short explanation, the 123.429-second song and a brief results/paint moment.
+Plan an accepted short-candidate turn for about two to two-and-a-half minutes: a short explanation, one 75–90-second song window and a brief results/paint moment. If the selected package is demo.6, plan three to four minutes for its complete 123.429-second song. Do not describe the fallback as the shortened version.
 
 1. Reset to the title/results handoff state agreed during rehearsal.
 2. Point to the Japanese control card. Explain mouse aim and held left-click first; describe the beat bonus as optional.
 3. Let the player finish after misses. Do not restart merely for a low score.
-4. At results, allow a short look at the painted room, then offer Retry or end the turn.
+4. At results, allow a short look at the painted room, then offer a different song/Retry if the accepted package supports selection, or end the turn.
 5. Between players, check pointer control, audio and whether the expected fresh-round state appears.
 
 ## Recovery order
@@ -49,4 +49,4 @@ Do not edit files, clear records, install updates or build a new player during t
 
 ## End-of-day record
 
-Record the package filename and hash, PC/display/audio setup, approximate number of turns, every relaunch or fallback switch, and concise anonymous observations about clarity, comfort and recovery. These observations are not automated results and should not include player names or contact information.
+Record the package filename and hash, selected song/round profile, PC/display/audio setup, approximate number of turns, every relaunch or fallback switch, and concise anonymous observations about duration, barrage variety, hit-effect alignment, clarity, comfort and recovery. These observations are not automated results and should not include player names or contact information.

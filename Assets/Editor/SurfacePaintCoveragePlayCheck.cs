@@ -230,6 +230,7 @@ namespace BalloonBarrage.EditorTools
                     }
 
                     controller.BeginRound();
+                    controller.StartSelectedSong();
                     Require(RoundController.IsPlaying,
                         "Natural complete-song check could not begin.");
                     stageStarted = EditorApplication.timeSinceStartup;

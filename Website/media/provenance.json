@@ -255,5 +255,53 @@
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
     "attribution": "Native Unity Edit Mode camera capture of a separate studio art study, 2026-10-28. Not recorded gameplay, a change to PrototypeScene, or an update to the demo.6 download. The source scene contains original generated prints; their exact prompts and hashes are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json. No generative editing of the capture."
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/Gameplay.png",
+    "source_sha256": "c97fae10555273f9a7be58c85b84ede5aa242d27b04afd40b409792ea6bc2780",
+    "output": "Website/media/gameplay-official-20261028.webp",
+    "output_sha256": "9a87bc4bb8ebd9598724eba2190251cbbf5d72948879bd65c3489a2df402d38a",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Play Mode capture, 3840x2160, 4x MSAA, October 28 2026. Current source, natural Springtime chart playback, before stress targets were inserted. Automated fixture, not physical play or a demo.6 package capture. No generative editing. Original art attribution remains preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/SongSelection.png",
+    "source_sha256": "3afb8ba5a09424acefaf97a331de6fe98fd263477401fe719f377078f7c74543",
+    "output": "Website/media/song-selection-20261028.webp",
+    "output_sha256": "70d6b4838f51911340c06d5cba64bfc34c021d4776e7fa7b9b5fe9744dd65237",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity Play Mode 3840x2160 capture of the current deep-teal selection screen, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/Title.png",
+    "source_sha256": "147919241d6b87473c17a5d26c8e64d461e8f7c56e4f97c584e851c4aa3d64dc",
+    "output": "Website/media/title-official-20261028.webp",
+    "output_sha256": "ca66d9d725cd535f40b01ad42abe66ebf3416fef09007cacf52be3fab107b748",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity Play Mode 3840x2160 title-screen capture, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved."
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/Gameplay.png",
+    "source_sha256": "c97fae10555273f9a7be58c85b84ede5aa242d27b04afd40b409792ea6bc2780",
+    "output": "Website/media/gameplay-official-share-20261028.jpg",
+    "output_sha256": "b5bc4157879f00b089ca2d676bccee581a1cfdefb4ef9beba5c0609f46cf4672",
+    "dimensions": [
+      1200,
+      675
+    ],
+    "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
+    "attribution": "Native Unity 6000.0.77f1 Play Mode capture, 3840x2160, 4x MSAA, October 28 2026. Current source, natural Springtime chart playback, before stress targets were inserted. Automated fixture, not physical play or a demo.6 package capture. No generative editing. Original art attribution remains preserved."
   }
 ]

@@ -1,4 +1,11 @@
 [
+  {"source":"Assets/Art/Previews/Official20261028/Gameplay.png","output":"gameplay-official-20261028.png"},
+  {"source":"Website/media/gameplay-official-20261028.webp","output":"gameplay-official-20261028.webp"},
+  {"source":"Assets/Art/Previews/Official20261028/SongSelection.png","output":"song-selection-20261028.png"},
+  {"source":"Website/media/song-selection-20261028.webp","output":"song-selection-20261028.webp"},
+  {"source":"Assets/Art/Previews/Official20261028/Title.png","output":"title-official-20261028.png"},
+  {"source":"Website/media/title-official-20261028.webp","output":"title-official-20261028.webp"},
+  {"source":"Website/media/gameplay-official-share-20261028.jpg","output":"gameplay-official-share-20261028.jpg"},
   {
     "source": "Website/media/results-statistics-20261023.png",
     "output": "results-statistics-20261023.png"

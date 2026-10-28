@@ -50,7 +50,7 @@ Updated: October 28, 2026. New art studies remain separate from the demo.6 deskt
 - [Concept studio detail V13](CONCEPT_DETAIL_V13.md): earlier room color/detail study, batched native supplies, mineral floor and comparison evidence.
 - [Paint blaster](PAINT_BLASTER.md): assembled gun, projectile visuals, muzzle effects and the prepared paint-shot audio/framing handoff.
 - [Concept-style gun refinement](CONCEPT_GUN_REFINEMENT.md): latest production shell, preserved recoil/muzzle integration and inspection evidence.
-- [Balloon pop](BALLOON_POP_V2.md): latex-fragment particles.
+- [Balloon pop](BALLOON_POP_V2.md): eight bounded latex-fragment particle prefabs are serialized on the production balloon and contact-point handoff is saved; the short variant-selection function and physical alignment check remain learner/playtest work.
 - [Paint-pop lesson](PAINT_POP_LESSON.md): connect combined fragments and paint droplets through the existing learner hook.
 - [Spray assets](SPRAY_ASSETS.md): wall decoration atlas and prefabs.
 - [Interface V2](INTERFACE_V2.md): current UI prefabs, score/timer display and learner integration steps.

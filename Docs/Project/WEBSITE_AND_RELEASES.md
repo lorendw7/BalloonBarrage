@@ -55,7 +55,7 @@ Player-facing copy lives in `Website/src/strings.mjs`; project documentation rem
 
 `Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives up to the source resolution, capped at 2560 × 1440. Gameplay, results, interface and coverage screenshots use quality 98 for clearer text and paint edges; other artwork uses quality 92. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
 
-The opening artwork and the 1347-pixel gameplay capture are not enlarged beyond their native widths. Other large gameplay/studio figures stop at 1600 CSS pixels, while the image dialog may use nearly the full viewport. Only opening media is preloaded; below-the-fold images use lazy loading. Stylesheets and scripts use content-addressed filenames so older cached markup cannot silently mix with a new layout.
+The current official captures preserve native 3840 x 2160 Unity PNGs under `Assets/Art/Previews/Official20261028`. The website shows 2560 x 1440 quality-98 WebP derivatives and links to untouched 4K originals; its share image is a 1200 x 675 JPEG. The gameplay image comes from natural Springtime chart events in current development source, separate from published demo.6. Large figures stop at 1600 CSS pixels; the dialog may use most of the viewport. Below-the-fold images are lazy-loaded. Content-addressed CSS/JS prevents stale layout files from being mixed with new pages.
 
 ## Verification after publication
 

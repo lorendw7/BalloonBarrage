@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 
 
@@ -10,6 +11,8 @@ public class RhythmEventData
 {
     public int id;
     public double timeSeconds;
+    [System.NonSerialized] public BarragePattern pattern;
+    [System.NonSerialized] public int patternStep;
 }
 
 [Serializable]
@@ -25,6 +28,7 @@ public class RhythmChartData
 public class RhythmChartReader : MonoBehaviour
 {
     private RhythmChartData chart;
+    public bool IsReady => chart != null && chart.events != null && chart.events.Length > 0;
 
     private int nextEventIndex = 0;
 
@@ -40,7 +44,7 @@ public class RhythmChartReader : MonoBehaviour
     private BalloonSpawner balloonSpawner;
 
     [SerializeField]
-    private double spawnLeadSeconds = 0.8d;
+    private double spawnLeadSeconds = 2.8d;
 
     [SerializeField]
     private Text beatCueText;
@@ -79,12 +83,22 @@ public class RhythmChartReader : MonoBehaviour
     {
         Balloon.OnBeatHit += ShownOnBeatFeedback;
         LanguageSettings.LanguageChanged += OnLanguageChanged;
+
+        if (roundController != null)
+        {
+            roundController.SongSelectionChanged += LoadSelectedChart;
+        }
     }
 
     private void OnDisable()
     {
         Balloon.OnBeatHit -= ShownOnBeatFeedback;
         LanguageSettings.LanguageChanged -= OnLanguageChanged;
+
+        if (roundController != null)
+        {
+            roundController.SongSelectionChanged -= LoadSelectedChart;
+        }
 
         feedbackRemaining = 0f;
 
@@ -128,9 +142,23 @@ public class RhythmChartReader : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LoadSelectedChart();
+    }
+
+    private void LoadSelectedChart()
+    {
+        chart = null;
+        if (roundController == null || roundController.SelectedSong == null)
+        {
+            Debug.LogError("No song profile is available for the chart reader.");
+            return;
+        }
+
+        ExhibitionSongProfile profile = roundController.SelectedSong;
+
         string path = Path.Combine(
             Application.streamingAssetsPath,
-            "Rhythm/Prepared/GoinUnder_Beginner.json");
+            profile.chartRelativePath);
 
         if (!File.Exists(path))
         {
@@ -139,14 +167,58 @@ public class RhythmChartReader : MonoBehaviour
         }
 
         string json = File.ReadAllText(path);
-        chart = JsonUtility.FromJson<RhythmChartData>(json);
+        RhythmChartData sourceChart =
+            JsonUtility.FromJson<RhythmChartData>(json);
 
-        if (chart == null || chart.events == null ||
-            chart.events.Length == 0)
+        if (sourceChart == null || sourceChart.events == null ||
+            sourceChart.events.Length == 0)
         {
             Debug.LogError("Chart has no events.");
             return;
         }
+
+        List<RhythmEventData> shortRoundEvents =
+            new List<RhythmEventData>();
+
+        foreach (RhythmEventData sourceEvent in sourceChart.events)
+        {
+            if (sourceEvent.id < profile.sourceEventStartId ||
+                sourceEvent.id >= profile.sourceEventEndIdExclusive)
+            {
+                continue;
+            }
+
+            double normalizedTime =
+                sourceEvent.timeSeconds - profile.sourceCueInSeconds;
+
+            double roundProgress = profile.roundDurationSeconds > 0d
+                ? normalizedTime / profile.roundDurationSeconds
+                : 0d;
+
+            shortRoundEvents.Add(new RhythmEventData
+            {
+                id = sourceEvent.id,
+                timeSeconds = System.Math.Max(0d, normalizedTime),
+                pattern = KyudaisaiLearnerCore.SelectBarragePattern(
+                    System.Math.Max(0d, System.Math.Min(1d, roundProgress))),
+                patternStep = shortRoundEvents.Count
+            });
+        }
+
+        chart = sourceChart;
+        chart.events = shortRoundEvents.ToArray();
+        chart.durationSeconds = profile.roundDurationSeconds;
+        nextEventIndex = 0;
+        nextCueEventIndex = 0;
+        displayedCueTenths = int.MinValue;
+        showingEndingCue = false;
+
+        if (chart.events.Length == 0)
+        {
+            Debug.LogError("Selected short round has no chart events.");
+            return;
+        }
+
         Debug.Log($"Loaded {chart.title}: {chart.events.Length} events.");
         Debug.Log("Chart file read successfully.");
         RhythmEventData firstEvent = chart.events[0];
@@ -237,7 +309,7 @@ public class RhythmChartReader : MonoBehaviour
             RhythmEventData currentEvent = chart.events[nextEventIndex];
 
             Debug.Log($"Chart event {currentEvent.id} reached.");
-            balloonSpawner.Spawn(currentEvent);
+            if (!balloonSpawner.Spawn(currentEvent)) break;
             nextEventIndex++;
         }
     }

@@ -6241,10 +6241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 1461988562263155107, guid: ee2d7674776bb93438672c562a35bc5b, type: 3}
   spawnSettings: {fileID: 11400000, guid: ecdcc52e368c41b996d51cb470de9df8, type: 2}
-  xRange: {x: -3, y: 3}
+  xRange: {x: -3.3, y: 3.3}
   yRange: {x: -2, y: 2}
   zPosition: 8
-  maxBalloons: 3
+  maxBalloons: 16
 --- !u!1 &556493344
 GameObject:
   m_ObjectHideFlags: 0
@@ -12770,6 +12770,37 @@ MonoBehaviour:
   bestScoreText: {fileID: 1241126544}
   menuMusic: {fileID: 43571004}
   gameMusic: {fileID: 1059022383}
+  exhibitionSongs:
+  - trackId: stepmania-goin-under-beginner
+    title: Goin' Under
+    artist: NegaRen
+    audioClip: {fileID: 8300000, guid: ca6ecad4fa0e4031ace7f3484d40651b, type: 3}
+    chartRelativePath: Rhythm/Prepared/GoinUnder_Beginner.json
+    sourceCueInSeconds: 9.142857143
+    sourceCueOutSeconds: 91.428571429
+    roundDurationSeconds: 82.285714286
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 68
+  - trackId: stepmania-springtime-beginner
+    title: Springtime
+    artist: Kommisar
+    audioClip: {fileID: 8300000, guid: 2ac7cf1472544d6d82261fe1720539a8, type: 3}
+    chartRelativePath: Rhythm/Prepared/Springtime_Beginner.json
+    sourceCueInSeconds: 5.373870435
+    sourceCueOutSeconds: 89.915797397
+    roundDurationSeconds: 84.541926962
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 147
+  - trackId: stepmania-mecha-tribe-beginner
+    title: Mecha-Tribe Assault
+    artist: Kommisar
+    audioClip: {fileID: 8300000, guid: 9547bc291198464bb92a289b11538471, type: 3}
+    chartRelativePath: Rhythm/Prepared/MechaTribeAssault_Beginner.json
+    sourceCueInSeconds: 5.361333333
+    sourceCueOutSeconds: 85.361333333
+    roundDurationSeconds: 80
+    sourceEventStartId: 0
+    sourceEventEndIdExclusive: 137
   resultStatsText: {fileID: 1008670705}
 --- !u!4 &1178834978
 Transform:
@@ -12801,7 +12832,7 @@ MonoBehaviour:
   roundController: {fileID: 1178834977}
   currentSongTime: 0
   balloonSpawner: {fileID: 553252044}
-  spawnLeadSeconds: 0.8
+  spawnLeadSeconds: 2.8
   beatCueText: {fileID: 932573874}
   beatApproachFill: {fileID: 932573875}
   onBeatFeedbackText: {fileID: 1982160103}

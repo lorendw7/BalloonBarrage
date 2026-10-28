@@ -1,14 +1,24 @@
 Goin' Under -- NegaRen
 Beginner chart -- Fraxtil
 
-Runtime audio is a byte-identical copy of the pinned StepMania source.
+Springtime -- Kommisar
+Beginner chart -- Kommisar
+
+Mecha-Tribe Assault -- Kommisar
+Beginner chart -- Wyde
+Balloon adaptation: tap/hold/roll heads become targets; tails and mines omitted.
+
+Runtime audio files are byte-identical copies of the pinned StepMania sources.
 Original source, chart credits, upstream README, NOTICE and manifest remain in
 Assets/StreamingAssets/Rhythm/StepMania.
-Prepared chart and provenance: Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json
+Prepared charts and provenance:
+- Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json
+- Assets/StreamingAssets/Rhythm/Prepared/Springtime_Beginner.json
+- Assets/StreamingAssets/Rhythm/Prepared/MechaTribeAssault_Beginner.json
 Source revision: 825467bcd81c812b33ad684dc04dd151b2d5dec3
 Source: https://github.com/stepmania/stepmania
 
 The creator authorized a noncommercial development package. Upstream describes
 the songs as CC-NC without identifying a precise license version. Commercial
-rights are not established. Do not sell packages containing this track.
+rights are not established. Do not sell packages containing these tracks.
 The StepMania engine's MIT license does not cover these song assets.

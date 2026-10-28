@@ -4,11 +4,19 @@ using BalloonBarrage.Foundation;
 
 public class BalloonSpawner : MonoBehaviour
 {
+    private static readonly int[] LateralSweepSlots =
+        { -2, -1, 0, 1, 2, 1, 0, -1 };
+
+    private static readonly int[] ShallowFanSlots =
+        { -2, 0, 2, -1, 1, 0 };
+
+    private static readonly int[] StaggeredClusterSlots =
+        { -1, 1, 0, 2, -2, 0 };
+    private static readonly float[] PlacementRows = { 0f, 0.85f, -0.85f, 1.7f, -1.7f };
+
     [SerializeField] private GameObject balloonPrefab;
 
     [SerializeField] private BalloonSpawnSettings spawnSettings;
-
-    private float remainingDelay;
 
     [SerializeField]
     private Vector2 xRange = new Vector2(
@@ -22,7 +30,8 @@ public class BalloonSpawner : MonoBehaviour
     private float zPosition = 8f;
 
     [SerializeField, Min(1)]
-    private int maxBalloons = 3;
+    private int maxBalloons = 16;
+    public int ActiveCount => activeBalloons.Count;
 
     private readonly List<Balloon> activeBalloons =
         new List<Balloon>();
@@ -36,7 +45,6 @@ public class BalloonSpawner : MonoBehaviour
             return;
         }
 
-        remainingDelay = 0f;
     }
 
     public void CheckExpiredBalloons(double songTime)
@@ -47,7 +55,7 @@ public class BalloonSpawner : MonoBehaviour
         {
             Balloon balloon = activeBalloons[index];
 
-            if (balloon == null)
+            if (balloon == null || !balloon.gameObject.activeSelf)
             {
                 activeBalloons.RemoveAt(index);
                 continue;
@@ -58,13 +66,39 @@ public class BalloonSpawner : MonoBehaviour
     }
 
 
-    public void Spawn(RhythmEventData eventData)
+    public bool Spawn(RhythmEventData eventData)
     {
+        activeBalloons.RemoveAll(balloon => balloon == null || !balloon.gameObject.activeSelf);
+        if (activeBalloons.Count >= maxBalloons) return false;
+        int placementSlot = GetPlacementSlot(
+            eventData.pattern,
+            eventData.patternStep);
+
+        Vector2 normalizedOffset =
+            KyudaisaiLearnerCore.CalculatePatternOffset(
+                eventData.pattern,
+                placementSlot,
+                eventData.patternStep);
+
         Vector3 position = new Vector3(
-            Random.Range(xRange.x, xRange.y),
-            Random.Range(yRange.x, yRange.y),
-            zPosition
-        );
+            Mathf.Lerp(xRange.x, xRange.y,
+                Mathf.Clamp01(normalizedOffset.x * 0.5f + 0.5f)),
+            Mathf.Lerp(yRange.x, yRange.y,
+                Mathf.Clamp01(normalizedOffset.y * 0.5f + 0.5f)),
+            zPosition);
+
+        // Spread overlapping events across readable rows while retaining their pattern x position.
+        foreach (float row in PlacementRows)
+        {
+            Vector3 candidate = position;
+            candidate.y = Mathf.Clamp(position.y + row, yRange.x, yRange.y);
+            if (!activeBalloons.Exists(other => other != null &&
+                (other.transform.position - candidate).sqrMagnitude < 0.75f * 0.75f))
+            {
+                position = candidate;
+                break;
+            }
+        }
 
         GameObject newBalloon = Instantiate(
             balloonPrefab,
@@ -76,5 +110,28 @@ public class BalloonSpawner : MonoBehaviour
         Debug.Log($"Initialized balloon {balloon.EventId}; beat at {balloon.EventTimeSeconds:F3}s.");
 
         activeBalloons.Add(balloon);
-    }    
+        return true;
+    }
+
+    private static int GetPlacementSlot(
+        BarragePattern pattern,
+        int patternStep)
+    {
+        int[] slots;
+
+        switch (pattern)
+        {
+            case BarragePattern.ShallowFan:
+                slots = ShallowFanSlots;
+                break;
+            case BarragePattern.StaggeredCluster:
+                slots = StaggeredClusterSlots;
+                break;
+            default:
+                slots = LateralSweepSlots;
+                break;
+        }
+
+        return slots[Mathf.Abs(patternStep) % slots.Length];
+    }
 }

@@ -1,0 +1,1311 @@
+{
+  "title": "Mecha-Tribe Assault",
+  "artist": "Kommisar",
+  "chartAuthor": "Wyde",
+  "difficulty": "Beginner",
+  "stepType": "dance-single",
+  "bpm": 180.0,
+  "sourceOffsetSeconds": -0.028,
+  "firstBeatOffsetSeconds": 0.028,
+  "events": [
+    {
+      "id": 0,
+      "beat": 16.0,
+      "timeSeconds": 5.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "beat": 20.0,
+      "timeSeconds": 6.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "beat": 23.0,
+      "timeSeconds": 7.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "beat": 24.0,
+      "timeSeconds": 8.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "beat": 28.0,
+      "timeSeconds": 9.361333333,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "beat": 31.0,
+      "timeSeconds": 10.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "beat": 32.0,
+      "timeSeconds": 10.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 7,
+      "beat": 36.0,
+      "timeSeconds": 12.028,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "beat": 39.0,
+      "timeSeconds": 13.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 9,
+      "beat": 40.0,
+      "timeSeconds": 13.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 10,
+      "beat": 44.0,
+      "timeSeconds": 14.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 11,
+      "beat": 47.0,
+      "timeSeconds": 15.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "beat": 48.0,
+      "timeSeconds": 16.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 13,
+      "beat": 50.0,
+      "timeSeconds": 16.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 14,
+      "beat": 52.0,
+      "timeSeconds": 17.361333333,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 15,
+      "beat": 55.0,
+      "timeSeconds": 18.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 16,
+      "beat": 56.0,
+      "timeSeconds": 18.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 17,
+      "beat": 58.0,
+      "timeSeconds": 19.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 18,
+      "beat": 60.0,
+      "timeSeconds": 20.028,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 19,
+      "beat": 63.0,
+      "timeSeconds": 21.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 20,
+      "beat": 64.0,
+      "timeSeconds": 21.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "beat": 66.0,
+      "timeSeconds": 22.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 22,
+      "beat": 68.0,
+      "timeSeconds": 22.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 23,
+      "beat": 71.0,
+      "timeSeconds": 23.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 24,
+      "beat": 72.0,
+      "timeSeconds": 24.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 25,
+      "beat": 74.0,
+      "timeSeconds": 24.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 26,
+      "beat": 76.0,
+      "timeSeconds": 25.361333333,
+      "lanes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 27,
+      "beat": 80.0,
+      "timeSeconds": 26.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 28,
+      "beat": 82.0,
+      "timeSeconds": 27.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 29,
+      "beat": 84.0,
+      "timeSeconds": 28.028,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 30,
+      "beat": 86.0,
+      "timeSeconds": 28.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 31,
+      "beat": 88.0,
+      "timeSeconds": 29.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 32,
+      "beat": 90.0,
+      "timeSeconds": 30.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 33,
+      "beat": 92.0,
+      "timeSeconds": 30.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 34,
+      "beat": 94.0,
+      "timeSeconds": 31.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 35,
+      "beat": 96.0,
+      "timeSeconds": 32.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 36,
+      "beat": 98.0,
+      "timeSeconds": 32.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 37,
+      "beat": 100.0,
+      "timeSeconds": 33.361333333,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 38,
+      "beat": 102.0,
+      "timeSeconds": 34.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 39,
+      "beat": 104.0,
+      "timeSeconds": 34.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 40,
+      "beat": 106.0,
+      "timeSeconds": 35.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 41,
+      "beat": 108.0,
+      "timeSeconds": 36.028,
+      "lanes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 42,
+      "beat": 112.0,
+      "timeSeconds": 37.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 43,
+      "beat": 113.0,
+      "timeSeconds": 37.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 44,
+      "beat": 114.0,
+      "timeSeconds": 38.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 45,
+      "beat": 115.0,
+      "timeSeconds": 38.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 46,
+      "beat": 116.0,
+      "timeSeconds": 38.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 47,
+      "beat": 117.0,
+      "timeSeconds": 39.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 48,
+      "beat": 118.0,
+      "timeSeconds": 39.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 49,
+      "beat": 119.0,
+      "timeSeconds": 39.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 50,
+      "beat": 120.0,
+      "timeSeconds": 40.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 51,
+      "beat": 121.0,
+      "timeSeconds": 40.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 52,
+      "beat": 122.0,
+      "timeSeconds": 40.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 53,
+      "beat": 123.0,
+      "timeSeconds": 41.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 54,
+      "beat": 124.0,
+      "timeSeconds": 41.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 55,
+      "beat": 128.0,
+      "timeSeconds": 42.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 56,
+      "beat": 129.0,
+      "timeSeconds": 43.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 57,
+      "beat": 130.0,
+      "timeSeconds": 43.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 58,
+      "beat": 131.0,
+      "timeSeconds": 43.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 59,
+      "beat": 132.0,
+      "timeSeconds": 44.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 60,
+      "beat": 133.0,
+      "timeSeconds": 44.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 61,
+      "beat": 134.0,
+      "timeSeconds": 44.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 62,
+      "beat": 135.0,
+      "timeSeconds": 45.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 63,
+      "beat": 136.0,
+      "timeSeconds": 45.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 64,
+      "beat": 137.0,
+      "timeSeconds": 45.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 65,
+      "beat": 138.0,
+      "timeSeconds": 46.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 66,
+      "beat": 139.0,
+      "timeSeconds": 46.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 67,
+      "beat": 140.0,
+      "timeSeconds": 46.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 68,
+      "beat": 144.0,
+      "timeSeconds": 48.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 69,
+      "beat": 145.0,
+      "timeSeconds": 48.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 70,
+      "beat": 146.0,
+      "timeSeconds": 48.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 71,
+      "beat": 147.0,
+      "timeSeconds": 49.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 72,
+      "beat": 148.0,
+      "timeSeconds": 49.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 73,
+      "beat": 149.0,
+      "timeSeconds": 49.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 74,
+      "beat": 150.0,
+      "timeSeconds": 50.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 75,
+      "beat": 151.0,
+      "timeSeconds": 50.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 76,
+      "beat": 152.0,
+      "timeSeconds": 50.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 77,
+      "beat": 153.0,
+      "timeSeconds": 51.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 78,
+      "beat": 154.0,
+      "timeSeconds": 51.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 79,
+      "beat": 155.0,
+      "timeSeconds": 51.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 80,
+      "beat": 156.0,
+      "timeSeconds": 52.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 81,
+      "beat": 160.0,
+      "timeSeconds": 53.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 82,
+      "beat": 161.0,
+      "timeSeconds": 53.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 83,
+      "beat": 162.0,
+      "timeSeconds": 54.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 84,
+      "beat": 163.0,
+      "timeSeconds": 54.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 85,
+      "beat": 164.0,
+      "timeSeconds": 54.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 86,
+      "beat": 165.0,
+      "timeSeconds": 55.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 87,
+      "beat": 166.0,
+      "timeSeconds": 55.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 88,
+      "beat": 167.0,
+      "timeSeconds": 55.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 89,
+      "beat": 168.0,
+      "timeSeconds": 56.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 90,
+      "beat": 169.0,
+      "timeSeconds": 56.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 91,
+      "beat": 170.0,
+      "timeSeconds": 56.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 92,
+      "beat": 171.0,
+      "timeSeconds": 57.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 93,
+      "beat": 172.0,
+      "timeSeconds": 57.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 94,
+      "beat": 176.0,
+      "timeSeconds": 58.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 95,
+      "beat": 178.0,
+      "timeSeconds": 59.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 96,
+      "beat": 180.0,
+      "timeSeconds": 60.028,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 97,
+      "beat": 182.0,
+      "timeSeconds": 60.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 98,
+      "beat": 184.0,
+      "timeSeconds": 61.361333333,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 99,
+      "beat": 186.0,
+      "timeSeconds": 62.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 100,
+      "beat": 188.0,
+      "timeSeconds": 62.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 101,
+      "beat": 189.0,
+      "timeSeconds": 63.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 102,
+      "beat": 190.0,
+      "timeSeconds": 63.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 103,
+      "beat": 192.0,
+      "timeSeconds": 64.028,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 104,
+      "beat": 194.0,
+      "timeSeconds": 64.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 105,
+      "beat": 196.0,
+      "timeSeconds": 65.361333333,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 106,
+      "beat": 198.0,
+      "timeSeconds": 66.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 107,
+      "beat": 200.0,
+      "timeSeconds": 66.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 108,
+      "beat": 202.0,
+      "timeSeconds": 67.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 109,
+      "beat": 206.0,
+      "timeSeconds": 68.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 110,
+      "beat": 207.0,
+      "timeSeconds": 69.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 111,
+      "beat": 208.0,
+      "timeSeconds": 69.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 112,
+      "beat": 211.0,
+      "timeSeconds": 70.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 113,
+      "beat": 212.0,
+      "timeSeconds": 70.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 114,
+      "beat": 214.0,
+      "timeSeconds": 71.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 115,
+      "beat": 215.0,
+      "timeSeconds": 71.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 116,
+      "beat": 216.0,
+      "timeSeconds": 72.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 117,
+      "beat": 219.0,
+      "timeSeconds": 73.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 118,
+      "beat": 220.0,
+      "timeSeconds": 73.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 119,
+      "beat": 222.0,
+      "timeSeconds": 74.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 120,
+      "beat": 224.0,
+      "timeSeconds": 74.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 121,
+      "beat": 226.0,
+      "timeSeconds": 75.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 122,
+      "beat": 228.0,
+      "timeSeconds": 76.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 123,
+      "beat": 230.0,
+      "timeSeconds": 76.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 124,
+      "beat": 232.0,
+      "timeSeconds": 77.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 125,
+      "beat": 234.0,
+      "timeSeconds": 78.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 126,
+      "beat": 236.0,
+      "timeSeconds": 78.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 127,
+      "beat": 238.0,
+      "timeSeconds": 79.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 128,
+      "beat": 240.0,
+      "timeSeconds": 80.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 129,
+      "beat": 243.0,
+      "timeSeconds": 81.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 130,
+      "beat": 244.0,
+      "timeSeconds": 81.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 131,
+      "beat": 246.0,
+      "timeSeconds": 82.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 132,
+      "beat": 247.0,
+      "timeSeconds": 82.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 133,
+      "beat": 248.0,
+      "timeSeconds": 82.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 134,
+      "beat": 251.0,
+      "timeSeconds": 83.694666667,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 135,
+      "beat": 252.0,
+      "timeSeconds": 84.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 136,
+      "beat": 254.0,
+      "timeSeconds": 84.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 137,
+      "beat": 256.0,
+      "timeSeconds": 85.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 138,
+      "beat": 260.0,
+      "timeSeconds": 86.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 139,
+      "beat": 264.0,
+      "timeSeconds": 88.028,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 140,
+      "beat": 268.0,
+      "timeSeconds": 89.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 141,
+      "beat": 272.0,
+      "timeSeconds": 90.694666667,
+      "lanes": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": 142,
+      "beat": 274.0,
+      "timeSeconds": 91.361333333,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 143,
+      "beat": 276.0,
+      "timeSeconds": 92.028,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 144,
+      "beat": 278.0,
+      "timeSeconds": 92.694666667,
+      "lanes": [
+        0
+      ]
+    },
+    {
+      "id": 145,
+      "beat": 280.0,
+      "timeSeconds": 93.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 146,
+      "beat": 282.0,
+      "timeSeconds": 94.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 147,
+      "beat": 283.0,
+      "timeSeconds": 94.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 148,
+      "beat": 284.0,
+      "timeSeconds": 94.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 149,
+      "beat": 286.0,
+      "timeSeconds": 95.361333333,
+      "lanes": [
+        3
+      ]
+    },
+    {
+      "id": 150,
+      "beat": 288.0,
+      "timeSeconds": 96.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 151,
+      "beat": 290.0,
+      "timeSeconds": 96.694666667,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 152,
+      "beat": 292.0,
+      "timeSeconds": 97.361333333,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 153,
+      "beat": 294.0,
+      "timeSeconds": 98.028,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 154,
+      "beat": 296.0,
+      "timeSeconds": 98.694666667,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 155,
+      "beat": 298.0,
+      "timeSeconds": 99.361333333,
+      "lanes": [
+        1
+      ]
+    },
+    {
+      "id": 156,
+      "beat": 300.0,
+      "timeSeconds": 100.028,
+      "lanes": [
+        2
+      ]
+    },
+    {
+      "id": 157,
+      "beat": 302.0,
+      "timeSeconds": 100.694666667,
+      "lanes": [
+        1
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "trackId": "stepmania-mecha-tribe-beginner",
+  "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
+  "durationSeconds": 106.409795918,
+  "audioSampleCount": 4692672,
+  "audioSampleRate": 44100,
+  "loop": false,
+  "sourceRevision": "825467bcd81c812b33ad684dc04dd151b2d5dec3",
+  "sourceAudioPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ogg",
+  "sourceChartPath": "Assets/StreamingAssets/Rhythm/StepMania/Songs/StepMania 5/MechaTribe Assault/Mecha-Tribe Assault.ssc",
+  "sourceAudioSha256": "6eb052cf8081ebb01d4b30e8db34e9eeca692635e2c1ed3ba7f7bd131c1b65c3",
+  "sourceChartSha256": "a594bd13b0728ecb2e9eb8e56ddb0e1744c0d2eef80466a42ea299703615e426",
+  "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ogg",
+  "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ssc",
+  "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared.",
+  "adaptation": "Balloon adaptation: tap/hold/roll heads become one target per row; sustain tails and mines are omitted. Original chart preserved."
+}

@@ -554,7 +554,9 @@ public class PlayerShooter : MonoBehaviour
 
                 int bonusPoints = isOnBeat ? 10 : 0;
 
-                sprayedBalloon.Hit(bonusPoints);
+                sprayedBalloon.HitAt(
+                    sprayHit.point,
+                    bonusPoints);
             }
             else if (paintProjectilePrefab != null)
             {

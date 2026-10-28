@@ -1,5 +1,9 @@
 # Credits and provenance
 
+## October 28 official development captures
+
+`Assets/Art/Previews/Official20261028` preserves 3840 x 2160 native Unity Play Mode PNGs for the title, deep-teal song selection and current gameplay. The gameplay frame uses natural Springtime chart events before stress-test targets are inserted. Captures come from the current working source in an isolated verification project, use 4x MSAA and contain no generative edits. UI canvases are rendered to the capture camera; these are automated development captures, not screenshots of the published demo.6 player or evidence of a physical playtest. Existing artwork, model, font and music attribution remains applicable. Website WebP/share derivatives retain exact source/output hashes and preparation settings in `Website/media/provenance.json`.
+
 ## October 28 studio expansion
 
 `Assets/StudioArtPack/StudioExpansion20261028/Textures` contains three new opaque images made with OpenAI built-in image generation: `StudioRhythmPrint.png`, `BotanicalPigmentPrint.png`, and `CourtyardAutumnView.png`. The PNGs are copied byte-for-byte from the generated outputs. Their exact prompts, output identifiers, dimensions and SHA-256 hashes are retained in [Textures/Provenance.json](Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json). The two prints are text-free decorative art; the courtyard is fictional and is not official campus imagery. These are generated artwork, not gameplay captures.

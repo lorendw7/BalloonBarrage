@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "profileSetId": "kyudaisai-2026-candidate-v1",
+  "status": "runtime-wiring-saved-awaiting-current-playtest",
+  "distributionBoundary": "Noncommercial development data only. Confirm segmented playback permission before packaging; otherwise use an unmodified whole track or demo.6.",
+  "eventContract": "One logical scoring target per chart event. Placement patterns are deterministic data and must not add score events.",
+  "patterns": [
+    {
+      "patternId": "lateral-sweep",
+      "placementSlots": [
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        -1
+      ],
+      "logicalTargetsPerEvent": 1,
+      "intent": "A readable side-to-side sequence across chart events."
+    },
+    {
+      "patternId": "shallow-fan",
+      "placementSlots": [
+        -2,
+        0,
+        2,
+        -1,
+        1,
+        0
+      ],
+      "logicalTargetsPerEvent": 1,
+      "intent": "A shallow alternating fan without simultaneous duplicate scoring targets."
+    },
+    {
+      "patternId": "staggered-cluster",
+      "placementSlots": [
+        -1,
+        1,
+        0,
+        2,
+        -2,
+        0
+      ],
+      "logicalTargetsPerEvent": 1,
+      "intent": "A compact staggered sequence; chart timing still owns every event."
+    }
+  ],
+  "profiles": [
+    {
+      "roundProfileId": "kyudaisai-mecha-tribe-v1",
+      "trackId": "stepmania-mecha-tribe-beginner",
+      "title": "Mecha-Tribe Assault",
+      "artist": "Kommisar",
+      "chartAuthor": "Wyde",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
+      "chartAssetPath": "Assets/StreamingAssets/Rhythm/Prepared/MechaTribeAssault_Beginner.json",
+      "sourceCueInSeconds": 5.361333333,
+      "sourceCueOutSeconds": 85.361333333,
+      "roundDurationSeconds": 80.0,
+      "sourceBeatStartInclusive": 16,
+      "sourceBeatEndExclusive": 256,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 137,
+      "eventCount": 137,
+      "estimatedMaxActiveWith2_8SecondLeadAnd5SecondCleanup": 21,
+      "patternSections": [
+        {
+          "patternId": "lateral-sweep",
+          "startBeatInclusive": 16,
+          "endBeatExclusive": 96,
+          "sourceEventStartId": 0,
+          "sourceEventEndIdExclusive": 35,
+          "eventCount": 35
+        },
+        {
+          "patternId": "shallow-fan",
+          "startBeatInclusive": 96,
+          "endBeatExclusive": 176,
+          "sourceEventStartId": 35,
+          "sourceEventEndIdExclusive": 94,
+          "eventCount": 59
+        },
+        {
+          "patternId": "staggered-cluster",
+          "startBeatInclusive": 176,
+          "endBeatExclusive": 256,
+          "sourceEventStartId": 94,
+          "sourceEventEndIdExclusive": 137,
+          "eventCount": 43
+        }
+      ]
+    },
+    {
+      "roundProfileId": "kyudaisai-goin-under-v1",
+      "trackId": "stepmania-goin-under-beginner",
+      "title": "Goin' Under",
+      "artist": "NegaRen",
+      "chartAuthor": "Fraxtil",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
+      "chartAssetPath": "Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json",
+      "sourceCueInSeconds": 9.142857143,
+      "sourceCueOutSeconds": 91.428571429,
+      "roundDurationSeconds": 82.285714286,
+      "sourceBeatStartInclusive": 32,
+      "sourceBeatEndExclusive": 320,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 68,
+      "eventCount": 68,
+      "estimatedMaxActiveWith2_8SecondLeadAnd5SecondCleanup": 8,
+      "patternSections": [
+        {
+          "patternId": "lateral-sweep",
+          "startBeatInclusive": 32,
+          "endBeatExclusive": 128,
+          "sourceEventStartId": 0,
+          "sourceEventEndIdExclusive": 23,
+          "eventCount": 23
+        },
+        {
+          "patternId": "shallow-fan",
+          "startBeatInclusive": 128,
+          "endBeatExclusive": 224,
+          "sourceEventStartId": 23,
+          "sourceEventEndIdExclusive": 46,
+          "eventCount": 23
+        },
+        {
+          "patternId": "staggered-cluster",
+          "startBeatInclusive": 224,
+          "endBeatExclusive": 320,
+          "sourceEventStartId": 46,
+          "sourceEventEndIdExclusive": 68,
+          "eventCount": 22
+        }
+      ]
+    },
+    {
+      "roundProfileId": "kyudaisai-springtime-v1",
+      "trackId": "stepmania-springtime-beginner",
+      "title": "Springtime",
+      "artist": "Kommisar",
+      "chartAuthor": "Kommisar",
+      "audioAssetPath": "Assets/Audio/Music/StepMania/Springtime.mp3",
+      "chartAssetPath": "Assets/StreamingAssets/Rhythm/Prepared/Springtime_Beginner.json",
+      "sourceCueInSeconds": 5.373870435,
+      "sourceCueOutSeconds": 89.915797397,
+      "roundDurationSeconds": 84.541926962,
+      "sourceBeatStartInclusive": 16,
+      "sourceBeatEndExclusive": 272,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 147,
+      "eventCount": 147,
+      "estimatedMaxActiveWith2_8SecondLeadAnd5SecondCleanup": 18,
+      "patternSections": [
+        {
+          "patternId": "lateral-sweep",
+          "startBeatInclusive": 16,
+          "endBeatExclusive": 96,
+          "sourceEventStartId": 0,
+          "sourceEventEndIdExclusive": 43,
+          "eventCount": 43
+        },
+        {
+          "patternId": "shallow-fan",
+          "startBeatInclusive": 96,
+          "endBeatExclusive": 176,
+          "sourceEventStartId": 43,
+          "sourceEventEndIdExclusive": 89,
+          "eventCount": 46
+        },
+        {
+          "patternId": "staggered-cluster",
+          "startBeatInclusive": 176,
+          "endBeatExclusive": 272,
+          "sourceEventStartId": 89,
+          "sourceEventEndIdExclusive": 147,
+          "eventCount": 58
+        }
+      ]
+    }
+  ]
+}

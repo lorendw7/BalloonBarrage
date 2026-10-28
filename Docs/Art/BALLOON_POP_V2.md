@@ -1,12 +1,12 @@
 # Latex-fragment balloon pop
 
-For the prepared combined latex-and-paint burst and the current wiring exercise, see the [paint-pop lesson](PAINT_POP_LESSON.md). The existing gameplay prefab still references the original teal fragment effect until the learner connects the new version.
+For the earlier combined latex-and-paint burst exercise, see the [paint-pop lesson](PAINT_POP_LESSON.md). The production balloon now serializes all eight fragment prefabs in palette order while preserving the original burst as a fallback.
 
-Folder: `Assets/StudioArtPack/BalloonPopV2`. The generated `LatexFragments_v1.png` is a transparent 2×2 atlas of neutral latex scraps, tinted through a shared unlit material. Teal, Coral and Gold particle prefabs share the texture.
+Folder: `Assets/StudioArtPack/BalloonPopV2`. The generated `LatexFragments_v1.png` is a transparent 2×2 atlas of neutral latex scraps, tinted through a shared unlit material. Teal, Coral, Gold, Sky Blue, Violet, Rose, Lime and Tangerine particle prefabs share the texture and match the production palette order.
 
 Each burst emits twelve particles with 0.38–0.68-second lifetime, size 0.22–0.4, speed 2.4–4, gravity, random spin and late fade. Each particle retains one randomly selected cell; the atlas is not sequential animation. XY emission suits the current front camera and does not simulate general 3D mesh fracture.
 
-Assign the matching particle prefab to the spawned balloon's Pop Effect Prefab and retain Pop Point. Its root ParticleSystem fits that field. Keep spawned effects independent of the balloon so destroying the target does not remove the burst early. Stop action destroys the effect; existing timed cleanup remains compatible.
+`Balloon.HitAt` now carries the sampled SphereCast or projectile contact into the independent effect instance, so target destruction does not move or remove the burst. The serialized variant array is connected, and the original Pop Effect Prefab remains the null/empty fallback. `KyudaisaiLearnerCore.SelectExplosionVariant` intentionally returns variant zero until the learner writes the short palette-selection rule. Static Unity validation confirms eight non-null root world-space ParticleSystems; camera readability and center/edge alignment still require Play Mode observation.
 
 Learner code controls shrinking/hiding and one-time scoring. A short shrink may still look like deflation; texture changes cannot implement rupture timing. Preserve the older PaintBurst asset where referenced. Check runtime appearance with the actual camera and target density.
 

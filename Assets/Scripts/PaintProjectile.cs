@@ -266,7 +266,7 @@ public class PaintProjectile : MonoBehaviour
                     bonusPoints = 10;
                 }
 
-                balloon.Hit(bonusPoints);
+                balloon.HitAt(hit.point, bonusPoints);
             }
             else if (paintMarkPrefab != null &&
                     (hit.collider.name == "MainWall" ||

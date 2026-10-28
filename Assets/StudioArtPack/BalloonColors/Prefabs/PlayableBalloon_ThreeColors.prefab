@@ -358,9 +358,18 @@ MonoBehaviour:
   popSound: {fileID: 8300000, guid: b8ae541a4dbe7be44bea956ba8b18bd8, type: 3}
   popVolume: 0.5
   popEffectPrefab: {fileID: 928517576936858472, guid: 7eeeb4a095cf1434cb3a5f8e3b1b352e, type: 3}
+  popEffectVariants:
+  - {fileID: 6864040625691906089, guid: 9d26bc8cc4d00b942bb1191dd43b5a52, type: 3}
+  - {fileID: 7905652977557144868, guid: f122021dc3926c94d88cfc09bab4d800, type: 3}
+  - {fileID: 6596064078026319195, guid: bdf10cc2354af6f42a6af5cd4dd07de0, type: 3}
+  - {fileID: 4858705235462565136, guid: 04811390d694d0946a089d31916575c3, type: 3}
+  - {fileID: 4887817988632966463, guid: 3cc44ca2585d7124f9854388f7f78339, type: 3}
+  - {fileID: 7619253384103056149, guid: 57664556dc894bd46a68ed3ff8f15a07, type: 3}
+  - {fileID: 8408347773550518605, guid: 09dc35f4e4bcbf444820f63cbd012191, type: 3}
+  - {fileID: 6505856079641505951, guid: c834a92fc0c055e46884b5b2ef0744c1, type: 3}
   onBeatGlowPrefab: {fileID: 2969724939019509008, guid: 11bdb868f9a58d94a862a79ddbf219da, type: 3}
   popPoint: {fileID: 0}
-  cleanupDelaySeconds: 3.1
+  cleanupDelaySeconds: 5
   rhythmWindowsSeconds: 0.1
   wallPaintPrefabs:
   - {fileID: 7850021937777270413, guid: 12e2d93da141461198837248dd1a9251, type: 3}

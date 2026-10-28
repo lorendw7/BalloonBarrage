@@ -37,7 +37,7 @@ export function renderPage(template, locale, release, staticFiles = {}) {
     : (snapshots.windows.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
   const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanels,
     styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
-    canonicalUrl, shareImageUrl: `${siteUrl}assets/gameplay-development-share-20261019.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
+    canonicalUrl, shareImageUrl: `${siteUrl}assets/gameplay-official-share-20261028.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (key in special) return special[key];
     if (!(key in text)) throw new Error(`Missing translation: ${locale}.${key}`);
