@@ -188,3 +188,8 @@ Assets/Audio/Music/Classics20261029/NOTICE.txt -text
 Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/License.txt -text
 Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/source-manifest.json -text
 Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/Models/*.mtl -text
+
+# Preserve derived chart hashes and deterministic festival regeneration across OSes.
+Assets/StreamingAssets/Rhythm/Prepared/*.json -text
+Assets/StreamingAssets/Rhythm/Festival20261029/*.json -text
+Assets/StreamingAssets/Rhythm/Festival20261029/*.txt -text
