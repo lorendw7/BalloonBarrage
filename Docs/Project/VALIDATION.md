@@ -21,6 +21,8 @@ Raw reports/logs/screenshots remain in ignored `.local-reference/FestivalVerific
 
 ## October 29 festival phrase revision — source and accelerated runtime
 
+The final [Pages workflow](https://github.com/lorendw7/BalloonBarrage/actions/runs/40721634254) completed successfully from website commit `9e65810`. The public Chinese root, `/ja/` and `/en/` each returned HTTP 200, displayed published-candidate copy and linked both exact demo.8 platform ZIPs. Public HEAD requests for both ZIPs and the verification JSON returned HTTP 200 with the expected byte lengths; GitHub's uploaded digests match the local files. These delivery checks do not establish additional Unity-player or physical-platform acceptance. The final main-branch update adds this evidence without changing the packaged runtime source.
+
 The creator authorized parallel Codex implementation, all-ten-song preparation, updated packaging and an ordinary main-branch push. Three agents prepared catalog data, runtime integration and independent verification. The long-note paint ribbon was explicitly deferred. The learner's `KyudaisaiLearnerCore.cs`, PlayerShooter/paint scoring path, source audio, original charts and notices remain intact.
 
 The new catalog has ten festival profiles of 64.000–65.455 seconds and ten complete-recording standard profiles, with separate v2 records. It adds bounded section/slot arrangements and one opening noninteractive three-outline demonstration followed by matching real targets. Sections follow source timing maps or signal-estimated beat phase; musical form, human listening calibration and physical aiming remain unverified. New charts explicitly identify thinned original events and three project-authored answer events.
