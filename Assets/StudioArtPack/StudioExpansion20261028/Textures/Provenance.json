@@ -1,0 +1,45 @@
+{
+  "created": "2026-10-28",
+  "timezone": "Asia/Tokyo",
+  "generator": "OpenAI built-in image_gen",
+  "mode": "new opaque image generation",
+  "purpose": "Text-free decorative artwork for an independent studio art study and website asset showcase.",
+  "status": "New original generated artwork; not gameplay captures or proof of production integration. Fictional courtyard, not official campus imagery.",
+  "preparation": "Generated PNG files copied byte-for-byte into the project; original files retained. Website compression derivatives are recorded separately in Website/media/provenance.json.",
+  "inputs": [],
+  "assets": [
+    {
+      "file": "StudioRhythmPrint.png",
+      "source_output": "exec-0b9f440e-1f0e-4dbd-b45c-ac88b64f8c0c.png",
+      "sha256": "ed8bef7b23c216eddf1d8c5fd3d4cb69d8dc3e4333a29168591eace25e96f313",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept.\nAsset type: original square art-print texture for a framed canvas in BalloonBarrage, a cozy cream-and-teal artist studio game.\nPrimary request: a restrained abstract study connecting balloon shapes, brush gestures and musical rhythm, without notation or text.\nSubject: three large rounded pear-shaped balloon forms, one muted coral, one deep teal, one warm mustard, with short loose charcoal strings; a few broad imperfect pigment swipes and tiny indigo dots form a gentle rising visual rhythm.\nStyle/medium: beautiful tactile contemporary screen print on warm ivory paper, subtle ink grain and slightly irregular handmade edges, sophisticated simple shapes.\nComposition/framing: perfectly flat front-on square artwork, full bleed; shapes occupy the middle two thirds with generous quiet ivory margin, balanced asymmetric composition; easily readable from across a room.\nColor palette: ivory #F4E6D0, coral #FF6B6B, teal #3EC6C0, mustard #FFD166, indigo #5B5F97, restrained charcoal #30343F.\nLighting/mood: evenly lit opaque printed artwork, warm, relaxing and playful.\nConstraints: artwork only, no physical frame, room, perspective, shadows, branding, text, lettering, numerals, logos, UI, watermark, characters or recognizable existing game imagery; do not present a mockup or contact sheet."
+    },
+    {
+      "file": "BotanicalPigmentPrint.png",
+      "source_output": "exec-2ca3f9f9-09c6-4c27-9799-90a8db1fc568.png",
+      "sha256": "96c14a0ed038a402f5e7ee728da81d40fbebd85c2504ed837f4ecf0bcce6e6a0",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept.\nAsset type: original square art-print texture for a framed canvas in BalloonBarrage, a cozy cream-and-teal artist studio game.\nPrimary request: a quiet botanical pigment study that complements balloon-and-paint studio art.\nSubject: a loose arrangement of broad rounded eucalyptus-like leaves and simple seed-pod silhouettes printed over two restrained translucent brush swatches; the organic forms echo soft balloon shapes without depicting characters.\nStyle/medium: tactile hand-pulled monoprint on warm ivory art paper, matte pigment with fine subtle grain, confident spare shapes and softly imperfect edges.\nComposition/framing: perfectly flat front-on square artwork, full bleed; an airy asymmetrical cluster in the middle with generous blank paper margin, no dense fine details, recognizable from across a room.\nColor palette: muted sage and deep teal foliage, a restrained coral accent, warm ochre pigment, cream #F4E6D0 ground and small charcoal marks.\nLighting/mood: evenly lit opaque printed artwork, restful late-afternoon studio mood.\nConstraints: artwork only, no frame, furniture, room, perspective, cast shadows, gradients simulating lighting, labels, text, letters, numbers, logos, watermark, UI, people or identifiable existing artwork; one composition, not a sheet of options."
+    },
+    {
+      "file": "CourtyardAutumnView.png",
+      "source_output": "exec-f33cb6ea-031c-49e0-a401-e3755738643f.png",
+      "sha256": "1bb3b7f972b649f4dba80562f057a6729cc78daef39a993558f36489ea62a93a",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "transparent_background": false,
+      "prompt": "Use case: stylized-concept.\nAsset type: original opaque portrait 3:4 window-view texture for BalloonBarrage's warm artist studio, also suitable for a website art-library preview.\nPrimary request: a peaceful fictional early-autumn courtyard visible from indoors, showing only the outdoor view without any window or interior.\nScene/backdrop: a pale apricot sky, simple distant cream workshop buildings with muted teal roofs, a quiet pale-stone path curving past terracotta planters, small maple-like trees with restrained ochre and sage foliage, a distant shaded archway.\nStyle/medium: polished painterly stylized game environment illustration, broad readable shapes, subtle brush texture, soft depth and low visual noise.\nComposition/framing: portrait 3:4 full-bleed outdoor landscape; upper third quiet pale sky, foliage framing the sides, architecture in the middle distance and path in foreground; composed for a tall studio window panel.\nLighting/mood: gentle late-afternoon daylight, restful, welcoming, low contrast without a bright sun disc.\nColor palette: warm ivory #F4E6D0, honey oak, muted teal, sage green, soft ochre, restrained coral terracotta.\nConstraints: wholly fictional place, no recognizable real campus or landmarks; no window frame, glass, interior, balloons, gun, people, animals, vehicles, signs, lettering, text, logos, watermark or UI; no collage or concept labels."
+    }
+  ]
+}

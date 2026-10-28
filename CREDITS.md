@@ -1,5 +1,11 @@
 # Credits and provenance
 
+## October 28 studio expansion
+
+`Assets/StudioArtPack/StudioExpansion20261028/Textures` contains three new opaque images made with OpenAI built-in image generation: `StudioRhythmPrint.png`, `BotanicalPigmentPrint.png`, and `CourtyardAutumnView.png`. The PNGs are copied byte-for-byte from the generated outputs. Their exact prompts, output identifiers, dimensions and SHA-256 hashes are retained in [Textures/Provenance.json](Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json). The two prints are text-free decorative art; the courtyard is fictional and is not official campus imagery. These are generated artwork, not gameplay captures.
+
+The companion modular props use project-authored native Unity geometry and materials. Their inspection renders retain the attribution of all existing studio assets visible around them. Integration, regeneration and evidence limits are recorded in [Studio expansion](Docs/Art/STUDIO_EXPANSION_20261028.md). Website derivatives retain source/output hashes in `Website/media/provenance.json`. This addition does not change existing third-party model, font or noncommercial song restrictions.
+
 ## October 19 concept-style production gun
 
 `Assets/StudioArtPack/PaintBlaster/ConceptRefinement20261019` contains native procedural Unity meshes/materials based on the existing `PaintBlaster_Concept_v1.png`. No new raster generation, prompt or external download was introduced. The original exact prompt remains in [Paint blaster](Docs/Art/PAINT_BLASTER.md#recorded-generation-prompts). Opaque materials reuse the existing V12 held-gun shader with its retained Unity Companion License and provenance; transparent glass derives from the existing reservoir material. The original Kenney model and its attribution remain intact. New previews are actual Unity inspection renders, not recorded playtests. Source/output hashes are in the new asset folder's `Provenance.json`; integration and limits are in [Concept-style gun refinement](Docs/Art/CONCEPT_GUN_REFINEMENT.md).

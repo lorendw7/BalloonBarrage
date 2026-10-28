@@ -22,6 +22,8 @@ HIGH_CLARITY_SCREENSHOTS = {
     "start-localized-zh-hans-20261025",
     "studio-refresh-20261020",
     "surface-paint-coverage-20261027",
+    "studio-expansion-20261028",
+    "studio-props-20261028",
 }
 CAPTURE = "Assets/Art/Previews/Gameplay_v0.1.0-demo.2_20261018.jpg"
 DEVELOPMENT_CAPTURE = "Assets/Art/Previews/Gameplay_Development_20261019.png"
@@ -45,6 +47,10 @@ SOURCES = {
     "mixed-pigment-model-20261020": "Assets/StudioArtPack/PaintBlaster/MixedPigment20261020/Previews/After_Model.png",
     "paint-spray-vfx-20261025": "Assets/StudioArtPack/PaintSprayStyle20261025/Textures/PaintSprayVfx_Atlas_v3.png",
     "surface-paint-coverage-20261027": "Assets/StudioArtPack/SurfacePaintCoverage20261027/Previews/DenseCoverage_1000Marks.png",
+    "studio-expansion-20261028": "Assets/StudioArtPack/StudioExpansion20261028/Previews/StudioExpansion.png",
+    "studio-props-20261028": "Assets/StudioArtPack/StudioExpansion20261028/Previews/PropCollection.png",
+    "studio-rhythm-print-20261028": "Assets/StudioArtPack/StudioExpansion20261028/Textures/StudioRhythmPrint.png",
+    "botanical-pigment-print-20261028": "Assets/StudioArtPack/StudioExpansion20261028/Textures/BotanicalPigmentPrint.png",
 }
 
 PREVIEW_ATTRIBUTIONS = {
@@ -56,6 +62,10 @@ PREVIEW_ATTRIBUTIONS = {
     "start-localized-zh-hans-20261025": "Native Unity 2560x1440 Simplified Chinese start-screen render, 2026-10-25. Captured by the project localization preview tool after the fixed Medium font and contrast-color pass; not a standalone-package capture. Original menu-art attribution and prompts remain unchanged. No generative editing.",
     "paint-spray-vfx-20261025": "Original transparent 2-by-2 paint-VFX candidate generated with OpenAI built-in image generation on 2026-10-25. Neutral white artwork is prepared for runtime tinting and is not connected gameplay. Exact prompt, source path and source hash are retained in the canonical asset folder.",
     "surface-paint-coverage-20261027": "Native Unity 6000.0.77f1 automated coverage fixture, 2026-10-27. Nine prepared static surfaces, eight pigments and 1,000 retained marks; not physical gameplay or standalone-package acceptance. The persistent marks use original generated artwork whose exact prompt and source hash remain in the canonical asset folder. No generative editing was applied to this capture.",
+    "studio-expansion-20261028": "Native Unity Edit Mode camera capture of a separate studio art study, 2026-10-28. Not recorded gameplay, a change to PrototypeScene, or an update to the demo.6 download. The source scene contains original generated prints; their exact prompts and hashes are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json. No generative editing of the capture.",
+    "studio-props-20261028": "Native Unity Edit Mode camera capture of seven modular studio prefabs (five supply props and two framed prints), 2026-10-28. Original procedural geometry with the recorded new art textures; prepared for scene staging, not new gameplay. Not included in demo.6. Exact texture prompts and hashes are retained in the canonical texture folder. No generative editing of the capture.",
+    "studio-rhythm-print-20261028": "Original text-free studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
+    "botanical-pigment-print-20261028": "Original text-free botanical studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
 }
 
 

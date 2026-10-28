@@ -1,6 +1,12 @@
 # Validation record
 
-Updated: October 27, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+Updated: October 28, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
+
+## Independent studio expansion and website, October 28
+
+The [studio expansion](../Art/STUDIO_EXPANSION_20261028.md) adds seven prefabs, seven meshes, twelve materials, three original generated textures and two saved art scenes. Unity 6000.0.77f1 authoring and placement-review runs exited 0 with `STUDIO_EXPANSION_OK` and `STUDIO_EXPANSION_PLACEMENT_REVIEW_OK`. Saved assets reloaded without missing scripts; new prefabs contain no colliders or runtime behaviours. Production-scene bytes, gameplay scripts and build settings remain unchanged. Native before/after and prop-gallery renders were visually reviewed; wall-facing and occlusion issues were corrected. This is Edit Mode art verification, not gameplay acceptance, a performance benchmark or a new desktop release. The initial restricted-sandbox editor startup failed before authoring; elevated runs succeeded with a nonfatal licensing-token refresh message.
+
+The static audit passed 1,347 unique metadata GUIDs and 39 documentation files. All three new PNG dimensions and SHA-256 hashes match their exact-prompt provenance. The website offline and online builds succeeded with three language pages and 42 image files; online release discovery resolved both demo.6 desktop packages. All 13 website tests passed. Parent-chat browser inspection verified the desktop gallery and a 390-pixel viewport with no horizontal overflow, category counts of 7/2/3/2, original-image dialog opening, Escape dismissal and focus restoration. These browser checks do not establish physical-phone or Unity-player acceptance. Existing demo.6 packages remain unchanged.
 
 ## v0.1.0-demo.6 desktop prerelease and website, October 27
 

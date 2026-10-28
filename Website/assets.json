@@ -134,5 +134,37 @@
   {
     "source": "Website/media/surface-paint-coverage-20261027.webp",
     "output": "surface-paint-coverage-20261027.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Previews/StudioExpansion.png",
+    "output": "studio-expansion-20261028.png"
+  },
+  {
+    "source": "Website/media/studio-expansion-20261028.webp",
+    "output": "studio-expansion-20261028.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Previews/PropCollection.png",
+    "output": "studio-props-20261028.png"
+  },
+  {
+    "source": "Website/media/studio-props-20261028.webp",
+    "output": "studio-props-20261028.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Textures/StudioRhythmPrint.png",
+    "output": "studio-rhythm-print-20261028.png"
+  },
+  {
+    "source": "Website/media/studio-rhythm-print-20261028.webp",
+    "output": "studio-rhythm-print-20261028.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Textures/BotanicalPigmentPrint.png",
+    "output": "botanical-pigment-print-20261028.png"
+  },
+  {
+    "source": "Website/media/botanical-pigment-print-20261028.webp",
+    "output": "botanical-pigment-print-20261028.webp"
   }
 ]

@@ -1,0 +1,12 @@
+SupplyTrolley: 33 source pieces -> 1 renderer / 8 material submeshes; 9390 vertices; 14320 triangles.
+RollerTray: 16 source pieces -> 1 renderer / 5 material submeshes; 3804 vertices; 5480 triangles.
+CanvasEasel: 10 source pieces -> 1 renderer / 5 material submeshes; 2682 vertices; 4020 triangles.
+PigmentSwatchRail: 16 source pieces -> 1 renderer / 7 material submeshes; 3456 vertices; 4800 triangles.
+CanvasDryingRack: 20 source pieces -> 1 renderer / 8 material submeshes; 4320 vertices; 6000 triangles.
+FramedRhythmPrint: 6 source pieces -> 1 renderer / 3 material submeshes; 1084 vertices; 1502 triangles.
+FramedBotanicalPrint: 6 source pieces -> 1 renderer / 3 material submeshes; 1084 vertices; 1502 triangles.
+Copied PrototypeScene into independent StudioExpansion20261028; preserved all existing transform/runtime/camera/audio/physics/light serialization. No build-settings change.
+Production scene SHA-256 unchanged: 1860d0bd12a3074a3506e1b763fd7a38b824c6d0c1b6efb0236dcecc57199355
+107 authoring parts combined into seven prefab renderers. This is a renderer-count reduction, not a measured FPS result.
+All seven prefabs reloaded with nonempty meshes, supported materials, zero colliders and zero runtime scripts. Both saved scenes reloaded with no missing scripts.
+Previews are Unity 6000.0.77f1 Edit Mode camera renders. No physical playtest, new gameplay, standalone build or release acceptance is claimed. Existing baked lighting was retained; new props use probes/realtime lighting.

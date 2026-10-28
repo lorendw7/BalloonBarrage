@@ -120,7 +120,9 @@ test("web derivatives retain recorded source and output hashes", async () => {
     "results-statistics-20261023.webp",
     "start-localized-zh-hans-20261025.webp",
     "studio-refresh-20261020.webp",
-    "surface-paint-coverage-20261027.webp"
+    "surface-paint-coverage-20261027.webp",
+    "studio-expansion-20261028.webp",
+    "studio-props-20261028.webp"
   ]);
   for (const record of records.filter(({ output }) => output.endsWith(".webp"))) {
     assert.match(record.preparation, /source resolution up to 2560x1440/);

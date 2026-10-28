@@ -207,5 +207,53 @@
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
     "attribution": "Native Unity 6000.0.77f1 automated coverage fixture, 2026-10-27. Nine prepared static surfaces, eight pigments and 1,000 retained marks; not physical gameplay or standalone-package acceptance. The persistent marks use original generated artwork whose exact prompt and source hash remain in the canonical asset folder. No generative editing was applied to this capture."
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Textures/StudioRhythmPrint.png",
+    "source_sha256": "ed8bef7b23c216eddf1d8c5fd3d4cb69d8dc3e4333a29168591eace25e96f313",
+    "output": "Website/media/studio-rhythm-print-20261028.webp",
+    "output_sha256": "7e8bf083326ad8ede2fe38f958a632d342181bfb350e9833ce9a3c610121bd99",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Original text-free studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json."
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Textures/BotanicalPigmentPrint.png",
+    "source_sha256": "96c14a0ed038a402f5e7ee728da81d40fbebd85c2504ed837f4ecf0bcce6e6a0",
+    "output": "Website/media/botanical-pigment-print-20261028.webp",
+    "output_sha256": "ae48d2a43e4058639d4133579e418acaba4f44dd16b12ccad24510876c1a8315",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Original text-free botanical studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json."
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Previews/PropCollection.png",
+    "source_sha256": "b57c46a91d6870562800d84b037368267cf1505b54d9387a70d1ea955fb89585",
+    "output": "Website/media/studio-props-20261028.webp",
+    "output_sha256": "829b014389f3baefa5204401f63b94fe38369d84056acd7a607aed4401ffaf2d",
+    "dimensions": [
+      1920,
+      1200
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity Edit Mode camera capture of seven modular studio prefabs (five supply props and two framed prints), 2026-10-28. Original procedural geometry with the recorded new art textures; prepared for scene staging, not new gameplay. Not included in demo.6. Exact texture prompts and hashes are retained in the canonical texture folder. No generative editing of the capture."
+  },
+  {
+    "source": "Assets/StudioArtPack/StudioExpansion20261028/Previews/StudioExpansion.png",
+    "source_sha256": "cfb854733345eb62e4e4e6ae041301b3a0be0f26c296bafdbf9877c2c722c5be",
+    "output": "Website/media/studio-expansion-20261028.webp",
+    "output_sha256": "0b42bf2ab82c898ddc63d3b2cba5b7790b935b1c5e8ec927b82ca56cbdf192d4",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 98, method 6",
+    "attribution": "Native Unity Edit Mode camera capture of a separate studio art study, 2026-10-28. Not recorded gameplay, a change to PrototypeScene, or an update to the demo.6 download. The source scene contains original generated prints; their exact prompts and hashes are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json. No generative editing of the capture."
   }
 ]
