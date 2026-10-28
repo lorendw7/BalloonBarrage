@@ -2,6 +2,10 @@
 
 Retrieved: October 11, 2026; status updated October 28. The creator authorized this collection for noncommercial development packages and selected downloaded music for gameplay. Studio music belongs to interfaces. Public demo.6 retains complete-song Goin' Under / Beginner. The current source candidate wires short Goin' Under and Springtime profiles, pre-start selection, cue seeking, event filtering and record isolation; three pattern/effect decisions and candidate play/package acceptance remain open.
 
+## October 29 expansion
+
+The [open music/studio update](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) adds four MintoDog CC0 tracks and three ParagonX9 CC BY-SA 3.0 classics through the existing song selector, for ten choices. New charts are project-authored practice grids with unverified listening calibration. Classics play fully and retain original MP3s, attribution and BY-SA licensing. Existing StepMania files and noncommercial restrictions remain preserved. The update guide owns the new track table, provenance and reproduction commands; [Validation](../Project/VALIDATION.md) owns completed runtime/package evidence.
+
 ## Downloaded collection
 
 Source: [StepMania official repository](https://github.com/stepmania/stepmania/tree/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205), pinned to revision `825467bcd81c812b33ad684dc04dd151b2d5dec3`.

@@ -1,14 +1,18 @@
 # Development roadmap
 
-Updated: October 28, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior, [Validation](../Project/VALIDATION.md) owns evidence, and [README](../../README.md) is the entry point.
+Updated: October 29, 2026 (Asia/Tokyo). This is the single delivery plan. [Game design](GAME_DESIGN.md) owns behavior, [Validation](../Project/VALIDATION.md) owns evidence, and [README](../../README.md) is the entry point.
 
 ## Current decision
 
-Preserve the complete-song **v0.1.0-demo.6** Windows package as the current packaged Kyudaisai fallback while preparing a separately versioned, feedback-driven candidate. Demo.6 packages commit `afdf4da`; **demo.5** remains the rollback. The candidate is not accepted merely because its plan, content or assets exist. It must pass its own source, Unity, exact-package and physical readability checks before replacing the booth default.
+The [October 29 expansion](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) prepares **v0.1.0-demo.7** with ten songs, four CC0 short rounds, three complete ParagonX9 classics under CC BY-SA 3.0 and current studio art promoted into production. Learner-owned gameplay scripts remain unchanged. [Validation](../Project/VALIDATION.md) records the actual build, package, automated runtime and publication results. Full-catalog human listening/play and exhibition hardware remain separate observations.
 
-Recent anonymous trial feedback said the game felt carefully made, but that the two-minute play stayed mechanically similar and that the balloon-hit effect sometimes appeared offset. The creator chose this response: investigate alignment, shorten the exhibition round, add a second selectable song, author several balloon-barrage patterns and add bounded pop-effect variations. [Validation](../Project/VALIDATION.md#external-playtest-feedback-received-october-28) records the evidence boundary; [game design](GAME_DESIGN.md#kyudaisai-feedback-revision--source-candidate) owns intended behavior.
+Preserve the complete-song **v0.1.0-demo.6** Windows package as the current packaged Kyudaisai fallback while preparing a separately versioned, feedback-driven candidate. Demo.6 packages commit `afdf4da`; **demo.5** remains the rollback. A new candidate needs source, affected Unity and exact-package checks before replacing the booth default; plan/content/assets alone are insufficient. Record physical readability separately when observed, without treating automated results as human acceptance.
 
-The product remains a casual, relaxing rhythm game: free aim, unrestricted-duration held fire, persistent colorful paint and an optional beat reward. [Game design](GAME_DESIGN.md) defines these rules. The creator explicitly authorized the assistant to save the Kyudaisai runtime scaffold, then reserved three short decisions for the learner in `KyudaisaiLearnerCore.cs`. Review those functions one at a time before candidate acceptance; maintainers continue to own assets, song/chart data, tools, documentation, website and checks.
+The October 29 planning revision prioritizes a **60–75-second festival round, preferably about 65 seconds**, with a 90–120-second visitor turn. Start with two curated songs and make musical phrases drive the existing barrage families before introducing new target rules. Existing 80–87-second windows and complete songs remain saved as they are; new shorter profiles are not implemented by this plan. [Music-led festival variety](GAME_DESIGN.md#music-led-festival-variety--proposed) owns pacing, interactions and fairness.
+
+Anonymous trial feedback identified mechanically uniform play and an occasional apparently offset hit effect. Address those observations through readable musical variation and contact checks. [Validation](../Project/VALIDATION.md#external-playtest-feedback-received-october-28) records the evidence boundary; more imported tracks or decorative effects alone do not establish improved play.
+
+The product remains a casual, relaxing rhythm game: free aim, unrestricted-duration held fire, persistent colorful paint and an optional beat reward. [Game design](GAME_DESIGN.md) defines these rules. The authorized Kyudaisai runtime scaffold and the three learner decisions in `KyudaisaiLearnerCore.cs` are saved. Future gameplay increments remain learner-owned; maintainers own assets, song/chart data, tools, documentation, website and checks.
 
 The festival dates previously checked on the [official site](https://kyudaisai.jp/79th/) on October 22 are October 31–November 1, 2026. The creator plans October 31; booth, operating hours, equipment, operator coverage and November 1 participation are unconfirmed. Do not treat festival-wide hours as this project's schedule.
 
@@ -23,7 +27,7 @@ The festival dates previously checked on the [official site](https://kyudaisai.j
 | Performance | The October 27 2K Editor fixture measured 3.733 ms mean / 6.584 ms p95 with 1,000 marks | This is an Editor diagnostic, not guaranteed standalone 120 FPS or capacity for more objects |
 | New art and website | The [October 28 studio expansion](../Art/STUDIO_EXPANSION_20261028.md) develops reusable studio assets, a separate composition study and a clearer trilingual art showcase | Label concepts, native scene previews and released gameplay separately. Use the new pack's own verification record for its status |
 | Recent player feedback | Anonymous responses reported uniform pacing and an occasional apparently offset balloon-hit effect | Exact build/hardware are unknown. Treat these as prioritization evidence; reproduce alignment and validate a shorter varied candidate rather than claiming a confirmed root cause |
-| Candidate source integration | Two short profiles, two runtime song buttons, chart filtering, isolated record keys, deterministic placement slots, contact-point burst handoff and eight serialized fragment prefabs are saved | Three learner functions still use safe defaults. No observed full candidate round or new package exists; segmented playback permission, physical readability, timing/listening, pattern variety and effect variation remain unaccepted |
+| Candidate source integration | Ten profiles through Start → list/preview → Play; seven 80–87-second windows, three complete classics, isolated record keys, deterministic slots, contact-point handoff and eight fragment prefabs are saved | Three learner functions are saved. Phrase-driven selection, 60–75-second profiles and new interactions remain proposals. New practice grids still need listening/calibration; use the October 29 verification for actual automated evidence |
 
 Physical spray feel, venue-volume listening, unfamiliar-player observations and real-Mac launch were explicitly excluded from the automated release pass. They remain optional future observations, **not failed gates and not passes**. Do not reinstate them as prerequisites for completing the already authorized automated work. Exact evidence, archive hashes and historical creator reports stay in [Validation](../Project/VALIDATION.md).
 
@@ -33,10 +37,10 @@ Dates are targets. A later date does not imply an earlier task passed. The creat
 
 | Target | Deliverable | Owner and completion rule |
 |---|---|---|
-| Oct 28 | Record feedback and save candidate scaffold | Saved: two 75–90-second windows, second tap-only song, source selection UI, timing/profile wiring, contact-point handoff, deterministic slots and eight effect references. Static Unity and preprocessing checks pass; this does not prove a playable candidate |
-| Oct 29 | Learner core and one observed short round | Learner writes pattern phase selection, pattern offsets and effect mapping one function at a time. Then pass center/edge hit alignment, pause, natural settlement, selection and Retry for one profile before testing both songs |
-| Oct 29–30 | Candidate playtest and authored-variety review | Complete two observed rounds per song, exercise sweep/fan/cluster and all intended effect mappings, confirm isolated records/credits, and tune only after recording the strongest readability issue |
-| Oct 30 | Candidate freeze and exact-package decision | Build a new immutable version only if selected-song audio/chart/credits, round timing, patterns, effect alignment, cleanup, results/Retry, trilingual UI and exact-package startup pass. Preserve ZIPs, checksums and notices. Otherwise retain demo.6 as the booth primary |
+| Oct 28–29 baseline | Preserve existing candidate and content evidence | Scaffold and the learner's three functions are saved; the working catalog now has ten profiles. Preserve concurrent work and demo.6 fallback. Use Validation for actual runtime/package results |
+| Oct 29 next | Choose the exhibit pair and prepare one shorter profile | Listen to existing tracks; select a spacious and a livelier option. Prepare one phrase-bounded 60–75-second window with cue/event metadata, ending, attribution and a new profile key; prefer about 65 seconds. This is planned data work, not a claim of calibrated charts |
+| Oct 29–30 optional increment | One phrase-driven barrage trial | Learner replaces elapsed-third selection with one explicit phrase lookup in a separate reviewable increment. Maintainer prepares section data and checks; reuse current patterns/rewards. If it is not clear and stable, keep existing pattern behavior |
+| Oct 30 freeze | Select the exact booth package and scope | Verify the selected audio/chart/window, profile records, timing, score, alignment, capacity/cleanup, pause, results/Retry and localized UI using affected checks, then an immutable package/startup check if packaging is requested. Compare the new profile's musical readability if a creator observation is available. Freeze without adding another mechanic; unresolved new work falls back to the verified package/profile |
 | Oct 31 | Exhibition, if logistics are confirmed | Use the new candidate only if its gates pass; otherwise use demo.6. Follow the documented handoff/recovery path and retain observations with exact version, song/profile and hardware context |
 | Nov 1 | Optional second day | Continue only if participation is confirmed; retain the same package unless a separately verified fix is needed |
 
@@ -44,19 +48,20 @@ No new executable, renamed replacement ZIP, feature-complete claim or performanc
 
 ## Kyudaisai gameplay revision
 
-Work in this order. A lower row does not start merely because its assets are ready.
+Work in this order. The source status below does not imply completed listening or human acceptance. [Game design](GAME_DESIGN.md#music-led-festival-variety--proposed) owns the interaction rules; do not copy them into a second design specification.
 
 | Priority | Smallest reviewable increment | Completion evidence |
 |---|---|---|
 | P0 — hit-effect alignment | **Source saved:** both hit paths pass sampled contact to the independent burst without changing scoring | Static call-site check passes; center/edge attachment, one-hit appearance and transient cleanup still need Play Mode observation |
-| P0 — shorter session | **Source saved:** Goin' Under 82.285714 s and Springtime 84.541927 s profiles seek/filter from unchanged source audio at pitch 1 | Static cue/event/duration checks pass; audio, visible timer, natural results, pause and Retry still need observed rounds |
-| P1 — three song choices | **Source saved:** Start opens a dropdown with preview; Play confirms matching clip/chart/profile/record key; Back returns to title | Current-source verification is recorded in Validation; physical listening, complete rounds, Retry and exact-package identity remain open |
-| P1 — authored barrages | **Source saved:** learner chooses sweep/fan/cluster; denser scene uses bounded active count and alternate rows | All three remain readable in full-round observation; no silent event loss or per-frame random spawning |
-| P1 — pop variations | **Source saved:** learner selects among eight serialized effects by color index | Visual variants respect the one-hit guard and particle budget, preserve next-target/music clarity and clean up on Retry/title |
+| P0 — shorter musical session | **Planned:** prepare one 60–75-second window, then the second exhibit choice; existing profiles stay intact | Check phrase start/end, source-to-round event conversion, credits, distinct record keys, timer/settlement, pause and Retry. Listen before calling the new window musically authored; never shorten by raising pitch/speed |
+| P1 — exhibit curation | **Saved:** ten-song selector. **Planned:** two clearly identified short exhibit choices; full catalog remains standard play | Matching clip/chart/window/record and duration label; avoid presenting a 254-second classic as a short queue round. Curated UI is not yet implemented |
+| P1 — phrase-driven barrages | **Saved:** sweep/fan/cluster selected by elapsed thirds. **Planned:** explicit phrase metadata selects direction/spacing and a repeated motif | One learner-owned selection increment; verify boundary times, deterministic placement, target visibility and capacity without moving judgement times or dropping events |
+| P2 — target timing cue | **Planned optional trial:** associate one approach cue with the next matching target | Same clock/window/reward; observe ordinary early hits, held fire and overlap. Defer if it competes with target visibility or cannot be verified before freeze |
+| Preserve — pop variations | **Source saved:** eight color-indexed fragment effects | Preserve one-hit guard, bounded feedback and Retry cleanup. Extra variants do not substitute for musical interaction |
 
-All three pinned songs now have short profiles: Goin' Under (82.286 s / 68 events), Springtime (84.542 s / 147 events) and Mecha-Tribe Assault (80 s / 137 events). The last uses an explicit head-only balloon adaptation that omits sustain tails and mines. The updated scene uses a 16-target cap, 2.8-second spawn lead, five-second post-beat cleanup and free-row placement. Keep originals, hashes, attribution and notices; the noncommercial/segmented-playback packaging boundary remains in Music and Charts.
+The saved catalog and provenance are documented in [Music and charts](MUSIC_AND_CHARTS.md) and the [October 29 expansion](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md). Ten available tracks are a content library, not ten required exhibit choices. Prioritize one polished short profile and then a contrasting second profile. Do not compress all old events into the shorter window. Keep the saved capacity/cadence, originals, hashes, attribution and notices.
 
-Candidate acceptance requires at least two observed complete rounds per song/profile, including pause/resume and Retry, plus center/edge hit checks during every pattern family. Record exact source/package and hardware. Automated checks, a website build or a startup smoke cannot replace those observations.
+For each newly selected exhibit profile, check start, natural ending, pause/resume, Retry, score identity, event density and center/edge effects. If human comparison is performed, aim for two rounds per selected profile and record whether the phrase changes are recognizable and held fire remains comfortable. Full ten-song listening is separate work. Human observations remain optional and cannot be claimed from automated results; missing observations do not invalidate previously completed automated release work. An unclear experimental interaction stays out of the booth default.
 
 ## Parallel work and asset acceptance
 
@@ -71,12 +76,12 @@ Useful art is art that can be reused and evaluated. Prefer a small coherent pack
 
 ## Immediate lesson queue
 
-For each item, explain **one small function**, let the learner write it, then review and verify the saved result. The creator explicitly authorized the surrounding source scaffold; no other core rewrite is needed for this lesson sequence.
+The three original functions are saved; do not restart them as unfinished exercises. For new gameplay, explain **one small function**, let the learner write it, then review and verify. This planning request does not authorize an assistant-written core rewrite.
 
-1. In `KyudaisaiLearnerCore.SelectBarragePattern`, split normalized round progress into three sections and return lateral sweep, shallow fan and staggered cluster.
-2. In `KyudaisaiLearnerCore.CalculatePatternOffset`, map the supplied slot to normalized x and give fan/cluster distinct, bounded y behavior. Review camera readability before adding complexity.
-3. In `KyudaisaiLearnerCore.SelectExplosionVariant`, return a valid palette index, initially by wrapping/clamping the balloon color index. Verify ordinary/on-beat cleanup and dense-passage visibility.
-4. Run the focused static validation, then observe center/edge hits, pause, natural results, song switching and Retry. Do not package until both songs complete twice and the rights gate is resolved.
+1. With the current code unchanged, listen to one candidate song and mark a coherent 60–75-second window plus its phrase changes. Maintainer can prepare derived profile/section data and provenance; preserve existing profile identities.
+2. Next gameplay lesson, if selected: given a current song time and explicit section ranges, return the matching section's existing pattern, with a safe fallback. Start with one boundary; the learner writes the lookup before any caller/schema integration.
+3. Review boundary behavior and pause/Retry against one clock, then integrate one phrase source in a separate learner increment. Keep the saved offset/effect mapping and scoring unchanged.
+4. Verify the first short profile, then prepare the contrasting second. Freeze existing behavior if a phrase lookup or target cue remains incomplete; defer the richer interactions below.
 
 ## Post-festival milestones
 
@@ -86,13 +91,26 @@ Start no earlier than November 2 after preserving the package and any exhibition
 |---|---|---|
 | M0 — review and preserve | Archive release hashes, current source, known limits and any versioned observations; choose the most important player problem | One ranked backlog item has a reproduction or observation and a measurable acceptance condition; keep demo.6 recoverable |
 | M1 — comfort and settings | M0; teach one audio, display or signed timing-calibration setting in the existing solo loop | Defaults preserve current behavior; value persists; pause/retry/relaunch and trilingual layout are checked. No silent timing-window/reward changes |
-| M2 — song and encounter library | Complete or continue the feedback-driven candidate; stable song/chart/round/pattern/rules identities before more content | Two or three rights-checked songs load matching audio/chart/credits, complete and short profiles isolate records, and authored pattern/effect sets remain readable. Add one content item at a time |
+| M2 — musical interaction slice | M0 plus a stable short solo profile; use the existing ten-track library before importing more. First phrase-authored patterns, then choose one richer interaction from the design | One interaction adds recognizable musical/aiming variety in a comparison round; records, cadence, timing, paint and no-failure play remain coherent. Listen/calibrate one chart at a time; imported grids alone do not satisfy this milestone |
 | M3 — paint rendering study | A measured paint/object cost or a specific receiver requirement; follow [full-scene paint architecture](FULL_SCENE_PAINT_ARCHITECTURE.md) on one planar receiver in a separate scene | Correct pigment/contact/overlap, persistence through results, clean Retry and measured object/memory behavior. Compare against the current sprites before deciding whether to promote |
 | M4 — explorable studio learning slice | M0 plus explicit choice to explore movement; original graybox with a short route and landmarks, then one movement/camera lesson | One small area is comfortable to traverse and supports readable aim/rhythm/paint. Compare it with fixed-camera solo; retain it as a study if it weakens the core experience |
 | M5 — local co-op | Stable solo loop and selected input lesson; P1 mouse plus explicitly paired P2 gamepad, Xbox first | Independent reticles/release guards, single target resolution, shared clock and reliable pause/disconnect/reconnect. Beitong follows as a separate device check |
 | M6 — broader distribution | Evidence of demand and target hardware access | Real-Mac launch, signing/notarization and any broader support have their own tested packages and stated limits; availability of a Universal ZIP alone is insufficient |
 
 M3 and M4 are separate experiments, not prerequisites to enjoy the fixed-camera game. Do not combine movement, camera, new paint rendering, song selection and co-op into one lesson. Art/website work may continue in parallel without consuming the current gameplay milestone's acceptance time.
+
+### Musical interaction experiments
+
+After the festival, progress within M2 only when the previous slice is useful. Each experiment gets a learner-owned gameplay increment and a keep/revise/defer decision; none is an exhibition commitment.
+
+| Order | Experiment and smallest slice | Evaluation |
+|---|---|---|
+| 1 | One listen-then-answer motif using visual demonstration markers and a repeated three-position answer | Demonstration cannot be mistaken for hittable balloons; players anticipate the answer without needing a memory test or extra button |
+| 2 | One sustained phrase with a visual paint ribbon on an existing eligible planar receiver; no tracking score initially | Held spray follows comfortably; actual contact/pigment and retained marks stay correct, music/targets remain visible, and missing the guide has no penalty |
+| 3 | One chorus relay and a final focal event on an already calibrated chart | Aim route remains possible at saved cadence; each event resolves once, ordinary hits still work and no extra scoring targets are fabricated |
+| 4 | A quieter painted-studio ending, after the interaction itself is convincing | The result view lets players recognize their own painting. Artwork export/saving is a separate choice; no account, collectible or progression system is required |
+
+Target cues may precede these experiments if observation shows players cannot connect the existing NEXT cue with a balloon. A scoring ribbon, new note type, chord rule or reward formula is a separate later design with versioned records. Co-op, movement and roguelite upgrades retain their own milestones rather than being bundled into this rhythm work.
 
 ### Original 3D-map study
 
@@ -102,13 +120,14 @@ After one reviewable slice, decide to promote, revise or archive it. A larger ma
 
 ## Exhibit session and recovery
 
-For an accepted short candidate, plan a 2–2.5 minute turn: short instructions, a 75–90-second song window and a brief result/paint moment. Preserve original source files and do not change playback speed/pitch; cue windows require recorded metadata and appropriate permission. If the candidate is not accepted, demo.6 remains a 3–4 minute turn with the complete 123.429-second song. Use Japanese-first instructions with the existing Chinese/Japanese/English selector; no account entry, public name leaderboard or compulsory score comparison is needed.
+For a newly verified short candidate, plan a **90–120-second visitor turn**: roughly 10–20 seconds for instructions/selection, **60–75 seconds of gameplay (prefer about 65)** and 10–20 seconds for results/paint/handoff. These are planning targets; no current profile is shortened by this document. The complete classics remain standard-play choices. Preserve source files and speed/pitch; cue windows need recorded metadata and appropriate usage rights. If the shorter profile is not ready at freeze, use the verified existing profile/package and state its actual duration; demo.6 still needs roughly a 3–4 minute turn. Use Japanese-first instructions with the Chinese/Japanese/English selector; no account, public name leaderboard or compulsory score comparison is needed.
 
 The [operator runbook](../Project/EXHIBITION_RUNBOOK.md) owns setup, handoff and recovery. The optional [creator playtest template](../Project/EXHIBITION_PLAYTEST.md) can record comfort, timing clarity, dense-paint readability and audio observations if performed. Preserve the tested version/hardware context instead of converting a report into general acceptance of later code.
 
 ## Change and cut rules
 
 - Fix a reproduced reliability, contact, readability or localization blocker before adding ornament. Defer milestone flourishes, extra bob, new-record animation, extra variants and reflection work first.
+- Freeze the shortest coherent verified profile first. Cut the target cue and new interactions before risking song/clock/results reliability. Never force an abrupt ending or cram the old event count into a 60–75-second window; if necessary choose a different song or retain the existing fallback with its actual duration.
 - Preserve demo.6's complete-song fallback, existing rewards/window, finite hit cadence, round-persistent paint and original notices. A candidate short profile may change only its explicit start/end/event window; do not overwrite source audio, change pitch/speed or mix records across profiles. No timed fading, oldest-first removal or silent paint cap; optimize only from measured cost.
 - Keep new art studies separate from production promotion. Website build, asset import, native render, Play Mode fixture and exact-package launch each prove different things.
 - Use the [desktop release runbook](../Project/PACKAGING_LESSON.md) for a requested new package. Never overwrite an existing public release ZIP or remove the rollback while validating its successor.

@@ -1,0 +1,895 @@
+{
+  "title": "Chaoz Fantasy",
+  "artist": "ParagonX9",
+  "chartAuthor": "BalloonBarrage project",
+  "difficulty": "Practice",
+  "bpm": 162.347,
+  "durationSeconds": 133.90367346938777,
+  "audioSampleCount": 5905152,
+  "audioSampleRate": 44100,
+  "license": "CC-BY-SA-3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "source": {
+    "filename": "ChaozFantasy.mp3",
+    "title": "Chaoz Fantasy",
+    "id": "chaoz-fantasy",
+    "bpm": 162.347,
+    "sourcePage": "https://www.newgrounds.com/audio/listen/85046",
+    "downloadEntryPoint": "https://www.newgrounds.com/audio/download/85046",
+    "downloadUrl": "https://audio-download.ngfiles.com/85000/85046_newgrounds_parago.mp3?f1770478210",
+    "published": "2007-06-18",
+    "timingEvidence": "Author page BPM: 162.347",
+    "license": "CC-BY-SA-3.0",
+    "author": "ParagonX9",
+    "bytes": 5454223,
+    "sha256": "6102c77d86b7d131dc5d7f4e4eff6e7b0df2c8165bd8bdfc7c63757e486f0e14"
+  },
+  "adaptation": "Project-authored two-beat practice grid, phase zero; eight-beat lead-in and three-second ending. Complete unchanged recording, no looping or cropping. This chart and the project's synchronized-sequence contributions are CC BY-SA 3.0. Not an upstream or other game's chart. Listening calibration remains unverified.",
+  "events": [
+    {
+      "id": 0,
+      "beat": 8,
+      "timeSeconds": 2.956629935
+    },
+    {
+      "id": 1,
+      "beat": 10,
+      "timeSeconds": 3.695787418
+    },
+    {
+      "id": 2,
+      "beat": 12,
+      "timeSeconds": 4.434944902
+    },
+    {
+      "id": 3,
+      "beat": 14,
+      "timeSeconds": 5.174102386
+    },
+    {
+      "id": 4,
+      "beat": 16,
+      "timeSeconds": 5.913259869
+    },
+    {
+      "id": 5,
+      "beat": 18,
+      "timeSeconds": 6.652417353
+    },
+    {
+      "id": 6,
+      "beat": 20,
+      "timeSeconds": 7.391574837
+    },
+    {
+      "id": 7,
+      "beat": 22,
+      "timeSeconds": 8.13073232
+    },
+    {
+      "id": 8,
+      "beat": 24,
+      "timeSeconds": 8.869889804
+    },
+    {
+      "id": 9,
+      "beat": 26,
+      "timeSeconds": 9.609047288
+    },
+    {
+      "id": 10,
+      "beat": 28,
+      "timeSeconds": 10.348204771
+    },
+    {
+      "id": 11,
+      "beat": 30,
+      "timeSeconds": 11.087362255
+    },
+    {
+      "id": 12,
+      "beat": 32,
+      "timeSeconds": 11.826519739
+    },
+    {
+      "id": 13,
+      "beat": 34,
+      "timeSeconds": 12.565677222
+    },
+    {
+      "id": 14,
+      "beat": 36,
+      "timeSeconds": 13.304834706
+    },
+    {
+      "id": 15,
+      "beat": 38,
+      "timeSeconds": 14.04399219
+    },
+    {
+      "id": 16,
+      "beat": 40,
+      "timeSeconds": 14.783149673
+    },
+    {
+      "id": 17,
+      "beat": 42,
+      "timeSeconds": 15.522307157
+    },
+    {
+      "id": 18,
+      "beat": 44,
+      "timeSeconds": 16.261464641
+    },
+    {
+      "id": 19,
+      "beat": 46,
+      "timeSeconds": 17.000622124
+    },
+    {
+      "id": 20,
+      "beat": 48,
+      "timeSeconds": 17.739779608
+    },
+    {
+      "id": 21,
+      "beat": 50,
+      "timeSeconds": 18.478937092
+    },
+    {
+      "id": 22,
+      "beat": 52,
+      "timeSeconds": 19.218094575
+    },
+    {
+      "id": 23,
+      "beat": 54,
+      "timeSeconds": 19.957252059
+    },
+    {
+      "id": 24,
+      "beat": 56,
+      "timeSeconds": 20.696409543
+    },
+    {
+      "id": 25,
+      "beat": 58,
+      "timeSeconds": 21.435567026
+    },
+    {
+      "id": 26,
+      "beat": 60,
+      "timeSeconds": 22.17472451
+    },
+    {
+      "id": 27,
+      "beat": 62,
+      "timeSeconds": 22.913881994
+    },
+    {
+      "id": 28,
+      "beat": 64,
+      "timeSeconds": 23.653039477
+    },
+    {
+      "id": 29,
+      "beat": 66,
+      "timeSeconds": 24.392196961
+    },
+    {
+      "id": 30,
+      "beat": 68,
+      "timeSeconds": 25.131354444
+    },
+    {
+      "id": 31,
+      "beat": 70,
+      "timeSeconds": 25.870511928
+    },
+    {
+      "id": 32,
+      "beat": 72,
+      "timeSeconds": 26.609669412
+    },
+    {
+      "id": 33,
+      "beat": 74,
+      "timeSeconds": 27.348826895
+    },
+    {
+      "id": 34,
+      "beat": 76,
+      "timeSeconds": 28.087984379
+    },
+    {
+      "id": 35,
+      "beat": 78,
+      "timeSeconds": 28.827141863
+    },
+    {
+      "id": 36,
+      "beat": 80,
+      "timeSeconds": 29.566299346
+    },
+    {
+      "id": 37,
+      "beat": 82,
+      "timeSeconds": 30.30545683
+    },
+    {
+      "id": 38,
+      "beat": 84,
+      "timeSeconds": 31.044614314
+    },
+    {
+      "id": 39,
+      "beat": 86,
+      "timeSeconds": 31.783771797
+    },
+    {
+      "id": 40,
+      "beat": 88,
+      "timeSeconds": 32.522929281
+    },
+    {
+      "id": 41,
+      "beat": 90,
+      "timeSeconds": 33.262086765
+    },
+    {
+      "id": 42,
+      "beat": 92,
+      "timeSeconds": 34.001244248
+    },
+    {
+      "id": 43,
+      "beat": 94,
+      "timeSeconds": 34.740401732
+    },
+    {
+      "id": 44,
+      "beat": 96,
+      "timeSeconds": 35.479559216
+    },
+    {
+      "id": 45,
+      "beat": 98,
+      "timeSeconds": 36.218716699
+    },
+    {
+      "id": 46,
+      "beat": 100,
+      "timeSeconds": 36.957874183
+    },
+    {
+      "id": 47,
+      "beat": 102,
+      "timeSeconds": 37.697031667
+    },
+    {
+      "id": 48,
+      "beat": 104,
+      "timeSeconds": 38.43618915
+    },
+    {
+      "id": 49,
+      "beat": 106,
+      "timeSeconds": 39.175346634
+    },
+    {
+      "id": 50,
+      "beat": 108,
+      "timeSeconds": 39.914504118
+    },
+    {
+      "id": 51,
+      "beat": 110,
+      "timeSeconds": 40.653661601
+    },
+    {
+      "id": 52,
+      "beat": 112,
+      "timeSeconds": 41.392819085
+    },
+    {
+      "id": 53,
+      "beat": 114,
+      "timeSeconds": 42.131976569
+    },
+    {
+      "id": 54,
+      "beat": 116,
+      "timeSeconds": 42.871134052
+    },
+    {
+      "id": 55,
+      "beat": 118,
+      "timeSeconds": 43.610291536
+    },
+    {
+      "id": 56,
+      "beat": 120,
+      "timeSeconds": 44.34944902
+    },
+    {
+      "id": 57,
+      "beat": 122,
+      "timeSeconds": 45.088606503
+    },
+    {
+      "id": 58,
+      "beat": 124,
+      "timeSeconds": 45.827763987
+    },
+    {
+      "id": 59,
+      "beat": 126,
+      "timeSeconds": 46.566921471
+    },
+    {
+      "id": 60,
+      "beat": 128,
+      "timeSeconds": 47.306078954
+    },
+    {
+      "id": 61,
+      "beat": 130,
+      "timeSeconds": 48.045236438
+    },
+    {
+      "id": 62,
+      "beat": 132,
+      "timeSeconds": 48.784393922
+    },
+    {
+      "id": 63,
+      "beat": 134,
+      "timeSeconds": 49.523551405
+    },
+    {
+      "id": 64,
+      "beat": 136,
+      "timeSeconds": 50.262708889
+    },
+    {
+      "id": 65,
+      "beat": 138,
+      "timeSeconds": 51.001866373
+    },
+    {
+      "id": 66,
+      "beat": 140,
+      "timeSeconds": 51.741023856
+    },
+    {
+      "id": 67,
+      "beat": 142,
+      "timeSeconds": 52.48018134
+    },
+    {
+      "id": 68,
+      "beat": 144,
+      "timeSeconds": 53.219338824
+    },
+    {
+      "id": 69,
+      "beat": 146,
+      "timeSeconds": 53.958496307
+    },
+    {
+      "id": 70,
+      "beat": 148,
+      "timeSeconds": 54.697653791
+    },
+    {
+      "id": 71,
+      "beat": 150,
+      "timeSeconds": 55.436811275
+    },
+    {
+      "id": 72,
+      "beat": 152,
+      "timeSeconds": 56.175968758
+    },
+    {
+      "id": 73,
+      "beat": 154,
+      "timeSeconds": 56.915126242
+    },
+    {
+      "id": 74,
+      "beat": 156,
+      "timeSeconds": 57.654283726
+    },
+    {
+      "id": 75,
+      "beat": 158,
+      "timeSeconds": 58.393441209
+    },
+    {
+      "id": 76,
+      "beat": 160,
+      "timeSeconds": 59.132598693
+    },
+    {
+      "id": 77,
+      "beat": 162,
+      "timeSeconds": 59.871756177
+    },
+    {
+      "id": 78,
+      "beat": 164,
+      "timeSeconds": 60.61091366
+    },
+    {
+      "id": 79,
+      "beat": 166,
+      "timeSeconds": 61.350071144
+    },
+    {
+      "id": 80,
+      "beat": 168,
+      "timeSeconds": 62.089228628
+    },
+    {
+      "id": 81,
+      "beat": 170,
+      "timeSeconds": 62.828386111
+    },
+    {
+      "id": 82,
+      "beat": 172,
+      "timeSeconds": 63.567543595
+    },
+    {
+      "id": 83,
+      "beat": 174,
+      "timeSeconds": 64.306701079
+    },
+    {
+      "id": 84,
+      "beat": 176,
+      "timeSeconds": 65.045858562
+    },
+    {
+      "id": 85,
+      "beat": 178,
+      "timeSeconds": 65.785016046
+    },
+    {
+      "id": 86,
+      "beat": 180,
+      "timeSeconds": 66.52417353
+    },
+    {
+      "id": 87,
+      "beat": 182,
+      "timeSeconds": 67.263331013
+    },
+    {
+      "id": 88,
+      "beat": 184,
+      "timeSeconds": 68.002488497
+    },
+    {
+      "id": 89,
+      "beat": 186,
+      "timeSeconds": 68.741645981
+    },
+    {
+      "id": 90,
+      "beat": 188,
+      "timeSeconds": 69.480803464
+    },
+    {
+      "id": 91,
+      "beat": 190,
+      "timeSeconds": 70.219960948
+    },
+    {
+      "id": 92,
+      "beat": 192,
+      "timeSeconds": 70.959118432
+    },
+    {
+      "id": 93,
+      "beat": 194,
+      "timeSeconds": 71.698275915
+    },
+    {
+      "id": 94,
+      "beat": 196,
+      "timeSeconds": 72.437433399
+    },
+    {
+      "id": 95,
+      "beat": 198,
+      "timeSeconds": 73.176590882
+    },
+    {
+      "id": 96,
+      "beat": 200,
+      "timeSeconds": 73.915748366
+    },
+    {
+      "id": 97,
+      "beat": 202,
+      "timeSeconds": 74.65490585
+    },
+    {
+      "id": 98,
+      "beat": 204,
+      "timeSeconds": 75.394063333
+    },
+    {
+      "id": 99,
+      "beat": 206,
+      "timeSeconds": 76.133220817
+    },
+    {
+      "id": 100,
+      "beat": 208,
+      "timeSeconds": 76.872378301
+    },
+    {
+      "id": 101,
+      "beat": 210,
+      "timeSeconds": 77.611535784
+    },
+    {
+      "id": 102,
+      "beat": 212,
+      "timeSeconds": 78.350693268
+    },
+    {
+      "id": 103,
+      "beat": 214,
+      "timeSeconds": 79.089850752
+    },
+    {
+      "id": 104,
+      "beat": 216,
+      "timeSeconds": 79.829008235
+    },
+    {
+      "id": 105,
+      "beat": 218,
+      "timeSeconds": 80.568165719
+    },
+    {
+      "id": 106,
+      "beat": 220,
+      "timeSeconds": 81.307323203
+    },
+    {
+      "id": 107,
+      "beat": 222,
+      "timeSeconds": 82.046480686
+    },
+    {
+      "id": 108,
+      "beat": 224,
+      "timeSeconds": 82.78563817
+    },
+    {
+      "id": 109,
+      "beat": 226,
+      "timeSeconds": 83.524795654
+    },
+    {
+      "id": 110,
+      "beat": 228,
+      "timeSeconds": 84.263953137
+    },
+    {
+      "id": 111,
+      "beat": 230,
+      "timeSeconds": 85.003110621
+    },
+    {
+      "id": 112,
+      "beat": 232,
+      "timeSeconds": 85.742268105
+    },
+    {
+      "id": 113,
+      "beat": 234,
+      "timeSeconds": 86.481425588
+    },
+    {
+      "id": 114,
+      "beat": 236,
+      "timeSeconds": 87.220583072
+    },
+    {
+      "id": 115,
+      "beat": 238,
+      "timeSeconds": 87.959740556
+    },
+    {
+      "id": 116,
+      "beat": 240,
+      "timeSeconds": 88.698898039
+    },
+    {
+      "id": 117,
+      "beat": 242,
+      "timeSeconds": 89.438055523
+    },
+    {
+      "id": 118,
+      "beat": 244,
+      "timeSeconds": 90.177213007
+    },
+    {
+      "id": 119,
+      "beat": 246,
+      "timeSeconds": 90.91637049
+    },
+    {
+      "id": 120,
+      "beat": 248,
+      "timeSeconds": 91.655527974
+    },
+    {
+      "id": 121,
+      "beat": 250,
+      "timeSeconds": 92.394685458
+    },
+    {
+      "id": 122,
+      "beat": 252,
+      "timeSeconds": 93.133842941
+    },
+    {
+      "id": 123,
+      "beat": 254,
+      "timeSeconds": 93.873000425
+    },
+    {
+      "id": 124,
+      "beat": 256,
+      "timeSeconds": 94.612157909
+    },
+    {
+      "id": 125,
+      "beat": 258,
+      "timeSeconds": 95.351315392
+    },
+    {
+      "id": 126,
+      "beat": 260,
+      "timeSeconds": 96.090472876
+    },
+    {
+      "id": 127,
+      "beat": 262,
+      "timeSeconds": 96.82963036
+    },
+    {
+      "id": 128,
+      "beat": 264,
+      "timeSeconds": 97.568787843
+    },
+    {
+      "id": 129,
+      "beat": 266,
+      "timeSeconds": 98.307945327
+    },
+    {
+      "id": 130,
+      "beat": 268,
+      "timeSeconds": 99.047102811
+    },
+    {
+      "id": 131,
+      "beat": 270,
+      "timeSeconds": 99.786260294
+    },
+    {
+      "id": 132,
+      "beat": 272,
+      "timeSeconds": 100.525417778
+    },
+    {
+      "id": 133,
+      "beat": 274,
+      "timeSeconds": 101.264575262
+    },
+    {
+      "id": 134,
+      "beat": 276,
+      "timeSeconds": 102.003732745
+    },
+    {
+      "id": 135,
+      "beat": 278,
+      "timeSeconds": 102.742890229
+    },
+    {
+      "id": 136,
+      "beat": 280,
+      "timeSeconds": 103.482047713
+    },
+    {
+      "id": 137,
+      "beat": 282,
+      "timeSeconds": 104.221205196
+    },
+    {
+      "id": 138,
+      "beat": 284,
+      "timeSeconds": 104.96036268
+    },
+    {
+      "id": 139,
+      "beat": 286,
+      "timeSeconds": 105.699520164
+    },
+    {
+      "id": 140,
+      "beat": 288,
+      "timeSeconds": 106.438677647
+    },
+    {
+      "id": 141,
+      "beat": 290,
+      "timeSeconds": 107.177835131
+    },
+    {
+      "id": 142,
+      "beat": 292,
+      "timeSeconds": 107.916992615
+    },
+    {
+      "id": 143,
+      "beat": 294,
+      "timeSeconds": 108.656150098
+    },
+    {
+      "id": 144,
+      "beat": 296,
+      "timeSeconds": 109.395307582
+    },
+    {
+      "id": 145,
+      "beat": 298,
+      "timeSeconds": 110.134465066
+    },
+    {
+      "id": 146,
+      "beat": 300,
+      "timeSeconds": 110.873622549
+    },
+    {
+      "id": 147,
+      "beat": 302,
+      "timeSeconds": 111.612780033
+    },
+    {
+      "id": 148,
+      "beat": 304,
+      "timeSeconds": 112.351937517
+    },
+    {
+      "id": 149,
+      "beat": 306,
+      "timeSeconds": 113.091095
+    },
+    {
+      "id": 150,
+      "beat": 308,
+      "timeSeconds": 113.830252484
+    },
+    {
+      "id": 151,
+      "beat": 310,
+      "timeSeconds": 114.569409968
+    },
+    {
+      "id": 152,
+      "beat": 312,
+      "timeSeconds": 115.308567451
+    },
+    {
+      "id": 153,
+      "beat": 314,
+      "timeSeconds": 116.047724935
+    },
+    {
+      "id": 154,
+      "beat": 316,
+      "timeSeconds": 116.786882419
+    },
+    {
+      "id": 155,
+      "beat": 318,
+      "timeSeconds": 117.526039902
+    },
+    {
+      "id": 156,
+      "beat": 320,
+      "timeSeconds": 118.265197386
+    },
+    {
+      "id": 157,
+      "beat": 322,
+      "timeSeconds": 119.00435487
+    },
+    {
+      "id": 158,
+      "beat": 324,
+      "timeSeconds": 119.743512353
+    },
+    {
+      "id": 159,
+      "beat": 326,
+      "timeSeconds": 120.482669837
+    },
+    {
+      "id": 160,
+      "beat": 328,
+      "timeSeconds": 121.22182732
+    },
+    {
+      "id": 161,
+      "beat": 330,
+      "timeSeconds": 121.960984804
+    },
+    {
+      "id": 162,
+      "beat": 332,
+      "timeSeconds": 122.700142288
+    },
+    {
+      "id": 163,
+      "beat": 334,
+      "timeSeconds": 123.439299771
+    },
+    {
+      "id": 164,
+      "beat": 336,
+      "timeSeconds": 124.178457255
+    },
+    {
+      "id": 165,
+      "beat": 338,
+      "timeSeconds": 124.917614739
+    },
+    {
+      "id": 166,
+      "beat": 340,
+      "timeSeconds": 125.656772222
+    },
+    {
+      "id": 167,
+      "beat": 342,
+      "timeSeconds": 126.395929706
+    },
+    {
+      "id": 168,
+      "beat": 344,
+      "timeSeconds": 127.13508719
+    },
+    {
+      "id": 169,
+      "beat": 346,
+      "timeSeconds": 127.874244673
+    },
+    {
+      "id": 170,
+      "beat": 348,
+      "timeSeconds": 128.613402157
+    },
+    {
+      "id": 171,
+      "beat": 350,
+      "timeSeconds": 129.352559641
+    },
+    {
+      "id": 172,
+      "beat": 352,
+      "timeSeconds": 130.091717124
+    }
+  ]
+}

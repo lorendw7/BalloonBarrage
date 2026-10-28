@@ -84,3 +84,7 @@ Use case: stylized-concept. Asset type: production game wall albedo texture for 
 ```text
 Use case: stylized-concept. Asset type: balloon visual development reference sheet for a cozy Unity 3D graffiti balloon-popping game, not a runtime sprite atlas. Landscape sheet, warm cream plain background. Exactly three isolated balloons equally spaced in a single row: coral red, deep teal, muted indigo. Each balloon has instantly recognizable rounded pear silhouette, a visible small tied triangular knot, one short gently curved charcoal string, satin rubber surface with broad soft off-white highlight on upper left and clear darker edge. Balloon body occupies 65% of sheet height, short string 15%. Hand-painted polished stylized 3D aesthetic, rounded friendly shapes. No paint splats, no room, no props, no letters, no text, no grids, no watermark, no ground shadow. Clear silhouette and warm-cool contrast usable as modeling and material reference.
 ```
+
+## October 29 production integration
+
+[Open music and studio update](OPEN_MUSIC_STUDIO_UPDATE_20261029.md): seven recordings, ten selectable profiles, current studio prefabs promoted into production and five Kenney CC0 decorations, with license/hash manifests. Native previews and verification are in `Assets/StudioArtPack/OpenExpansion20261028`.

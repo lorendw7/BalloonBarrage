@@ -1,0 +1,52 @@
+{
+  "songs": [
+    {
+      "trackId": "cozy-puzzle-1-practice-v1",
+      "title": "Cozy Puzzle In-Game 1",
+      "artist": "MintoDog",
+      "audioPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_1_bpm118_0.ogg",
+      "chartRelativePath": "Rhythm/OpenMusic20261028/cozy-puzzle-1.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 81.35593220338983,
+      "roundDurationSeconds": 81.35593220338983,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 77
+    },
+    {
+      "trackId": "cozy-puzzle-2-practice-v1",
+      "title": "Cozy Puzzle In-Game 2",
+      "artist": "MintoDog",
+      "audioPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_2_bpm90_0.ogg",
+      "chartRelativePath": "Rhythm/OpenMusic20261028/cozy-puzzle-2.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 85.33333333333333,
+      "roundDurationSeconds": 85.33333333333333,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 61
+    },
+    {
+      "trackId": "magic-puzzle-1-practice-v1",
+      "title": "Magic Puzzle In-Game 1",
+      "artist": "MintoDog",
+      "audioPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_1_bpm110_0.ogg",
+      "chartRelativePath": "Rhythm/OpenMusic20261028/magic-puzzle-1.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 87.27272727272727,
+      "roundDurationSeconds": 87.27272727272727,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 77
+    },
+    {
+      "trackId": "magic-puzzle-2-practice-v1",
+      "title": "Magic Puzzle In-Game 2",
+      "artist": "MintoDog",
+      "audioPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_2_bpm120_0.ogg",
+      "chartRelativePath": "Rhythm/OpenMusic20261028/magic-puzzle-2.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 80.0,
+      "roundDurationSeconds": 80.0,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 77
+    }
+  ]
+}

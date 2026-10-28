@@ -1,0 +1,40 @@
+{
+  "songs": [
+    {
+      "trackId": "chaoz-fantasy-full-practice-v1",
+      "title": "Chaoz Fantasy",
+      "artist": "ParagonX9",
+      "audioPath": "Assets/Audio/Music/Classics20261029/ChaozFantasy.mp3",
+      "chartRelativePath": "Rhythm/Classics20261029/chaoz-fantasy.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 133.90367346938777,
+      "roundDurationSeconds": 133.90367346938777,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 173
+    },
+    {
+      "trackId": "chaoz-airflow-full-practice-v1",
+      "title": "Chaoz Airflow",
+      "artist": "ParagonX9",
+      "audioPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
+      "chartRelativePath": "Rhythm/Classics20261029/chaoz-airflow.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 253.77959183673468,
+      "roundDurationSeconds": 253.77959183673468,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 362
+    },
+    {
+      "trackId": "chaoz-impact-full-practice-v1",
+      "title": "Chaoz Impact",
+      "artist": "ParagonX9",
+      "audioPath": "Assets/Audio/Music/Classics20261029/ChaozImpact.mp3",
+      "chartRelativePath": "Rhythm/Classics20261029/chaoz-impact.json",
+      "sourceCueInSeconds": 0,
+      "sourceCueOutSeconds": 115.5395918367347,
+      "roundDurationSeconds": 115.5395918367347,
+      "sourceEventStartId": 0,
+      "sourceEventEndIdExclusive": 160
+    }
+  ]
+}

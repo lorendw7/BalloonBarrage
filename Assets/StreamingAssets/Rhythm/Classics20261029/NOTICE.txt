@@ -1,0 +1,16 @@
+ParagonX9 classics, retrieved October 29, 2026 (Asia/Tokyo).
+
+Chaoz Fantasy (2007), Chaoz Impact (2008), Chaoz Airflow (2009), by ParagonX9.
+Copyright ParagonX9. Author: https://paragonx9.newgrounds.com/
+License: Creative Commons Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/
+
+Author pages, exact original CDN download URLs, sizes and SHA-256: source-manifest.json.
+Recordings remain byte-identical; complete playback, no crops or loops.
+Project-authored practice grids and project contributions to their synchronized sequences
+are offered under the same CC BY-SA 3.0 license. No upstream game charts are included.
+Retain attribution and share adaptations alike. No author endorsement is implied.
+Unmodified source recordings remain freely accessible under Originals/; no DRM is applied.
+Other independent software/assets retain their own notices. In particular StepMania songs
+remain restricted to noncommercial packages; that restriction does not relicense these recordings.
+Grid phase/listening calibration remains unverified. See each chart's adaptation field.

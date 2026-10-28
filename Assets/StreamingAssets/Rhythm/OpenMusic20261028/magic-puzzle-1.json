@@ -1,0 +1,414 @@
+{
+  "title": "Magic Puzzle In-Game 1",
+  "artist": "MintoDog",
+  "chartAuthor": "BalloonBarrage project",
+  "difficulty": "Practice",
+  "bpm": 110,
+  "durationSeconds": 87.27272727272727,
+  "audioDurationSeconds": 122.18181405895692,
+  "audioSampleCount": 5388218,
+  "audioSampleRate": 44100,
+  "source": {
+    "filename": "magic_puzzle_in-game_1_bpm110_0.ogg",
+    "title": "Magic Puzzle In-Game 1",
+    "id": "magic-puzzle-1",
+    "bpm": 110,
+    "roundBars": 40,
+    "published": "2026-07-22",
+    "author": "MintoDog",
+    "sourcePage": "https://opengameart.org/content/magic-puzzle-in-game-1",
+    "downloadUrl": "https://opengameart.org/sites/default/files/magic_puzzle_in-game_1_bpm110_0.ogg",
+    "license": "CC0-1.0",
+    "bytes": 3509046,
+    "sha256": "f94f4a6f895f22669dd5ced4061f932e1b5335e40e36d1e94fe7cfc222a4c2b8"
+  },
+  "license": "CC0-1.0",
+  "events": [
+    {
+      "id": 0,
+      "beat": 4,
+      "timeSeconds": 2.181818182
+    },
+    {
+      "id": 1,
+      "beat": 6,
+      "timeSeconds": 3.272727273
+    },
+    {
+      "id": 2,
+      "beat": 8,
+      "timeSeconds": 4.363636364
+    },
+    {
+      "id": 3,
+      "beat": 10,
+      "timeSeconds": 5.454545455
+    },
+    {
+      "id": 4,
+      "beat": 12,
+      "timeSeconds": 6.545454545
+    },
+    {
+      "id": 5,
+      "beat": 14,
+      "timeSeconds": 7.636363636
+    },
+    {
+      "id": 6,
+      "beat": 16,
+      "timeSeconds": 8.727272727
+    },
+    {
+      "id": 7,
+      "beat": 18,
+      "timeSeconds": 9.818181818
+    },
+    {
+      "id": 8,
+      "beat": 20,
+      "timeSeconds": 10.909090909
+    },
+    {
+      "id": 9,
+      "beat": 22,
+      "timeSeconds": 12.0
+    },
+    {
+      "id": 10,
+      "beat": 24,
+      "timeSeconds": 13.090909091
+    },
+    {
+      "id": 11,
+      "beat": 26,
+      "timeSeconds": 14.181818182
+    },
+    {
+      "id": 12,
+      "beat": 28,
+      "timeSeconds": 15.272727273
+    },
+    {
+      "id": 13,
+      "beat": 30,
+      "timeSeconds": 16.363636364
+    },
+    {
+      "id": 14,
+      "beat": 32,
+      "timeSeconds": 17.454545455
+    },
+    {
+      "id": 15,
+      "beat": 34,
+      "timeSeconds": 18.545454545
+    },
+    {
+      "id": 16,
+      "beat": 36,
+      "timeSeconds": 19.636363636
+    },
+    {
+      "id": 17,
+      "beat": 38,
+      "timeSeconds": 20.727272727
+    },
+    {
+      "id": 18,
+      "beat": 40,
+      "timeSeconds": 21.818181818
+    },
+    {
+      "id": 19,
+      "beat": 42,
+      "timeSeconds": 22.909090909
+    },
+    {
+      "id": 20,
+      "beat": 44,
+      "timeSeconds": 24.0
+    },
+    {
+      "id": 21,
+      "beat": 46,
+      "timeSeconds": 25.090909091
+    },
+    {
+      "id": 22,
+      "beat": 48,
+      "timeSeconds": 26.181818182
+    },
+    {
+      "id": 23,
+      "beat": 50,
+      "timeSeconds": 27.272727273
+    },
+    {
+      "id": 24,
+      "beat": 52,
+      "timeSeconds": 28.363636364
+    },
+    {
+      "id": 25,
+      "beat": 54,
+      "timeSeconds": 29.454545455
+    },
+    {
+      "id": 26,
+      "beat": 56,
+      "timeSeconds": 30.545454545
+    },
+    {
+      "id": 27,
+      "beat": 58,
+      "timeSeconds": 31.636363636
+    },
+    {
+      "id": 28,
+      "beat": 60,
+      "timeSeconds": 32.727272727
+    },
+    {
+      "id": 29,
+      "beat": 62,
+      "timeSeconds": 33.818181818
+    },
+    {
+      "id": 30,
+      "beat": 64,
+      "timeSeconds": 34.909090909
+    },
+    {
+      "id": 31,
+      "beat": 66,
+      "timeSeconds": 36.0
+    },
+    {
+      "id": 32,
+      "beat": 68,
+      "timeSeconds": 37.090909091
+    },
+    {
+      "id": 33,
+      "beat": 70,
+      "timeSeconds": 38.181818182
+    },
+    {
+      "id": 34,
+      "beat": 72,
+      "timeSeconds": 39.272727273
+    },
+    {
+      "id": 35,
+      "beat": 74,
+      "timeSeconds": 40.363636364
+    },
+    {
+      "id": 36,
+      "beat": 76,
+      "timeSeconds": 41.454545455
+    },
+    {
+      "id": 37,
+      "beat": 78,
+      "timeSeconds": 42.545454545
+    },
+    {
+      "id": 38,
+      "beat": 80,
+      "timeSeconds": 43.636363636
+    },
+    {
+      "id": 39,
+      "beat": 82,
+      "timeSeconds": 44.727272727
+    },
+    {
+      "id": 40,
+      "beat": 84,
+      "timeSeconds": 45.818181818
+    },
+    {
+      "id": 41,
+      "beat": 86,
+      "timeSeconds": 46.909090909
+    },
+    {
+      "id": 42,
+      "beat": 88,
+      "timeSeconds": 48.0
+    },
+    {
+      "id": 43,
+      "beat": 90,
+      "timeSeconds": 49.090909091
+    },
+    {
+      "id": 44,
+      "beat": 92,
+      "timeSeconds": 50.181818182
+    },
+    {
+      "id": 45,
+      "beat": 94,
+      "timeSeconds": 51.272727273
+    },
+    {
+      "id": 46,
+      "beat": 96,
+      "timeSeconds": 52.363636364
+    },
+    {
+      "id": 47,
+      "beat": 98,
+      "timeSeconds": 53.454545455
+    },
+    {
+      "id": 48,
+      "beat": 100,
+      "timeSeconds": 54.545454545
+    },
+    {
+      "id": 49,
+      "beat": 102,
+      "timeSeconds": 55.636363636
+    },
+    {
+      "id": 50,
+      "beat": 104,
+      "timeSeconds": 56.727272727
+    },
+    {
+      "id": 51,
+      "beat": 106,
+      "timeSeconds": 57.818181818
+    },
+    {
+      "id": 52,
+      "beat": 108,
+      "timeSeconds": 58.909090909
+    },
+    {
+      "id": 53,
+      "beat": 110,
+      "timeSeconds": 60.0
+    },
+    {
+      "id": 54,
+      "beat": 112,
+      "timeSeconds": 61.090909091
+    },
+    {
+      "id": 55,
+      "beat": 114,
+      "timeSeconds": 62.181818182
+    },
+    {
+      "id": 56,
+      "beat": 116,
+      "timeSeconds": 63.272727273
+    },
+    {
+      "id": 57,
+      "beat": 118,
+      "timeSeconds": 64.363636364
+    },
+    {
+      "id": 58,
+      "beat": 120,
+      "timeSeconds": 65.454545455
+    },
+    {
+      "id": 59,
+      "beat": 122,
+      "timeSeconds": 66.545454545
+    },
+    {
+      "id": 60,
+      "beat": 124,
+      "timeSeconds": 67.636363636
+    },
+    {
+      "id": 61,
+      "beat": 126,
+      "timeSeconds": 68.727272727
+    },
+    {
+      "id": 62,
+      "beat": 128,
+      "timeSeconds": 69.818181818
+    },
+    {
+      "id": 63,
+      "beat": 130,
+      "timeSeconds": 70.909090909
+    },
+    {
+      "id": 64,
+      "beat": 132,
+      "timeSeconds": 72.0
+    },
+    {
+      "id": 65,
+      "beat": 134,
+      "timeSeconds": 73.090909091
+    },
+    {
+      "id": 66,
+      "beat": 136,
+      "timeSeconds": 74.181818182
+    },
+    {
+      "id": 67,
+      "beat": 138,
+      "timeSeconds": 75.272727273
+    },
+    {
+      "id": 68,
+      "beat": 140,
+      "timeSeconds": 76.363636364
+    },
+    {
+      "id": 69,
+      "beat": 142,
+      "timeSeconds": 77.454545455
+    },
+    {
+      "id": 70,
+      "beat": 144,
+      "timeSeconds": 78.545454545
+    },
+    {
+      "id": 71,
+      "beat": 146,
+      "timeSeconds": 79.636363636
+    },
+    {
+      "id": 72,
+      "beat": 148,
+      "timeSeconds": 80.727272727
+    },
+    {
+      "id": 73,
+      "beat": 150,
+      "timeSeconds": 81.818181818
+    },
+    {
+      "id": 74,
+      "beat": 152,
+      "timeSeconds": 82.909090909
+    },
+    {
+      "id": 75,
+      "beat": 154,
+      "timeSeconds": 84.0
+    },
+    {
+      "id": 76,
+      "beat": 156,
+      "timeSeconds": 85.090909091
+    }
+  ],
+  "adaptation": "Project-authored two-beat practice grid using the tempo in the author's filename, phase zero. Four-beat lead-in, no audio edits. Not an upstream authored chart; listening calibration remains unverified."
+}

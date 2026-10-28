@@ -1,5 +1,15 @@
 # Validation record
 
+## October 29 music and studio expansion — source checks
+
+The [expansion guide](../Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) records seven added recordings, licenses, original hashes, practice-grid boundaries and production art integration. `Assets/Scripts` is unchanged from `cb2c514`. Unity 6000.0.77f1 completed `OPEN_EXPANSION_SETUP_OK` and `CLASSIC_MUSIC_SETUP_OK`: ten serialized profiles, seven promoted studio prefabs, five Kenney decorations, supported materials and no added decoration colliders/runtime behaviours. Existing gameplay component data other than the song catalog was protected during authoring; original GUIDs and lightmaps remain.
+
+`OPEN_MUSIC_RUNTIME_OK` verifies ten dropdown profiles against audio, chart title, cue/duration, event ranges and unique record identities. Cozy Puzzle In-Game 1 completed its 81.356-second round naturally, with peak eight targets; Chaoz Fantasy completed its 133.904-second full recording naturally, with peak eleven. Each passed a one-second pause with a frozen DSP song clock, resume, visible results and Retry reset. Other eight profiles have selection/data checks, not full-round evidence. The fixture initially exposed test-tool assumptions about Dropdown.Start/animation and the intentionally zero post-settlement clock; only the corrected final run is counted as passed. Runtime gameplay was not changed for those fixes.
+
+The updated `KYUDAISAI_RUNTIME_SMOKE_OK` also passes all ten clip/chart selections, Back/confirm, original Springtime playback with natural peak fourteen, sixteen-target capacity, slot reuse and the pigment handler. Synthetic C input remains a handler check, not physical key acceptance. The source audit passes 1,430 unique metadata GUIDs and 41 documentation files. Thirteen rhythm tests (including original-byte hashes, legal notices, profile boundaries and altered-cache rejection), two desktop-packager tests and thirteen website tests pass. Sandbox restrictions required running temp-file and loopback tests outside the sandbox.
+
+Native scene and 3840×2160 runtime captures were inspected; the website derivatives preserve source/output hashes. No new generative image editing occurred. Human listening calibration, MP3 encoder-delay alignment, full ten-song play, exhibition hardware, sustained player performance and real-Mac acceptance are unverified. The computer-use skill's native pipe was unavailable after retry/reset, so no desktop-UI playtest is claimed. Build/package/publication evidence follows separately for the exact demo.7 outputs.
+
 Updated: October 28, 2026 (Asia/Tokyo). This record separates saved implementation, creator-reported playtests, automated checks and outstanding release gates. Earlier lesson-by-lesson narrative is superseded by the current evidence below; prior committed versions remain in Git history. [Roadmap](../Design/ROADMAP.md) owns delivery decisions.
 
 ## External playtest feedback received October 28

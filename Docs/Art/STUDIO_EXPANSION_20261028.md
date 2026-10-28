@@ -2,6 +2,8 @@
 
 This additive pack prepares seven reusable studio prefabs and three original text-free images. Two saved Unity scenes let the new art be inspected without changing `PrototypeScene` or the demo.6 desktop packages. [Art direction](ART_DIRECTION.md) owns the visual language; [Roadmap](../Design/ROADMAP.md) owns any later production promotion.
 
+The [October 29 production update](OPEN_MUSIC_STUDIO_UPDATE_20261029.md) subsequently places these seven prefabs into `PrototypeScene`. The original study and verification below describe their initial delivery; immutable demo.6 packages remain unchanged.
+
 ## Open the delivered scenes
 
 - [Studio expansion](../../Assets/Scenes/StudioExpansion20261028.unity): a copy of the production room with supplies and artwork staged around the perimeter. Existing gameplay components remain inherited; this pass verifies art authoring, not Play Mode.

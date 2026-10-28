@@ -32,6 +32,9 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "gameplay-open-music-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/GameplayClassic.png",
+    "song-selection-ten-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/SongListTen.png",
+    "studio-integrated-20261029": "Assets/StudioArtPack/OpenExpansion20261028/Previews/Studio.png",
     "gameplay-official-20261028": "Assets/Art/Previews/Official20261028/Gameplay.png",
     "song-selection-20261028": "Assets/Art/Previews/Official20261028/SongSelection.png",
     "title-official-20261028": "Assets/Art/Previews/Official20261028/Title.png",
@@ -58,6 +61,9 @@ SOURCES = {
 }
 
 PREVIEW_ATTRIBUTIONS = {
+    "gameplay-open-music-20261029": "Native Unity 6000.0.77f1 Play Mode 3840x2160 automated capture, October 29 2026. Natural Chaoz Fantasy practice-grid events in the integrated production studio. Corresponding demo.7 source, not standalone capture or human play evidence. No generative editing. Music by ParagonX9, CC BY-SA 3.0; project synchronized-sequence contributions under the same license. Other assets retain original attribution.",
+    "song-selection-ten-20261029": "Native Unity 3840x2160 automated Play Mode capture, October 29 2026, showing the ten-song dropdown in corresponding demo.7 source. The bounded list scrolls to reveal additional tracks. No generative editing. Original menu-art prompts and attribution preserved.",
+    "studio-integrated-20261029": "Native Unity 2560x1440 Edit Mode render of the integrated production studio, October 28-29 2026. Seven current studio prefabs plus five Kenney CC0 models, imported from Kenney's author-uploaded Furniture Pack. Not gameplay, a new light bake or performance evidence. No generative editing. Existing artwork retains exact prompts and attribution.",
     "gameplay-official-20261028": "Native Unity 6000.0.77f1 Play Mode capture, 3840x2160, 4x MSAA, October 28 2026. Current source, natural Springtime chart playback, before stress targets were inserted. Automated fixture, not physical play or a demo.6 package capture. No generative editing. Original art attribution remains preserved.",
     "song-selection-20261028": "Native Unity Play Mode 3840x2160 capture of the current deep-teal selection screen, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved.",
     "title-official-20261028": "Native Unity Play Mode 3840x2160 title-screen capture, October 28 2026. Current source, separate from demo.6. No generative editing. Original menu-art attribution and exact prompts remain preserved.",

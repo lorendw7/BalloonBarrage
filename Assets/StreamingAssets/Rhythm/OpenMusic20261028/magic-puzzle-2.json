@@ -1,0 +1,414 @@
+{
+  "title": "Magic Puzzle In-Game 2",
+  "artist": "MintoDog",
+  "chartAuthor": "BalloonBarrage project",
+  "difficulty": "Practice",
+  "bpm": 120,
+  "durationSeconds": 80.0,
+  "audioDurationSeconds": 120.0,
+  "audioSampleCount": 5292000,
+  "audioSampleRate": 44100,
+  "source": {
+    "filename": "magic_puzzle_in-game_2_bpm120_0.ogg",
+    "title": "Magic Puzzle In-Game 2",
+    "id": "magic-puzzle-2",
+    "bpm": 120,
+    "roundBars": 40,
+    "published": "2026-09-02",
+    "author": "MintoDog",
+    "sourcePage": "https://opengameart.org/content/magic-puzzle-in-game-2",
+    "downloadUrl": "https://opengameart.org/sites/default/files/magic_puzzle_in-game_2_bpm120_0.ogg",
+    "license": "CC0-1.0",
+    "bytes": 3626575,
+    "sha256": "dec433015e1a89501595f5dd28dbb4de0e54cb44967be15af2aac161f1d06138"
+  },
+  "license": "CC0-1.0",
+  "events": [
+    {
+      "id": 0,
+      "beat": 4,
+      "timeSeconds": 2.0
+    },
+    {
+      "id": 1,
+      "beat": 6,
+      "timeSeconds": 3.0
+    },
+    {
+      "id": 2,
+      "beat": 8,
+      "timeSeconds": 4.0
+    },
+    {
+      "id": 3,
+      "beat": 10,
+      "timeSeconds": 5.0
+    },
+    {
+      "id": 4,
+      "beat": 12,
+      "timeSeconds": 6.0
+    },
+    {
+      "id": 5,
+      "beat": 14,
+      "timeSeconds": 7.0
+    },
+    {
+      "id": 6,
+      "beat": 16,
+      "timeSeconds": 8.0
+    },
+    {
+      "id": 7,
+      "beat": 18,
+      "timeSeconds": 9.0
+    },
+    {
+      "id": 8,
+      "beat": 20,
+      "timeSeconds": 10.0
+    },
+    {
+      "id": 9,
+      "beat": 22,
+      "timeSeconds": 11.0
+    },
+    {
+      "id": 10,
+      "beat": 24,
+      "timeSeconds": 12.0
+    },
+    {
+      "id": 11,
+      "beat": 26,
+      "timeSeconds": 13.0
+    },
+    {
+      "id": 12,
+      "beat": 28,
+      "timeSeconds": 14.0
+    },
+    {
+      "id": 13,
+      "beat": 30,
+      "timeSeconds": 15.0
+    },
+    {
+      "id": 14,
+      "beat": 32,
+      "timeSeconds": 16.0
+    },
+    {
+      "id": 15,
+      "beat": 34,
+      "timeSeconds": 17.0
+    },
+    {
+      "id": 16,
+      "beat": 36,
+      "timeSeconds": 18.0
+    },
+    {
+      "id": 17,
+      "beat": 38,
+      "timeSeconds": 19.0
+    },
+    {
+      "id": 18,
+      "beat": 40,
+      "timeSeconds": 20.0
+    },
+    {
+      "id": 19,
+      "beat": 42,
+      "timeSeconds": 21.0
+    },
+    {
+      "id": 20,
+      "beat": 44,
+      "timeSeconds": 22.0
+    },
+    {
+      "id": 21,
+      "beat": 46,
+      "timeSeconds": 23.0
+    },
+    {
+      "id": 22,
+      "beat": 48,
+      "timeSeconds": 24.0
+    },
+    {
+      "id": 23,
+      "beat": 50,
+      "timeSeconds": 25.0
+    },
+    {
+      "id": 24,
+      "beat": 52,
+      "timeSeconds": 26.0
+    },
+    {
+      "id": 25,
+      "beat": 54,
+      "timeSeconds": 27.0
+    },
+    {
+      "id": 26,
+      "beat": 56,
+      "timeSeconds": 28.0
+    },
+    {
+      "id": 27,
+      "beat": 58,
+      "timeSeconds": 29.0
+    },
+    {
+      "id": 28,
+      "beat": 60,
+      "timeSeconds": 30.0
+    },
+    {
+      "id": 29,
+      "beat": 62,
+      "timeSeconds": 31.0
+    },
+    {
+      "id": 30,
+      "beat": 64,
+      "timeSeconds": 32.0
+    },
+    {
+      "id": 31,
+      "beat": 66,
+      "timeSeconds": 33.0
+    },
+    {
+      "id": 32,
+      "beat": 68,
+      "timeSeconds": 34.0
+    },
+    {
+      "id": 33,
+      "beat": 70,
+      "timeSeconds": 35.0
+    },
+    {
+      "id": 34,
+      "beat": 72,
+      "timeSeconds": 36.0
+    },
+    {
+      "id": 35,
+      "beat": 74,
+      "timeSeconds": 37.0
+    },
+    {
+      "id": 36,
+      "beat": 76,
+      "timeSeconds": 38.0
+    },
+    {
+      "id": 37,
+      "beat": 78,
+      "timeSeconds": 39.0
+    },
+    {
+      "id": 38,
+      "beat": 80,
+      "timeSeconds": 40.0
+    },
+    {
+      "id": 39,
+      "beat": 82,
+      "timeSeconds": 41.0
+    },
+    {
+      "id": 40,
+      "beat": 84,
+      "timeSeconds": 42.0
+    },
+    {
+      "id": 41,
+      "beat": 86,
+      "timeSeconds": 43.0
+    },
+    {
+      "id": 42,
+      "beat": 88,
+      "timeSeconds": 44.0
+    },
+    {
+      "id": 43,
+      "beat": 90,
+      "timeSeconds": 45.0
+    },
+    {
+      "id": 44,
+      "beat": 92,
+      "timeSeconds": 46.0
+    },
+    {
+      "id": 45,
+      "beat": 94,
+      "timeSeconds": 47.0
+    },
+    {
+      "id": 46,
+      "beat": 96,
+      "timeSeconds": 48.0
+    },
+    {
+      "id": 47,
+      "beat": 98,
+      "timeSeconds": 49.0
+    },
+    {
+      "id": 48,
+      "beat": 100,
+      "timeSeconds": 50.0
+    },
+    {
+      "id": 49,
+      "beat": 102,
+      "timeSeconds": 51.0
+    },
+    {
+      "id": 50,
+      "beat": 104,
+      "timeSeconds": 52.0
+    },
+    {
+      "id": 51,
+      "beat": 106,
+      "timeSeconds": 53.0
+    },
+    {
+      "id": 52,
+      "beat": 108,
+      "timeSeconds": 54.0
+    },
+    {
+      "id": 53,
+      "beat": 110,
+      "timeSeconds": 55.0
+    },
+    {
+      "id": 54,
+      "beat": 112,
+      "timeSeconds": 56.0
+    },
+    {
+      "id": 55,
+      "beat": 114,
+      "timeSeconds": 57.0
+    },
+    {
+      "id": 56,
+      "beat": 116,
+      "timeSeconds": 58.0
+    },
+    {
+      "id": 57,
+      "beat": 118,
+      "timeSeconds": 59.0
+    },
+    {
+      "id": 58,
+      "beat": 120,
+      "timeSeconds": 60.0
+    },
+    {
+      "id": 59,
+      "beat": 122,
+      "timeSeconds": 61.0
+    },
+    {
+      "id": 60,
+      "beat": 124,
+      "timeSeconds": 62.0
+    },
+    {
+      "id": 61,
+      "beat": 126,
+      "timeSeconds": 63.0
+    },
+    {
+      "id": 62,
+      "beat": 128,
+      "timeSeconds": 64.0
+    },
+    {
+      "id": 63,
+      "beat": 130,
+      "timeSeconds": 65.0
+    },
+    {
+      "id": 64,
+      "beat": 132,
+      "timeSeconds": 66.0
+    },
+    {
+      "id": 65,
+      "beat": 134,
+      "timeSeconds": 67.0
+    },
+    {
+      "id": 66,
+      "beat": 136,
+      "timeSeconds": 68.0
+    },
+    {
+      "id": 67,
+      "beat": 138,
+      "timeSeconds": 69.0
+    },
+    {
+      "id": 68,
+      "beat": 140,
+      "timeSeconds": 70.0
+    },
+    {
+      "id": 69,
+      "beat": 142,
+      "timeSeconds": 71.0
+    },
+    {
+      "id": 70,
+      "beat": 144,
+      "timeSeconds": 72.0
+    },
+    {
+      "id": 71,
+      "beat": 146,
+      "timeSeconds": 73.0
+    },
+    {
+      "id": 72,
+      "beat": 148,
+      "timeSeconds": 74.0
+    },
+    {
+      "id": 73,
+      "beat": 150,
+      "timeSeconds": 75.0
+    },
+    {
+      "id": 74,
+      "beat": 152,
+      "timeSeconds": 76.0
+    },
+    {
+      "id": 75,
+      "beat": 154,
+      "timeSeconds": 77.0
+    },
+    {
+      "id": 76,
+      "beat": 156,
+      "timeSeconds": 78.0
+    }
+  ],
+  "adaptation": "Project-authored two-beat practice grid using the tempo in the author's filename, phase zero. Four-beat lead-in, no audio edits. Not an upstream authored chart; listening calibration remains unverified."
+}

@@ -1,0 +1,74 @@
+{
+  "retrieved": "2026-10-28",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "songs": [
+    {
+      "filename": "cozy_puzzle_in-game_1_bpm118_0.ogg",
+      "title": "Cozy Puzzle In-Game 1",
+      "id": "cozy-puzzle-1",
+      "bpm": 118,
+      "roundBars": 40,
+      "published": "2026-02-05",
+      "author": "MintoDog",
+      "sourcePage": "https://opengameart.org/content/cozy-puzzle-in-game-1",
+      "downloadUrl": "https://opengameart.org/sites/default/files/cozy_puzzle_in-game_1_bpm118_0.ogg",
+      "license": "CC0-1.0",
+      "bytes": 4036007,
+      "sha256": "afa440cb8814907b215b285a0503d39b125b6c83d9fca3f686c969107f04c7f7"
+    },
+    {
+      "filename": "cozy_puzzle_in-game_2_bpm90_0.ogg",
+      "title": "Cozy Puzzle In-Game 2",
+      "id": "cozy-puzzle-2",
+      "bpm": 90,
+      "roundBars": 32,
+      "published": "2026-03-06",
+      "author": "MintoDog",
+      "sourcePage": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+      "downloadUrl": "https://opengameart.org/sites/default/files/cozy_puzzle_in-game_2_bpm90_0.ogg",
+      "license": "CC0-1.0",
+      "bytes": 3897559,
+      "sha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7"
+    },
+    {
+      "filename": "magic_puzzle_in-game_1_bpm110_0.ogg",
+      "title": "Magic Puzzle In-Game 1",
+      "id": "magic-puzzle-1",
+      "bpm": 110,
+      "roundBars": 40,
+      "published": "2026-07-22",
+      "author": "MintoDog",
+      "sourcePage": "https://opengameart.org/content/magic-puzzle-in-game-1",
+      "downloadUrl": "https://opengameart.org/sites/default/files/magic_puzzle_in-game_1_bpm110_0.ogg",
+      "license": "CC0-1.0",
+      "bytes": 3509046,
+      "sha256": "f94f4a6f895f22669dd5ced4061f932e1b5335e40e36d1e94fe7cfc222a4c2b8"
+    },
+    {
+      "filename": "magic_puzzle_in-game_2_bpm120_0.ogg",
+      "title": "Magic Puzzle In-Game 2",
+      "id": "magic-puzzle-2",
+      "bpm": 120,
+      "roundBars": 40,
+      "published": "2026-09-02",
+      "author": "MintoDog",
+      "sourcePage": "https://opengameart.org/content/magic-puzzle-in-game-2",
+      "downloadUrl": "https://opengameart.org/sites/default/files/magic_puzzle_in-game_2_bpm120_0.ogg",
+      "license": "CC0-1.0",
+      "bytes": 3626575,
+      "sha256": "dec433015e1a89501595f5dd28dbb4de0e54cb44967be15af2aac161f1d06138"
+    }
+  ],
+  "art": {
+    "filename": "kenney_furniturePack.zip",
+    "author": "Kenney",
+    "title": "Furniture Pack 1.0",
+    "sourcePage": "https://opengameart.org/content/furniture-kit",
+    "officialPage": "https://kenney.nl/assets/furniture-kit",
+    "downloadUrl": "https://opengameart.org/sites/default/files/kenney_furniturePack.zip",
+    "license": "CC0-1.0",
+    "bytes": 5580414,
+    "sha256": "68afa4e6dc8a53942379fb47f1e84ec735d46b77bb1c1ceb968e245693dde067",
+    "note": "Author-uploaded OpenGameArt distribution. Official-site current archive returned HTTP 403; no claim that this mirror is a newer release. Original OBJ/MTL files preserved; URP materials derived in Unity."
+  }
+}

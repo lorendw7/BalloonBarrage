@@ -1,0 +1,334 @@
+{
+  "title": "Cozy Puzzle In-Game 2",
+  "artist": "MintoDog",
+  "chartAuthor": "BalloonBarrage project",
+  "difficulty": "Practice",
+  "bpm": 90,
+  "durationSeconds": 85.33333333333333,
+  "audioDurationSeconds": 128.0,
+  "audioSampleCount": 5644800,
+  "audioSampleRate": 44100,
+  "source": {
+    "filename": "cozy_puzzle_in-game_2_bpm90_0.ogg",
+    "title": "Cozy Puzzle In-Game 2",
+    "id": "cozy-puzzle-2",
+    "bpm": 90,
+    "roundBars": 32,
+    "published": "2026-03-06",
+    "author": "MintoDog",
+    "sourcePage": "https://opengameart.org/content/cozy-puzzle-in-game-2",
+    "downloadUrl": "https://opengameart.org/sites/default/files/cozy_puzzle_in-game_2_bpm90_0.ogg",
+    "license": "CC0-1.0",
+    "bytes": 3897559,
+    "sha256": "364165e65a7103a17d54ff3b1c0e33149dcee6db33eae082e8d63b658804fcc7"
+  },
+  "license": "CC0-1.0",
+  "events": [
+    {
+      "id": 0,
+      "beat": 4,
+      "timeSeconds": 2.666666667
+    },
+    {
+      "id": 1,
+      "beat": 6,
+      "timeSeconds": 4.0
+    },
+    {
+      "id": 2,
+      "beat": 8,
+      "timeSeconds": 5.333333333
+    },
+    {
+      "id": 3,
+      "beat": 10,
+      "timeSeconds": 6.666666667
+    },
+    {
+      "id": 4,
+      "beat": 12,
+      "timeSeconds": 8.0
+    },
+    {
+      "id": 5,
+      "beat": 14,
+      "timeSeconds": 9.333333333
+    },
+    {
+      "id": 6,
+      "beat": 16,
+      "timeSeconds": 10.666666667
+    },
+    {
+      "id": 7,
+      "beat": 18,
+      "timeSeconds": 12.0
+    },
+    {
+      "id": 8,
+      "beat": 20,
+      "timeSeconds": 13.333333333
+    },
+    {
+      "id": 9,
+      "beat": 22,
+      "timeSeconds": 14.666666667
+    },
+    {
+      "id": 10,
+      "beat": 24,
+      "timeSeconds": 16.0
+    },
+    {
+      "id": 11,
+      "beat": 26,
+      "timeSeconds": 17.333333333
+    },
+    {
+      "id": 12,
+      "beat": 28,
+      "timeSeconds": 18.666666667
+    },
+    {
+      "id": 13,
+      "beat": 30,
+      "timeSeconds": 20.0
+    },
+    {
+      "id": 14,
+      "beat": 32,
+      "timeSeconds": 21.333333333
+    },
+    {
+      "id": 15,
+      "beat": 34,
+      "timeSeconds": 22.666666667
+    },
+    {
+      "id": 16,
+      "beat": 36,
+      "timeSeconds": 24.0
+    },
+    {
+      "id": 17,
+      "beat": 38,
+      "timeSeconds": 25.333333333
+    },
+    {
+      "id": 18,
+      "beat": 40,
+      "timeSeconds": 26.666666667
+    },
+    {
+      "id": 19,
+      "beat": 42,
+      "timeSeconds": 28.0
+    },
+    {
+      "id": 20,
+      "beat": 44,
+      "timeSeconds": 29.333333333
+    },
+    {
+      "id": 21,
+      "beat": 46,
+      "timeSeconds": 30.666666667
+    },
+    {
+      "id": 22,
+      "beat": 48,
+      "timeSeconds": 32.0
+    },
+    {
+      "id": 23,
+      "beat": 50,
+      "timeSeconds": 33.333333333
+    },
+    {
+      "id": 24,
+      "beat": 52,
+      "timeSeconds": 34.666666667
+    },
+    {
+      "id": 25,
+      "beat": 54,
+      "timeSeconds": 36.0
+    },
+    {
+      "id": 26,
+      "beat": 56,
+      "timeSeconds": 37.333333333
+    },
+    {
+      "id": 27,
+      "beat": 58,
+      "timeSeconds": 38.666666667
+    },
+    {
+      "id": 28,
+      "beat": 60,
+      "timeSeconds": 40.0
+    },
+    {
+      "id": 29,
+      "beat": 62,
+      "timeSeconds": 41.333333333
+    },
+    {
+      "id": 30,
+      "beat": 64,
+      "timeSeconds": 42.666666667
+    },
+    {
+      "id": 31,
+      "beat": 66,
+      "timeSeconds": 44.0
+    },
+    {
+      "id": 32,
+      "beat": 68,
+      "timeSeconds": 45.333333333
+    },
+    {
+      "id": 33,
+      "beat": 70,
+      "timeSeconds": 46.666666667
+    },
+    {
+      "id": 34,
+      "beat": 72,
+      "timeSeconds": 48.0
+    },
+    {
+      "id": 35,
+      "beat": 74,
+      "timeSeconds": 49.333333333
+    },
+    {
+      "id": 36,
+      "beat": 76,
+      "timeSeconds": 50.666666667
+    },
+    {
+      "id": 37,
+      "beat": 78,
+      "timeSeconds": 52.0
+    },
+    {
+      "id": 38,
+      "beat": 80,
+      "timeSeconds": 53.333333333
+    },
+    {
+      "id": 39,
+      "beat": 82,
+      "timeSeconds": 54.666666667
+    },
+    {
+      "id": 40,
+      "beat": 84,
+      "timeSeconds": 56.0
+    },
+    {
+      "id": 41,
+      "beat": 86,
+      "timeSeconds": 57.333333333
+    },
+    {
+      "id": 42,
+      "beat": 88,
+      "timeSeconds": 58.666666667
+    },
+    {
+      "id": 43,
+      "beat": 90,
+      "timeSeconds": 60.0
+    },
+    {
+      "id": 44,
+      "beat": 92,
+      "timeSeconds": 61.333333333
+    },
+    {
+      "id": 45,
+      "beat": 94,
+      "timeSeconds": 62.666666667
+    },
+    {
+      "id": 46,
+      "beat": 96,
+      "timeSeconds": 64.0
+    },
+    {
+      "id": 47,
+      "beat": 98,
+      "timeSeconds": 65.333333333
+    },
+    {
+      "id": 48,
+      "beat": 100,
+      "timeSeconds": 66.666666667
+    },
+    {
+      "id": 49,
+      "beat": 102,
+      "timeSeconds": 68.0
+    },
+    {
+      "id": 50,
+      "beat": 104,
+      "timeSeconds": 69.333333333
+    },
+    {
+      "id": 51,
+      "beat": 106,
+      "timeSeconds": 70.666666667
+    },
+    {
+      "id": 52,
+      "beat": 108,
+      "timeSeconds": 72.0
+    },
+    {
+      "id": 53,
+      "beat": 110,
+      "timeSeconds": 73.333333333
+    },
+    {
+      "id": 54,
+      "beat": 112,
+      "timeSeconds": 74.666666667
+    },
+    {
+      "id": 55,
+      "beat": 114,
+      "timeSeconds": 76.0
+    },
+    {
+      "id": 56,
+      "beat": 116,
+      "timeSeconds": 77.333333333
+    },
+    {
+      "id": 57,
+      "beat": 118,
+      "timeSeconds": 78.666666667
+    },
+    {
+      "id": 58,
+      "beat": 120,
+      "timeSeconds": 80.0
+    },
+    {
+      "id": 59,
+      "beat": 122,
+      "timeSeconds": 81.333333333
+    },
+    {
+      "id": 60,
+      "beat": 124,
+      "timeSeconds": 82.666666667
+    }
+  ],
+  "adaptation": "Project-authored two-beat practice grid using the tempo in the author's filename, phase zero. Four-beat lead-in, no audio edits. Not an upstream authored chart; listening calibration remains unverified."
+}

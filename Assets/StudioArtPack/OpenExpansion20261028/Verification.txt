@@ -1,0 +1,6 @@
+OPEN_EXPANSION_SETUP_OK
+Seven serialized song profiles; four unchanged CC0 recordings with separate practice grids.
+Seven current studio-art prefabs and five Kenney OBJ decorations promoted into PrototypeScene.
+No decoration colliders/runtime scripts. Existing gameplay components other than the song catalog remain unchanged.
+New music imports stream audio. Existing lightmaps retained; no new bake or FPS claim.
+CLASSIC_MUSIC_SETUP_OK: three unchanged ParagonX9 recordings, CC BY-SA 3.0 notices/originals and separate full-song practice profiles; ten choices total.

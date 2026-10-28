@@ -94,8 +94,8 @@ public static class KyudaisaiRuntimeSmokeCheck
                 Require(controller.IsChoosingSong && !RoundController.IsPlaying,
                     "Start must open song selection without starting gameplay.");
                 Dropdown list = GameObject.Find("SongList").GetComponent<Dropdown>();
-                Require(list.options.Count == 3, "Song list must contain three tracks.");
-                string[] expected = { "Goin' Under", "Springtime", "Mecha-Tribe Assault" };
+                Require(list.options.Count == 10, "Song list must contain ten tracks.");
+                string[] expected = { "Goin' Under", "Springtime", "Mecha-Tribe Assault", "Cozy Puzzle In-Game 1", "Cozy Puzzle In-Game 2", "Magic Puzzle In-Game 1", "Magic Puzzle In-Game 2", "Chaoz Fantasy", "Chaoz Airflow", "Chaoz Impact" };
                 RhythmChartReader reader = Object.FindFirstObjectByType<RhythmChartReader>();
                 AudioSource music = new SerializedObject(controller).FindProperty("gameMusic")
                     .objectReferenceValue as AudioSource;
@@ -156,7 +156,7 @@ public static class KyudaisaiRuntimeSmokeCheck
                 list.Show();
                 Toggle[] items = GameObject.Find("Dropdown List").GetComponentsInChildren<Toggle>()
                     .Where(toggle => toggle.gameObject.activeInHierarchy).ToArray();
-                Require(items.Length == 3, "Dropdown did not display all three rows.");
+                Require(items.Length == 10, "Dropdown did not create all ten selectable rows.");
                 Capture("SongListOpen");
                 items[2].isOn = true;
                 Require(controller.SelectedSong.title == "Mecha-Tribe Assault", "Clicking a list row did not switch songs.");
@@ -232,7 +232,7 @@ public static class KyudaisaiRuntimeSmokeCheck
 
                 Debug.Log(
                     "KYUDAISAI_RUNTIME_SMOKE_OK: no song buttons, " +
-                    "Start/list/Back/confirm flow, three matching clips/charts, " +
+                    "Start/list/Back/confirm flow, ten matching clips/charts, " +
                     "pigment handler, clock, peak=" + peakActive + ", cap=16 and freed-slot reuse passed.");
                 stageStarted = EditorApplication.timeSinceStartup;
                 SessionState.SetInt(StageKey, 3);

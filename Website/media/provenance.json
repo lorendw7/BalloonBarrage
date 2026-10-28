@@ -303,5 +303,41 @@
     ],
     "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
     "attribution": "Native Unity 6000.0.77f1 Play Mode capture, 3840x2160, 4x MSAA, October 28 2026. Current source, natural Springtime chart playback, before stress targets were inserted. Automated fixture, not physical play or a demo.6 package capture. No generative editing. Original art attribution remains preserved."
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/GameplayClassic.png",
+    "source_sha256": "9966c2dff4d72a1cf8f675601a4af4c1ab30c5c5d1b8e4f5a9df4d5c34f18b66",
+    "output": "Website/media/gameplay-open-music-20261029.webp",
+    "output_sha256": "b5f4526292f44892cb756e6cb98227e6ee7c0c598f93c24db107bff03f87609c",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Play Mode 3840x2160 automated capture, October 29 2026. Natural Chaoz Fantasy practice-grid events in the integrated production studio. Corresponding demo.7 source, not standalone capture or human play evidence. No generative editing. Music by ParagonX9, CC BY-SA 3.0; project synchronized-sequence contributions under the same license. Other assets retain original attribution."
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/SongListTen.png",
+    "source_sha256": "6b15a55b62e412303ef143a53bf082cdba8fee3c33ba3f5b4980dcc4e64eced0",
+    "output": "Website/media/song-selection-ten-20261029.webp",
+    "output_sha256": "5a377818193fb995f00c628947c01523139fbe34918ed143a1650cb8a9ba29ce",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 3840x2160 automated Play Mode capture, October 29 2026, showing the ten-song dropdown in corresponding demo.7 source. The bounded list scrolls to reveal additional tracks. No generative editing. Original menu-art prompts and attribution preserved."
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/Studio.png",
+    "source_sha256": "ef90a67d6a0ce07fe9fe692a7361fd4545e4cef24f96d4f732805363ed72e237",
+    "output": "Website/media/studio-integrated-20261029.webp",
+    "output_sha256": "49c81a7a06b4691fe652b381c46cf6406d05c399a0ef2d24a6b3ffe19a5fdefe",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 2560x1440 Edit Mode render of the integrated production studio, October 28-29 2026. Seven current studio prefabs plus five Kenney CC0 models, imported from Kenney's author-uploaded Furniture Pack. Not gameplay, a new light bake or performance evidence. No generative editing. Existing artwork retains exact prompts and attribution."
   }
 ]

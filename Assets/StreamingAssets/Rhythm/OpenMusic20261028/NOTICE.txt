@@ -1,0 +1,9 @@
+CC0 music expansion, retrieved October 28, 2026.
+
+Cozy Puzzle In-Game 1 & 2 and Magic Puzzle In-Game 1 & 2 by MintoDog.
+Author-uploaded OpenGameArt pages explicitly identify each recording as CC0.
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Audio is byte-identical. The project selects 80-87 second windows and authors practice grids.
+No upstream chart or source DAW project was supplied. Timing/listening calibration is unverified.
+See source-manifest.json for source pages, exact download URLs, byte lengths and SHA-256.
+These CC0 assets do not change the separate noncommercial StepMania restrictions.

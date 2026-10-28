@@ -1,11 +1,32 @@
 [
-  {"source":"Assets/Art/Previews/Official20261028/Gameplay.png","output":"gameplay-official-20261028.png"},
-  {"source":"Website/media/gameplay-official-20261028.webp","output":"gameplay-official-20261028.webp"},
-  {"source":"Assets/Art/Previews/Official20261028/SongSelection.png","output":"song-selection-20261028.png"},
-  {"source":"Website/media/song-selection-20261028.webp","output":"song-selection-20261028.webp"},
-  {"source":"Assets/Art/Previews/Official20261028/Title.png","output":"title-official-20261028.png"},
-  {"source":"Website/media/title-official-20261028.webp","output":"title-official-20261028.webp"},
-  {"source":"Website/media/gameplay-official-share-20261028.jpg","output":"gameplay-official-share-20261028.jpg"},
+  {
+    "source": "Assets/Art/Previews/Official20261028/Gameplay.png",
+    "output": "gameplay-official-20261028.png"
+  },
+  {
+    "source": "Website/media/gameplay-official-20261028.webp",
+    "output": "gameplay-official-20261028.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/SongSelection.png",
+    "output": "song-selection-20261028.png"
+  },
+  {
+    "source": "Website/media/song-selection-20261028.webp",
+    "output": "song-selection-20261028.webp"
+  },
+  {
+    "source": "Assets/Art/Previews/Official20261028/Title.png",
+    "output": "title-official-20261028.png"
+  },
+  {
+    "source": "Website/media/title-official-20261028.webp",
+    "output": "title-official-20261028.webp"
+  },
+  {
+    "source": "Website/media/gameplay-official-share-20261028.jpg",
+    "output": "gameplay-official-share-20261028.jpg"
+  },
   {
     "source": "Website/media/results-statistics-20261023.png",
     "output": "results-statistics-20261023.png"
@@ -173,5 +194,29 @@
   {
     "source": "Website/media/botanical-pigment-print-20261028.webp",
     "output": "botanical-pigment-print-20261028.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/GameplayClassic.png",
+    "output": "gameplay-open-music-20261029.png"
+  },
+  {
+    "source": "Website/media/gameplay-open-music-20261029.webp",
+    "output": "gameplay-open-music-20261029.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/SongListTen.png",
+    "output": "song-selection-ten-20261029.png"
+  },
+  {
+    "source": "Website/media/song-selection-ten-20261029.webp",
+    "output": "song-selection-ten-20261029.webp"
+  },
+  {
+    "source": "Assets/StudioArtPack/OpenExpansion20261028/Previews/Studio.png",
+    "output": "studio-integrated-20261029.png"
+  },
+  {
+    "source": "Website/media/studio-integrated-20261029.webp",
+    "output": "studio-integrated-20261029.webp"
   }
 ]

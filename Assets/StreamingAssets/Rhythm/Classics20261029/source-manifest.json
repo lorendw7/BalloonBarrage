@@ -1,0 +1,57 @@
+{
+  "retrieved": "2026-10-29",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "licenseFile": {
+    "filename": "CC-BY-SA-3.0.txt",
+    "downloadUrl": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt",
+    "bytes": 22240,
+    "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+  },
+  "songs": [
+    {
+      "filename": "ChaozFantasy.mp3",
+      "title": "Chaoz Fantasy",
+      "id": "chaoz-fantasy",
+      "bpm": 162.347,
+      "sourcePage": "https://www.newgrounds.com/audio/listen/85046",
+      "downloadEntryPoint": "https://www.newgrounds.com/audio/download/85046",
+      "downloadUrl": "https://audio-download.ngfiles.com/85000/85046_newgrounds_parago.mp3?f1770478210",
+      "published": "2007-06-18",
+      "timingEvidence": "Author page BPM: 162.347",
+      "license": "CC-BY-SA-3.0",
+      "author": "ParagonX9",
+      "bytes": 5454223,
+      "sha256": "6102c77d86b7d131dc5d7f4e4eff6e7b0df2c8165bd8bdfc7c63757e486f0e14"
+    },
+    {
+      "filename": "ChaozAirflow.mp3",
+      "title": "Chaoz Airflow",
+      "id": "chaoz-airflow",
+      "bpm": 175,
+      "sourcePage": "https://www.newgrounds.com/audio/listen/245921",
+      "downloadEntryPoint": "https://www.newgrounds.com/audio/download/245921",
+      "downloadUrl": "https://audio-download.ngfiles.com/245000/245921_ParagonX9___Chaoz_Airflow.mp3?f1244938398",
+      "published": "2009-06-11",
+      "timingEvidence": "Author description: 175 bpm",
+      "license": "CC-BY-SA-3.0",
+      "author": "ParagonX9",
+      "bytes": 5079688,
+      "sha256": "deaa00c2b21707de9e62a7134f1821950c6f2206a80751fc3520c193bef2689b"
+    },
+    {
+      "filename": "ChaozImpact.mp3",
+      "title": "Chaoz Impact",
+      "id": "chaoz-impact",
+      "bpm": 175,
+      "sourcePage": "https://www.newgrounds.com/audio/listen/152047",
+      "downloadEntryPoint": "https://www.newgrounds.com/audio/download/152047",
+      "downloadUrl": "https://audio-download.ngfiles.com/152000/152047_ParagonX9___Chaoz_Impact.mp3?f1213815199",
+      "published": "2008-06-18",
+      "timingEvidence": "Provisional 175 BPM practice grid; community timing reference https://osu.ppy.sh/community/forums/topics/122110 ; not author-confirmed or listening-calibrated",
+      "license": "CC-BY-SA-3.0",
+      "author": "ParagonX9",
+      "bytes": 1852729,
+      "sha256": "4d9d81bb83259f9af35cef7148f4b7875ab16ce1ee863f2ac721028ae75dcbf5"
+    }
+  ]
+}

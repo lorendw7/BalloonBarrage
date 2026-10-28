@@ -1,0 +1,69 @@
+{
+  "filename": "kenney_furniturePack.zip",
+  "author": "Kenney",
+  "title": "Furniture Pack 1.0",
+  "sourcePage": "https://opengameart.org/content/furniture-kit",
+  "officialPage": "https://kenney.nl/assets/furniture-kit",
+  "downloadUrl": "https://opengameart.org/sites/default/files/kenney_furniturePack.zip",
+  "license": "CC0-1.0",
+  "bytes": 5580414,
+  "sha256": "68afa4e6dc8a53942379fb47f1e84ec735d46b77bb1c1ceb968e245693dde067",
+  "note": "Author-uploaded OpenGameArt distribution. Official-site current archive returned HTTP 403; no claim that this mirror is a newer release. Original OBJ/MTL files preserved; URP materials derived in Unity.",
+  "files": [
+    {
+      "path": "License.txt",
+      "bytes": 575,
+      "sha256": "f2e61608341204c8e28650702cdff7c87c946aec4b8ef83096c8a5c16a52cd5f"
+    },
+    {
+      "path": "Models/pottedPlant.obj",
+      "bytes": 5611,
+      "sha256": "cf66928b943e30ef5c1f06145419ca2cda534249bb4d77831ae723532c4f8de3"
+    },
+    {
+      "path": "Models/pottedPlant.mtl",
+      "bytes": 366,
+      "sha256": "bca73c565e3c81f5a546a0dd17167c7d59249e6a322ec5319f9fb21484fddaaf"
+    },
+    {
+      "path": "Models/plantSmall1.obj",
+      "bytes": 8547,
+      "sha256": "39fe6c2793a23d0a7d60526f0390be9994c285565caf697ac87c4ce5b7cc3101"
+    },
+    {
+      "path": "Models/plantSmall1.mtl",
+      "bytes": 254,
+      "sha256": "28c640c281eef31d648a5651bc984879a21e86a90eee33d3fc51d6029aed881e"
+    },
+    {
+      "path": "Models/plantSmall2.obj",
+      "bytes": 15215,
+      "sha256": "146a9799904b6a20610c764f755991fd926fddda84ca1466a1f203ec19143971"
+    },
+    {
+      "path": "Models/plantSmall2.mtl",
+      "bytes": 254,
+      "sha256": "28c640c281eef31d648a5651bc984879a21e86a90eee33d3fc51d6029aed881e"
+    },
+    {
+      "path": "Models/plantSmall3.obj",
+      "bytes": 8920,
+      "sha256": "95eaca90cf46d5b96ff0ec7b4bfe6e863fa9f6f04b54692b17d51b627a57dd56"
+    },
+    {
+      "path": "Models/plantSmall3.mtl",
+      "bytes": 254,
+      "sha256": "28c640c281eef31d648a5651bc984879a21e86a90eee33d3fc51d6029aed881e"
+    },
+    {
+      "path": "Models/books.obj",
+      "bytes": 4442,
+      "sha256": "91fd64f5fd821b5046724ffa18974e8964b85bfbd4a0d89687d2283966394f5f"
+    },
+    {
+      "path": "Models/books.mtl",
+      "bytes": 470,
+      "sha256": "90b35f0e9448c3a7bf4a16ccbb31a67f9dec1c6727276494fa6109b3d8883a8e"
+    }
+  ]
+}
