@@ -1,8 +1,25 @@
 # Validation record
 
+## Demo.10 focus-recovery release — October 29
+
+The demo.10 desktop candidates package the saved input repair below from **`675eb9a2349264054923740047253fad9ce98945`**, pushed to `main`. Windows and macOS used separate fresh source checkouts/Libraries at `D:/CS/Build/BalloonBarrage-v0.1.0-demo.10` and `D:/CS/Build/BalloonBarrage-v0.1.0-demo.10-macos`. Both passed Git LFS verification; 45 recorded gameplay/scene/prefab/catalog sources match the active project and the isolated diagnostic project, normalizing C# line endings. The source passed 23 rhythm and two packager tests.
+
+Unity **6000.0.77f1** built both non-Development players with **zero errors and zero warnings**. Windows reports 242,189,489 bytes / 398.897 seconds; macOS Universal reports 258,826,880 bytes / 411.353 seconds. No diagnostic runtime probe is included in production Assets.
+
+| Exact archive | Bytes | SHA-256 |
+|---|---:|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.10.zip | 121,538,613 | `b44bd1a49fe48f58230ccf20238514ff5257fd163b5df80ce7faf56572c3c30e` |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.10.zip | 130,681,635 | `d6a575a6498508d20d97dd65bc49002eef1d56222ebb81751b78afe605bec7cc` |
+
+Both ZIPs passed CRC, unique/safe paths, every runtime-file manifest hash, all sixteen pinned StepMania original hashes, all twenty derived charts, notices/credits/font licenses, checksum sidecars and Unity backup exclusion. The Mac executable has x86_64 and arm64 entries and executable ZIP permissions. A fresh Windows extraction passed exhibition preflight and a **62.32-second hidden-window startup check**, initializing Direct3D/Input System and loading the default 45-event festival chart without runtime exceptions or missing-script errors.
+
+This exact-package check is startup evidence. The 15 callback assertions, natural-DSP longest-song synthetic spray diagnostic, 20-profile accelerated flow regression and existing spray Play Mode regression below are separate source evidence. No new exact-ZIP full-song, manual Alt+Tab, human aiming/listening, venue-PC or real-Mac acceptance is claimed. macOS remains unsigned and unnotarized; mixed StepMania content remains noncommercial. Demo.9 and demo.6 remain immutable fallbacks.
+
+Build logs, exact-package checks, fresh extraction, source comparison, startup evidence, release notes and public verification JSON/sidecar are retained under ignored `Builds/Desktop-v0.1.0-demo.10`. Website copy now explains focus recovery in all three languages and retains the actual demo.8 screenshot provenance. Publication and live-route verification are recorded after deployment.
+
 ## Focus recovery and long-song spray — October 29
 
-This source repair is newer than published demo.9; no replacement release is claimed. The tested `PlayerShooter.cs` SHA-256 is `0e41437a65b73553cf4f21b990c2b27b97a2614707b800df80690557feb9be01`, on base `e1a86c2d516eb78425c6dcdc3003a515c6148193`. Focus loss/suspension/disable clear the nozzle and shot audio, restore the pointer and reset recoil; input cannot aim, fire or change pigment while unfocused/suspended. Recovery/re-enable requires release before a new press. The music clock and automatic-pause policy are unchanged.
+This source validation preceded demo.10 packaging; the release record above distinguishes the shipped candidates from these diagnostics. The tested `PlayerShooter.cs` SHA-256 is `0e41437a65b73553cf4f21b990c2b27b97a2614707b800df80690557feb9be01`, on base `e1a86c2d516eb78425c6dcdc3003a515c6148193`. Focus loss/suspension/disable clear the nozzle and shot audio, restore the pointer and reset recoil; input cannot aim, fire or change pigment while unfocused/suspended. Recovery/re-enable requires release before a new press. The music clock and automatic-pause policy are unchanged.
 
 Unity **6000.0.77f1** built a non-Development Windows diagnostic player with **zero errors/warnings**. The isolated identity is `BalloonBarrage.Diagnostics/SprayLongRunProbe`; diagnostics do not use the released game's preference namespace. All **15 method-driven assertions passed**, covering focused fire, focus-loss cleanup/pointer restoration, blocked unfocused aim/fire/pigment, held-button recovery, application suspension/resume, disable/re-enable and round pause/resume. These exercise production callbacks with synthetic input, not physical Alt+Tab or human input acceptance.
 
