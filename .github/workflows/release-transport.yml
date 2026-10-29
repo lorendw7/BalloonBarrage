@@ -9,12 +9,17 @@ on:
       base_tag:
         description: Existing public release used for transport reuse
         required: true
+      public_check:
+        description: Verify anonymous public downloads instead of reconstructing
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
   transport:
+    if: ${{ !inputs.public_check }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -50,3 +55,51 @@ jobs:
             python Tools/Release/desktop_release_delta.py restore "transport/$base" "transport/$delta" "transport/$target"
             gh release upload "$TAG" "transport/$target"
           done
+
+  public-downloads:
+    if: ${{ inputs.public_check }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      TAG: ${{ inputs.tag }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: Hash all six anonymous public downloads
+        run: |
+          python - <<'PY'
+          import concurrent.futures, hashlib, json, os, pathlib, re, urllib.request
+          tag, repo = os.environ['TAG'], os.environ['REPO']
+          if not re.fullmatch(r'v\d+\.\d+\.\d+-demo\.\d+', tag):
+              raise ValueError('Expected a versioned demo tag')
+          with urllib.request.urlopen(f'https://api.github.com/repos/{repo}/releases/tags/{tag}', timeout=45) as response:
+              release = json.load(response)
+          assert not release['draft']
+          prefix = f'https://github.com/{repo}/releases/download/{tag}/'
+          names = [f'BalloonBarrage-{label}-{tag}.zip' for label in ('Windows-x64', 'macOS-Universal')]
+          names += [f'BalloonBarrage-{tag}-verification.json']
+          names += [name + '.sha256' for name in list(names)]
+          expected = [next(a for a in release['assets'] if a['name'] == name) for name in names]
+          def check(asset):
+              url = asset['browser_download_url']
+              assert url == prefix + asset['name']
+              digest, size = hashlib.sha256(), 0
+              with urllib.request.urlopen(url, timeout=45) as response:
+                  assert response.status == 200
+                  while chunk := response.read(1024 * 1024):
+                      digest.update(chunk)
+                      size += len(chunk)
+              sha = digest.hexdigest()
+              assert size == asset['size'] and asset['digest'] == 'sha256:' + sha
+              return {'name': asset['name'], 'status': 200, 'bytes': size, 'sha256': sha, 'matches': True}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+              results = list(pool.map(check, expected))
+          pathlib.Path('public-download-verification.json').write_text(json.dumps({'status': 'passed', 'assets': results}, indent=2))
+          print('PUBLIC_DOWNLOAD_HASHES_OK: six assets')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-download-verification
+          path: public-download-verification.json
+          retention-days: 7

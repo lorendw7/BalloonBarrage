@@ -164,6 +164,8 @@ Record all completed checks and failures in [Validation](VALIDATION.md). A fix r
 
 ## Publish and refresh the website
 
+When the local download route is slow, dispatch the transport workflow with `public_check=true` after publication. Its read-only job downloads all six release files anonymously, checks each complete body against GitHub's size/digest, and retains a small verification artifact. Compare that report with the independently verified local files. This tests public delivery without rebuilding or replacing the release.
+
 After the required platform checks pass, edit the release notes to match the evidence and publish the draft. Use a prerelease for development candidates. Publication triggers `.github/workflows/website.yml`, which rebuilds the static site from `main` and discovers the uploaded Windows/macOS assets independently.
 
 Verify afterward:
