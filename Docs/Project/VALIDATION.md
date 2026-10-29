@@ -1,5 +1,29 @@
 # Validation record
 
+## Focus recovery and long-song spray — October 29
+
+This source repair is newer than published demo.9; no replacement release is claimed. The tested `PlayerShooter.cs` SHA-256 is `0e41437a65b73553cf4f21b990c2b27b97a2614707b800df80690557feb9be01`, on base `e1a86c2d516eb78425c6dcdc3003a515c6148193`. Focus loss/suspension/disable clear the nozzle and shot audio, restore the pointer and reset recoil; input cannot aim, fire or change pigment while unfocused/suspended. Recovery/re-enable requires release before a new press. The music clock and automatic-pause policy are unchanged.
+
+Unity **6000.0.77f1** built a non-Development Windows diagnostic player with **zero errors/warnings**. The isolated identity is `BalloonBarrage.Diagnostics/SprayLongRunProbe`; diagnostics do not use the released game's preference namespace. All **15 method-driven assertions passed**, covering focused fire, focus-loss cleanup/pointer restoration, blocked unfocused aim/fire/pigment, held-button recovery, application suspension/resume, disable/re-enable and round pause/resume. These exercise production callbacks with synthetic input, not physical Alt+Tab or human input acceptance.
+
+The natural-DSP **253.78-second Chaoz Airflow standard** round ran at **2560 × 1440**, with a 120 FPS diagnostic cap, continuously held synthetic fire, a moving aim and pigment changes every eight seconds. It retained **1,542 marks** through Results, cleared the stream and transient impact systems, then cleared all marks/score on Retry. The final capture was inspected. No player runtime errors were recorded.
+
+| Diagnostic measurement | Early / initial | Late / final |
+|---|---:|---:|
+| Frame p50, 10–40 s versus 218.78–248.78 s | 8.334 ms | 8.334 ms |
+| Frame p95, same windows | 8.344 ms | 8.342 ms |
+| Retained marks, first sample versus Results | 16 | 1,542 |
+| Unity total allocated memory, same samples | 140.635 MiB | 148.421 MiB |
+| Draw calls, same samples | 648 | 2,170 |
+
+The 18 spaced snapshots report active main-thread timings of **1.155–3.402 ms**; the 17 available GPU readings are **2.119–7.043 ms**. The GPU reading at 197 seconds was zero/unavailable and is excluded. `GC Allocated In Frame` was unavailable in this non-Development player; no zero-allocation claim is made. Sampled nozzle particles peaked at 146 and transient impact systems at 12; both were zero at Results. Memory/draw count grow with the deliberately retained SpriteRenderers; this run does not establish unlimited paint capacity. No sustained late slowdown or transient-effect accumulation was observed at this workload, so paint rendering, density and persistence were left unchanged.
+
+This is a controlled diagnostic on an RTX 5070 Ti Laptop GPU / Core Ultra 9 275HX, not an all-foreground exhibition-PC FPS guarantee. The window was visible at launch and could be occluded by other desktop work. After the focus assertions the driver replayed focused/released input once to keep the performance workload steady; this override exists only in the diagnostic. Earlier hidden-window GPU/draw counters were zero and are excluded from rendering conclusions. The first diagnostic also exposed unloaded audio before start; the driver now waits for loading. The first subsequent Editor regression was rejected because the probe auto-started in Editor; its bootstrap now excludes Editor. Failed/partial runs remain separate.
+
+Raw final report, player log, zero-warning build summary and `painted-results.png` are under ignored `Logs/SprayPerformance20261029/rendered-final`; the source/assembly/report hashes are in `Logs/SprayPerformance20261029/source-manifest.json`. Reproduction uses [the diagnostic builder](../../Tools/Unity/SprayLongRunBuild.cs) in an isolated project's `Assets/Editor` and [the runtime probe](../../Tools/Unity/SprayLongRunProbe.cs) in its `Assets`, with the same saved gameplay/assets. Build with `-executeMethod SprayLongRunBuild.Run -probeBuildOutput <new directory>`, then launch the diagnostic executable; reports default to its `probe-reports` folder. Keep these tool sources outside production `Assets` and inspect counter availability before interpreting timings.
+
+Additional source regressions passed: `FestivalRuntimeValidation.RunFast` completed **all 20 profiles in 40.80 seconds** using controlled clock offsets, with no recorded runtime errors; this is accelerated flow evidence. The existing `ExhibitionSprayPlayCheck.RunBatch` now confirms the selected song, waits for loaded audio and explicitly supplies batch-mode focus; its synthetic release/hold/release, bounded live stream, retained teal mark and release cleanup checks passed. Its initial stale selection-only run remains in the logs. The project maintenance audit passed **1,464 unique metadata GUIDs and 41 documentation files**; `git diff --check` passed with line-ending notices only.
+
 ## Demo.9 desktop repair release — October 29
 
 The prerelease is public and its tag resolves to the exact build source below. All six uploaded assets match their local byte counts and GitHub SHA-256 digests. Public checks returned HTTP 200 for both platform ZIPs and the verification JSON; all three checksum sidecars match local files. [Website deployment 40784340956](https://github.com/lorendw7/BalloonBarrage/actions/runs/40784340956) succeeded from website commit `10bf490c912761fd6f3214b579d9627ff6bfdc0e`. The live Chinese, Japanese and English routes return HTTP 200 and select demo.9 for both platforms.

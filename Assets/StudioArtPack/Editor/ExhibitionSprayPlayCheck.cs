@@ -91,6 +91,16 @@ namespace BalloonBarrage.EditorTools
                         return;
                     }
 
+                    RoundController controller = Object.FindFirstObjectByType<RoundController>();
+                    Require(controller != null, "Missing production round controller.");
+                    if (!controller.IsChoosingSong) controller.BeginRound();
+                    AudioClip clip = controller.SelectedSong.audioClip;
+                    if (clip.loadState == AudioDataLoadState.Unloaded) { clip.LoadAudioData(); return; }
+                    if (clip.loadState == AudioDataLoadState.Loading) return;
+                    Require(clip.loadState == AudioDataLoadState.Loaded, "Selected song failed to load.");
+                    controller.StartSelectedSong();
+                    Require(RoundController.IsPlaying, "Selected song did not start.");
+
                     InputSystem.settings.backgroundBehavior =
                         InputSettings.BackgroundBehavior.IgnoreFocus;
 
@@ -112,8 +122,11 @@ namespace BalloonBarrage.EditorTools
                         new Vector3(0f, 0f, 8f));
                     aimPosition = new Vector2(screenPoint.x, screenPoint.y);
 
-                    Object.FindFirstObjectByType<RoundController>()
-                        .BeginRound();
+                    // Batch mode has no focused game window; model focus explicitly.
+                    typeof(PlayerShooter).GetMethod(
+                        "OnApplicationFocus",
+                        BindingFlags.Instance | BindingFlags.NonPublic)
+                        .Invoke(shooter, new object[] { true });
                     QueueMouseState(0);
                     InvokeShooterUpdate(shooter);
 

@@ -54,6 +54,8 @@ public class PlayerShooter : MonoBehaviour
     private float nextShotTime;
 
     private bool waitingForFireRelease = true;
+    private bool hasInputFocus;
+    private bool applicationSuspended;
 
     [SerializeField]
     private RoundController roundController;
@@ -294,6 +296,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void Awake()
     {
+        hasInputFocus = Application.isFocused;
         aimCamera = Camera.main;
         cursorVisible = Cursor.visible;
 
@@ -329,19 +332,38 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    private void OnEnable()
     {
+        hasInputFocus = Application.isFocused;
+        waitingForFireRelease = true;
+    }
+
+    private void CancelFireInput()
+    {
+        waitingForFireRelease = true;
         SetSprayVisual(false);
+        if (shotAudioSource != null) shotAudioSource.Stop();
         ResetGunPose();
         RestorePointer();
     }
 
+    private void OnDisable()
+    {
+        CancelFireInput();
+    }
+
     private void OnApplicationFocus(bool hasFocus)
     {
-        if(!hasFocus)
-        {
-            RestorePointer() ;
-        }
+        hasInputFocus = hasFocus;
+        waitingForFireRelease = true;
+        if (!hasFocus) CancelFireInput();
+    }
+
+    private void OnApplicationPause(bool paused)
+    {
+        applicationSuspended = paused;
+        waitingForFireRelease = true;
+        if (paused) CancelFireInput();
     }
 
     private void KickGun()
@@ -370,7 +392,7 @@ public class PlayerShooter : MonoBehaviour
     private void LateUpdate()
     {
 
-        if (!RoundController.IsPlaying)
+        if (!RoundController.IsPlaying || !hasInputFocus || applicationSuspended)
         {
             ResetGunPose();
             return;
@@ -396,6 +418,12 @@ public class PlayerShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasInputFocus || applicationSuspended)
+        {
+            CancelFireInput();
+            return;
+        }
+
         Mouse mouse = Mouse.current;
 
         Keyboard keyboard = Keyboard.current;
@@ -415,7 +443,7 @@ public class PlayerShooter : MonoBehaviour
         bool showReticle = mouse != null &&
             RoundController.IsPlaying &&
             !RoundController.IsPaused &&
-            Application.isFocused;
+            hasInputFocus && !applicationSuspended;
 
         bool shouldShowCursor = !showReticle;
 
@@ -443,7 +471,7 @@ public class PlayerShooter : MonoBehaviour
 
         if (mouse == null)
         {
-            SetSprayVisual(false);
+            CancelFireInput();
             return;
         }
 
