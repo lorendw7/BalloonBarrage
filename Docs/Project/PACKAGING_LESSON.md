@@ -146,6 +146,8 @@ Drafts are private staging records, not playable public releases. Keep the nonco
 
 ## Acceptance of the exact ZIPs
 
+For a slow local uplink, [the optional transport workflow](../../.github/workflows/release-transport.yml) can reconstruct the already-built ZIPs on GitHub. Use [the delta tool](../../Tools/Release/desktop_release_delta.py) to create a transport delta against the exact prior public ZIP and restore it locally first. Both base and reconstructed target SHA-256 values are bound in the recipe; outputs are never overwritten. Upload the small `.transport-delta` files to the new draft, dispatch the workflow with its tag and base tag, then compare the uploaded ZIP digests to the independently verified local originals. The workflow uploads only to a draft and never publishes. Remove temporary transport assets before publication. This changes transport only; it does not replace local builds or package acceptance.
+
 Verify the checksum before testing, extract to a fresh directory and run the packaged copy rather than the uncompressed build output.
 
 For Windows, test on the intended exhibition PC:

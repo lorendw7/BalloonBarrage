@@ -1,0 +1,52 @@
+name: Reconstruct exact desktop release archives
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing draft release tag
+        required: true
+      base_tag:
+        description: Existing public release used for transport reuse
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: ${{ inputs.tag }}
+      BASE_TAG: ${{ inputs.base_tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          persist-credentials: false
+      - name: Validate release identities
+        run: |
+          python - <<'PY'
+          import os, re
+          for key in ('TAG', 'BASE_TAG'):
+              if not re.fullmatch(r'v\d+\.\d+\.\d+-demo\.\d+', os.environ[key]):
+                  raise ValueError('Expected a versioned demo tag')
+          PY
+      - name: Reconstruct and upload checksum-identical archives to the draft
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$TAG" --json isDraft --jq .isDraft)" = true
+          mkdir transport
+          for platform in windows macos; do
+            if [ "$platform" = windows ]; then label=Windows-x64; else label=macOS-Universal; fi
+            base="BalloonBarrage-${label}-${BASE_TAG}.zip"
+            target="BalloonBarrage-${label}-${TAG}.zip"
+            delta="BalloonBarrage-${TAG}-${platform}.transport-delta"
+            gh release download "$BASE_TAG" --pattern "$base" --dir transport
+            gh release download "$TAG" --pattern "$delta" --dir transport
+            python Tools/Release/desktop_release_delta.py restore "transport/$base" "transport/$delta" "transport/$target"
+            gh release upload "$TAG" "transport/$target"
+          done
