@@ -20,7 +20,9 @@ A single combined world-space coat mesh samples the atlas above the original opa
 
 ## Continuous strokes and effects
 
-Fast neighboring contacts from the same player, surface, normal and pigment receive intermediate visual stamps. A release, suspension, pigment/surface change, gap above 0.20 seconds or jump above three units breaks the connection. Player identities remain separate. Interpolation adds pigment only, never damage, score, targets or rhythm events.
+Fast neighboring contacts from the same player and pigment receive visual intermediate samples on the starting/ending prepared surfaces. Normals blend across a turn; a bounded first-hit ray reprojects each sample onto real geometry rather than leaving its center inside a convex curve. A brush-width sweep conservatively rejects an intervening unrelated collider. Adjacent walls can join a stroke; opposite-facing contacts, a release, suspension, pigment change, gap above 0.20 seconds or jump above three units break the connection. Player identities remain separate. Interpolation adds pigment only, never damage, score, targets or rhythm events.
+
+Corner spill probes aim slightly inside the neighboring bounds before requiring that neighbor's actual collider to be the first visible contact. Ending a ray exactly on a shared wall/floor edge could otherwise select the original wall and omit the neighbor. No permanent object, extra atlas or scoring query is introduced.
 
 The original coverage mask atlas combines with an original procedural opaque body, chunky lobes and short vertical drips. Existing eight pigment groups coordinate direct deposits, the stream and balloon-pop paint. A twelve-slot-per-prefab pool reuses short impact particles; older permanent paint is never deleted to satisfy that pool. The nozzle presentation is slightly thicker; hit cadence, range and forgiving hit volume remain unchanged.
 

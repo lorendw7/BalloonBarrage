@@ -1,5 +1,13 @@
 # Validation record
 
+## Continuous spray, corners and curved coverage — October 31
+
+The requested retest reproduced three defects in demo.16 source: rapid strokes stopped at a change of receiver; the normal cutoff rejected rapid convex-curve sweeps; and edge-tied neighbor rays omitted wall/floor spill. Slow curve sweeps, release/player/color boundaries and opposite-face rejection already passed. The baseline isolated fixture failed 20 of 171 checks.
+
+`RoomPaintSystem` now reprojects intermediate points onto the first visible starting/ending mesh, blends normals across a corner and uses a conservative brush-width obstruction sweep. Neighbor probes aim slightly inside the adjacent bounds to avoid a shared-edge tie. Logical hit cadence, range, balloon damage, rhythm and score paths are unchanged. Atlas storage, geometry and persistent renderer count remain unchanged.
+
+The final targeted fixture passes **171/171** checks across 13 cases: flat rapid strokes, wall corners, wall/floor spill, sphere/cylinder rapid sweeps, fine sweeps through UV seams, release/color/player isolation, opposite faces and an unrelated occluder. Formal studio regression separately passes **1,256 assertions** for 404 receivers/eight pigments, 10,000 deposits, 1,000 pooled impacts, idle writes, pause/results, natural short-song completion and five actual Retry reloads. These are actual Unity Editor physics and GPU-readback checks, not visible standalone/physical/Mac acceptance. Reports, direct graybox camera captures and source/capture provenance are in [the verification folder](../Verification/PaintRegression20261031). The original demo.16 full-room capture/provenance remains unchanged.
+
 ## Demo.16 desktop publication — October 31
 
 Published prerelease [v0.1.0-demo.16](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.16) at **08:08:05 JST on October 31** (2026-10-30T23:08:05Z), from exact source `48bcfeb9eca5b7ea5b01187d09bb829e934d79a5`. Separate clean detached Windows/macOS checkouts exclude the local learner script, shader graph and editor configuration changes. Unity 6000.0.77f1 non-Development builds both report **zero errors and zero warnings**: Windows 787.526 seconds / 282,378,398 raw bytes; macOS 807.697 seconds / 299,027,849 raw bytes.

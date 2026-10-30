@@ -16,7 +16,11 @@ public static class RoomPaintValidation
 {
     private const BindingFlags Private = BindingFlags.Instance | BindingFlags.NonPublic;
     private const string Key = "RoomPaintValidation.Active";
-    private static string Folder => Path.GetFullPath("../../Logs/RoomPaint20261031");
+    private static string Folder
+    {
+        get { string[] args=Environment.GetCommandLineArgs(); int at=Array.IndexOf(args,"-paintValidationOutput");
+            return Path.GetFullPath(at>=0?args[at+1]:"../../Logs/RoomPaint20261031"); }
+    }
     private static int stage, checks, retries, oldRound;
     private static double started, deadline;
     private static double readyAt;

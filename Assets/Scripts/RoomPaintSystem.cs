@@ -96,15 +96,37 @@ public sealed class RoomPaintSystem : MonoBehaviour
     {
         radius = Mathf.Clamp(radius, .06f, 1.5f);
         // Interpolation adds pigment, never authoritative hits, score, or new targets.
-        if (strokeId != 0 && strokes.TryGetValue(strokeId, out Stroke previous) && previous.surface == surface &&
-            Time.unscaledTime - previous.time <= .20f && previous.color == color && Vector3.Dot(previous.normal, normal) > .65f)
+        if (strokeId != 0 && strokes.TryGetValue(strokeId, out Stroke previous) && previous.surface != null &&
+            Time.unscaledTime - previous.time <= .20f && previous.color == color && Vector3.Dot(previous.normal, normal) > -.05f)
         {
             float distance = Vector3.Distance(previous.point, point);
             if (distance <= 3f)
             {
-                int steps = Mathf.CeilToInt(distance / (radius * .55f));
+                int steps = Mathf.CeilToInt(distance / (radius * .30f));
+                float reach = radius + distance * .75f + .05f;
                 for (int i = 1; i < steps; i++)
-                    QueueContact(surface, Vector3.Lerp(previous.point, point, (float)i / steps), normal, color, mask, radius);
+                {
+                    float t = (float)i / steps;
+                    Vector3 direction = Vector3.Slerp(previous.normal, normal, t).normalized;
+                    Vector3 chord = Vector3.Lerp(previous.point, point, t);
+                    // Reproject the chord onto real geometry: curves bow away from a straight
+                    // interpolation, and adjacent walls need contacts on both sides of the turn.
+                    if (!Physics.Raycast(chord + direction * reach, -direction, out RaycastHit contact,
+                        reach * 2f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore)) continue;
+                    PaintSurface projected = contact.collider.GetComponentInParent<PaintSurface>();
+                    // The first visible collider must belong to this stroke, never an unrelated
+                    // prop, an occluder, or another surface behind it.
+                    if (projected != surface && projected != previous.surface) continue;
+                    // Test the brush width as well as its center ray, so fringe pigment from
+                    // a neighboring interpolated stamp cannot bridge behind an occluder.
+                    if (Physics.SphereCast(chord + direction * reach, radius, -direction,
+                        out RaycastHit obstruction, reach * 2f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+                    {
+                        PaintSurface first = obstruction.collider.GetComponentInParent<PaintSurface>();
+                        if (first != surface && first != previous.surface) continue;
+                    }
+                    QueueContact(projected, contact.point, contact.normal, color, mask, radius);
+                }
             }
         }
         QueueContact(surface, point, normal, color, mask, radius);
@@ -119,8 +141,14 @@ public sealed class RoomPaintSystem : MonoBehaviour
         foreach (PaintSurface neighbor in surfaces)
         {
             if (neighbor == null || neighbor == primary || !neighbor.HasPreparedPaint ||
-                neighbor.TargetRenderer.bounds.SqrDistance(point) > radius * radius) continue;
-            Vector3 closest = neighbor.TargetRenderer.bounds.ClosestPoint(point);
+                !neighbor.gameObject.activeInHierarchy || !neighbor.TargetRenderer.enabled) continue;
+            Bounds bounds = neighbor.TargetRenderer.bounds;
+            if (bounds.SqrDistance(point) > radius * radius) continue;
+            Vector3 closest = bounds.ClosestPoint(point);
+            // A ray ending exactly on a shared edge can select the primary wall again.
+            // Aim slightly inside the neighbor; its real collider must still win visibility.
+            Vector3 inward = bounds.center - closest;
+            if (inward.sqrMagnitude > .000001f) closest += inward.normalized * Mathf.Min(.03f, radius * .1f);
             Vector3 origin = point + normal * .035f;
             Vector3 delta = closest - origin;
             if (delta.sqrMagnitude < .000001f) continue;

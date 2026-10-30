@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-31",
+  "baselineSource": "27c0d3a",
+  "runtimeSha256": "3d851f8e60bf4cfe6ca99ac8cd142003a90554bcd697d4ad86104f4f2db950f4",
+  "scope": "Original primitive graybox, Unity 6000.0.77f1 Editor actual physics/GPU readback and direct camera captures. No generative editing. Not production-room captures, physical input or standalone frame acceptance. Production fixture separately checks 404 receivers.",
+  "captures": {
+    "Corner.png": "3cbe7cae5c34837b0bccdb2d34097c21fb9b50916551c33c3a8de64ffc182b67",
+    "Sphere.png": "e73a869d2324d4b5ecb33ef5b57e60be4902a8883c2df228fa631e99d0b4bfa2"
+  }
+}

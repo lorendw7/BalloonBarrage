@@ -1,0 +1,86 @@
+{
+    "scope": "Isolated prepared graybox, actual MeshCollider contacts and GPU readback. Not a physical input or standalone FPS check.",
+    "status": "passed",
+    "checks": 171,
+    "cases": [
+        {
+            "name": "flat rapid stroke",
+            "minimumAlpha": 1.0,
+            "samples": 17,
+            "passed": true
+        },
+        {
+            "name": "release must break stroke",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "players stay separate",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "pigment change breaks stroke",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "rapid stroke across wall corner",
+            "minimumAlpha": 1.0,
+            "samples": 2,
+            "passed": true
+        },
+        {
+            "name": "wall floor adjacent spill",
+            "minimumAlpha": 1.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "TestSphere rapid curved stroke",
+            "minimumAlpha": 1.0,
+            "samples": 17,
+            "passed": true
+        },
+        {
+            "name": "TestSphere fine sweep and UV seams",
+            "minimumAlpha": 1.0,
+            "samples": 55,
+            "passed": true
+        },
+        {
+            "name": "TestSphere opposite side stays clean",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "TestCylinder rapid curved stroke",
+            "minimumAlpha": 0.7718276977539063,
+            "samples": 17,
+            "passed": true
+        },
+        {
+            "name": "TestCylinder fine sweep and UV seams",
+            "minimumAlpha": 0.7718276977539063,
+            "samples": 55,
+            "passed": true
+        },
+        {
+            "name": "TestCylinder opposite side stays clean",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        },
+        {
+            "name": "unrelated occluder blocks interpolated pigment",
+            "minimumAlpha": 0.0,
+            "samples": 1,
+            "passed": true
+        }
+    ],
+    "failures": []
+}

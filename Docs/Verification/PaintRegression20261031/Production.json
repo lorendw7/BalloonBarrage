@@ -1,0 +1,22 @@
+{
+    "status": "passed",
+    "scope": "Controlled Unity Editor GPU/physics/source checks and natural song clock. Not physical input, venue sound or standalone frame acceptance.",
+    "assertions": 1256,
+    "surfaces": 404,
+    "atlasWidth": 4096,
+    "persistentPaintRenderers": 1,
+    "stressContacts": 10000,
+    "retries": 5,
+    "pooledImpactEmissions": 1000,
+    "atlasColorBytes": 67108864,
+    "allReceiversPainted": true,
+    "stableObjectCount": true,
+    "idleHasNoPaintPasses": true,
+    "pausePersists": true,
+    "resultsPersist": true,
+    "naturalSong": true,
+    "oppositeFaceRejected": true,
+    "strokeInterpolation": true,
+    "naturalSongSeconds": 65.12266666666668,
+    "errors": []
+}
