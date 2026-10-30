@@ -246,5 +246,21 @@
   {
     "source": "Website/media/festival-share-20261029.jpg",
     "output": "festival-share-20261029.jpg"
+  },
+  {
+    "source": "Assets/Resources/Audience/emoji_u1f44d.png",
+    "output": "audience-thumb.png"
+  },
+  {
+    "source": "Assets/Resources/Audience/emoji_u1f44f.png",
+    "output": "audience-clap.png"
+  },
+  {
+    "source": "Assets/Resources/Audience/emoji_u1f389.png",
+    "output": "audience-party.png"
+  },
+  {
+    "source": "Assets/Resources/Audience/emoji_u1f929.png",
+    "output": "audience-star.png"
   }
 ]

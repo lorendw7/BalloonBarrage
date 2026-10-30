@@ -4,12 +4,17 @@
 
       <dl class="game-facts"><div><dt>{{factSong}}</dt><dd>{{factSongBody}}</dd></div><div><dt>{{factPaint}}</dt><dd>{{factPaintBody}}</dd></div><div><dt>{{factScore}}</dt><dd>{{factScoreBody}}</dd></div></dl>
       <article class="cue-guide" id="cue-guide" aria-labelledby="cue-guide-title">
-        <div class="section-heading"><p class="eyebrow">DEMO.14</p><h3 id="cue-guide-title">{{cueGuideTitle}}</h3><p>{{cueGuideIntro}}</p></div>
+        <div class="section-heading"><p class="eyebrow">DEMO.15</p><h3 id="cue-guide-title">{{cueGuideTitle}}</h3><p>{{cueGuideIntro}}</p></div>
         <div class="cue-guide-cards">
           <section class="cue-card"><div class="cue-visual cue-order" aria-hidden="true"><span>1</span><i></i><span>2</span><i></i><span>3</span></div><h4>{{sequenceTitle}}</h4><p>{{sequenceBody}}</p></section>
           <section class="cue-card"><div class="cue-visual" aria-hidden="true"><span class="cue-ring">10 → 20</span></div><h4>{{timingTitle}}</h4><p>{{timingBody}}</p></section>
           <section class="cue-card"><div class="cue-visual cue-branches" aria-hidden="true"><span class="cue-primary">1</span><i></i><span class="cue-extra cue-extra-top">+10</span><i></i><span class="cue-extra cue-extra-bottom">+10</span></div><h4>{{burstTitle}}</h4><p>{{burstBody}}</p></section>
         </div><p class="small cue-schematic-note">{{guideSchematicLabel}}</p>
+      </article>
+      <article class="audience-feature" id="audience" aria-labelledby="audience-title">
+        <div class="audience-copy"><p class="eyebrow">DEMO.15</p><h3 id="audience-title">{{audienceTitle}}</h3><p>{{audienceBody}}</p><p class="small">{{audienceRules}}</p><label for="audience-cheer">{{audienceListen}}</label><audio id="audience-cheer" controls preload="none" aria-label="{{audienceListen}}"><source src="{{base}}{{audienceCheerFile}}" type="audio/mpeg"></audio></div>
+        <div class="audience-preview" aria-hidden="true"><div class="audience-reaction"><img src="{{base}}assets/audience-thumb.png" width="128" height="128" loading="lazy" alt=""><span>{{audienceLike}}</span></div><div class="audience-reaction"><img src="{{base}}assets/audience-clap.png" width="128" height="128" loading="lazy" alt=""><span>{{audienceNice}}</span></div><div class="audience-reaction"><img src="{{base}}assets/audience-party.png" width="128" height="128" loading="lazy" alt=""><span>{{audienceAgain}}</span></div><div class="audience-reaction"><img src="{{base}}assets/audience-star.png" width="128" height="128" loading="lazy" alt=""><span>{{audienceLike}}</span></div></div>
+        <p class="small audience-credit">{{audienceCredit}} <a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a> (Apache 2.0) · <a href="https://otologic.jp/free/se/applause-cheer01.html">OtoLogic</a> (CC BY 4.0) · <a href="{{base}}assets/audience-NOTICE.txt">{{audienceLicenses}}</a></p>
       </article>
       <article class="rhythm-feature" aria-labelledby="rhythm-title">
         <div class="section-heading"><h3 id="rhythm-title">{{rhythmTitle}}</h3><p>{{rhythmIntro}}</p></div>

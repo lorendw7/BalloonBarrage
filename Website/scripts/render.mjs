@@ -51,6 +51,7 @@ export function renderPage(template, locale, release, staticFiles = {}, page = "
     gameUrl: `${home}game/`, updatesUrl: `${home}updates/`, artUrl: `${home}art/`,
     worldUrl: `${home}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),
     styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
+    audienceCheerFile: e(staticFiles["audience-cheer.mp3"] ?? "audience-cheer.mp3"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/festival-share-20261029.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (key in special) return special[key];

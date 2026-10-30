@@ -379,3 +379,14 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
   @keyframes cue-ring-approach { from { transform: scale(1); } to { transform: scale(.7); } }
 }
 @media (max-width: 800px) { .cue-guide-cards { grid-template-columns: 1fr; } .release-highlight { align-items: flex-start; flex-direction: column; gap: 1rem; } .cue-visual { max-width: 260px; margin-inline: auto; } }
+.audience-feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; padding: clamp(1.4rem, 4vw, 3rem); margin: 3rem 0; background: #fff6dc; border: 1px solid #e2cca2; border-radius: 1.5rem; }
+.audience-copy h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin: .4rem 0 1rem; }
+.audience-copy label { display: block; margin: 1.3rem 0 .5rem; font-weight: 700; }
+.audience-copy audio { display: block; width: min(100%, 340px); }
+.audience-preview { display: grid; grid-template-columns: 1fr 1fr; align-content: center; gap: .8rem; }
+.audience-reaction { display: flex; align-items: center; gap: .5rem; background: #17343e; color: #fff0be; padding: .65rem; border-radius: 1rem; font-weight: 700; }
+.audience-reaction:nth-child(even) { transform: translateY(-.8rem); }
+.audience-reaction img { width: 48px; height: 48px; flex-shrink: 0; }
+.audience-credit { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 800px) { .audience-feature { grid-template-columns: 1fr; gap: 1.5rem; } .audience-preview { margin-top: .6rem; } }
+@media (max-width: 400px) { .audience-reaction { font-size: .8rem; padding: .4rem; } .audience-reaction img { width: 34px; height: 34px; } }

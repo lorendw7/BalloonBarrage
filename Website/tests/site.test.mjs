@@ -39,9 +39,9 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
-test("demo.14 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
+test("demo.15 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
   for (const locale of languages) {
-    assert.ok(strings[locale].deliveryNowTitle.includes("demo.14"));
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.15"));
     for (const value of ["3", "24", "12", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
     assert.ok(strings[locale].factPaint.includes("24"));
     assert.ok(strings[locale].factPaintBody.includes("12"));
@@ -53,13 +53,37 @@ test("demo.14 copy keeps capacity, retention, input recovery and verification sc
   }
 });
 
+test("audience previews preserve licensed source bytes and require an explicit audio play action", async () => {
+  const root = path.resolve(site, "..");
+  for (const [code, name] of [["1f44d", "thumb"], ["1f44f", "clap"], ["1f389", "party"], ["1f929", "star"]]) {
+    assert.deepEqual(await readFile(path.join(site, "dist/assets", `audience-${name}.png`)),
+      await readFile(path.join(root, "Assets/Resources/Audience", `emoji_u${code}.png`)));
+  }
+  const source = await readFile(path.join(root, "Assets/Resources/Audience/CheerYay.mp3"));
+  const hash = createHash("sha256").update(source).digest("hex").slice(0, 12);
+  assert.deepEqual(await readFile(path.join(site, "dist", `audience-cheer.${hash}.mp3`)), source);
+  for (const name of ["NOTICE.txt", "Apache-2.0.txt", "CC-BY-4.0.txt"]) {
+    assert.deepEqual(await readFile(path.join(site, "dist/assets", `audience-${name}`)),
+      await readFile(path.join(root, "Assets/StreamingAssets/ThirdParty/Audience", name)));
+  }
+  for (const locale of languages) {
+    const html = await readFile(path.join(site, "dist", locale === "zh-Hans" ? "" : locale, "game/index.html"), "utf8");
+    assert.ok(html.includes(strings[locale].audienceTitle));
+    assert.match(html, /<audio[^>]*controls[^>]*preload="none"/);
+    assert.doesNotMatch(html, /<audio[^>]*\bautoplay/);
+    assert.ok(html.includes(`audience-cheer.${hash}.mp3`));
+    assert.match(html, /otologic\.jp\/free\/se\/applause-cheer01\.html/);
+    assert.match(html, /github\.com\/googlefonts\/noto-emoji/);
+  }
+});
+
 test("confirmed meeting room and packaged relay stay explicit in every language", () => {
   for (const locale of languages) {
     const html = renderPage(template, locale, selectDownloads([release]));
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
-    assert.ok(strings[locale].relayStatus.includes("demo.14"));
+    assert.ok(strings[locale].relayStatus.includes("demo.15"));
     assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);
@@ -257,6 +281,9 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   assert.equal((await fetch(base + "/assets/gameplay-official-20261028.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/assets/festival-share-20261029.jpg")).headers.get("content-type"), "image/jpeg");
   assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
+  const game = await (await fetch(base + "/game/")).text();
+  const cheerUrl = new URL(game.match(/<source src="([^"]+)" type="audio\/mpeg"/)[1], base + "/game/");
+  assert.equal((await fetch(cheerUrl)).headers.get("content-type"), "audio/mpeg");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
 });

@@ -15,13 +15,19 @@ await mkdir(path.join(output, "assets"), { recursive: true });
 const templates = Object.fromEntries(await Promise.all(sitePages.map(async page => [page, await loadTemplate(page)])));
 // New pages must never reuse a cached stylesheet from an earlier layout.
 const staticFiles = {};
-for (const file of ["styles.css", "app.js", "world.css"]) {
-  const data = await readFile(path.join(site, "src", file));
+const staticSources = Object.fromEntries(["styles.css", "app.js", "world.css"].map(file => [file, path.join(site, "src", file)]));
+staticSources["audience-cheer.mp3"] = path.join(root, "Assets/Resources/Audience/CheerYay.mp3");
+for (const [file, source] of Object.entries(staticSources)) {
+  const data = await readFile(source);
+  if (data.subarray(0, 80).toString().includes("git-lfs.github.com/spec")) throw new Error(`Fetch Git LFS assets first: ${source}`);
   const extension = path.extname(file);
   const hash = createHash("sha256").update(data).digest("hex").slice(0, 12);
   const name = `${path.basename(file, extension)}.${hash}${extension}`;
   staticFiles[file] = name;
   await writeFile(path.join(output, name), data);
+}
+for (const name of ["NOTICE.txt", "Apache-2.0.txt", "CC-BY-4.0.txt"]) {
+  await copyFile(path.join(root, "Assets/StreamingAssets/ThirdParty/Audience", name), path.join(output, "assets", `audience-${name}`));
 }
 const release = await getReleaseSnapshot({ offline: process.argv.includes("--offline") });
 const assets = JSON.parse(await readFile(path.join(site, "assets.json"), "utf8"));
