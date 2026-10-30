@@ -7,6 +7,7 @@ import { getReleaseSnapshot } from "./releases.mjs";
 import { renderPage } from "./render.mjs";
 import { renderWorld, worldPages } from "./render-world.mjs";
 import { loadTemplate, sitePages } from "./templates.mjs";
+import { getSurveyFormUrl } from "../src/survey-config.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
 const root = path.resolve(site, "..");
@@ -17,6 +18,17 @@ const templates = Object.fromEntries(await Promise.all(sitePages.map(async page 
 const staticFiles = {};
 const staticSources = Object.fromEntries(["styles.css", "app.js", "world.css"].map(file => [file, path.join(site, "src", file)]));
 staticSources["audience-cheer.mp3"] = path.join(root, "Assets/Resources/Audience/CheerYay.mp3");
+const qrDirectory = path.join(site, "media/survey");
+const qrManifest = JSON.parse(await readFile(path.join(qrDirectory, "manifest.json"), "utf8"));
+if (getSurveyFormUrl()) {
+  if (qrManifest.url !== getSurveyFormUrl()) throw new Error("Regenerate the QR for the configured survey URL.");
+  for (const file of ["survey-qr.svg", "survey-qr.png"]) {
+    const source = path.join(qrDirectory, file);
+    const hash = createHash("sha256").update(await readFile(source)).digest("hex");
+    if (hash !== qrManifest.files[file]) throw new Error(`Survey QR checksum mismatch: ${file}`);
+    staticSources[file] = source;
+  }
+}
 for (const [file, source] of Object.entries(staticSources)) {
   const data = await readFile(source);
   if (data.subarray(0, 80).toString().includes("git-lfs.github.com/spec")) throw new Error(`Fetch Git LFS assets first: ${source}`);

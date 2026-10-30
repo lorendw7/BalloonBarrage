@@ -124,6 +124,20 @@ The night music festival is a later optional expansion, not a scheduled gate or 
 
 If walking and aiming compete for attention, keep the fixed stage camera. If rivalry undermines the relaxing experience, offer the same stage solo and reduce target contention. If the first route is confusing, shorten it before building a second district. Keep measured runtime/package evidence in [Validation](../Project/VALIDATION.md), separate from site checks and proposed acceptance criteria.
 
+### Boss combat research track — planning only
+
+The October 31 choice is **single-player direct combat against a Boss and its AI squad**, not a balloon scoring contest. [Game design](GAME_DESIGN.md#optional-boss-brawl--direct-combat) owns the encounter rules and [research/asset responsibilities](GAME_DESIGN.md#boss-ai-research-and-asset-responsibility). This track follows acceptance of the basic daytime town visit (OW4); it is not a dependency for the current festival build, a delivery date, or a promise to complete every research idea.
+
+| Gate | Smallest deliverable | Evidence before the next step |
+|---|---|---|
+| B0 — combat brief and art | One paper arena and direct-combat walkthrough; assistant prepares original silhouette, material, cover and warning references | Creator/learner can explain who attacks whom, what the weak point is, how to avoid an attack and how to exit; health/defeat/camera questions explicitly recorded |
+| B1 — moving combat baseline | A separate small test arena, simultaneous movement/aiming, one rule-based enemy and one telegraphed attack | Contact, finite held-fire cadence, line of sight, warning readability, evasion, camera comfort, hit/defeat feedback and retry/exit checked; no change to existing rhythm scores |
+| B2 — one Boss and one minion | One Boss phase with recovery/weak-point opening; one minion and bounded coordination | No unavoidable combined attack, blocked return path or unreadable off-screen pressure; record human comprehension separately from automated checks |
+| B3 — optional learned decisions | Offline cover/reposition policy, evaluated against B2 with identical constraints and a rule-based fallback | Measured comfort/fairness, generalization, stalls, frame time, memory and fallback behavior justify adoption; otherwise retain B2 |
+| B4 — accepted encounter integration | Optional district arena entry/exit, explicitly designed reward and original approved assets; later template variations only if useful | Clean town/combat/audio transitions, isolated records, no duplicate rewards, preserved exploration access, provenance and runtime budget |
+
+The learner writes gameplay one step at a time; the assistant prepares assets/tools/docs and reviews saved code. Asset preparation is assigned to the assistant. No trained model, combat script, new Unity asset import or playable Boss scene is delivered by this website/planning update. Online or local multiplayer Boss modes, additional factions and night festivals require separate scope decisions.
+
 ## Change and cut rules
 
 - Fix reproduced timing, contact, crash, visibility or localization issues before adding ornament. Cut extra variants and milestone effects first.

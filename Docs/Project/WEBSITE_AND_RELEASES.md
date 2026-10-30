@@ -12,9 +12,11 @@ The four unchanged Noto Emoji PNGs and OtoLogic MP3 preview remain. Playback req
 
 The festival survey now links to the published Google Form. Each question has expandable examples in Chinese, Japanese and English, including what a musical layer adds and how the proposed rivals differ. The optional invitation email has a creator-selected 90-day manual retention limit; [survey operations](FESTIVAL_SURVEY.md) records the form settings, branching checks and remaining verification limits.
 
-The open-world landing page describes an imagined first visit: walk from the plaza, choose a stage, shoot balloons against a signalled rival, and bring a musical part home. Its three cards explain rivals, camera views and musical layers in everyday language. The map and play subpages expand that explanation; the five-page structure and planning-only status remain. Design choices and delivery gates remain in their source documents, with no gameplay implementation change.
+The open-world landing page describes an imagined first visit: walk from the plaza, choose a stage, shoot balloons against a signalled rival, and bring a musical part home. Its three cards explain rivals, camera views and musical layers in everyday language. The map and play subpages expand that explanation. A sixth, separate Boss page explains the later solo direct-combat arena: move and aim against a Boss and its AI squad, read attack warnings, and attack the Boss itself. Rules, optional AI research and original asset preparation are collapsed for concise reading. Design choices and delivery gates remain in their source documents; no gameplay implementation is included.
 
-Validation: all 21 website checks passed after a 30-page build with both platform downloads available. Browser checks exercised the survey explanations and the world guide at 390-pixel and 1280-pixel widths without horizontal overflow. This is website and survey evidence, not a Unity or open-world playtest.
+The survey entry includes a locally generated QR and printable PNG in all three languages. Its payload matches the existing public form button. Build-time URL/hash checks guard against stale QR assets; independent decoding checked the source PNG at 636 and 260 pixels and the browser-rendered SVG screenshot. See [survey operations](FESTIVAL_SURVEY.md#qr-entry-and-printable-asset) for regeneration and print checks.
+
+Validation: all 21 website checks passed after a 33-page build with both platform downloads available. Browser checks exercised the survey and world pages at 390-pixel and 1280-pixel widths without horizontal overflow. This is website and QR evidence, not a Unity or open-world playtest or a physical-phone scan.
 
 ## Distribution contract
 
@@ -69,7 +71,7 @@ The tests cover translation structure, trusted platform-specific release selecti
 
 Player-facing copy lives in `Website/src/strings.mjs`; project documentation remains English-only. Each language uses the same page structure and distinguishes published builds from development screenshots, concepts and model previews.
 
-The site provides ten topic pages per language (30 routes), including the October 31 survey guide and live form entry. Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page preserves its topic when switching languages and provides a home link. The home page retains concise game information, actual downloads, topic links and exhibition details; detailed tutorials, galleries and verification notes live on their own pages.
+The site provides eleven topic pages per language (33 routes), including the survey guide and separate Boss plan. Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page preserves its topic when switching languages and provides a home link. The home page retains concise game information, actual downloads, topic links and exhibition details; detailed tutorials, galleries and verification notes live on their own pages.
 
 | Route within a language | Content |
 |---|---|
@@ -77,14 +79,15 @@ The site provides ten topic pages per language (30 routes), including the Octobe
 | `game/` | Controls, musical demonstration/response, song catalog and relay |
 | `updates/` | Current delivery priorities and expandable historical verification details |
 | `art/` | Filterable scene/prop/artwork gallery and pigment study |
-| `survey/` | Future-direction choices with expandable examples, a published Google Form link, and optional signup/90-day email policy |
+| `survey/` | Future-direction choices with expandable examples, Google Form button/QR/download, and optional signup/90-day email policy |
 | `open-world/` | An imagined first visit and plain-language explanations of rivals, camera views and musical rewards |
 | `open-world/map/` | Labelled original topology diagram and district concepts |
 | `open-world/play/` | Exploration/challenge loop, readable troupe rules and expandable candidate roles |
+| `open-world/boss/` | Future solo direct combat against a Boss and AI squad; expandable rules, AI research and asset plans |
 | `open-world/art/` | Sunny street festival with handmade details; night festival deferred |
 | `open-world/roadmap/` | Learner-led development gates and deferred scope |
 
-`Website/src/index.html` is the shared site shell; `home.html`, `game.html`, `updates.html`, `art.html` and `survey.html` provide its page bodies through `Website/scripts/templates.mjs`. [Survey operations](FESTIVAL_SURVEY.md) records questions, information handling, the published Google Form and the limits of live verification. `Website/src/world-strings.mjs` holds public planning translations; `Website/scripts/render-world.mjs` renders its five pages. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions; [Roadmap](../Design/ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. Gameplay C / A / B appears as static cards, while art A + C has a separate compact page. Candidate rival roles are collapsed by default. Exact roles, camera settings, reward conditions and save scope remain open. World-specific styles use content-addressed filenames. No Unity gameplay or desktop package changes are part of this update.
+`Website/src/index.html` is the shared site shell; `home.html`, `game.html`, `updates.html`, `art.html` and `survey.html` provide its page bodies through `Website/scripts/templates.mjs`. [Survey operations](FESTIVAL_SURVEY.md) records questions, information handling, QR maintenance and live-verification limits. `Website/src/world-strings.mjs` and `world-boss-strings.mjs` hold public planning translations; `Website/scripts/render-world.mjs` renders six pages. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions; [Roadmap](../Design/ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. Gameplay C / A / B appears as static cards, while art A + C has a separate compact page. Candidate rival roles are collapsed by default. Exact roles, camera settings, reward conditions and save scope remain open. World-specific styles use content-addressed filenames. No Unity gameplay or desktop package changes are part of this website update.
 
 The October 30 update shows the creator-confirmed meeting room (Center Building 2, Room 2407) near the hero and in the exhibition section, keeping demo operating hours unconfirmed. An illustrated three-step explanation introduces the tricolor relay as included in the demo.11 Windows/macOS candidates. Download cards independently discover the actually published package for each platform. It uses CSS swatches and existing fonts without new image downloads or generated media. Existing release selection and screenshot provenance remain unchanged.
 

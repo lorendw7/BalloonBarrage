@@ -7,6 +7,7 @@ export const surveyStrings = {
     pending: "投票尚未开放", pendingBody: "Google 表单正在准备。下面可预览题目，目前没有收集昵称、邮箱或选票。",
     open: "前往 Google 表单投票", openBody: "在 Google 表单填写并提交后，回复才会被记录。本页只介绍问卷，不直接接收个人信息。",
     questionsTitle: "四道选择题，每题选一项", unsure: "还没想好",
+    qrTitle: "扫码填写九大祭问卷", qrAlt: "九大祭投票二维码，指向同一个 Google 问卷", qrHint: "用手机相机扫码；正在用手机浏览可直接点投票按钮。", qrDownload: "下载二维码 PNG（可打印）",
     detailsTitle: "选项是什么意思？看小例子",
     questionHelp: "展开每题的说明再比较。例子是未来构想，不是现有功能；没有偏好可选“还没想好”，无需猜答案。",
     choiceExplanations: [
@@ -33,6 +34,7 @@ export const surveyStrings = {
     pending: "投票はまだ始まっていません", pendingBody: "Googleフォームを準備中です。以下は質問のプレビューで、現在はニックネーム、メールアドレス、票を収集していません。",
     open: "Googleフォームで回答する", openBody: "Googleフォームで送信すると回答が記録されます。このページは案内のみで、個人情報を直接受け取りません。",
     questionsTitle: "四つの質問、それぞれ一つ選択", unsure: "まだわからない",
+    qrTitle: "QRから九大祭アンケートへ", qrAlt: "同じGoogleアンケートを開く九大祭投票QRコード", qrHint: "スマートフォンのカメラで読み取れます。スマートフォンで閲覧中なら回答ボタンを押してください。", qrDownload: "印刷用QR画像をダウンロード",
     detailsTitle: "選択肢の意味と小さな例",
     questionHelp: "説明を開いて比べてみてください。例は将来の構想で、実装済み機能ではありません。迷ったら「まだわからない」を選べます。",
     choiceExplanations: [
@@ -59,6 +61,7 @@ export const surveyStrings = {
     pending: "Voting is not open yet", pendingBody: "The Google Form is being prepared. Preview the questions below; no nicknames, email addresses or votes are being collected yet.",
     open: "Vote in Google Forms", openBody: "Your response is recorded only when you submit the Google Form. This page explains the survey and does not receive personal information directly.",
     questionsTitle: "Four questions, one choice each", unsure: "Not sure yet",
+    qrTitle: "Scan to answer the festival survey", qrAlt: "Festival survey QR code linking to the same Google Form", qrHint: "Scan with your phone camera, or use the vote button if you are already on your phone.", qrDownload: "Download printable QR (PNG)",
     detailsTitle: "What the choices mean, with examples",
     questionHelp: "Open each explanation to compare. These examples describe future ideas, not existing features. Choose “Not sure” if you have no preference.",
     choiceExplanations: [

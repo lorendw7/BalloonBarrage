@@ -104,6 +104,34 @@ Proposed music progression: percussion at the pier, melody in the garden and bas
 
 Still open: troupe size and exact roles, interruption rules, camera distance/transition settings, layer acquisition conditions, music arrangement and save scope. The initial learner exercise remains a paper route walkthrough and one movement/camera question; the assistant reviews saved learner code before the next gameplay increment. No gameplay implementation is authorized by this planning update.
 
+### Optional Boss brawl — direct combat
+
+On October 31, 2026 the creator selected **one player versus a Boss and its AI squad**, clarified that both sides directly attack each other rather than compete for balloons, and requested planning and website updates. This is a separate optional combat mode within the future town, not implemented gameplay or an alteration of the current studio release. The existing fixed-stage rhythm track remains available.
+
+Proposed visit: explicitly enter a small arena from a district spur → move, aim and exchange paint attacks with enemies → avoid a telegraphed Boss attack → use its recovery opening to hit a weak point on its body → resolve the encounter → return to the plaza. An original loudspeaker mech is a visual example, not a selected final character or a produced asset. Start the study with one Boss and one minion; final squad size remains open.
+
+| Question | Proposed direction and open boundary |
+|---|---|
+| What is the objective? | Defeat the Boss through direct attacks. Its minion attacks the player and creates positioning decisions. Balloon chart scores are not the combat objective. |
+| How does movement work? | Test simultaneous third-person movement and aiming in a separate combat camera. Cover, flanking routes and range should create readable choices. The ordinary rhythm-stage camera stays stable. |
+| What makes attacks fair? | Communicate windup, attack area and recovery using shape, motion and sound. Bound concurrent attackers, reaction speed and line-of-sight access; reserve a viable evasion route. No future-input knowledge, wall shots or instant perfect aim. |
+| What can hurt the player? | This mode introduces direct enemy attacks as a new study. Health/shield rules, hit feedback, defeat conditions and recovery must be designed before implementation. The earlier non-damaging balloon rival is a different mode. |
+| What do paint and music do? | Preserve held-fire intent with finite cadence. Ground paint affecting movement or territory is an optional separate experiment, not an assumed property of the existing renderer. Music can emphasize authored Boss phases and provide optional on-beat feedback; firing and evasion never require waiting for a beat. |
+| How does it fit the town? | Entry is voluntary; defeat allows exit or retry without blocking exploration. Musical/decorative rewards, acquisition rules and persistence remain open. Keep combat results separate from existing rhythm records. |
+
+The reference is the group pressure, differentiated enemy roles and large-enemy encounters described in Nintendo's [Salmon Run overview](https://www.nintendo.com/en-ca/whatsnew/splatoon-3-makes-a-big-splash-in-new-video-preview-filled-to-the-gills-with-fresh-gameplay-and-new-details/). Our solo Boss-and-squad interpretation is an original proposal, not a claim that Salmon Run is a solo free-for-all. Create original characters, attack patterns, map layouts and audiovisual assets. Online multiplayer, local co-op Boss combat and three-faction battles are outside the selected first study.
+
+### Boss AI research and asset responsibility
+
+First establish a rule-based baseline: patrol, perceive, choose cover, aim, telegraph, attack and recover. A bounded coordinator assigns squad roles and limits simultaneous pressure. Compare optional learning against this baseline rather than adding a model before a playable encounter exists.
+
+- **Optional reinforcement/imitation learning:** Unity's [ML-Agents overview](https://unity-technologies.github.io/ml-agents/ML-Agents-Overview/) describes learning-based agent training. Our proposed use is offline training for cover selection, repositioning and choosing among approved actions. Training uses owned simulated encounters, not survey registrations. Pin compatible tool/model versions before any experiment; no ML runtime dependency is added by this plan.
+- **Runtime boundary:** freeze an evaluated model for local inference, keep telegraph/cooldown/visibility limits outside its policy, and retain the rule-based fallback. Do not adapt secretly during a fight or let a policy alter a rhythm chart, hit resolution or attack safety envelope.
+- **Evaluation before adoption:** compare success across player skill levels, warning comprehension, avoidable attack rates, stalls/repetitive behavior, frame time and memory against the baseline on target hardware. Test unfamiliar layouts and model failure. Improved training reward alone does not establish a more enjoyable opponent.
+- **Optional constrained layout variation:** assemble reviewed cover/entrance templates only after the fixed arena works. Validate connected routes, safe spawn/exit, evasion space and clear sightlines; use a fixed authored layout when validation fails.
+
+The assistant owns preparation of original concept sheets, Boss/minion silhouettes, weapons, modular arena props, textures, sound candidates, provenance and import checks. The creator continues to own core gameplay code and artistic direction. Preserve exact image-generation prompts when used, source licenses/attribution, editable masters and paired Unity GUIDs/meta files. Start with a silhouette sheet, a small material palette, one cover module and attack-warning references before producing a large asset set. This ownership decision is not a claim that those assets already exist. Gameplay implementation still follows the learner-led sequence and requires explicit authorization to be written directly by the assistant.
+
 ## Continuous-fire contract
 
 “Unrestricted continuous fire” means the player may hold the fire input for the whole playable round. There is no ammunition pool, magazine, reload, heat meter, stamina cost, rhythm permission gate or forced downtime. Empty shots and surface painting do not punish the player. Releasing and pressing again is a choice, not a resource-reset requirement.

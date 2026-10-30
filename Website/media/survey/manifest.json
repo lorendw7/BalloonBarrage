@@ -1,0 +1,12 @@
+{
+  "url": "https://docs.google.com/forms/d/e/1FAIpQLSeVouVCSTX5NwfYFtdqnif3T98-n9IXLhL2dqh8Y2uucesujQ/viewform?usp=publish-editor",
+  "generator": "qrcode 8.2",
+  "decoder": "zxing-cpp 3.0.0",
+  "errorCorrection": "M",
+  "quietZoneModules": 4,
+  "modulesIncludingBorder": 53,
+  "files": {
+    "survey-qr.svg": "53deab5be4d7877edf6fe3f92f3ceb569abc484625babb9c20a4449b5389ef04",
+    "survey-qr.png": "3e47ee42f2c9066c5a94e561ad0b8e99e2573b22f910b500ab3182969706a68a"
+  }
+}

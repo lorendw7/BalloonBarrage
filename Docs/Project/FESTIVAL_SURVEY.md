@@ -43,6 +43,23 @@ References: Google on [sharing and response summaries](https://support.google.co
 
 When changing that URL, verify the nickname requirement, both invitation branches, email validation, private response settings, contact/retention notice and public responder permissions. Use clearly labelled synthetic test data only when authorized to submit a test response. Website tests validate rendering and links; they do not establish that the live Google Form saves data or protects its responses correctly.
 
+## QR entry and printable asset
+
+All three survey pages display a locally generated black-on-white QR beside the responder button, plus a downloadable PNG. It encodes exactly `getSurveyFormUrl()`, including no visitor details or intermediate tracking service. The homepage keeps its compact survey link. The existing live questionnaire and its answer options are unchanged by the separate Boss-planning update.
+
+Sources are `Website/media/survey/survey-qr.svg` and `.png`; `manifest.json` records the public URL, generation settings and SHA-256 hashes. The build checks the URL and hashes before publishing content-addressed copies. A URL change requires regeneration. Keep the four-module white quiet zone, square shape and unaltered dark modules when printing; do not put a logo over the code.
+
+Regeneration uses isolated tooling, not a website/runtime dependency:
+
+```powershell
+python -m pip install --target .local-reference/qr-tools qrcode==8.2 zxing-cpp==3.0.0
+$env:PYTHONPATH=(Resolve-Path .local-reference/qr-tools).Path
+python Website/scripts/prepare-survey-qr.py
+python Website/scripts/prepare-survey-qr.py --check
+```
+
+Pillow must also be available to Python (already present on the authoring workstation). The generator reads the canonical URL through Node and verifies the PNG with the independent ZXing decoder at its native 636-pixel size and the 260-pixel display size. These are automated decoding checks, not a claim of a physical-phone scan at the venue. Recheck with a phone after printing for the intended display distance.
+
 ## Live form verification — October 31, 2026
 
 - The editor showed **Published**, automatic email collection **Do not collect**, account-based response limits off, and response summaries off. The sharing dialog showed one owner, restricted editor access and **Anyone with the link** responder access.

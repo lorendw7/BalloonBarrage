@@ -1,12 +1,14 @@
 import { languages } from "../src/strings.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
 import { surveyStrings } from "../src/survey-strings.mjs";
+import { bossStrings } from "../src/world-boss-strings.mjs";
 import { escapeHtml as e } from "./render.mjs";
 
-export const worldPages = ["", "map", "play", "art", "roadmap"];
+export const worldPages = ["", "map", "play", "boss", "art", "roadmap"];
 
 export function renderWorld(locale, files = {}, page = "") {
   const t = worldStrings[locale];
+  const boss = bossStrings[locale];
   if (!t) throw new Error(`Unsupported world language: ${locale}`);
   if (!worldPages.includes(page)) throw new Error(`Unsupported world page: ${page}`);
   const base = "../".repeat(1 + Number(locale !== "zh-Hans") + Number(Boolean(page)));
@@ -16,17 +18,18 @@ export function renderWorld(locale, files = {}, page = "") {
   const canonical = `https://lorendw7.github.io/BalloonBarrage/${locale === "zh-Hans" ? "" : `${locale}/`}open-world/${page ? `${page}/` : ""}`;
   const labels = { "zh-Hans": "中文", ja: "日本語", en: "EN" };
   const ids = ["plaza", "pier", "garden", "rooftops"];
-  const nav = [["", t.nav], ["map", t.mapNav], ["play", `${t.loopNav} / ${t.aiNav}`], ["art", t.artNav], ["roadmap", t.planNav]];
+  const nav = [["", t.nav], ["map", t.mapNav], ["play", `${t.loopNav} / ${t.aiNav}`], ["boss", boss.nav], ["art", t.artNav], ["roadmap", t.planNav]];
   const pageTitle = page ? `${nav.find(([id]) => id === page)[1]} | ${t.title}` : t.title;
+  const description = page === "boss" ? boss.intro : t.description;
   const sections = (items, css = "world-cards") => `<div class="${css}">${items.map(([title, body]) => `<article><h3>${e(title)}</h3><p>${e(body)}</p></article>`).join("")}</div>`;
   return `<!doctype html>
 <html lang="${locale}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${e(pageTitle)}</title><meta name="description" content="${e(t.description)}">
+  <title>${e(pageTitle)}</title><meta name="description" content="${e(description)}">
   <meta name="theme-color" content="#fff4dc"><link rel="canonical" href="${canonical}">
   <meta property="og:type" content="website"><meta property="og:title" content="${e(pageTitle)}">
-  <meta property="og:description" content="${e(t.description)}"><meta property="og:url" content="${canonical}">
+  <meta property="og:description" content="${e(description)}"><meta property="og:url" content="${canonical}">
   ${languages.map(lang => `<link rel="alternate" hreflang="${lang}" href="${route(lang)}">`).join("\n  ")}
   <link rel="icon" type="image/svg+xml" href="${base}favicon.svg">
   <link rel="stylesheet" href="${base}${e(files["styles.css"] ?? "styles.css")}">
@@ -57,10 +60,12 @@ export function renderWorld(locale, files = {}, page = "") {
     ${page === "play" ? `<section class="world-loop-band"><div class="section" id="loop" aria-labelledby="loop-title"><div class="world-heading"><p class="eyebrow">02 / PLAY</p><h2 id="loop-title">${e(t.loopTitle)}</h2><p>${e(t.loopIntro)}</p></div>${sections(t.loop, "world-loop")}<p class="world-note">${e(t.rule)}</p></div></section>
     <section class="section" id="rival" aria-labelledby="rival-title"><div class="world-heading"><p class="eyebrow">03 / RIVAL</p><h2 id="rival-title">${e(t.aiTitle)}</h2><p>${e(t.aiIntro)}</p></div><ol class="ai-states">${t.aiStates.map(s => `<li>${e(s)}</li>`).join("")}</ol>${sections(t.aiRules)}<details class="world-role-details"><summary>${e(t.roleTitle)}</summary><p>${e(t.roleIntro)}</p>${sections(t.roles)}</details></section>
     ` : ""}
+    ${page === "boss" ? `<section class="section" aria-labelledby="boss-title"><div class="world-heading"><h2 id="boss-title">${e(boss.title)}</h2><p>${e(boss.intro)}</p><p>${e(boss.distinction)}</p></div>${sections(boss.steps)}<p class="world-note">${e(boss.outcome)}</p><details class="world-role-details"><summary>${e(boss.rulesTitle)}</summary>${sections(boss.rules)}</details><details class="world-role-details"><summary>${e(boss.techTitle)}</summary><p>${e(boss.techIntro)}</p>${sections(boss.tech)}<p>${e(boss.inspiration)}</p><p><a href="https://www.nintendo.com/en-ca/whatsnew/splatoon-3-makes-a-big-splash-in-new-video-preview-filled-to-the-gills-with-fresh-gameplay-and-new-details/">Nintendo · Salmon Run</a> · <a href="https://unity-technologies.github.io/ml-agents/ML-Agents-Overview/">Unity · ML-Agents</a></p></details><details class="world-role-details"><summary>${e(boss.artTitle)}</summary><p>${e(boss.art)}</p></details><p class="world-note">${e(boss.order)}</p></section>` : ""}
     ${page === "art" ? `<section class="section" id="art-direction" aria-labelledby="art-title"><div class="world-heading"><p class="eyebrow">A + C / ART</p><h2 id="art-title">${e(t.artTitle)}</h2><p>${e(t.artIntro)}</p></div>${sections(t.artRules)}<p class="world-note">${e(t.artLater)}</p></section>` : ""}
     ${page === "roadmap" ? `<section class="section world-plan" id="plan" aria-labelledby="plan-title"><div class="world-heading"><p class="eyebrow">04 / BUILD TOGETHER</p><h2 id="plan-title">${e(t.planTitle)}</h2><p>${e(t.planIntro)}</p></div><ol class="world-timeline">${t.stages.map(([code, name, work, gate]) => `<li><span>${code}</span><div><h3>${e(name)}</h3><p>${e(work)}</p><p class="stage-gate">${e(gate)}</p></div></li>`).join("")}</ol><p class="world-note">${e(t.deferred)}</p></section>` : ""}
     ${!page ? `<section class="section world-choices" id="choices" aria-labelledby="choices-title"><div class="world-heading"><p class="eyebrow">${e(t.choicesNav)}</p><h2 id="choices-title">${e(t.choicesTitle)}</h2><p>${e(t.choicesIntro)}</p></div>
       ${sections(t.choices)}
+      <p class="world-note"><a href="${worldRoot}boss/">${e(boss.teaser)}</a></p>
     </section>` : ""}
     <nav class="world-nav" aria-label="${e(t.navigation)}">${nav.map(([id, text]) => `<a href="${worldRoot}${id ? `${id}/` : ""}"${id === page ? ' aria-current="location"' : ""}>${e(text)}</a>`).join("")}</nav>
     <footer class="section world-sources"><div class="world-source-links"><a href="${home}">${e(t.home)}</a><a href="${home}survey/">${e(surveyStrings[locale].nav)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only">${e(t.sourceDesign)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md#open-world-development-track--planning-only">${e(t.sourceRoadmap)}</a></div>${page === "art" ? `<p>${e(t.originality)}</p>` : ""}</footer>

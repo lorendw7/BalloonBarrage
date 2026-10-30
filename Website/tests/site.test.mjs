@@ -10,6 +10,7 @@ import { getReleaseSnapshot, selectDownload, selectDownloads, repositoryUrl } fr
 import { renderPage } from "../scripts/render.mjs";
 import { renderWorld, worldPages } from "../scripts/render-world.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
+import { bossStrings } from "../src/world-boss-strings.mjs";
 import { loadTemplate, sitePages } from "../scripts/templates.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
@@ -313,8 +314,10 @@ test("pagination keeps landing pages compact and preserves localized detail rout
 test("world pages preserve locale across nested navigation and keep proposals separate from downloads", async () => {
   const shape = value => Array.isArray(value) ? value.map(shape) : typeof value;
   for (const locale of languages) {
-    assert.deepEqual(Object.keys(worldStrings[locale]).sort(), Object.keys(worldStrings.en).sort());
-    for (const key of Object.keys(worldStrings.en)) assert.deepEqual(shape(worldStrings[locale][key]), shape(worldStrings.en[key]), `${locale}/${key}`);
+    for (const translations of [worldStrings, bossStrings]) {
+      assert.deepEqual(Object.keys(translations[locale]).sort(), Object.keys(translations.en).sort());
+      for (const key of Object.keys(translations.en)) assert.deepEqual(shape(translations[locale][key]), shape(translations.en[key]), `${locale}/${key}`);
+    }
     const html = renderWorld(locale);
     const root = locale === "zh-Hans" ? "../" : "../../";
     const prefix = locale === "zh-Hans" ? "" : `${locale}/`;

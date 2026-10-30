@@ -343,6 +343,12 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 @media (max-width: 620px) { .showcase-facts { grid-template-columns: 1fr; } }
 
 .release-highlight { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: linear-gradient(115deg, #f2e7cb, #f5ebe3 65%, #dce9df); }
+.survey-entry { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 2rem; align-items: center; }
+.survey-qr { margin: 0; text-align: center; }
+.survey-qr img { display: block; width: 260px; max-width: 100%; height: auto; margin: 0 auto 1rem; background: white; }
+.survey-qr figcaption { font-size: .9rem; }
+.survey-qr figcaption p { margin: .5rem 0; }
+@media (max-width: 700px) { .survey-entry { grid-template-columns: minmax(0, 1fr); } }
 .release-highlight h2 { font-size: clamp(1.35rem, 2.7vw, 2rem); margin: .4rem 0 .6rem; }
 .release-highlight .eyebrow { color: var(--teal); font-size: .8rem; font-weight: 700; }
 .release-highlight .text-link { flex-shrink: 0; }

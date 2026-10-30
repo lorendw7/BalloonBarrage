@@ -46,7 +46,10 @@ export function renderPage(template, locale, release, staticFiles = {}, page = "
     surveyUrl: `${home}survey/`, surveyNav: e(survey.nav), surveyTitle: e(survey.title), surveyTeaser: e(survey.teaser),
     surveyIntro: e(survey.intro), surveyBack: e(survey.back), surveyThanks: e(survey.thanks),
     description: e(page === "survey" ? survey.intro : text.description),
-    surveyContent: page === "survey" ? surveyContent(locale, e) : "",
+    surveyContent: page === "survey" ? surveyContent(locale, e, undefined, {
+      svg: staticFiles["survey-qr.svg"] ? `${base}${staticFiles["survey-qr.svg"]}` : "",
+      png: staticFiles["survey-qr.png"] ? `${base}${staticFiles["survey-qr.png"]}` : ""
+    }) : "",
     title: e(page ? `${headings[page]} | BalloonBarrage` : text.title), pageHeading: e(headings[page] ?? text.title), pageClass: page ? "site-detail" : "site-home",
     gameUrl: `${home}game/`, updatesUrl: `${home}updates/`, artUrl: `${home}art/`,
     worldUrl: `${home}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),
