@@ -13,6 +13,10 @@ All archive CRCs and every runtime file's recorded size/SHA-256 pass (264 Window
 
 [Release transport run 41141930994](https://github.com/lorendw7/BalloonBarrage/actions/runs/41141930994) reconstructed checksum-identical archives. All six final remote assets match local size and SHA-256; only the two temporary draft transport assets were removed before publication. Original archives remain immutable. Exact reports/checksums are retained in ignored `Builds/Desktop-v0.1.0-demo.16`.
 
+[Anonymous public-download run 41142671139](https://github.com/lorendw7/BalloonBarrage/actions/runs/41142671139) passed all six HTTP downloads and digests. [Website deployment 41142670207](https://github.com/lorendw7/BalloonBarrage/actions/runs/41142670207) succeeded from `c411a680d7ee8c9f31742dbc41f8356899861f43`. Live verification passes all **30** formal routes, demo.16 metadata for both platforms, and **10** exact-byte image/emoji/license/audio files. The official Chinese update page was inspected in the browser; its genuine live screenshot is retained under ignored `Logs/RoomPaint20261031/official-website-live.jpg`.
+
+After preservation checks, removed **10.554 GiB** of this run's reproducible worktrees, raw builds, diagnostic players and temporary transport/restoration data. All versioned archives/checksums, canonical assets and GUIDs, reports, original music, main Library and latest Windows extraction remain. Original learner/shader-graph/editor changes and concurrent survey/website work are preserved and excluded from this release bookkeeping.
+
 The source GPU/physics and separate hidden native lifecycle results below retain their own scope. Hidden native render capture was black; frame figures are rejected as rendering evidence. The creator selected automatic checks/publication. Visible UI, physical gamepads, human/venue audio and a real Mac remain unaccepted. Mac is unsigned/unnotarized; the mixed StepMania bundle remains noncommercial. The website uses the genuine controlled Editor capture, not the blank native capture, and reports bounded resources rather than a 120 FPS guarantee.
 
 ## Room-wide ink source verification — October 31
