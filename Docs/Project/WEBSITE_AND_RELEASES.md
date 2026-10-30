@@ -2,6 +2,10 @@
 
 This document owns the website architecture and its contract with GitHub Releases. Use the [desktop release runbook](PACKAGING_LESSON.md) for local Unity builds, Draft Release staging, physical acceptance and publication. [Validation](VALIDATION.md) records completed checks and package hashes; the [Roadmap](../Design/ROADMAP.md) owns scope and release gates.
 
+## Demo.15 audience presentation — October 31
+
+The trilingual site presents demo.15 downloads and success reactions with four unchanged Noto Emoji PNGs and an OtoLogic MP3 preview. Playback requires an explicit user action; the audio filename is content-addressed and the original notices plus Apache-2.0/CC-BY-4.0 texts are copied to public assets. The import's [provenance](../../Assets/Resources/Audience/Provenance.json) owns source hashes and licensing. The independently committed survey preview remains intact. [Validation](VALIDATION.md#demo15-desktop-publication--october-31) separates 21 integrated website checks and public delivery evidence from the unaccepted native UI, physical-controller and real-Mac checks.
+
 ## Distribution contract
 
 - GitHub Pages hosts the static Chinese, Japanese and English website.

@@ -4,11 +4,10 @@ Updated: October 31, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
-The creator requests the [audience cheer revision](GAME_DESIGN.md#audience-cheers--demo15-source-revision), dual-platform demo.15 packages, tests, main push and official website publication. The controlled presentation fixture passes; clean-source builds and exact archive/public delivery checks are the next gates. Keep the local learner/art edits outside this release.
+The [audience cheer revision](GAME_DESIGN.md#audience-cheers--demo15-source-revision) is published in demo.15 with dual-platform candidates, exact archive/public download checks and the trilingual website. Controlled checks pass; native Windows UI automation could not complete after the desktop control stop, while physical-controller, venue-audio and real-Mac acceptance remain open. Preserve learner/art working edits, release archives, music originals, source/GUIDs and verification records.
 
-The subsequent creator request authorizes a 24-target production cap, twelve-second post-note cleanup, fresh Windows/macOS packaging and checks, a normal main-branch push and deletion of obsolete recoverable caches. The follow-up official-website request publishes the verified demo.14 candidates and updates all three languages. [Validation](../Project/VALIDATION.md#demo14-publication-and-official-website--october-31) owns package, transport, live-route and download evidence. Preserve older archives/checksums, music originals, source/GUIDs and validation records. Native Windows UI access timed out; physical-device/real-Mac acceptance remains separate from publication.
 
-The creator-authorized [sequence guidance, celebrations, A+B+C Kyudaisai presentation and gamepad feel](GAME_DESIGN.md#sequence-guidance-and-celebrations--source-revision) are included in demo.14. Controlled checks cover read-only guidance, ordinary/beat/chain reward boundaries and modal/input lifecycle; physical Xbox/Beitong comfort remains a creator playtest. Open-world gameplay remains outside this authorization.
+The creator-authorized [sequence guidance, celebrations, A+B+C Kyudaisai presentation and gamepad feel](GAME_DESIGN.md#sequence-guidance-and-celebrations--source-revision) remain in the published baseline. Controlled checks cover read-only guidance, ordinary/beat/chain reward boundaries and modal/input lifecycle; physical Xbox/Beitong comfort remains a creator playtest. Open-world gameplay remains outside this authorization.
 
 The October 30 planning request authorizes documenting the selected open-world direction, updating the official website and pushing main. It does **not** authorize implementing open-world gameplay. The selected topology, encounter structure and first AI role are in [Game design](GAME_DESIGN.md#open-world-direction--planning-only); the [open-world track](#open-world-development-track--planning-only) below is the future learner/assistant development sequence. Exhibition and package work retain their existing evidence boundaries.
 
@@ -16,11 +15,11 @@ The published baseline retains the creator's completed co-op decisions, all twen
 
 | Current work | Completion boundary |
 |---|---|
-| Demo.14 desktop candidates | Preserve the verified immutable ZIPs; keep native Windows, physical-controller and real-Mac acceptance separate from passed controlled checks and headless startup |
-| Trilingual official website | Present published demo.14 downloads, explain the three cue meanings and Kyudaisai presentation, and retain the confirmed Room 2407 meeting place; future packages need their own release |
+| Demo.15 desktop candidates | Preserve the verified immutable ZIPs; keep native Windows, physical-controller and real-Mac acceptance separate from passed controlled checks and headless startup |
+| Trilingual official website | Present published demo.15 downloads with optional cheer playback, explain the three cue meanings and Kyudaisai presentation, and retain the confirmed Room 2407 meeting place; future packages need their own release |
 | Local disk reclamation | Remove only verified recoverable extractions or reproducible build output; preserve release archives, checksums, evidence, source, asset GUIDs, notices and music originals |
 
-Unity checks, exact-package observations, screenshots and remaining human/device checks belong to [Validation](../Project/VALIDATION.md#demo14-publication-and-official-website--october-31). Keep real-Mac, native keyboard/focus, sustained-spray and venue acceptance distinct from the completed checks. Demo.13 remains the previous desktop candidate, and demo.6 remains the complete-song fallback. Published packages are immutable; historical natural rounds and newer controlled diagnostics retain their original revision boundaries.
+Unity checks, exact-package observations, screenshots and remaining human/device checks belong to [Validation](../Project/VALIDATION.md#demo15-desktop-publication--october-31). Keep real-Mac, native keyboard/focus, sustained-spray and venue acceptance distinct from the completed checks. Demo.14 remains the previous desktop candidate, and demo.6 remains the complete-song fallback. Published packages are immutable; historical natural rounds and newer controlled diagnostics retain their original revision boundaries.
 
 - **Festival:** 60–75 seconds per song, preferably about 65 seconds, with a clear musical start, contrast and ending. Default to this mode for the booth.
 - **Standard:** each complete recording, with a separate versioned chart/profile identity. Do not overwrite original audio or existing profiles.
