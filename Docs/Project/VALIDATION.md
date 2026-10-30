@@ -1,8 +1,20 @@
 # Validation record
 
+## Demo.14 publication and official website — October 31
+
+At the creator's request to update the official website and push main, [v0.1.0-demo.14](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.14) was published as a development prerelease at **00:01:22 on October 31, 2026 (Asia/Tokyo)**. It contains the exact Windows/macOS archives from source `564d69935de4fca9fb3253057e4f478cd2eb4a05`, with the sizes/hashes recorded in the packaging entry below. No Unity rebuild or replacement of an older public asset was performed. Demo.13 remains available unchanged.
+
+The [transport run](https://github.com/lorendw7/BalloonBarrage/actions/runs/41075552162) reconstructed byte-identical ZIPs from locally verified deltas. All six final server assets matched local size and SHA-256 before publication; the two temporary transport assets were removed from the draft. The published release has two ZIPs, two archive sidecars and a verification JSON with its sidecar. [Anonymous public-delivery verification](https://github.com/lorendw7/BalloonBarrage/actions/runs/41076860086) downloaded all six complete bodies and passed HTTP 200, size and SHA-256 checks against GitHub's recorded digests.
+
+Website source **`1f17177f1c62c0c5d9d498177b91b7f39b73a906`** was pushed to main. The [Pages deployment](https://github.com/lorendw7/BalloonBarrage/actions/runs/41076859537) passed build, all **18 site tests** and deployment. All 27 routes were generated. Live Chinese/Japanese/English home, game and update routes returned HTTP 200 with demo.14 copy; the public release snapshot and both platform links on all three home pages point to demo.14. The new cue cards distinguish cosmetic order celebration, the 10/20 beat reward and charged secondary pops. Original CSS diagrams are labelled as explanations, not gameplay captures. The dawn/lantern/79 description links the official theme; existing demo.8 screenshots keep their actual source labels and provenance.
+
+Browser inspection verified the live Chinese guide and local desktop/narrow layouts. At a 390-pixel viewport, Chinese, Japanese and English cue cards stacked without horizontal overflow. The guide's shrinking-ring animation respects reduced-motion preferences. Public copy retains the noncommercial StepMania restriction, unsigned/unnotarized Mac status and incomplete physical/native acceptance. Static website checks and public downloads add no new Unity, real-Mac, controller-feel or natural standalone-round acceptance.
+
+Raw upload/public-download/live-route reports and the live guide screenshot remain under ignored `Logs/WebsiteDemo14`. The two existing creator working files were excluded from publication commits.
+
 ## Demo.14 local desktop candidates and cache cleanup — October 30
 
-The creator requested further optimization, more simultaneous balloons, longer unhit retention, new packages/checks, a normal main push and obsolete-cache cleanup. Source **`564d69935de4fca9fb3253057e4f478cd2eb4a05`** was pushed to main and built in independent Windows/macOS worktrees. Existing learner/shader working changes were excluded from that commit and preserved locally. This is a **local candidate**, not a newly published GitHub release; the website still offers demo.13.
+The creator requested further optimization, more simultaneous balloons, longer unhit retention, new packages/checks, a normal main push and obsolete-cache cleanup. Source **`564d69935de4fca9fb3253057e4f478cd2eb4a05`** was pushed to main and built in independent Windows/macOS worktrees. Existing learner/shader working changes were excluded from that commit and preserved locally. This entry records the initial local packaging; publication of the unchanged archives is recorded above.
 
 Production settings now allow **24 active targets** and cleanup **12 seconds after a note** (about 14.8 seconds after its unchanged early appearance). The three-second drift wait, 0.75-unit spawn spacing, original event IDs/timestamps, audio, ordinary/beat rewards and asset GUIDs remain intact. Twenty current v4 charts refresh only their occupancy estimate; their playable event data and profiles are unchanged. Recomputed no-hit occupancy peaks at **21**, below capacity.
 

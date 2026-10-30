@@ -14,6 +14,8 @@ This document owns the website architecture and its contract with GitHub Release
 
 The website is a release catalogue, not acceptance evidence. Static checks cannot prove that a Unity player launches, plays audio, handles input or completes a song.
 
+The October 31 demo.14 update publishes the previously verified Windows/macOS candidates and updates all three website languages. A compact home highlight introduces the new version; the game page adds labelled order/ring/chain diagrams and a Kyudaisai dawn/lantern/79 explanation with an optional spoiler disclosure. Capacity/retention copy is 24 targets and twelve seconds after the note. Current verification limits remain explicit, while older screenshots retain their source version labels. [Validation](VALIDATION.md#demo14-publication-and-official-website--october-31) owns exact source/deployment identities and public download evidence.
+
 ## Release asset selection
 
 `Website/scripts/releases.mjs` queries this repository's public releases during the site build. It examines up to the latest 100 releases, rejects drafts and empty assets, accepts only trusted HTTPS `releases/download` URLs from this repository, and prefers a stable release over a prerelease. Windows and macOS labelled ZIPs are resolved separately.
