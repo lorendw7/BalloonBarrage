@@ -39,9 +39,9 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
-test("demo.15 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
+test("demo.16 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
   for (const locale of languages) {
-    assert.ok(strings[locale].deliveryNowTitle.includes("demo.15"));
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.16"));
     for (const value of ["3", "24", "12", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
     assert.ok(strings[locale].factPaint.includes("24"));
     assert.ok(strings[locale].factPaintBody.includes("12"));
@@ -83,7 +83,7 @@ test("confirmed meeting room and packaged relay stay explicit in every language"
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
-    assert.ok(strings[locale].relayStatus.includes("demo.15"));
+    assert.ok(strings[locale].relayStatus.includes("demo.16"));
     assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);
@@ -108,9 +108,9 @@ test("all languages explain unrestricted-duration held fire without promising pe
 });
 test("all languages describe the integrated eight-color coverage fixture", () => {
   const required = {
-    "zh-Hans": ["八种颜色", "九个", "1000", "十次 Retry"],
-    ja: ["8色", "9面", "1,000", "10回連続"],
-    en: ["eight pigments", "nine", "1,000", "ten consecutive Retries"]
+    "zh-Hans": ["八种颜色", "404", "10000", "五次 Retry"],
+    ja: ["8色", "404", "10,000", "5回連続"],
+    en: ["eight pigments", "404", "10,000", "five consecutive Retries"]
   };
   for (const locale of languages) {
     const copy = `${strings[locale].updatesIntro} ${strings[locale].sprayBody} ${strings[locale].sprayPreviewLabel} ${strings[locale].sprayRuntimeStatus}`;

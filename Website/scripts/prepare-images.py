@@ -33,6 +33,7 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "room-paint-coverage-20261031": "Assets/StudioArtPack/RoomPaint20261031/Previews/FullRoomControlled.png",
     "festival-selection-20261029": "Assets/Art/Previews/Festival20261029/Selection.png",
     "festival-watch-20261029": "Assets/Art/Previews/Festival20261029/Watch.png",
     "festival-response-20261029": "Assets/Art/Previews/Festival20261029/Response.png",
@@ -65,6 +66,7 @@ SOURCES = {
 }
 
 PREVIEW_ATTRIBUTIONS = {
+    "room-paint-coverage-20261031": 'Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing. Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported.',
     "festival-selection-20261029": "Native Unity 6000.0.77f1 automated Editor Play Mode 3840x2160 capture, October 29 2026. Demo.8 source commit 2c3df2d494eb201939ebc69b797bed23b87aa464, showing Festival/Standard mode selection and the matching song selector. Not a standalone-package capture or physical playtest. No generative editing; original artwork, prompts, models and font attribution preserved.",
     "festival-watch-20261029": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: three noninteractive hollow demonstration markers. Not a standalone-package capture or physical playtest. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved.",
     "festival-response-20261029": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: real answer balloons following the demonstration. Not a standalone-package capture, human aiming or listening evidence. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved.",

@@ -387,5 +387,17 @@
     ],
     "preparation": "1200x675 Lanczos; RGB JPEG quality 92, optimized",
     "attribution": "Native Unity 6000.0.77f1 automated Editor natural-DSP verification capture, 3840x2160, October 29 2026. Demo.8 source, Cozy Puzzle In-Game 1 festival profile: real answer balloons following the demonstration. Not a standalone-package capture, human aiming or listening evidence. No generative editing. MintoDog music remains CC0; other artwork/model/font attribution and exact recorded prompts remain preserved."
+  },
+  {
+    "source": "Assets/StudioArtPack/RoomPaint20261031/Previews/FullRoomControlled.png",
+    "source_sha256": "8a8924b31542464248886789f70c19968c31325fa39b21ead01dfec9954723ef",
+    "output": "Website/media/room-paint-coverage-20261031.webp",
+    "output_sha256": "0bfd6b3028e8d574f9027487e6e6f284d71c6f60b01d892da60c66586397e32f",
+    "dimensions": [
+      2560,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing. Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported."
   }
 ]

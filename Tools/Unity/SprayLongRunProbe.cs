@@ -45,7 +45,7 @@ public sealed class SprayLongRunProbe : MonoBehaviour
     {
         public string status = "running", unityVersion, gpu, cpu, title, trackId, output;
         public string paintBackend, paintCountMeaning;
-        public string scope = "Non-Development diagnostic Windows player; natural DSP longest song; synthetic held mouse/periodic pigment changes; method-driven focus and suspension assertions, then replayed focused/released input if external tools interrupt the performance workload. Not physical Alt+Tab, human aiming/listening or venue acceptance.";
+        public string scope = "Non-Development diagnostic Windows player; natural DSP longest song; synthetic held mouse/periodic pigment changes; method-driven focus and suspension assertions. Passed status accepts logical lifecycle only. Independently inspect actual rendered captures and nonzero render counters before citing frame figures: a hidden window may skip camera rendering. Not physical Alt+Tab, human aiming/listening or venue acceptance.";
         public int width, height, requestedFps = 120, focusAssertions, peakMarks, performanceFocusReplays;
         public double durationSeconds, completedAtSongSeconds, wallSeconds, earlyFrameP50, earlyFrameP95, lateFrameP50, lateFrameP95;
         public bool results, paintSurvivesResults, retryClearsPaint, zeroResultsParticles;

@@ -262,5 +262,13 @@
   {
     "source": "Assets/Resources/Audience/emoji_u1f929.png",
     "output": "audience-star.png"
+  },
+  {
+    "source": "Assets/StudioArtPack/RoomPaint20261031/Previews/FullRoomControlled.png",
+    "output": "room-paint-coverage-20261031.png"
+  },
+  {
+    "source": "Website/media/room-paint-coverage-20261031.webp",
+    "output": "room-paint-coverage-20261031.webp"
   }
 ]

@@ -2,9 +2,11 @@
 
 This document owns the website architecture and its contract with GitHub Releases. Use the [desktop release runbook](PACKAGING_LESSON.md) for local Unity builds, Draft Release staging, physical acceptance and publication. [Validation](VALIDATION.md) records completed checks and package hashes; the [Roadmap](../Design/ROADMAP.md) owns scope and release gates.
 
-## Demo.15 audience presentation — October 31
+## Room-wide paint presentation — October 31
 
-The trilingual site presents demo.15 downloads and success reactions with four unchanged Noto Emoji PNGs and an OtoLogic MP3 preview. Playback requires an explicit user action; the audio filename is content-addressed and the original notices plus Apache-2.0/CC-BY-4.0 texts are copied to public assets. The import's [provenance](../../Assets/Resources/Audience/Provenance.json) owns source hashes and licensing. The independently committed survey preview remains intact. [Validation](VALIDATION.md#demo15-desktop-publication--october-31) separates 21 integrated website checks and public delivery evidence from the unaccepted native UI, physical-controller and real-Mac checks.
+The demo.16 website copy introduces 404 prepared opaque static studio surfaces, connected same-player strokes, original dense wet pigment and bounded storage. A genuine 2560×1440 controlled Unity GPU/physics capture replaces the old nine-receiver preview. The source capture, hashes and scope live in `Assets/StudioArtPack/RoomPaint20261031`; web derivatives retain provenance. The performance panel reports 64 MiB color storage and 76% fewer visible vertices, not a venue 120 FPS claim.
+
+The four unchanged Noto Emoji PNGs and OtoLogic MP3 preview remain. Playback requires an explicit user action; original notices and license texts are public assets. The [audience provenance](../../Assets/Resources/Audience/Provenance.json) owns their source hashes. The independently committed connected survey and historical demo.8 screenshot source labels remain intact. Website checks and live delivery are recorded separately from player acceptance in [Validation](VALIDATION.md).
 
 ## Survey connection and clearer world guide — October 31
 
