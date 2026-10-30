@@ -50,8 +50,9 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
             {
                 if (demonstration.slots == null || demonstration.slots.Length == 0 ||
                     demonstration.stepSeconds <= 0d) continue;
-                double end = demonstration.answerStartSeconds +
-                    demonstration.slots.Length * demonstration.stepSeconds;
+                double end = demonstration.answerEndSeconds > demonstration.answerStartSeconds
+                    ? demonstration.answerEndSeconds
+                    : demonstration.answerStartSeconds + demonstration.slots.Length * demonstration.stepSeconds;
                 if (now >= demonstration.startSeconds && now < end)
                 {
                     active = demonstration;

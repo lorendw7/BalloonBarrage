@@ -25,9 +25,13 @@ public class RoundController : MonoBehaviour
     private RainbowChain rainbowChain;
     private Dropdown rulesDropdown;
     private Text rulesDescription;
+    private LocalPlayerInput localPlayers;
+    private Dropdown playersDropdown;
+    private Text playersDescription;
     public bool RainbowChainEnabled { get; private set; }
     public string SelectedBestScoreKey => GetBestScoreKey(SelectedSong.trackId) +
-        (RainbowChainEnabled ? ".RainbowChain.v1" : "");
+        (RainbowChainEnabled ? ".RainbowChain.v1" : "") +
+        (localPlayers != null && localPlayers.IsCoop ? ".LocalCoop.Dev.v1" : "");
     private float songDuration;
     private double songStartDspTime;
 
@@ -161,6 +165,8 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        localPlayers = gameObject.AddComponent<LocalPlayerInput>();
+        localPlayers.Configure(this, FindFirstObjectByType<PlayerShooter>());
         rainbowChain = GetComponent<RainbowChain>();
         if (rainbowChain == null) rainbowChain = gameObject.AddComponent<RainbowChain>();
         rainbowChain.Configure(this);
@@ -393,8 +399,36 @@ public class RoundController : MonoBehaviour
         songDropdown.SetValueWithoutNotify(Mathf.Max(0, visibleSongIndices.IndexOf(selectedSongIndex)));
     }
 
+    public void SetLocalPlayerLayout(int value)
+    {
+        if (hasStarted) return;
+        localPlayers.SelectLayout(value);
+        if (playersDropdown != null) playersDropdown.SetValueWithoutNotify(value);
+        bestScore = PlayerPrefs.GetInt(SelectedBestScoreKey, 0);
+        RefreshSongSelectionText();
+    }
+    public void PauseForControllerLoss()
+    {
+        if (IsPlaying && !IsPaused) TogglePause();
+    }
+    public void TogglePauseFromController()
+    {
+        if (IsPlaying && localPlayers.DevicesReady) TogglePause();
+    }
+    private void RefreshLocalInputStatus()
+    {
+        if (playersDescription == null || localPlayers == null) return;
+        playersDescription.text = !localPlayers.CanStart
+            ? LocalizationManager.Format("players.missing", localPlayers.RequiredGamepads, localPlayers.AvailableGamepads)
+            : LocalizationManager.GetText(localPlayers.IsCoop ? "players.lesson" :
+                localPlayers.UsesGamepad(0) ? "players.padControls" : "players.mouseControls");
+        if (songConfirmButton != null) songConfirmButton.interactable = localPlayers.CanStart;
+    }
+
     private static string GetBestScoreKey(string trackId)
     {
+        if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-showcase-v4", System.StringComparison.Ordinal))
+            return $"BestScore.{trackId}.Rhythm.Showcase.v4";
         if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-showcase-v3", System.StringComparison.Ordinal))
             return $"BestScore.{trackId}.Rhythm.Showcase.v3";
         if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-phrase-v2", System.StringComparison.Ordinal))
@@ -404,6 +438,7 @@ public class RoundController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (IsChoosingSong) RefreshLocalInputStatus();
         if (refreshSelectionText)
         {
             refreshSelectionText = false;
@@ -474,14 +509,14 @@ public class RoundController : MonoBehaviour
         songSelectionPanel.transform.SetParent(sourcePanel.parent, false);
         RectTransform panel = songSelectionPanel.GetComponent<RectTransform>();
         panel.anchoredPosition = new Vector2(0f, -100f);
-        panel.sizeDelta = new Vector2(680f, 500f);
+        panel.sizeDelta = new Vector2(680f, 620f);
         Image background = songSelectionPanel.GetComponent<Image>();
         background.sprite = sourcePanel.GetComponent<Image>().sprite;
         background.type = Image.Type.Sliced;
         background.pixelsPerUnitMultiplier = 1.4f;
 
         Text textTemplate = FindDescendant(startScreen.transform, "ControlsText").GetComponent<Text>();
-        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 205f, 38f, 25);
+        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 260f, 38f, 25);
         songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -45f, 76f, 17);
         songSelectionDetails.resizeTextForBestFit = true;
         songSelectionDetails.resizeTextMinSize = 14;
@@ -494,7 +529,7 @@ public class RoundController : MonoBehaviour
         GameObject modeObject = DefaultControls.CreateDropdown(new DefaultControls.Resources());
         modeObject.name = "SongMode";
         modeObject.transform.SetParent(panel, false);
-        modeObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 145f);
+        modeObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 210f);
         modeObject.GetComponent<RectTransform>().sizeDelta = new Vector2(560f, 42f);
         songModeDropdown = modeObject.GetComponent<Dropdown>();
         songModeDropdown.ClearOptions();
@@ -578,6 +613,20 @@ public class RoundController : MonoBehaviour
         rulesDropdown.onValueChanged = new Dropdown.DropdownEvent();
         rulesDropdown.SetValueWithoutNotify(RainbowChainEnabled ? 1 : 0);
         rulesDropdown.onValueChanged.AddListener(index => SetRainbowChainEnabled(index == 1));
+        GameObject playersObject = Instantiate(modeObject, panel);
+        playersObject.name = "LocalPlayerLayout";
+        playersObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 145f);
+        playersDropdown = playersObject.GetComponent<Dropdown>();
+        playersDropdown.onValueChanged = new Dropdown.DropdownEvent();
+        playersDropdown.ClearOptions();
+        playersDropdown.AddOptions(new System.Collections.Generic.List<string> { "Mouse", "Gamepad", "Mouse + gamepad", "Two gamepads" });
+        playersDropdown.template.sizeDelta = new Vector2(0f, 180f);
+        playersDropdown.SetValueWithoutNotify((int)localPlayers.Layout);
+        playersDropdown.onValueChanged.AddListener(SetLocalPlayerLayout);
+        playersDescription = CreateSelectionLabel(textTemplate, "LocalPlayersDescription", -190f, 58f, 17);
+        playersDescription.resizeTextForBestFit = true;
+        playersDescription.resizeTextMinSize = 13;
+        playersDescription.resizeTextMaxSize = 17;
         songConfirmButton = CreateSelectionButton("ConfirmSongButton", "StartButton", -170f, StartSelectedSong);
         songBackButton = CreateSelectionButton("BackFromSongButton", "QuitButton", 170f, CancelSongSelection);
     }
@@ -623,7 +672,7 @@ public class RoundController : MonoBehaviour
         foreach (LocalizedText localized in buttonObject.GetComponentsInChildren<LocalizedText>(true))
             localized.enabled = false;
         RectTransform rect = buttonObject.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(x, -195f);
+        rect.anchoredPosition = new Vector2(x, -265f);
         rect.sizeDelta = new Vector2(280f, 70f);
         Button button = buttonObject.GetComponent<Button>();
         button.onClick = new Button.ButtonClickedEvent();
@@ -645,10 +694,15 @@ public class RoundController : MonoBehaviour
         rulesDropdown.options[0].text = LocalizationManager.GetText("rules.classic");
         rulesDropdown.options[1].text = LocalizationManager.GetText("rules.chain");
         rulesDropdown.RefreshShownValue();
+        string[] layouts = { "players.mouse", "players.pad", "players.mousePad", "players.twoPads" };
+        for (int index = 0; index < layouts.Length; index++) playersDropdown.options[index].text = LocalizationManager.GetText(layouts[index]);
+        playersDropdown.RefreshShownValue();
+        RefreshLocalInputStatus();
         rulesDescription.text = LocalizationManager.GetText(RainbowChainEnabled ? "rules.chainHint" : "rules.classicHint");
         songSelectionDetails.text = $"{SelectedSong.artist}  ·  {SelectedSong.roundDurationSeconds:0} sec\n" +
             LocalizationManager.GetText("song.preview");
-        if (SelectedSong.trackId.EndsWith("-showcase-v3", System.StringComparison.Ordinal))
+        if (SelectedSong.trackId.EndsWith("-showcase-v3", System.StringComparison.Ordinal) ||
+            SelectedSong.trackId.EndsWith("-showcase-v4", System.StringComparison.Ordinal))
             songSelectionDetails.text += "\n" + LocalizationManager.GetText("showcase.tag");
         songConfirmButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.play");
         songBackButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.back");
@@ -678,6 +732,7 @@ public class RoundController : MonoBehaviour
             return;
         }
 
+        if (localPlayers != null && !localPlayers.PrepareRound()) { RefreshLocalInputStatus(); return; }
         Score.ResetScore();
 
         ExhibitionSongProfile profile = SelectedSong;
@@ -760,7 +815,7 @@ public class RoundController : MonoBehaviour
 
     public void ResumeRound()
     {
-        if (IsPlaying && IsPaused)
+        if (IsPlaying && IsPaused && (localPlayers == null || localPlayers.DevicesReady))
         {
             TogglePause();
         }

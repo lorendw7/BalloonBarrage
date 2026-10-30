@@ -16,11 +16,12 @@ public static class PhraseShowcaseValidation
 {
     private const string Active = "PhraseShowcaseValidation.Active";
     private const BindingFlags Private = BindingFlags.Instance | BindingFlags.NonPublic;
-    private static int stage, assertions;
+    private static int stage, assertions, profileIndex;
+    private static readonly List<string> completedProfiles = new List<string>();
+    private static readonly Dictionary<string, int?> preferences = new Dictionary<string, int?>();
+    private static double motionStart, motionEnd;
     private static double deadline, waitUntil;
     private static UILanguage language;
-    private static string record;
-    private static int? savedRecord;
     private static readonly List<string> errors = new List<string>();
     private static MelodyTrajectory[] movers;
     private static Vector3[] pausedPositions;
@@ -50,17 +51,16 @@ public static class PhraseShowcaseValidation
             if (round == null || Time.frameCount < 8) return;
             if (stage == 0)
             {
-                deadline = EditorApplication.timeSinceStartup + 120;
+                deadline = EditorApplication.timeSinceStartup + 400;
                 Application.logMessageReceived += OnLog;
                 language = LanguageSettings.Current;
                 InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
                 foreach (InputDevice device in InputSystem.devices)
                     if (device is Mouse || device is Keyboard) InputSystem.DisableDevice(device);
                 round.BeginRound();
-                record = round.SelectedBestScoreKey;
-                savedRecord = PlayerPrefs.HasKey(record) ? PlayerPrefs.GetInt(record) : (int?)null;
-                Require(round.SelectedSong.trackId.EndsWith("-showcase-v3"), "Default profile is not the versioned showcase.");
-                Require(record.EndsWith(".Rhythm.Showcase.v3"), "Showcase shares the old record.");
+                SaveRecord(round);
+                Require(round.SelectedSong.trackId.EndsWith("-showcase-v4"), "Default profile is not the versioned showcase.");
+                Require(round.SelectedBestScoreKey.EndsWith(".Rhythm.Showcase.v4"), "Showcase shares the old record.");
                 foreach (UILanguage locale in Enum.GetValues(typeof(UILanguage)))
                 {
                     LanguageSettings.SetLanguage(locale);
@@ -79,31 +79,34 @@ public static class PhraseShowcaseValidation
             {
                 if (round.SelectedSong.audioClip.loadState == AudioDataLoadState.Loading) return;
                 round.StartSelectedSong();
-                Require(RoundController.IsPlaying && reader.LoadedChart.events.Length == 45, "Showcase failed to load.");
-                Seek(round, reader, 24d);
+                Require(RoundController.IsPlaying && reader.LoadedChart.events.Length > 20, "Showcase failed to load.");
+                RhythmDemonstrationData mirror = reader.LoadedChart.demonstrations[1];
+                Seek(round, reader, mirror.startSeconds + mirror.stepSeconds);
                 Call(cue, "LateUpdate");
                 Require(cue.IsMirrored && cue.IsDemonstrating && cue.VisibleMarkerCount == 3, "Middle demonstration is missing.");
                 Require(Score.Value == 0, "Watch markers scored.");
                 foreach (Graphic graphic in GameObject.Find("FestivalDemonstrationOverlay").GetComponentsInChildren<Graphic>(true))
                     Require(!graphic.raycastTarget, "Guide blocks aiming.");
                 Capture("ShowcaseMirrorWatch-ja");
-                Seek(round, reader, 27.6d);
+                Seek(round, reader, mirror.answerStartSeconds + .05d);
                 Call(cue, "LateUpdate");
                 Require(cue.IsMirrored && cue.IsResponding && cue.VisibleMarkerCount == 3, "Answer outlines did not persist.");
-                Require(reader.LoadedChart.events[15].placementSlot == 1 && reader.LoadedChart.events[17].placementSlot == -1,
+                Require(reader.LoadedChart.events[mirror.answerEventIds[0]].placementSlot == 1 && reader.LoadedChart.events[mirror.answerEventIds[2]].placementSlot == -1,
                     "Middle answer did not reverse columns.");
                 Capture("ShowcaseMirrorAnswer-ja");
-                Balloon answer = FindBalloon(15);
+                Balloon answer = FindBalloon(mirror.answerEventIds[0]);
                 Require(answer != null, "First mirror answer target is missing.");
                 answer.Hit();
                 Call(cue, "LateUpdate");
                 Require(cue.VisibleMarkerCount == 2 && Score.Value == 10, "Resolved answer marker or score mismatch.");
-                Seek(round, reader, 36.6d);
+                RhythmEventData motion = Array.Find(reader.LoadedChart.events, e => e.trajectory != 0);
+                motionStart = motion.motionStartSeconds; motionEnd = motion.motionEndSeconds;
+                Seek(round, reader, motionStart + .02d);
                 movers = Object.FindObjectsByType<MelodyTrajectory>(FindObjectsSortMode.None);
                 Require(movers.Length > 0, "Authored motion did not attach.");
                 var before = new Vector3[movers.Length];
                 for (int i = 0; i < movers.Length; i++) { Call(movers[i], "FixedUpdate"); before[i] = movers[i].GetComponent<Rigidbody>().position; }
-                Seek(round, reader, 37.6d);
+                Seek(round, reader, motionStart + motion.motionPeriodSeconds * .25d);
                 bool moved = false;
                 for (int i = 0; i < movers.Length; i++)
                 {
@@ -140,14 +143,16 @@ public static class PhraseShowcaseValidation
                 }
                 Call(round, "TogglePause");
                 var owner = Object.FindFirstObjectByType<BalloonSpawner>();
-                Require(owner.Spawn(new RhythmEventData { id = 999998, timeSeconds = 80d, trajectory = 1,
-                    motionStartSeconds = 36d, motionEndSeconds = 45.714285714d, motionPeriodSeconds = 4d }),
+                Require(owner.Spawn(new RhythmEventData { id = 999998, timeSeconds = motionEnd + 20d, trajectory = 1,
+                    motionStartSeconds = motionStart, motionEndSeconds = motionEnd, motionPeriodSeconds = 4d }),
                     "Restoration probe failed to spawn.");
                 MelodyTrajectory restorationProbe = FindBalloon(999998).GetComponent<MelodyTrajectory>();
-                Seek(round, reader, 45.8d);
+                Seek(round, reader, motionEnd + .05d);
                 Call(restorationProbe, "FixedUpdate");
                 Require(!restorationProbe.IsActive && restorationProbe.GetComponent<BalloonFloat>().enabled &&
                     !restorationProbe.GetComponent<Rigidbody>().isKinematic, "End of phrase did not restore float/physics.");
+                restorationProbe.gameObject.SetActive(false);
+                Object.Destroy(restorationProbe.gameObject);
                 foreach (MelodyTrajectory mover in movers)
                 {
                     if (mover == null || !mover.gameObject.activeSelf) continue;
@@ -155,11 +160,13 @@ public static class PhraseShowcaseValidation
                     Require(!mover.IsActive && mover.GetComponent<BalloonFloat>().enabled && !mover.GetComponent<Rigidbody>().isKinematic,
                         "Motion did not restore ordinary target behaviour.");
                 }
-                Seek(round, reader, 61d);
+                int finalId = reader.LoadedChart.finale.eventIds[2];
+                double finaleTime = reader.LoadedChart.events[finalId].timeSeconds;
+                Seek(round, reader, Math.Max(reader.LoadedChart.events[finalId - 2].timeSeconds - 1d, finaleTime - 2.7d));
                 Call(cue, "LateUpdate");
                 Require(cue.IsFinale && cue.VisibleMarkerCount == 3, "Final route is missing.");
                 Capture("ShowcaseFinaleRoute-ja");
-                Balloon accent = FindBalloon(44);
+                Balloon accent = FindBalloon(finalId);
                 Require(accent != null && accent.IsFinaleAccent, "Final accent target is missing.");
                 int beforeScore = Score.Value, beforeHits = Score.SuccessfulHits;
                 accent.Hit();
@@ -183,6 +190,7 @@ public static class PhraseShowcaseValidation
                 Call(round, "EndRound");
                 Call(cue, "LateUpdate");
                 Require(!cue.IsFinale && cue.VisibleMarkerCount == 0, "Settlement retained the route.");
+                completedProfiles.Add(round.SelectedSong.trackId);
                 round.RestartRound();
                 waitUntil = EditorApplication.timeSinceStartup + .5;
                 stage = 3; return;
@@ -190,22 +198,35 @@ public static class PhraseShowcaseValidation
             if (stage == 3)
             {
                 Require(!RoundController.IsPlaying && !RoundController.IsPaused && Score.Value == 0, "Retry did not reset the showcase.");
-                Finish(null);
+                if (++profileIndex == 20) { Finish(null); return; }
+                round.BeginRound();
+                round.SetSongMode(profileIndex < 10 ? "festival" : "standard");
+                round.SelectSong(profileIndex);
+                SaveRecord(round);
+                stage = 1;
+                waitUntil = EditorApplication.timeSinceStartup + .1;
             }
         }
         catch (Exception error) { Finish(error); }
     }
 
+    private static void SaveRecord(RoundController round)
+    {
+        string key = round.SelectedBestScoreKey;
+        if (!preferences.ContainsKey(key)) preferences[key] = PlayerPrefs.HasKey(key) ? PlayerPrefs.GetInt(key) : (int?)null;
+    }
     private static void Seek(RoundController round, RhythmChartReader reader, double time)
     {
         double paused = (double)typeof(RoundController).GetField("totalPausedDspSeconds", Private).GetValue(round);
         typeof(RoundController).GetField("songStartDspTime", Private).SetValue(round, AudioSettings.dspTime - paused - time);
-        Call(reader, "Update"); Call(reader, "Update");
+        for (int pass = 0; pass < reader.LoadedChart.events.Length / 16 + 3; pass++) Call(reader, "Update");
     }
     private static Balloon FindBalloon(int id) => Array.Find(Object.FindObjectsByType<Balloon>(FindObjectsSortMode.None), b => b.EventId == id);
     private static void Call(object target, string method) => target.GetType().GetMethod(method, Private).Invoke(target, null);
     private static void Capture(string name)
     {
+        if (profileIndex > 1) return;
+        name = profileIndex + "-" + name;
         Call(Object.FindFirstObjectByType<RoundController>(), "LateUpdate");
         Canvas.ForceUpdateCanvases();
         typeof(KyudaisaiRuntimeSmokeCheck).GetMethod("Capture", BindingFlags.Static | BindingFlags.NonPublic)
@@ -217,12 +238,12 @@ public static class PhraseShowcaseValidation
     private static void Finish(Exception error)
     {
         SessionState.SetBool(Active, false); Application.logMessageReceived -= OnLog;
-        if (record != null) { if (savedRecord.HasValue) PlayerPrefs.SetInt(record, savedRecord.Value); else PlayerPrefs.DeleteKey(record); }
+        foreach (var pair in preferences) { if (pair.Value.HasValue) PlayerPrefs.SetInt(pair.Key, pair.Value.Value); else PlayerPrefs.DeleteKey(pair.Key); }
         LanguageSettings.SetLanguage(language); PlayerPrefs.Save();
         Directory.CreateDirectory("Logs");
         File.WriteAllText("Logs/PhraseShowcaseRuntime.json", JsonUtility.ToJson(new Evidence {
             status = error == null ? "passed" : "failed", error = error?.ToString(), assertions = assertions,
-            finishedUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion }, true));
+            finishedUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion, profiles = completedProfiles.ToArray() }, true));
         if (error == null) Debug.Log("PHRASE_SHOWCASE_RUNTIME_OK: " + assertions); else Debug.LogException(error);
         EditorApplication.Exit(error == null ? 0 : 1);
     }
@@ -230,6 +251,7 @@ public static class PhraseShowcaseValidation
     {
         public string status, error, finishedUtc, unityVersion;
         public int assertions;
+        public string[] profiles;
         public string scope = "Controlled-clock Editor mirror guide/reverse answer, bounded logical motion/pause/restoration, final route/single-score flourish/expiry, locales/record isolation and Retry.";
         public string limits = "No natural full-song mouse play, standalone, real Mac, human aim comfort or musical/venue acceptance.";
     }

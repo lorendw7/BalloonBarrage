@@ -58,6 +58,59 @@ public class PlayerShooter : MonoBehaviour
     private bool applicationSuspended;
     private bool aimValid;
     private Vector3 lastAimDirection;
+    private LocalPlayerInput localPlayers;
+    public int LocalPlayerIndex { get; private set; }
+    public int ShotCount { get; private set; }
+    public void ConfigureLocalPlayer(LocalPlayerInput owner, int index) { localPlayers = owner; LocalPlayerIndex = index; }
+    public void SuspendLocalInput() { CancelFireInput(); }
+
+    public PlayerShooter CreateSecondLocalPlayer(LocalPlayerInput owner)
+    {
+        var go = new GameObject("SecondLocalPlayerShooter");
+        go.transform.SetParent(Camera.main.transform, false);
+        go.transform.localPosition = new Vector3(-.5f, -.4f, .7f);
+        var second = go.AddComponent<PlayerShooter>();
+        second.ConfigureLocalPlayer(owner, 1);
+        second.roundController = roundController;
+        second.muzzle = go.transform;
+        second.paintProjectilePrefab = paintProjectilePrefab;
+        second.impactSprayPrefab = impactSprayPrefab;
+        second.shotsPerSecond = shotsPerSecond; second.sprayRadius = sprayRadius; second.sprayRange = sprayRange;
+        second.sprayPigmentIndex = 1;
+        if (muzzleSpray != null)
+        {
+            second.muzzleSpray = Instantiate(muzzleSpray, go.transform);
+            second.muzzleSpray.transform.localPosition = Vector3.zero;
+            second.muzzleSpray.transform.localRotation = Quaternion.identity;
+            second.ConfigureSprayPresentation();
+        }
+        if (shotAudioSource != null)
+        {
+            second.shotAudioSource = go.AddComponent<AudioSource>();
+            second.shotAudioSource.clip = shotAudioSource.clip;
+            second.shotAudioSource.volume = shotAudioSource.volume;
+            second.shotAudioSource.playOnAwake = false;
+            second.shotAudioSource.outputAudioMixerGroup = shotAudioSource.outputAudioMixerGroup;
+        }
+        if (aimReticle != null)
+        {
+            var label = new GameObject("LocalPlayerNumber", typeof(RectTransform), typeof(UnityEngine.UI.Text));
+            label.transform.SetParent(aimReticle, false);
+            var text = label.GetComponent<UnityEngine.UI.Text>();
+            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            text.fontSize = 18; text.text = "1"; text.color = Color.white; text.raycastTarget = false;
+            text.rectTransform.anchoredPosition = new Vector2(24f, 20f);
+            text.rectTransform.sizeDelta = new Vector2(28f, 28f);
+            second.aimReticle = Instantiate(aimReticle, aimReticle.parent);
+            second.aimReticle.name = "SecondPlayerReticle";
+            second.aimReticle.GetComponentInChildren<UnityEngine.UI.Text>(true).text = "2";
+            foreach (var image in second.aimReticle.GetComponentsInChildren<UnityEngine.UI.Image>(true))
+                image.color = new Color(.3f, .9f, 1f, 1f);
+        }
+        second.ConfigureSprayPigment();
+        return second;
+    }
+
 
     public bool TryGetAimedBalloon(out Balloon target)
     {
@@ -330,7 +383,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void RestorePointer()
     {
-        if (!cursorVisible)
+        if (LocalPlayerIndex == 0 && !cursorVisible)
         {
             Cursor.visible = true;
             cursorVisible = true;
@@ -438,29 +491,20 @@ public class PlayerShooter : MonoBehaviour
         }
 
         Mouse mouse = Mouse.current;
-
         Keyboard keyboard = Keyboard.current;
-
-        if (keyboard != null &&
-            keyboard.cKey.wasPressedThisFrame &&
-            RoundController.IsPlaying &&
-            !RoundController.IsPaused)
-        {
-            SelectNextPigment();
-        }
-
-        Vector2 pointerPosition = mouse != null
-            ? mouse.position.ReadValue()
-            : default;
-
-        bool showReticle = mouse != null &&
-            RoundController.IsPlaying &&
-            !RoundController.IsPaused &&
+        bool routed = localPlayers != null && localPlayers.UsesGamepad(LocalPlayerIndex);
+        Vector2 pointerPosition = mouse != null ? mouse.position.ReadValue() : default;
+        bool fireHeld = mouse != null && mouse.leftButton.isPressed;
+        bool cycle = keyboard != null && keyboard.cKey.wasPressedThisFrame;
+        bool inputAvailable = mouse != null;
+        if (routed) inputAvailable = localPlayers.ReadGamepad(LocalPlayerIndex, out pointerPosition, out fireHeld, out cycle);
+        if (cycle && RoundController.IsPlaying && !RoundController.IsPaused) SelectNextPigment();
+        bool showReticle = inputAvailable && RoundController.IsPlaying && !RoundController.IsPaused &&
             hasInputFocus && !applicationSuspended;
 
         bool shouldShowCursor = !showReticle;
 
-        if (cursorVisible != shouldShowCursor)
+        if (LocalPlayerIndex == 0 && cursorVisible != shouldShowCursor)
         {
             Cursor.visible = shouldShowCursor;
             cursorVisible = shouldShowCursor;
@@ -482,7 +526,7 @@ public class PlayerShooter : MonoBehaviour
         }
 
 
-        if (mouse == null)
+        if (!inputAvailable)
         {
             CancelFireInput();
             return;
@@ -490,14 +534,14 @@ public class PlayerShooter : MonoBehaviour
 
         EventSystem eventSystem = EventSystem.current;
 
-        bool pointerOverUi = eventSystem != null &&
+        bool pointerOverUi = !routed && eventSystem != null &&
             eventSystem.IsPointerOverGameObject();
 
         bool shouldSpray =
         RoundController.IsPlaying &&
         !RoundController.IsPaused &&
         !waitingForFireRelease &&
-        mouse.leftButton.isPressed &&
+        fireHeld &&
         !pointerOverUi;
 
         if (aimCamera == null)
@@ -560,7 +604,7 @@ public class PlayerShooter : MonoBehaviour
 
         if (waitingForFireRelease)
         {
-            if (!mouse.leftButton.isPressed)
+            if (!fireHeld)
             {
                 waitingForFireRelease = false;
             }
@@ -568,12 +612,12 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (!mouse.leftButton.isPressed)
+        if (!fireHeld)
         {
             return;
         }
 
-        if (Time.time < nextShotTime)
+        if (LocalPlayerIndex == 1 ? !CoopLearnerCore.IsSecondShotReady(Time.time, nextShotTime) : Time.time < nextShotTime)
         {
             return;
         }
@@ -598,7 +642,9 @@ public class PlayerShooter : MonoBehaviour
             {
                 bool isOnBeat = sprayedBalloon.IsOnBeat(shotTime);
 
-                int bonusPoints = isOnBeat ? 10 : 0;
+                int bonusPoints = LocalPlayerIndex == 1
+                    ? Mathf.Clamp(CoopLearnerCore.SecondPlayerBeatBonus(isOnBeat), 0, 10)
+                    : isOnBeat ? 10 : 0;
 
                 sprayedBalloon.HitAt(
                     sprayHit.point,
@@ -614,6 +660,7 @@ public class PlayerShooter : MonoBehaviour
             }
         }
 
+        ShotCount++;
         nextShotTime = Time.time + 1f / Mathf.Max(0.1f, shotsPerSecond);
 
         KickGun();

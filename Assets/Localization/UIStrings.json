@@ -85,6 +85,15 @@
     {"key":"cue.mirror.respond","zhHans":"反过来回应：右→中→左，可按住喷射","ja":"今度は逆に：右→中→左。長押しでもOK","en":"Answer in reverse: right, center, left. Holding fire is fine"},
     {"key":"cue.finale","zhHans":"最后三个气球：沿着轮廓，为这首歌收尾","ja":"最後の3個：輪郭に沿ってフィナーレへ","en":"Final three: follow the outlines to finish the song"},
     {"key":"chain.preview","zhHans":"连锁预览：可连带 {0} 只","ja":"連鎖プレビュー：追加 {0} 個","en":"Chain preview: {0} extra balloons"},
-    {"key":"showcase.tag","zhHans":"本曲短局：镜像回声 · 旋律轨迹 · 烟花终章","ja":"このショート曲：ミラー・軌道・フィナーレ","en":"Short-song showcase: mirror echo · melody paths · finale"}
+    {"key":"showcase.tag","zhHans":"本曲玩法：镜像回声 · 旋律轨迹 · 烟花终章","ja":"この曲：ミラー・軌道・フィナーレ","en":"Song features: mirror echo · melody paths · finale"},
+    {"key":"players.mouse","zhHans":"单人：键鼠","ja":"ひとり：マウス","en":"Solo: mouse"},
+    {"key":"players.pad","zhHans":"单人：手柄","ja":"ひとり：ゲームパッド","en":"Solo: gamepad"},
+    {"key":"players.mousePad","zhHans":"双人练习：键鼠＋手柄","ja":"ふたり練習：マウス＋パッド","en":"Co-op practice: mouse + gamepad"},
+    {"key":"players.twoPads","zhHans":"双人练习：双手柄","ja":"ふたり練習：パッド2台","en":"Co-op practice: two gamepads"},
+    {"key":"players.missing","zhHans":"需要 {0} 个手柄，目前已连接 {1} 个。","ja":"パッドが{0}台必要です。接続中：{1}台。","en":"Needs {0} gamepads; {1} connected."},
+    {"key":"players.lesson","zhHans":"双人练习：P2 发射与节拍奖励留作核心函数练习。摇杆瞄准，RT 喷射，X 换色，Start 暂停。","ja":"ふたり練習：P2の発射と拍ボーナスは学習課題です。スティック：照準、RT：発射、X：色、Start：一時停止。","en":"Co-op practice: P2 firing and beat bonus are learner exercises. Stick: aim; RT: spray; X: color; Start: pause."},
+    {"key":"players.padControls","zhHans":"摇杆瞄准，按住 RT 喷射，X 换色，Start 暂停。","ja":"スティック：照準、RT長押し：発射、X：色、Start：一時停止。","en":"Stick: aim; hold RT: spray; X: color; Start: pause."},
+    {"key":"players.mouseControls","zhHans":"鼠标瞄准，按住左键喷射，C 换色，Esc 暂停。","ja":"マウス：照準、左長押し：発射、C：色、Esc：一時停止。","en":"Mouse: aim; hold left click: spray; C: color; Esc: pause."},
+    {"key":"players.reconnect","zhHans":"手柄已断开。请重新连接原手柄，再按 Start 或“继续”。","ja":"パッドが切断されました。同じパッドを接続し直し、Startか再開を押してください。","en":"Controller disconnected. Reconnect the assigned controller, then press Start or Resume."}
   ]
 }

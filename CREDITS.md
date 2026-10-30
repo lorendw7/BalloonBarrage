@@ -6,6 +6,10 @@
 
 The website uses quality-98 WebP derivatives and a 1200 × 675 share JPEG. Derivative source/output hashes and settings are in `Website/media/provenance.json`. Existing room/model/font/music attribution and exact recorded artwork prompts remain unchanged. No generative editing or new image generation occurred.
 
+## October 30 all-song showcase v4
+
+The twenty separately versioned `*-showcase-v4.json` derivatives in `Assets/StreamingAssets/Rhythm/Festival20261029` extend mirror/trajectory/finale metadata to all ten recordings in both lengths. They select existing note IDs without changing their counts/timestamps or any audio bytes. Irregular responses are matched by ID. Historical v2/v3 derivatives remain intact; original author attribution, source hashes, license and noncommercial restrictions still apply. The derived-folder NOTICE records the new modification. No new generated images or prompts were added.
+
 ## October 30 Goin' Under showcase adaptation
 
 The separately versioned `stepmania-goin-under-beginner-festival-showcase-v3.json` in `Assets/StreamingAssets/Rhythm/Festival20261029` adds a middle-song mirrored answer, one bounded arc/wave phrase and a three-target finale to the preserved Goin' Under Festival derivative. It reuses its 45 event IDs/timestamps and original audio, preserving the earlier v2 file. Its chart provenance and derived-folder NOTICE record this modification; original source files, licenses, noncommercial restrictions and attribution remain unchanged. The finale reuses existing credited pigment effects. No new generated artwork or prompts were introduced.

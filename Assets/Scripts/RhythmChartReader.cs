@@ -38,6 +38,7 @@ public class RhythmDemonstrationData
     public double startSeconds;
     public double stepSeconds;
     public double answerStartSeconds;
+    public double answerEndSeconds;
     public int[] slots;
     public int[] answerSlots;
     public int[] answerEventIds;
@@ -286,7 +287,10 @@ public class RhythmChartReader : MonoBehaviour
                     for (int index = 0; index < demonstration.slots.Length; index++)
                     {
                         double answerTime = demonstration.answerStartSeconds + index * demonstration.stepSeconds;
-                        if (Math.Abs(normalizedTime - answerTime) > 0.02d) continue;
+                        bool explicitIds = demonstration.answerEventIds != null &&
+                            demonstration.answerEventIds.Length == demonstration.slots.Length;
+                        if (explicitIds ? demonstration.answerEventIds[index] != roundEvent.id :
+                            Math.Abs(normalizedTime - answerTime) > 0.02d) continue;
                         roundEvent.authoredPlacement = true;
                         int[] answerSlots = demonstration.answerSlots != null &&
                             demonstration.answerSlots.Length == demonstration.slots.Length

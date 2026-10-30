@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 4,
+  "title": "Mecha-Tribe Assault",
+  "artist": "Kommisar",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 180.0,
+  "durationSeconds": 105.0,
+  "roundDurationSeconds": 105.0,
+  "license": "Upstream noncommercial restrictions; exact version unspecified",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Prepared/MechaTribeAssault_Beginner.json",
+  "sourceChartSha256": "d511ecc91334ddeb0eeff020d44d9bf7e0fd6a9965e46a90a0ac920f2fb2ab46",
+  "source": {
+    "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ogg",
+    "sourceAudioSha256": "6eb052cf8081ebb01d4b30e8db34e9eeca692635e2c1ed3ba7f7bd131c1b65c3",
+    "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/MechaTribe%20Assault/Mecha-Tribe%20Assault.ssc",
+    "sourceChartSha256": "a594bd13b0728ecb2e9eb8e56ddb0e1744c0d2eef80466a42ea299703615e426",
+    "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared."
+  },
+  "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
+  "audioSha256": "6eb052cf8081ebb01d4b30e8db34e9eeca692635e2c1ed3ba7f7bd131c1b65c3",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified. October 30 all-song showcase v4: one middle mirrored response matched by existing event IDs, one bounded eight-target arc/wave phrase and a three-target finale. Existing IDs/timestamps/count and original audio remain unchanged. Each profile has a new record identity; human comfort/listening remains unverified.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 9,
+  "minimumEventGapSeconds": 1.0,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 10.694666667,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 10.694666667,
+      "endSeconds": 21.361333333,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 21.361333333,
+      "endSeconds": 32.028,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 32.028,
+      "endSeconds": 42.694666667,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 42.694666667,
+      "endSeconds": 53.361333333,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 53.361333333,
+      "endSeconds": 64.028,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 64.028,
+      "endSeconds": 74.694666667,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 74.694666667,
+      "endSeconds": 85.361333333,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 85.361333333,
+      "endSeconds": 96.028,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 96.028,
+      "endSeconds": 105.0,
+      "pattern": 1,
+      "direction": 1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.361333333,
+      "stepSeconds": 1.333333333,
+      "answerStartSeconds": 6.694666667,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "startSeconds": 40.361333333,
+      "stepSeconds": 1.0,
+      "answerStartSeconds": 44.361333333,
+      "answerEndSeconds": 47.361333333,
+      "slots": [
+        -1,
+        0,
+        1
+      ],
+      "answerSlots": [
+        1,
+        0,
+        -1
+      ],
+      "answerEventIds": [
+        22,
+        23,
+        24
+      ],
+      "keepAnswerGuide": true
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 6.694666667,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 8.028,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 9.361333333,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 13.361333333,
+      "sourceEventId": 9,
+      "sourceBeat": 40.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 14.694666667,
+      "sourceEventId": 10,
+      "sourceBeat": 44.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 16.028,
+      "sourceEventId": 12,
+      "sourceBeat": 48.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 17.361333333,
+      "sourceEventId": 14,
+      "sourceBeat": 52.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 18.361333333,
+      "sourceEventId": 15,
+      "sourceBeat": 55.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 20.028,
+      "sourceEventId": 18,
+      "sourceBeat": 60.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 21.028,
+      "sourceEventId": 19,
+      "sourceBeat": 63.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 22.028,
+      "sourceEventId": 21,
+      "sourceBeat": 66.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 24.028,
+      "sourceEventId": 24,
+      "sourceBeat": 72.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 25.361333333,
+      "sourceEventId": 26,
+      "sourceBeat": 76.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 28.028,
+      "sourceEventId": 29,
+      "sourceBeat": 84.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 30.028,
+      "sourceEventId": 32,
+      "sourceBeat": 90.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 31.361333333,
+      "sourceEventId": 34,
+      "sourceBeat": 94.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 33.361333333,
+      "sourceEventId": 37,
+      "sourceBeat": 100.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 36.028,
+      "sourceEventId": 41,
+      "sourceBeat": 108.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 38.361333333,
+      "sourceEventId": 45,
+      "sourceBeat": 115.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 40.361333333,
+      "sourceEventId": 51,
+      "sourceBeat": 121.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 41.361333333,
+      "sourceEventId": 54,
+      "sourceBeat": 124.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 43.028,
+      "sourceEventId": 56,
+      "sourceBeat": 129.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 44.361333333,
+      "sourceEventId": 60,
+      "sourceBeat": 133.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22,
+      "mirrorAnswerIndex": 0
+    },
+    {
+      "timeSeconds": 45.361333333,
+      "sourceEventId": 63,
+      "sourceBeat": 136.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 23,
+      "mirrorAnswerIndex": 1
+    },
+    {
+      "timeSeconds": 46.361333333,
+      "sourceEventId": 66,
+      "sourceBeat": 139.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 24,
+      "mirrorAnswerIndex": 2
+    },
+    {
+      "timeSeconds": 49.028,
+      "sourceEventId": 71,
+      "sourceBeat": 147.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 50.361333333,
+      "sourceEventId": 75,
+      "sourceBeat": 151.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 51.694666667,
+      "sourceEventId": 79,
+      "sourceBeat": 155.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 54.361333333,
+      "sourceEventId": 84,
+      "sourceBeat": 163.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 56.361333333,
+      "sourceEventId": 90,
+      "sourceBeat": 169.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 57.361333333,
+      "sourceEventId": 93,
+      "sourceBeat": 172.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 59.361333333,
+      "sourceEventId": 95,
+      "sourceBeat": 178.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 61.361333333,
+      "sourceEventId": 98,
+      "sourceBeat": 184.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 63.028,
+      "sourceEventId": 101,
+      "sourceBeat": 189.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 64.028,
+      "sourceEventId": 103,
+      "sourceBeat": 192.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 65.361333333,
+      "sourceEventId": 105,
+      "sourceBeat": 196.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35,
+      "trajectory": 1,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 67.361333333,
+      "sourceEventId": 108,
+      "sourceBeat": 202.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 36,
+      "trajectory": 1,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 68.694666667,
+      "sourceEventId": 109,
+      "sourceBeat": 206.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 37,
+      "trajectory": 1,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 70.361333333,
+      "sourceEventId": 112,
+      "sourceBeat": 211.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 38,
+      "trajectory": 1,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 71.361333333,
+      "sourceEventId": 114,
+      "sourceBeat": 214.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 39,
+      "trajectory": 2,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 73.028,
+      "sourceEventId": 117,
+      "sourceBeat": 219.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 40,
+      "trajectory": 2,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 74.028,
+      "sourceEventId": 119,
+      "sourceBeat": 222.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 41,
+      "trajectory": 2,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 76.028,
+      "sourceEventId": 122,
+      "sourceBeat": 228.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 42,
+      "trajectory": 2,
+      "motionStartSeconds": 65.361333333,
+      "motionEndSeconds": 77.361333333,
+      "motionPeriodSeconds": 5.333333333
+    },
+    {
+      "timeSeconds": 77.361333333,
+      "sourceEventId": 124,
+      "sourceBeat": 232.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 43
+    },
+    {
+      "timeSeconds": 79.361333333,
+      "sourceEventId": 127,
+      "sourceBeat": 238.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 44
+    },
+    {
+      "timeSeconds": 82.028,
+      "sourceEventId": 131,
+      "sourceBeat": 246.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 45
+    },
+    {
+      "timeSeconds": 84.694666667,
+      "sourceEventId": 136,
+      "sourceBeat": 254.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 46
+    },
+    {
+      "timeSeconds": 86.694666667,
+      "sourceEventId": 138,
+      "sourceBeat": 260.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 47
+    },
+    {
+      "timeSeconds": 88.028,
+      "sourceEventId": 139,
+      "sourceBeat": 264.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 48
+    },
+    {
+      "timeSeconds": 89.361333333,
+      "sourceEventId": 140,
+      "sourceBeat": 268.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 49
+    },
+    {
+      "timeSeconds": 90.694666667,
+      "sourceEventId": 141,
+      "sourceBeat": 272.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 50
+    },
+    {
+      "timeSeconds": 92.028,
+      "sourceEventId": 143,
+      "sourceBeat": 276.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 51
+    },
+    {
+      "timeSeconds": 94.028,
+      "sourceEventId": 146,
+      "sourceBeat": 282.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 52
+    },
+    {
+      "timeSeconds": 95.361333333,
+      "sourceEventId": 149,
+      "sourceBeat": 286.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 53
+    },
+    {
+      "timeSeconds": 96.694666667,
+      "sourceEventId": 151,
+      "sourceBeat": 290.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 54
+    },
+    {
+      "timeSeconds": 98.028,
+      "sourceEventId": 153,
+      "sourceBeat": 294.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 55
+    },
+    {
+      "timeSeconds": 100.028,
+      "sourceEventId": 156,
+      "sourceBeat": 300.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 56,
+      "finaleAccent": true
+    }
+  ],
+  "finale": {
+    "eventIds": [
+      54,
+      55,
+      56
+    ],
+    "slots": [
+      -1,
+      1,
+      0
+    ]
+  }
+}

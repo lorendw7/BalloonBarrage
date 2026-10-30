@@ -1,8 +1,8 @@
 # Controller preparation
 
-Updated: October 17, 2026. The creator selected P1 keyboard/mouse plus P2 one gamepad and owns one Xbox and one Beitong controller. Gameplay support is **not connected yet**. This guide supplies configuration and a hardware-check sequence; [game design](GAME_DESIGN.md#co-op-and-localization) defines behavior and [roadmap](ROADMAP.md) defines delivery gates.
+Updated: October 30, 2026. The creator now requested local mouse + gamepad and two-gamepad practice. [Game design](GAME_DESIGN.md#local-players-and-gamepads--development-practice) owns current behavior; [the co-op lesson](LOCAL_COOP_LESSON.md) teaches the two deliberately unfinished P2 decisions. Solo gamepad/P1 input infrastructure is connected; this does not establish physical-controller or complete co-op acceptance.
 
-Controller and co-op work is **deferred at the creator’s request**. The previous October 23 gate is retired. Preserve the prepared assets and this reference; hardware checks are not the next lesson. Resume after solo polish/performance is accepted and this work is rescheduled in the roadmap.
+The practice runtime reads explicitly assigned `Gamepad` device references through `LocalPlayerInput`, keeps each pairing fixed for the round and reuses existing menu UI actions. It currently chooses connected devices in stable device-ID order at Play; verify which numbered reticle belongs to each pad during hardware checks. New devices cannot steal a slot. A named device picker/join screen remains future work. The original optional action asset below remains preserved and unassigned; its earlier PlayerInput-based integration proposal is reference material, not a description of the current direct-device implementation.
 
 ## Prepared input asset
 
@@ -17,7 +17,7 @@ Controller and co-op work is **deferred at the creator’s request**. The previo
 
 KeyboardMouse requires both a keyboard and a mouse; Gamepad requires one Gamepad device. The right stick retains the Input System's built-in deadzone; no second binding deadzone is stacked on it. Stick input is a velocity request, not an absolute screen coordinate. Integrating/clamping the reticle is learner gameplay work. The asset alone cannot move a reticle, spawn a gun or fire.
 
-For integration, each PlayerInput must use its own actions copy and explicitly paired devices. P1 pairs the keyboard/mouse; P2 pairs the pad selected for that round. Read that player's actions, not Gamepad.current or the global InputSystem.actions. Disable automatic scheme switching for fixed roles. A connected spare pad must not silently take over P2. Do not create two copies of the shared camera, RoundController, score or music.
+If later adopting PlayerInput, each instance must use its own actions copy and explicitly paired devices. P1 pairs the keyboard/mouse; P2 pairs the pad selected for that round. Read that player's actions, not Gamepad.current or the global InputSystem.actions. Disable automatic scheme switching for fixed roles. A connected spare pad must not silently take over P2. Do not create two copies of the shared camera, RoundController, score or music.
 
 Keep the current Input System UI Input Module and UI actions while learning gamepad gameplay. Gameplay input and menu navigation are separate. Later accept a designated menu owner's navigation/Submit/Cancel and release guards before enabling pad-driven menus; do not replace the scene UI asset with the Gameplay-only asset.
 
@@ -28,7 +28,7 @@ Reported status, October 13: the creator says the Beitong check has no issue. Th
 1. Save the current scene. Connect only the Xbox pad first, preferably by USB for the first check.
 2. Open **Window > Analysis > Input Debugger** in Unity. Expand **Devices**, then double-click the Xbox/XInput device.
 3. Move the right stick: confirm rightStick/x and rightStick/y change and settle close to zero. Squeeze RT: confirm rightTrigger changes from near zero to near one. Press Menu: confirm start changes.
-4. Record the exact layout/device name and whether these three controls respond. This checks recognition only; the current game still reads the mouse.
+4. Record the exact layout/device name and whether these three controls respond. This checks recognition only. Select a gamepad layout in the source practice build for the separate gameplay check.
 5. Disconnect Xbox and repeat with Beitong. If the model offers a Windows/XInput mode, choose it using that model's manufacturer instructions; no model-specific shortcut is assumed. Generic Joystick/HID recognition alone does not prove the Gamepad bindings match.
 6. Connect both and confirm two distinct device entries. Do not pair based solely on arrival order or whichever pad was used most recently.
 
@@ -43,4 +43,4 @@ The installed Input System is 1.19.0. Its local package documentation is the pri
 5. Disconnect the paired pad during play: pause with a readable reason; reconnect without a ghost shot, or return to title and choose solo. Retry clears player/beat/effect state.
 6. Repeat with the alternate controller and on the exhibition Windows PC. Test actual audio, focus, menus and a complete song round; synthetic input checks cannot accept physical controller compatibility.
 
-The Editor test `ExhibitionControlsTests` uses isolated synthetic devices to check action filtering, trigger release, independent mouse/stick values, small-stick drift and the spare pad. See [Validation](../Project/VALIDATION.md) for the executed result and remaining checks. The tests do not implement co-op gameplay.
+The Editor test `ExhibitionControlsTests` uses isolated synthetic devices to check action filtering, trigger release, independent mouse/stick values, small-stick drift and the spare pad. See [Validation](../Project/VALIDATION.md) for the executed result and remaining checks. Those asset tests do not implement co-op gameplay. Current direct-device support evidence is recorded separately in Validation.

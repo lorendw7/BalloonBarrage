@@ -1,18 +1,18 @@
 {
-  "schemaVersion": 3,
-  "catalogId": "kyudaisai-2026-phrase-v3-showcase",
+  "schemaVersion": 4,
+  "catalogId": "kyudaisai-2026-all-song-showcase-v4",
   "defaultMode": "festival",
   "status": "prepared-derived-data-awaiting-runtime-and-package-verification",
   "humanListeningCalibrated": false,
   "paintRibbonImplemented": false,
   "songs": [
     {
-      "trackId": "stepmania-goin-under-beginner-festival-showcase-v3",
+      "trackId": "stepmania-goin-under-beginner-festival-showcase-v4",
       "title": "Goin' Under",
       "artist": "NegaRen",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-goin-under-beginner-festival-showcase-v3.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-goin-under-beginner-festival-showcase-v4.json",
       "sourceCueInSeconds": 18.285714286,
       "sourceCueOutSeconds": 83.428571429,
       "roundDurationSeconds": 65.142857143,
@@ -20,12 +20,12 @@
       "sourceEventEndIdExclusive": 45
     },
     {
-      "trackId": "stepmania-springtime-beginner-festival-phrase-v2",
+      "trackId": "stepmania-springtime-beginner-festival-showcase-v4",
       "title": "Springtime",
       "artist": "Kommisar",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/StepMania/Springtime.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-springtime-beginner-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-springtime-beginner-festival-showcase-v4.json",
       "sourceCueInSeconds": 0.09,
       "sourceCueOutSeconds": 64.81741283,
       "roundDurationSeconds": 64.72741283,
@@ -33,12 +33,12 @@
       "sourceEventEndIdExclusive": 34
     },
     {
-      "trackId": "stepmania-mecha-tribe-beginner-festival-phrase-v2",
+      "trackId": "stepmania-mecha-tribe-beginner-festival-showcase-v4",
       "title": "Mecha-Tribe Assault",
       "artist": "Kommisar",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-festival-showcase-v4.json",
       "sourceCueInSeconds": 32.028,
       "sourceCueOutSeconds": 97.361333333,
       "roundDurationSeconds": 65.333333333,
@@ -46,12 +46,12 @@
       "sourceEventEndIdExclusive": 35
     },
     {
-      "trackId": "cozy-puzzle-1-festival-phrase-v2",
+      "trackId": "cozy-puzzle-1-festival-showcase-v4",
       "title": "Cozy Puzzle In-Game 1",
       "artist": "MintoDog",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_1_bpm118_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-1-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-1-festival-showcase-v4.json",
       "sourceCueInSeconds": 33.034957627,
       "sourceCueOutSeconds": 98.11970339,
       "roundDurationSeconds": 65.084745763,
@@ -59,12 +59,12 @@
       "sourceEventEndIdExclusive": 50
     },
     {
-      "trackId": "cozy-puzzle-2-festival-phrase-v2",
+      "trackId": "cozy-puzzle-2-festival-showcase-v4",
       "title": "Cozy Puzzle In-Game 2",
       "artist": "MintoDog",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_2_bpm90_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-2-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-2-festival-showcase-v4.json",
       "sourceCueInSeconds": 43.317708334,
       "sourceCueOutSeconds": 107.317708334,
       "roundDurationSeconds": 64.0,
@@ -72,12 +72,12 @@
       "sourceEventEndIdExclusive": 38
     },
     {
-      "trackId": "magic-puzzle-1-festival-phrase-v2",
+      "trackId": "magic-puzzle-1-festival-showcase-v4",
       "title": "Magic Puzzle In-Game 1",
       "artist": "MintoDog",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_1_bpm110_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-1-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-1-festival-showcase-v4.json",
       "sourceCueInSeconds": 17.995738637,
       "sourceCueOutSeconds": 83.450284091,
       "roundDurationSeconds": 65.454545455,
@@ -85,12 +85,12 @@
       "sourceEventEndIdExclusive": 47
     },
     {
-      "trackId": "magic-puzzle-2-festival-phrase-v2",
+      "trackId": "magic-puzzle-2-festival-showcase-v4",
       "title": "Magic Puzzle In-Game 2",
       "artist": "MintoDog",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_2_bpm120_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-2-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-2-festival-showcase-v4.json",
       "sourceCueInSeconds": 48.49609375,
       "sourceCueOutSeconds": 112.49609375,
       "roundDurationSeconds": 64.0,
@@ -98,12 +98,12 @@
       "sourceEventEndIdExclusive": 51
     },
     {
-      "trackId": "chaoz-fantasy-festival-phrase-v2",
+      "trackId": "chaoz-fantasy-festival-showcase-v4",
       "title": "Chaoz Fantasy",
       "artist": "ParagonX9",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozFantasy.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-fantasy-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-fantasy-festival-showcase-v4.json",
       "sourceCueInSeconds": 23.713673489,
       "sourceCueOutSeconds": 88.759532051,
       "roundDurationSeconds": 65.045858562,
@@ -111,12 +111,12 @@
       "sourceEventEndIdExclusive": 73
     },
     {
-      "trackId": "chaoz-airflow-festival-phrase-v2",
+      "trackId": "chaoz-airflow-festival-showcase-v4",
       "title": "Chaoz Airflow",
       "artist": "ParagonX9",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-airflow-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-airflow-festival-showcase-v4.json",
       "sourceCueInSeconds": 43.901785715,
       "sourceCueOutSeconds": 108.358928572,
       "roundDurationSeconds": 64.457142857,
@@ -124,12 +124,12 @@
       "sourceEventEndIdExclusive": 36
     },
     {
-      "trackId": "chaoz-impact-festival-phrase-v2",
+      "trackId": "chaoz-impact-festival-showcase-v4",
       "title": "Chaoz Impact",
       "artist": "ParagonX9",
       "mode": "festival",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozImpact.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-impact-festival.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-impact-festival-showcase-v4.json",
       "sourceCueInSeconds": 11.284821428,
       "sourceCueOutSeconds": 75.741964286,
       "roundDurationSeconds": 64.457142857,
@@ -137,12 +137,12 @@
       "sourceEventEndIdExclusive": 34
     },
     {
-      "trackId": "stepmania-goin-under-beginner-standard-phrase-v2",
+      "trackId": "stepmania-goin-under-beginner-standard-showcase-v4",
       "title": "Goin' Under",
       "artist": "NegaRen",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-goin-under-beginner-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-goin-under-beginner-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 123.428571429,
       "roundDurationSeconds": 123.428571429,
@@ -150,12 +150,12 @@
       "sourceEventEndIdExclusive": 94
     },
     {
-      "trackId": "stepmania-springtime-beginner-standard-phrase-v2",
+      "trackId": "stepmania-springtime-beginner-standard-showcase-v4",
       "title": "Springtime",
       "artist": "Kommisar",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/StepMania/Springtime.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-springtime-beginner-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-springtime-beginner-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 129.044897959,
       "roundDurationSeconds": 129.044897959,
@@ -163,12 +163,12 @@
       "sourceEventEndIdExclusive": 74
     },
     {
-      "trackId": "stepmania-mecha-tribe-beginner-standard-phrase-v2",
+      "trackId": "stepmania-mecha-tribe-beginner-standard-showcase-v4",
       "title": "Mecha-Tribe Assault",
       "artist": "Kommisar",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/StepMania/MechaTribeAssault.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/stepmania-mecha-tribe-beginner-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 105.0,
       "roundDurationSeconds": 105.0,
@@ -176,12 +176,12 @@
       "sourceEventEndIdExclusive": 57
     },
     {
-      "trackId": "cozy-puzzle-1-standard-phrase-v2",
+      "trackId": "cozy-puzzle-1-standard-showcase-v4",
       "title": "Cozy Puzzle In-Game 1",
       "artist": "MintoDog",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_1_bpm118_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-1-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-1-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 130.169501134,
       "roundDurationSeconds": 130.169501134,
@@ -189,12 +189,12 @@
       "sourceEventEndIdExclusive": 111
     },
     {
-      "trackId": "cozy-puzzle-2-standard-phrase-v2",
+      "trackId": "cozy-puzzle-2-standard-showcase-v4",
       "title": "Cozy Puzzle In-Game 2",
       "artist": "MintoDog",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/cozy_puzzle_in-game_2_bpm90_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-2-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/cozy-puzzle-2-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 128.0,
       "roundDurationSeconds": 128.0,
@@ -202,12 +202,12 @@
       "sourceEventEndIdExclusive": 82
     },
     {
-      "trackId": "magic-puzzle-1-standard-phrase-v2",
+      "trackId": "magic-puzzle-1-standard-showcase-v4",
       "title": "Magic Puzzle In-Game 1",
       "artist": "MintoDog",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_1_bpm110_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-1-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-1-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 122.181814059,
       "roundDurationSeconds": 122.181814059,
@@ -215,12 +215,12 @@
       "sourceEventEndIdExclusive": 95
     },
     {
-      "trackId": "magic-puzzle-2-standard-phrase-v2",
+      "trackId": "magic-puzzle-2-standard-showcase-v4",
       "title": "Magic Puzzle In-Game 2",
       "artist": "MintoDog",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/OpenMusic20261028/magic_puzzle_in-game_2_bpm120_0.ogg",
-      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-2-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/magic-puzzle-2-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 120.0,
       "roundDurationSeconds": 120.0,
@@ -228,12 +228,12 @@
       "sourceEventEndIdExclusive": 103
     },
     {
-      "trackId": "chaoz-fantasy-standard-phrase-v2",
+      "trackId": "chaoz-fantasy-standard-showcase-v4",
       "title": "Chaoz Fantasy",
       "artist": "ParagonX9",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozFantasy.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-fantasy-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-fantasy-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 133.903673469,
       "roundDurationSeconds": 133.903673469,
@@ -241,12 +241,12 @@
       "sourceEventEndIdExclusive": 158
     },
     {
-      "trackId": "chaoz-airflow-standard-phrase-v2",
+      "trackId": "chaoz-airflow-standard-showcase-v4",
       "title": "Chaoz Airflow",
       "artist": "ParagonX9",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozAirflow.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-airflow-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-airflow-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 253.779591837,
       "roundDurationSeconds": 253.779591837,
@@ -254,12 +254,12 @@
       "sourceEventEndIdExclusive": 152
     },
     {
-      "trackId": "chaoz-impact-standard-phrase-v2",
+      "trackId": "chaoz-impact-standard-showcase-v4",
       "title": "Chaoz Impact",
       "artist": "ParagonX9",
       "mode": "standard",
       "audioAssetPath": "Assets/Audio/Music/Classics20261029/ChaozImpact.mp3",
-      "chartRelativePath": "Rhythm/Festival20261029/chaoz-impact-standard.json",
+      "chartRelativePath": "Rhythm/Festival20261029/chaoz-impact-standard-showcase-v4.json",
       "sourceCueInSeconds": 0.0,
       "sourceCueOutSeconds": 115.539591837,
       "roundDurationSeconds": 115.539591837,

@@ -40,7 +40,7 @@ class FestivalCatalogTests(unittest.TestCase):
     def test_demos_and_answers_are_disjoint_from_normal_events(self):
         for profile in self.profiles:
             chart = self.chart(profile)
-            self.assertEqual(len(chart["demonstrations"]), 2 if profile["trackId"].endswith("-showcase-v3") else 1)
+            self.assertEqual(len(chart["demonstrations"]), 2)
             demo = chart["demonstrations"][0]
             answer = [e for e in chart["events"] if "answerIndex" in e]
             self.assertEqual(len(answer), 3)
@@ -75,23 +75,36 @@ class FestivalCatalogTests(unittest.TestCase):
             self.assertEqual(peak, chart["estimatedPeakActiveWithoutHits"])
             self.assertTrue(all(e["authoredPlacement"] and -2 <= e["placementSlot"] <= 2 for e in events))
 
-    def test_showcase_preserves_time_count_and_limits_features_to_one_profile(self):
-        profiles = [p for p in self.profiles if p["trackId"].endswith("-showcase-v3")]
-        self.assertEqual(len(profiles), 1)
-        chart = self.chart(profiles[0])
-        original = festival.read_json(festival.DATA / "stepmania-goin-under-beginner-festival.json")
-        self.assertEqual([(e["id"], e["timeSeconds"]) for e in chart["events"]],
-                         [(e["id"], e["timeSeconds"]) for e in original["events"]])
-        mirror = chart["demonstrations"][1]
-        self.assertEqual(mirror["answerSlots"], list(reversed(mirror["slots"])))
-        self.assertTrue(mirror["keepAnswerGuide"])
-        self.assertEqual(mirror["answerEventIds"], [15, 16, 17])
-        moving = [e for e in chart["events"] if e.get("trajectory")]
-        self.assertEqual(len(moving), 8)
-        self.assertEqual({e["trajectory"] for e in moving}, {1, 2})
-        self.assertTrue(all(e["motionStartSeconds"] < e["motionEndSeconds"] and e["motionPeriodSeconds"] > 0 for e in moving))
-        self.assertEqual(chart["finale"]["eventIds"], [42, 43, 44])
-        self.assertEqual([e["id"] for e in chart["events"] if e.get("finaleAccent")], [44])
+    def test_every_profile_has_disjoint_showcase_and_preserves_all_event_times(self):
+        self.assertTrue(all(p["trackId"].endswith("-showcase-v4") for p in self.profiles))
+        for profile in self.profiles:
+            chart = self.chart(profile)
+            original = festival.read_json(festival.DATA / (profile["trackId"].replace("-showcase-v4", "") + ".json"))
+            self.assertEqual([(e["id"], e["timeSeconds"]) for e in chart["events"]],
+                             [(e["id"], e["timeSeconds"]) for e in original["events"]])
+            mirror = chart["demonstrations"][1]
+            self.assertEqual(mirror["answerSlots"], list(reversed(mirror["slots"])))
+            self.assertTrue(mirror["keepAnswerGuide"])
+            self.assertEqual(len(mirror["answerEventIds"]), 3)
+            answers = [chart["events"][i] for i in mirror["answerEventIds"]]
+            self.assertEqual([e["placementSlot"] for e in answers], mirror["answerSlots"])
+            self.assertLessEqual(mirror["startSeconds"] + 3 * mirror["stepSeconds"], mirror["answerStartSeconds"])
+            self.assertGreater(mirror["answerEndSeconds"], answers[-1]["timeSeconds"] - profile["sourceCueInSeconds"])
+            moving = [e for e in chart["events"] if e.get("trajectory")]
+            self.assertEqual(len(moving), 8)
+            self.assertEqual({e["trajectory"] for e in moving}, {1, 2})
+            start, end = moving[0]["motionStartSeconds"], moving[0]["motionEndSeconds"]
+            self.assertGreaterEqual(start, mirror["answerEndSeconds"] + festival.LEAD - 1e-7)
+            finale = chart["events"][-3:]
+            self.assertLess(end, finale[0]["timeSeconds"] - profile["sourceCueInSeconds"] - festival.LEAD)
+            self.assertEqual(chart["finale"]["eventIds"], [e["id"] for e in finale])
+            self.assertEqual([e["id"] for e in chart["events"] if e.get("finaleAccent")], [finale[-1]["id"]])
+
+    def test_irregular_mirror_answers_retain_source_gaps(self):
+        spring = next(p for p in self.profiles if p["title"] == "Springtime" and p["mode"] == "festival")
+        chart = self.chart(spring)
+        times = [chart["events"][i]["timeSeconds"] for i in chart["demonstrations"][1]["answerEventIds"]]
+        self.assertNotAlmostEqual(times[1] - times[0], times[2] - times[1], places=3)
 
     def test_density_estimate_uses_production_prefab_expiry_and_scene_capacity(self):
         prefab = (festival.ROOT / "Assets/StudioArtPack/BalloonColors/Prefabs/PlayableBalloon_ThreeColors.prefab").read_text()

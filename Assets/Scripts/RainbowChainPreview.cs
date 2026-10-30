@@ -9,6 +9,7 @@ public sealed class RainbowChainPreview : MonoBehaviour
     private RainbowChain chain;
     private PlayerShooter shooter;
     private RoundController round;
+    private LocalPlayerInput localPlayers;
     private GameObject root;
     private Text label;
     private LocalizedText fontTemplate;
@@ -23,10 +24,12 @@ public sealed class RainbowChainPreview : MonoBehaviour
         chain = owner;
         shooter = FindFirstObjectByType<PlayerShooter>();
         round = FindFirstObjectByType<RoundController>();
+        localPlayers = round != null ? round.GetComponent<LocalPlayerInput>() : null;
     }
 
     private void LateUpdate()
     {
+        if (localPlayers != null) shooter = localPlayers.LastAimingPlayer == 1 ? localPlayers.Secondary : localPlayers.Primary;
         if (chain == null || shooter == null || !chain.IsSelected || !chain.IsReady ||
             !RoundController.IsPlaying || RoundController.IsPaused || !shooter.TryGetAimedBalloon(out Balloon target))
         { Hide(); return; }

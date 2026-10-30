@@ -6,7 +6,7 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 The October 30 planning request authorizes documenting the selected open-world direction, updating the official website and pushing main. It does **not** authorize implementing open-world gameplay. The selected topology, encounter structure and first AI role are in [Game design](GAME_DESIGN.md#open-world-direction--planning-only); the [open-world track](#open-world-development-track--planning-only) below is the future learner/assistant development sequence. Exhibition and package work retain their existing evidence boundaries.
 
-The creator explicitly authorized implementing the four [showcase additions](GAME_DESIGN.md#goin-under-festival-showcase--v3), testing them, packaging Windows/macOS candidates and pushing main. The bounded Goin' Under Festival mirror, motion phrase and finale, plus the shared-planner Rainbow chain preview, are implemented and checked. Source `ee2ef85` is pushed to main, and both local demo.12 candidates passed builds and exact ZIP checks. Windows interface acceptance is pending because the desktop was locked; real-Mac acceptance is also pending. Preserve all original event times/audio and the nineteen other profiles, isolate showcase records, then verify source behavior and exact packages. Keep packages/evidence immutable and remove recoverable temporary build files after verification. Published demo.11 downloads remain separate until a new publication is requested. Postcards/export and the paint ribbon remain deferred.
+The creator expanded the [showcase](GAME_DESIGN.md#all-song-showcase--v4) to all twenty song/mode profiles and requested [local co-op/gamepad practice](GAME_DESIGN.md#local-players-and-gamepads--development-practice), explicitly reserving two small core decisions for guided learning. Preserve source note times/audio and historical v2/v3 data; use isolated v4 records. Verify every profile's mirror/motion/finale and controller ownership/pause/reset. Complete support infrastructure while leaving both `CoopLearnerCore` TODOs to the creator, one lesson at a time. The [first co-op lesson](LOCAL_COOP_LESSON.md) is the next learner step. Demo.12 remains immutable; expanded source needs a new candidate version. Public demo.11 remains separate. Postcards/export and paint ribbon remain deferred.
 
 The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
 
@@ -56,7 +56,7 @@ The [music-led design](GAME_DESIGN.md#music-led-festival-variety) defines the in
 | Lane | Owner and output | Boundary |
 |---|---|---|
 | Catalog preparation | Preserve the saved catalog, sections, demonstration metadata and provenance | Original recordings/charts/notices remain unchanged; human listening remains separately labelled |
-| Runtime | Codex: the explicitly authorized relay, Rainbow chain and four showcase additions | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
+| Runtime | Codex: authorized all-song, gamepad and co-op support; learner: two reserved P2 decisions | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
 | Verification | Codex: focused collection tests and runtime lifecycle/scoring/layout checks | Controlled-clock traversal, natural real-time rounds, screenshots and physical play are different evidence |
 | Integration and delivery | Codex: source review, native visual inspection and documentation/site publication | No force-push, overwritten public assets, concurrent editor shutdown or unearned acceptance claims |
 
@@ -86,7 +86,7 @@ The [operator runbook](../Project/EXHIBITION_RUNBOOK.md) owns setup and recovery
 
 ## Immediate lesson queue
 
-The October 30 relay, Rainbow chain and four showcase additions were explicitly authorized for direct Codex implementation. Subsequent core gameplay lessons return to the working agreement: explain one small step, let the learner write it, then review and verify. Do not restart the three saved learner functions as unfinished work. Select the next lesson from an observed player problem rather than adding unrelated mechanics.
+The current learner step is [co-op lesson 1](LOCAL_COOP_LESSON.md): implement only `CoopLearnerCore.IsSecondShotReady`, check early/equal/late times, then request review. Leave `SecondPlayerBeatBonus` untouched until that first step is verified. The assistant owns support wiring and checks; the learner owns these two decisions. Preserve the three existing `KyudaisaiLearnerCore` solutions. New co-op packaging follows completion/review of the lesson rather than presenting placeholders as accepted gameplay.
 
 ## Post-festival milestones
 

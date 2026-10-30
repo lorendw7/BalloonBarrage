@@ -319,33 +319,63 @@ def prepare_chart(track, analysis, mode):
                "sourceCueInSeconds": round(cue_in, 9), "sourceCueOutSeconds": round(cue_out, 9),
                "roundDurationSeconds": round(duration, 9), "sourceEventStartId": 0,
                "sourceEventEndIdExclusive": len(events)}
-    if track["id"] == "stepmania-goin-under-beginner" and mode == "festival":
-        # One bounded showcase: preserve every event id/time and the prior v2 file.
-        path = DATA / (track["id"] + "-festival-showcase-v3.json")
-        profile["trackId"] = track["id"] + "-festival-showcase-v3"
-        profile["chartRelativePath"] = path.relative_to(ROOT / "Assets/StreamingAssets").as_posix()
-        chart["schemaVersion"] = 3
-        mirror_events = events[15:18]
-        mirror_start = mirror_events[0]["timeSeconds"] - cue_in
-        chart["demonstrations"].append({
-            "startSeconds": round(mirror_start - 4 * step, 9), "stepSeconds": round(step, 9),
-            "answerStartSeconds": round(mirror_start, 9), "slots": [-1, 0, 1],
-            "answerSlots": [1, 0, -1], "answerEventIds": [e["id"] for e in mirror_events],
-            "keepAnswerGuide": True})
-        for index, event in enumerate(mirror_events):
-            event["placementSlot"] = [1, 0, -1][index]
-            event["mirrorAnswerIndex"] = index
-        for index, event in enumerate(events[23:31]):
-            event.update(trajectory=1 if index < 4 else 2,
-                         motionStartSeconds=round(events[23]["timeSeconds"] - cue_in, 9),
-                         motionEndSeconds=round(events[31]["timeSeconds"] - cue_in, 9),
-                         motionPeriodSeconds=round(4 * step, 9))
-        chart["finale"] = {"eventIds": [e["id"] for e in events[-3:]], "slots": [-1, 1, 0]}
-        for event, slot in zip(events[-3:], chart["finale"]["slots"]):
-            event["placementSlot"] = slot
-        events[-1]["finaleAccent"] = True
-        chart["adaptation"] += " October 30 showcase v3: one mid-song mirrored answer with persistent outlines, one bounded arc/wave phrase and a three-target finale with a cosmetic multicolor final pop. Existing ids/timestamps/count and original audio remain unchanged; human comfort/listening remains unverified."
+    # Every profile gets a new identity; historical v2/v3 derivatives remain intact.
+    path = DATA / (track["id"] + "-" + mode + "-showcase-v4.json")
+    profile["trackId"] = track["id"] + "-" + mode + "-showcase-v4"
+    profile["chartRelativePath"] = path.relative_to(ROOT / "Assets/StreamingAssets").as_posix()
+    chart["schemaVersion"] = 4
+    add_showcase(chart, cue_in, duration, step)
     return path, chart, profile
+
+
+def add_showcase(chart, cue_in, duration, opening_step):
+    """Choose disjoint phrases from existing events, never retime or insert notes.
+
+    Joint selection avoids choosing a mirror that leaves no eight-event motion
+    phrase in a sparse short chart. Response IDs support irregular source gaps.
+    """
+    events = chart["events"]
+    opening = chart["demonstrations"][0]
+    opening_end = opening["answerStartSeconds"] + 3 * opening_step
+    options = []
+    for index in range(3, len(events) - 11):
+        first, middle, last = [e["timeSeconds"] - cue_in for e in events[index:index + 3]]
+        watch_step = min(opening_step, middle - first, last - middle)
+        response_end = last + watch_step
+        if first - 4 * watch_step < opening_end + LEAD or response_end >= duration * .66:
+            continue
+        for motion_index in range(index + 3, len(events) - 11):
+            motion_start = events[motion_index]["timeSeconds"] - cue_in
+            motion_end = events[motion_index + 8]["timeSeconds"] - cue_in
+            finale_preview = events[-3]["timeSeconds"] - cue_in - LEAD
+            if motion_start < response_end + LEAD or motion_end >= finale_preview - MIN_GAP:
+                continue
+            score = abs(first - duration * .42) + .25 * abs(motion_start - duration * .62)
+            options.append((score, index, motion_index, watch_step, response_end))
+    if not options:
+        raise ValueError("No separated showcase phrases: " + chart["title"])
+    _, index, motion_index, watch_step, response_end = min(options)
+    mirror = events[index:index + 3]
+    answer_start = mirror[0]["timeSeconds"] - cue_in
+    chart["demonstrations"].append({
+        "startSeconds": round(answer_start - 4 * watch_step, 9),
+        "stepSeconds": round(watch_step, 9), "answerStartSeconds": round(answer_start, 9),
+        "answerEndSeconds": round(response_end, 9), "slots": [-1, 0, 1],
+        "answerSlots": [1, 0, -1], "answerEventIds": [e["id"] for e in mirror], "keepAnswerGuide": True})
+    for answer_index, event in enumerate(mirror):
+        event["placementSlot"] = [1, 0, -1][answer_index]
+        event["mirrorAnswerIndex"] = answer_index
+    start = events[motion_index]["timeSeconds"] - cue_in
+    end = events[motion_index + 8]["timeSeconds"] - cue_in
+    for offset, event in enumerate(events[motion_index:motion_index + 8]):
+        event.update(trajectory=1 if offset < 4 else 2,
+                     motionStartSeconds=round(start, 9), motionEndSeconds=round(end, 9),
+                     motionPeriodSeconds=round(4 * opening_step, 9))
+    chart["finale"] = {"eventIds": [e["id"] for e in events[-3:]], "slots": [-1, 1, 0]}
+    for event, slot in zip(events[-3:], chart["finale"]["slots"]):
+        event["placementSlot"] = slot
+    events[-1]["finaleAccent"] = True
+    chart["adaptation"] += " October 30 all-song showcase v4: one middle mirrored response matched by existing event IDs, one bounded eight-target arc/wave phrase and a three-target finale. Existing IDs/timestamps/count and original audio remain unchanged. Each profile has a new record identity; human comfort/listening remains unverified."
 
 
 def unity_meta(path, folder=False):
@@ -383,8 +413,8 @@ def prepare(analyze=False):
             generated[path] = json_bytes(chart)
             profiles.append(profile)
             print(f"{mode}: {track['title']}, {profile['roundDurationSeconds']:.3f}s, {len(chart['events'])} events, peak {chart['estimatedPeakActiveWithoutHits']}")
-    generated[DATA / "catalog.json"] = json_bytes({"schemaVersion": 3,
-        "catalogId": "kyudaisai-2026-phrase-v3-showcase", "defaultMode": "festival",
+    generated[DATA / "catalog.json"] = json_bytes({"schemaVersion": 4,
+        "catalogId": "kyudaisai-2026-all-song-showcase-v4", "defaultMode": "festival",
         "status": "prepared-derived-data-awaiting-runtime-and-package-verification",
         "humanListeningCalibrated": False, "paintRibbonImplemented": False,
         "songs": profiles})
@@ -427,10 +457,11 @@ def prepare(analyze=False):
         "to 105 seconds; historical maximum-granule metadata counted extra padding.\n"
         "See duration-audit.json. Original audio bytes and source charts remain unchanged.\n"
         "Demonstration markers do not score; long-note paint ribbon is not implemented.\n"
-        "October 30 showcase v3: only Goin' Under / Festival adds a mirrored middle\n"
-        "answer, one bounded arc/wave phrase and a cosmetic three-target finale.\n"
-        "Its v2 derivative is preserved; event timestamps, count and original audio\n"
-        "are unchanged. The showcase has a distinct profile/record identity.\n"
+        "October 30 all-song showcase v4: all twenty Festival/Standard profiles add a\n"
+        "middle mirrored response, one bounded arc/wave phrase and a three-target finale.\n"
+        "Response IDs preserve irregular source timing. All existing event IDs/times,\n"
+        "counts and original audio remain unchanged. Historical v2/v3 derivatives are\n"
+        "preserved; v4 profiles use distinct record identities.\n"
     ).encode("utf-8")
     generated[DATA / "CC-BY-SA-3.0.txt"] = (ROOT / "Assets/StreamingAssets/Rhythm/Classics20261029/CC-BY-SA-3.0.txt").read_bytes()
     for path, data in generated.items():

@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 4,
+  "title": "Goin' Under",
+  "artist": "NegaRen",
+  "chartAuthor": "BalloonBarrage project; source authors retained in sourceChart",
+  "difficulty": "Relaxed phrase",
+  "bpm": 210.0,
+  "durationSeconds": 123.42857142857143,
+  "roundDurationSeconds": 123.428571429,
+  "license": "Upstream noncommercial restrictions; exact version unspecified",
+  "sourceChart": "Assets/StreamingAssets/Rhythm/Prepared/GoinUnder_Beginner.json",
+  "sourceChartSha256": "a4c019ed6cf9ec0d92b03689fd7363d14aac1b5e9c854ce477807c7eb7f68549",
+  "source": {
+    "sourceAudioUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ogg",
+    "sourceAudioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+    "sourceChartUrl": "https://raw.githubusercontent.com/stepmania/stepmania/825467bcd81c812b33ad684dc04dd151b2d5dec3/Songs/StepMania%205/Goin%27%20Under/Goin%27%20Under.ssc",
+    "sourceChartSha256": "d29fa1147bb9018b04ab1bfdbb7ef867d70baa2a1f4d748b54af7c00c377dac5",
+    "usage": "User-authorized noncommercial development bundle. Upstream describes songs as CC-NC without a specific license version; preserve notices and do not sell packages containing these songs. Commercial rights are not cleared."
+  },
+  "audioAssetPath": "Assets/Audio/Music/StepMania/GoinUnder.ogg",
+  "audioSha256": "9d211f2fee8bc5327119ea9b1b6bb77f88226c5a1317628ad2467734fe4cb483",
+  "adaptation": "Project-authored phrase/placement adaptation. Source StepMania event times are retained when selected; crowded rows are thinned and three new answer events are explicitly authored. Other songs use documented BPM and signal-estimated phase, alternating beat motifs. Opening noninteractive demonstration markers never score. Sections are beat-aligned 8-bar arrangements inferred from timing, not verified musical form. Audio bytes, speed and pitch unchanged. Human listening/aim calibration remains unverified. October 30 all-song showcase v4: one middle mirrored response matched by existing event IDs, one bounded eight-target arc/wave phrase and a three-target finale. Existing IDs/timestamps/count and original audio remain unchanged. Each profile has a new record identity; human comfort/listening remains unverified.",
+  "coordinateContract": "Event timeSeconds is source-audio time. Sections and demonstrations use round-relative seconds. Subtract profile.sourceCueInSeconds from event time once.",
+  "humanListeningCalibrated": false,
+  "estimatedPeakActiveWithoutHits": 10,
+  "minimumEventGapSeconds": 0.857142857,
+  "sections": [
+    {
+      "startSeconds": 0.0,
+      "endSeconds": 9.142857143,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 9.142857143,
+      "endSeconds": 18.285714286,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 18.285714286,
+      "endSeconds": 27.428571429,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 27.428571429,
+      "endSeconds": 36.571428571,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 36.571428571,
+      "endSeconds": 45.714285714,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 45.714285714,
+      "endSeconds": 54.857142857,
+      "pattern": 2,
+      "direction": -1
+    },
+    {
+      "startSeconds": 54.857142857,
+      "endSeconds": 64.0,
+      "pattern": 0,
+      "direction": 1
+    },
+    {
+      "startSeconds": 64.0,
+      "endSeconds": 73.142857143,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 73.142857143,
+      "endSeconds": 82.285714286,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 82.285714286,
+      "endSeconds": 91.428571429,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 91.428571429,
+      "endSeconds": 100.571428571,
+      "pattern": 2,
+      "direction": 1
+    },
+    {
+      "startSeconds": 100.571428571,
+      "endSeconds": 109.714285714,
+      "pattern": 0,
+      "direction": -1
+    },
+    {
+      "startSeconds": 109.714285714,
+      "endSeconds": 118.857142857,
+      "pattern": 1,
+      "direction": 1
+    },
+    {
+      "startSeconds": 118.857142857,
+      "endSeconds": 123.428571429,
+      "pattern": 2,
+      "direction": 1
+    }
+  ],
+  "demonstrations": [
+    {
+      "startSeconds": 1.142857143,
+      "stepSeconds": 1.142857143,
+      "answerStartSeconds": 5.714285714,
+      "slots": [
+        -1,
+        0,
+        1
+      ]
+    },
+    {
+      "startSeconds": 46.857142861,
+      "stepSeconds": 1.142857142,
+      "answerStartSeconds": 51.428571429,
+      "answerEndSeconds": 54.857142856,
+      "slots": [
+        -1,
+        0,
+        1
+      ],
+      "answerSlots": [
+        1,
+        0,
+        -1
+      ],
+      "answerEventIds": [
+        36,
+        37,
+        38
+      ],
+      "keepAnswerGuide": true
+    }
+  ],
+  "events": [
+    {
+      "timeSeconds": 5.714285714,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "answerIndex": 0,
+      "id": 0
+    },
+    {
+      "timeSeconds": 6.857142857,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "answerIndex": 1,
+      "id": 1
+    },
+    {
+      "timeSeconds": 8.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "answerIndex": 2,
+      "id": 2
+    },
+    {
+      "timeSeconds": 11.428571429,
+      "sourceEventId": 2,
+      "sourceBeat": 40.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 3
+    },
+    {
+      "timeSeconds": 12.285714286,
+      "sourceEventId": 3,
+      "sourceBeat": 43.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 4
+    },
+    {
+      "timeSeconds": 13.714285714,
+      "sourceEventId": 4,
+      "sourceBeat": 48.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 5
+    },
+    {
+      "timeSeconds": 14.571428571,
+      "sourceEventId": 5,
+      "sourceBeat": 51.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 6
+    },
+    {
+      "timeSeconds": 16.0,
+      "sourceEventId": 6,
+      "sourceBeat": 56.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 7
+    },
+    {
+      "timeSeconds": 16.857142857,
+      "sourceEventId": 7,
+      "sourceBeat": 59.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 8
+    },
+    {
+      "timeSeconds": 18.285714286,
+      "sourceEventId": 8,
+      "sourceBeat": 64.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 9
+    },
+    {
+      "timeSeconds": 19.142857143,
+      "sourceEventId": 9,
+      "sourceBeat": 67.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 10
+    },
+    {
+      "timeSeconds": 20.571428571,
+      "sourceEventId": 10,
+      "sourceBeat": 72.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 11
+    },
+    {
+      "timeSeconds": 21.428571429,
+      "sourceEventId": 11,
+      "sourceBeat": 75.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 12
+    },
+    {
+      "timeSeconds": 22.857142857,
+      "sourceEventId": 12,
+      "sourceBeat": 80.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 13
+    },
+    {
+      "timeSeconds": 23.714285714,
+      "sourceEventId": 13,
+      "sourceBeat": 83.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 14
+    },
+    {
+      "timeSeconds": 25.142857143,
+      "sourceEventId": 14,
+      "sourceBeat": 88.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 15
+    },
+    {
+      "timeSeconds": 26.0,
+      "sourceEventId": 15,
+      "sourceBeat": 91.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 16
+    },
+    {
+      "timeSeconds": 27.428571429,
+      "sourceEventId": 16,
+      "sourceBeat": 96.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 17
+    },
+    {
+      "timeSeconds": 28.571428571,
+      "sourceEventId": 17,
+      "sourceBeat": 100.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 18
+    },
+    {
+      "timeSeconds": 29.714285714,
+      "sourceEventId": 18,
+      "sourceBeat": 104.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 19
+    },
+    {
+      "timeSeconds": 30.857142857,
+      "sourceEventId": 19,
+      "sourceBeat": 108.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 20
+    },
+    {
+      "timeSeconds": 32.0,
+      "sourceEventId": 20,
+      "sourceBeat": 112.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 21
+    },
+    {
+      "timeSeconds": 33.142857143,
+      "sourceEventId": 21,
+      "sourceBeat": 116.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 22
+    },
+    {
+      "timeSeconds": 34.285714286,
+      "sourceEventId": 22,
+      "sourceBeat": 120.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 23
+    },
+    {
+      "timeSeconds": 36.571428571,
+      "sourceEventId": 23,
+      "sourceBeat": 128.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 24
+    },
+    {
+      "timeSeconds": 37.714285714,
+      "sourceEventId": 24,
+      "sourceBeat": 132.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 25
+    },
+    {
+      "timeSeconds": 38.857142857,
+      "sourceEventId": 25,
+      "sourceBeat": 136.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 26
+    },
+    {
+      "timeSeconds": 40.0,
+      "sourceEventId": 26,
+      "sourceBeat": 140.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 27
+    },
+    {
+      "timeSeconds": 41.142857143,
+      "sourceEventId": 27,
+      "sourceBeat": 144.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 28
+    },
+    {
+      "timeSeconds": 42.285714286,
+      "sourceEventId": 28,
+      "sourceBeat": 148.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 29
+    },
+    {
+      "timeSeconds": 43.428571429,
+      "sourceEventId": 29,
+      "sourceBeat": 152.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 30
+    },
+    {
+      "timeSeconds": 45.714285714,
+      "sourceEventId": 30,
+      "sourceBeat": 160.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 31
+    },
+    {
+      "timeSeconds": 46.857142857,
+      "sourceEventId": 31,
+      "sourceBeat": 164.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 32
+    },
+    {
+      "timeSeconds": 48.0,
+      "sourceEventId": 32,
+      "sourceBeat": 168.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 33
+    },
+    {
+      "timeSeconds": 49.142857143,
+      "sourceEventId": 33,
+      "sourceBeat": 172.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 34
+    },
+    {
+      "timeSeconds": 50.285714286,
+      "sourceEventId": 34,
+      "sourceBeat": 176.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 35
+    },
+    {
+      "timeSeconds": 51.428571429,
+      "sourceEventId": 35,
+      "sourceBeat": 180.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 36,
+      "mirrorAnswerIndex": 0
+    },
+    {
+      "timeSeconds": 52.571428571,
+      "sourceEventId": 36,
+      "sourceBeat": 184.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 37,
+      "mirrorAnswerIndex": 1
+    },
+    {
+      "timeSeconds": 53.714285714,
+      "sourceEventId": 37,
+      "sourceBeat": 188.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 38,
+      "mirrorAnswerIndex": 2
+    },
+    {
+      "timeSeconds": 54.857142857,
+      "sourceEventId": 38,
+      "sourceBeat": 192.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 39
+    },
+    {
+      "timeSeconds": 56.0,
+      "sourceEventId": 39,
+      "sourceBeat": 196.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 40
+    },
+    {
+      "timeSeconds": 57.142857143,
+      "sourceEventId": 40,
+      "sourceBeat": 200.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 41
+    },
+    {
+      "timeSeconds": 58.285714286,
+      "sourceEventId": 41,
+      "sourceBeat": 204.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 42
+    },
+    {
+      "timeSeconds": 59.428571429,
+      "sourceEventId": 42,
+      "sourceBeat": 208.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 43
+    },
+    {
+      "timeSeconds": 60.571428571,
+      "sourceEventId": 43,
+      "sourceBeat": 212.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 44
+    },
+    {
+      "timeSeconds": 61.714285714,
+      "sourceEventId": 44,
+      "sourceBeat": 216.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 45
+    },
+    {
+      "timeSeconds": 62.857142857,
+      "sourceEventId": 45,
+      "sourceBeat": 220.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 46
+    },
+    {
+      "timeSeconds": 64.0,
+      "sourceEventId": 46,
+      "sourceBeat": 224.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 47
+    },
+    {
+      "timeSeconds": 65.142857143,
+      "sourceEventId": 47,
+      "sourceBeat": 228.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 48
+    },
+    {
+      "timeSeconds": 66.285714286,
+      "sourceEventId": 48,
+      "sourceBeat": 232.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 49
+    },
+    {
+      "timeSeconds": 67.428571429,
+      "sourceEventId": 49,
+      "sourceBeat": 236.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 50
+    },
+    {
+      "timeSeconds": 68.571428571,
+      "sourceEventId": 50,
+      "sourceBeat": 240.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 51
+    },
+    {
+      "timeSeconds": 69.714285714,
+      "sourceEventId": 51,
+      "sourceBeat": 244.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 52
+    },
+    {
+      "timeSeconds": 70.857142857,
+      "sourceEventId": 52,
+      "sourceBeat": 248.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 53
+    },
+    {
+      "timeSeconds": 73.142857143,
+      "sourceEventId": 53,
+      "sourceBeat": 256.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 54
+    },
+    {
+      "timeSeconds": 74.285714286,
+      "sourceEventId": 54,
+      "sourceBeat": 260.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 55
+    },
+    {
+      "timeSeconds": 75.428571429,
+      "sourceEventId": 55,
+      "sourceBeat": 264.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 56
+    },
+    {
+      "timeSeconds": 76.571428571,
+      "sourceEventId": 56,
+      "sourceBeat": 268.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 57,
+      "trajectory": 1,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 77.714285714,
+      "sourceEventId": 57,
+      "sourceBeat": 272.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 58,
+      "trajectory": 1,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 78.857142857,
+      "sourceEventId": 58,
+      "sourceBeat": 276.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 59,
+      "trajectory": 1,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 80.0,
+      "sourceEventId": 59,
+      "sourceBeat": 280.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 60,
+      "trajectory": 1,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 82.285714286,
+      "sourceEventId": 60,
+      "sourceBeat": 288.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 61,
+      "trajectory": 2,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 83.142857143,
+      "sourceEventId": 61,
+      "sourceBeat": 291.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 62,
+      "trajectory": 2,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 84.571428571,
+      "sourceEventId": 62,
+      "sourceBeat": 296.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 63,
+      "trajectory": 2,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 85.428571429,
+      "sourceEventId": 63,
+      "sourceBeat": 299.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 64,
+      "trajectory": 2,
+      "motionStartSeconds": 76.571428571,
+      "motionEndSeconds": 86.857142857,
+      "motionPeriodSeconds": 4.571428571
+    },
+    {
+      "timeSeconds": 86.857142857,
+      "sourceEventId": 64,
+      "sourceBeat": 304.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 65
+    },
+    {
+      "timeSeconds": 87.714285714,
+      "sourceEventId": 65,
+      "sourceBeat": 307.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 66
+    },
+    {
+      "timeSeconds": 89.142857143,
+      "sourceEventId": 66,
+      "sourceBeat": 312.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 67
+    },
+    {
+      "timeSeconds": 90.0,
+      "sourceEventId": 67,
+      "sourceBeat": 315.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 68
+    },
+    {
+      "timeSeconds": 91.428571429,
+      "sourceEventId": 68,
+      "sourceBeat": 320.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 69
+    },
+    {
+      "timeSeconds": 92.285714286,
+      "sourceEventId": 69,
+      "sourceBeat": 323.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 70
+    },
+    {
+      "timeSeconds": 93.714285714,
+      "sourceEventId": 70,
+      "sourceBeat": 328.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 71
+    },
+    {
+      "timeSeconds": 94.571428571,
+      "sourceEventId": 71,
+      "sourceBeat": 331.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 72
+    },
+    {
+      "timeSeconds": 96.0,
+      "sourceEventId": 72,
+      "sourceBeat": 336.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 73
+    },
+    {
+      "timeSeconds": 96.857142857,
+      "sourceEventId": 73,
+      "sourceBeat": 339.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 74
+    },
+    {
+      "timeSeconds": 98.285714286,
+      "sourceEventId": 74,
+      "sourceBeat": 344.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 75
+    },
+    {
+      "timeSeconds": 99.142857143,
+      "sourceEventId": 75,
+      "sourceBeat": 347.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 76
+    },
+    {
+      "timeSeconds": 100.571428571,
+      "sourceEventId": 76,
+      "sourceBeat": 352.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 77
+    },
+    {
+      "timeSeconds": 101.714285714,
+      "sourceEventId": 77,
+      "sourceBeat": 356.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 78
+    },
+    {
+      "timeSeconds": 102.857142857,
+      "sourceEventId": 78,
+      "sourceBeat": 360.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 79
+    },
+    {
+      "timeSeconds": 104.0,
+      "sourceEventId": 79,
+      "sourceBeat": 364.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 80
+    },
+    {
+      "timeSeconds": 105.142857143,
+      "sourceEventId": 80,
+      "sourceBeat": 368.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 81
+    },
+    {
+      "timeSeconds": 106.285714286,
+      "sourceEventId": 81,
+      "sourceBeat": 372.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 82
+    },
+    {
+      "timeSeconds": 107.428571429,
+      "sourceEventId": 82,
+      "sourceBeat": 376.0,
+      "authoredPlacement": true,
+      "placementSlot": -2,
+      "id": 83
+    },
+    {
+      "timeSeconds": 108.571428571,
+      "sourceEventId": 83,
+      "sourceBeat": 380.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 84
+    },
+    {
+      "timeSeconds": 109.714285714,
+      "sourceEventId": 84,
+      "sourceBeat": 384.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 85
+    },
+    {
+      "timeSeconds": 110.857142857,
+      "sourceEventId": 85,
+      "sourceBeat": 388.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 86
+    },
+    {
+      "timeSeconds": 112.0,
+      "sourceEventId": 86,
+      "sourceBeat": 392.0,
+      "authoredPlacement": true,
+      "placementSlot": 2,
+      "id": 87
+    },
+    {
+      "timeSeconds": 113.142857143,
+      "sourceEventId": 87,
+      "sourceBeat": 396.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 88
+    },
+    {
+      "timeSeconds": 114.285714286,
+      "sourceEventId": 88,
+      "sourceBeat": 400.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 89
+    },
+    {
+      "timeSeconds": 115.428571429,
+      "sourceEventId": 89,
+      "sourceBeat": 404.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 90
+    },
+    {
+      "timeSeconds": 116.571428571,
+      "sourceEventId": 90,
+      "sourceBeat": 408.0,
+      "authoredPlacement": true,
+      "placementSlot": -1,
+      "id": 91
+    },
+    {
+      "timeSeconds": 117.714285714,
+      "sourceEventId": 91,
+      "sourceBeat": 412.0,
+      "authoredPlacement": true,
+      "placementSlot": 1,
+      "id": 92
+    },
+    {
+      "timeSeconds": 118.857142857,
+      "sourceEventId": 92,
+      "sourceBeat": 416.0,
+      "authoredPlacement": true,
+      "placementSlot": 0,
+      "id": 93,
+      "finaleAccent": true
+    }
+  ],
+  "finale": {
+    "eventIds": [
+      91,
+      92,
+      93
+    ],
+    "slots": [
+      -1,
+      1,
+      0
+    ]
+  }
+}
