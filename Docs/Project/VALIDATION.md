@@ -1,5 +1,15 @@
 # Validation record
 
+## Room-wide ink source verification — October 31
+
+The creator authorized full studio walls/floor/static props, denser original cartoon ink, performance work, fresh packages, main push and website publication. The saved preparation has **404 active opaque static mesh receivers**, exact mesh contacts, unique UV4 tiles, one 4096² ARGB32 atlas (**64 MiB color storage**) and one combined coat renderer. Welding reduces visible triangle vertices from 824,082 to 197,469 (76%). Original artwork/materials/GUIDs and local learner/shader-graph edits remain separate. No Nintendo content is imported.
+
+The final isolated Unity 6000.0.77f1 GPU/physics fixture passed **1,256 assertions**: real contacts and GPU alpha readback for all 404 receivers; all eight pigment colors; opposite-face rejection; same-player interpolation, release boundaries and player isolation; **10,000 deposits without permanent-object or atlas-byte growth**; **1,000 pooled impacts without new objects**; idle frames with no paint writes; pause with pigment retained and pooled particles cleared; natural short-song completion at 65.144 seconds; results retention; and five actual Retry scene reloads. The fixture is `Tools/Unity/RoomPaintValidation.cs`; canonical report, capture and exact source/capture hashes live in `Assets/StudioArtPack/RoomPaint20261031`. A clean preparation excludes unused early diagnostic components/assets.
+
+The non-Development Windows diagnostic build succeeded with **zero errors and warnings**. Its initial hidden-window run supplied zero draw counters, so its partial frame timing was rejected as rendered-frame acceptance. Desktop Computer Use app authorization timed out; the creator explicitly chose to continue automatic checks and publication without a visible-window test. A fresh hidden longest-song lifecycle run is separate from any rendering-performance claim. The website presents bounded-resource evidence, not a 120 FPS guarantee. Physical controllers, human/venue audio and real-Mac acceptance remain open. Exact desktop packages/public delivery are recorded separately after building from the named source commit.
+
+Integrated website checks passed **21/21**, including the existing connected survey, 30 language routes, updated trilingual room-paint copy, native controlled capture and retained provenance. These are website checks, not Unity/player acceptance. Detailed architecture remains in [Full-scene paint](../Design/FULL_SCENE_PAINT_ARCHITECTURE.md).
+
 ## Demo.15 desktop publication — October 31
 
 Published prerelease [v0.1.0-demo.15](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.15) at **01:00:44 JST on October 31** (2026-10-30T16:00:44Z), from exact source `f8664ae7dc4f49f857bcac187318c6e8902e3fc4`. Both clean detached checkouts exclude the local learner script, shader graph and editor configuration changes. Unity 6000.0.77f1 produced non-Development Windows x64 and macOS Universal players with **zero errors and zero warnings**: Windows 409.176 seconds / 242,786,522 raw bytes; macOS 421.472 seconds / 259,432,709 raw bytes. Previous archives remain immutable.

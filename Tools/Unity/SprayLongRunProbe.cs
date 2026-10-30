@@ -38,10 +38,13 @@ public sealed class SprayLongRunProbe : MonoBehaviour
         public double songSeconds, frameMilliseconds, cpuMainMilliseconds, gpuMilliseconds;
         public long allocatedBytes, managedUsedBytes, drawCalls, batches, gcAllocatedInFrame;
         public int persistentMarks, liveParticles, transientImpactSystems;
+        public long atlasColorBytes;
+        public int persistentPaintRenderers, liveGameObjects;
     }
     [Serializable] public sealed class Report
     {
         public string status = "running", unityVersion, gpu, cpu, title, trackId, output;
+        public string paintBackend, paintCountMeaning;
         public string scope = "Non-Development diagnostic Windows player; natural DSP longest song; synthetic held mouse/periodic pigment changes; method-driven focus and suspension assertions, then replayed focused/released input if external tools interrupt the performance workload. Not physical Alt+Tab, human aiming/listening or venue acceptance.";
         public int width, height, requestedFps = 120, focusAssertions, peakMarks, performanceFocusReplays;
         public double durationSeconds, completedAtSongSeconds, wallSeconds, earlyFrameP50, earlyFrameP95, lateFrameP50, lateFrameP95;
@@ -102,6 +105,9 @@ public sealed class SprayLongRunProbe : MonoBehaviour
                     .OrderByDescending(i => controller.SongProfiles[i].roundDurationSeconds).First();
                 controller.SelectSong(selected);
                 report.title = controller.SelectedSong.title; report.trackId = controller.SelectedSong.trackId;
+                bool atlasPaint = Object.FindFirstObjectByType<RoomPaintSystem>() != null;
+                report.paintBackend = atlasPaint ? "Combined mesh UV paint atlas" : "Legacy sprite marks";
+                report.paintCountMeaning = atlasPaint ? "Accumulated mesh stamp commands; not GameObjects" : "Persistent SpriteRenderer marks";
                 report.durationSeconds = controller.SelectedSong.roundDurationSeconds;
                 report.width = Screen.width; report.height = Screen.height;
                 Require(report.width == 2560 && report.height == 1440, "Diagnostic must render at 2560x1440.");
@@ -237,10 +243,16 @@ public sealed class SprayLongRunProbe : MonoBehaviour
         InputSystem.QueueStateEvent(keyboard, changePigment ? new KeyboardState(Key.C) : new KeyboardState());
         InputSystem.Update();
     }
-    private static int MarkCount() => Object.FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Include, FindObjectsSortMode.None)
-        .Count(r => r.name.StartsWith("SurfacePaint", StringComparison.Ordinal));
+    private static int MarkCount()
+    {
+        RoomPaintSystem paint = Object.FindFirstObjectByType<RoomPaintSystem>();
+        return paint != null ? (int)Math.Min(int.MaxValue, paint.SubmittedStampCount)
+            : Object.FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+                .Count(r => r.name.StartsWith("SurfacePaint", StringComparison.Ordinal));
+    }
     private void TakeSnapshot(double songTime)
     {
+        RoomPaintSystem paint = Object.FindFirstObjectByType<RoomPaintSystem>();
         int count = MarkCount(); report.peakMarks = Mathf.Max(report.peakMarks, count);
         FrameTimingManager.GetLatestTimings(1, timings);
         report.samples.Add(new Snapshot { songSeconds = songTime, frameMilliseconds = Time.unscaledDeltaTime * 1000d,
@@ -248,6 +260,9 @@ public sealed class SprayLongRunProbe : MonoBehaviour
             allocatedBytes = Profiler.GetTotalAllocatedMemoryLong(), managedUsedBytes = Profiler.GetMonoUsedSizeLong(),
             drawCalls = draws.Valid ? draws.LastValue : -1, batches = batches.Valid ? batches.LastValue : -1,
             gcAllocatedInFrame = gc.Valid ? gc.LastValue : -1, persistentMarks = count,
+            atlasColorBytes = paint != null ? paint.ColorStorageBytes : 0,
+            persistentPaintRenderers = paint != null ? 1 : count,
+            liveGameObjects = Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None).Length,
             liveParticles = spray != null ? spray.particleCount : 0,
             transientImpactSystems = Object.FindObjectsByType<ParticleSystem>(FindObjectsSortMode.None).Count(p => p.name.Contains("Clone")) });
     }

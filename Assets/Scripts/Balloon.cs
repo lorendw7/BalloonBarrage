@@ -321,6 +321,9 @@ public class Balloon : MonoBehaviour
                 continue;
             }
 
+            SpriteRenderer paintPattern = wallPaintPrefabs[index].GetComponent<SpriteRenderer>();
+            if (paintPattern != null && RoomPaintSystem.TryPaint(hit, appearance.Pigment, paintPattern.sprite, .72f)) continue;
+
             Vector3 position = hit.point + hit.normal * 0.005f;
 
 

@@ -788,6 +788,7 @@ public class RoundController : MonoBehaviour
         if (songDropdown != null) songDropdown.Hide();
         if (songSelectionPanel != null) songSelectionPanel.SetActive(false);
 
+        RoomPaintSystem.ClearForNewRound();
         colorRelay.ResetRound();
 
         songDuration = (float)profile.roundDurationSeconds;

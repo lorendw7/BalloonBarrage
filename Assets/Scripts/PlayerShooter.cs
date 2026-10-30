@@ -142,6 +142,7 @@ public class PlayerShooter : MonoBehaviour
         bool shouldPlay,
         float hitDistance = 0f)
     {
+        if (!shouldPlay) RoomPaintSystem.EndStroke(GetInstanceID());
         if (muzzleSpray == null)
         {
             return;
@@ -298,18 +299,6 @@ public class PlayerShooter : MonoBehaviour
         }
 
 
-        Vector3 position = hit.point + hit.normal * 0.01f;
-
-        Quaternion rotation =
-            Quaternion.LookRotation(hit.normal);
-
-        ParticleSystem effect = Instantiate(
-            impactSprayPrefab, position, rotation);
-
-        effect.Stop(
-            true,
-            ParticleSystemStopBehavior.StopEmittingAndClear);
-
         Color impactColor = Color.white;
 
         if (paintProjectilePrefab != null)
@@ -317,16 +306,7 @@ public class PlayerShooter : MonoBehaviour
             impactColor = paintProjectilePrefab.GetPigmentColor(sprayPigmentIndex);
         }
 
-        ParticleSystem[] particleSystems = effect.GetComponentsInChildren<ParticleSystem>(true);
-
-        foreach (ParticleSystem particle in particleSystems)
-        {
-            ParticleSystem.MainModule main = particle.main;
-            main.startColor = impactColor; 
-        }
-
-        effect.Play(true);
-        Destroy(effect.gameObject, 2f);
+        PaintImpactPool.Play(impactSprayPrefab, hit.point, hit.normal, impactColor);
     }
 
 
@@ -340,6 +320,9 @@ public class PlayerShooter : MonoBehaviour
         ParticleSystem.MainModule main = muzzleSpray.main;
         main.simulationSpace = ParticleSystemSimulationSpace.Local;
         main.startSpeed = sprayVisualSpeed;
+        main.startSize = new ParticleSystem.MinMaxCurve(.12f, .23f);
+        var shape = muzzleSpray.shape;
+        if (shape.shapeType == ParticleSystemShapeType.Cone) shape.angle = 1.1f;
 
         ParticleSystem.CollisionModule collision =
             muzzleSpray.collision;
@@ -371,6 +354,7 @@ public class PlayerShooter : MonoBehaviour
 
         ConfigureSprayPresentation();
         ConfigureSprayPigment();
+        PaintImpactPool.Warm(impactSprayPrefab);
 
         if (gunVisual == null)
         {
@@ -404,6 +388,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void CancelFireInput()
     {
+        RoomPaintSystem.EndStroke(GetInstanceID());
         aimValid = false;
         waitingForFireRelease = true;
         SetSprayVisual(false);
@@ -660,7 +645,7 @@ public class PlayerShooter : MonoBehaviour
             {
                 paintProjectilePrefab.SpawnPaintMark(
                     sprayHit,
-                    sprayPigmentIndex);
+                    sprayPigmentIndex, GetInstanceID());
 
                 PlayImpactSpray(sprayHit);
             }

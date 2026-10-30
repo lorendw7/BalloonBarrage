@@ -51,6 +51,7 @@ public class PaintProjectile : MonoBehaviour
 
     private const int FirstPaintSortingOrder = 100;
     private static int nextPaintSortingOrder = FirstPaintSortingOrder;
+    private int projectilePigment;
 
     public int PigmentCount => Mathf.Min(
         pigments?.Length ?? 0,
@@ -65,6 +66,7 @@ public class PaintProjectile : MonoBehaviour
     private void Awake()
     {
         int index = pigmentRandom.Next(pigments.Length);
+        projectilePigment = index;
 
         Color color = pigments[index].GetColor("_BaseColor");
 
@@ -119,7 +121,7 @@ public class PaintProjectile : MonoBehaviour
         SpawnPaintMark(hit, 0);
     }
 
-    public void SpawnPaintMark(RaycastHit hit, int pigmentIndex)
+    public void SpawnPaintMark(RaycastHit hit, int pigmentIndex, int strokeId = 0)
     {
 
         if (!PaintSurface.CanReceivePaint(hit.collider) ||
@@ -145,6 +147,10 @@ public class PaintProjectile : MonoBehaviour
         GameObject selectedPrefab = patterns[patternIndex];
 
         if(selectedPrefab == null) { return; }
+
+        SpriteRenderer preparedPattern = selectedPrefab.GetComponent<SpriteRenderer>();
+        if (preparedPattern != null && RoomPaintSystem.TryPaint(hit, GetPigmentColor(groupIndex),
+            preparedPattern.sprite, .48f, strokeId)) return;
 
         Vector3 position = hit.point + hit.normal * 0.005f;
 
@@ -268,38 +274,9 @@ public class PaintProjectile : MonoBehaviour
 
                 balloon.HitAt(hit.point, bonusPoints);
             }
-            else if (paintMarkPrefab != null &&
-                    (hit.collider.name == "MainWall" ||
-             hit.collider.name == "Floor" ||
-             hit.collider.name == "LeftWall" ||
-             hit.collider.name == "RightWall"))
+            else if (PaintSurface.CanReceivePaint(hit.collider))
             {
-                Vector3 position = hit.point + hit.normal * 0.005f;
-
-                Quaternion rotation = Quaternion.LookRotation(hit.normal);
-
-                GameObject mark = Instantiate(paintMarkPrefab, position, rotation);
-
-                int sortingOrder = nextPaintSortingOrder++;
-
-                foreach(SpriteRenderer spriteRenderer
-                    in mark.GetComponentsInChildren<SpriteRenderer>(true)) {
-                    spriteRenderer.sortingOrder = sortingOrder;
-                }
-
-                float angle = ((float)pigmentRandom.NextDouble() * 2f - 1f) * paintRotationRange;
-
-                mark.transform.Rotate(0f, 0f, angle, Space.Self);
-
-                float scaleMultiplier = 0.8f + (float)pigmentRandom.NextDouble() * 0.4f;
-
-                mark.transform.localScale *= scaleMultiplier;
-
-                PaintMarkImpactPulse impactPulse =
-                    mark.AddComponent<PaintMarkImpactPulse>();
-
-                impactPulse.Initialize(mark.transform.localScale);
-
+                SpawnPaintMark(hit, projectilePigment);
             }
 
             Destroy(gameObject);

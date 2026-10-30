@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-31",
+  "capture": "Assets/StudioArtPack/RoomPaint20261031/Previews/FullRoomControlled.png",
+  "sha256": "8a8924b31542464248886789f70c19968c31325fa39b21ead01dfec9954723ef",
+  "scope": "Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing.",
+  "artwork": "Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported.",
+  "runtimeSha256": {
+    "Assets/Scripts/RoomPaintSystem.cs": "d97afecc9bc354eeb8f9da997f013d4e9200043ee2eb9dbbbf7dd49d97f2c444",
+    "Assets/Scripts/PaintSurface.cs": "2fe0a085dfd86e20f4d24f446cacdee1f0aaa50a31be8e36733de21200bda666",
+    "Assets/Scripts/PaintProjectile.cs": "f80e3f7e10828374cc9e7fd56ed8995e317ae5ba4cb4b6600b93b2c68171902d",
+    "Assets/Scripts/PlayerShooter.cs": "3aeb200d7507624b74fc0c4425ff613c6b19aee496f2d5ad8762b4f776bcfd41",
+    "Assets/Scripts/Balloon.cs": "d526f5e59147e45da14203a69fb7a23613b913053e8fc5e72b02c8d5ef60da1a",
+    "Assets/Scripts/RoundController.cs": "c9fa0a74dbafec8d86e124a4ab4e5307716c4eb1ac43878d3685e265626edd43",
+    "Assets/Editor/RoomPaintPreparation.cs": "34d8c5cba7925082f5189f5f3a0a8e18b70a38df41d095fbefebfc4bdae4f1e1",
+    "Assets/Art/PaintSystem/RoomPaintAccumulate.shader": "4fc10a877e7693049844d57835624b79f3b060f9660795f159c961d4856f0a01",
+    "Assets/Art/PaintSystem/RoomPaintCoat.shader": "348f3c766b78e19a589571b506bd73630248b2926057a75f6425916f9b56dbd7",
+    "Assets/Scripts/PaintImpactPool.cs": "a47bed9dc1699ed16cb16cd949e0a315f94b45b17334ef1a2c1009b0264536a3"
+  },
+  "sceneSha256": "7f91e0b34153b6725864a1c40e5da58ddad5817b463e9d0c5247fbabc9b52552",
+  "combinedVertices": 197469,
+  "unweldedTriangleVertices": 824082
+}

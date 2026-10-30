@@ -7,6 +7,13 @@ public class PaintSurface : MonoBehaviour
     private Renderer targetRenderer;
 
     public Renderer TargetRenderer => targetRenderer;
+    [SerializeField] private Mesh stampMesh;
+    [SerializeField] private Rect atlasPixels;
+    [SerializeField] private MeshRenderer coatRenderer;
+    public Mesh StampMesh => stampMesh;
+    public Rect AtlasPixels => atlasPixels;
+    public MeshRenderer CoatRenderer => coatRenderer;
+    public bool HasPreparedPaint => targetRenderer != null && stampMesh != null && atlasPixels.width > 0f;
 
     private void Reset()
     {
