@@ -1,5 +1,20 @@
 # Validation record
 
+## Demo.13 published desktop candidates — October 30
+
+Published [v0.1.0-demo.13](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.13) packages source **`17db595109cef2542c8676d63293f5d28eccbaa4`**, including the prepublication dropdown correction. Two independent platform checkouts retained separate Libraries; the final UI-only correction reused each platform's own import/build cache. Both Unity 6000.0.77f1 reports succeeded with **zero errors and warnings** (Windows 12.568 seconds; macOS 15.619 seconds). Builder-only ProjectSettings changes stayed outside the creator checkout.
+
+| Immutable archive | Bytes | SHA-256 |
+|---|---:|---|
+| Windows x64 | 121626301 | `142f0f65b4d957442cbbd9e99207d0d70b3c52cad821872109e78031e8a3763d` |
+| macOS Universal | 130771540 | `e48cba735dfe130025990b7d7ddeb767f5474f6268182d5b8d7189156ae5920e` |
+
+Exact verification passed ZIP CRC/safe unique paths, every runtime manifest hash/size (260 Windows / 262 Mac files), all twenty v4 charts, sixteen pinned originals, notices/font licenses, absence of Editor validators and backup payload, and universal Intel/ARM Mach-O headers plus execute attributes. A fresh Windows extraction passed exhibition preflight. [Transport run](https://github.com/lorendw7/BalloonBarrage/actions/runs/41055130449) restored byte-identical ZIPs into the draft; server asset digests matched local checksums before publication. Only six final ZIP/checksum/verification assets were published.
+
+The corrected exact Windows ZIP launched through native UI control; title, selection and the expanded Chinese four-layout menu showed readable labels. The creator then took over and played; subsequent observation is user-controlled gameplay, not an automated full-round acceptance. No further game input or preference rollback was performed after takeover. Physical controllers, complete native round/comfort checks and real Macs remain unverified. The Universal Mac app is unsigned/unnotarized. The mixed StepMania package remains noncommercial.
+
+Evidence is retained under ignored `Builds/Desktop-v0.1.0-demo.13/corrected`, including exact ZIPs, manifests, reports and the native dropdown screenshot. The initial UI-defective draft build was never published; earlier public packages remain unchanged.
+
 ## Demo.13 source verification — October 30
 
 The creator completed both `CoopLearnerCore` functions; review confirmed the equality boundary and ten-point bonus. Authored bodies and existing learner solutions remain preserved. Local co-op records now use `.LocalCoop.v1`, separate from unfinished practice records. [Game design](../Design/GAME_DESIGN.md) owns behavior and [the completed lesson](../Design/LOCAL_COOP_LESSON.md) explains the decisions.

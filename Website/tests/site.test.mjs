@@ -38,9 +38,9 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
-test("demo.11 relay release copy keeps input recovery and verification scopes explicit", () => {
+test("demo.13 relay release copy keeps input recovery and verification scopes explicit", () => {
   for (const locale of languages) {
-    assert.ok(strings[locale].deliveryNowTitle.includes("demo.11"));
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.13"));
     for (const value of ["3", "8", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
     assert.ok(strings[locale].rhythmCaptureLabel.includes("demo.8"), "Preserve the actual screenshot source revision");
     assert.match(strings[locale].checkpointBody, /加速|時刻を進める|accelerated/u);
@@ -55,7 +55,7 @@ test("confirmed meeting room and packaged relay stay explicit in every language"
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
-    assert.ok(strings[locale].relayStatus.includes("demo.11"));
+    assert.ok(strings[locale].relayStatus.includes("demo.13"));
     assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);

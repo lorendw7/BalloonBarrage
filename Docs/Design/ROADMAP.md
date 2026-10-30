@@ -13,7 +13,7 @@ The creator explicitly authorized the tricolor relay and its new Windows/macOS p
 | Current work | Completion boundary |
 |---|---|
 | Demo.13 co-op and visual-feedback candidates | Independent clean-source Windows/macOS builds, immutable ZIPs, exact per-file/provenance/license checks, Windows package observations and clearly labelled remaining Mac/human acceptance |
-| Trilingual official website | Present published demo.13 downloads after publication and the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館); a new public download needs a separate release |
+| Trilingual official website | Present published demo.13 downloads and the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館); a new public download needs a separate release |
 | Local disk reclamation | Remove only verified recoverable extractions or reproducible build output; preserve release archives, checksums, evidence, source, asset GUIDs, notices and music originals |
 
 Unity checks, exact-package observations, screenshots and remaining human/device checks belong to [Validation](../Project/VALIDATION.md#demo11-tricolor-relay-release--october-30). Keep real-Mac, native keyboard/focus, sustained-spray and venue acceptance distinct from the completed checks.
