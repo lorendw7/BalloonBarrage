@@ -3,6 +3,14 @@
       <div class="section-heading"><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
 
       <dl class="game-facts"><div><dt>{{factSong}}</dt><dd>{{factSongBody}}</dd></div><div><dt>{{factPaint}}</dt><dd>{{factPaintBody}}</dd></div><div><dt>{{factScore}}</dt><dd>{{factScoreBody}}</dd></div></dl>
+      <article class="cue-guide" id="cue-guide" aria-labelledby="cue-guide-title">
+        <div class="section-heading"><p class="eyebrow">DEMO.14</p><h3 id="cue-guide-title">{{cueGuideTitle}}</h3><p>{{cueGuideIntro}}</p></div>
+        <div class="cue-guide-cards">
+          <section class="cue-card"><div class="cue-visual cue-order" aria-hidden="true"><span>1</span><i></i><span>2</span><i></i><span>3</span></div><h4>{{sequenceTitle}}</h4><p>{{sequenceBody}}</p></section>
+          <section class="cue-card"><div class="cue-visual" aria-hidden="true"><span class="cue-ring">10 → 20</span></div><h4>{{timingTitle}}</h4><p>{{timingBody}}</p></section>
+          <section class="cue-card"><div class="cue-visual cue-branches" aria-hidden="true"><span class="cue-primary">1</span><i></i><span class="cue-extra cue-extra-top">+10</span><i></i><span class="cue-extra cue-extra-bottom">+10</span></div><h4>{{burstTitle}}</h4><p>{{burstBody}}</p></section>
+        </div><p class="small cue-schematic-note">{{guideSchematicLabel}}</p>
+      </article>
       <article class="rhythm-feature" aria-labelledby="rhythm-title">
         <div class="section-heading"><h3 id="rhythm-title">{{rhythmTitle}}</h3><p>{{rhythmIntro}}</p></div>
         <ol class="rhythm-steps">
@@ -17,6 +25,7 @@
         <h3>{{localPlayersTitle}}</h3><p>{{localPlayersBody}}</p>
       </article>
       <article class="song-showcase"><div class="section-heading"><p class="eyebrow">{{screenshotsLabel}}</p><h3>{{songsTitle}}</h3><p>{{songsBody}}</p></div><ul class="song-tracklist"><li>{{songOne}}</li><li>{{songTwo}}</li><li>{{songThree}}</li><li>{{songFour}}</li><li>{{songFive}}</li><li>{{songSix}}</li><li>{{songSeven}}</li><li>{{songEight}}</li><li>{{songNine}}</li><li>{{songTen}}</li></ul><p>{{selectionControl}}</p></article>
+      <article class="festival-edition" aria-labelledby="festival-edition-title"><p class="eyebrow">79 · AKATSUKI</p><h3 id="festival-edition-title">{{festivalSpecialTitle}}</h3><p>{{festivalSpecialBody}}</p><div class="festival-lights" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><details><summary>{{festivalSecretTitle}}</summary><p>{{festivalSecretBody}}</p></details><a href="https://kyudaisai.jp/79th/theme/">{{festivalSourceLabel}} <span aria-hidden="true">↗</span></a></article>
       <div class="play-notes">
         <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{selectionLabel}}</dt><dd>{{selectionControl}}</dd></div><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{colorLabel}}</kbd></dt><dd>{{controlsColor}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
         <p class="scene-note">{{sceneNote}}</p>

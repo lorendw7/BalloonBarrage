@@ -30,7 +30,8 @@ test("all three translations have the same complete, nonempty key set", () => {
 
 test("festival guidance and delivery copy do not fall back to another language", () => {
   const keys = ["deliveryNowBody", "deliveryNextTitle", "deliveryNextBody", "checkpointBody", "downloadIntro",
-    "watchTitle", "watchBody", "responseTitle", "responseBody", "nextBody"];
+    "watchTitle", "watchBody", "responseTitle", "responseBody", "nextBody",
+    "sequenceTitle", "sequenceBody", "timingTitle", "timingBody", "burstTitle", "burstBody", "festivalSpecialTitle", "festivalSpecialBody"];
   for (const key of keys) {
     assert.doesNotMatch(strings.en[key], /[\u3400-\u9fff]/u, `English ${key} contains CJK text`);
     assert.match(strings.ja[key], /[\u3040-\u30ff]/u, `Japanese ${key} needs its own Japanese copy`);
@@ -38,14 +39,17 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
-test("demo.13 relay release copy keeps input recovery and verification scopes explicit", () => {
+test("demo.14 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
   for (const locale of languages) {
-    assert.ok(strings[locale].deliveryNowTitle.includes("demo.13"));
-    for (const value of ["3", "8", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.14"));
+    for (const value of ["3", "24", "12", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
+    assert.ok(strings[locale].factPaint.includes("24"));
+    assert.ok(strings[locale].factPaintBody.includes("12"));
     assert.ok(strings[locale].rhythmCaptureLabel.includes("demo.8"), "Preserve the actual screenshot source revision");
-    assert.match(strings[locale].checkpointBody, /加速|時刻を進める|accelerated/u);
+    assert.match(strings[locale].checkpointBody, /加速|時刻を進める|accelerated/ui);
     assert.match(strings[locale].deliveryNowBody, /松开|離して|release/u);
-    assert.ok(strings[locale].checkpointBody.includes("254"));
+    assert.ok(strings[locale].checkpointBody.includes("20"));
+    assert.match(strings[locale].checkpointBody, /无界面|画面なし|headless/u);
   }
 });
 
@@ -55,7 +59,7 @@ test("confirmed meeting room and packaged relay stay explicit in every language"
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
-    assert.ok(strings[locale].relayStatus.includes("demo.13"));
+    assert.ok(strings[locale].relayStatus.includes("demo.14"));
     assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);

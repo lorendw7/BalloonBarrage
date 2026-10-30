@@ -341,3 +341,41 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .showcase-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .showcase-facts > div:nth-child(4) { border-color: #9672ac; }
 @media (max-width: 620px) { .showcase-facts { grid-template-columns: 1fr; } }
+
+.release-highlight { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: linear-gradient(115deg, #f2e7cb, #f5ebe3 65%, #dce9df); }
+.release-highlight h2 { font-size: clamp(1.35rem, 2.7vw, 2rem); margin: .4rem 0 .6rem; }
+.release-highlight .eyebrow { color: var(--teal); font-size: .8rem; font-weight: 700; }
+.release-highlight .text-link { flex-shrink: 0; }
+.cue-guide { margin-block: 2.5rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: 1rem; background: var(--white); }
+.cue-guide-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.cue-card { min-width: 0; padding: 1.1rem; border: 1px solid var(--line); border-radius: .7rem; background: #f5f3e9; }
+.cue-card h4 { font-size: 1.08rem; margin: .5rem 0 .8rem; }
+.cue-card p { font-size: .93rem; color: var(--muted); line-height: 1.8; }
+.cue-visual { height: 132px; display: flex; align-items: center; justify-content: center; position: relative; color: #24554d; }
+.cue-order > span { display: grid; place-items: center; flex: 0 0 38px; height: 44px; border: 2px solid #427d71; border-radius: 50%; background: #dceae2; font-weight: 700; }
+.cue-order > span:first-child { border-color: #936b19; color: #68490d; background: #f5df9f; }
+.cue-order i { position: relative; flex: 1 1 25px; max-width: 42px; height: 23px; margin: 0 3px; border-top: 2px solid #427d71; border-radius: 50% 50% 0 0; }
+.cue-order i::after { content: ""; position: absolute; right: 0; top: 0; width: 7px; height: 7px; border-right: 2px solid #427d71; border-bottom: 2px solid #427d71; transform: rotate(35deg); }
+.cue-ring { display: grid; place-items: center; width: 78px; height: 78px; border: 3px solid #a07722; border-radius: 50%; background: #f5df9f; color: #654817; font-size: .95rem; font-weight: 700; position: relative; }
+.cue-ring::before { content: ""; position: absolute; inset: -18px; border: 2px solid #a07722; border-radius: 50%; }
+.cue-branches > span { position: absolute; display: grid; place-items: center; width: 52px; height: 40px; border: 2px solid #427d71; background: #dceae2; font-weight: 700; z-index: 1; }
+.cue-branches .cue-primary { left: 15%; top: 47px; background: #f5df9f; border-color: #936b19; }
+.cue-extra-top { right: 15%; top: 14px; }
+.cue-extra-bottom { right: 15%; bottom: 14px; }
+.cue-branches i { position: absolute; left: 25%; width: 49%; height: 3px; background: #427d71; transform-origin: left center; top: 66px; transform: rotate(-24deg); }
+.cue-branches i:nth-of-type(2) { transform: rotate(24deg); }
+.cue-schematic-note { color: var(--muted); margin-top: 1rem; }
+.festival-edition { margin-block: 2.5rem; padding: clamp(1.25rem, 4vw, 2.5rem); border-radius: 1rem; background: linear-gradient(135deg, #18283f, #3e3e4e 60%, #6b4c43); color: #fff0ce; }
+.festival-edition h3 { font-size: clamp(1.4rem, 3vw, 2rem); margin: .5rem 0 1rem; }
+.festival-edition p { max-width: 58rem; line-height: 1.8; }
+.festival-edition > a { display: inline-block; margin-top: 1.5rem; color: #ffe0a0; text-underline-offset: .25rem; }
+.festival-edition details { border-top: 1px solid #9b8a72; padding-top: 1rem; }
+.festival-edition details p { padding-top: .8rem; }
+.festival-edition summary { cursor: pointer; }
+.festival-lights { display: flex; gap: clamp(.6rem, 2vw, 1.4rem); align-items: center; margin-block: 1.8rem; }
+.festival-lights span { width: clamp(13px, 2.5vw, 22px); aspect-ratio: 1; border: 1px solid #f9bd69; border-radius: 50%; background: #ffdfa0; box-shadow: 0 0 14px #ffbd5f70; }
+@media (prefers-reduced-motion: no-preference) {
+  .cue-ring::before { animation: cue-ring-approach 2.8s linear infinite; }
+  @keyframes cue-ring-approach { from { transform: scale(1); } to { transform: scale(.7); } }
+}
+@media (max-width: 800px) { .cue-guide-cards { grid-template-columns: 1fr; } .release-highlight { align-items: flex-start; flex-direction: column; gap: 1rem; } .cue-visual { max-width: 260px; margin-inline: auto; } }
