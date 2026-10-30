@@ -78,7 +78,11 @@ jobs:
           assert not release['draft']
           prefix = f'https://github.com/{repo}/releases/download/{tag}/'
           names = [f'BalloonBarrage-{label}-{tag}.zip' for label in ('Windows-x64', 'macOS-Universal')]
-          names += [f'BalloonBarrage-{tag}-verification.json']
+          # Keep already-published assets immutable; both report names are supported.
+          asset_names = {a['name'] for a in release['assets']}
+          verification = next((name for name in (f'BalloonBarrage-{tag}-verification.json', 'package-verification.json') if name in asset_names), None)
+          assert verification is not None, 'Missing public verification report'
+          names += [verification]
           names += [name + '.sha256' for name in list(names)]
           expected = [next(a for a in release['assets'] if a['name'] == name) for name in names]
           def check(asset):
