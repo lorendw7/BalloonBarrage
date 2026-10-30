@@ -1,6 +1,12 @@
 {
   "locales": ["zh-Hans", "ja", "en"],
   "entries": [
+    {"key":"audience.sequence","zhHans":"顺序奏响！","ja":"順番どおり！","en":"In harmony!"},
+    {"key":"audience.relay","zhHans":"三色集齐！","ja":"三色そろった！","en":"Three colors!"},
+    {"key":"audience.chain","zhHans":"连锁！额外 {0} 只 · +{1}","ja":"連鎖！追加 {0} 個 · +{1}","en":"Chain! {0} extra · +{1}"},
+    {"key":"audience.like","zhHans":"为你点赞！","ja":"いいね！","en":"Love that!"},
+    {"key":"audience.cheer","zhHans":"打得漂亮！","ja":"ナイス！","en":"Beautiful shot!"},
+    {"key":"audience.encore","zhHans":"再来一组！","ja":"もう一回！","en":"Encore!"},
     {"key":"instructions.aim","zhHans":"移动鼠标瞄准，按住左键射击。","ja":"マウスで狙い、左クリック長押しで連射。","en":"Aim with the mouse. Hold left click to fire."},
     {"key":"instructions.rhythm","zhHans":"跟随气球倒计时射击，命中对应气球可得节奏奖励。","ja":"風船のカウントダウンに合わせて撃ち、同じ風船に当てるとボーナス。","en":"Fire as a balloon countdown reaches zero. Hit that balloon for a rhythm bonus."},
     {"key":"instructions.pause","zhHans":"Esc：暂停或继续。","ja":"Esc：一時停止・再開。","en":"Esc: pause or resume."},

@@ -12,6 +12,7 @@ Updated: October 29, 2026. The catalog includes production assets, separate art 
 | Assets/Art/Textures | Original splat atlas and quiet graffiti wall |
 | Assets/Art/Previews | Historical scene/gameplay and gun/workbench/balloon closeups |
 | Assets/Art/Previews/Festival20261029 | Three untouched native 4K demo.8-source selection/watch/response captures with [provenance](../../Assets/Art/Previews/Festival20261029/Provenance.json); automated Editor evidence, not standalone recordings |
+| Assets/Resources/Audience | Four unchanged Apache-2.0 Noto Emoji PNGs and two CC-BY-4.0 OtoLogic cheers; [pinned provenance](../../Assets/Resources/Audience/Provenance.json), [bundled licenses](../../Assets/StreamingAssets/ThirdParty/Audience/NOTICE.txt) |
 | Assets/Audio | Five generic and five glass impact sounds |
 | Assets/Audio/Music | Three original loops, two cues and music metadata |
 | Assets/Prefabs | Playable balloon |

@@ -20,7 +20,7 @@ public static class PresentationFeedbackValidation
 {
     private const string Key = "PresentationFeedbackValidation.Active";
     private const BindingFlags Private = BindingFlags.Instance | BindingFlags.NonPublic;
-    private static string Folder => Path.GetFullPath("../../Logs/RhythmSequenceGuide20261030");
+    private static string Folder => Path.GetFullPath("../../Logs/AudienceCelebration20261031");
     private static int checks;
     static PresentationFeedbackValidation()
     { if (SessionState.GetBool(Key, false)) EditorApplication.update += Tick; }
@@ -48,6 +48,7 @@ public static class PresentationFeedbackValidation
     {
         var camera = new GameObject("DiagnosticCamera", typeof(Camera)).GetComponent<Camera>();
         camera.tag = "MainCamera"; camera.transform.position = new Vector3(0, 0, -8);
+        camera.gameObject.AddComponent<AudioListener>();
         camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = new Color(.86f, .81f, .7f);
         var events = new GameObject("Events", typeof(EventSystem)).GetComponent<EventSystem>();
         var title = Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/StudioArtPack/InterfaceV2/Prefabs/StartScreen.prefab"));
@@ -234,6 +235,7 @@ public static class PresentationFeedbackValidation
         SetStatic("IsPaused", false); Write(local, "hasFocus", false); local.NotifyHit(0, false, true);
         Check(((float[])Read(local, "rumbleRemaining"))[0] == 0f, "Unfocused input cannot start controller vibration.");
         InputSystem.RemoveDevice(pad); Play(false);
+        VerifyAudience(owner, round, spawner, guide, chain, camera);
         Object.Destroy(special); Object.Destroy(guide);
         Debug.Log("PRESENTATION_FEEDBACK_OK: " + checks + " assertions.");
     }
@@ -246,18 +248,103 @@ public static class PresentationFeedbackValidation
         Balloon balloon = go.AddComponent<Balloon>(); balloon.InitializeRhythm(new RhythmEventData { id = id, timeSeconds = time });
         return balloon;
     }
-    private static void Capture(Camera camera, string name)
+    private static void VerifyAudience(GameObject owner, RoundController round, BalloonSpawner spawner,
+        RhythmSequenceGuide guide, RainbowChain chain, Camera camera)
+    {
+        LanguageSettings.SetLanguage(UILanguage.SimplifiedChinese);
+        foreach (var target in Object.FindObjectsByType<Balloon>(FindObjectsSortMode.None)) target.gameObject.SetActive(false);
+        var active = (List<Balloon>)Read(spawner, "activeBalloons"); active.Clear();
+        var audience = owner.AddComponent<AudienceCelebration>(); audience.enabled = false;
+        chain.enabled = false; chain.ResetRound();
+        Play(false); Call(audience, "LateUpdate"); Play(true); Clock(round, 8d);
+        guide.enabled = true;
+        var phrase = new[] { Target(900, 10d, new Vector3(-3, 0, 3), Color.cyan),
+            Target(901, 11d, new Vector3(0, 0, 3), Color.yellow), Target(902, 12d, new Vector3(3, 0, 3), Color.red) };
+        active.AddRange(phrase); Call(guide, "LateUpdate");
+        int score = Score.Value;
+        phrase[0].Hit(); Call(guide, "LateUpdate"); Call(audience, "LateUpdate");
+        Check(audience.ShownCelebrationCount == 0, "An incomplete ordered phrase does not pretend to succeed.");
+        phrase[1].Hit(); Call(guide, "LateUpdate"); phrase[2].Hit(); Call(guide, "LateUpdate"); Call(audience, "LateUpdate");
+        AdvanceAudience(audience, .6f);
+        Check(audience.ShownCelebrationCount == 1 && audience.VisibleReactionCount == 8, "Actual ordered direct pops show four reaction pairs.");
+        Check(audience.CheerStartCount == 1, "Ordered success requests one cheer voice.");
+        Check(Score.Value == score + 30, "Audience reactions preserve the three ordinary pop rewards.");
+        var layer = (GameObject)Read(audience, "root");
+        Check(!layer.GetComponent<CanvasGroup>().blocksRaycasts && !layer.GetComponent<CanvasGroup>().interactable,
+            "The audience overlay cannot intercept aiming or UI input.");
+        foreach (var graphic in layer.GetComponentsInChildren<Graphic>(true)) Check(!graphic.raycastTarget, "Every audience graphic is passive.");
+        foreach (var texture in (Texture2D[])Read(audience, "emojiTextures")) Check(texture != null && texture.width == 128, "Pinned public emoji imports at 128 pixels.");
+        foreach (string field in new[] { "yay", "crowd" })
+        {
+            var clip = (AudioClip)Read(audience, field);
+            Check(clip != null && clip.length > .2f && clip.samples > 0, "Real cheer audio imported: " + field);
+        }
+        var audio = (AudioSource)Read(audience, "cheer");
+        Check(!audio.loop && audio.spatialBlend == 0f && !audio.ignoreListenerPause, "A single non-looping 2D voice respects listener pause.");
+        foreach (UILanguage language in Enum.GetValues(typeof(UILanguage)))
+        {
+            LanguageSettings.SetLanguage(language);
+            Font font = ((LocalizedText)Read(audience, "fontTemplate")).CurrentFont;
+            foreach (string key in new[] { "audience.sequence", "audience.relay", "audience.chain", "audience.like", "audience.cheer", "audience.encore" })
+                foreach (char character in LocalizationManager.Format(key, 2, 20))
+                    if (!char.IsWhiteSpace(character)) Check(font.HasCharacter(character), "Audience font covers " + language + ": " + character);
+        }
+        LanguageSettings.SetLanguage(UILanguage.SimplifiedChinese);
+        Capture(camera, "audience-sequence-controlled.png");
+        Capture(camera, "audience-portrait-controlled.png", 900, 1600);
+        Capture(camera, "audience-four-three-controlled.png", 1200, 900);
+        Check(audience.VisibleReactionCount <= AudienceCelebration.MaximumReactions, "All aspect ratios retain a bounded pool.");
+        SetStatic("IsPaused", true); Call(audience, "LateUpdate");
+        Check(!layer.activeSelf && !audio.isPlaying && audience.VisibleReactionCount == 0, "Pause clears reactions and stops cheer playback.");
+        SetStatic("IsPaused", false); Call(audience, "LateUpdate");
+        Check(audience.ShownCelebrationCount == 1 && !layer.activeSelf, "Resume does not replay an old success.");
+        guide.enabled = false; chain.enabled = true;
+        foreach (var balloon in phrase) balloon.gameObject.SetActive(false);
+        active.Clear();
+        var primary = Target(910, 10d, new Vector3(0, 0, 3), Color.cyan);
+        var neighbor = Target(911, 11d, new Vector3(1.1f, 0, 3), Color.yellow);
+        active.AddRange(new[] { primary, neighbor }); Physics.SyncTransforms(); chain.GrantCharge();
+        primary.Hit(); Call(audience, "LateUpdate"); AdvanceAudience(audience, .6f);
+        Check(chain.LastNeighborCount == 1 && audience.ShownCelebrationCount == 2, "A real neighboring chain pop gets its own reaction.");
+        Check(layer.GetComponentInChildren<Text>().text == LocalizationManager.Format("audience.chain", 1, 10), "The audience reports actual neighbor and point totals.");
+        Capture(camera, "audience-chain-controlled.png");
+        active.Clear(); var lone = Target(912, 12d, new Vector3(0, 0, 3), Color.cyan); active.Add(lone);
+        chain.GrantCharge(); lone.Hit(); Call(audience, "LateUpdate");
+        Check(chain.LastNeighborCount == 0 && audience.ShownCelebrationCount == 2, "Zero-extra chains do not get a misleading cheer.");
+        var relay = owner.AddComponent<TricolorRelay>(); relay.enabled = false;
+        for (int i = 0; i < 3; i++) typeof(TricolorRelay).GetMethod("Collect", Private).Invoke(relay, new object[] { i, Color.cyan });
+        int beforeRelay = Score.Value; Call(audience, "LateUpdate");
+        Check(audience.ShownCelebrationCount == 3 && Score.Value == beforeRelay, "The real relay callback celebrates without awarding extra score.");
+        for (int repeat = 0; repeat < 30; repeat++)
+            typeof(AudienceCelebration).GetMethod("Celebrate", Private).Invoke(audience, new object[] { "audience.sequence", false, 0, 0 });
+        AdvanceAudience(audience, .6f);
+        Check(audience.VisibleReactionCount <= AudienceCelebration.MaximumReactions && layer.transform.childCount == 9,
+            "Success storms reuse the fixed eight-row pool rather than allocating more UI.");
+        Check(owner.GetComponents<AudioSource>().Length == 1 && audience.CheerStartCount == 2, "Success storms cannot overlap or spam cheer voices.");
+        typeof(AudienceCelebration).GetMethod("OnApplicationFocus", Private).Invoke(audience, new object[] { false });
+        Check(!layer.activeSelf && !audio.isPlaying, "Losing focus immediately stops all audience presentation.");
+        typeof(AudienceCelebration).GetMethod("OnApplicationFocus", Private).Invoke(audience, new object[] { true });
+        Play(false); Call(audience, "LateUpdate"); Play(true); Call(audience, "LateUpdate");
+        Check(!layer.activeSelf, "Returning from results never replays stale successes.");
+        typeof(AudienceCelebration).GetMethod("Celebrate", Private).Invoke(audience, new object[] { "audience.sequence", false, 0, 0 });
+        AdvanceAudience(audience, 10f); Check(!layer.activeSelf && !audio.isPlaying, "Expired effects consume no active presentation or looping audio.");
+        Play(false); Object.Destroy(audience); relay.enabled = false;
+    }
+    private static void AdvanceAudience(AudienceCelebration audience, float seconds) =>
+        typeof(AudienceCelebration).GetMethod("Animate", Private).Invoke(audience, new object[] { seconds });
+
+    private static void Capture(Camera camera, string name, int width = 1600, int height = 900)
     {
         var canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);
         var modes = new RenderMode[canvases.Length];
-        var target = RenderTexture.GetTemporary(1600, 900, 24);
+        var target = RenderTexture.GetTemporary(width, height, 24);
         var prior = RenderTexture.active;
         try
         {
             camera.targetTexture = target;
             for (int i = 0; i < canvases.Length; i++)
             { modes[i] = canvases[i].renderMode; canvases[i].renderMode = RenderMode.ScreenSpaceCamera; canvases[i].worldCamera = camera; canvases[i].planeDistance = 1f; }
-            camera.aspect = 1600f / 900f;
+            camera.aspect = (float)width / height;
             Canvas.ForceUpdateCanvases();
             foreach (var scaler in Object.FindObjectsByType<CanvasScaler>(FindObjectsSortMode.None))
                 typeof(CanvasScaler).GetMethod("Handle", Private).Invoke(scaler, null);
@@ -276,9 +363,25 @@ public static class PresentationFeedbackValidation
             Canvas.ForceUpdateCanvases();
             foreach (var activeGuide in Object.FindObjectsByType<RhythmSequenceGuide>(FindObjectsSortMode.None))
                 if (activeGuide.VisibleTargetCount > 0) Call(activeGuide, "LateUpdate");
+            foreach (var activeAudience in Object.FindObjectsByType<AudienceCelebration>(FindObjectsSortMode.None))
+            {
+                AdvanceAudience(activeAudience, 0f);
+                var audienceRoot = (GameObject)Read(activeAudience, "root");
+                if (audienceRoot == null || !audienceRoot.activeSelf) continue;
+                RectTransform parent = audienceRoot.GetComponent<RectTransform>();
+                foreach (RectTransform row in parent)
+                {
+                    if (!row.gameObject.activeSelf || !row.name.StartsWith("AudienceReaction") || row.GetComponent<CanvasGroup>().alpha <= 0f) continue;
+                    Bounds bounds = RectTransformUtility.CalculateRelativeRectTransformBounds(parent, row);
+                    Check(bounds.min.x >= parent.rect.xMin && bounds.max.x <= parent.rect.xMax &&
+                        bounds.min.y >= parent.rect.yMin && bounds.max.y <= parent.rect.yMax, "Reaction stays inside the capture viewport.");
+                    Check(bounds.max.x <= parent.rect.xMin + parent.rect.width * .24f ||
+                        bounds.min.x >= parent.rect.xMax - parent.rect.width * .24f, "Reactions leave the central aiming region clear.");
+                }
+            }
             Canvas.ForceUpdateCanvases(); camera.Render(); camera.Render(); RenderTexture.active = target;
-            var texture = new Texture2D(1600, 900, TextureFormat.RGB24, false);
-            texture.ReadPixels(new Rect(0, 0, 1600, 900), 0, 0); texture.Apply();
+            var texture = new Texture2D(width, height, TextureFormat.RGB24, false);
+            texture.ReadPixels(new Rect(0, 0, width, height), 0, 0); texture.Apply();
             File.WriteAllBytes(Path.Combine(Folder, name), texture.EncodeToPNG()); Object.Destroy(texture);
         }
         finally

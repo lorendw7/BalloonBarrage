@@ -179,6 +179,7 @@ public class RoundController : MonoBehaviour
         colorRelay = GetComponent<TricolorRelay>();
         if (colorRelay == null) colorRelay = gameObject.AddComponent<TricolorRelay>();
         colorRelay.ResetRound();
+        if (GetComponent<AudienceCelebration>() == null) gameObject.AddComponent<AudienceCelebration>();
         IsPaused = false;
         Time.timeScale = 1f;
         AudioListener.pause = false;

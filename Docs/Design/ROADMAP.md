@@ -4,6 +4,8 @@ Updated: October 31, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
+The creator requests the [audience cheer revision](GAME_DESIGN.md#audience-cheers--demo15-source-revision), dual-platform demo.15 packages, tests, main push and official website publication. The controlled presentation fixture passes; clean-source builds and exact archive/public delivery checks are the next gates. Keep the local learner/art edits outside this release.
+
 The subsequent creator request authorizes a 24-target production cap, twelve-second post-note cleanup, fresh Windows/macOS packaging and checks, a normal main-branch push and deletion of obsolete recoverable caches. The follow-up official-website request publishes the verified demo.14 candidates and updates all three languages. [Validation](../Project/VALIDATION.md#demo14-publication-and-official-website--october-31) owns package, transport, live-route and download evidence. Preserve older archives/checksums, music originals, source/GUIDs and validation records. Native Windows UI access timed out; physical-device/real-Mac acceptance remains separate from publication.
 
 The creator-authorized [sequence guidance, celebrations, A+B+C Kyudaisai presentation and gamepad feel](GAME_DESIGN.md#sequence-guidance-and-celebrations--source-revision) are included in demo.14. Controlled checks cover read-only guidance, ordinary/beat/chain reward boundaries and modal/input lifecycle; physical Xbox/Beitong comfort remains a creator playtest. Open-world gameplay remains outside this authorization.

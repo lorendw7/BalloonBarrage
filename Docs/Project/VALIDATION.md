@@ -1,5 +1,11 @@
 # Validation record
 
+## Audience cheers source validation — October 31
+
+Unity 6000.0.77f1 passed **768 controlled assertions** in `.local-reference/AudienceCelebrationUnity20261031`, using copied production presentation/runtime sources and the committed learner baseline. The local learner script and shader graph edits were not included in the release-validation snapshot. Coverage extends the prior sequence/chain/controller/festival fixture with actual ordered-pop and chain callbacks, the relay's real collection callback, truthful zero-extra handling, score preservation, loaded PNG/audio assets, one non-looping voice, spam limits, all three language fonts, 16:9/9:16/4:3 margin bounds, passive UI, pause/focus/settlement cleanup and stale-success suppression.
+
+Native RenderTexture captures demonstrate the controlled UI; they are not full-song, human-input or standalone acceptance. MP3 import and playback requests were checked; perceived loudness, venue acoustics, physical controls and real-Mac launch remain unverified. Six source media files total 154,851 bytes; unchanged source hashes, pinned Noto revision and licenses are in [provenance](../../Assets/Resources/Audience/Provenance.json). Reports, logs and captures are retained under ignored `Logs/AudienceCelebration20261031`. Clean release packaging and public checks follow separately.
+
 ## Demo.14 publication and official website — October 31
 
 At the creator's request to update the official website and push main, [v0.1.0-demo.14](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.14) was published as a development prerelease at **00:01:22 on October 31, 2026 (Asia/Tokyo)**. It contains the exact Windows/macOS archives from source `564d69935de4fca9fb3253057e4f478cd2eb4a05`, with the sizes/hashes recorded in the packaging entry below. No Unity rebuild or replacement of an older public asset was performed. Demo.13 remains available unchanged.

@@ -1,0 +1,19 @@
+Audience celebration assets
+
+CheerYay.mp3: Cheer-Yay01-2 (Mid-Solo), by OtoLogic.
+CheerCrowd.mp3: Cheer-Crowd01-3 (Low-Short), by OtoLogic.
+Source: https://otologic.jp/free/se/applause-cheer01.html
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+Original source files are unchanged. Playback uses gain, excerpts and a fade.
+
+Emoji U+1F44D, U+1F44F, U+1F389 and U+1F929: Noto Emoji.
+Copyright Google LLC and Noto Emoji contributors.
+License: Apache License, Version 2.0.
+https://github.com/googlefonts/noto-emoji
+Original 128px PNG source files are unchanged; runtime scales and moves them.
+No emoji fonts or region flags were imported.
+
+The accompanying license texts and Assets/Resources/Audience/Provenance.json
+record exact sources, pinned Noto revision and SHA-256 hashes.
+These licenses do not change the game's other assets or bundled music terms.

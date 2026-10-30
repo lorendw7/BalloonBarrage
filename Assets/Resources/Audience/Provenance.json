@@ -1,0 +1,77 @@
+{
+  "purpose": "Offline cosmetic audience celebration; no gameplay or music licensing changes.",
+  "files": [
+    {
+      "path": "Assets/Resources/Audience/emoji_u1f44d.png",
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/png/128/emoji_u1f44d.png",
+      "sourcePage": "https://github.com/googlefonts/noto-emoji/tree/99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "author": "Google LLC and Noto Emoji contributors",
+      "license": "Apache-2.0",
+      "retrieved": "2026-10-31",
+      "sha256": "a17fcf51fee3abc247210f28b130802fc381e01971699bbefa40eaf89adb3a02",
+      "bytes": 4229,
+      "modifications": "None to source bytes. Runtime positions/scales the image."
+    },
+    {
+      "path": "Assets/Resources/Audience/emoji_u1f44f.png",
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/png/128/emoji_u1f44f.png",
+      "sourcePage": "https://github.com/googlefonts/noto-emoji/tree/99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "author": "Google LLC and Noto Emoji contributors",
+      "license": "Apache-2.0",
+      "retrieved": "2026-10-31",
+      "sha256": "8c64101727234ab7f2b10cfb5ace2ec98f2360ca0823ce77074ac35e6319534a",
+      "bytes": 5197,
+      "modifications": "None to source bytes. Runtime positions/scales the image."
+    },
+    {
+      "path": "Assets/Resources/Audience/emoji_u1f389.png",
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/png/128/emoji_u1f389.png",
+      "sourcePage": "https://github.com/googlefonts/noto-emoji/tree/99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "author": "Google LLC and Noto Emoji contributors",
+      "license": "Apache-2.0",
+      "retrieved": "2026-10-31",
+      "sha256": "d761a0d17048bfe3e96842f3dfe444fe18780f3a2285792f6da7ce1697fc2a19",
+      "bytes": 7239,
+      "modifications": "None to source bytes. Runtime positions/scales the image."
+    },
+    {
+      "path": "Assets/Resources/Audience/emoji_u1f929.png",
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/png/128/emoji_u1f929.png",
+      "sourcePage": "https://github.com/googlefonts/noto-emoji/tree/99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "author": "Google LLC and Noto Emoji contributors",
+      "license": "Apache-2.0",
+      "retrieved": "2026-10-31",
+      "sha256": "a44c16bda5f84a5210ffe67c315f7804501d01cf89996ca49a94cd8f53d03efa",
+      "bytes": 7971,
+      "modifications": "None to source bytes. Runtime positions/scales the image."
+    },
+    {
+      "path": "Assets/Resources/Audience/CheerYay.mp3",
+      "source": "https://otologic.jp/sounds/se/pre2/Cheer-Yay01-2%28Mid-Solo%29.mp3",
+      "sourcePage": "https://otologic.jp/free/se/applause-cheer01.html",
+      "author": "OtoLogic",
+      "license": "CC-BY-4.0",
+      "retrieved": "2026-10-31",
+      "sha256": "10c1c8bef35f415898768e85830c43e8876ea9f5f5dc8754eb0f1f6dd518aa1a",
+      "bytes": 52681,
+      "modifications": "None to source bytes. Runtime plays an excerpt with gain and a short fade."
+    },
+    {
+      "path": "Assets/Resources/Audience/CheerCrowd.mp3",
+      "source": "https://otologic.jp/sounds/se/pre2/Cheer-Crowd01-3%28Low-Short%29.mp3",
+      "sourcePage": "https://otologic.jp/free/se/applause-cheer01.html",
+      "author": "OtoLogic",
+      "license": "CC-BY-4.0",
+      "retrieved": "2026-10-31",
+      "sha256": "db2c9b12b90a814b34896d58424473573b87c615fd88f8908f058a23dac2fb77",
+      "bytes": 77534,
+      "modifications": "None to source bytes. Runtime plays an excerpt with gain and a short fade."
+    }
+  ],
+  "notoCommit": "99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+  "licensePages": [
+    "https://github.com/googlefonts/noto-emoji/blob/99701e07d3d1fe1bdbcdb14964547f0fd592966f/README.md#license",
+    "https://otologic.jp/free/license.html"
+  ],
+  "usage": "Redistribute notices and licenses with game packages. No endorsement implied. Existing StepMania music restrictions still apply."
+}

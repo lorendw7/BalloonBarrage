@@ -193,3 +193,7 @@ Assets/StudioArtPack/OpenExpansion20261028/KenneyFurniture/Models/*.mtl -text
 Assets/StreamingAssets/Rhythm/Prepared/*.json -text
 Assets/StreamingAssets/Rhythm/Festival20261029/*.json -text
 Assets/StreamingAssets/Rhythm/Festival20261029/*.txt -text
+
+# Preserve imported audience asset provenance and license bytes.
+Assets/Resources/Audience/Provenance.json -text
+Assets/StreamingAssets/ThirdParty/Audience/*.txt -text
