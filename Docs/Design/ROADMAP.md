@@ -4,7 +4,7 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
-The creator explicitly authorized implementing the four [showcase additions](GAME_DESIGN.md#goin-under-festival-showcase--v3), testing them, packaging Windows/macOS candidates and pushing main. Deliver the bounded Goin' Under Festival mirror, motion phrase and finale, plus the shared-planner Rainbow chain preview. Preserve all original event times/audio and the nineteen other profiles, isolate showcase records, then verify source behavior and exact packages. Keep packages/evidence immutable and remove recoverable temporary build files after verification. Published demo.11 downloads remain separate until a new publication is requested. Postcards/export and the paint ribbon remain deferred.
+The creator explicitly authorized implementing the four [showcase additions](GAME_DESIGN.md#goin-under-festival-showcase--v3), testing them, packaging Windows/macOS candidates and pushing main. The bounded Goin' Under Festival mirror, motion phrase and finale, plus the shared-planner Rainbow chain preview, are implemented and checked. Source `ee2ef85` is pushed to main, and both local demo.12 candidates passed builds and exact ZIP checks. Windows interface acceptance is pending because the desktop was locked; real-Mac acceptance is also pending. Preserve all original event times/audio and the nineteen other profiles, isolate showcase records, then verify source behavior and exact packages. Keep packages/evidence immutable and remove recoverable temporary build files after verification. Published demo.11 downloads remain separate until a new publication is requested. Postcards/export and the paint ribbon remain deferred.
 
 The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
 
@@ -54,7 +54,7 @@ The [music-led design](GAME_DESIGN.md#music-led-festival-variety) defines the in
 | Lane | Owner and output | Boundary |
 |---|---|---|
 | Catalog preparation | Preserve the saved catalog, sections, demonstration metadata and provenance | Original recordings/charts/notices remain unchanged; human listening remains separately labelled |
-| Runtime | Codex: the authorized tricolor relay only | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
+| Runtime | Codex: the explicitly authorized relay, Rainbow chain and four showcase additions | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
 | Verification | Codex: focused collection tests and runtime lifecycle/scoring/layout checks | Controlled-clock traversal, natural real-time rounds, screenshots and physical play are different evidence |
 | Integration and delivery | Codex: source review, native visual inspection and documentation/site publication | No force-push, overwritten public assets, concurrent editor shutdown or unearned acceptance claims |
 
@@ -84,7 +84,7 @@ The [operator runbook](../Project/EXHIBITION_RUNBOOK.md) owns setup and recovery
 
 ## Immediate lesson queue
 
-The October 30 tricolor relay is explicitly authorized for direct Codex implementation. Subsequent core gameplay lessons return to the working agreement: explain one small step, let the learner write it, then review and verify. Do not restart the three saved learner functions as unfinished work. Select the next lesson from an observed player problem rather than adding unrelated mechanics.
+The October 30 relay, Rainbow chain and four showcase additions were explicitly authorized for direct Codex implementation. Subsequent core gameplay lessons return to the working agreement: explain one small step, let the learner write it, then review and verify. Do not restart the three saved learner functions as unfinished work. Select the next lesson from an observed player problem rather than adding unrelated mechanics.
 
 ## Post-festival milestones
 

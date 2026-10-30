@@ -1,5 +1,20 @@
 # Validation record
 
+## Demo.12 local showcase packages — October 30
+
+Both immutable local candidates were built from pushed source **`ee2ef8518860aec6072cc73aba98a480a3d16d67`** in independent clean Windows/macOS checkouts with fresh Libraries and passing Git LFS verification. Unity 6000.0.77f1 produced non-Development builds with **zero errors and zero warnings**: Windows in 331.743 seconds and macOS Universal in 343.689 seconds. The build-only frame-timing/architecture serialization changes are retained as diffs and were never copied into the learner workspace. Existing music, GUIDs and learner code are preserved; nineteen catalog profiles compare unchanged.
+
+| Local candidate | Bytes | SHA-256 |
+|---|---:|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.12.zip | 121,551,997 | `664b64d435f7cf078b85b35ed52e609c8b479a7cdd1743b3ae3d34633a90c98f` |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.12.zip | 130,694,775 | `52971156c7024ac8715c28319399def7bc247503daf3dd88107c3821e75572dc` |
+
+Both ZIPs passed CRC, unique/safe paths, every runtime-file length/hash (240 Windows / 242 macOS files), twenty exact profile/chart comparisons, sixteen pinned StepMania originals, notices, credits/font licenses and compiled feature/foundation presence checks. Mac executable permissions and both x86_64/arm64 Mach-O slices pass structural checks. The Windows ZIP was freshly extracted and passed exhibition preflight; its dedicated startup log reached chart/title initialization without recorded exceptions.
+
+**Native Windows mouse play, pause, the four feature interactions, results and Retry are not accepted by this packaging pass.** The Windows app controller returned the locked desktop, so interface input stopped. All 22 pre-test game preferences were restored and verified. Source-level controlled-clock checks above remain separate. macOS remains **unsigned, unnotarized and untested on real Mac hardware**. Human aiming comfort, musical listening/calibration and exhibition-machine acceptance remain unverified. The StepMania development bundle remains noncommercial.
+
+Archives, sidecars, build logs/summaries, exact package/source comparisons and `BalloonBarrage-v0.1.0-demo.12-verification.json` remain under ignored `Builds/Desktop-v0.1.0-demo.12`. Temporary checkouts/Libraries, raw outputs and the recoverable Windows extraction were removed after verification, reclaiming approximately **6.5 GiB**. The private preference backup was removed after verified restoration; retained Git/source, ZIPs, checksums and evidence allow reproduction. Demo.12 is a **local candidate**, with no new public release or website download publication. The public site continues to offer demo.11. GitHub [release-tools verification 41020870301](https://github.com/lorendw7/BalloonBarrage/actions/runs/41020870301) passed for the build source, and all sixteen existing website tests passed locally.
+
 ## Four-interaction showcase source checks — October 30
 
 The creator explicitly authorized the four [showcase additions](../Design/GAME_DESIGN.md#goin-under-festival-showcase--v3), testing, new desktop packages and a normal main push. Working source starts from `c7cd3da`. Only Goin' Under / Festival uses the new showcase-v3 chart/profile and record key; the other nineteen catalog profiles, 45 original event timestamps/IDs, music originals and learner functions remain preserved. Published demo.11 downloads remain separate and do not contain these additions.
