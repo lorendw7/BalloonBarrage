@@ -6,7 +6,7 @@ A casual, relaxing rhythm-game prototype set in a warm graffiti studio. Aim free
 
 ## Play or open the project
 
-The current desktop candidate is **[v0.1.0-demo.10](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.10)** for Windows x64 and macOS Universal. Published downloads are listed in [Desktop releases](https://github.com/lorendw7/BalloonBarrage/releases); [Validation](Docs/Project/VALIDATION.md) records each exact build/package. Extract the complete platform ZIP before running **BalloonShooter.exe** or opening **BalloonBarrage.app**. The Mac candidate is unsigned, unnotarized and untested on a real Mac. The mixed development bundle remains noncommercial because of its original StepMania content. **[demo.9](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.9)** remains available as the previous candidate; **[demo.6](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.6)** remains the complete-song fallback. Source archives are not playable packages.
+The current desktop candidate is **[v0.1.0-demo.11](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.11)** for Windows x64 and macOS Universal. Published downloads are listed in [Desktop releases](https://github.com/lorendw7/BalloonBarrage/releases); [Validation](Docs/Project/VALIDATION.md) records each exact build/package. Extract the complete platform ZIP before running **BalloonShooter.exe** or opening **BalloonBarrage.app**. The Mac candidate is unsigned, unnotarized and untested on a real Mac. The mixed development bundle remains noncommercial because of its original StepMania content. **[demo.10](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.10)** remains available as the previous candidate; **[demo.6](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.6)** remains the complete-song fallback. Source archives are not playable packages.
 
 To open the source:
 
@@ -19,7 +19,7 @@ The revised scene offers Festival (ten rounds of about 64–65 seconds) and Stan
 
 ## Current work and evidence
 
-The October 30 source adds an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. This feature is not included in the published demo.10 ZIPs. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
+The October 30 demo.11 candidates include an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. Demo.10 remains the earlier candidate without the relay. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
 
 The planned October 31 exhibition meeting place is **Room 2407, Center Building 2 (センター２号館), Ito Campus**. Demo operating hours remain unconfirmed. The [official website](https://lorendw7.github.io/BalloonBarrage/en/#festival) carries the translated visitor information.
 

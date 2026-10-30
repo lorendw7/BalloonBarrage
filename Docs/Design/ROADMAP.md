@@ -4,19 +4,19 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
-The creator explicitly authorized Codex to implement the October 30 tricolor relay, update the official website and reclaim local disk space. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules; this source addition does not change the immutable demo.10 download.
+The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
 
 | Current work | Completion boundary |
 |---|---|
-| Optional tricolor relay in both song modes | Distinct-color collection, repeated-color preservation, bounded celebration, separate result count, paused/post-round guards and clean Retry; preserve 10/20 scoring and existing learner functions |
-| Trilingual official website | Explain development-only status separately from public download; show the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館) |
+| Demo.11 dual-platform relay candidates | Independent clean-source builds, immutable ZIPs, per-file/provenance/license checks, a natural Windows package round, evidence-labelled limits and prerelease publication |
+| Trilingual official website | Discover published demo.11 platform downloads, describe the included relay and preserve the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館) |
 | Local disk reclamation | Remove only verified recoverable extractions or reproducible build output; preserve release archives, checksums, evidence, source, asset GUIDs, notices and music originals |
 
-Unity checks, website checks, screenshots and remaining package/human observations belong to [Validation](../Project/VALIDATION.md). A future desktop package needs its own immutable build and verification; this request does not establish a new package acceptance result.
+Unity checks, exact-package observations, screenshots and remaining human/device checks belong to [Validation](../Project/VALIDATION.md#demo11-tricolor-relay-release--october-30). Keep real-Mac, native keyboard/focus, sustained-spray and venue acceptance distinct from the completed checks.
 
-The current **v0.1.0-demo.10** Windows/macOS candidates package input protection when switching windows, alongside the previous balloon placement, protected drift wait, retention and NEXT repairs. Both non-Development builds have zero errors/warnings. Exact ZIP verification and fresh Windows startup are recorded in [Validation](../Project/VALIDATION.md#demo10-focus-recovery-release--october-29); real-Mac, physical Alt+Tab and exhibition-machine acceptance remain separate. No paint-rendering change was justified by the measured longest-song workload.
+The current **v0.1.0-demo.11** Windows/macOS candidates include the tricolor relay and the earlier input protection, balloon placement, protected drift wait, retention and NEXT repairs. Both non-Development builds have zero errors/warnings. Both exact ZIPs passed structural/hash/provenance checks; a fresh Windows extraction completed a natural short round with one relay, results, Retry and normal Quit. Real-Mac, native keyboard/focus, held-fire soak, human listening and exhibition-machine acceptance remain separate.
 
-Demo.9 remains the previous desktop candidate, and demo.6 remains the complete-song fallback. Published packages are immutable. Demo.8's natural all-profile Editor rounds and the newer focused/synthetic diagnostics remain distinct evidence in [Validation](../Project/VALIDATION.md).
+Demo.10 remains the previous desktop candidate, and demo.6 remains the complete-song fallback. Published packages are immutable. Demo.8's natural all-profile Editor rounds and the newer focused/synthetic diagnostics remain distinct evidence in [Validation](../Project/VALIDATION.md).
 
 - **Festival:** 60–75 seconds per song, preferably about 65 seconds, with a clear musical start, contrast and ending. Default to this mode for the booth.
 - **Standard:** each complete recording, with a separate versioned chart/profile identity. Do not overwrite original audio or existing profiles.

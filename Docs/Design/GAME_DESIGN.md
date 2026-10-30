@@ -109,7 +109,7 @@ Before promoting a trial, compare it against the same short profile with the exi
 
 ## Optional tricolor relay
 
-On October 30 the creator explicitly authorized Codex to write this additional gameplay. The three learner functions stay intact. This source revision adds a small, optional collection goal to both existing song modes; demo.10 remains the published download and does not contain it.
+On October 30 the creator explicitly authorized Codex to write this additional gameplay. The three learner functions stay intact. The demo.11 candidates include this small, optional collection goal in both existing song modes. Demo.10 remains the immutable earlier package without it.
 
 Pop any three distinct balloon pigments to complete one relay. The lower-left HUD shows numeric progress, three collected swatches and the completed count. Completing a set briefly pulses the three HUD swatches, then collection starts again. A repeated pigment still earns its normal hit score and preserves partial progress. Pigment identity comes from the popped balloon, not the player's selected spray color; C remains optional decoration control. The next successful pigment starts the next set immediately, even during the celebration.
 

@@ -1,5 +1,28 @@
 # Validation record
 
+## Demo.11 tricolor relay release — October 30
+
+The creator authorized new Windows/macOS packages, tests, prerelease publication, website downloads and temporary-file cleanup. Both candidates use source **`a82520f0b4f0c3660886a2b88eab0461a83a48ea`**, already pushed to `main`. Separate fresh checkouts under ignored `.local-reference/Demo11Build-windows` and `Demo11Build-macos` passed Git LFS verification. Thirty-one gameplay, foundation, localization and scene source files match both checkouts after C# line-ending normalization. The only build-checkout changes were the existing builder's frame-timing setting and serialized default architecture; their diffs were retained. No new gameplay or diagnostic runtime driver was added during packaging.
+
+Unity **6000.0.77f1** built both non-Development players with **zero errors and zero warnings**. Windows reports 242,195,137 bytes / 479.670 seconds; macOS Universal reports 258,832,032 bytes / 491.881 seconds. These build times exclude the initial clean-project asset imports.
+
+| Exact archive | Bytes | SHA-256 |
+|---|---:|---|
+| BalloonBarrage-Windows-x64-v0.1.0-demo.11.zip | 121,540,798 | `21c8a1d6bf0ce160fd34baecaf6a6ee478486565fe9d3a310efc24f377cfd569` |
+| BalloonBarrage-macOS-Universal-v0.1.0-demo.11.zip | 130,683,855 | `ec3d9e82efc69decf46b5e3da323d82812c4ef31352973093873a732fb604c3b` |
+
+Both ZIPs passed CRC, unique/safe paths, every runtime-manifest hash, all sixteen pinned StepMania original hashes, all twenty profile/chart comparisons, notices, credits, font licenses, checksum sidecars and Unity backup exclusion. Both managed payloads contain `TricolorRelay` and `TricolorRelayProgress`; the Editor fixture is excluded. The Mac executable contains Intel x86_64 and Apple-silicon arm64 slices and executable ZIP permissions. The Windows and Mac manifests cover 239 and 241 runtime files respectively.
+
+A fresh Windows ZIP extraction passed exhibition preflight. Native mouse input on the unmodified packaged player completed **Goin' Under / Festival** at its natural approximately 65-second duration: **30 points, three successful ordinary hits, zero on-beat hits and one completed relay**. The collection celebration and separate result count were observed. Retry returned to title and normal Quit shut down the player; no player exceptions were found. Chinese and Japanese title screens were observed. Test score/language/display preferences were restored and checked against the pre-test backup; original player records were preserved.
+
+The native keyboard pause and later English-switching attempts were not confirmed because local focus/user input interfered. Do not count those attempts as passed. Pause/progress freezing, three-language relay strings, post-round guards and state reset retain the separate **50-assertion synthetic Editor fixture** below. This release does not claim a native-package on-beat hit, sustained held-fire soak, every song, physical focus recovery, real-Mac run, human listening/aiming comfort or venue-machine acceptance. macOS remains **unsigned, unnotarized and untested on real Mac hardware**. The mixed StepMania bundle remains noncommercial.
+
+Source checks remain three relay progress tests, fifty synthetic runtime assertions and twenty-profile accelerated regression from the preceding source record. This packaging pass also passed **23 rhythm-data tests, two packager tests and all sixteen website tests**. The initial sandboxed rhythm run encountered a temporary-directory permission error; the same suite passed outside that restriction without source changes.
+
+[Checksum-bound transport run 41009431308](https://github.com/lorendw7/BalloonBarrage/actions/runs/41009431308) reproduced the independently tested ZIPs from demo.10 using 13,352,492-byte Windows and 14,629,908-byte Mac deltas. Local roundtrips and GitHub asset digests match the exact archive hashes above. Temporary transport attachments were removed from the draft before publication. This is a transfer optimization, not a rebuild or substitute for package testing. Demo.10 and demo.6 remain unchanged fallbacks.
+
+Build logs/reports, source comparisons, exact-package verification JSON/sidecar, native screenshots and the Windows player log are retained under ignored `Builds/Desktop-v0.1.0-demo.11`. The public verification report contains summaries and source/file hashes; private local preference backups are excluded. Website copy identifies the relay as included in demo.11 and retains the actual demo.8 provenance for older gameplay figures. The meeting place remains Room 2407, Center Building 2 (センター２号館); operating hours remain unconfirmed.
+
 ## Tricolor relay source and confirmed venue — October 30
 
 The creator explicitly authorized Codex to write this gameplay addition. The tested working tree is based on `d261af48fa8cf5c0e978d7aeb3e96b69681dfb22`. It adds the [optional tricolor relay](../Design/GAME_DESIGN.md#optional-tricolor-relay), a separate result count and Chinese/Japanese/English HUD strings. The learner's `KyudaisaiLearnerCore.cs`, source charts, music originals, scene and prefab GUIDs remain unchanged. **The published demo.10 ZIPs do not include this addition.** No new player/package acceptance is claimed.
