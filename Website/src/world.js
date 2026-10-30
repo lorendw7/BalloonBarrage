@@ -10,7 +10,8 @@ if (form) {
     }).join("\n");
   };
   form.addEventListener("change", update);
-  form.addEventListener("reset", () => queueMicrotask(update));
+  // Reset's default action runs after its event listeners; update on the next task.
+  form.addEventListener("reset", () => setTimeout(update, 0));
   form.addEventListener("submit", event => event.preventDefault());
   update();
   panel.hidden = false;
