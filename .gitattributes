@@ -197,3 +197,7 @@ Assets/StreamingAssets/Rhythm/Festival20261029/*.txt -text
 # Preserve imported audience asset provenance and license bytes.
 Assets/Resources/Audience/Provenance.json -text
 Assets/StreamingAssets/ThirdParty/Audience/*.txt -text
+
+# Keep QR source hashes identical on Windows and the Linux publishing runner.
+Website/media/survey/*.svg text eol=lf
+Website/media/survey/*.json text eol=lf
