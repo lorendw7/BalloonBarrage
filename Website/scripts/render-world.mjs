@@ -2,7 +2,7 @@ import { languages } from "../src/strings.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
 import { escapeHtml as e } from "./render.mjs";
 
-export const worldPages = ["", "map", "play", "roadmap"];
+export const worldPages = ["", "map", "play", "art", "roadmap"];
 
 export function renderWorld(locale, files = {}, page = "") {
   const t = worldStrings[locale];
@@ -15,7 +15,7 @@ export function renderWorld(locale, files = {}, page = "") {
   const canonical = `https://lorendw7.github.io/BalloonBarrage/${locale === "zh-Hans" ? "" : `${locale}/`}open-world/${page ? `${page}/` : ""}`;
   const labels = { "zh-Hans": "中文", ja: "日本語", en: "EN" };
   const ids = ["plaza", "pier", "garden", "rooftops"];
-  const nav = [["", t.nav], ["map", t.mapNav], ["play", `${t.loopNav} / ${t.aiNav}`], ["roadmap", t.planNav]];
+  const nav = [["", t.nav], ["map", t.mapNav], ["play", `${t.loopNav} / ${t.aiNav}`], ["art", t.artNav], ["roadmap", t.planNav]];
   const pageTitle = page ? `${nav.find(([id]) => id === page)[1]} | ${t.title}` : t.title;
   const sections = (items, css = "world-cards") => `<div class="${css}">${items.map(([title, body]) => `<article><h3>${e(title)}</h3><p>${e(body)}</p></article>`).join("")}</div>`;
   return `<!doctype html>
@@ -54,14 +54,15 @@ export function renderWorld(locale, files = {}, page = "") {
       <p class="world-note">${e(t.scale)}</p>
     </section>` : ""}
     ${page === "play" ? `<section class="world-loop-band"><div class="section" id="loop" aria-labelledby="loop-title"><div class="world-heading"><p class="eyebrow">02 / PLAY</p><h2 id="loop-title">${e(t.loopTitle)}</h2><p>${e(t.loopIntro)}</p></div>${sections(t.loop, "world-loop")}<p class="world-note">${e(t.rule)}</p></div></section>
-    <section class="section" id="rival" aria-labelledby="rival-title"><div class="world-heading"><p class="eyebrow">03 / RIVAL</p><h2 id="rival-title">${e(t.aiTitle)}</h2><p>${e(t.aiIntro)}</p></div><ol class="ai-states">${t.aiStates.map(s => `<li>${e(s)}</li>`).join("")}</ol>${sections(t.aiRules)}</section>
+    <section class="section" id="rival" aria-labelledby="rival-title"><div class="world-heading"><p class="eyebrow">03 / RIVAL</p><h2 id="rival-title">${e(t.aiTitle)}</h2><p>${e(t.aiIntro)}</p></div><ol class="ai-states">${t.aiStates.map(s => `<li>${e(s)}</li>`).join("")}</ol>${sections(t.aiRules)}<details class="world-role-details"><summary>${e(t.roleTitle)}</summary><p>${e(t.roleIntro)}</p>${sections(t.roles)}</details></section>
     ` : ""}
+    ${page === "art" ? `<section class="section" id="art-direction" aria-labelledby="art-title"><div class="world-heading"><p class="eyebrow">A + C / ART</p><h2 id="art-title">${e(t.artTitle)}</h2><p>${e(t.artIntro)}</p></div>${sections(t.artRules)}<p class="world-note">${e(t.artLater)}</p></section>` : ""}
     ${page === "roadmap" ? `<section class="section world-plan" id="plan" aria-labelledby="plan-title"><div class="world-heading"><p class="eyebrow">04 / BUILD TOGETHER</p><h2 id="plan-title">${e(t.planTitle)}</h2><p>${e(t.planIntro)}</p></div><ol class="world-timeline">${t.stages.map(([code, name, work, gate]) => `<li><span>${code}</span><div><h3>${e(name)}</h3><p>${e(work)}</p><p class="stage-gate">${e(gate)}</p></div></li>`).join("")}</ol><p class="world-note">${e(t.deferred)}</p></section>` : ""}
     ${!page ? `<section class="section world-choices" id="choices" aria-labelledby="choices-title"><div class="world-heading"><p class="eyebrow">C · A · B</p><h2 id="choices-title">${e(t.choicesTitle)}</h2><p>${e(t.choicesIntro)}</p></div>
       ${sections(t.choices)}
     </section>` : ""}
     <nav class="world-nav" aria-label="${e(t.navigation)}">${nav.map(([id, text]) => `<a href="${worldRoot}${id ? `${id}/` : ""}"${id === page ? ' aria-current="location"' : ""}>${e(text)}</a>`).join("")}</nav>
-    <footer class="section world-sources"><div class="world-source-links"><a href="${home}">${e(t.home)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only">${e(t.sourceDesign)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md#open-world-development-track--planning-only">${e(t.sourceRoadmap)}</a></div>${page === "map" ? `<p>${e(t.originality)}</p>` : ""}</footer>
+    <footer class="section world-sources"><div class="world-source-links"><a href="${home}">${e(t.home)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only">${e(t.sourceDesign)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md#open-world-development-track--planning-only">${e(t.sourceRoadmap)}</a></div>${page === "art" ? `<p>${e(t.originality)}</p>` : ""}</footer>
   </main><footer class="world-footer">BalloonBarrage · ${e(t.footer)}</footer>
 </body></html>\n`;
 }

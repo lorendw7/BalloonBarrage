@@ -26,7 +26,7 @@ The creator selected a post-festival open-world direction on October 30: a centr
 
 ### Player promise and loop
 
-Explore a bright, handmade festival town in third person, follow balloon landmarks to a small music stage, challenge a mischievous AI troupe from a stable stage view, then bring a musical layer back to the plaza. Keep the studio's warm materials and tactile balloon pops while exploring bolder color blocks, playful street furniture and readable silhouettes. These are original art-direction proposals, not copied reference maps or assets.
+Explore a bright, handmade festival town in third person, follow balloon landmarks to a small music stage, challenge a mischievous AI troupe from a stable stage view, then bring a musical layer back to the plaza. The creator selected **art direction A + C: a sunny street music festival with handmade art-town details** on October 30, 2026. Keep the studio's warm materials and tactile balloon pops. A night music festival is a later expansion idea, outside the first slice; no day/night system is committed.
 
 Proposed loop: **explore → discover a stage → explicitly start a music challenge → pop and paint against the troupe → see results → collect a musical layer → hear the town ensemble grow**. Exploration has no accuracy grade or time pressure. Entering a district does not automatically start a scoring chart. First prototype: transition from third-person exploration to a comfortable stable stage view after confirmation, reuse one existing song profile unchanged, and return control after results. Ambient music fades out before the chart starts; only the chart's existing clock judges notes. Returning to exploration never carries an unfinished scoring event across modes.
 
@@ -52,9 +52,41 @@ Diagram: Plaza ↔ Pier; Plaza ↔ Garden; Plaza ↔ Rooftops. Optional cross-di
 3. **Rival AI creates a readable choice.** Before contesting a target, the rival turns, aims and displays an intent marker. The player can contest that target or choose another visible balloon. The rival must occasionally miss and wait through authored recovery windows; it cannot fire instantly on spawn, act through walls or read future player input.
 4. **The selected reward is a growing town ensemble.** Collect musical layers through stage progression and hear them combine in the plaza. An AI loss or low accuracy cannot lock the only exploration route. Exact reward conditions and progression persistence remain design questions; neither is implemented.
 
+### Gameplay principles for the festival town
+
+Use balloons consistently as landmarks, chart targets and stage props, with distinct shapes for each purpose. A completed challenge should leave an authored, readable change: a decoration rises, a light turns on or an instrument joins the plaza ensemble. These visible and audible rewards are planned feedback, not evidence of implemented persistence.
+
+Keep the first route direct. Later optional detours can lead to hidden challenges, while short, replayable stages each introduce one rule. Better performances may unlock variations; exact thresholds remain undecided and access to the main route stays open. Cosmetic balloon patterns, clothes, instruments and performance gestures are later identity options, not first-slice requirements.
+
+The first rival study retains the existing authored chart and target-contest rules. Candidate roles for later studies are:
+
+| Candidate | Proposed encounter | Boundary |
+|---|---|---|
+| Beat Teaser | Demonstrates a short balloon phrase for the player to answer | Separate authored call-and-response study after the baseline encounter; no runtime chart changes |
+| Balloon Porter | Carries an optional task balloon along a readable route; the player chooses an interception path | Opt-in exploration activity, not mandatory pursuit; suspend it during stage play |
+| Stage Leader | Announces one challenge modifier, such as a sustained balloon, before the round | Later rule study only; requires its own chart/input design and must not alter an active chart |
+
+These are proposals, not three committed characters or a fixed team size. Actions need advance cues, recovery windows and recoverable mistakes. Pause exploration pursuits during the stable stage view; no off-screen interference with chart reading. Verify one member before a coordinated pair.
+
+### Confirmed art direction — A + C
+
+The selected base is a sunny street music festival with handmade town details. Apply it to the plaza corner, path and single pier stage before extending it to other districts. This is a visual brief, not newly produced art or a playable environment.
+
+| Element | Direction | Readability constraint |
+|---|---|---|
+| Color and light | Cream buildings, warm daylight, teal and coral accents | Calm backgrounds; reserve strong contrast for targets and interaction cues, paired with shapes/icons |
+| Materials | Glossy balloons against matte buildings and ground; paper posters, cardboard signs, fabric bunting and wooden stages | Preserve target edges against busy textures; avoid decorative flashes that resemble scoring cues |
+| Silhouette and motion | Rounded balloons, recognizable instrument backpacks; inflation, springy hits and brief deflation | Exaggerated feedback stays bounded and never covers the next target |
+| Everyday props | Original combinations of pumps, paint buckets, drumsticks and metronomes | Shared local craft vocabulary; keep prop function legible |
+| District culture | Local bands, handmade posters and instrument-shaped landmarks | Pier percussion, garden chimes/keyboards and rooftop street performances are examples, not fixed content assignments |
+
+Learn from Splatoon's integration of a core material, traversal/objectives and a believable local music culture. References: Nintendo's [gameplay overview](https://splatoon.nintendo.com/en/gameplay/), [world and music interview](https://www.nintendo.com/au/news-and-articles/ask-the-developer-vol-7-splatoon-3-chapter-1/) and [everyday-object design interview](https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-7-splatoon-3-part-2/). These inform design principles; maps, characters, interfaces, artwork, fictional bands and music remain original. Preserve attribution and exact generation prompts for any future assets.
+
+Defer the neon/night music festival until the daytime slice is accepted. Treat it as an optional later event with separate lighting, readability and audio checks, not an automatic OW5 deliverable.
+
 ### Rival AI: bounded and offline first
 
-The selected opponent is **C — a mischievous troupe**, with multiple original rivals and readable environmental interruptions. Build toward that direction in increments: study one troupe member first, then add a second with coordinated intent and turn-taking before increasing simultaneous pressure. The one-member study is an implementation step, not a replacement for the selected group. Candidate roles include a balloon contender, a route feinter and a stage-prop prankster; exact roles and team size remain undecided. Proposed member states: patrol → notice an invitation → show target intent → aim → fire → recover → return. Use bounded offline behavior rules. Patrols outside a stage are presentation only; challenges begin through player consent. Interruptions must not move scoring timestamps, hide required targets or block the only path.
+The selected opponent is **C — a mischievous troupe**, with multiple original rivals and readable environmental interruptions. Build toward that direction in increments: study one troupe member first, then add a second with coordinated intent and turn-taking before increasing simultaneous pressure. The one-member study is an implementation step, not a replacement for the selected group. The candidate roles above are later studies; exact roles and team size remain undecided. Proposed member states: patrol → notice an invitation → show target intent → aim → fire → recover → return. Use bounded offline behavior rules. In the first slice, patrols outside a stage are presentation only; challenges begin through player consent. Interruptions must not move scoring timestamps, hide required targets or block the only path.
 
 Use the same declared chart and one authoritative target-resolution rule. A balloon can be consumed once. Log target ownership, shot time and resolution; test simultaneous hits explicitly. Define reaction delay, aim error, line-of-sight checks and recovery before tuning difficulty. Rival scoring is a separate experimental mode and must not silently replace the existing 10/20 solo rules. In the first study, disable damage, knockback, hard failure and adaptive difficulty. Later adaptation may select the next encounter tier with the player's consent; it must not change a running chart or secretly weaken the player's input.
 

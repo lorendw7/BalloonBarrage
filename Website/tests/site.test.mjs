@@ -263,7 +263,7 @@ test("pagination keeps landing pages compact and preserves localized detail rout
     const home = await readFile(path.join(localeRoot, "index.html"), "utf8");
     assert.doesNotMatch(home, /id="art-grid"|id="rhythm-title"|id="performance-title"/);
     const world = await readFile(path.join(localeRoot, "open-world/index.html"), "utf8");
-    assert.doesNotMatch(world, /id="map-title"|id="loop-title"|id="plan-title"/);
+    assert.doesNotMatch(world, /id="map-title"|id="loop-title"|id="art-title"|id="plan-title"/);
     for (const page of pagePaths) {
       const html = await readFile(path.join(localeRoot, page, "index.html"), "utf8");
       assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1, `${locale}/${page} needs one main heading`);

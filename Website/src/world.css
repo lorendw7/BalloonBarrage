@@ -50,6 +50,9 @@
 .world-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
 .world-cards article { padding: 1.5rem; border: 1px solid var(--line); background: var(--white); border-radius: .75rem; }
 .world-cards h3 { margin-bottom: .8rem; }
+.world-role-details { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+.world-role-details summary { cursor: pointer; font-weight: 600; color: var(--teal); }
+.world-role-details > p { margin: 1rem 0; color: var(--muted); }
 .world-plan { padding-top: 1rem; }
 .world-timeline { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
 .world-timeline li { display: flex; gap: 1.2rem; border-top: 1px solid var(--line); padding: 1.5rem 0; }
