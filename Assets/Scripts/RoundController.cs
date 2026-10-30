@@ -31,7 +31,7 @@ public class RoundController : MonoBehaviour
     public bool RainbowChainEnabled { get; private set; }
     public string SelectedBestScoreKey => GetBestScoreKey(SelectedSong.trackId) +
         (RainbowChainEnabled ? ".RainbowChain.v1" : "") +
-        (localPlayers != null && localPlayers.IsCoop ? ".LocalCoop.Dev.v1" : "");
+        (localPlayers != null && localPlayers.IsCoop ? ".LocalCoop.v1" : "");
     private float songDuration;
     private double songStartDspTime;
 
@@ -165,6 +165,7 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        gameObject.AddComponent<PopLightFeedback>();
         localPlayers = gameObject.AddComponent<LocalPlayerInput>();
         localPlayers.Configure(this, FindFirstObjectByType<PlayerShooter>());
         rainbowChain = GetComponent<RainbowChain>();

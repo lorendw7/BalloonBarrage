@@ -11,7 +11,7 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-/// <summary>Virtual gamepad integration only. Learner-owned firing/bonus remain unaccepted.</summary>
+/// <summary>Virtual gamepad integration only. Checks the saved learner firing and bonus through actual shooter sampling.</summary>
 [InitializeOnLoad]
 public static class LocalPlayerInputValidation
 {
@@ -54,6 +54,10 @@ public static class LocalPlayerInputValidation
             if (stage == 0)
             {
                 deadline = EditorApplication.timeSinceStartup + 100;
+                Require(!CoopLearnerCore.IsSecondShotReady(.8f, 1f) && CoopLearnerCore.IsSecondShotReady(1f, 1f) &&
+                    CoopLearnerCore.IsSecondShotReady(1.2f, 1f), "Learner shot boundary cases failed.");
+                Require(CoopLearnerCore.SecondPlayerBeatBonus(true) == 10 && CoopLearnerCore.SecondPlayerBeatBonus(false) == 0,
+                    "Learner beat bonus cases failed.");
                 Application.logMessageReceived += OnLog;
                 language = LanguageSettings.Current;
                 InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
@@ -70,7 +74,7 @@ public static class LocalPlayerInputValidation
                 Require(input.CanStart && input.RequiredGamepads == 1, "Mouse/pad layout did not accept one gamepad.");
                 Require(input.PrepareRound() && input.AssignedDeviceId(0) == -1 && input.AssignedDeviceId(1) == first.deviceId,
                     "Mouse/pad layout assigned the gamepad to the wrong player.");
-                Require(round.SelectedBestScoreKey == solo + ".LocalCoop.Dev.v1", "Co-op record is not isolated.");
+                Require(round.SelectedBestScoreKey == solo + ".LocalCoop.v1", "Co-op record is not isolated.");
                 round.SetLocalPlayerLayout(1);
                 Require(input.CanStart && round.SelectedBestScoreKey == solo, "Gamepad solo changed scoring identity.");
                 round.SetLocalPlayerLayout(3);
@@ -123,9 +127,23 @@ public static class LocalPlayerInputValidation
                 Call(input.Primary, "Update");
                 Require(input.Primary.ShotCount == shots + 1, "Gamepad ignored the existing shot interval.");
                 State(first, new GamepadState());
+                Balloon timedTarget = SpawnAimed(round, input, true);
+                int scoreBefore = Score.Value, onBeatBefore = Score.OnBeatHits;
                 State(second, new GamepadState { rightTrigger = 1f });
                 Call(input.Secondary, "Update");
-                Require(input.Secondary.ShotCount == 0, "Unfinished learner firing gate produced a shot.");
+                Require(input.Secondary.ShotCount == 1 && Score.Value == scoreBefore + 20 && Score.OnBeatHits == onBeatBefore + 1,
+                    "P2 timed shot did not award exactly 10 base + 10 learner bonus.");
+                Call(input.Secondary, "Update");
+                Require(input.Secondary.ShotCount == 1, "P2 bypassed the learner cooldown.");
+                Write(input.Primary, "nextShotTime", 0f);
+                State(first, new GamepadState { rightTrigger = 1f }); Call(input.Primary, "Update");
+                timedTarget.HitAt(timedTarget.transform.position, 10);
+                Require(Score.Value == scoreBefore + 20, "Shared target scored twice.");
+                State(first, new GamepadState()); State(second, new GamepadState());
+                SpawnAimed(round, input, false); Write(input.Secondary, "nextShotTime", 0f);
+                State(second, new GamepadState { rightTrigger = 1f }); Call(input.Secondary, "Update");
+                Require(input.Secondary.ShotCount == 2 && Score.Value == scoreBefore + 30 && Score.OnBeatHits == onBeatBefore + 1,
+                    "P2 ordinary shot did not award exactly base points.");
                 State(second, new GamepadState());
                 InputSystem.DisableDevice(second);
                 Require(RoundController.IsPaused && !input.DevicesReady, "Disconnected controller did not pause safely.");
@@ -166,11 +184,44 @@ public static class LocalPlayerInputValidation
                 State(first, new GamepadState()); Call(input.Primary, "Update");
                 State(first, new GamepadState { rightTrigger = 1f }); Call(input.Primary, "Update");
                 Require(input.Primary.ShotCount == 1, "Gamepad solo could not fire after release.");
-                Call(round, "EndRound");
-                Finish(null);
+                Call(round, "EndRound"); round.RestartRound();
+                stage = 4; wait = EditorApplication.timeSinceStartup + .5; return;
+            }
+            if (stage == 4)
+            {
+                round.BeginRound(); round.SetLocalPlayerLayout(2); stage = 5; return;
+            }
+            if (stage == 5)
+            {
+                if (round.SelectedSong.audioClip.loadState == AudioDataLoadState.Loading) return;
+                round.StartSelectedSong(); Object.FindFirstObjectByType<RhythmChartReader>().enabled = false;
+                Write(input, "hasFocus", true); Write(input.Secondary, "hasInputFocus", true);
+                State(first, new GamepadState()); Call(input.Secondary, "Update");
+                SpawnAimed(round, input, true);
+                int before = Score.Value;
+                State(first, new GamepadState { rightTrigger = 1f }); Call(input.Secondary, "Update");
+                Require(input.AssignedDeviceId(1) == first.deviceId && input.Secondary.ShotCount == 1 && Score.Value == before + 20,
+                    "Mouse + gamepad P2 did not fire/score from its assigned device.");
+                Call(round, "EndRound"); Finish(null);
             }
         }
         catch (Exception error) { Finish(error); }
+    }
+    private static int nextTarget = 600000;
+    private static Balloon SpawnAimed(RoundController round, LocalPlayerInput input, bool onBeat)
+    {
+        int id = nextTarget++;
+        Require(Object.FindFirstObjectByType<BalloonSpawner>().Spawn(new RhythmEventData {
+            id = id, timeSeconds = round.SongTimeSeconds + (onBeat ? 0d : 2d) }), "Scoring target failed to spawn.");
+        Balloon target = Array.Find(Object.FindObjectsByType<Balloon>(FindObjectsSortMode.None), b => b.EventId == id);
+        target.GetComponent<BalloonFloat>().enabled = false; target.GetComponent<BalloonEntrance>().enabled = false;
+        target.GetComponent<Rigidbody>().isKinematic = true; target.transform.position = new Vector3(0f, 0f, 8f);
+        Physics.SyncTransforms();
+        Collider body = Array.Find(target.GetComponentsInChildren<Collider>(), c => c.enabled && !c.isTrigger);
+        Vector3 screen = Camera.main.WorldToScreenPoint(body.bounds.center);
+        var aim = (Vector2[])typeof(LocalPlayerInput).GetField("aims", Private).GetValue(input);
+        aim[0] = aim[1] = new Vector2(screen.x / Screen.width, screen.y / Screen.height);
+        return target;
     }
     private static void State(Gamepad pad, GamepadState value)
     {
@@ -199,7 +250,7 @@ public static class LocalPlayerInputValidation
         public string status, error, finishedUtc;
         public int assertions;
         public string scope = "Directly injected virtual Input System device states: four layouts, device ownership, independent bounded aim, P1 RT/cadence, missing-device/reconnect pause and held-trigger protection, records/locales and Retry. No native event/physical-controller acceptance.";
-        public string learnerStatus = "Both CoopLearnerCore decisions remain TODO. P2 shot guard is intentionally closed; no complete co-op gameplay acceptance.";
+        public string learnerStatus = "Saved learner methods pass early/equal/late and bonus cases; actual P2 shooter samples verify ordinary/timed scoring in both co-op layouts and one-time shared resolution.";
         public string limits = "No physical controller, native standalone, real-Mac or human comfort acceptance.";
     }
 }

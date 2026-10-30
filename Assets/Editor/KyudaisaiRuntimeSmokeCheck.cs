@@ -317,6 +317,7 @@ public static class KyudaisaiRuntimeSmokeCheck
         // Reproject world-attached overlays after the capture camera is configured.
         Object.FindFirstObjectByType<FestivalDemonstrationCue>()?.SendMessage("LateUpdate", SendMessageOptions.DontRequireReceiver);
         Object.FindFirstObjectByType<RainbowChainPreview>()?.SendMessage("LateUpdate", SendMessageOptions.DontRequireReceiver);
+        Object.FindFirstObjectByType<PopLightFeedback>()?.Reproject();
         camera.Render();
         RenderTexture.active = target;
         Texture2D capture = new Texture2D(width, height, TextureFormat.RGB24, false);

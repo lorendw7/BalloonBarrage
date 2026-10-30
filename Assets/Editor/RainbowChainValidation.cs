@@ -145,7 +145,7 @@ public static class RainbowChainValidation
                 Require(foundAim && aimed == primary, "Preview did not use the shooter SphereCast. Hit: " +
                     (diagnostic.collider == null ? "none" : diagnostic.collider.name) + "; target bounds " + aimCollider.bounds);
                 Call(preview, "LateUpdate");
-                Require(preview.PrimaryTarget == primary && preview.NeighborCount == 2 && preview.VisibleMarkerCount == 3,
+                Require(preview.PrimaryTarget == primary && preview.NeighborCount == 2 && preview.VisibleMarkerCount == 3 && preview.VisibleLinkCount == 2,
                     "Aim preview markers/count mismatch.");
                 var overlay = GameObject.Find("RainbowChainPreviewOverlay");
                 Require(overlay.GetComponentsInChildren<Collider>(true).Length == 0, "Preview acquired colliders.");

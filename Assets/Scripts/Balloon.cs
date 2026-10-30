@@ -223,6 +223,9 @@ public class Balloon : MonoBehaviour
         }
 
         Camera mainCamera = Camera.main;
+        StudioBalloonAppearance feedbackPigment = GetComponent<StudioBalloonAppearance>();
+        PopLightFeedback.Instance?.Show(hasHitPoint ? hitPoint : GuidePosition,
+            feedbackPigment != null ? feedbackPigment.Pigment : Color.cyan, bonusPoints > 0, finaleAccent);
 
         if (finaleAccent && popEffectVariants != null && popEffectVariants.Length > 0)
         {
@@ -233,7 +236,7 @@ public class Balloon : MonoBehaviour
                 if (prefab == null) continue;
                 Vector3 offset = new Vector3((index - 1) * .24f, index == 1 ? .22f : 0f, 0f);
                 ParticleSystem accent = Instantiate(prefab, center + offset, Quaternion.identity);
-                accent.transform.localScale *= .65f;
+                accent.transform.localScale *= 1.25f;
                 accent.Play(true);
                 Destroy(accent.gameObject, 2f);
                 FinaleEffectCount++;

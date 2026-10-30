@@ -82,6 +82,7 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
             ? Mathf.Clamp((int)((now - active.startSeconds) / active.stepSeconds), 0, active.slots.Length - 1)
             : -1;
 
+        instruction.fontSize = 24;
         instruction.text = LocalizationManager.GetText(IsMirrored
             ? (IsDemonstrating ? "cue.mirror.watch" : "cue.mirror.respond")
             : (IsDemonstrating ? "cue.demonstration.watch" : "cue.demonstration.respond"));
@@ -130,7 +131,7 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
         EnsureUi();
         uiRoot.SetActive(true);
         IsFinale = true;
-        instruction.text = LocalizationManager.GetText("cue.finale");
+        instruction.fontSize = 30;
         LocalizedText template = textTemplate != null ? textTemplate.GetComponent<LocalizedText>() : null;
         if (template != null) instruction.font = template.CurrentFont;
         for (int index = 0; index < markers.Length; index++)
@@ -144,12 +145,13 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
             if (viewport.z <= 0f) { markers[index].gameObject.SetActive(false); continue; }
             markers[index].anchorMin = markers[index].anchorMax = new Vector2(viewport.x, viewport.y);
             markers[index].anchoredPosition = Vector2.zero;
-            markers[index].localScale = Vector3.one;
-            foreach (Image stroke in markerStrokes[index]) stroke.color = new Color(1f, .9f, .45f, .45f);
+            markers[index].localScale = Vector3.one * (1.75f + .07f * Mathf.Sin(Time.unscaledTime * 3f));
+            foreach (Image stroke in markerStrokes[index]) stroke.color = new Color(1f, .9f, .45f, .9f);
             markerNumbers[index].font = instruction.font;
-            markerNumbers[index].color = new Color(1f, .9f, .45f, .65f);
+            markerNumbers[index].color = new Color(1f, .96f, .7f, 1f);
             VisibleMarkerCount++;
         }
+        instruction.text = LocalizationManager.Format("cue.finale", VisibleMarkerCount);
         if (VisibleMarkerCount == 0) { IsFinale = false; Hide(); }
     }
 

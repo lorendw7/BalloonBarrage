@@ -1,8 +1,8 @@
 # Controller preparation
 
-Updated: October 30, 2026. The creator now requested local mouse + gamepad and two-gamepad practice. [Game design](GAME_DESIGN.md#local-players-and-gamepads--development-practice) owns current behavior; [the co-op lesson](LOCAL_COOP_LESSON.md) teaches the two deliberately unfinished P2 decisions. Solo gamepad/P1 input infrastructure is connected; this does not establish physical-controller or complete co-op acceptance.
+Updated: October 30, 2026. Saved local mouse + gamepad and two-gamepad support now includes the creator's two completed P2 core functions. [Game design](GAME_DESIGN.md#local-players-and-gamepads) owns behavior and [the completed co-op lesson](LOCAL_COOP_LESSON.md) explains the functions. Controlled virtual-state checks do not establish physical-controller or real-Mac acceptance.
 
-The practice runtime reads explicitly assigned `Gamepad` device references through `LocalPlayerInput`, keeps each pairing fixed for the round and reuses existing menu UI actions. It currently chooses connected devices in stable device-ID order at Play; verify which numbered reticle belongs to each pad during hardware checks. New devices cannot steal a slot. A named device picker/join screen remains future work. The original optional action asset below remains preserved and unassigned; its earlier PlayerInput-based integration proposal is reference material, not a description of the current direct-device implementation.
+The local-player runtime reads explicitly assigned `Gamepad` device references through `LocalPlayerInput`, keeps each pairing fixed for the round and reuses existing menu UI actions. It currently chooses connected devices in stable device-ID order at Play; verify which numbered reticle belongs to each pad during hardware checks. New devices cannot steal a slot. A named device picker/join screen remains future work. The original optional action asset below remains preserved and unassigned; its earlier PlayerInput-based integration proposal is reference material, not a description of the current direct-device implementation.
 
 ## Prepared input asset
 
@@ -28,7 +28,7 @@ Reported status, October 13: the creator says the Beitong check has no issue. Th
 1. Save the current scene. Connect only the Xbox pad first, preferably by USB for the first check.
 2. Open **Window > Analysis > Input Debugger** in Unity. Expand **Devices**, then double-click the Xbox/XInput device.
 3. Move the right stick: confirm rightStick/x and rightStick/y change and settle close to zero. Squeeze RT: confirm rightTrigger changes from near zero to near one. Press Menu: confirm start changes.
-4. Record the exact layout/device name and whether these three controls respond. This checks recognition only. Select a gamepad layout in the source practice build for the separate gameplay check.
+4. Record the exact layout/device name and whether these three controls respond. This checks recognition only. Select a gamepad layout in the new local-player build for the separate gameplay check.
 5. Disconnect Xbox and repeat with Beitong. If the model offers a Windows/XInput mode, choose it using that model's manufacturer instructions; no model-specific shortcut is assumed. Generic Joystick/HID recognition alone does not prove the Gamepad bindings match.
 6. Connect both and confirm two distinct device entries. Do not pair based solely on arrival order or whichever pad was used most recently.
 

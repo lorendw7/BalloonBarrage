@@ -169,11 +169,14 @@ public static class PhraseShowcaseValidation
                 Balloon accent = FindBalloon(finalId);
                 Require(accent != null && accent.IsFinaleAccent, "Final accent target is missing.");
                 int beforeScore = Score.Value, beforeHits = Score.SuccessfulHits;
+                int finalePulses = PopLightFeedback.Instance.FinalePulseCount;
                 accent.Hit();
+                Require(PopLightFeedback.Instance.FinalePulseCount == finalePulses + 1 && PopLightFeedback.Instance.VisiblePetalCount == 12, "Finale light flower is missing.");
                 Require(accent.FinaleEffectCount == 3 && Score.Value == beforeScore + 10 && Score.SuccessfulHits == beforeHits + 1,
                     "Finale duplicated score or omitted its multicolour effect.");
                 accent.Hit();
                 Require(accent.FinaleEffectCount == 3 && Score.Value == beforeScore + 10, "Repeated final hit duplicated the flourish.");
+                Require(PopLightFeedback.Instance.FinalePulseCount == finalePulses + 1, "Repeated final hit duplicated light effects.");
                 var spawner = Object.FindFirstObjectByType<BalloonSpawner>();
                 Require(spawner.Spawn(new RhythmEventData { id = 999999, timeSeconds = -10d, finaleAccent = true }), "Expiry probe failed to spawn.");
                 Balloon expired = FindBalloon(999999);
@@ -187,6 +190,30 @@ public static class PhraseShowcaseValidation
             if (stage == 21)
             {
                 Capture("ShowcaseFinaleBurst-ja");
+                if (profileIndex == 0)
+                {
+                    var feedback = PopLightFeedback.Instance;
+                    int score = Score.Value, hits = Score.SuccessfulHits;
+                    for (int i = 0; i < 40; i++) feedback.Show(new Vector3(0, 1, 8), Color.cyan, false, false);
+                    Call(feedback, "LateUpdate");
+                    Require(feedback.GetComponentsInChildren<Light>().Length == PopLightFeedback.MaximumLights && feedback.ActiveLightCount <= 3,
+                        "Pop lights exceeded their fixed pool.");
+                    Require(feedback.VisiblePetalCount == 12 && Score.Value == score && Score.SuccessfulHits == hits,
+                        "Cosmetic stress replaced the finale or changed score.");
+                    var overlay = GameObject.Find("PaintPopLightOverlay");
+                    Require(overlay.GetComponentsInChildren<Image>(true).Length == PopLightFeedback.MaximumPulses * 15 &&
+                        !overlay.GetComponent<CanvasGroup>().blocksRaycasts, "Pulse pool grew or blocked input.");
+                    foreach (var image in overlay.GetComponentsInChildren<Image>(true))
+                        Require(!image.raycastTarget, "Pop overlay intercepted aim.");
+                    foreach (var light in feedback.GetComponentsInChildren<Light>())
+                        Require(light.shadows == LightShadows.None, "Pop light allocated shadows.");
+                    Call(round, "TogglePause"); float age = feedback.FinaleAge;
+                    Call(feedback, "LateUpdate");
+                    Require(feedback.FinaleAge == age && feedback.ActiveLightCount == 0 && !overlay.activeSelf,
+                        "Pause retained lights or advanced the afterglow.");
+                    Call(round, "TogglePause"); Call(feedback, "LateUpdate");
+                    Require(overlay.activeSelf && feedback.VisiblePetalCount == 12, "Resume lost the finale afterglow.");
+                }
                 Call(round, "EndRound");
                 Call(cue, "LateUpdate");
                 Require(!cue.IsFinale && cue.VisibleMarkerCount == 0, "Settlement retained the route.");
