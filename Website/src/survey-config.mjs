@@ -1,6 +1,8 @@
 // Set only after checking the responder flow and private response settings.
 // Keep all responses, email addresses and editor links out of this repository.
-export const surveyConfig = { formUrl: "" };
+export const surveyConfig = {
+  formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeVouVCSTX5NwfYFtdqnif3T98-n9IXLhL2dqh8Y2uucesujQ/viewform?usp=publish-editor"
+};
 
 export function getSurveyFormUrl(value = surveyConfig.formUrl) {
   if (!value) return "";

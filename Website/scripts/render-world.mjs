@@ -59,7 +59,7 @@ export function renderWorld(locale, files = {}, page = "") {
     ` : ""}
     ${page === "art" ? `<section class="section" id="art-direction" aria-labelledby="art-title"><div class="world-heading"><p class="eyebrow">A + C / ART</p><h2 id="art-title">${e(t.artTitle)}</h2><p>${e(t.artIntro)}</p></div>${sections(t.artRules)}<p class="world-note">${e(t.artLater)}</p></section>` : ""}
     ${page === "roadmap" ? `<section class="section world-plan" id="plan" aria-labelledby="plan-title"><div class="world-heading"><p class="eyebrow">04 / BUILD TOGETHER</p><h2 id="plan-title">${e(t.planTitle)}</h2><p>${e(t.planIntro)}</p></div><ol class="world-timeline">${t.stages.map(([code, name, work, gate]) => `<li><span>${code}</span><div><h3>${e(name)}</h3><p>${e(work)}</p><p class="stage-gate">${e(gate)}</p></div></li>`).join("")}</ol><p class="world-note">${e(t.deferred)}</p></section>` : ""}
-    ${!page ? `<section class="section world-choices" id="choices" aria-labelledby="choices-title"><div class="world-heading"><p class="eyebrow">C · A · B</p><h2 id="choices-title">${e(t.choicesTitle)}</h2><p>${e(t.choicesIntro)}</p></div>
+    ${!page ? `<section class="section world-choices" id="choices" aria-labelledby="choices-title"><div class="world-heading"><p class="eyebrow">${e(t.choicesNav)}</p><h2 id="choices-title">${e(t.choicesTitle)}</h2><p>${e(t.choicesIntro)}</p></div>
       ${sections(t.choices)}
     </section>` : ""}
     <nav class="world-nav" aria-label="${e(t.navigation)}">${nav.map(([id, text]) => `<a href="${worldRoot}${id ? `${id}/` : ""}"${id === page ? ' aria-current="location"' : ""}>${e(text)}</a>`).join("")}</nav>

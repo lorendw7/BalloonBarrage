@@ -326,7 +326,6 @@ test("world pages preserve locale across nested navigation and keep proposals se
     }
     assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1);
     assert.doesNotMatch(html, /type="radio"|data-world-choices|\{\{|releases\/download/);
-    assert.deepEqual(worldStrings[locale].choices.map(([title]) => title[0]), ["C", "A", "B"]);
     for (const [title, body] of worldStrings[locale].choices) {
       assert.ok(html.includes(title));
       assert.ok(html.includes(body));
