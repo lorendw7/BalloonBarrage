@@ -312,6 +312,9 @@ public static class FestivalRuntimeValidation
                     int expectedSlot = demo.answerSlots != null && demo.answerSlots.Length == demo.slots.Length
                         ? demo.answerSlots[s] : demo.slots[s];
                     Require(answer != null && answer.authoredPlacement && answer.placementSlot == expectedSlot, "Missing/mismatched answer target.");
+                    RhythmEventData loadedAnswer = loaded.events.SingleOrDefault(e => e.id == answer.id);
+                    Require(loadedAnswer != null && Math.Abs(loadedAnswer.timeSeconds - (answer.timeSeconds - profile.sourceCueInSeconds)) < .002,
+                        "Answer event identity/time changed while loading.");
                 }
             }
             Dropdown list = GameObject.Find("SongList").GetComponent<Dropdown>();
@@ -353,7 +356,9 @@ public static class FestivalRuntimeValidation
         Current.lastPlayingSeconds = controller.SongTimeSeconds;
         Balloon[] balloons = Object.FindObjectsByType<Balloon>(FindObjectsSortMode.None).Where(b => b.gameObject.activeInHierarchy).ToArray();
         Current.peakActiveTargets = Math.Max(Current.peakActiveTargets, balloons.Length);
-        Require(balloons.Length <= 16, "Active balloon cap exceeded.");
+        var spawner = Object.FindFirstObjectByType<BalloonSpawner>();
+        int capacity = (int)typeof(BalloonSpawner).GetField("maxBalloons", PrivateInstance).GetValue(spawner);
+        Require(balloons.Length <= capacity, "Active balloon cap exceeded.");
         foreach (Balloon balloon in balloons)
         {
             int instance = balloon.GetInstanceID();
