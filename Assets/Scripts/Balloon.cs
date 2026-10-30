@@ -28,6 +28,18 @@ public class Balloon : MonoBehaviour
     private float popVolume = 0.5f;
 
     private bool isPoping;
+    private bool finaleAccent;
+    public bool IsFinaleAccent => finaleAccent;
+    public int FinaleEffectCount { get; private set; }
+    private Renderer guideRenderer;
+    public Vector3 GuidePosition
+    {
+        get
+        {
+            if (guideRenderer == null) guideRenderer = GetComponent<StudioBalloonAppearance>()?.latex;
+            return guideRenderer != null ? guideRenderer.bounds.center : transform.position;
+        }
+    }
 
     [SerializeField]
     private ParticleSystem popEffectPrefab;
@@ -62,6 +74,7 @@ public class Balloon : MonoBehaviour
     {
         EventId = eventData.id;
         EventTimeSeconds = eventData.timeSeconds;
+        finaleAccent = eventData.finaleAccent;
     }
 
     public void CheckExpiry(double songTime)
@@ -210,6 +223,22 @@ public class Balloon : MonoBehaviour
         }
 
         Camera mainCamera = Camera.main;
+
+        if (finaleAccent && popEffectVariants != null && popEffectVariants.Length > 0)
+        {
+            Vector3 center = hasHitPoint ? hitPoint : (popPoint != null ? popPoint.position : transform.position);
+            for (int index = 0; index < 3; index++)
+            {
+                ParticleSystem prefab = popEffectVariants[(index * 2) % popEffectVariants.Length];
+                if (prefab == null) continue;
+                Vector3 offset = new Vector3((index - 1) * .24f, index == 1 ? .22f : 0f, 0f);
+                ParticleSystem accent = Instantiate(prefab, center + offset, Quaternion.identity);
+                accent.transform.localScale *= .65f;
+                accent.Play(true);
+                Destroy(accent.gameObject, 2f);
+                FinaleEffectCount++;
+            }
+        }
 
         if (popSound != null && mainCamera != null)
         {

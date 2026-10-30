@@ -80,6 +80,11 @@
     {"key":"chain.hint","zhHans":"集齐三色充能 → 下次命中连带最多两只","ja":"3色でチャージ → 次のヒットで最大2個連鎖","en":"Three colors charge your next hit · up to 2 neighbors"},
     {"key":"chain.ready","zhHans":"已蓄能！下次命中气球触发连锁","ja":"チャージ完了！次のヒットで連鎖","en":"READY! Your next balloon hit triggers a burst"},
     {"key":"chain.burst","zhHans":"彩虹连锁！连带 {0} 只","ja":"レインボー連鎖！追加 {0} 個","en":"Rainbow burst! {0} extra balloons"},
-    {"key":"result.chainBursts","zhHans":"连锁彩爆：{0} 次","ja":"連鎖バースト：{0} 回","en":"Rainbow bursts: {0}"}
+    {"key":"result.chainBursts","zhHans":"连锁彩爆：{0} 次","ja":"連鎖バースト：{0} 回","en":"Rainbow bursts: {0}"},
+    {"key":"cue.mirror.watch","zhHans":"镜像回声：先看左→中→右","ja":"ミラーエコー：左→中→右を見てみよう","en":"Mirror echo: watch left, center, right"},
+    {"key":"cue.mirror.respond","zhHans":"反过来回应：右→中→左，可按住喷射","ja":"今度は逆に：右→中→左。長押しでもOK","en":"Answer in reverse: right, center, left. Holding fire is fine"},
+    {"key":"cue.finale","zhHans":"最后三个气球：沿着轮廓，为这首歌收尾","ja":"最後の3個：輪郭に沿ってフィナーレへ","en":"Final three: follow the outlines to finish the song"},
+    {"key":"chain.preview","zhHans":"连锁预览：可连带 {0} 只","ja":"連鎖プレビュー：追加 {0} 個","en":"Chain preview: {0} extra balloons"},
+    {"key":"showcase.tag","zhHans":"本曲短局：镜像回声 · 旋律轨迹 · 烟花终章","ja":"このショート曲：ミラー・軌道・フィナーレ","en":"Short-song showcase: mirror echo · melody paths · finale"}
   ]
 }

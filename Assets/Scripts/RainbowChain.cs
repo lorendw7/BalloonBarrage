@@ -10,6 +10,8 @@ public sealed class RainbowChain : MonoBehaviour
     public const int MaximumNeighbors = 2;
     private readonly RainbowChainCharge charge = new RainbowChainCharge();
     private readonly List<Balloon> candidates = new List<Balloon>(16);
+    private readonly List<Balloon> ordered = new List<Balloon>(16);
+    private readonly RaycastHit[] visibilityHits = new RaycastHit[64];
     private RoundController round;
     private BalloonSpawner spawner;
     private Vector3 burstOrigin;
@@ -54,32 +56,61 @@ public sealed class RainbowChain : MonoBehaviour
         if (!IsSelected || !RoundController.IsPlaying || RoundController.IsPaused ||
             primary == null || primary.EventId < 0 || spawner == null || !charge.TryConsume()) return;
 
-        burstOrigin = primary.transform.position;
         LastNeighborCount = 0;
-        candidates.Clear();
-        double now = round.SongTimeSeconds;
-        foreach (Balloon target in spawner.ActiveBalloons)
-        {
-            if (target == primary || target == null || !target.CanReceiveChain(now)) continue;
-            if ((target.transform.position - burstOrigin).sqrMagnitude <= Radius * Radius)
-                candidates.Add(target);
-        }
-        candidates.Sort(CompareNearest);
+        SelectTargets(primary, candidates);
         foreach (Balloon target in candidates)
         {
-            if (LastNeighborCount == MaximumNeighbors) break;
-            if (target == null || !target.CanReceiveChain(now)) continue;
-            Vector3 destination = target.transform.position;
-            // Primary colliders are disabled before this callback. Another balloon can
-            // block a farther one until it is resolved; walls always block the burst.
-            if (Physics.Linecast(burstOrigin, destination, out RaycastHit obstruction,
-                Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore) &&
-                obstruction.collider.GetComponentInParent<Balloon>() != target) continue;
+            if (target == null || !target.CanReceiveChain(round.SongTimeSeconds)) continue;
             target.HitFromChain();
             LastNeighborCount++;
         }
         flashRemaining = 1.4f;
         candidates.Clear();
+    }
+
+    public int GetPreviewTargets(Balloon primary, List<Balloon> result)
+    {
+        result.Clear();
+        if (!IsSelected || !IsReady || !RoundController.IsPlaying || RoundController.IsPaused ||
+            primary == null || round == null || spawner == null || !primary.CanReceiveChain(round.SongTimeSeconds)) return 0;
+        SelectTargets(primary, result);
+        return result.Count;
+    }
+
+    private void SelectTargets(Balloon primary, List<Balloon> result)
+    {
+        result.Clear();
+        ordered.Clear();
+        burstOrigin = primary.transform.position;
+        double now = round.SongTimeSeconds;
+        foreach (Balloon target in spawner.ActiveBalloons)
+        {
+            if (target == primary || target == null || !target.CanReceiveChain(now)) continue;
+            if ((target.transform.position - burstOrigin).sqrMagnitude <= Radius * Radius)
+                ordered.Add(target);
+        }
+        ordered.Sort(CompareNearest);
+        foreach (Balloon target in ordered)
+        {
+            if (result.Count == MaximumNeighbors) break;
+            if (VisibleAfterSelected(primary, target, result)) result.Add(target);
+        }
+        ordered.Clear();
+    }
+
+    private bool VisibleAfterSelected(Balloon primary, Balloon target, List<Balloon> selected)
+    {
+        Vector3 delta = target.transform.position - burstOrigin;
+        int count = Physics.RaycastNonAlloc(burstOrigin, delta.normalized, visibilityHits, delta.magnitude,
+            Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+        if (count == visibilityHits.Length) return false; // Conservative on unexpected collider congestion.
+        for (int index = 0; index < count; index++)
+        {
+            Balloon hit = visibilityHits[index].collider.GetComponentInParent<Balloon>();
+            if (hit == primary || hit == target || (hit != null && selected.Contains(hit))) continue;
+            return false;
+        }
+        return true;
     }
 
     private int CompareNearest(Balloon left, Balloon right)

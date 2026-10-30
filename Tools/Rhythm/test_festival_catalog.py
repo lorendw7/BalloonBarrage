@@ -40,7 +40,7 @@ class FestivalCatalogTests(unittest.TestCase):
     def test_demos_and_answers_are_disjoint_from_normal_events(self):
         for profile in self.profiles:
             chart = self.chart(profile)
-            self.assertEqual(len(chart["demonstrations"]), 1)
+            self.assertEqual(len(chart["demonstrations"]), 2 if profile["trackId"].endswith("-showcase-v3") else 1)
             demo = chart["demonstrations"][0]
             answer = [e for e in chart["events"] if "answerIndex" in e]
             self.assertEqual(len(answer), 3)
@@ -74,6 +74,24 @@ class FestivalCatalogTests(unittest.TestCase):
             self.assertLessEqual(peak, 16, profile["title"])
             self.assertEqual(peak, chart["estimatedPeakActiveWithoutHits"])
             self.assertTrue(all(e["authoredPlacement"] and -2 <= e["placementSlot"] <= 2 for e in events))
+
+    def test_showcase_preserves_time_count_and_limits_features_to_one_profile(self):
+        profiles = [p for p in self.profiles if p["trackId"].endswith("-showcase-v3")]
+        self.assertEqual(len(profiles), 1)
+        chart = self.chart(profiles[0])
+        original = festival.read_json(festival.DATA / "stepmania-goin-under-beginner-festival.json")
+        self.assertEqual([(e["id"], e["timeSeconds"]) for e in chart["events"]],
+                         [(e["id"], e["timeSeconds"]) for e in original["events"]])
+        mirror = chart["demonstrations"][1]
+        self.assertEqual(mirror["answerSlots"], list(reversed(mirror["slots"])))
+        self.assertTrue(mirror["keepAnswerGuide"])
+        self.assertEqual(mirror["answerEventIds"], [15, 16, 17])
+        moving = [e for e in chart["events"] if e.get("trajectory")]
+        self.assertEqual(len(moving), 8)
+        self.assertEqual({e["trajectory"] for e in moving}, {1, 2})
+        self.assertTrue(all(e["motionStartSeconds"] < e["motionEndSeconds"] and e["motionPeriodSeconds"] > 0 for e in moving))
+        self.assertEqual(chart["finale"]["eventIds"], [42, 43, 44])
+        self.assertEqual([e["id"] for e in chart["events"] if e.get("finaleAccent")], [44])
 
     def test_density_estimate_uses_production_prefab_expiry_and_scene_capacity(self):
         prefab = (festival.ROOT / "Assets/StudioArtPack/BalloonColors/Prefabs/PlayableBalloon_ThreeColors.prefab").read_text()

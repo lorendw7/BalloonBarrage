@@ -4,14 +4,14 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
-The creator subsequently authorized direct implementation of an optional rainbow-chain ruleset after its scope was explained. [Rainbow chain](GAME_DESIGN.md#optional-rainbow-chain--source-candidate) owns its rules. This source trial is separate from the published demo.11 packages: Classic remains the default, chain records have a distinct identity, and no new desktop release or website download is implied. Postcards/export remain deferred. Verify the bounded burst, charge order, ordinary-only secondary rewards, pause/results/Retry, record isolation and three-language selector before considering another package.
+The creator explicitly authorized implementing the four [showcase additions](GAME_DESIGN.md#goin-under-festival-showcase--v3), testing them, packaging Windows/macOS candidates and pushing main. Deliver the bounded Goin' Under Festival mirror, motion phrase and finale, plus the shared-planner Rainbow chain preview. Preserve all original event times/audio and the nineteen other profiles, isolate showcase records, then verify source behavior and exact packages. Keep packages/evidence immutable and remove recoverable temporary build files after verification. Published demo.11 downloads remain separate until a new publication is requested. Postcards/export and the paint ribbon remain deferred.
 
 The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
 
 | Current work | Completion boundary |
 |---|---|
-| Demo.11 dual-platform relay candidates | Independent clean-source builds, immutable ZIPs, per-file/provenance/license checks, a natural Windows package round, evidence-labelled limits and prerelease publication |
-| Trilingual official website | Discover published demo.11 platform downloads, describe the included relay and preserve the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館) |
+| Demo.12 four-interaction candidates | Independent clean-source Windows/macOS builds, immutable ZIPs, exact per-file/provenance/license checks, Windows package observations and clearly labelled remaining Mac/human acceptance |
+| Trilingual official website | Continue presenting published demo.11 downloads and the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館); a new public download needs a separate release |
 | Local disk reclamation | Remove only verified recoverable extractions or reproducible build output; preserve release archives, checksums, evidence, source, asset GUIDs, notices and music originals |
 
 Unity checks, exact-package observations, screenshots and remaining human/device checks belong to [Validation](../Project/VALIDATION.md#demo11-tricolor-relay-release--october-30). Keep real-Mac, native keyboard/focus, sustained-spray and venue acceptance distinct from the completed checks.

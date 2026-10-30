@@ -56,6 +56,17 @@ public class PlayerShooter : MonoBehaviour
     private bool waitingForFireRelease = true;
     private bool hasInputFocus;
     private bool applicationSuspended;
+    private bool aimValid;
+    private Vector3 lastAimDirection;
+
+    public bool TryGetAimedBalloon(out Balloon target)
+    {
+        target = null;
+        if (!aimValid || !RoundController.IsPlaying || RoundController.IsPaused || muzzle == null) return false;
+        if (TryGetSprayHit(lastAimDirection, out RaycastHit hit))
+            target = hit.collider.GetComponentInParent<Balloon>();
+        return target != null;
+    }
 
     [SerializeField]
     private RoundController roundController;
@@ -340,6 +351,7 @@ public class PlayerShooter : MonoBehaviour
 
     private void CancelFireInput()
     {
+        aimValid = false;
         waitingForFireRelease = true;
         SetSprayVisual(false);
         if (shotAudioSource != null) shotAudioSource.Stop();
@@ -418,6 +430,7 @@ public class PlayerShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        aimValid = false;
         if (!hasInputFocus || applicationSuspended)
         {
             CancelFireInput();
@@ -513,6 +526,11 @@ public class PlayerShooter : MonoBehaviour
         }
 
         transform.LookAt(aimPoint);
+        if (muzzle != null)
+        {
+            lastAimDirection = (aimPoint - muzzle.position).normalized;
+            aimValid = RoundController.IsPlaying && !RoundController.IsPaused && !pointerOverUi;
+        }
 
         if (shouldSpray && muzzle != null)
         {

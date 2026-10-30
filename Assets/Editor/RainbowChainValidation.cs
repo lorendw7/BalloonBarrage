@@ -23,6 +23,7 @@ public static class RainbowChainValidation
     private static readonly Dictionary<string, int?> preferences = new Dictionary<string, int?>();
     private static GameObject blocker;
     private static int pausedScore;
+    private static Balloon[] previewFixture;
 
     static RainbowChainValidation()
     {
@@ -116,7 +117,45 @@ public static class RainbowChainValidation
                 Balloon right = Spawn(5, new Vector3(.9f, 0f, 8f));
                 Balloon extra = Spawn(6, new Vector3(0f, 1.4f, 8f));
                 Balloon far = Spawn(7, new Vector3(0f, -2.2f, 8f));
+                previewFixture = new[] { primary, left, right, extra, far };
+                waitUntil = EditorApplication.timeSinceStartup + .1;
+                stage = 19;
+                return;
+            }
+            if (stage == 19)
+            {
+                Balloon primary = previewFixture[0], left = previewFixture[1], right = previewFixture[2],
+                    extra = previewFixture[3], far = previewFixture[4];
                 Physics.SyncTransforms();
+                var predicted = new List<Balloon>();
+                Require(chain.GetPreviewTargets(primary, predicted) == 2 && predicted.Contains(left) && predicted.Contains(right),
+                    "Preview planner differs from the expected nearest two.");
+                Require(chain.IsReady && Score.Value == 30, "Preview consumed charge or scored.");
+                var preview = round.GetComponent<RainbowChainPreview>();
+                PlayerShooter shooter = Object.FindFirstObjectByType<PlayerShooter>();
+                Transform muzzle = (Transform)typeof(PlayerShooter).GetField("muzzle", Private).GetValue(shooter);
+                // Imported mesh/collider center is offset from the logical chart root.
+                Collider aimCollider = Array.Find(primary.GetComponentsInChildren<Collider>(), c => c.enabled && !c.isTrigger);
+                muzzle.position = aimCollider.bounds.center - Vector3.forward * 2f;
+                typeof(PlayerShooter).GetField("lastAimDirection", Private).SetValue(shooter, Vector3.forward);
+                typeof(PlayerShooter).GetField("aimValid", Private).SetValue(shooter, true);
+                bool foundAim = shooter.TryGetAimedBalloon(out Balloon aimed);
+                Physics.SphereCast(muzzle.position, .3f, Vector3.forward, out RaycastHit diagnostic, 30f,
+                    Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+                Require(foundAim && aimed == primary, "Preview did not use the shooter SphereCast. Hit: " +
+                    (diagnostic.collider == null ? "none" : diagnostic.collider.name) + "; target bounds " + aimCollider.bounds);
+                Call(preview, "LateUpdate");
+                Require(preview.PrimaryTarget == primary && preview.NeighborCount == 2 && preview.VisibleMarkerCount == 3,
+                    "Aim preview markers/count mismatch.");
+                var overlay = GameObject.Find("RainbowChainPreviewOverlay");
+                Require(overlay.GetComponentsInChildren<Collider>(true).Length == 0, "Preview acquired colliders.");
+                foreach (Graphic graphic in overlay.GetComponentsInChildren<Graphic>(true))
+                    Require(!graphic.raycastTarget, "Preview blocks pointer input.");
+                Capture("RainbowPreview-ja");
+                Call(shooter, "CancelFireInput");
+                Call(preview, "LateUpdate");
+                Require(preview.PrimaryTarget == null && preview.VisibleMarkerCount == 0 && chain.IsReady,
+                    "Focus cancellation did not hide preview or preserved charge incorrectly.");
                 primary.HitAt(primary.transform.position, 10);
                 Require(!left.CanReceiveChain(round.SongTimeSeconds) && !right.CanReceiveChain(round.SongTimeSeconds), "Nearest two were not resolved.");
                 Require(extra.CanReceiveChain(round.SongTimeSeconds) && far.CanReceiveChain(round.SongTimeSeconds), "Burst exceeded two targets or radius.");
@@ -291,7 +330,7 @@ public static class RainbowChainValidation
     {
         public string status, error, unityVersion, finishedUtc;
         public int assertions;
-        public string scope = "Synthetic Editor charge order, chain cap/radius/occlusion, ordinary secondary scoring, no relay recursion, pause, record isolation, three-language selection/results and Retry.";
+        public string scope = "Synthetic Editor shared aim SphereCast, read-only preview/burst parity and input cancellation, charge order, chain cap/radius/occlusion, ordinary secondary scoring, no relay recursion, pause, record isolation, three-language selection/results and Retry.";
         public string limits = "No mouse-input, natural full-song, standalone release, real-Mac, human feel/listening or venue acceptance.";
     }
 }

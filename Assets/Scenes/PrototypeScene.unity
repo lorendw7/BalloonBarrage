@@ -13404,12 +13404,12 @@ MonoBehaviour:
   menuMusic: {fileID: 43571004}
   gameMusic: {fileID: 1059022383}
   exhibitionSongs:
-  - trackId: stepmania-goin-under-beginner-festival-phrase-v2
+  - trackId: stepmania-goin-under-beginner-festival-showcase-v3
     title: Goin' Under
     artist: NegaRen
     mode: festival
     audioClip: {fileID: 8300000, guid: ca6ecad4fa0e4031ace7f3484d40651b, type: 3}
-    chartRelativePath: Rhythm/Festival20261029/stepmania-goin-under-beginner-festival.json
+    chartRelativePath: Rhythm/Festival20261029/stepmania-goin-under-beginner-festival-showcase-v3.json
     sourceCueInSeconds: 18.285714286
     sourceCueOutSeconds: 83.428571429
     roundDurationSeconds: 65.142857143

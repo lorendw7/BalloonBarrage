@@ -13,6 +13,11 @@ public class RhythmEventData
     public double timeSeconds;
     public bool authoredPlacement;
     public int placementSlot;
+    public int trajectory;
+    public double motionStartSeconds;
+    public double motionEndSeconds;
+    public double motionPeriodSeconds;
+    public bool finaleAccent;
     [System.NonSerialized] public BarragePattern pattern;
     [System.NonSerialized] public int patternStep;
     [System.NonSerialized] public double previewNotBeforeSeconds;
@@ -34,6 +39,16 @@ public class RhythmDemonstrationData
     public double stepSeconds;
     public double answerStartSeconds;
     public int[] slots;
+    public int[] answerSlots;
+    public int[] answerEventIds;
+    public bool keepAnswerGuide;
+}
+
+[Serializable]
+public class RhythmFinaleData
+{
+    public int[] eventIds;
+    public int[] slots;
 }
 
 [Serializable]
@@ -45,6 +60,7 @@ public class RhythmChartData
     public RhythmEventData[] events;
     public RhythmSectionData[] sections;
     public RhythmDemonstrationData[] demonstrations;
+    public RhythmFinaleData finale;
 }
 
 
@@ -53,6 +69,7 @@ public class RhythmChartReader : MonoBehaviour
     private RhythmChartData chart;
     public bool IsReady => chart != null && chart.events != null && chart.events.Length > 0;
     public RhythmChartData LoadedChart => chart;
+    public bool IsResolved(int eventId) => resolvedEventIds.Contains(eventId);
 
     private int nextEventIndex = 0;
 
@@ -252,6 +269,11 @@ public class RhythmChartReader : MonoBehaviour
                 authoredPlacement = sourceEvent.authoredPlacement,
                 placementSlot = Mathf.Clamp(sourceEvent.placementSlot, -2, 2) * direction,
                 pattern = pattern,
+                trajectory = sourceEvent.trajectory,
+                motionStartSeconds = sourceEvent.motionStartSeconds,
+                motionEndSeconds = sourceEvent.motionEndSeconds,
+                motionPeriodSeconds = sourceEvent.motionPeriodSeconds,
+                finaleAccent = sourceEvent.finaleAccent,
                 patternStep = shortRoundEvents.Count
             };
             // Answer targets become hittable only after the demonstration has finished.
@@ -266,12 +288,26 @@ public class RhythmChartReader : MonoBehaviour
                         double answerTime = demonstration.answerStartSeconds + index * demonstration.stepSeconds;
                         if (Math.Abs(normalizedTime - answerTime) > 0.02d) continue;
                         roundEvent.authoredPlacement = true;
-                        roundEvent.placementSlot = Mathf.Clamp(demonstration.slots[index], -2, 2);
+                        int[] answerSlots = demonstration.answerSlots != null &&
+                            demonstration.answerSlots.Length == demonstration.slots.Length
+                            ? demonstration.answerSlots : demonstration.slots;
+                        roundEvent.placementSlot = Mathf.Clamp(answerSlots[index], -2, 2);
                         roundEvent.pattern = BarragePattern.LateralSweep;
                         roundEvent.previewNotBeforeSeconds = demonstration.startSeconds +
                             demonstration.slots.Length * demonstration.stepSeconds;
                     }
                 }
+            }
+            if (sourceChart.finale != null && sourceChart.finale.eventIds != null &&
+                sourceChart.finale.slots != null)
+            {
+                for (int index = 0; index < Math.Min(sourceChart.finale.eventIds.Length, sourceChart.finale.slots.Length); index++)
+                    if (sourceChart.finale.eventIds[index] == roundEvent.id)
+                    {
+                        roundEvent.authoredPlacement = true;
+                        roundEvent.pattern = BarragePattern.LateralSweep;
+                        roundEvent.placementSlot = sourceChart.finale.slots[index];
+                    }
             }
             shortRoundEvents.Add(roundEvent);
         }

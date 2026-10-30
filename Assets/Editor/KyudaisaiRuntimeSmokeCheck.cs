@@ -313,6 +313,10 @@ public static class KyudaisaiRuntimeSmokeCheck
         foreach (Canvas canvas in canvases)
             foreach (Text label in canvas.GetComponentsInChildren<Text>(true)) label.SetAllDirty();
         Canvas.ForceUpdateCanvases();
+        // Target texture may have a different aspect from the Editor Game view.
+        // Reproject world-attached overlays after the capture camera is configured.
+        Object.FindFirstObjectByType<FestivalDemonstrationCue>()?.SendMessage("LateUpdate", SendMessageOptions.DontRequireReceiver);
+        Object.FindFirstObjectByType<RainbowChainPreview>()?.SendMessage("LateUpdate", SendMessageOptions.DontRequireReceiver);
         camera.Render();
         RenderTexture.active = target;
         Texture2D capture = new Texture2D(width, height, TextureFormat.RGB24, false);

@@ -17,12 +17,14 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
     public bool IsResponding { get; private set; }
     public int ActiveStep { get; private set; } = -1;
     public int VisibleMarkerCount { get; private set; }
+    public bool IsMirrored { get; private set; }
+    public bool IsFinale { get; private set; }
 
     private GameObject uiRoot;
-    private RectTransform canvasRect;
     private Text instruction;
     private readonly RectTransform[] markers = new RectTransform[3];
     private readonly Image[][] markerStrokes = new Image[3][];
+    private readonly Text[] markerNumbers = new Text[3];
 
     private void LateUpdate()
     {
@@ -30,6 +32,8 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
         IsResponding = false;
         ActiveStep = -1;
         VisibleMarkerCount = 0;
+        IsMirrored = false;
+        IsFinale = false;
         if (!RoundController.IsPlaying || RoundController.IsPaused || roundController == null ||
             chartReader == null || balloonSpawner == null || Camera.main == null)
         {
@@ -55,44 +59,97 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
                 }
             }
         }
-        if (active == null) { Hide(); return; }
+        if (active == null)
+        {
+            if (chart != null && chart.finale != null && chart.finale.eventIds != null &&
+                chart.finale.eventIds.Length > 0)
+            {
+                RhythmEventData first = System.Array.Find(chart.events, e => e.id == chart.finale.eventIds[0]);
+                if (first != null && now >= chartReader.GetSpawnTime(first))
+                { ShowFinale(chart); return; }
+            }
+            Hide(); return;
+        }
 
         EnsureUi();
         uiRoot.SetActive(true);
         double watchEnd = active.startSeconds + active.slots.Length * active.stepSeconds;
         IsDemonstrating = now < watchEnd;
         IsResponding = !IsDemonstrating;
+        IsMirrored = active.answerSlots != null && active.answerSlots.Length == active.slots.Length;
         ActiveStep = IsDemonstrating
             ? Mathf.Clamp((int)((now - active.startSeconds) / active.stepSeconds), 0, active.slots.Length - 1)
             : -1;
 
-        instruction.text = LocalizationManager.GetText(IsDemonstrating
-            ? "cue.demonstration.watch" : "cue.demonstration.respond");
+        instruction.text = LocalizationManager.GetText(IsMirrored
+            ? (IsDemonstrating ? "cue.mirror.watch" : "cue.mirror.respond")
+            : (IsDemonstrating ? "cue.demonstration.watch" : "cue.demonstration.respond"));
         LocalizedText localizedTemplate = textTemplate != null ? textTemplate.GetComponent<LocalizedText>() : null;
         if (localizedTemplate != null) instruction.font = localizedTemplate.CurrentFont;
 
         int count = Mathf.Min(markers.Length, active.slots.Length);
         for (int index = 0; index < markers.Length; index++)
         {
-            bool visible = IsDemonstrating && index < count;
+            int eventId = active.answerEventIds != null && index < active.answerEventIds.Length
+                ? active.answerEventIds[index] : -1;
+            bool visible = index < count && (IsDemonstrating || active.keepAnswerGuide) &&
+                (IsDemonstrating || eventId < 0 || !chartReader.IsResolved(eventId));
             markers[index].gameObject.SetActive(visible);
             if (!visible) continue;
-            Vector3 world = balloonSpawner.GetPatternPosition(
-                BarragePattern.LateralSweep, Mathf.Clamp(active.slots[index], -2, 2), index);
-            Vector3 screen = Camera.main.WorldToScreenPoint(world);
-            if (screen.z <= 0f)
+            int slot = !IsDemonstrating && IsMirrored ? active.answerSlots[index] : active.slots[index];
+            Vector3 world = TargetPosition(eventId, slot, index);
+            Vector3 viewport = Camera.main.WorldToViewportPoint(world);
+            if (viewport.z <= 0f)
             {
                 markers[index].gameObject.SetActive(false);
                 continue;
             }
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screen, null, out Vector2 local);
-            markers[index].anchoredPosition = local;
+            markers[index].anchorMin = markers[index].anchorMax = new Vector2(viewport.x, viewport.y);
+            markers[index].anchoredPosition = Vector2.zero;
             bool highlighted = index == ActiveStep;
             markers[index].localScale = Vector3.one * (highlighted ? 1.15f : 1f);
             Color color = highlighted ? new Color(1f, 0.9f, 0.45f, 1f) : new Color(0.9f, 1f, 0.96f, 0.34f);
             foreach (Image stroke in markerStrokes[index]) stroke.color = color;
+            markerNumbers[index].font = instruction.font;
+            markerNumbers[index].color = color;
             VisibleMarkerCount++;
         }
+    }
+
+    private Vector3 TargetPosition(int eventId, int slot, int step)
+    {
+        foreach (Balloon balloon in balloonSpawner.ActiveBalloons)
+            if (balloon != null && balloon.EventId == eventId && balloon.gameObject.activeSelf)
+                return balloon.GuidePosition;
+        return balloonSpawner.GetPatternPosition(BarragePattern.LateralSweep, Mathf.Clamp(slot, -2, 2), step);
+    }
+
+    private void ShowFinale(RhythmChartData chart)
+    {
+        EnsureUi();
+        uiRoot.SetActive(true);
+        IsFinale = true;
+        instruction.text = LocalizationManager.GetText("cue.finale");
+        LocalizedText template = textTemplate != null ? textTemplate.GetComponent<LocalizedText>() : null;
+        if (template != null) instruction.font = template.CurrentFont;
+        for (int index = 0; index < markers.Length; index++)
+        {
+            bool visible = index < chart.finale.eventIds.Length && chart.finale.slots != null &&
+                index < chart.finale.slots.Length && !chartReader.IsResolved(chart.finale.eventIds[index]);
+            markers[index].gameObject.SetActive(visible);
+            if (!visible) continue;
+            Vector3 viewport = Camera.main.WorldToViewportPoint(TargetPosition(
+                chart.finale.eventIds[index], chart.finale.slots[index], index));
+            if (viewport.z <= 0f) { markers[index].gameObject.SetActive(false); continue; }
+            markers[index].anchorMin = markers[index].anchorMax = new Vector2(viewport.x, viewport.y);
+            markers[index].anchoredPosition = Vector2.zero;
+            markers[index].localScale = Vector3.one;
+            foreach (Image stroke in markerStrokes[index]) stroke.color = new Color(1f, .9f, .45f, .45f);
+            markerNumbers[index].font = instruction.font;
+            markerNumbers[index].color = new Color(1f, .9f, .45f, .65f);
+            VisibleMarkerCount++;
+        }
+        if (VisibleMarkerCount == 0) { IsFinale = false; Hide(); }
     }
 
     private void EnsureUi()
@@ -110,7 +167,6 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
         CanvasGroup group = uiRoot.GetComponent<CanvasGroup>();
         group.interactable = false;
         group.blocksRaycasts = false;
-        canvasRect = uiRoot.GetComponent<RectTransform>();
 
         GameObject label = new GameObject("DemonstrationInstruction", typeof(RectTransform), typeof(Text), typeof(Shadow));
         label.transform.SetParent(uiRoot.transform, false);
@@ -132,6 +188,16 @@ public sealed class FestivalDemonstrationCue : MonoBehaviour
             markers[index] = marker.GetComponent<RectTransform>();
             markers[index].sizeDelta = new Vector2(38f, 38f);
             markers[index].localRotation = Quaternion.Euler(0f, 0f, 45f);
+            var number = new GameObject("Order", typeof(RectTransform), typeof(Text));
+            number.transform.SetParent(marker.transform, false);
+            markerNumbers[index] = number.GetComponent<Text>();
+            markerNumbers[index].text = (index + 1).ToString();
+            markerNumbers[index].font = instruction.font;
+            markerNumbers[index].fontSize = 18;
+            markerNumbers[index].alignment = TextAnchor.MiddleCenter;
+            markerNumbers[index].raycastTarget = false;
+            markerNumbers[index].rectTransform.sizeDelta = new Vector2(36f, 36f);
+            markerNumbers[index].rectTransform.localRotation = Quaternion.Euler(0f, 0f, -45f);
             markerStrokes[index] = new Image[4];
             for (int side = 0; side < 4; side++)
             {

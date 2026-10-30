@@ -67,7 +67,7 @@ public static class FestivalRuntimeValidation
     [Serializable] private sealed class Demonstration
     {
         public double startSeconds, stepSeconds, answerStartSeconds;
-        public int[] slots;
+        public int[] slots, answerSlots;
     }
     [Serializable] private sealed class Evidence
     {
@@ -307,7 +307,9 @@ public static class FestivalRuntimeValidation
                 {
                     double expectedTime = profile.sourceCueInSeconds + demo.answerStartSeconds + s * demo.stepSeconds;
                     Event answer = included.SingleOrDefault(e => Math.Abs(e.timeSeconds - expectedTime) < .002);
-                    Require(answer != null && answer.authoredPlacement && answer.placementSlot == demo.slots[s], "Missing/mismatched answer target.");
+                    int expectedSlot = demo.answerSlots != null && demo.answerSlots.Length == demo.slots.Length
+                        ? demo.answerSlots[s] : demo.slots[s];
+                    Require(answer != null && answer.authoredPlacement && answer.placementSlot == expectedSlot, "Missing/mismatched answer target.");
                 }
             }
             Dropdown list = GameObject.Find("SongList").GetComponent<Dropdown>();

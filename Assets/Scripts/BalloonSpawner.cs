@@ -86,6 +86,8 @@ public class BalloonSpawner : MonoBehaviour
         );
         Balloon balloon = newBalloon.GetComponent<Balloon>();
         balloon.InitializeRhythm( eventData );
+        if (eventData.trajectory != 0)
+            newBalloon.AddComponent<MelodyTrajectory>().Configure(eventData, this);
         Debug.Log($"Initialized balloon {balloon.EventId}; beat at {balloon.EventTimeSeconds:F3}s.");
 
         activeBalloons.Add(balloon);
@@ -132,7 +134,15 @@ public class BalloonSpawner : MonoBehaviour
 
     private bool IsPositionOpen(Vector3 candidate)
     {
-        return !activeBalloons.Exists(other => other != null &&
+        return CanMoveTarget(null, candidate);
+    }
+
+    public Vector3 ClampTargetPosition(Vector3 candidate) => new Vector3(
+        Mathf.Clamp(candidate.x, xRange.x, xRange.y), Mathf.Clamp(candidate.y, yRange.x, yRange.y), zPosition);
+
+    public bool CanMoveTarget(Balloon target, Vector3 candidate)
+    {
+        return !activeBalloons.Exists(other => other != target && other != null && other.gameObject.activeSelf &&
             (other.transform.position - candidate).sqrMagnitude < 0.75f * 0.75f);
     }
 

@@ -165,6 +165,9 @@ public class RoundController : MonoBehaviour
         if (rainbowChain == null) rainbowChain = gameObject.AddComponent<RainbowChain>();
         rainbowChain.Configure(this);
         rainbowChain.ResetRound();
+        RainbowChainPreview preview = GetComponent<RainbowChainPreview>();
+        if (preview == null) preview = gameObject.AddComponent<RainbowChainPreview>();
+        preview.Configure(rainbowChain);
         colorRelay = GetComponent<TricolorRelay>();
         if (colorRelay == null) colorRelay = gameObject.AddComponent<TricolorRelay>();
         colorRelay.ResetRound();
@@ -392,6 +395,8 @@ public class RoundController : MonoBehaviour
 
     private static string GetBestScoreKey(string trackId)
     {
+        if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-showcase-v3", System.StringComparison.Ordinal))
+            return $"BestScore.{trackId}.Rhythm.Showcase.v3";
         if (!string.IsNullOrEmpty(trackId) && trackId.EndsWith("-phrase-v2", System.StringComparison.Ordinal))
             return $"BestScore.{trackId}.Rhythm.Phrase.v2";
         return $"BestScore.{trackId}.Kyudaisai.Short.v1";
@@ -477,8 +482,11 @@ public class RoundController : MonoBehaviour
 
         Text textTemplate = FindDescendant(startScreen.transform, "ControlsText").GetComponent<Text>();
         songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 205f, 38f, 25);
-        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -45f, 60f, 18);
-        rulesDescription = CreateSelectionLabel(textTemplate, "RulesDescription", -110f, 58f, 17);
+        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -45f, 76f, 17);
+        songSelectionDetails.resizeTextForBestFit = true;
+        songSelectionDetails.resizeTextMinSize = 14;
+        songSelectionDetails.resizeTextMaxSize = 17;
+        rulesDescription = CreateSelectionLabel(textTemplate, "RulesDescription", -118f, 58f, 17);
         rulesDescription.resizeTextForBestFit = true;
         rulesDescription.resizeTextMinSize = 14;
         rulesDescription.resizeTextMaxSize = 17;
@@ -640,6 +648,8 @@ public class RoundController : MonoBehaviour
         rulesDescription.text = LocalizationManager.GetText(RainbowChainEnabled ? "rules.chainHint" : "rules.classicHint");
         songSelectionDetails.text = $"{SelectedSong.artist}  ·  {SelectedSong.roundDurationSeconds:0} sec\n" +
             LocalizationManager.GetText("song.preview");
+        if (SelectedSong.trackId.EndsWith("-showcase-v3", System.StringComparison.Ordinal))
+            songSelectionDetails.text += "\n" + LocalizationManager.GetText("showcase.tag");
         songConfirmButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.play");
         songBackButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.back");
     }

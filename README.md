@@ -19,7 +19,7 @@ The revised scene offers Festival (ten rounds of about 64–65 seconds) and Stan
 
 ## Current work and evidence
 
-The current source also adds optional [Rainbow chain rules](Docs/Design/GAME_DESIGN.md#optional-rainbow-chain--source-candidate): a completed tricolor relay banks one burst for the next direct balloon hit, resolving at most two nearby visible targets for ordinary points. Classic stays available with unchanged records; chain records are separate. This addition is **not included in the published demo.11 packages**. Artwork postcards/export remain deferred.
+The current source adds optional [Rainbow chain rules](Docs/Design/GAME_DESIGN.md#optional-rainbow-chain--source-candidate), a read-only neighbor preview, and a [Goin' Under Festival showcase](Docs/Design/GAME_DESIGN.md#goin-under-festival-showcase--v3) with middle-song mirror echo, one short arc/wave phrase and a final multicolor flourish. The showcase has a new chart/record identity; the other nineteen profiles retain their data. These additions are **not included in the published demo.11 packages**. Artwork postcards/export remain deferred. [Validation](Docs/Project/VALIDATION.md) distinguishes automated checks, package evidence and remaining human/device acceptance.
 
 The October 30 demo.11 candidates include an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. Demo.10 remains the earlier candidate without the relay. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
 

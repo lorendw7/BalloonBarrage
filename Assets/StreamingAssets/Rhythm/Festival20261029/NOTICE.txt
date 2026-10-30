@@ -24,3 +24,7 @@ Duration correction: Mecha-Tribe's final Vorbis EOS trims the playable recording
 to 105 seconds; historical maximum-granule metadata counted extra padding.
 See duration-audit.json. Original audio bytes and source charts remain unchanged.
 Demonstration markers do not score; long-note paint ribbon is not implemented.
+October 30 showcase v3: only Goin' Under / Festival adds a mirrored middle
+answer, one bounded arc/wave phrase and a cosmetic three-target finale.
+Its v2 derivative is preserved; event timestamps, count and original audio
+are unchanged. The showcase has a distinct profile/record identity.
