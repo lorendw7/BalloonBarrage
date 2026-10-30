@@ -4,6 +4,8 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
+The October 30 planning request authorizes documenting the selected open-world direction, updating the official website and pushing main. It does **not** authorize implementing open-world gameplay. The selected topology, encounter structure and first AI role are in [Game design](GAME_DESIGN.md#open-world-direction--planning-only); the [open-world track](#open-world-development-track--planning-only) below is the future learner/assistant development sequence. Exhibition and package work retain their existing evidence boundaries.
+
 The creator explicitly authorized implementing the four [showcase additions](GAME_DESIGN.md#goin-under-festival-showcase--v3), testing them, packaging Windows/macOS candidates and pushing main. The bounded Goin' Under Festival mirror, motion phrase and finale, plus the shared-planner Rainbow chain preview, are implemented and checked. Source `ee2ef85` is pushed to main, and both local demo.12 candidates passed builds and exact ZIP checks. Windows interface acceptance is pending because the desktop was locked; real-Mac acceptance is also pending. Preserve all original event times/audio and the nineteen other profiles, isolate showcase records, then verify source behavior and exact packages. Keep packages/evidence immutable and remove recoverable temporary build files after verification. Published demo.11 downloads remain separate until a new publication is requested. Postcards/export and the paint ribbon remain deferred.
 
 The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
@@ -101,7 +103,24 @@ Begin after preserving the exhibition package and any observations. Select one g
 | M5 — local co-op | Stable solo loop; P1 mouse plus explicitly paired P2 gamepad, Xbox first | Independent reticles/release guards, single target resolution, shared clock and reliable reconnect; Beitong follows separately |
 | M6 — wider distribution | Real-Mac access and evidence of demand | Launch/signing/notarization and broader hardware support each have tested packages and stated limits |
 
-Co-op, movement, new paint rendering and roguelite upgrades are separate decisions. Study reference games at the level of player problems and create original answers, following the [originality boundary](GAME_DESIGN.md#inspiration-and-originality-boundary).
+The selected open-world track below refines M4 into small teaching steps. M0 review and demonstrated comfort problems take priority; M1–M3 are not automatic prerequisites when unrelated to the first graybox question. Co-op, new paint rendering and roguelite upgrades remain separate decisions. Study references at the level of player problems and create original answers, following the [originality boundary](GAME_DESIGN.md#inspiration-and-originality-boundary).
+
+## Open-world development track — planning only
+
+No release date or calendar estimate is committed. The three districts are a long-term design envelope, not a commitment to build them together. [Game design](GAME_DESIGN.md#open-world-direction--planning-only) owns the selected central plaza, fixed-location challenges and rival AI rules. Scope changes and additional choices must remain explicit.
+
+| Gate | Smallest deliverable and dependency | Evidence required before expansion |
+|---|---|---|
+| OW0 — decide and sketch | Preserve the studio baseline; choose camera, rival temperament and reward emphasis; sketch plaza → first stage → return | Creator agrees on one route and first question. Website is labelled planning; no claim of a playable world |
+| OW1 — walk comfortably | After OW0: separate graybox with plaza edge, one path and one stage; learner writes one movement/camera increment | Observe navigation, camera collision, motion comfort, return-path clarity and pause/focus behavior; record human observations separately from automated checks |
+| OW2 — enter and leave one song | After OW1: explicitly enter a stable stage view using one existing profile; return after results or exit | Audio ownership/clock, input handoff, Retry, exit, records and target cleanup verified; free exploration never starts a chart unintentionally |
+| OW3 — one readable rival | After OW2: telegraph one target, bounded aim/fire/recovery, then one complete rival encounter | Single target consumption, simultaneous-hit rule, line of sight and reaction delay checked; player can explain what the rival will do; no change to solo records/rules |
+| OW4 — one complete visit | After OW3: plaza → pier stage → result → one proposed decoration → plaza | Observe a first-time player completing the 5–8-minute target visit without forced retry; measure actual time, comfort, target visibility and performance on a named machine |
+| OW5 — expand only what works | After OW4 acceptance: one additional district at a time, using the established encounter contract | Each district adds a distinct musical or spatial experience; measure loaded scene, paint, targets and audio costs before adding streaming, vertical traversal or further AI |
+
+The learner owns future gameplay code. The assistant prepares a small exercise, documentation, original assets or tools as needed, then reviews and verifies the saved result. Direct gameplay implementation needs an explicit request. Persistent world saves, procedural maps, cloud-generated dialogue/music, online multiplayer, several simultaneous rivals, damage systems and a seamless city are outside the first slice.
+
+If walking and aiming compete for attention, keep the fixed stage camera. If rivalry undermines the relaxing experience, offer the same stage solo and reduce target contention. If the first route is confusing, shorten it before building a second district. Keep measured runtime/package evidence in [Validation](../Project/VALIDATION.md), separate from site checks and proposed acceptance criteria.
 
 ## Change and cut rules
 

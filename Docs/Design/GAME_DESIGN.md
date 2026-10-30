@@ -18,7 +18,55 @@ Do not copy Splatoon characters, names, UI, maps, weapon silhouettes, sound, mus
 
 After Kyudaisai, design study may compare multiple games, including Splatoon, at the level of abstract mechanics, interaction clarity, pacing, camera language and environmental feedback. Each lesson must identify what player problem a reference solves, then create and test a BalloonBarrage-specific answer with original code, layouts, art and audio. A reference is evidence for a design question, not permission to reproduce its content or combine feature lists without a player-experience reason.
 
-An explorable 3D map is a post-festival teaching direction, not an exhibition promise. The first experiment should live in a separate graybox scene and preserve the accepted fixed-camera complete-song mode as a working baseline. It may investigate movement, camera control, landmarks, navigable studio spaces and paintable surfaces one system at a time. It should advance only if testing shows that exploration supports the relaxing rhythm-and-paint identity without making aiming, musical timing, comfort or performance less readable.
+The creator selected a post-festival open-world direction on October 30: a central plaza with music districts, free exploration with opt-in fixed-location music challenges, and rival AI as the first AI role. The [open-world design](#open-world-direction--planning-only) defines this branch. It is planning only; preserve the accepted studio mode and begin in a separate graybox scene.
+
+## Open-world direction — planning only
+
+**Selected by the creator on October 30, 2026:** central plaza plus music districts; free exploration plus fixed-location music challenges; rival AI that patrols, competes for balloons and participates in musical duels. The website presents these decisions at [Open-world plans](https://lorendw7.github.io/BalloonBarrage/en/open-world/). No open-world scene, movement, rivals, unlocks or new playable package is delivered by this planning update. The [roadmap](ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. Future core gameplay remains learner-written, one small step at a time, unless direct implementation is explicitly requested.
+
+### Player promise and loop
+
+Explore a bright, handmade festival town, follow balloon landmarks to a small music stage, choose a friendly rival challenge, then carry a colorful memory back to the plaza. Keep the studio's warm materials and tactile balloon pops while exploring bolder color blocks, playful street furniture and readable silhouettes. These are original art-direction proposals, not copied reference maps or assets.
+
+Proposed loop: **explore → discover a stage → explicitly start a music challenge → pop and paint with an AI rival → see results → decorate or explore again**. Exploration has no accuracy grade or time pressure. Entering a district does not automatically start a scoring chart. First prototype: lock into a comfortable stage view after confirmation, reuse one existing song profile unchanged, and return control after results. Ambient music fades out before the chart starts; only the chart's existing clock judges notes. Returning to exploration never carries an unfinished scoring event across modes.
+
+Unrestricted-duration held fire, finite hit cadence and optional on-beat rewards remain the baseline. Missing a beat does not block movement, remove access to a district or force a restart. Rival results are separate from existing solo records. Exploration paint persistence across scenes or application restarts is an undecided storage feature; do not promise it from the current round-persistent studio paint.
+
+### Map concept: one plaza, three distinct districts
+
+The topology is a hub with three short return loops, not a seamless city. Every district entrance should show the plaza's balloon tower or another unambiguous return sign. Color is paired with shapes, signs and distinct silhouettes. Quiet walking paths sit outside challenge sightlines. The first slice includes only the plaza edge, one route and one stage; the rest of the map is a proposal, not production scope.
+
+| Place | Navigation and music role | Balloon interaction proposal | Expansion boundary |
+|---|---|---|---|
+| Balloon Plaza | Safe arrival, recognizable balloon tower, route signs, practice wall and studio entry | Non-scoring practice balloons and a display for earned decorations | No active rival contest in the arrival area |
+| Percussion Pier | Broad, flat first route; drum-canopy landmark; spacious percussion phrases | Clearly telegraphed targets shared with one rival on a small stage | First graybox candidate; no water traversal or new physics required |
+| Melody Garden | Sheltered loop, arch-shaped landmark, quieter melodic call-and-response | Balloon patterns illuminate authored garden decorations | Later content study after the first stage succeeds |
+| Syncopation Rooftops | Stepped silhouettes and distant stage; stronger rhythmic contrast | Optional lift-balloon spectacle and trickier authored patterns | Vertical movement, lifts and camera occlusion are separate experiments |
+
+Diagram: Plaza ↔ Pier; Plaza ↔ Garden; Plaza ↔ Rooftops. Optional cross-district shortcuts come later. Initial design targets, not measured results: a roughly 30–60-second walk to the first stage and a 5–8-minute first visit including practice, one challenge, results and return. Scale the map by observed travel comfort rather than kilometres or collectible count. Keep combat targets against calm backgrounds, avoid simultaneous rival threats behind the camera, and provide a direct return path.
+
+### How balloons, rhythm and AI connect
+
+1. **Balloons make the world readable.** Landmark clusters identify routes; stage balloons are the actual chart targets; decoration balloons have a separate appearance and never create competitive rewards.
+2. **Rhythm structures the encounter.** Authored phrases determine previews and scoring targets. A good musical hit adds the existing optional bonus and a bounded celebration; free spraying stays valid. Decorative lights may follow the beat without becoming extra notes.
+3. **Rival AI creates a readable choice.** Before contesting a target, the rival turns, aims and displays an intent marker. The player can contest that target or choose another visible balloon. The rival must occasionally miss and wait through authored recovery windows; it cannot fire instantly on spawn, act through walls or read future player input.
+4. **The result changes presentation, not access.** Proposed rewards are stage decorations, color arrangements or musical ambience. Completion can unlock cosmetic variants; an AI loss or low accuracy cannot lock the only exploration route. Whether any progression is saved is a later explicit design decision.
+
+### Rival AI: bounded and offline first
+
+Start with one original rival on one stage. Proposed states: patrol → notice an invitation → show target intent → aim → fire → recover → return. A lightweight state machine or behavior tree is sufficient for the first study; no cloud model, live generated music, chat service or machine learning is required. Patrols outside a stage are presentation only; challenges begin through player consent.
+
+Use the same declared chart and one authoritative target-resolution rule. A balloon can be consumed once. Log target ownership, shot time and resolution; test simultaneous hits explicitly. Define reaction delay, aim error, line-of-sight checks and recovery before tuning difficulty. Rival scoring is a separate experimental mode and must not silently replace the existing 10/20 solo rules. In the first study, disable damage, knockback, hard failure and adaptive difficulty. Later adaptation may select the next encounter tier with the player's consent; it must not change a running chart or secretly weaken the player's input.
+
+### Next choices — not yet selected
+
+| Decision | A | B | C |
+|---|---|---|---|
+| Rival temperament | Playful competitor: generous telegraphs and frequent openings; recommended first | Balanced duelist: denser contest for shared targets | Mischievous troupe: multiple rivals and environmental interruptions; high scope |
+| Exploration camera | Third-person walking, stable stage camera; recommended study | First-person walking and stage aiming | Elevated/isometric exploration with separate stage view |
+| Reward emphasis | Restore and decorate the plaza; recommended | Collect musical layers for the town | Unlock movement routes and traversal toys; highest dependency cost |
+
+Recommendations are discussion defaults, not accepted features. The initial learner exercise is a paper route walkthrough and one movement/camera question; the assistant reviews the learner's saved code before a next gameplay increment. Do not implement the entire map or AI from this plan.
 
 ## Continuous-fire contract
 

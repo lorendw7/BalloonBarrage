@@ -1,5 +1,6 @@
 import { languages, strings } from "../src/strings.mjs";
 import { repositoryUrl } from "./releases.mjs";
+import { worldStrings } from "../src/world-strings.mjs";
 
 export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
@@ -36,6 +37,7 @@ export function renderPage(template, locale, release, staticFiles = {}) {
     ? `${text.downloadPreviewLabel} · ${snapshots.windows.tag}${snapshots.macos.available ? ` · macOS ${snapshots.macos.tag}` : ""}`
     : (snapshots.windows.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
   const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanels,
+    worldUrl: `${route(locale)}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),
     styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/festival-share-20261029.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {

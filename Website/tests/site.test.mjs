@@ -8,6 +8,8 @@ import { createHash } from "node:crypto";
 import { languages, strings } from "../src/strings.mjs";
 import { getReleaseSnapshot, selectDownload, selectDownloads, repositoryUrl } from "../scripts/releases.mjs";
 import { renderPage } from "../scripts/render.mjs";
+import { renderWorld } from "../scripts/render-world.mjs";
+import { worldStrings } from "../src/world-strings.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
 const template = await readFile(path.join(site, "src/index.html"), "utf8");
@@ -176,11 +178,17 @@ test("web derivatives retain recorded source and output hashes", async () => {
 test("built pages have valid local links, scripts, styles and artwork", async () => {
   const output = path.join(site, "dist");
   for (const locale of languages) {
-    const directory = locale === "zh-Hans" ? output : path.join(output, locale);
-    const html = await readFile(path.join(directory, "index.html"), "utf8");
-    for (const [, url] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-      if (/^(https:|#)/.test(url)) continue;
-      assert.ok((await stat(path.resolve(directory, url))).isFile() || (await stat(path.resolve(directory, url))).isDirectory(), url);
+    const localeRoot = locale === "zh-Hans" ? output : path.join(output, locale);
+    for (const directory of [localeRoot, path.join(localeRoot, "open-world")]) {
+      const html = await readFile(path.join(directory, "index.html"), "utf8");
+      for (const [, url] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+        if (url.startsWith("#")) {
+          assert.ok(html.includes(`id="${url.slice(1)}"`), `${locale}/${url}`);
+          continue;
+        }
+        if (/^https:/.test(url)) continue;
+        assert.ok((await stat(path.resolve(directory, url))).isFile() || (await stat(path.resolve(directory, url))).isDirectory(), url);
+      }
     }
   }
   const assets = JSON.parse(await readFile(path.join(site, "assets.json"), "utf8"));
@@ -223,7 +231,7 @@ test("preview serves language directory roots and blocks paths outside dist", { 
       if (url) resolve(url[0]);
     });
   });
-  for (const [route, locale] of [["/", "zh-Hans"], ["/ja/", "ja"], ["/en/", "en"]]) {
+  for (const [route, locale] of [["/", "zh-Hans"], ["/ja/", "ja"], ["/en/", "en"], ["/open-world/", "zh-Hans"], ["/ja/open-world/", "ja"], ["/en/open-world/", "en"]]) {
     const response = await fetch(base + route);
     assert.equal(response.status, 200, route);
     assert.ok((await response.text()).includes(`<html lang="${locale}">`));
@@ -234,4 +242,33 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
+});
+
+test("world pages preserve locale across nested navigation and keep proposals separate from downloads", async () => {
+  const shape = value => Array.isArray(value) ? value.map(shape) : typeof value;
+  for (const locale of languages) {
+    assert.deepEqual(Object.keys(worldStrings[locale]).sort(), Object.keys(worldStrings.en).sort());
+    for (const key of Object.keys(worldStrings.en)) assert.deepEqual(shape(worldStrings[locale][key]), shape(worldStrings.en[key]), `${locale}/${key}`);
+    const html = renderWorld(locale);
+    const root = locale === "zh-Hans" ? "../" : "../../";
+    const prefix = locale === "zh-Hans" ? "" : `${locale}/`;
+    assert.ok(html.includes(`href="${root}${prefix}"`), "Return to the same locale home");
+    assert.ok(html.includes(`href="https://lorendw7.github.io/BalloonBarrage/${prefix}open-world/"`));
+    for (const language of languages) {
+      const target = `${root}${language === "zh-Hans" ? "" : `${language}/`}open-world/`;
+      assert.ok(html.includes(`href="${target}" lang="${language}"`), "Language switch keeps world subpage");
+    }
+    assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1);
+    assert.equal((html.match(/type="radio"/g) ?? []).length, 9);
+    assert.doesNotMatch(html, /\bchecked\b|\{\{|releases\/download/);
+    assert.ok(html.includes(worldStrings[locale].status));
+    const directory = path.join(site, "dist", prefix, "open-world");
+    const built = await readFile(path.join(directory, "index.html"), "utf8");
+    for (const file of ["world.css", "world.js"]) {
+      const source = await readFile(path.join(site, "src", file));
+      const extension = path.extname(file);
+      const hash = createHash("sha256").update(source).digest("hex").slice(0, 12);
+      assert.ok(built.includes(`${path.basename(file, extension)}.${hash}${extension}`));
+    }
+  }
 });
