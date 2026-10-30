@@ -1,6 +1,8 @@
 import { languages, strings } from "../src/strings.mjs";
 import { repositoryUrl } from "./releases.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
+import { surveyStrings } from "../src/survey-strings.mjs";
+import { surveyContent } from "./render-survey.mjs";
 
 export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
@@ -38,8 +40,13 @@ export function renderPage(template, locale, release, staticFiles = {}, page = "
   const heroReleaseStatus = snapshots.windows.available
     ? `${text.downloadPreviewLabel} · ${snapshots.windows.tag}${snapshots.macos.available ? ` · macOS ${snapshots.macos.tag}` : ""}`
     : (snapshots.windows.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
-  const headings = { game: text.navGame, updates: text.navUpdates, art: text.navArt };
+  const survey = surveyStrings[locale];
+  const headings = { game: text.navGame, updates: text.navUpdates, art: text.navArt, survey: survey.nav };
   const special = { base, home, locale, languageLinks, alternateLinks, releasePanels,
+    surveyUrl: `${home}survey/`, surveyNav: e(survey.nav), surveyTitle: e(survey.title), surveyTeaser: e(survey.teaser),
+    surveyIntro: e(survey.intro), surveyBack: e(survey.back), surveyThanks: e(survey.thanks),
+    description: e(page === "survey" ? survey.intro : text.description),
+    surveyContent: page === "survey" ? surveyContent(locale, e) : "",
     title: e(page ? `${headings[page]} | BalloonBarrage` : text.title), pageHeading: e(headings[page] ?? text.title), pageClass: page ? "site-detail" : "site-home",
     gameUrl: `${home}game/`, updatesUrl: `${home}updates/`, artUrl: `${home}art/`,
     worldUrl: `${home}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),

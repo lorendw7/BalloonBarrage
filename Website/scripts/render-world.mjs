@@ -1,5 +1,6 @@
 import { languages } from "../src/strings.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
+import { surveyStrings } from "../src/survey-strings.mjs";
 import { escapeHtml as e } from "./render.mjs";
 
 export const worldPages = ["", "map", "play", "art", "roadmap"];
@@ -62,7 +63,7 @@ export function renderWorld(locale, files = {}, page = "") {
       ${sections(t.choices)}
     </section>` : ""}
     <nav class="world-nav" aria-label="${e(t.navigation)}">${nav.map(([id, text]) => `<a href="${worldRoot}${id ? `${id}/` : ""}"${id === page ? ' aria-current="location"' : ""}>${e(text)}</a>`).join("")}</nav>
-    <footer class="section world-sources"><div class="world-source-links"><a href="${home}">${e(t.home)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only">${e(t.sourceDesign)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md#open-world-development-track--planning-only">${e(t.sourceRoadmap)}</a></div>${page === "art" ? `<p>${e(t.originality)}</p>` : ""}</footer>
+    <footer class="section world-sources"><div class="world-source-links"><a href="${home}">${e(t.home)}</a><a href="${home}survey/">${e(surveyStrings[locale].nav)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only">${e(t.sourceDesign)}</a><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md#open-world-development-track--planning-only">${e(t.sourceRoadmap)}</a></div>${page === "art" ? `<p>${e(t.originality)}</p>` : ""}</footer>
   </main><footer class="world-footer">BalloonBarrage · ${e(t.footer)}</footer>
 </body></html>\n`;
 }

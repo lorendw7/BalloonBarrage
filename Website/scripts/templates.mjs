@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 
-export const sitePages = ["", "game", "updates", "art"];
+export const sitePages = ["", "game", "updates", "art", "survey"];
 
 export async function loadTemplate(page = "") {
   if (!sitePages.includes(page)) throw new Error(`Unsupported site page: ${page}`);
