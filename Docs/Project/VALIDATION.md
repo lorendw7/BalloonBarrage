@@ -4,12 +4,14 @@
 
 The creator completed both `CoopLearnerCore` functions; review confirmed the equality boundary and ten-point bonus. Authored bodies and existing learner solutions remain preserved. Local co-op records now use `.LocalCoop.v1`, separate from unfinished practice records. [Game design](../Design/GAME_DESIGN.md) owns behavior and [the completed lesson](../Design/LOCAL_COOP_LESSON.md) explains the decisions.
 
-Checks ran in an isolated Windows checkout, without closing the creator's open Unity project:
+Checks ran in isolated Windows checkouts. Gameplay/light evidence below is from `7763913`; the later prepublication UI correction changes only dropdown row layout and its Editor fixture, with a new 64-assertion input regression.
+
+The creator reported blank expanded dropdowns. `DropdownVisualValidation.Run` reproduced a Chinese option with **17px text space, 23.8157px preferred line height and zero rendered vertices**. Default 20px option rows truncated the localized font. The correction gives all four dropdowns 40px rows, 32px text space, matching content padding and up to four visible rows. The same actual expansion/selection fixture then passed **120 assertions across four dropdowns × three locales**, checking visible text meshes, line fit, option counts and callbacks. Editor screenshots show the repaired four-option layout; native pointer/controller acceptance remains separate.
 
 - `LocalPlayerInputValidation.Run`: **64 assertions**, directly injected virtual Input System states, real P2 shooter ordinary/timed scoring in both co-op layouts, cadence, single target resolution, ownership/no stealing, disconnect/reconnect pause/release protection, solo, locales, records and Retry. This does not certify native events or physical hardware.
 - `PhraseShowcaseValidation.Run`: **1,216 assertions across 20 profiles**, controlled-clock mirror/motion/finale, single-score/single-flower resolution, expiry, routes, pause, locales and Retry. Forty extra cosmetic emissions verify fixed pools of 12 pulses/3 shadow-free lights, 180 nonblocking Images, unchanged score and protected finale/pause/afterglow.
 - `RainbowChainValidation.Run`: **99 assertions**, preview/burst parity, thick-frame links, charge/cap/radius/occlusion, single scoring, pause and reset.
-- Python music/chart suite: **25 tests**. ZIP-packager suite: **2 tests**. Static audit: **1,502 unique paired metadata GUIDs and 42 documentation files**.
+- Python music/chart suite: **25 tests**. ZIP-packager suite: **2 tests**. Static audit: **1,503 unique paired metadata GUIDs and 42 documentation files**.
 
 Editor render captures demonstrate the current visuals under controlled inputs and clocks; they are not standalone or human-play captures. Real controllers, native UI, natural-song human aiming/listening, real Macs and venue brightness/comfort remain separate checks. Exact platform builds and package results are recorded below after completion. Historical demo.12/demo.11 packages remain unchanged.
 

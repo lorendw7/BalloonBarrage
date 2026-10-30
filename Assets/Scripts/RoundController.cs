@@ -624,12 +624,43 @@ public class RoundController : MonoBehaviour
         playersDropdown.template.sizeDelta = new Vector2(0f, 180f);
         playersDropdown.SetValueWithoutNotify((int)localPlayers.Layout);
         playersDropdown.onValueChanged.AddListener(SetLocalPlayerLayout);
+        foreach (Dropdown dropdown in new[] { songModeDropdown, playersDropdown, rulesDropdown, songDropdown })
+            ConfigureDropdownRows(dropdown);
         playersDescription = CreateSelectionLabel(textTemplate, "LocalPlayersDescription", -190f, 58f, 17);
         playersDescription.resizeTextForBestFit = true;
         playersDescription.resizeTextMinSize = 13;
         playersDescription.resizeTextMaxSize = 17;
         songConfirmButton = CreateSelectionButton("ConfirmSongButton", "StartButton", -170f, StartSelectedSong);
         songBackButton = CreateSelectionButton("BackFromSongButton", "QuitButton", 170f, CancelSongSelection);
+    }
+
+    // DefaultControls supplies 20px rows with only 17px of text space. Our localized
+    // fonts need about 24px, so vertical truncation otherwise removes every glyph.
+    private static void ConfigureDropdownRows(Dropdown dropdown)
+    {
+        const float rowHeight = 40f;
+        Text label = dropdown.itemText;
+        RectTransform item = (RectTransform)label.transform.parent;
+        item.sizeDelta = new Vector2(item.sizeDelta.x, rowHeight);
+        RectTransform content = (RectTransform)item.parent;
+        content.sizeDelta = new Vector2(content.sizeDelta.x, rowHeight + 8f);
+        dropdown.template.sizeDelta = new Vector2(0f, Mathf.Min(4, dropdown.options.Count) * rowHeight + 8f);
+        label.rectTransform.anchorMin = Vector2.zero;
+        label.rectTransform.anchorMax = Vector2.one;
+        label.rectTransform.offsetMin = new Vector2(28f, 4f);
+        label.rectTransform.offsetMax = new Vector2(-12f, -4f);
+        label.alignment = TextAnchor.MiddleLeft;
+        label.fontSize = 18;
+        label.resizeTextForBestFit = true;
+        label.resizeTextMinSize = 14;
+        label.resizeTextMaxSize = 18;
+        label.color = new Color(.12f, .19f, .17f);
+        Toggle toggle = label.GetComponentInParent<Toggle>(true);
+        if (toggle.graphic != null)
+        {
+            toggle.graphic.rectTransform.sizeDelta = new Vector2(12f, 12f);
+            toggle.graphic.rectTransform.anchoredPosition = new Vector2(12f, 0f);
+        }
     }
 
     private static void CreateDropdownChevron(Transform arrow, Color color)
