@@ -19,6 +19,10 @@ The revised scene offers Festival (ten rounds of about 64–65 seconds) and Stan
 
 ## Current work and evidence
 
+The October 30 source adds an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. This feature is not included in the published demo.10 ZIPs. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
+
+The planned October 31 exhibition meeting place is **Room 2407, Center Building 2 (センター２号館), Ito Campus**. Demo operating hours remain unconfirmed. The [official website](https://lorendw7.github.io/BalloonBarrage/en/#festival) carries the translated visitor information.
+
 The [October 29 open music/studio update](Docs/Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) adds seven recordings and promotes seven current studio prefabs plus five downloaded Kenney CC0 decorations into production. The [October 28 study](Docs/Art/STUDIO_EXPANSION_20261028.md) remains available. Website media distinguishes generated artwork, Unity previews and standalone evidence. The [art catalog](Docs/Art/ASSET_CATALOG.md) links individual assets and earlier studies.
 
 The creator authorized this festival implementation by parallel Codex agents. Derived section/placement data and a brief demonstration extend the saved rhythm loop while retaining learner-owned pattern/effect functions. Source-data tests, Unity runtime checks, native captures and exact-package checks are recorded separately in Validation.

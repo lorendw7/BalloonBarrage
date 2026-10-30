@@ -1,10 +1,18 @@
 # Development roadmap
 
-Updated: October 29, 2026 (Asia/Tokyo). This is the delivery plan. [Game design](GAME_DESIGN.md) owns behavior, [Validation](../Project/VALIDATION.md) owns completed evidence, and [README](../../README.md) is the entry point.
+Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design](GAME_DESIGN.md) owns behavior, [Validation](../Project/VALIDATION.md) owns completed evidence, and [README](../../README.md) is the entry point.
 
 ## Current decision
 
-The creator authorized the direct focus-recovery repair, sustained-spray diagnostic, refreshed desktop candidates and website, and an ordinary push to `main`. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons.
+The creator explicitly authorized Codex to implement the October 30 tricolor relay, update the official website and reclaim local disk space. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules; this source addition does not change the immutable demo.10 download.
+
+| Current work | Completion boundary |
+|---|---|
+| Optional tricolor relay in both song modes | Distinct-color collection, repeated-color preservation, bounded celebration, separate result count, paused/post-round guards and clean Retry; preserve 10/20 scoring and existing learner functions |
+| Trilingual official website | Explain development-only status separately from public download; show the confirmed meeting place, Room 2407 in Center Building 2 (センター２号館) |
+| Local disk reclamation | Remove only verified recoverable extractions or reproducible build output; preserve release archives, checksums, evidence, source, asset GUIDs, notices and music originals |
+
+Unity checks, website checks, screenshots and remaining package/human observations belong to [Validation](../Project/VALIDATION.md). A future desktop package needs its own immutable build and verification; this request does not establish a new package acceptance result.
 
 The current **v0.1.0-demo.10** Windows/macOS candidates package input protection when switching windows, alongside the previous balloon placement, protected drift wait, retention and NEXT repairs. Both non-Development builds have zero errors/warnings. Exact ZIP verification and fresh Windows startup are recorded in [Validation](../Project/VALIDATION.md#demo10-focus-recovery-release--october-29); real-Mac, physical Alt+Tab and exhibition-machine acceptance remain separate. No paint-rendering change was justified by the measured longest-song workload.
 
@@ -39,16 +47,16 @@ Historical automated checks, creator reports, anonymous feedback about uniform p
 
 The [music-led design](GAME_DESIGN.md#music-led-festival-variety) defines the interaction, timing and fairness rules. Keep one target per scoring event; ordinary early hits consume their event normally. Demonstrations and other decoration never create rewards. Do not force tapping, add color-match requirements or change timing/reward values during this slice.
 
-## Parallel ownership and integration
+## Implementation ownership and integration
 
 | Lane | Owner and output | Boundary |
 |---|---|---|
-| Catalog preparation | Codex catalog agent: derived charts, sections, demonstration metadata, provenance and meaningful preparation tests | Original recordings/charts/notices remain unchanged; human listening remains separately labelled |
-| Runtime | Codex runtime agent: phrase/placement consumption, noninteractive demonstration and mode selection | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
-| Verification | Codex verification agent: all-profile data/runtime checks, lifecycle/score/capacity cases and structured evidence | Controlled-clock traversal, natural real-time rounds, screenshots and physical play are different evidence |
-| Integration and delivery | Primary Codex agent: source review, native visual inspection, documentation/site updates, isolated release build and main-branch push | No force-push, overwritten public assets, concurrent editor shutdown or unearned acceptance claims |
+| Catalog preparation | Preserve the saved catalog, sections, demonstration metadata and provenance | Original recordings/charts/notices remain unchanged; human listening remains separately labelled |
+| Runtime | Codex: the authorized tricolor relay only | Preserve learner functions, scoring, hit cadence, contact-aware pops, existing paint receivers and persistence |
+| Verification | Codex: focused collection tests and runtime lifecycle/scoring/layout checks | Controlled-clock traversal, natural real-time rounds, screenshots and physical play are different evidence |
+| Integration and delivery | Codex: source review, native visual inspection and documentation/site publication | No force-push, overwritten public assets, concurrent editor shutdown or unearned acceptance claims |
 
-Only the primary agent runs Unity integration and release commands. Agents share the workspace and own disjoint files. The active learner directory is not the release-build source. Preserve GUIDs and paired `.meta` files; use a named committed revision in a separate checkout for release builds.
+Keep Unity integration sequential and avoid concurrent edits. The active learner directory is not the release-build source. Preserve GUIDs and paired `.meta` files; use a named committed revision in a separate checkout for release builds.
 
 ## October 29–31 delivery targets
 
@@ -59,7 +67,7 @@ Dates are targets; a later date never implies an earlier check passed.
 | Oct 29 | Generate all twenty profiles and integrate sections/demo/mode UI | Run fast all-profile checks first; correct timing/placement/lifecycle errors before long runs |
 | Oct 29–30 | Run natural automated rounds across the catalog and inspect native selection/demo/answer captures | Record the exact tested profiles, revision and elapsed time. Human aiming/listening and hardware observations remain separate |
 | Oct 30 freeze | Build immutable Windows x64 and unsigned macOS Universal candidates from the named source revision | Verify exact archives, notices, checksums, manifests and fresh Windows launch; state Mac testing limits and preserve the fallback |
-| Oct 31 | Planned exhibition if logistics are confirmed | Use default festival mode and the verified package. Operator may recommend the easiest two tracks; no additional feature work at the booth |
+| Oct 31 | Planned exhibition; meeting place confirmed as Center Building 2, Room 2407 | Use default festival mode and the verified package. Operating hours remain unconfirmed. Operator may recommend the easiest two tracks; no additional feature work at the booth |
 | Nov 1 | Optional second day | Participation, booth and operating hours remain unconfirmed; keep the same package unless a separately verified fix is needed |
 
 The creator previously planned October 31 at Kyudaisai. The [official event site](https://kyudaisai.jp/79th/) is the event source; festival-wide dates/hours are not the project's confirmed booth schedule.
@@ -74,7 +82,7 @@ The [operator runbook](../Project/EXHIBITION_RUNBOOK.md) owns setup and recovery
 
 ## Immediate lesson queue
 
-The authorized festival implementation is handled by Codex for this revision. Subsequent core gameplay lessons return to the working agreement: explain one small step, let the learner write it, then review and verify. Do not restart the three saved learner functions as unfinished work. Select the next lesson from an observed player problem rather than adding unrelated mechanics.
+The October 30 tricolor relay is explicitly authorized for direct Codex implementation. Subsequent core gameplay lessons return to the working agreement: explain one small step, let the learner write it, then review and verify. Do not restart the three saved learner functions as unfinished work. Select the next lesson from an observed player problem rather than adding unrelated mechanics.
 
 ## Post-festival milestones
 

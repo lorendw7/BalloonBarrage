@@ -68,6 +68,10 @@
     {"key":"song.mode.festival","zhHans":"九大祭短曲 · 60-75 秒","ja":"九大祭ショート · 60-75 秒","en":"Festival · 60-75 seconds"},
     {"key":"song.mode.standard","zhHans":"标准模式 · 完整歌曲","ja":"スタンダード · フル楽曲","en":"Standard · complete songs"},
     {"key":"cue.demonstration.watch","zhHans":"先看示范：空心标记无需射击","ja":"まず見てみよう：ひし形はお手本です","en":"Watch the hollow markers: no need to shoot"},
-    {"key":"cue.demonstration.respond","zhHans":"轮到你了：按相同方向打气球，可按住喷射","ja":"同じ順に風船をねらおう：押し続けてもOK","en":"Your turn: follow the same positions: holding fire is fine"}
+    {"key":"cue.demonstration.respond","zhHans":"轮到你了：按相同方向打气球，可按住喷射","ja":"同じ順に風船をねらおう：押し続けてもOK","en":"Your turn: follow the same positions: holding fire is fine"},
+    {"key":"relay.progress","zhHans":"三色接力 {0}/3 · 已完成 {1} 次","ja":"3色リレー {0}/3 · 完成 {1} 回","en":"Tricolor relay {0}/3 · Completed {1}"},
+    {"key":"relay.complete","zhHans":"三色集齐！已完成 {0} 次","ja":"3色そろった！完成 {0} 回","en":"Three colors collected! Completed {0}"},
+    {"key":"relay.hint","zhHans":"可选目标：打破三种不同颜色的气球","ja":"おまけ：違う色の風船を3色集めよう","en":"Optional: pop three different balloon colors"},
+    {"key":"result.tricolorRelays","zhHans":"三色接力：{0} 次","ja":"3色リレー：{0} 回","en":"Tricolor relays: {0}"}
   ]
 }

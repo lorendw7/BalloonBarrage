@@ -1,6 +1,6 @@
 # Game design
 
-Updated: October 29, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). The authorized festival revision prepares ten short profiles and ten complete-song profiles, phrase-based patterns and one brief listen-then-answer motif per profile. Source, scene integration, automated runtime and package evidence are recorded separately; demo.6 remains the complete-song fallback. The long-note paint ribbon is explicitly deferred. [Validation](../Project/VALIDATION.md) separates automated evidence from human or target-hardware acceptance.
+Updated: October 30, 2026. Delivery order, ownership and acceptance live in the [roadmap](ROADMAP.md); source and download details live in [Music and charts](MUSIC_AND_CHARTS.md). The authorized festival revision prepares ten short profiles and ten complete-song profiles, phrase-based patterns and one brief listen-then-answer motif per profile. Source, scene integration, automated runtime and package evidence are recorded separately; demo.6 remains the complete-song fallback. The long-note paint ribbon is explicitly deferred. [Validation](../Project/VALIDATION.md) separates automated evidence from human or target-hardware acceptance.
 
 ## Confirmed direction
 
@@ -106,6 +106,16 @@ Use the existing one-clock, one-event, one-accepted-pop model. An early ordinary
 Author spatial/event spacing against the actual finite firing cadence and aim travel. Do not require a simultaneous chord or intervals shorter than the player can sample and aim; do not increase shot frequency to rescue a dense chart. Keep the saved 16-target limit as a capacity bound, not a density goal. If a chart fills capacity and delays a pending event beyond its intended cue, reduce authored congestion and recheck timing; do not move the judgement time or silently skip events. Ordinary off-time play must still finish comfortably without a failure state.
 
 Before promoting a trial, compare it against the same short profile with the existing patterns: can a player describe at least one musical/aiming change, identify the next target, and finish without a required extra input? Record timing/readability observations separately from automated clock, score, pause, cleanup and Retry checks. These are criteria for choosing a new design, not claims that existing packages passed human testing or a requirement to repeat unrelated release work.
+
+## Optional tricolor relay
+
+On October 30 the creator explicitly authorized Codex to write this additional gameplay. The three learner functions stay intact. This source revision adds a small, optional collection goal to both existing song modes; demo.10 remains the published download and does not contain it.
+
+Pop any three distinct balloon pigments to complete one relay. The lower-left HUD shows numeric progress, three collected swatches and the completed count. Completing a set briefly pulses the three HUD swatches, then collection starts again. A repeated pigment still earns its normal hit score and preserves partial progress. Pigment identity comes from the popped balloon, not the player's selected spray color; C remains optional decoration control. The next successful pigment starts the next set immediately, even during the celebration.
+
+There is no additional deadline, required order, color-match shot, failure, score multiplier or automatic secondary pop. Expired balloons do not erase collection progress. Existing 10/20 rewards, rhythm windows, chart events, target capacity, song durations, retained paint and record keys remain unchanged. Completed relays are a separate per-round keepsake shown as the fourth result statistic, without persistent records or rewards. Paused and post-round pops cannot collect; pause hides the overlay and freezes the brief celebration. Retry resets counts, swatches and celebration state and destroys the old overlay. Both text and numeric progress explain the goal without relying on color alone.
+
+The implementation uses a pure progress model, a successful-pop notification and one bounded HUD. No new art, music, scene copies or world particle systems are needed. [Validation](../Project/VALIDATION.md) records the actual automated evidence and limits; source checks are not a standalone release or a human playtest.
 
 ## Required rhythm loop
 

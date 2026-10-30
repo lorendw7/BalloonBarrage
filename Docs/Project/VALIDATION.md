@@ -1,5 +1,25 @@
 # Validation record
 
+## Tricolor relay source and confirmed venue — October 30
+
+The creator explicitly authorized Codex to write this gameplay addition. The tested working tree is based on `d261af48fa8cf5c0e978d7aeb3e96b69681dfb22`. It adds the [optional tricolor relay](../Design/GAME_DESIGN.md#optional-tricolor-relay), a separate result count and Chinese/Japanese/English HUD strings. The learner's `KyudaisaiLearnerCore.cs`, source charts, music originals, scene and prefab GUIDs remain unchanged. **The published demo.10 ZIPs do not include this addition.** No new player/package acceptance is claimed.
+
+| Evidence | Observed result | Scope |
+|---|---|---|
+| Unity 6000.0.77f1 Edit Mode | 3/3 focused progress tests passed | Repeated/invalid pigments, any three distinct colors, successive sets and reset |
+| `TricolorRelayValidation.Run` | 50 synthetic runtime assertions passed | Successful pop notification, repeated hit idempotency, unchanged ordinary/bonus points, pause and post-round guards, expiry preservation, two collections, event disable/enable, three localized HUDs, result fit and scene Retry |
+| `FestivalRuntimeValidation.RunFast` | All 20 profiles passed, with no recorded runtime errors | Existing accelerated selection, sampled physics/pop scoring, demonstration, pause/resume, settlement and Retry across Festival and Standard; controlled clock offsets, not twenty natural full-song playtests |
+| Website build and tests | 3 locale pages built; 16/16 checks passed | Translation parity, confirmed room, development-only feature status, downloads, media provenance, links, cached-file identity and preview HTTP/path safety |
+| Project audit | 1,468 unique metadata GUIDs; 41 documentation files checked | Paired metadata, duplicate GUIDs and local documentation links |
+
+Native synthetic Editor captures under ignored `Logs/TricolorRelay*.png` show the partial Japanese collection, completed collection in all three languages and Japanese results. The completion HUD and result capture were visually inspected. The first result-layout check exposed clipping when adding a fourth line; two rows now pair hits/on-beat hits and streak/relay count, with bounded text fitting. The corrected fixture passed and its result capture was inspected. These images are synthetic Editor evidence, not human or standalone-player recordings.
+
+The first sandboxed website run passed 15 checks but could not connect to the local preview port; rerunning with localhost access passed all 16. The interactive browser preview timed out, so no new browser viewport/layout acceptance is claimed. Machine-readable fixture results remain in ignored `Logs/TricolorRelayRuntime.json`, `Logs/tricolor-editmode.xml` and `Logs/FestivalRuntime-fast.json`, alongside the corresponding Unity logs. Human aiming, color readability, listening, natural whole-song experience, venue hardware and any future exact release package remain separate checks.
+
+The creator confirmed the meeting place as **Room 2407, Center Building 2 (センター２号館), Ito Campus**. All three website languages now show the room in the hero and exhibition section; October 31 remains the planned date and demo operating hours remain unconfirmed.
+
+Disk cleanup removed five Windows package extractions only after checking each retained archive's SHA-256 and matching all 248 extracted files byte for byte against its ZIP: demo.8 `windows-extracted`; demo.9 `windows-extracted`, `windows-final-extracted` and `windows-startup-extracted`; demo.10 `windows-final-extracted`. This reclaimed **1,211,467,748 bytes (1.128 GiB)**. Every deletion target was resolved and checked to stay inside `Builds`; archives, sidecars, original music, notices, source, learner backups and validation reports were preserved. The ignored `.local-reference/cleanup-20261030.json` retains the path/archive/hash/size audit. This cleanup does not invalidate the earlier exact-package tests; a new launch can re-extract the retained ZIP.
+
 ## Demo.10 focus-recovery release — October 29
 
 The demo.10 desktop candidates package the saved input repair below from **`675eb9a2349264054923740047253fad9ce98945`**, pushed to `main`. Windows and macOS used separate fresh source checkouts/Libraries at `D:/CS/Build/BalloonBarrage-v0.1.0-demo.10` and `D:/CS/Build/BalloonBarrage-v0.1.0-demo.10-macos`. Both passed Git LFS verification; 45 recorded gameplay/scene/prefab/catalog sources match the active project and the isolated diagnostic project, normalizing C# line endings. The source passed 23 rhythm and two packager tests.

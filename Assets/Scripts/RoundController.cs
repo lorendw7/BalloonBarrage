@@ -21,6 +21,7 @@ public sealed class ExhibitionSongProfile
 
 public class RoundController : MonoBehaviour
 {
+    private TricolorRelay colorRelay;
     private float songDuration;
     private double songStartDspTime;
 
@@ -154,6 +155,9 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        colorRelay = GetComponent<TricolorRelay>();
+        if (colorRelay == null) colorRelay = gameObject.AddComponent<TricolorRelay>();
+        colorRelay.ResetRound();
         IsPaused = false;
         Time.timeScale = 1f;
         AudioListener.pause = false;
@@ -648,6 +652,8 @@ public class RoundController : MonoBehaviour
         if (songDropdown != null) songDropdown.Hide();
         if (songSelectionPanel != null) songSelectionPanel.SetActive(false);
 
+        colorRelay.ResetRound();
+
         songDuration = (float)profile.roundDurationSeconds;
         remainingTime = songDuration;
 
@@ -830,11 +836,16 @@ public class RoundController : MonoBehaviour
 
         resultStatsText.text =
             LocalizationManager.Format(
-                "result.successfulHits", Score.SuccessfulHits) + "\n" +
+                "result.successfulHits", Score.SuccessfulHits) + " · " +
             LocalizationManager.Format(
                 "result.onBeatHits", Score.OnBeatHits) + "\n" +
             LocalizationManager.Format(
-                "result.maxStreak", Score.MaximumStreak);
+                "result.maxStreak", Score.MaximumStreak) + " · " +
+            LocalizationManager.Format(
+                "result.tricolorRelays", colorRelay != null ? colorRelay.CompletedCount : 0);
+        resultStatsText.resizeTextForBestFit = true;
+        resultStatsText.resizeTextMinSize = 16;
+        resultStatsText.resizeTextMaxSize = 21;
     }
 
     public void RestartRound()

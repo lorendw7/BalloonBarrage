@@ -44,6 +44,21 @@ test("demo.10 release copy keeps input recovery and verification scopes explicit
   }
 });
 
+test("confirmed meeting room and development-only relay stay explicit in every language", () => {
+  for (const locale of languages) {
+    const html = renderPage(template, locale, selectDownloads([release]));
+    assert.ok(strings[locale].meetingRoom.includes("2407"));
+    assert.ok(strings[locale].festivalVenue.includes("2407"));
+    assert.ok(strings[locale].relayStatus.includes("demo.10"));
+    for (const key of ["meetingRoom", "relayTitle", "relayStatus", "relayRules"])
+      assert.ok(html.includes(strings[locale][key]), `${locale}/${key}`);
+    assert.ok(html.indexOf('class="venue-callout"') < html.indexOf('id="game"'));
+  }
+  assert.match(strings.ja.festivalNote, /集合場所は2407教室/);
+  assert.match(strings.en.relayStatus, /not in/);
+  assert.match(strings.en.relayRules, /Repeated colors.*preserve progress/);
+});
+
 test("all languages explain unrestricted-duration held fire without promising per-frame spawning", () => {
   const required = {
     "zh-Hans": ["按住", "弹药", "换弹", "过热", "有限", "采样"],

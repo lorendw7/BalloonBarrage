@@ -41,6 +41,7 @@
         <p class="release-status">{{heroReleaseStatus}}</p>
         <div class="hero-actions"><a class="button button-teal" href="#download">{{heroDownload}}</a><a class="text-link" href="#game">{{heroMore}}</a></div>
         <p class="prototype-note">{{prototype}}</p>
+        <a class="venue-callout" href="#festival"><span>{{meetingLabel}}</span><strong>{{meetingRoom}}</strong><span aria-hidden="true">↗</span></a>
         <dl class="hero-facts"><div><dt>{{heroLength}}</dt><dd>{{heroLengthValue}}</dd></div><div><dt>{{heroMode}}</dt><dd>{{heroModeValue}}</dd></div><div><dt>{{heroInput}}</dt><dd>{{heroInputValue}}</dd></div></dl>
       </div>
     </section>
@@ -64,6 +65,10 @@
         <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{selectionLabel}}</dt><dd>{{selectionControl}}</dd></div><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{colorLabel}}</kbd></dt><dd>{{controlsColor}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
         <p class="scene-note">{{sceneNote}}</p>
       </div>
+      <article class="relay-feature" aria-labelledby="relay-title">
+        <div><p class="eyebrow">{{relayStatus}}</p><h3 id="relay-title">{{relayTitle}}</h3><p>{{relayBody}}</p><p class="small">{{relayRules}}</p></div>
+        <ol class="relay-steps"><li><span class="relay-swatch relay-teal" aria-hidden="true">1</span>{{relayStepOne}}</li><li><span class="relay-swatch relay-coral" aria-hidden="true">2</span>{{relayStepTwo}}</li><li><span class="relay-swatch relay-gold" aria-hidden="true">3</span>{{relayStepThree}}</li></ol>
+      </article>
       <aside class="palette-panel" aria-labelledby="palette-title">
         <div class="palette-copy">
         <p class="eyebrow">{{paletteStatus}}</p>
@@ -100,7 +105,7 @@
       </div>
     </section>
     <section class="section updates-section" id="updates" aria-labelledby="updates-title">
-      <div class="updates-heading"><div><p class="eyebrow">{{updatesEyebrow}}</p><h2 id="updates-title">{{updatesTitle}}</h2></div><time datetime="2026-10-29">2026.10.29</time></div>
+      <div class="updates-heading"><div><p class="eyebrow">{{updatesEyebrow}}</p><h2 id="updates-title">{{updatesTitle}}</h2></div><time datetime="2026-10-30">2026.10.30</time></div>
       <p class="updates-intro">{{updatesIntro}}</p>
       <a class="studio-announcement" href="#art"><span class="announcement-date">10.29</span><span><strong>{{expansionTeaser}}</strong><span>{{expansionTeaserBody}}</span></span><span class="announcement-arrow" aria-hidden="true">↗</span></a>
       <article class="spray-feature">

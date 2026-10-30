@@ -14,6 +14,7 @@ public class Balloon : MonoBehaviour
 
     public static event System.Action<int> OnBeatHit;
     public static event System.Action<int> OnResolved;
+    public static event System.Action<int, Color> OnPigmentPopped;
 
 
     [SerializeField]
@@ -120,6 +121,11 @@ public class Balloon : MonoBehaviour
         isPoping = true;
         Score.Add(points + bonusPoints);
         Score.RegisterSuccessfulHit(bonusPoints > 0);
+        StudioBalloonAppearance pigment = GetComponent<StudioBalloonAppearance>();
+        if (pigment != null && pigment.pigments.Length > 0)
+        {
+            OnPigmentPopped?.Invoke(pigment.ColorIndex, pigment.Pigment);
+        }
         OnResolved?.Invoke(EventId);
 
         if (bonusPoints > 0)

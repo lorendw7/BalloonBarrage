@@ -4,6 +4,8 @@ Use this runbook for the accepted Windows package at the Kyudaisai booth. It cov
 
 ## Required kit
 
+The creator confirmed the meeting place on October 30: **Room 2407, Center Building 2 (センター２号館), Ito Campus**. October 31 remains the planned participation date; the project's demo operating hours are not yet confirmed. Use the [official website](https://lorendw7.github.io/BalloonBarrage/ja/#festival) for visitor-facing Japanese information.
+
 - Accepted primary ZIP, its `.sha256` file and a separately tested fallback ZIP.
 - Freshly extracted primary and fallback folders on local storage; do not run from inside a ZIP.
 - The intended Windows PC, display, mouse, audio output, power adapters and offline backup storage.
