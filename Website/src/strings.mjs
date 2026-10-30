@@ -1,6 +1,11 @@
 export const languages = ["zh-Hans","ja","en"];
 export const strings = {
   "zh-Hans": {
+    navHome: "首页", exploreTitle: "想了解哪一部分？",
+    exploreGame: "操作、音乐挑战与三色接力。",
+    exploreWorld: "捣蛋小队、第三人称探索与音乐层收集。规划中。",
+    exploreUpdates: "当前版本、下一步与验证记录。",
+    exploreArt: "画室、道具与原创美术，按类别浏览。",
     rhythmTitle: "先看一遍，再跟着音乐回应。",
     rhythmIntro: "开场只示范一个简单顺序，不用背谱，也不用改变按键。",
     watchTitle: "看空心标记依次亮起",
@@ -224,6 +229,11 @@ export const strings = {
     songTen: "Chaoz Impact · ParagonX9 · 短64秒 / 完整116秒 · CC BY-SA 3.0",
   },
   "ja": {
+    navHome: "ホーム", exploreTitle: "気になるところから。",
+    exploreGame: "操作、音楽チャレンジ、3色リレー。",
+    exploreWorld: "いたずら集団、三人称探索、音楽レイヤー収集。計画段階です。",
+    exploreUpdates: "現在のバージョン、次の予定、検証記録。",
+    exploreArt: "アトリエ、道具、オリジナルアートを分類して紹介。",
     rhythmTitle: "お手本を見て、音楽に応えよう。",
     rhythmIntro: "冒頭に短い順番をひとつ。譜面の暗記や特別な操作は必要ありません。",
     watchTitle: "中抜きマークが光る順番を見る",
@@ -447,6 +457,11 @@ export const strings = {
     songTen: "Chaoz Impact · ParagonX9 · ショート64秒 / フル116秒 · CC BY-SA 3.0",
   },
   "en": {
+    navHome: "Home", exploreTitle: "What would you like to explore?",
+    exploreGame: "Controls, music challenges and the tricolor relay.",
+    exploreWorld: "A mischievous troupe, third-person exploration and musical layers. Planning only.",
+    exploreUpdates: "Current version, next steps and verification notes.",
+    exploreArt: "Browse studio scenes, props and original artwork by category.",
     rhythmTitle: "Watch the pattern. Answer with the music.",
     rhythmIntro: "One short opening sequence, with no chart to memorize or extra controls to learn.",
     watchTitle: "Watch the hollow markers light up",

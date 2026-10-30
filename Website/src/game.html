@@ -1,0 +1,24 @@
+    <header class="section page-heading"><a href="{{home}}">← {{navHome}}</a><h1>{{pageHeading}}</h1></header>
+    <section class="section game-section" id="game" aria-labelledby="game-title">
+      <div class="section-heading"><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
+
+      <dl class="game-facts"><div><dt>{{factSong}}</dt><dd>{{factSongBody}}</dd></div><div><dt>{{factPaint}}</dt><dd>{{factPaintBody}}</dd></div><div><dt>{{factScore}}</dt><dd>{{factScoreBody}}</dd></div></dl>
+      <article class="rhythm-feature" aria-labelledby="rhythm-title">
+        <div class="section-heading"><h3 id="rhythm-title">{{rhythmTitle}}</h3><p>{{rhythmIntro}}</p></div>
+        <ol class="rhythm-steps">
+          <li><figure><a class="art-open" href="{{base}}assets/festival-watch-20261029.png" data-art aria-label="{{artOpen}}: {{watchTitle}}"><img src="{{base}}assets/festival-watch-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{watchAlt}}"></a><figcaption><span class="rhythm-step-number" aria-hidden="true">01</span><strong>{{watchTitle}}</strong></figcaption></figure><p>{{watchBody}}</p></li>
+          <li><figure><a class="art-open" href="{{base}}assets/festival-response-20261029.png" data-art aria-label="{{artOpen}}: {{responseTitle}}"><img src="{{base}}assets/festival-response-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{responseAlt}}"></a><figcaption><span class="rhythm-step-number" aria-hidden="true">02</span><strong>{{responseTitle}}</strong></figcaption></figure><p>{{responseBody}}</p></li>
+        </ol>
+        <p class="small rhythm-capture-note">{{rhythmCaptureLabel}}</p>
+      </article>
+      <article class="song-showcase"><div class="section-heading"><p class="eyebrow">{{screenshotsLabel}}</p><h3>{{songsTitle}}</h3><p>{{songsBody}}</p></div><ul class="song-tracklist"><li>{{songOne}}</li><li>{{songTwo}}</li><li>{{songThree}}</li><li>{{songFour}}</li><li>{{songFive}}</li><li>{{songSix}}</li><li>{{songSeven}}</li><li>{{songEight}}</li><li>{{songNine}}</li><li>{{songTen}}</li></ul><p>{{selectionControl}}</p></article>
+      <div class="play-notes">
+        <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{selectionLabel}}</dt><dd>{{selectionControl}}</dd></div><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{colorLabel}}</kbd></dt><dd>{{controlsColor}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
+        <p class="scene-note">{{sceneNote}}</p>
+      </div>
+      <article class="relay-feature" aria-labelledby="relay-title">
+        <div><p class="eyebrow">{{relayStatus}}</p><h3 id="relay-title">{{relayTitle}}</h3><p>{{relayBody}}</p><p class="small">{{relayRules}}</p></div>
+        <ol class="relay-steps"><li><span class="relay-swatch relay-teal" aria-hidden="true">1</span>{{relayStepOne}}</li><li><span class="relay-swatch relay-coral" aria-hidden="true">2</span>{{relayStepTwo}}</li><li><span class="relay-swatch relay-gold" aria-hidden="true">3</span>{{relayStepThree}}</li></ol>
+      </article>
+
+    </section>

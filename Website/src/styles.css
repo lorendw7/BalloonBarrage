@@ -13,6 +13,24 @@
   --media-width: 1600px;
   --page-gutter: clamp(1.25rem, 4vw, 4rem);
 }
+.site-home .hero { min-height: 0; padding-block: 2rem; }
+.site-home .hero-inner { max-width: 760px; padding: 1.5rem; }
+.site-home .wordmark { font-size: clamp(2.7rem, 5vw, 4rem); margin-block: .5rem 1rem; }
+.site-home .section, .site-detail .section { padding-block: 2rem; }
+.page-heading h1 { font-size: clamp(2rem, 4vw, 3rem); margin-top: .6rem; }
+.page-heading + .section { padding-top: 0; }
+.page-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.page-links > a { display: block; padding: 1.25rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--white); text-decoration: none; }
+.page-links > a:hover { border-color: var(--teal); }
+.page-links p { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.page-links span { display: block; color: var(--teal); font-size: 1.5rem; margin-top: .6rem; }
+.archive-entry { margin-block: 1rem; border: 1px solid var(--line); border-radius: .5rem; padding: 1rem; background: var(--white); }
+.archive-entry summary { cursor: pointer; font-weight: 600; }
+.site-detail .rhythm-feature { margin-block: 1.5rem; }
+.site-detail .rhythm-steps img { max-height: 320px; object-fit: contain; background: #233d3a; }
+.site-detail .palette-panel { max-width: 900px; margin-inline: auto; }
+@media (max-width: 1000px) { .page-links { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .page-links { grid-template-columns: 1fr; } }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; scroll-padding-top: 8rem; }

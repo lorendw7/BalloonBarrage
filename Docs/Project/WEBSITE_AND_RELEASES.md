@@ -53,7 +53,20 @@ The tests cover translation structure, trusted platform-specific release selecti
 
 Player-facing copy lives in `Website/src/strings.mjs`; project documentation remains English-only. Each language uses the same page structure and distinguishes published builds from development screenshots, concepts and model previews.
 
-The October 30 open-world planning update adds `/open-world/`, `/ja/open-world/` and `/en/open-world/`, linked from each home page's navigation and updates section. `Website/src/world-strings.mjs` holds the public translations; `Website/scripts/render-world.mjs` renders the shared structure. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions; [Roadmap](../Design/ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. The original HTML/CSS/SVG map is a labelled topology diagram, not generated art or game footage. The three selected directions are separated from unselected camera, rival-temperament and reward options. The optional choice summary is ephemeral: no upload, analytics, persistence or automatic plan change. Language links preserve the subpage; home links preserve the language. World-specific styles and scripts use content-addressed filenames. No Unity gameplay or desktop package changes are part of this website update.
+The October 30 pagination update creates eight topic pages per language (24 routes). Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page preserves its topic when switching languages and provides a home link. The home page retains concise game information, actual downloads, topic links and exhibition details; detailed tutorials, galleries and verification notes live on their own pages.
+
+| Route within a language | Content |
+|---|---|
+| `/` | Game introduction, downloads, topic links and exhibition information |
+| `game/` | Controls, musical demonstration/response, song catalog and relay |
+| `updates/` | Current delivery priorities and expandable historical verification details |
+| `art/` | Filterable scene/prop/artwork gallery and pigment study |
+| `open-world/` | Future direction and confirmed C / A / B decisions |
+| `open-world/map/` | Labelled original topology diagram and district concepts |
+| `open-world/play/` | Exploration/challenge loop and troupe behavior proposals |
+| `open-world/roadmap/` | Learner-led development gates and deferred scope |
+
+`Website/src/index.html` is the shared site shell; `home.html`, `game.html`, `updates.html` and `art.html` provide its page bodies through `Website/scripts/templates.mjs`. `Website/src/world-strings.mjs` holds public planning translations; `Website/scripts/render-world.mjs` renders its four pages. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions; [Roadmap](../Design/ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. The creator-confirmed C / A / B choices appear as static cards: mischievous troupe, third-person exploration plus stable stage view, and musical-layer rewards. The earlier unselected comparison form and its script are removed. Troupe roles, camera settings, reward conditions and save scope remain open. World-specific styles use content-addressed filenames. No Unity gameplay or desktop package changes are part of this update.
 
 The October 30 update shows the creator-confirmed meeting room (Center Building 2, Room 2407) near the hero and in the exhibition section, keeping demo operating hours unconfirmed. An illustrated three-step explanation introduces the tricolor relay as included in the demo.11 Windows/macOS candidates. Download cards independently discover the actually published package for each platform. It uses CSS swatches and existing fonts without new image downloads or generated media. Existing release selection and screenshot provenance remain unchanged.
 

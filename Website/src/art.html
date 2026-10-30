@@ -1,0 +1,26 @@
+    <header class="section page-heading"><a href="{{home}}">← {{navHome}}</a><h1>{{pageHeading}}</h1></header>
+    <section class="section art-section" id="art" aria-labelledby="art-title">
+      <div class="art-heading"><div><p class="eyebrow">{{artEyebrow}}</p><h2 id="art-title">{{artTitle}}</h2></div><p>{{artIntro}}</p></div>
+      <div class="art-toolbar" data-gallery-toolbar hidden><div class="art-filters" role="group" aria-label="{{artFilterLabel}}"><button type="button" data-art-filter="all" aria-pressed="true" aria-controls="art-grid">{{artFilterAll}}</button><button type="button" data-art-filter="studio" aria-pressed="false" aria-controls="art-grid">{{artFilterStudio}}</button><button type="button" data-art-filter="props" aria-pressed="false" aria-controls="art-grid">{{artFilterProps}}</button><button type="button" data-art-filter="artwork" aria-pressed="false" aria-controls="art-grid">{{artFilterArtwork}}</button></div><p class="art-count" role="status" aria-live="polite" data-art-count data-count-template="{{artCount}}"></p></div>
+      <div class="art-grid" id="art-grid">
+        <figure class="art-card art-wide" data-art-category="studio"><a class="art-open" href="{{base}}assets/studio-integrated-20261029.png" data-art aria-label="{{artOpen}}: {{expansionTitle}}"><img src="{{base}}assets/studio-integrated-20261029.webp" loading="lazy" decoding="async" width="1920" height="1080" alt="{{expansionAlt}}"></a><figcaption><span>{{expansionTitle}}</span><span>{{artNativeLabel}}</span></figcaption><p>{{expansionBody}}</p></figure>
+        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/studio-props-20261028.png" data-art aria-label="{{artOpen}}: {{propsTitle}}"><img src="{{base}}assets/studio-props-20261028.webp" loading="lazy" decoding="async" width="1920" height="1200" alt="{{propsAlt}}"></a><figcaption><span>{{propsTitle}}</span><span>{{artNativeLabel}}</span></figcaption><p>{{propsBody}}</p></figure>
+        <figure class="art-card" data-art-category="artwork"><a class="art-open" href="{{base}}assets/studio-rhythm-print-20261028.png" data-art aria-label="{{artOpen}}: {{rhythmPrintTitle}}"><img src="{{base}}assets/studio-rhythm-print-20261028.webp" loading="lazy" decoding="async" width="1254" height="1254" alt="{{rhythmPrintAlt}}"></a><figcaption><span>{{rhythmPrintTitle}}</span><span>{{artGeneratedLabel}}</span></figcaption><p>{{rhythmPrintBody}}</p></figure>
+        <figure class="art-card" data-art-category="artwork"><a class="art-open" href="{{base}}assets/botanical-pigment-print-20261028.png" data-art aria-label="{{artOpen}}: {{botanicalPrintTitle}}"><img src="{{base}}assets/botanical-pigment-print-20261028.webp" loading="lazy" decoding="async" width="1254" height="1254" alt="{{botanicalPrintAlt}}"></a><figcaption><span>{{botanicalPrintTitle}}</span><span>{{artGeneratedLabel}}</span></figcaption><p>{{botanicalPrintBody}}</p></figure>
+        <figure class="art-card" data-art-category="studio"><a class="art-open" href="{{base}}assets/studio-concept.png" data-art aria-label="{{artOpen}}: {{artStudio}}"><img src="{{base}}assets/studio-concept.webp" loading="lazy" decoding="async" width="1672" height="941" alt="{{studioAlt}}"></a><figcaption><span>{{artStudio}}</span><span>{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/paint-blaster-concept.png" data-art aria-label="{{artOpen}}: {{artGun}}"><img src="{{base}}assets/paint-blaster-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{gunAlt}}"></a><figcaption><span>{{artGun}}</span><span>{{artLabel}}</span></figcaption></figure>
+        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/balloon-concept.png" data-art aria-label="{{artOpen}}: {{artBalloon}}"><img src="{{base}}assets/balloon-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{balloonAlt}}"></a><figcaption><span>{{artBalloon}}</span><span>{{artLabel}}</span></figcaption></figure>
+      </div>
+      <p class="art-source-note">{{artSourceNote}} <a href="https://github.com/lorendw7/BalloonBarrage/tree/main/Assets/StudioArtPack/StudioExpansion20261028">{{artSourceLink}} <span aria-hidden="true">↗</span></a></p>
+      <aside class="palette-panel" aria-labelledby="palette-title">
+        <div class="palette-copy">
+        <p class="eyebrow">{{paletteStatus}}</p>
+        <h3 id="palette-title">{{paletteTitle}}</h3>
+        <p>{{paletteBody}}</p>
+        </div>
+        <figure>
+          <a class="art-open" href="{{base}}assets/palette.png" data-art aria-label="{{artOpen}}: {{paletteTitle}}"><img src="{{base}}assets/palette.webp" loading="lazy" decoding="async" width="1600" height="850" alt="{{paletteAlt}}"></a>
+          <figcaption><span>{{paletteCaption}}</span><time datetime="2026-10-19">2026.10.19</time></figcaption>
+        </figure>
+      </aside>
+    </section>

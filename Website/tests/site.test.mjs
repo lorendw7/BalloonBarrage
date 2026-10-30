@@ -8,11 +8,14 @@ import { createHash } from "node:crypto";
 import { languages, strings } from "../src/strings.mjs";
 import { getReleaseSnapshot, selectDownload, selectDownloads, repositoryUrl } from "../scripts/releases.mjs";
 import { renderPage } from "../scripts/render.mjs";
-import { renderWorld } from "../scripts/render-world.mjs";
+import { renderWorld, worldPages } from "../scripts/render-world.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
+import { loadTemplate, sitePages } from "../scripts/templates.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
-const template = await readFile(path.join(site, "src/index.html"), "utf8");
+const template = await loadTemplate();
+const gameTemplate = await loadTemplate("game");
+const pagePaths = [...sitePages, ...worldPages.map(page => `open-world/${page}`)];
 const asset = { name: "BalloonBarrage-Windows-x64.zip", size: 1024, state: "uploaded", browser_download_url: `${repositoryUrl}/releases/download/v1/demo.zip` };
 const macAsset = { name: "BalloonBarrage-macOS-Universal.zip", size: 2048, state: "uploaded", browser_download_url: `${repositoryUrl}/releases/download/v1/demo-macos.zip` };
 const release = { tag_name: "v1", published_at: "2026-10-08T00:00:00Z", prerelease: false, draft: false, assets: [asset, macAsset] };
@@ -49,11 +52,13 @@ test("demo.11 relay release copy keeps input recovery and verification scopes ex
 test("confirmed meeting room and packaged relay stay explicit in every language", () => {
   for (const locale of languages) {
     const html = renderPage(template, locale, selectDownloads([release]));
+    const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
     assert.ok(strings[locale].relayStatus.includes("demo.11"));
-    for (const key of ["meetingRoom", "relayTitle", "relayStatus", "relayRules"])
-      assert.ok(html.includes(strings[locale][key]), `${locale}/${key}`);
+    assert.ok(html.includes(strings[locale].meetingRoom));
+    for (const key of ["relayTitle", "relayStatus", "relayRules"])
+      assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);
     assert.ok(html.indexOf('class="venue-callout"') < html.indexOf('id="game"'));
   }
   assert.match(strings.ja.festivalNote, /集合場所は2407教室/);
@@ -179,7 +184,7 @@ test("built pages have valid local links, scripts, styles and artwork", async ()
   const output = path.join(site, "dist");
   for (const locale of languages) {
     const localeRoot = locale === "zh-Hans" ? output : path.join(output, locale);
-    for (const directory of [localeRoot, path.join(localeRoot, "open-world")]) {
+    for (const directory of pagePaths.map(page => path.join(localeRoot, page))) {
       const html = await readFile(path.join(directory, "index.html"), "utf8");
       for (const [, url] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
         if (url.startsWith("#")) {
@@ -187,7 +192,14 @@ test("built pages have valid local links, scripts, styles and artwork", async ()
           continue;
         }
         if (/^https:/.test(url)) continue;
-        assert.ok((await stat(path.resolve(directory, url))).isFile() || (await stat(path.resolve(directory, url))).isDirectory(), url);
+        const [filePath, fragment] = url.split("#");
+        const target = path.resolve(directory, filePath);
+        const info = await stat(target);
+        assert.ok(info.isFile() || info.isDirectory(), url);
+        if (fragment) {
+          const targetHtml = await readFile(info.isDirectory() ? path.join(target, "index.html") : target, "utf8");
+          assert.ok(targetHtml.includes(`id="${fragment}"`), `${directory}: ${url}`);
+        }
       }
     }
   }
@@ -231,7 +243,8 @@ test("preview serves language directory roots and blocks paths outside dist", { 
       if (url) resolve(url[0]);
     });
   });
-  for (const [route, locale] of [["/", "zh-Hans"], ["/ja/", "ja"], ["/en/", "en"], ["/open-world/", "zh-Hans"], ["/ja/open-world/", "ja"], ["/en/open-world/", "en"]]) {
+  for (const locale of languages) for (const page of pagePaths) {
+    const route = `/${locale === "zh-Hans" ? "" : `${locale}/`}${page ? `${page.replace(/\/$/, "")}/` : ""}`;
     const response = await fetch(base + route);
     assert.equal(response.status, 200, route);
     assert.ok((await response.text()).includes(`<html lang="${locale}">`));
@@ -242,6 +255,28 @@ test("preview serves language directory roots and blocks paths outside dist", { 
   assert.equal((await fetch(base + "/assets/surface-paint-coverage-20261027.webp")).headers.get("content-type"), "image/webp");
   assert.equal((await fetch(base + "/%2e%2e%2fassets.json")).status, 403);
   assert.equal((await fetch(base + "/missing.html")).status, 404);
+});
+
+test("pagination keeps landing pages compact and preserves localized detail routes", async () => {
+  for (const locale of languages) {
+    const localeRoot = path.join(site, "dist", locale === "zh-Hans" ? "" : locale);
+    const home = await readFile(path.join(localeRoot, "index.html"), "utf8");
+    assert.doesNotMatch(home, /id="art-grid"|id="rhythm-title"|id="performance-title"/);
+    const world = await readFile(path.join(localeRoot, "open-world/index.html"), "utf8");
+    assert.doesNotMatch(world, /id="map-title"|id="loop-title"|id="plan-title"/);
+    for (const page of pagePaths) {
+      const html = await readFile(path.join(localeRoot, page, "index.html"), "utf8");
+      assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1, `${locale}/${page} needs one main heading`);
+      assert.ok(!html.includes("{{"));
+      for (const language of languages) {
+        const target = `https://lorendw7.github.io/BalloonBarrage/${language === "zh-Hans" ? "" : `${language}/`}${page ? `${page.replace(/\/$/, "")}/` : ""}`;
+        const match = html.match(new RegExp(`<link rel="alternate" hreflang="${language}" href="([^"]+)"`));
+        assert.ok(match);
+        const currentUrl = `https://lorendw7.github.io/BalloonBarrage/${locale === "zh-Hans" ? "" : `${locale}/`}${page ? `${page.replace(/\/$/, "")}/` : ""}`;
+        assert.equal(new URL(match[1], currentUrl).href, target);
+      }
+    }
+  }
 });
 
 test("world pages preserve locale across nested navigation and keep proposals separate from downloads", async () => {
@@ -259,12 +294,16 @@ test("world pages preserve locale across nested navigation and keep proposals se
       assert.ok(html.includes(`href="${target}" lang="${language}"`), "Language switch keeps world subpage");
     }
     assert.equal((html.match(/aria-current="page"/g) ?? []).length, 1);
-    assert.equal((html.match(/type="radio"/g) ?? []).length, 9);
-    assert.doesNotMatch(html, /\bchecked\b|\{\{|releases\/download/);
+    assert.doesNotMatch(html, /type="radio"|data-world-choices|\{\{|releases\/download/);
+    assert.deepEqual(worldStrings[locale].choices.map(([title]) => title[0]), ["C", "A", "B"]);
+    for (const [title, body] of worldStrings[locale].choices) {
+      assert.ok(html.includes(title));
+      assert.ok(html.includes(body));
+    }
     assert.ok(html.includes(worldStrings[locale].status));
     const directory = path.join(site, "dist", prefix, "open-world");
     const built = await readFile(path.join(directory, "index.html"), "utf8");
-    for (const file of ["world.css", "world.js"]) {
+    for (const file of ["world.css"]) {
       const source = await readFile(path.join(site, "src", file));
       const extension = path.extname(file);
       const hash = createHash("sha256").update(source).digest("hex").slice(0, 12);

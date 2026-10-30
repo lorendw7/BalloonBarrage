@@ -6,11 +6,13 @@ export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
 }
 
-export function renderPage(template, locale, release, staticFiles = {}) {
+export function renderPage(template, locale, release, staticFiles = {}, page = "") {
   const text = strings[locale];
   if (!text) throw new Error(`Unsupported language: ${locale}`);
-  const base = locale === "zh-Hans" ? "./" : "../";
-  const route = (language) => language === "zh-Hans" ? base : `${base}${language}/`;
+  const depth = Number(locale !== "zh-Hans") + Number(Boolean(page));
+  const base = depth ? "../".repeat(depth) : "./";
+  const home = `${base}${locale === "zh-Hans" ? "" : `${locale}/`}`;
+  const route = (language) => `${base}${language === "zh-Hans" ? "" : `${language}/`}${page ? `${page}/` : ""}`;
   const labels = { "zh-Hans": "中文", ja: "日本語", en: "EN" };
   const languageLinks = languages.map((language) => `<a href="${route(language)}" lang="${language}" hreflang="${language}" data-language="${language}"${locale === language ? ' aria-current="page"' : ""}>${labels[language]}</a>`).join("");
   const alternateLinks = languages.map((language) => `<link rel="alternate" hreflang="${language}" href="${route(language)}">`).join("\n  ");
@@ -32,12 +34,15 @@ export function renderPage(template, locale, release, staticFiles = {}) {
   };
   const releasePanels = platformPanel("windows", snapshots.windows) + platformPanel("macos", snapshots.macos);
   const siteUrl = "https://lorendw7.github.io/BalloonBarrage/";
-  const canonicalUrl = siteUrl + (locale === "zh-Hans" ? "" : `${locale}/`);
+  const canonicalUrl = siteUrl + (locale === "zh-Hans" ? "" : `${locale}/`) + (page ? `${page}/` : "");
   const heroReleaseStatus = snapshots.windows.available
     ? `${text.downloadPreviewLabel} · ${snapshots.windows.tag}${snapshots.macos.available ? ` · macOS ${snapshots.macos.tag}` : ""}`
     : (snapshots.windows.status === "empty" ? text.downloadEmpty : text.downloadUnknown);
-  const special = { base, home: route(locale), locale, languageLinks, alternateLinks, releasePanels,
-    worldUrl: `${route(locale)}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),
+  const headings = { game: text.navGame, updates: text.navUpdates, art: text.navArt };
+  const special = { base, home, locale, languageLinks, alternateLinks, releasePanels,
+    title: e(page ? `${headings[page]} | BalloonBarrage` : text.title), pageHeading: e(headings[page] ?? text.title), pageClass: page ? "site-detail" : "site-home",
+    gameUrl: `${home}game/`, updatesUrl: `${home}updates/`, artUrl: `${home}art/`,
+    worldUrl: `${home}open-world/`, worldNav: e(worldStrings[locale].nav), worldStatus: e(worldStrings[locale].status),
     styleFile: e(staticFiles["styles.css"] ?? "styles.css"), scriptFile: e(staticFiles["app.js"] ?? "app.js"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/festival-share-20261029.jpg`, heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {

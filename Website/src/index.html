@@ -23,128 +23,17 @@
   {{alternateLinks}}
   <script type="module" src="{{base}}{{scriptFile}}"></script>
 </head>
-<body>
+<body class="{{pageClass}}">
   <a class="skip-link" href="#main">{{skip}}</a>
   <header class="site-header">
     <div class="header-inner">
     <a class="brand" href="{{home}}" aria-label="BalloonBarrage"><img src="{{base}}favicon.svg" width="32" height="32" alt=""><span>Balloon<span class="brand-color">Barrage</span></span></a>
-    <nav class="main-nav" aria-label="{{navigation}}"><a href="#game">{{navGame}}</a><a href="#updates">{{navUpdates}}</a><a href="{{worldUrl}}">{{worldNav}}</a><a href="#festival">{{navFestival}}</a><a href="#art">{{navArt}}</a><a class="nav-download" href="#download">{{navDownload}}</a></nav>
+    <nav class="main-nav" aria-label="{{navigation}}"><a href="{{home}}">{{navHome}}</a><a href="{{gameUrl}}">{{navGame}}</a><a href="{{worldUrl}}">{{worldNav}}</a><a href="{{updatesUrl}}">{{navUpdates}}</a><a href="{{artUrl}}">{{navArt}}</a><a class="nav-download" href="{{home}}#download">{{navDownload}}</a></nav>
     <nav class="language-nav" aria-label="{{language}}">{{languageLinks}}</nav>
     </div>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <p class="eyebrow">{{eyebrow}}</p>
-        <h1 class="wordmark" id="hero-title">BALLOON<span>BARRAGE</span></h1>
-        <p class="hero-description">{{intro}}</p>
-        <p class="release-status">{{heroReleaseStatus}}</p>
-        <div class="hero-actions"><a class="button button-teal" href="#download">{{heroDownload}}</a><a class="text-link" href="#game">{{heroMore}}</a></div>
-        <p class="prototype-note">{{prototype}}</p>
-        <a class="venue-callout" href="#festival"><span>{{meetingLabel}}</span><strong>{{meetingRoom}}</strong><span aria-hidden="true">↗</span></a>
-        <dl class="hero-facts"><div><dt>{{heroLength}}</dt><dd>{{heroLengthValue}}</dd></div><div><dt>{{heroMode}}</dt><dd>{{heroModeValue}}</dd></div><div><dt>{{heroInput}}</dt><dd>{{heroInputValue}}</dd></div></dl>
-      </div>
-    </section>
-    <section class="section game-section" id="game" aria-labelledby="game-title">
-      <div class="section-heading"><h2 id="game-title">{{gameTitle}}</h2><p>{{gameIntro}}</p></div>
-      <figure class="gameplay-figure">
-        <a class="art-open" href="{{base}}assets/festival-response-20261029.png" data-art aria-label="{{artOpen}}: {{prototypeCaption}}"><img src="{{base}}assets/festival-response-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{prototypeAlt}}"></a>
-        <figcaption><span>{{prototypeCaption}}</span><time datetime="2026-10-29">2026.10.29</time></figcaption>
-      </figure>
-      <dl class="game-facts"><div><dt>{{factSong}}</dt><dd>{{factSongBody}}</dd></div><div><dt>{{factPaint}}</dt><dd>{{factPaintBody}}</dd></div><div><dt>{{factScore}}</dt><dd>{{factScoreBody}}</dd></div></dl>
-      <article class="rhythm-feature" aria-labelledby="rhythm-title">
-        <div class="section-heading"><h3 id="rhythm-title">{{rhythmTitle}}</h3><p>{{rhythmIntro}}</p></div>
-        <ol class="rhythm-steps">
-          <li><figure><a class="art-open" href="{{base}}assets/festival-watch-20261029.png" data-art aria-label="{{artOpen}}: {{watchTitle}}"><img src="{{base}}assets/festival-watch-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{watchAlt}}"></a><figcaption><span class="rhythm-step-number" aria-hidden="true">01</span><strong>{{watchTitle}}</strong></figcaption></figure><p>{{watchBody}}</p></li>
-          <li><figure><a class="art-open" href="{{base}}assets/festival-response-20261029.png" data-art aria-label="{{artOpen}}: {{responseTitle}}"><img src="{{base}}assets/festival-response-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{responseAlt}}"></a><figcaption><span class="rhythm-step-number" aria-hidden="true">02</span><strong>{{responseTitle}}</strong></figcaption></figure><p>{{responseBody}}</p></li>
-        </ol>
-        <p class="small rhythm-capture-note">{{rhythmCaptureLabel}}</p>
-      </article>
-      <article class="song-showcase"><div class="section-heading"><p class="eyebrow">{{screenshotsLabel}}</p><h3>{{songsTitle}}</h3><p>{{songsBody}}</p></div><ul class="song-tracklist"><li>{{songOne}}</li><li>{{songTwo}}</li><li>{{songThree}}</li><li>{{songFour}}</li><li>{{songFive}}</li><li>{{songSix}}</li><li>{{songSeven}}</li><li>{{songEight}}</li><li>{{songNine}}</li><li>{{songTen}}</li></ul><figure><a class="art-open" href="{{base}}assets/festival-selection-20261029.png" data-art aria-label="{{artOpen}}: {{interfaceTitle}}"><img src="{{base}}assets/festival-selection-20261029.webp" loading="lazy" decoding="async" width="2560" height="1440" alt="{{interfaceAlt}}"></a><figcaption>{{interfacePreviewLabel}}</figcaption></figure><p>{{selectionControl}}</p></article>
-      <div class="play-notes">
-        <div class="controls"><h3>{{controlsTitle}}</h3><dl><div><dt>{{selectionLabel}}</dt><dd>{{selectionControl}}</dd></div><div><dt>{{mouseLabel}}</dt><dd>{{controlsAim}}</dd></div><div><dt>{{buttonLabel}}</dt><dd>{{controlsFire}}</dd></div><div><dt><kbd>{{colorLabel}}</kbd></dt><dd>{{controlsColor}}</dd></div><div><dt><kbd>{{pauseLabel}}</kbd></dt><dd>{{controlsPause}}</dd></div></dl></div>
-        <p class="scene-note">{{sceneNote}}</p>
-      </div>
-      <article class="relay-feature" aria-labelledby="relay-title">
-        <div><p class="eyebrow">{{relayStatus}}</p><h3 id="relay-title">{{relayTitle}}</h3><p>{{relayBody}}</p><p class="small">{{relayRules}}</p></div>
-        <ol class="relay-steps"><li><span class="relay-swatch relay-teal" aria-hidden="true">1</span>{{relayStepOne}}</li><li><span class="relay-swatch relay-coral" aria-hidden="true">2</span>{{relayStepTwo}}</li><li><span class="relay-swatch relay-gold" aria-hidden="true">3</span>{{relayStepThree}}</li></ol>
-      </article>
-      <aside class="palette-panel" aria-labelledby="palette-title">
-        <div class="palette-copy">
-        <p class="eyebrow">{{paletteStatus}}</p>
-        <h3 id="palette-title">{{paletteTitle}}</h3>
-        <p>{{paletteBody}}</p>
-        </div>
-        <figure>
-          <a class="art-open" href="{{base}}assets/palette.png" data-art aria-label="{{artOpen}}: {{paletteTitle}}"><img src="{{base}}assets/palette.webp" loading="lazy" decoding="async" width="1600" height="850" alt="{{paletteAlt}}"></a>
-          <figcaption><span>{{paletteCaption}}</span><time datetime="2026-10-19">2026.10.19</time></figcaption>
-        </figure>
-      </aside>
-      <details class="development-details"><summary>{{developmentTitle}} <span>{{developmentUpdated}}</span></summary><div class="development-note"><div>
-        <p>{{developmentBody}}</p>
-        <dl class="progress-list">
-          <div><dt>{{savedTitle}}</dt><dd>{{savedBody}}</dd></div>
-          <div><dt>{{feedbackTitle}}</dt><dd>{{feedbackBody}}</dd></div>
-          <div><dt>{{windowsTitle}}</dt><dd>{{windowsBody}}</dd></div>
-          <div><dt>{{nextTitle}}</dt><dd>{{nextBody}}</dd></div>
-          <div><dt>{{checkpointTitle}}</dt><dd>{{checkpointBody}}</dd></div>
-        </dl>
-        <p class="small">{{laterBody}}</p>
-      </div></div></details>
-      <details class="performance-details"><summary>{{performanceTitle}}</summary><aside class="performance-panel" aria-labelledby="performance-title">
-        <div class="performance-heading"><h3 id="performance-title">{{performanceTitle}}</h3><p><strong>{{performanceTarget}}</strong><span>{{performanceTargetLabel}}</span></p></div>
-        <dl class="performance-metrics"><div><dt>{{performanceBeforeLabel}}</dt><dd>{{performanceBefore}}</dd></div><div><dt>{{performanceAfterLabel}}</dt><dd>{{performanceAfter}}</dd></div></dl>
-        <p class="small">{{performanceBody}}</p>
-        <details class="performance-evidence"><summary>{{performanceEvidence}}</summary><a class="art-open" href="{{base}}assets/surface-paint-coverage-20261027.png" data-art aria-label="{{artOpen}}: {{performanceEvidence}}"><img src="{{base}}assets/surface-paint-coverage-20261027.webp" loading="lazy" decoding="async" width="1920" height="1080" alt="{{performanceAlt}}"></a></details>
-      </aside></details>
-    </section>
-    <section class="download-section" id="download" aria-labelledby="download-title">
-      <div class="section download-grid">
-        <div class="download-copy"><h2 id="download-title">{{downloadTitle}}</h2><p>{{downloadIntro}}</p><a class="feedback" href="https://github.com/lorendw7/BalloonBarrage/issues">{{feedback}}</a><a class="source-link" href="https://github.com/lorendw7/BalloonBarrage">{{downloadSource}}</a></div>
-        <div class="download-cards">{{releasePanels}}</div>
-      </div>
-    </section>
-    <section class="section updates-section" id="updates" aria-labelledby="updates-title">
-      <div class="updates-heading"><div><p class="eyebrow">{{updatesEyebrow}}</p><h2 id="updates-title">{{updatesTitle}}</h2></div><time datetime="2026-10-30">2026.10.30</time></div>
-      <p class="updates-intro">{{updatesIntro}}</p>
-      <a class="studio-announcement" href="{{worldUrl}}"><span class="announcement-date">NEXT</span><span><strong>{{worldNav}}</strong><span>{{worldStatus}}</span></span><span class="announcement-arrow" aria-hidden="true">↗</span></a>
-      <a class="studio-announcement" href="#art"><span class="announcement-date">10.29</span><span><strong>{{expansionTeaser}}</strong><span>{{expansionTeaserBody}}</span></span><span class="announcement-arrow" aria-hidden="true">↗</span></a>
-      <article class="spray-feature">
-        <figure class="spray-art"><a class="art-open" href="{{base}}assets/surface-paint-coverage-20261027.png" data-art aria-label="{{artOpen}}: {{sprayTitle}}"><img src="{{base}}assets/surface-paint-coverage-20261027.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="{{sprayAlt}}"></a><figcaption><span>{{sprayPreviewLabel}}</span><time datetime="2026-10-27">2026.10.27</time></figcaption></figure>
-        <div class="spray-copy"><p class="eyebrow">{{sprayEyebrow}}</p><h3>{{sprayTitle}}</h3><p>{{sprayBody}}</p><ul class="spray-status"><li><span aria-hidden="true"></span>{{sprayVisualStatus}}</li><li><span aria-hidden="true"></span>{{sprayAtlasStatus}}</li><li><span aria-hidden="true"></span>{{sprayRuntimeStatus}}</li></ul></div>
-      </article>
-      <article class="studio-feature"><a class="art-open" href="{{base}}assets/results-statistics-20261023.png" data-art aria-label="{{artOpen}}: {{resultTitle}}"><img src="{{base}}assets/results-statistics-20261023.webp" width="1349" height="783" loading="lazy" decoding="async" alt="{{resultAlt}}"></a><div class="update-copy"><p class="eyebrow">{{resultPreviewLabel}}</p><h3>{{resultTitle}}</h3><p>{{resultBody}}</p></div></article>
-      <div class="updates-grid">
-        <article class="update-card"><figure><a class="art-open" href="{{base}}assets/festival-response-20261029.png" data-art aria-label="{{artOpen}}: {{sceneTitle}}"><img src="{{base}}assets/festival-response-20261029.webp" width="2560" height="1440" loading="lazy" decoding="async" alt="{{sceneAlt}}"></a><figcaption><span>{{scenePreviewLabel}}</span></figcaption></figure><div class="update-copy"><h3>{{sceneTitle}}</h3><p>{{sceneBody}}</p></div></article>
-        <article class="update-card"><figure><a class="art-open" href="{{base}}assets/surface-patterns-20261019.png" data-art aria-label="{{artOpen}}: {{patternsTitle}}"><img src="{{base}}assets/surface-patterns-20261019.webp" width="1600" height="1280" loading="lazy" decoding="async" alt="{{patternsAlt}}"></a><figcaption><span>{{assetPreviewLabel}}</span></figcaption></figure><div class="update-copy"><h3>{{patternsTitle}}</h3><p>{{patternsBody}}</p></div></article>
-        <article class="update-card"><figure><a class="art-open" href="{{base}}assets/mixed-pigment-model-20261020.png" data-art aria-label="{{artOpen}}: {{blasterTitle}}"><img src="{{base}}assets/mixed-pigment-model-20261020.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="{{blasterAlt}}"></a><figcaption><span>{{modelPreviewLabel}}</span></figcaption></figure><div class="update-copy"><h3>{{blasterTitle}}</h3><p>{{blasterBody}}</p></div></article>
-        <article class="update-card"><figure><a class="art-open" href="{{base}}assets/festival-selection-20261029.png" data-art aria-label="{{artOpen}}: {{interfaceTitle}}"><img src="{{base}}assets/festival-selection-20261029.webp" width="2560" height="1440" loading="lazy" decoding="async" alt="{{interfaceAlt}}"></a><figcaption><span>{{interfacePreviewLabel}}</span></figcaption></figure><div class="update-copy"><h3>{{interfaceTitle}}</h3><p>{{interfaceBody}}</p></div></article>
-      </div>
-      <p class="updates-next"><strong>{{updatesNextLabel}}</strong> {{updatesNextBody}}</p>
-      <div class="delivery-heading"><h3>{{deliveryTitle}}</h3><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/Docs/Design/ROADMAP.md">{{deliveryLink}} <span aria-hidden="true">↗</span></a></div>
-      <ol class="delivery-strip"><li><span>{{deliveryNow}}</span><h4>{{deliveryNowTitle}}</h4><p>{{deliveryNowBody}}</p></li><li><span>{{deliveryNext}}</span><h4>{{deliveryNextTitle}}</h4><p>{{deliveryNextBody}}</p></li><li><span>{{deliveryLater}}</span><h4>{{deliveryLaterTitle}}</h4><p>{{deliveryLaterBody}}</p></li></ol>
-    </section>
-    <section class="festival-section" id="festival" aria-labelledby="festival-title">
-      <div class="section festival-grid">
-        <div class="festival-copy"><h2 id="festival-title">{{festivalTitle}}</h2><p>{{festivalBody}}</p><div class="festival-links"><a href="https://www.qpic.jp/">{{qpicLink}}</a><a href="https://kyudaisai.jp/79th/">{{festivalLink}}</a></div></div>
-        <div class="festival-date"><p>{{festivalDateLabel}}</p><time datetime="2026-10-31">{{festivalDate}}</time><p>{{festivalVenue}}</p><p class="small">{{festivalNote}}</p></div>
-      </div>
-    </section>
-    <section class="section art-section" id="art" aria-labelledby="art-title">
-      <div class="art-heading"><div><p class="eyebrow">{{artEyebrow}}</p><h2 id="art-title">{{artTitle}}</h2></div><p>{{artIntro}}</p></div>
-      <div class="art-toolbar" data-gallery-toolbar hidden><div class="art-filters" role="group" aria-label="{{artFilterLabel}}"><button type="button" data-art-filter="all" aria-pressed="true" aria-controls="art-grid">{{artFilterAll}}</button><button type="button" data-art-filter="studio" aria-pressed="false" aria-controls="art-grid">{{artFilterStudio}}</button><button type="button" data-art-filter="props" aria-pressed="false" aria-controls="art-grid">{{artFilterProps}}</button><button type="button" data-art-filter="artwork" aria-pressed="false" aria-controls="art-grid">{{artFilterArtwork}}</button></div><p class="art-count" role="status" aria-live="polite" data-art-count data-count-template="{{artCount}}"></p></div>
-      <div class="art-grid" id="art-grid">
-        <figure class="art-card art-wide" data-art-category="studio"><a class="art-open" href="{{base}}assets/studio-integrated-20261029.png" data-art aria-label="{{artOpen}}: {{expansionTitle}}"><img src="{{base}}assets/studio-integrated-20261029.webp" loading="lazy" decoding="async" width="1920" height="1080" alt="{{expansionAlt}}"></a><figcaption><span>{{expansionTitle}}</span><span>{{artNativeLabel}}</span></figcaption><p>{{expansionBody}}</p></figure>
-        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/studio-props-20261028.png" data-art aria-label="{{artOpen}}: {{propsTitle}}"><img src="{{base}}assets/studio-props-20261028.webp" loading="lazy" decoding="async" width="1920" height="1200" alt="{{propsAlt}}"></a><figcaption><span>{{propsTitle}}</span><span>{{artNativeLabel}}</span></figcaption><p>{{propsBody}}</p></figure>
-        <figure class="art-card" data-art-category="artwork"><a class="art-open" href="{{base}}assets/studio-rhythm-print-20261028.png" data-art aria-label="{{artOpen}}: {{rhythmPrintTitle}}"><img src="{{base}}assets/studio-rhythm-print-20261028.webp" loading="lazy" decoding="async" width="1254" height="1254" alt="{{rhythmPrintAlt}}"></a><figcaption><span>{{rhythmPrintTitle}}</span><span>{{artGeneratedLabel}}</span></figcaption><p>{{rhythmPrintBody}}</p></figure>
-        <figure class="art-card" data-art-category="artwork"><a class="art-open" href="{{base}}assets/botanical-pigment-print-20261028.png" data-art aria-label="{{artOpen}}: {{botanicalPrintTitle}}"><img src="{{base}}assets/botanical-pigment-print-20261028.webp" loading="lazy" decoding="async" width="1254" height="1254" alt="{{botanicalPrintAlt}}"></a><figcaption><span>{{botanicalPrintTitle}}</span><span>{{artGeneratedLabel}}</span></figcaption><p>{{botanicalPrintBody}}</p></figure>
-        <figure class="art-card" data-art-category="studio"><a class="art-open" href="{{base}}assets/studio-concept.png" data-art aria-label="{{artOpen}}: {{artStudio}}"><img src="{{base}}assets/studio-concept.webp" loading="lazy" decoding="async" width="1672" height="941" alt="{{studioAlt}}"></a><figcaption><span>{{artStudio}}</span><span>{{artLabel}}</span></figcaption></figure>
-        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/paint-blaster-concept.png" data-art aria-label="{{artOpen}}: {{artGun}}"><img src="{{base}}assets/paint-blaster-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{gunAlt}}"></a><figcaption><span>{{artGun}}</span><span>{{artLabel}}</span></figcaption></figure>
-        <figure class="art-card" data-art-category="props"><a class="art-open" href="{{base}}assets/balloon-concept.png" data-art aria-label="{{artOpen}}: {{artBalloon}}"><img src="{{base}}assets/balloon-concept.webp" loading="lazy" decoding="async" width="1536" height="1024" alt="{{balloonAlt}}"></a><figcaption><span>{{artBalloon}}</span><span>{{artLabel}}</span></figcaption></figure>
-      </div>
-      <p class="art-source-note">{{artSourceNote}} <a href="https://github.com/lorendw7/BalloonBarrage/tree/main/Assets/StudioArtPack/StudioExpansion20261028">{{artSourceLink}} <span aria-hidden="true">↗</span></a></p>
-    </section>
-
+{{pageContent}}
   </main>
   <footer class="section footer"><div><a class="footer-brand" href="{{home}}">{{footer}}</a><p>{{footerNote}}</p><p class="creator-credit"><span>{{creatorLabel}}</span><strong>何单东 <span lang="en">Shandong He</span></strong></p></div><details class="credits"><summary>{{credits}}</summary><p>{{creditsBody}}</p><a href="https://github.com/lorendw7/BalloonBarrage/blob/main/CREDITS.md">{{creditsLink}}</a></details><p class="privacy">{{privacy}}</p></footer>
   <dialog class="art-dialog" aria-label="{{artOpen}}"><button class="dialog-close" type="button">{{artClose}}</button><img alt=""><p></p></dialog>

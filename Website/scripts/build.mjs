@@ -5,16 +5,17 @@ import { createHash } from "node:crypto";
 import { languages } from "../src/strings.mjs";
 import { getReleaseSnapshot } from "./releases.mjs";
 import { renderPage } from "./render.mjs";
-import { renderWorld } from "./render-world.mjs";
+import { renderWorld, worldPages } from "./render-world.mjs";
+import { loadTemplate, sitePages } from "./templates.mjs";
 
 const site = fileURLToPath(new URL("../", import.meta.url));
 const root = path.resolve(site, "..");
 const output = path.join(site, "dist");
 await mkdir(path.join(output, "assets"), { recursive: true });
-const template = await readFile(path.join(site, "src/index.html"), "utf8");
+const templates = Object.fromEntries(await Promise.all(sitePages.map(async page => [page, await loadTemplate(page)])));
 // New pages must never reuse a cached stylesheet from an earlier layout.
 const staticFiles = {};
-for (const file of ["styles.css", "app.js", "world.css", "world.js"]) {
+for (const file of ["styles.css", "app.js", "world.css"]) {
   const data = await readFile(path.join(site, "src", file));
   const extension = path.extname(file);
   const hash = createHash("sha256").update(data).digest("hex").slice(0, 12);
@@ -39,14 +40,21 @@ for (const asset of assets) {
 for (const locale of languages) {
   const directory = locale === "zh-Hans" ? output : path.join(output, locale);
   await mkdir(directory, { recursive: true });
-  await writeFile(path.join(directory, "index.html"), renderPage(template, locale, release, staticFiles));
-  await mkdir(path.join(directory, "open-world"), { recursive: true });
-  await writeFile(path.join(directory, "open-world/index.html"), renderWorld(locale, staticFiles));
+  for (const page of sitePages) {
+    const destination = path.join(directory, page);
+    await mkdir(destination, { recursive: true });
+    await writeFile(path.join(destination, "index.html"), renderPage(templates[page], locale, release, staticFiles, page));
+  }
+  for (const page of worldPages) {
+    const destination = path.join(directory, "open-world", page);
+    await mkdir(destination, { recursive: true });
+    await writeFile(path.join(destination, "index.html"), renderWorld(locale, staticFiles, page));
+  }
 }
 for (const file of ["styles.css", "app.js", "favicon.svg"]) await copyFile(path.join(site, "src", file), path.join(output, file));
 await writeFile(path.join(output, ".nojekyll"), "");
 await writeFile(path.join(output, "release.json"), JSON.stringify(release, null, 2) + "\n");
 console.log(
-  `Built ${languages.length * 2} language pages using ${assets.length} project images. ` +
+  `Built ${languages.length * (sitePages.length + worldPages.length)} language pages using ${assets.length} project images. ` +
   `Release status: Windows=${release.windows.status}, macOS=${release.macos.status}.`
 );
