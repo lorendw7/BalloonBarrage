@@ -5,13 +5,16 @@ public static class CoopLearnerCore
     public static bool IsSecondShotReady(float now, float nextAllowedShotTime)
     {
         // TODO (learner): return the result of comparing the two times.
-        return false;
+        return now >= nextAllowedShotTime;
     }
 
     /// <summary>Lesson 2: ordinary hit adds zero; on-beat hit adds ten bonus points.</summary>
     public static int SecondPlayerBeatBonus(bool isOnBeat)
     {
-        // TODO (learner): choose the bonus using isOnBeat.
+        if(isOnBeat)
+        {
+            return 10;
+        }
         return 0;
     }
 }
