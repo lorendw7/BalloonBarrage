@@ -19,6 +19,8 @@ The revised scene offers Festival (ten rounds of about 64–65 seconds) and Stan
 
 ## Current work and evidence
 
+The current source also adds optional [Rainbow chain rules](Docs/Design/GAME_DESIGN.md#optional-rainbow-chain--source-candidate): a completed tricolor relay banks one burst for the next direct balloon hit, resolving at most two nearby visible targets for ordinary points. Classic stays available with unchanged records; chain records are separate. This addition is **not included in the published demo.11 packages**. Artwork postcards/export remain deferred.
+
 The October 30 demo.11 candidates include an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. Demo.10 remains the earlier candidate without the relay. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
 
 The planned October 31 exhibition meeting place is **Room 2407, Center Building 2 (センター２号館), Ito Campus**. Demo operating hours remain unconfirmed. The [official website](https://lorendw7.github.io/BalloonBarrage/en/#festival) carries the translated visitor information.

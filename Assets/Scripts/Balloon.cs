@@ -15,6 +15,7 @@ public class Balloon : MonoBehaviour
     public static event System.Action<int> OnBeatHit;
     public static event System.Action<int> OnResolved;
     public static event System.Action<int, Color> OnPigmentPopped;
+    public static event System.Action<Balloon> OnDirectPop;
 
 
     [SerializeField]
@@ -43,6 +44,9 @@ public class Balloon : MonoBehaviour
     public int EventId { get; private set; } = -1;
 
     public double EventTimeSeconds { get; private set; }
+
+    public bool CanReceiveChain(double songTime) => EventId >= 0 && !isPoping &&
+        gameObject.activeInHierarchy && songTime <= EventTimeSeconds + cleanupDelaySeconds;
 
     [SerializeField]
     private double cleanupDelaySeconds = 5d;
@@ -113,19 +117,21 @@ public class Balloon : MonoBehaviour
         Pop(bonusPoints, true, hitPoint);
     }
 
+    public void HitFromChain()
+    {
+        if (isPoping || !RoundController.IsPlaying || RoundController.IsPaused) return;
+        Pop(0, false, default, false);
+    }
+
     private void Pop(
         int bonusPoints,
         bool hasHitPoint,
-        Vector3 hitPoint)
+        Vector3 hitPoint,
+        bool direct = true)
     {
         isPoping = true;
         Score.Add(points + bonusPoints);
         Score.RegisterSuccessfulHit(bonusPoints > 0);
-        StudioBalloonAppearance pigment = GetComponent<StudioBalloonAppearance>();
-        if (pigment != null && pigment.pigments.Length > 0)
-        {
-            OnPigmentPopped?.Invoke(pigment.ColorIndex, pigment.Pigment);
-        }
         OnResolved?.Invoke(EventId);
 
         if (bonusPoints > 0)
@@ -137,6 +143,16 @@ public class Balloon : MonoBehaviour
             in GetComponentsInChildren<Collider>())
         {
             balloonCollider.enabled = false;
+        }
+
+        if (direct)
+        {
+            // Spend only a previously banked charge. A relay completed by this pop
+            // is granted afterward and belongs to the following direct hit.
+            OnDirectPop?.Invoke(this);
+            StudioBalloonAppearance pigment = GetComponent<StudioBalloonAppearance>();
+            if (pigment != null && pigment.pigments.Length > 0)
+                OnPigmentPopped?.Invoke(pigment.ColorIndex, pigment.Pigment);
         }
 
         LeaveWallPaint();

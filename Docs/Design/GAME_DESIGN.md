@@ -86,6 +86,8 @@ Prefer fewer meaningful events to compressing the same event count into less tim
 
 ### Interaction palette
 
+This table describes the Classic song rules. The separately selected [rainbow chain](#optional-rainbow-chain--source-candidate) uses its own scoring-record identity; it does not alter Classic or add the deferred paint ribbon.
+
 | Interaction | How music drives play | Rule and scope |
 |---|---|---|
 | Phrase-authored sweep, fan and staggered sequence | Different phrases change aim direction, spacing and recurrence; the returning theme repeats its recognizable pattern | Implemented source/data slice. Reuse the three learner pattern families, one target per derived chart event and existing rewards; timing/phrase listening remains separate |
@@ -116,6 +118,20 @@ Pop any three distinct balloon pigments to complete one relay. The lower-left HU
 There is no additional deadline, required order, color-match shot, failure, score multiplier or automatic secondary pop. Expired balloons do not erase collection progress. Existing 10/20 rewards, rhythm windows, chart events, target capacity, song durations, retained paint and record keys remain unchanged. Completed relays are a separate per-round keepsake shown as the fourth result statistic, without persistent records or rewards. Paused and post-round pops cannot collect; pause hides the overlay and freezes the brief celebration. Retry resets counts, swatches and celebration state and destroys the old overlay. Both text and numeric progress explain the goal without relying on color alone.
 
 The implementation uses a pure progress model, a successful-pop notification and one bounded HUD. No new art, music, scene copies or world particle systems are needed. [Validation](../Project/VALIDATION.md) records the actual automated evidence and limits; source checks are not a standalone release or a human playtest.
+
+## Optional rainbow chain — source candidate
+
+On October 30 the creator explicitly authorized direct implementation of another gameplay addition after first receiving its scope. The optional Rainbow chain ruleset extends the tricolor relay with a banked burst. It is saved source, not part of the published demo.11 ZIPs. Artwork postcards/export remain deferred at the creator's request.
+
+Before Play, select Classic or Rainbow chain independently of Festival/Standard song length. Classic is the default and retains its original scoring records. The rules selector and short explanation are localized in Chinese, Japanese and English. Rules cannot change after a round starts. Retry returns to the normal title with Classic selected and all transient counters cleared.
+
+Complete a tricolor relay through direct balloon hits to bank one charge. Charges do not stack or expire. Empty shots and ordinary surface painting do not consume it. The next direct hit on a chart balloon spends the charge, even if no eligible neighbor is nearby: choose a cluster to make the burst useful. First spend an existing charge, then collect that direct hit's pigment. A hit that completes a set cannot spend its newly earned charge immediately; a direct hit can legitimately spend an old charge and earn another for the following hit.
+
+One burst resolves at most two additional, already spawned chart balloons within 1.8 world units of the primary balloon. Choose nearest first, using event ID to break distance ties. Ignore resolved, inactive, expired and non-chart targets. Physics linecasts prevent crossing scene geometry. Secondary hits resolve through the existing one-time pop guard, effects, paint and event cleanup. They receive their ordinary base points and successful-hit/streak accounting, with no rhythm bonus, no pigment collection and no further burst callback. A single direct timed hit can therefore score its normal 20 plus up to two normal 10-point neighbors; it cannot multiply a rhythm reward or create new chart events. Original event times, capacity, audio, cadence and continuous-fire input remain intact.
+
+The existing relay HUD shows a ready instruction and a brief localized burst/neighbor count; the actual neighboring pops use the existing pigment effects. No new asset or world particle system is required. Results add a separate burst count. Charge, flash and collection state freeze during pause, cannot advance after settlement and reset on Retry. Rainbow chain records append `.RainbowChain.v1` to the existing song/profile scoring key; Festival and Standard remain separate. Classic records are read and written under their unchanged keys.
+
+The first automated trial covers charge order, cap/radius/occlusion, one-time outcomes, secondary-score boundaries, pause, record isolation, localized selection/results and reset. [Validation](../Project/VALIDATION.md) owns exact results and the distinction from natural mouse-input play, musical comfort, packages and venue acceptance.
 
 ## Required rhythm loop
 
@@ -250,7 +266,7 @@ Translation data targets Simplified Chinese, Japanese and English. The festival 
 
 The current production path uses eight indexed pigments, an explicit C-key switch for gun/stream/direct deposits and nine prepared opaque static receivers. Balloon pigment independently selects matching pop feedback. Broad-coverage sprites are connected; they are not general projected decals or arbitrary-mesh painting. The [concept variants V12](../Art/CONCEPT_VARIANTS_V12.md) scene remains a separate six-pigment art study. See the [palette guide](../Art/BALLOON_COLOR_LESSON.md), [paint-art guide](../Art/PAINT_SPRAY_STYLE.md) and Validation for resource/evidence details. The rules below constrain any further expansion.
 
-- Keep a balloon's visible material, pop color and pattern coordinated as one entry; avoid independent random selections that disagree. Color is cosmetic and does not add new target rules or score values.
+- Keep a balloon's visible material, pop color and pattern coordinated as one entry; avoid independent random selections that disagree. Classic retains its existing target/point rules. The separately selected rainbow-chain rules use the existing pigment collection to bank bursts, without requiring the spray color to match a target.
 - Spray samples place paint at the actual hit position and surface normal on eligible scene geometry. New props are not automatically receivers. Verify normals, depth bias and clipping before accepting another surface. The [full-scene paint architecture](FULL_SCENE_PAINT_ARCHITECTURE.md) proposes a planar paint-rendering study before broader geometry; evaluate projected decals or a separate glass treatment only for a demonstrated need. Do not recolor an entire shared material on every hit.
 - A balloon pop has three coordinated visual layers: a brief independent contact-anchored pigment puff, a small radial latex-fragment scatter and matching persistent splat/brush/drip deposits on eligible nearby surfaces. Determine surface deposits through short, bounded queries; neither fragments nor deposits may float at the balloon root when the accepted contact differs. Match pigment to the balloon, keep short particle lifetimes and the one-time hit guard, and do not create extra damage or score. The on-beat layer adds a restrained gold accent rather than multiplying queries or covering the screen.
 - Retain deposits without timed fading/removal throughout the song, pause and results; clear them on retry, a new round or a future return-to-title path. The October 27 automated fixture checked pause, 1,000 retained marks, natural song settlement and ten Retry resets. Saving artwork across application restarts is a separate future feature.

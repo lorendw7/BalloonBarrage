@@ -72,6 +72,14 @@
     {"key":"relay.progress","zhHans":"三色接力 {0}/3 · 已完成 {1} 次","ja":"3色リレー {0}/3 · 完成 {1} 回","en":"Tricolor relay {0}/3 · Completed {1}"},
     {"key":"relay.complete","zhHans":"三色集齐！已完成 {0} 次","ja":"3色そろった！完成 {0} 回","en":"Three colors collected! Completed {0}"},
     {"key":"relay.hint","zhHans":"可选目标：打破三种不同颜色的气球","ja":"おまけ：違う色の風船を3色集めよう","en":"Optional: pop three different balloon colors"},
-    {"key":"result.tricolorRelays","zhHans":"三色接力：{0} 次","ja":"3色リレー：{0} 回","en":"Tricolor relays: {0}"}
+    {"key":"result.tricolorRelays","zhHans":"三色接力：{0} 次","ja":"3色リレー：{0} 回","en":"Tricolor relays: {0}"},
+    {"key":"rules.classic","zhHans":"经典玩法 · 独立原有纪录","ja":"クラシック · 従来の記録","en":"Classic · original records"},
+    {"key":"rules.chain","zhHans":"彩虹连锁 · 独立新纪录","ja":"レインボー連鎖 · 専用記録","en":"Rainbow chain · separate records"},
+    {"key":"rules.classicHint","zhHans":"三色接力记录完成次数。普通命中10分，节拍命中20分。","ja":"3色リレーの完成回数を記録。通常10点、拍に合うと20点。","en":"Tricolor relays count completed sets. Ordinary hits score 10; on-beat hits score 20."},
+    {"key":"rules.chainHint","zhHans":"集齐三色充能，下次命中连带最多两只附近气球。\n连带只计普通分，纪录独立。","ja":"3色でチャージし、次のヒットで近くの風船を最大2個連鎖。\n追加分は通常点のみ。記録は別です。","en":"Three colors charge your next hit: burst up to two nearby balloons.\nExtras earn base points only. Separate records."},
+    {"key":"chain.hint","zhHans":"集齐三色充能 → 下次命中连带最多两只","ja":"3色でチャージ → 次のヒットで最大2個連鎖","en":"Three colors charge your next hit · up to 2 neighbors"},
+    {"key":"chain.ready","zhHans":"已蓄能！下次命中气球触发连锁","ja":"チャージ完了！次のヒットで連鎖","en":"READY! Your next balloon hit triggers a burst"},
+    {"key":"chain.burst","zhHans":"彩虹连锁！连带 {0} 只","ja":"レインボー連鎖！追加 {0} 個","en":"Rainbow burst! {0} extra balloons"},
+    {"key":"result.chainBursts","zhHans":"连锁彩爆：{0} 次","ja":"連鎖バースト：{0} 回","en":"Rainbow bursts: {0}"}
   ]
 }

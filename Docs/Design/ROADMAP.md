@@ -4,6 +4,8 @@ Updated: October 30, 2026 (Asia/Tokyo). This is the delivery plan. [Game design]
 
 ## Current decision
 
+The creator subsequently authorized direct implementation of an optional rainbow-chain ruleset after its scope was explained. [Rainbow chain](GAME_DESIGN.md#optional-rainbow-chain--source-candidate) owns its rules. This source trial is separate from the published demo.11 packages: Classic remains the default, chain records have a distinct identity, and no new desktop release or website download is implied. Postcards/export remain deferred. Verify the bounded burst, charge order, ordinary-only secondary rewards, pause/results/Retry, record isolation and three-language selector before considering another package.
+
 The creator explicitly authorized the tricolor relay and its new Windows/macOS packages, tests, publication, website download update and temporary-file cleanup. Preserve the learner's three saved functions in `KyudaisaiLearnerCore.cs` and retain learner ownership for future lessons. [Optional tricolor relay](GAME_DESIGN.md#optional-tricolor-relay) owns the rules. Demo.11 adds the relay; demo.10 remains immutable.
 
 | Current work | Completion boundary |

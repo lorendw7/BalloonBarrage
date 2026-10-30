@@ -14,6 +14,7 @@ public sealed class TricolorRelay : MonoBehaviour
     private Text hint;
     private LocalizedText fontTemplate;
     private float celebrationRemaining;
+    private RainbowChain chain;
 
     public int CollectedCount => progress.CollectedCount;
     public int CompletedCount => progress.CompletedCount;
@@ -41,6 +42,11 @@ public sealed class TricolorRelay : MonoBehaviour
         if (!progress.Collect(colorIndex)) return;
         collectedColors[slot] = pigment;
         celebrationRemaining = progress.CompletedCount > completed ? 1.4f : 0f;
+        if (progress.CompletedCount > completed)
+        {
+            chain = GetComponent<RainbowChain>();
+            if (chain != null) chain.GrantCharge();
+        }
     }
 
     private void LateUpdate()
@@ -54,10 +60,14 @@ public sealed class TricolorRelay : MonoBehaviour
         uiRoot.SetActive(true);
         celebrationRemaining = Mathf.Max(0f, celebrationRemaining - Time.deltaTime);
         bool celebrating = IsCelebrating;
-        label.text = celebrating
+        chain = GetComponent<RainbowChain>();
+        label.text = chain != null && chain.IsSelected && chain.IsFlashing
+            ? LocalizationManager.Format("chain.burst", chain.LastNeighborCount)
+            : celebrating
             ? LocalizationManager.Format("relay.complete", CompletedCount)
             : LocalizationManager.Format("relay.progress", CollectedCount, CompletedCount);
-        hint.text = LocalizationManager.GetText("relay.hint");
+        hint.text = LocalizationManager.GetText(chain != null && chain.IsSelected
+            ? (chain.IsReady ? "chain.ready" : "chain.hint") : "relay.hint");
         if (fontTemplate != null) label.font = hint.font = fontTemplate.CurrentFont;
         int visibleCount = celebrating ? 3 : CollectedCount;
         for (int i = 0; i < swatches.Length; i++)

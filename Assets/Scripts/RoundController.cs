@@ -22,6 +22,12 @@ public sealed class ExhibitionSongProfile
 public class RoundController : MonoBehaviour
 {
     private TricolorRelay colorRelay;
+    private RainbowChain rainbowChain;
+    private Dropdown rulesDropdown;
+    private Text rulesDescription;
+    public bool RainbowChainEnabled { get; private set; }
+    public string SelectedBestScoreKey => GetBestScoreKey(SelectedSong.trackId) +
+        (RainbowChainEnabled ? ".RainbowChain.v1" : "");
     private float songDuration;
     private double songStartDspTime;
 
@@ -155,6 +161,10 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        rainbowChain = GetComponent<RainbowChain>();
+        if (rainbowChain == null) rainbowChain = gameObject.AddComponent<RainbowChain>();
+        rainbowChain.Configure(this);
+        rainbowChain.ResetRound();
         colorRelay = GetComponent<TricolorRelay>();
         if (colorRelay == null) colorRelay = gameObject.AddComponent<TricolorRelay>();
         colorRelay.ResetRound();
@@ -318,7 +328,7 @@ public class RoundController : MonoBehaviour
         remainingTime = songDuration;
         displayedSeconds = int.MinValue;
 
-        string bestScoreKey = GetBestScoreKey(profile.trackId);
+        string bestScoreKey = SelectedBestScoreKey;
         bestScore = PlayerPrefs.GetInt(bestScoreKey, 0);
 
         SongSelectionChanged?.Invoke();
@@ -346,6 +356,15 @@ public class RoundController : MonoBehaviour
         if (firstMatch < 0) return;
         currentSongMode = mode;
         SelectSong(firstMatch);
+    }
+
+    public void SetRainbowChainEnabled(bool enabled)
+    {
+        if (hasStarted) return;
+        RainbowChainEnabled = enabled;
+        if (rulesDropdown != null) rulesDropdown.SetValueWithoutNotify(enabled ? 1 : 0);
+        if (SelectedSong != null) bestScore = PlayerPrefs.GetInt(SelectedBestScoreKey, 0);
+        RefreshSongSelectionText();
     }
 
     private void SelectVisibleSong(int index)
@@ -449,21 +468,25 @@ public class RoundController : MonoBehaviour
         songSelectionPanel = new GameObject("SongSelectionPanel", typeof(RectTransform), typeof(Image));
         songSelectionPanel.transform.SetParent(sourcePanel.parent, false);
         RectTransform panel = songSelectionPanel.GetComponent<RectTransform>();
-        panel.anchoredPosition = new Vector2(0f, -55f);
-        panel.sizeDelta = new Vector2(680f, 400f);
+        panel.anchoredPosition = new Vector2(0f, -100f);
+        panel.sizeDelta = new Vector2(680f, 500f);
         Image background = songSelectionPanel.GetComponent<Image>();
         background.sprite = sourcePanel.GetComponent<Image>().sprite;
         background.type = Image.Type.Sliced;
         background.pixelsPerUnitMultiplier = 1.4f;
 
         Text textTemplate = FindDescendant(startScreen.transform, "ControlsText").GetComponent<Text>();
-        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 155f, 38f, 25);
-        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -40f, 60f, 18);
+        songSelectionTitle = CreateSelectionLabel(textTemplate, "SongSelectionTitle", 205f, 38f, 25);
+        songSelectionDetails = CreateSelectionLabel(textTemplate, "SongSelectionDetails", -45f, 60f, 18);
+        rulesDescription = CreateSelectionLabel(textTemplate, "RulesDescription", -110f, 58f, 17);
+        rulesDescription.resizeTextForBestFit = true;
+        rulesDescription.resizeTextMinSize = 14;
+        rulesDescription.resizeTextMaxSize = 17;
 
         GameObject modeObject = DefaultControls.CreateDropdown(new DefaultControls.Resources());
         modeObject.name = "SongMode";
         modeObject.transform.SetParent(panel, false);
-        modeObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 95f);
+        modeObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 145f);
         modeObject.GetComponent<RectTransform>().sizeDelta = new Vector2(560f, 42f);
         songModeDropdown = modeObject.GetComponent<Dropdown>();
         songModeDropdown.ClearOptions();
@@ -482,7 +505,7 @@ public class RoundController : MonoBehaviour
         dropdownObject.name = "SongList";
         dropdownObject.transform.SetParent(panel, false);
         RectTransform dropdownRect = dropdownObject.GetComponent<RectTransform>();
-        dropdownRect.anchoredPosition = new Vector2(0f, 40f);
+        dropdownRect.anchoredPosition = new Vector2(0f, 35f);
         dropdownRect.sizeDelta = new Vector2(560f, 54f);
         songDropdown = dropdownObject.GetComponent<Dropdown>();
         Color ink = new Color(0.12f, 0.24f, 0.21f);
@@ -540,6 +563,13 @@ public class RoundController : MonoBehaviour
         songDropdown.captionText.resizeTextForBestFit = true;
         songDropdown.captionText.resizeTextMinSize = 15;
         songDropdown.captionText.resizeTextMaxSize = 20;
+        GameObject rulesObject = Instantiate(modeObject, panel);
+        rulesObject.name = "SongRules";
+        rulesObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 90f);
+        rulesDropdown = rulesObject.GetComponent<Dropdown>();
+        rulesDropdown.onValueChanged = new Dropdown.DropdownEvent();
+        rulesDropdown.SetValueWithoutNotify(RainbowChainEnabled ? 1 : 0);
+        rulesDropdown.onValueChanged.AddListener(index => SetRainbowChainEnabled(index == 1));
         songConfirmButton = CreateSelectionButton("ConfirmSongButton", "StartButton", -170f, StartSelectedSong);
         songBackButton = CreateSelectionButton("BackFromSongButton", "QuitButton", 170f, CancelSongSelection);
     }
@@ -585,7 +615,7 @@ public class RoundController : MonoBehaviour
         foreach (LocalizedText localized in buttonObject.GetComponentsInChildren<LocalizedText>(true))
             localized.enabled = false;
         RectTransform rect = buttonObject.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(x, -140f);
+        rect.anchoredPosition = new Vector2(x, -195f);
         rect.sizeDelta = new Vector2(280f, 70f);
         Button button = buttonObject.GetComponent<Button>();
         button.onClick = new Button.ButtonClickedEvent();
@@ -604,6 +634,10 @@ public class RoundController : MonoBehaviour
         songModeDropdown.options[0].text = LocalizationManager.GetText("song.mode.festival");
         songModeDropdown.options[1].text = LocalizationManager.GetText("song.mode.standard");
         songModeDropdown.RefreshShownValue();
+        rulesDropdown.options[0].text = LocalizationManager.GetText("rules.classic");
+        rulesDropdown.options[1].text = LocalizationManager.GetText("rules.chain");
+        rulesDropdown.RefreshShownValue();
+        rulesDescription.text = LocalizationManager.GetText(RainbowChainEnabled ? "rules.chainHint" : "rules.classicHint");
         songSelectionDetails.text = $"{SelectedSong.artist}  ·  {SelectedSong.roundDurationSeconds:0} sec\n" +
             LocalizationManager.GetText("song.preview");
         songConfirmButton.GetComponentInChildren<Text>(true).text = LocalizationManager.GetText("song.play");
@@ -655,6 +689,7 @@ public class RoundController : MonoBehaviour
         colorRelay.ResetRound();
 
         songDuration = (float)profile.roundDurationSeconds;
+        rainbowChain.ResetRound();
         remainingTime = songDuration;
 
         hasStarted = true;
@@ -778,7 +813,7 @@ public class RoundController : MonoBehaviour
         {
             bestScore = finalScore;
             PlayerPrefs.SetInt(
-                GetBestScoreKey(SelectedSong.trackId),
+                SelectedBestScoreKey,
                 bestScore);
             PlayerPrefs.Save();
         }
@@ -844,6 +879,8 @@ public class RoundController : MonoBehaviour
             LocalizationManager.Format(
                 "result.tricolorRelays", colorRelay != null ? colorRelay.CompletedCount : 0);
         resultStatsText.resizeTextForBestFit = true;
+        if (RainbowChainEnabled)
+            resultStatsText.text += "\n" + LocalizationManager.Format("result.chainBursts", rainbowChain.BurstCount);
         resultStatsText.resizeTextMinSize = 16;
         resultStatsText.resizeTextMaxSize = 21;
     }
