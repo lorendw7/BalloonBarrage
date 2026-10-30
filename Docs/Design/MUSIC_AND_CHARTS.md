@@ -1,5 +1,7 @@
 # Music and chart resources
 
+The October 30 demo.14 tuning uses a 24-target scene cap and twelve-second post-note cleanup. Density tests recompute occupancy from unchanged event timestamps and the current production settings. Current v4 `estimatedPeakActiveWithoutHits` values are refreshed for that longer lifetime; these estimates do not schedule runtime events. Event IDs/times, profiles, audio and original notices remain unchanged.
+
 Retrieved: October 11, 2026; status updated October 29. The creator authorized the pinned StepMania collection for noncommercial development packages. Interface music stays separate from gameplay. The new festival revision derives twenty profiles from ten preserved recordings, with bounded charts and an opening listen-then-answer motif. Original files, source manifests and notices remain intact. Runtime, listening and exact-package evidence live in [Validation](../Project/VALIDATION.md).
 
 ## October 29 expansion

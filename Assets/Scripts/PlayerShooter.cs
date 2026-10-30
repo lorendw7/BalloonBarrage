@@ -646,9 +646,15 @@ public class PlayerShooter : MonoBehaviour
                     ? Mathf.Clamp(CoopLearnerCore.SecondPlayerBeatBonus(isOnBeat), 0, 10)
                     : isOnBeat ? 10 : 0;
 
+                RainbowChain chain = roundController.GetComponent<RainbowChain>();
+                int burstsBefore = chain != null ? chain.BurstCount : 0;
+                int hitsBefore = Score.SuccessfulHits;
                 sprayedBalloon.HitAt(
                     sprayHit.point,
                     bonusPoints);
+                if (Score.SuccessfulHits > hitsBefore)
+                    localPlayers?.NotifyHit(LocalPlayerIndex, isOnBeat,
+                        chain != null && chain.BurstCount > burstsBefore && chain.LastNeighborCount > 0);
             }
             else if (paintProjectilePrefab != null)
             {

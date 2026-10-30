@@ -22,6 +22,20 @@ public sealed class RainbowChainPreview : MonoBehaviour
     public Balloon PrimaryTarget { get; private set; }
     public int NeighborCount => neighbors.Count;
     public int VisibleMarkerCount { get; private set; }
+    private readonly Vector3[] shownPositions = new Vector3[3];
+    private readonly int[] shownPoints = new int[3];
+    private float burstRemaining;
+    public bool IsShowingBurst => burstRemaining > 0f;
+
+    public void ShowBurst(Vector3 primary, Vector3[] positions, int[] points, int count)
+    {
+        shownPositions[0] = primary;
+        for (int i = 0; i < Mathf.Min(count, 2); i++)
+        { shownPositions[i + 1] = positions[i]; shownPoints[i + 1] = points[i]; }
+        burstRemaining = .85f;
+        burstCount = Mathf.Clamp(count, 0, 2);
+    }
+    private int burstCount;
 
     public void Configure(RainbowChain owner)
     {
@@ -33,6 +47,19 @@ public sealed class RainbowChainPreview : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!RoundController.IsPlaying) { burstRemaining = 0f; Hide(); return; }
+        if (RoundController.IsPaused) { Hide(); return; }
+        if (Camera.main == null || chain == null) { burstRemaining = 0f; Hide(); return; }
+        if (burstRemaining > 0f)
+        {
+            burstRemaining = Mathf.Max(0f, burstRemaining - Time.deltaTime);
+            EnsureUi();
+            label.text = burstCount > 0
+                ? LocalizationManager.Format("chain.burst.result", burstCount, chain.LastExtraPoints)
+                : LocalizationManager.GetText("chain.burst.empty");
+            RenderPattern(burstCount + 1, true);
+            return;
+        }
         if (localPlayers != null) shooter = localPlayers.LastAimingPlayer == 1 ? localPlayers.Secondary : localPlayers.Primary;
         if (chain == null || shooter == null || !chain.IsSelected || !chain.IsReady ||
             !RoundController.IsPlaying || RoundController.IsPaused || !shooter.TryGetAimedBalloon(out Balloon target))
@@ -48,40 +75,52 @@ public sealed class RainbowChainPreview : MonoBehaviour
         if (primary == null || round == null || !primary.CanReceiveChain(round.SongTimeSeconds))
         { Hide(); return; }
         EnsureUi();
-        root.SetActive(true);
         PrimaryTarget = primary;
+        shownPositions[0] = primary.GuidePosition;
+        for (int i = 0; i < neighbors.Count; i++)
+        { shownPositions[i + 1] = neighbors[i].GuidePosition; shownPoints[i + 1] = neighbors[i].points; }
+        label.text = neighbors.Count > 0
+            ? LocalizationManager.Format("chain.preview.shot", neighbors.Count + 1)
+            : LocalizationManager.GetText("chain.preview.empty");
+        RenderPattern(neighbors.Count + 1, false);
+    }
+
+    private void RenderPattern(int count, bool burst)
+    {
+        root.SetActive(true);
         VisibleMarkerCount = 0;
-        label.text = neighbors.Count == 2 ? LocalizationManager.GetText("chain.preview.triple")
-            : LocalizationManager.Format("chain.preview", neighbors.Count, neighbors.Count + 1);
         if (fontTemplate != null) label.font = fontTemplate.CurrentFont;
         for (int index = 0; index < outlines.Length; index++)
         {
-            Balloon target = index == 0 ? primary : index <= neighbors.Count ? neighbors[index - 1] : null;
-            bool visible = target != null && target.gameObject.activeSelf;
+            bool visible = index < count;
             outlines[index].gameObject.SetActive(visible);
             if (!visible) continue;
-            Vector3 viewport = Camera.main.WorldToViewportPoint(target.GuidePosition);
+            Vector3 viewport = Camera.main.WorldToViewportPoint(shownPositions[index]);
             if (viewport.z <= 0f) { outlines[index].gameObject.SetActive(false); continue; }
             outlines[index].anchorMin = outlines[index].anchorMax = new Vector2(viewport.x, viewport.y);
             outlines[index].anchoredPosition = Vector2.zero;
-            outlines[index].localScale = Vector3.one * (1f + .025f * Mathf.Sin(Time.unscaledTime * 4f));
+            outlines[index].localScale = Vector3.one * (burst ? 1f + .3f * (1f - burstRemaining / .85f) : 1f);
+            badges[index].text = index == 0 ? LocalizationManager.GetText(burst ? "chain.marker.hit" : "chain.marker.aim")
+                : "+" + shownPoints[index].ToString(System.Globalization.CultureInfo.InvariantCulture);
             if (fontTemplate != null) badges[index].font = fontTemplate.CurrentFont;
             VisibleMarkerCount++;
         }
         VisibleLinkCount = 0;
-        Vector3 primaryUv = Camera.main.WorldToViewportPoint(primary.GuidePosition);
+        Vector3 primaryUv = Camera.main.WorldToViewportPoint(shownPositions[0]);
         for (int index = 0; index < links.Length; index++)
         {
-            bool visible = index < neighbors.Count && primaryUv.z > 0f;
+            bool visible = index < count - 1 && primaryUv.z > 0f;
             links[index].gameObject.SetActive(visible);
             if (!visible) continue;
-            Vector3 targetUv = Camera.main.WorldToViewportPoint(neighbors[index].GuidePosition);
+            Vector3 targetUv = Camera.main.WorldToViewportPoint(shownPositions[index + 1]);
             if (targetUv.z <= 0f) { links[index].gameObject.SetActive(false); continue; }
             Vector2 delta = Vector2.Scale(new Vector2(targetUv.x - primaryUv.x, targetUv.y - primaryUv.y), canvasRect.rect.size);
             RectTransform line = links[index].rectTransform;
             line.anchorMin = line.anchorMax = new Vector2(primaryUv.x, primaryUv.y);
             line.anchoredPosition = Vector2.zero; line.pivot = new Vector2(0f, .5f);
-            line.sizeDelta = new Vector2(delta.magnitude, 4f);
+            float travel = burst ? Mathf.Clamp01((.85f - burstRemaining) / .12f) : 1f;
+            line.sizeDelta = new Vector2(delta.magnitude * travel, burst ? 9f : 4f);
+            links[index].color = burst ? new Color(1f, .88f, .32f, Mathf.Clamp01(burstRemaining * 3f)) : new Color(.5f, 1f, .88f, .9f);
             line.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg);
             VisibleLinkCount++;
         }
@@ -91,7 +130,8 @@ public sealed class RainbowChainPreview : MonoBehaviour
     {
         if (root != null) return;
         fontTemplate = FindFirstObjectByType<LocalizedText>(FindObjectsInactive.Include);
-        root = new GameObject("RainbowChainPreviewOverlay", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(CanvasGroup));
+        root = new GameObject("RainbowChainPreviewOverlay", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler),
+            typeof(CanvasGroup), typeof(BalloonBarrage.Foundation.CanvasTextResolutionRefresh));
         canvasRect = root.GetComponent<RectTransform>();
         Canvas canvas = root.GetComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.sortingOrder = 26;
@@ -129,7 +169,7 @@ public sealed class RainbowChainPreview : MonoBehaviour
             badges[index].text = index == 0 ? "1" : "+" + index;
             badges[index].alignment = TextAnchor.MiddleCenter; badges[index].color = index == 0 ? new Color(1f, .88f, .35f) : new Color(.5f, 1f, .88f);
             badges[index].raycastTarget = false; badges[index].rectTransform.anchoredPosition = new Vector2(0, 77);
-            badges[index].rectTransform.sizeDelta = new Vector2(66, 34);
+            badges[index].rectTransform.sizeDelta = new Vector2(118, 34);
             badge.GetComponent<Outline>().effectColor = new Color(.02f, .1f, .08f, 1f);
             for (int side = 0; side < 4; side++)
             {
@@ -150,6 +190,6 @@ public sealed class RainbowChainPreview : MonoBehaviour
         PrimaryTarget = null; VisibleMarkerCount = 0; VisibleLinkCount = 0; neighbors.Clear();
         if (root != null) root.SetActive(false);
     }
-    private void OnDisable() { Hide(); }
+    private void OnDisable() { burstRemaining = 0f; Hide(); }
     private void OnDestroy() { if (root != null) Destroy(root); }
 }

@@ -30,7 +30,7 @@ public class BalloonSpawner : MonoBehaviour
     private float zPosition = 8f;
 
     [SerializeField, Min(1)]
-    private int maxBalloons = 16;
+    private int maxBalloons = 24;
     public int ActiveCount => activeBalloons.Count;
     public IReadOnlyList<Balloon> ActiveBalloons => activeBalloons;
 

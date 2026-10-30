@@ -74,7 +74,7 @@ public static class BalloonTimingValidation
                 Require((body.constraints & RigidbodyConstraints.FreezePosition) == RigidbodyConstraints.FreezePosition,
                     "Initial formation position is not protected.");
                 Require(Math.Abs(ReadFloat("driftDelaySeconds") - 3f) < .001f, "Wrong production drift delay.");
-                Require(Math.Abs(new SerializedObject(balloon).FindProperty("cleanupDelaySeconds").doubleValue - 8d) < .001d,
+                Require(Math.Abs(new SerializedObject(balloon).FindProperty("cleanupDelaySeconds").doubleValue - 12d) < .001d,
                     "Wrong production expiry delay.");
                 pausedAt = now; stage = 2; return;
             }
@@ -136,12 +136,14 @@ public static class BalloonTimingValidation
                 Require(Vector3.Distance(body.position, origin) > .1f, "Drift did not continue after delay.");
                 balloon.CheckExpiry(5.01d);
                 Require(balloon.gameObject.activeSelf, "Balloon expired at the old deadline.");
-                balloon.CheckExpiry(8d);
-                Require(balloon.gameObject.activeSelf, "Balloon expired at the inclusive boundary.");
                 balloon.CheckExpiry(8.01d);
+                Require(balloon.gameObject.activeSelf, "Balloon expired at the previous eight-second deadline.");
+                balloon.CheckExpiry(12d);
+                Require(balloon.gameObject.activeSelf, "Balloon expired at the inclusive boundary.");
+                balloon.CheckExpiry(12.01d);
                 Require(!balloon.gameObject.activeSelf, "Balloon survived the new deadline.");
                 Require(Score.Value == 0 && Score.SuccessfulHits == 0, "Expiry awarded a hit or points.");
-                Finish(0, "PASS: production prefab; menu hold; three active seconds before drift; position survives impulse and physical collision; pause/resume; restored constraints and original 0.6 speed; eight-second expiry boundary; no expiry score.");
+                Finish(0, "PASS: production prefab; menu hold; three active seconds before drift; position survives impulse and physical collision; pause/resume; restored constraints and original 0.6 speed; survives previous eight-second deadline; twelve-second inclusive expiry boundary; no expiry score.");
             }
         }
         catch (Exception error) { Finish(1, "FAIL: " + error); }

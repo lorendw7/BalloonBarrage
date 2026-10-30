@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
+using BalloonBarrage.Foundation;
 
 public enum LocalPlayerLayout { MouseSolo, GamepadSolo, MouseAndGamepad, TwoGamepads }
 
@@ -28,10 +29,14 @@ public sealed class LocalPlayerInput : MonoBehaviour
     private GameObject reconnectRoot;
     private Text reconnectText;
     private LocalizedText fontTemplate;
+    private BalloonSpawner aimTargets;
+    private Camera aimCamera;
+    private readonly float[] rumbleRemaining = new float[2];
 
     public void Configure(RoundController owner, PlayerShooter primary)
     {
         round = owner; Primary = primary; hasFocus = Application.isFocused;
+        aimTargets = FindFirstObjectByType<BalloonSpawner>(); aimCamera = Camera.main;
         Primary.ConfigureLocalPlayer(this, 0);
         Secondary = Primary.CreateSecondLocalPlayer(this);
         Secondary.gameObject.SetActive(false);
@@ -66,6 +71,7 @@ public sealed class LocalPlayerInput : MonoBehaviour
     public void SelectLayout(int value)
     {
         if (RoundController.IsPlaying) return;
+        StopRumble();
         Layout = (LocalPlayerLayout)Mathf.Clamp(value, 0, 3);
         prepared = false; assigned[0] = assigned[1] = null;
         Primary?.SuspendLocalInput(); Secondary?.SuspendLocalInput();
@@ -73,6 +79,7 @@ public sealed class LocalPlayerInput : MonoBehaviour
     }
     public bool PrepareRound()
     {
+        StopRumble();
         RefreshAvailable();
         if (available.Count < RequiredGamepads) return false;
         assigned[0] = UsesGamepad(0) ? available[0] : null;
@@ -101,15 +108,17 @@ public sealed class LocalPlayerInput : MonoBehaviour
         return true;
     }
     private void OnEnable() { InputSystem.onDeviceChange += DeviceChanged; hasFocus = Application.isFocused; }
-    private void OnDisable() { InputSystem.onDeviceChange -= DeviceChanged; }
+    private void OnDisable() { InputSystem.onDeviceChange -= DeviceChanged; StopRumble(); }
     private void OnApplicationFocus(bool focused)
     {
         hasFocus = focused;
+        if (!focused) StopRumble();
         Primary?.SuspendLocalInput(); Secondary?.SuspendLocalInput();
     }
     private void OnApplicationPause(bool paused)
     {
         suspended = paused;
+        if (paused) StopRumble();
         Primary?.SuspendLocalInput(); Secondary?.SuspendLocalInput();
     }
     private void DeviceChanged(InputDevice device, InputDeviceChange change)
@@ -117,12 +126,14 @@ public sealed class LocalPlayerInput : MonoBehaviour
         if (!prepared || (device != assigned[0] && device != assigned[1])) return;
         if (!DevicesReady)
         {
+            StopRumble();
             Primary?.SuspendLocalInput(); Secondary?.SuspendLocalInput();
             round?.PauseForControllerLoss();
         }
     }
     private void Update()
     {
+        UpdateRumble();
         if (round == null || !hasFocus || suspended) return;
         if (!RoundController.IsPlaying)
         {
@@ -147,20 +158,62 @@ public sealed class LocalPlayerInput : MonoBehaviour
         bool pausePressed = false;
         foreach (Gamepad pad in assigned) pausePressed |= Connected(pad) && pad.startButton.wasPressedThisFrame;
         if (pausePressed) round.TogglePauseFromController();
-        if (RoundController.IsPaused) return;
+        if (RoundController.IsPaused) { StopRumble(); return; }
         for (int player = 0; player < (IsCoop ? 2 : 1); player++)
         {
             Gamepad pad = assigned[player];
             if (!UsesGamepad(player) || !Connected(pad)) continue;
-            Vector2 stick = pad.rightStick.ReadValue();
-            if (stick.sqrMagnitude < .02f) stick = pad.leftStick.ReadValue();
-            if (stick.sqrMagnitude < .02f) continue;
-            Vector2 pixels = Vector2.ClampMagnitude(stick, 1f) * (800f * Time.unscaledDeltaTime);
-            aims[player] += new Vector2(pixels.x / Mathf.Max(1, Screen.width), pixels.y / Mathf.Max(1, Screen.height));
+            Vector2 stick = pad.rightStick.ReadUnprocessedValue();
+            if (stick.magnitude <= GamepadAimMotion.Deadzone) stick = pad.leftStick.ReadUnprocessedValue();
+            if (stick.magnitude <= GamepadAimMotion.Deadzone) continue;
+            float precision = NearTarget(player) && stick.magnitude < .8f ? .55f : 1f;
+            aims[player] += GamepadAimMotion.ViewportDelta(stick, Time.unscaledDeltaTime,
+                Mathf.Max(1, Screen.width) / (float)Mathf.Max(1, Screen.height), precision);
             aims[player] = new Vector2(Mathf.Clamp(aims[player].x, .04f, .96f), Mathf.Clamp(aims[player].y, .04f, .96f));
             LastAimingPlayer = player;
         }
         if (!UsesGamepad(0) && Mouse.current != null && Mouse.current.delta.ReadValue().sqrMagnitude > 0f) LastAimingPlayer = 0;
+    }
+
+    private bool NearTarget(int player)
+    {
+        if (aimTargets == null || aimCamera == null || round == null) return false;
+        float aspect = Mathf.Max(1, Screen.width) / (float)Mathf.Max(1, Screen.height);
+        foreach (Balloon target in aimTargets.ActiveBalloons)
+        {
+            if (target == null || !target.CanReceiveChain(round.SongTimeSeconds)) continue;
+            Vector3 uv = aimCamera.WorldToViewportPoint(target.GuidePosition);
+            if (uv.z <= 0f) continue;
+            Vector2 distance = new Vector2((uv.x - aims[player].x) * aspect, uv.y - aims[player].y);
+            if (distance.sqrMagnitude < .055f * .055f) return true;
+        }
+        return false;
+    }
+
+    public void NotifyHit(int player, bool onBeat, bool chainBurst)
+    {
+        if (player < 0 || player > 1 || !prepared || !UsesGamepad(player) || !Connected(assigned[player]) ||
+            !hasFocus || suspended || !RoundController.IsPlaying || RoundController.IsPaused) return;
+        assigned[player].SetMotorSpeeds(chainBurst ? .3f : onBeat ? .16f : .09f, chainBurst ? .5f : onBeat ? .3f : .16f);
+        rumbleRemaining[player] = chainBurst ? .11f : onBeat ? .07f : .045f;
+    }
+    private void UpdateRumble()
+    {
+        if (!RoundController.IsPlaying || RoundController.IsPaused || !hasFocus || suspended) { StopRumble(); return; }
+        for (int i = 0; i < rumbleRemaining.Length; i++)
+        {
+            if (rumbleRemaining[i] <= 0f) continue;
+            rumbleRemaining[i] = Mathf.Max(0f, rumbleRemaining[i] - Time.unscaledDeltaTime);
+            if (rumbleRemaining[i] == 0f && assigned[i] != null && assigned[i].added) assigned[i].SetMotorSpeeds(0f, 0f);
+        }
+    }
+    private void StopRumble()
+    {
+        for (int i = 0; i < rumbleRemaining.Length; i++)
+        {
+            if (rumbleRemaining[i] > 0f && assigned[i] != null && assigned[i].added) assigned[i].SetMotorSpeeds(0f, 0f);
+            rumbleRemaining[i] = 0f;
+        }
     }
     private void LateUpdate()
     {
@@ -191,5 +244,5 @@ public sealed class LocalPlayerInput : MonoBehaviour
             reconnectText.text = LocalizationManager.GetText("players.reconnect");
         }
     }
-    private void OnDestroy() { if (reconnectRoot != null) Destroy(reconnectRoot); }
+    private void OnDestroy() { StopRumble(); if (reconnectRoot != null) Destroy(reconnectRoot); }
 }

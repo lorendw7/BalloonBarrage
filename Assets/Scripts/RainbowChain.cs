@@ -20,6 +20,9 @@ public sealed class RainbowChain : MonoBehaviour
     public bool IsReady => charge.IsReady;
     public int BurstCount => charge.BurstCount;
     public int LastNeighborCount { get; private set; }
+    public int LastExtraPoints { get; private set; }
+    private readonly Vector3[] burstPositions = new Vector3[2];
+    private readonly int[] burstPoints = new int[2];
     public bool IsFlashing => flashRemaining > 0f;
     public bool IsSelected => round != null && round.RainbowChainEnabled;
 
@@ -37,6 +40,7 @@ public sealed class RainbowChain : MonoBehaviour
         charge.Reset();
         flashRemaining = 0f;
         LastNeighborCount = 0;
+        LastExtraPoints = 0;
         candidates.Clear();
     }
 
@@ -57,14 +61,23 @@ public sealed class RainbowChain : MonoBehaviour
             primary == null || primary.EventId < 0 || spawner == null || !charge.TryConsume()) return;
 
         LastNeighborCount = 0;
+        LastExtraPoints = 0;
+        Vector3 primaryPosition = primary.GuidePosition;
         SelectTargets(primary, candidates);
         foreach (Balloon target in candidates)
         {
             if (target == null || !target.CanReceiveChain(round.SongTimeSeconds)) continue;
+            Vector3 position = target.GuidePosition;
+            int before = Score.Value;
             target.HitFromChain();
+            int earned = Score.Value - before;
+            burstPositions[LastNeighborCount] = position;
+            burstPoints[LastNeighborCount] = earned;
+            LastExtraPoints += earned;
             LastNeighborCount++;
         }
         flashRemaining = 1.4f;
+        GetComponent<RainbowChainPreview>()?.ShowBurst(primaryPosition, burstPositions, burstPoints, LastNeighborCount);
         candidates.Clear();
     }
 

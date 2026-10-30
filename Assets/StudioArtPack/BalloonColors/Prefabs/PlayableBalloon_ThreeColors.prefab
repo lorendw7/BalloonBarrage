@@ -369,7 +369,7 @@ MonoBehaviour:
   - {fileID: 6505856079641505951, guid: c834a92fc0c055e46884b5b2ef0744c1, type: 3}
   onBeatGlowPrefab: {fileID: 2969724939019509008, guid: 11bdb868f9a58d94a862a79ddbf219da, type: 3}
   popPoint: {fileID: 0}
-  cleanupDelaySeconds: 8
+  cleanupDelaySeconds: 12
   rhythmWindowsSeconds: 0.1
   wallPaintPrefabs:
   - {fileID: 7850021937777270413, guid: 12e2d93da141461198837248dd1a9251, type: 3}

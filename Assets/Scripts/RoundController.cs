@@ -166,6 +166,7 @@ public class RoundController : MonoBehaviour
     private void Start()
     {
         gameObject.AddComponent<PopLightFeedback>();
+        if (GetComponent<RhythmSequenceGuide>() == null) gameObject.AddComponent<RhythmSequenceGuide>();
         localPlayers = gameObject.AddComponent<LocalPlayerInput>();
         localPlayers.Configure(this, FindFirstObjectByType<PlayerShooter>());
         rainbowChain = GetComponent<RainbowChain>();
@@ -214,6 +215,9 @@ public class RoundController : MonoBehaviour
         EnsureFallbackSongProfile();
         PrepareStartScreenLayout();
         SelectSong(0);
+        var festival = GetComponent<KyudaisaiFestivalPresentation>();
+        if (festival == null) festival = gameObject.AddComponent<KyudaisaiFestivalPresentation>();
+        festival.Configure(this, startScreen, resultsScreen);
     }
 
     private void EnsureFallbackSongProfile()

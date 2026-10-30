@@ -6482,7 +6482,7 @@ MonoBehaviour:
   xRange: {x: -3.3, y: 3.3}
   yRange: {x: -2, y: 2}
   zPosition: 8
-  maxBalloons: 16
+  maxBalloons: 24
 --- !u!1 &556493344
 GameObject:
   m_ObjectHideFlags: 0

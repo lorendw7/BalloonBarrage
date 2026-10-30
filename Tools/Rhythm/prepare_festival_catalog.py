@@ -21,7 +21,8 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "Assets/StreamingAssets/Rhythm/Festival20261029"
 MIN_GAP = 0.72
 LEAD = 2.8
-CLEANUP = 8.0
+CLEANUP = 12.0
+CAPACITY = 24
 
 
 def json_bytes(value):
@@ -293,7 +294,7 @@ def prepare_chart(track, analysis, mode):
         raise ValueError("Event cadence violated")
     peak = max(sum(0 <= event["timeSeconds"] - previous["timeSeconds"] <= LEAD + CLEANUP for previous in events)
                for event in events)
-    if peak > 16:
+    if peak > CAPACITY:
         raise ValueError("Source congestion exceeds authored budget")
     profile_id = track["id"] + "-" + mode + "-phrase-v2"
     chart = {"schemaVersion": 2, "title": track["title"], "artist": track["artist"],

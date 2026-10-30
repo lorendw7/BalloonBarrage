@@ -96,6 +96,19 @@
     {"key":"players.mouseControls","zhHans":"鼠标瞄准，按住左键喷射，C 换色，Esc 暂停。","ja":"マウス：照準、左長押し：発射、C：色、Esc：一時停止。","en":"Mouse: aim; hold left click: spray; C: color; Esc: pause."},
     {"key":"players.reconnect","zhHans":"手柄已断开。请重新连接原手柄，再按 Start 或“继续”。","ja":"パッドが切断されました。同じパッドを接続し直し、Startか再開を押してください。","en":"Controller disconnected. Reconnect the assigned controller, then press Start or Resume."},
     {"key":"chain.preview.triple","zhHans":"一发三响！ 1 ＋ 2","ja":"1発で3個！ 1 ＋ 2","en":"ONE SHOT · THREE POPS! 1 + 2"},
-    {"key":"cue.finale.burst","zhHans":"终章绽放！","ja":"フィナーレ、満開！","en":"A COLORFUL FINISH!"}
+    {"key":"cue.finale.burst","zhHans":"终章绽放！","ja":"フィナーレ、満開！","en":"A COLORFUL FINISH!"},
+    {"key":"festival.heading","zhHans":"第79回九大祭 · 暁\n黎明的色彩，从这里开始","ja":"第79回九大祭 · 暁\n夜明けの色を、ここから。","en":"79th KYUDAISAI · AKATSUKI\nA new dawn, a little color."},
+    {"key":"festival.thanks","zhHans":"九盏暖光，送给今天相遇的你。\n谢谢游玩 · 第79回九大祭特别呈现","ja":"今日出会えたあなたへ、九つの灯りを。\n遊んでくれてありがとう · 第79回九大祭 特別演出","en":"Nine little lights for everyone we met today.\nThanks for playing · A Kyudaisai special presentation"},
+    {"key":"festival.secret.title","zhHans":"你找到了，第79道晨光。","ja":"見つけたね、79番目の朝の光。","en":"You found the 79th ray of dawn."},
+    {"key":"festival.secret.message","zhHans":"愿今天留下的色彩，照亮下一次相遇。\n我们，在这里再见。","ja":"今日の色が、次の出会いを照らしますように。\nまた、ここで。","en":"May today's colors light the way to our next meeting.\nSee you here again."},
+    {"key":"festival.secret.close","zhHans":"带上祝福，回到画室","ja":"想いを胸に、アトリエへ","en":"Back to the studio"},
+    {"key":"cue.sequence.hint","zhHans":"顺序建议 1 → 2 → 3 · 已连贯击破 {0}/3\n外圈合拢时命中：节拍奖励 ＋10","ja":"おすすめ順 1 → 2 → 3 · 順に {0}/3 個\n外の輪が重なる瞬間にヒット：拍ボーナス ＋10","en":"Suggested order 1 → 2 → 3 · {0}/3 in sequence\nHit as the rings meet: on-beat bonus +10"},
+    {"key":"cue.sequence.complete","zhHans":"顺序奏响！\n三只气球，一段小旋律。","ja":"順につながった！\n三つの風船、小さなメロディー。","en":"A LITTLE MELODY!\nThree balloons, in sequence."},
+    {"key":"chain.preview.shot","zhHans":"连锁蓄能就绪：这一发将击破 {0} 只！","ja":"連鎖チャージOK：この1発で {0} 個！","en":"CHAIN CHARGED · This shot will pop {0} balloons!"},
+    {"key":"chain.preview.empty","zhHans":"蓄能待用：附近没有额外目标，试试密集气球","ja":"チャージ中：追加対象なし。近くに集まった風船を狙おう","en":"CHARGED · No extras nearby. Aim at a cluster."},
+    {"key":"chain.burst.result","zhHans":"连锁绽放！额外击破 {0} 只 · ＋{1}","ja":"連鎖、開花！追加 {0} 個 · ＋{1}","en":"CHAIN BLOOM! {0} extra pops · +{1}"},
+    {"key":"chain.burst.empty","zhHans":"蓄能已使用 · 本次没有额外目标","ja":"チャージを使用 · 今回は追加対象なし","en":"CHARGE USED · No extra targets this time"},
+    {"key":"chain.marker.aim","zhHans":"瞄准","ja":"ねらう","en":"AIM"},
+    {"key":"chain.marker.hit","zhHans":"命中","ja":"ヒット","en":"HIT"}
   ]
 }

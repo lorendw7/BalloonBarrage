@@ -101,10 +101,11 @@ public static class BalloonReliabilityValidation
     private static void VerifySpacing(BalloonSpawner spawner)
     {
         ClearBalloons();
-        for (int index = 0; index < 16; index++)
-            Require(spawner.Spawn(Event(10000 + index)), "Could not admit 16 targets from one crowded column.");
+        int capacity = (int)Read(spawner, "maxBalloons");
+        for (int index = 0; index < capacity; index++)
+            Require(spawner.Spawn(Event(10000 + index)), "Could not admit the configured capacity from one crowded column.");
         var balloons = Object.FindObjectsByType<Balloon>(FindObjectsSortMode.None);
-        Require(balloons.Length == 16 && !spawner.Spawn(Event(10016)), "Capacity check failed.");
+        Require(balloons.Length == capacity && !spawner.Spawn(Event(10000 + capacity)), "Capacity check failed.");
         var motion = balloons[0].GetComponent<BalloonFloat>();
         var body = balloons[0].GetComponent<Rigidbody>();
         var original = (RigidbodyConstraints)Read(motion, "originalConstraints");
@@ -130,7 +131,7 @@ public static class BalloonReliabilityValidation
                         b, b.transform.position, b.transform.rotation, out _, out _), "Target colliders overlap at spawn.");
             }
         }
-        Record("PASS: 16 repeated-column targets admitted inside bounds, separated centers/colliders; seventeenth blocked; original event times retained.");
+        Record("PASS: " + capacity + " repeated-column targets admitted inside bounds, separated centers/colliders; next target blocked; original event times retained.");
         ClearBalloons();
     }
 
@@ -175,7 +176,8 @@ public static class BalloonReliabilityValidation
         string remaining = (Mathf.RoundToInt((float)((events[2].timeSeconds - (double)Read(reader, "currentSongTime")) * 10d)) / 10f)
             .ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
         Require(cueText.text == LocalizationManager.Format("cue.next", remaining), "Displayed countdown still refers to a popped target.");
-        balloons[2].CheckExpiry(events[2].timeSeconds + 8.01d);
+        double retention = new SerializedObject(balloons[2]).FindProperty("cleanupDelaySeconds").doubleValue;
+        balloons[2].CheckExpiry(events[2].timeSeconds + retention + .01d);
         Call(reader, "UpdateBeatCue");
         Require((int)Read(reader, "nextCueEventIndex") == 3, "Expiry did not resolve its cue.");
         Require(Score.Value == score, "Expiry changed the score.");

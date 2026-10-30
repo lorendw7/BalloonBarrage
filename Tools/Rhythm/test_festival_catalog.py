@@ -71,7 +71,7 @@ class FestivalCatalogTests(unittest.TestCase):
             self.assertLess(times[-1], profile["sourceCueOutSeconds"] - 1)
             self.assertTrue(all(b - a >= festival.MIN_GAP - 1e-7 for a, b in zip(times, times[1:])))
             peak = max(sum(0 <= t - previous <= festival.LEAD + festival.CLEANUP for previous in times) for t in times)
-            self.assertLessEqual(peak, 16, profile["title"])
+            self.assertLessEqual(peak, festival.CAPACITY, profile["title"])
             self.assertEqual(peak, chart["estimatedPeakActiveWithoutHits"])
             self.assertTrue(all(e["authoredPlacement"] and -2 <= e["placementSlot"] <= 2 for e in events))
 
@@ -112,8 +112,11 @@ class FestivalCatalogTests(unittest.TestCase):
         cleanup = float(re.search(r"cleanupDelaySeconds: ([\d.]+)", prefab)[1])
         capacity = int(re.search(r"maxBalloons: (\d+)", scene)[1])
         self.assertEqual(festival.CLEANUP, cleanup)
+        self.assertEqual(festival.CAPACITY, capacity)
         for profile in self.profiles:
-            self.assertLessEqual(self.chart(profile)["estimatedPeakActiveWithoutHits"], capacity)
+            times = [event["timeSeconds"] for event in self.chart(profile)["events"]]
+            peak = max(sum(0 <= now - previous <= festival.LEAD + cleanup for previous in times) for now in times)
+            self.assertLessEqual(peak, capacity, profile["title"])
 
     def test_sections_are_contiguous_and_source_times_are_not_double_shifted(self):
         for profile in self.profiles:
