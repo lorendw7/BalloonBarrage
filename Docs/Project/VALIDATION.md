@@ -1,5 +1,20 @@
 # Validation record
 
+## Demo.17 desktop publication — October 31
+
+Published prerelease [v0.1.0-demo.17](https://github.com/lorendw7/BalloonBarrage/releases/tag/v0.1.0-demo.17) at **09:11:58 JST on October 31** (2026-10-31T00:11:58Z), from exact source `c1c8f06294262ccaf76705127f1add435ef0ed2f`. Separate clean source checkouts produced non-Development Windows x64 and macOS Universal players with **zero errors and zero warnings**. Windows: 194.518 seconds / 282,378,910 raw bytes. Mac: 218.554 seconds / 299,028,361 raw bytes. Windows reused its verified same-platform import cache after removal of all graybox fixtures/assets; the final source checkout was clean, and its build/startup had no missing-script warnings.
+
+| Platform | ZIP bytes | SHA-256 |
+|---|---:|---|
+| Windows x64 | 142,133,300 | `5e5abcbc1138795426b0d6d63e042dfca3b8987c82f9ed4440ce4ab2df48b800` |
+| macOS Universal | 151,273,513 | `a40a9ee619b5a4d0d32409792943e7db048fa122faadd1627fa956f5f28e90a6` |
+
+Every archive CRC and runtime file size/SHA-256 passes (264 Windows / 266 Mac files). Code presence, exact credits/audience notices, Mac x86_64/arm64 and executable ZIP permissions pass. The exact freshly extracted Windows ZIP initializes its engine, 404-receiver/4096 atlas descriptor and default 45-event Goin' Under festival chart without runtime/script/shader errors, then the harness stops it at the menu. This is hidden automatic startup, not visible interaction or rendered-frame acceptance. Demo.16 native lifecycle/timing is not reused as demo.17 evidence.
+
+[Transport run 41148653241](https://github.com/lorendw7/BalloonBarrage/actions/runs/41148653241) reproduced identical ZIPs from the immutable demo.16 base. All six final remote files match local size/digest; only the two temporary draft transport files were removed. New archives, checksums and reports are retained in ignored `Builds/Desktop-v0.1.0-demo.17`. Local distribution is portable: extract the complete ZIP before launching. No installer wizard is claimed. Earlier archives remain unchanged.
+
+Targeted 171-check and production 1,256-assertion results follow below. Website local build passes **21 tests across 33 localized routes** and labels the retained full-room capture as demo.16 source. Visible standalone UI, physical controllers, venue audio, real-Mac launch and standalone 120 FPS remain unaccepted. Mac is unsigned/unnotarized and the mixed StepMania bundle remains noncommercial.
+
 ## Continuous spray, corners and curved coverage — October 31
 
 The requested retest reproduced three defects in demo.16 source: rapid strokes stopped at a change of receiver; the normal cutoff rejected rapid convex-curve sweeps; and edge-tied neighbor rays omitted wall/floor spill. Slow curve sweeps, release/player/color boundaries and opposite-face rejection already passed. The baseline isolated fixture failed 20 of 171 checks.

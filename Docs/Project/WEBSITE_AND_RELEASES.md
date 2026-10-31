@@ -2,6 +2,10 @@
 
 This document owns the website architecture and its contract with GitHub Releases. Use the [desktop release runbook](PACKAGING_LESSON.md) for local Unity builds, Draft Release staging, physical acceptance and publication. [Validation](VALIDATION.md) records completed checks and package hashes; the [Roadmap](../Design/ROADMAP.md) owns scope and release gates.
 
+## Demo.17 continuous-spray fixes — October 31
+
+The trilingual site explains corrected fast corner/curve strokes, wall/floor spill and brush-width obstruction protection. Targeted checks (171) and full studio checks (1,256) remain distinct. The existing full-room illustration is explicitly labelled demo.16 source and retains its original provenance; current direct graybox captures and reports are in [coverage verification](../Verification/PaintRegression20261031). The existing survey QR and proposed direct-Boss guide remain intact. The site currently builds 33 localized routes. Exact downloads and live delivery are recorded in [Validation](VALIDATION.md).
+
 ## Room-wide paint presentation — October 31
 
 The demo.16 website copy introduces 404 prepared opaque static studio surfaces, connected same-player strokes, original dense wet pigment and bounded storage. A genuine 2560×1440 controlled Unity GPU/physics capture replaces the old nine-receiver preview. The source capture, hashes and scope live in `Assets/StudioArtPack/RoomPaint20261031`; web derivatives retain provenance. The performance panel reports 64 MiB color storage and 76% fewer visible vertices, not a venue 120 FPS claim.

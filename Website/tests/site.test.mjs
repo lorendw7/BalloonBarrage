@@ -40,9 +40,9 @@ test("festival guidance and delivery copy do not fall back to another language",
   }
 });
 
-test("demo.16 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
+test("demo.17 copy keeps capacity, retention, input recovery and verification scopes explicit", () => {
   for (const locale of languages) {
-    assert.ok(strings[locale].deliveryNowTitle.includes("demo.16"));
+    assert.ok(strings[locale].deliveryNowTitle.includes("demo.17"));
     for (const value of ["3", "24", "12", "NEXT"]) assert.ok(strings[locale].deliveryNowBody.includes(value));
     assert.ok(strings[locale].factPaint.includes("24"));
     assert.ok(strings[locale].factPaintBody.includes("12"));
@@ -84,7 +84,7 @@ test("confirmed meeting room and packaged relay stay explicit in every language"
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
     assert.ok(strings[locale].meetingRoom.includes("2407"));
     assert.ok(strings[locale].festivalVenue.includes("2407"));
-    assert.ok(strings[locale].relayStatus.includes("demo.16"));
+    assert.ok(strings[locale].relayStatus.includes("demo.17"));
     assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);

@@ -6,5 +6,8 @@
   "captures": {
     "Corner.png": "3cbe7cae5c34837b0bccdb2d34097c21fb9b50916551c33c3a8de64ffc182b67",
     "Sphere.png": "e73a869d2324d4b5ecb33ef5b57e60be4902a8883c2df228fa631e99d0b4bfa2"
-  }
+  },
+  "diagnosticCheckout": "5f3be1820f105e44eb1e2fb5b60e6a76f3a7b260",
+  "baselineRuntimeSha256": "d97afecc9bc354eeb8f9da997f013d4e9200043ee2eb9dbbbf7dd49d97f2c444",
+  "baselineRuntimeIdentity": "The baseline painting module is byte-identical in Git to 27c0d3a/demo.16; later checkout commits changed website/planning only."
 }
