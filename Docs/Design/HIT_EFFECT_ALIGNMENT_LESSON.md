@@ -1,6 +1,6 @@
 # Hit-effect contact handoff lesson
 
-Updated: October 28, 2026. The creator explicitly authorized the contact-handoff scaffold after the external report that a balloon-hit effect sometimes appeared offset. [Game design](GAME_DESIGN.md#kyudaisai-feedback-revision--source-candidate) owns the intended behavior, the [roadmap](ROADMAP.md#immediate-lesson-queue) owns the remaining learner functions, and [Validation](../Project/VALIDATION.md#kyudaisai-source-integration-october-28) records the evidence boundary.
+Updated: October 28, 2026. The creator explicitly authorized the contact-handoff scaffold after the external report that a balloon-hit effect sometimes appeared offset. [Game design](GAME_DESIGN.md#studio-feedback-revision--source-record) owns the intended behavior, the [roadmap](ROADMAP.md#immediate-lesson-queue) owns the remaining learner functions, and [Validation](../Project/VALIDATION.md#kyudaisai-source-integration-october-28) records the evidence boundary.
 
 ## Current evidence
 

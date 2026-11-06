@@ -1,42 +1,14 @@
-# Website and desktop releases
+# Official website and desktop releases
 
-This document owns the website architecture and its contract with GitHub Releases. Use the [desktop release runbook](PACKAGING_LESSON.md) for local Unity builds, Draft Release staging, physical acceptance and publication. [Validation](VALIDATION.md) records completed checks and package hashes; the [Roadmap](../Design/ROADMAP.md) owns scope and release gates.
+## Current website direction — November 6, 2026
 
-## Demo.17 continuous-spray fixes — October 31
+The trilingual site now leads with the open-world preparation plan while keeping the published studio demo downloads. Event dates, venue details, special-event promotion, voting/registration links, QR assets and all three survey routes are removed. The build recreates only its known generated `Website/dist` directory so stale pages and QR files cannot survive a rebuild. Removed survey URLs return not found; they do not collect information or redirect to the external form.
 
-The trilingual site explains corrected fast corner/curve strokes, wall/floor spill and brush-width obstruction protection. Targeted checks (171) and full studio checks (1,256) remain distinct. The existing full-room illustration is explicitly labelled demo.16 source and retains its original provenance; current direct graybox captures and reports are in [coverage verification](../Verification/PaintRegression20261031). The existing survey QR and proposed direct-Boss guide remain intact. The site currently builds 33 localized routes. Exact downloads and live delivery are recorded in [Validation](VALIDATION.md).
+There are ten topic pages per language (30 routes). The selected daytime handmade music town and later Boss plan remain planning-only. The first next step is a route/camera sketch and small original asset brief, governed by [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) and [Roadmap](../Design/ROADMAP.md#immediate-lesson-queue).
 
-## Room-wide paint presentation — October 31
+The website retirement does not delete external form replies or change Google Forms settings. Any previously collected invitation emails retain their original 90-day limit; [retention notes](FESTIVAL_SURVEY.md) preserve those obligations. Published desktop packages, historical screenshots, exact image prompts and license attribution remain intact.
 
-The demo.16 website copy introduces 404 prepared opaque static studio surfaces, connected same-player strokes, original dense wet pigment and bounded storage. A genuine 2560×1440 controlled Unity GPU/physics capture replaces the old nine-receiver preview. The source capture, hashes and scope live in `Assets/StudioArtPack/RoomPaint20261031`; web derivatives retain provenance. The performance panel reports 64 MiB color storage and 76% fewer visible vertices, not a venue 120 FPS claim.
-
-The four unchanged Noto Emoji PNGs and OtoLogic MP3 preview remain. Playback requires an explicit user action; original notices and license texts are public assets. The [audience provenance](../../Assets/Resources/Audience/Provenance.json) owns their source hashes. The independently committed connected survey and historical demo.8 screenshot source labels remain intact. Website checks and live delivery are recorded separately from player acceptance in [Validation](VALIDATION.md).
-
-## Survey connection and clearer world guide — October 31
-
-The festival survey now links to the published Google Form. Each question has expandable examples in Chinese, Japanese and English, including what a musical layer adds and how the proposed rivals differ. The optional invitation email has a creator-selected 90-day manual retention limit; [survey operations](FESTIVAL_SURVEY.md) records the form settings, branching checks and remaining verification limits.
-
-The open-world landing page describes an imagined first visit: walk from the plaza, choose a stage, shoot balloons against a signalled rival, and bring a musical part home. Its three cards explain rivals, camera views and musical layers in everyday language. The map and play subpages expand that explanation. A sixth, separate Boss page explains the later solo direct-combat arena: move and aim against a Boss and its AI squad, read attack warnings, and attack the Boss itself. Rules, optional AI research and original asset preparation are collapsed for concise reading. Design choices and delivery gates remain in their source documents; no gameplay implementation is included.
-
-The survey entry includes a locally generated QR and printable PNG in all three languages. Its payload matches the existing public form button. Build-time URL/hash checks guard against stale QR assets; independent decoding checked the source PNG at 636 and 260 pixels and the browser-rendered SVG screenshot. See [survey operations](FESTIVAL_SURVEY.md#qr-entry-and-printable-asset) for regeneration and print checks.
-
-Validation: all 21 website checks passed after a 33-page build with both platform downloads available. Browser checks exercised the survey and world pages at 390-pixel and 1280-pixel widths without horizontal overflow. This is website and QR evidence, not a Unity or open-world playtest or a physical-phone scan.
-
-## Distribution contract
-
-- GitHub Pages hosts the static Chinese, Japanese and English website.
-- GitHub Releases hosts playable desktop ZIPs and their SHA-256 sidecars.
-- Windows and macOS assets are selected independently. A source archive is never treated as a playable package.
-- Draft releases are staging only and are excluded from the website.
-- A missing platform package is shown as unavailable rather than inferred from source code or another platform's asset.
-- macOS packages remain labelled unsigned, unnotarized and pending real-hardware verification until that evidence exists.
-- Bundled StepMania music remains limited to noncommercial development packages with its original notices and attribution.
-
-The website is a release catalogue, not acceptance evidence. Static checks cannot prove that a Unity player launches, plays audio, handles input or completes a song.
-
-The October 31 demo.14 update publishes the previously verified Windows/macOS candidates and updates all three website languages. A compact home highlight introduces the new version; the game page adds labelled order/ring/chain diagrams and a Kyudaisai dawn/lantern/79 explanation with an optional spoiler disclosure. Capacity/retention copy is 24 targets and twelve seconds after the note. Current verification limits remain explicit, while older screenshots retain their source version labels. [Validation](VALIDATION.md#demo14-publication-and-official-website--october-31) owns exact source/deployment identities and public download evidence.
-
-## Release asset selection
+## Release discovery
 
 `Website/scripts/releases.mjs` queries this repository's public releases during the site build. It examines up to the latest 100 releases, rejects drafts and empty assets, accepts only trusted HTTPS `releases/download` URLs from this repository, and prefers a stable release over a prerelease. Windows and macOS labelled ZIPs are resolved separately.
 
@@ -63,7 +35,7 @@ Use Node.js 22 or newer. No package installation is required:
 
 ```powershell
 node Website/scripts/build.mjs
-node --test Website/tests/site.test.mjs
+node --test Website/tests/*.test.mjs
 node Website/scripts/serve.mjs
 ```
 
@@ -75,15 +47,14 @@ The tests cover translation structure, trusted platform-specific release selecti
 
 Player-facing copy lives in `Website/src/strings.mjs`; project documentation remains English-only. Each language uses the same page structure and distinguishes published builds from development screenshots, concepts and model previews.
 
-The site provides eleven topic pages per language (33 routes), including the survey guide and separate Boss plan. Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page preserves its topic when switching languages and provides a home link. The home page retains concise game information, actual downloads, topic links and exhibition details; detailed tutorials, galleries and verification notes live on their own pages.
+Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page preserves its topic when switching languages. The home page keeps a concise introduction, open-world next step, actual downloads and topic links. Detailed tutorials, galleries and verification notes stay on separate pages.
 
 | Route within a language | Content |
 |---|---|
-| `/` | Game introduction, downloads, topic links and exhibition information |
+| `/` | Game introduction, open-world next step, downloads and topic links |
 | `game/` | Controls, musical demonstration/response, song catalog and relay |
 | `updates/` | Current delivery priorities and expandable historical verification details |
 | `art/` | Filterable scene/prop/artwork gallery and pigment study |
-| `survey/` | Future-direction choices with expandable examples, Google Form button/QR/download, and optional signup/90-day email policy |
 | `open-world/` | An imagined first visit and plain-language explanations of rivals, camera views and musical rewards |
 | `open-world/map/` | Labelled original topology diagram and district concepts |
 | `open-world/play/` | Exploration/challenge loop, readable troupe rules and expandable candidate roles |
@@ -91,9 +62,7 @@ The site provides eleven topic pages per language (33 routes), including the sur
 | `open-world/art/` | Sunny street festival with handmade details; night festival deferred |
 | `open-world/roadmap/` | Learner-led development gates and deferred scope |
 
-`Website/src/index.html` is the shared site shell; `home.html`, `game.html`, `updates.html`, `art.html` and `survey.html` provide its page bodies through `Website/scripts/templates.mjs`. [Survey operations](FESTIVAL_SURVEY.md) records questions, information handling, QR maintenance and live-verification limits. `Website/src/world-strings.mjs` and `world-boss-strings.mjs` hold public planning translations; `Website/scripts/render-world.mjs` renders six pages. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions; [Roadmap](../Design/ROADMAP.md#open-world-development-track--planning-only) owns delivery gates. Gameplay C / A / B appears as static cards, while art A + C has a separate compact page. Candidate rival roles are collapsed by default. Exact roles, camera settings, reward conditions and save scope remain open. World-specific styles use content-addressed filenames. No Unity gameplay or desktop package changes are part of this website update.
-
-The October 30 update shows the creator-confirmed meeting room (Center Building 2, Room 2407) near the hero and in the exhibition section, keeping demo operating hours unconfirmed. An illustrated three-step explanation introduces the tricolor relay as included in the demo.11 Windows/macOS candidates. Download cards independently discover the actually published package for each platform. It uses CSS swatches and existing fonts without new image downloads or generated media. Existing release selection and screenshot provenance remain unchanged.
+`Website/src/index.html` is the shared shell; `home.html`, `game.html`, `updates.html` and `art.html` supply its bodies through `Website/scripts/templates.mjs`. `world-strings.mjs` and `world-boss-strings.mjs` hold planning translations; `render-world.mjs` renders six world pages. Rule/technology detail is collapsed by default. Content-addressed CSS/JS keeps layout changes coherent. No Unity gameplay or desktop package change is included in the website retirement.
 
 `Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives up to the source resolution, capped at 2560 × 1440. Gameplay, results, interface and coverage screenshots use quality 98 for clearer text and paint edges; other artwork uses quality 92. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
 

@@ -47,7 +47,7 @@ This map organizes responsibilities without moving or rewriting learner-owned sc
 | `Score.cs` | Minimal round score store | Event statistics and UI orchestration |
 | `PaintGunVfx.cs` | Additional gun presentation | Authoritative projectile creation |
 
-The most valuable cleanup is responsibility-by-responsibility, not a broad rename or folder churn before the exhibition. Make one learner-owned gameplay change at a time, preserve serialized field names unless a migration is planned, and verify scene/prefab references after any later move. The [continuous-fire lesson](../Design/CONTINUOUS_FIRE_LESSON.md) is the current entry point.
+The most valuable cleanup is responsibility-by-responsibility, without broad renames or folder churn. Make one learner-owned gameplay change at a time, preserve serialized field names unless a migration is planned, and verify scene/prefab references after any later move. The [immediate lesson queue](../Design/ROADMAP.md#immediate-lesson-queue) is the current entry point; earlier gameplay lessons remain references.
 
 ## Maintenance rules
 

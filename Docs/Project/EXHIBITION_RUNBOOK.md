@@ -1,10 +1,8 @@
-# Exhibition operator runbook
+# Local playtest setup and recovery reference
 
-Use this runbook for the accepted Windows package at the Kyudaisai booth. It covers setup, player handoff and recovery; it does not establish gameplay acceptance. The [Roadmap](../Design/ROADMAP.md) owns dates and cuts, [Validation](VALIDATION.md) owns evidence, and [Packaging](PACKAGING_LESSON.md) owns release creation.
+Reference procedures for an explicitly arranged local playtest. No event date, venue or public session is currently scheduled by this document. [Roadmap](../Design/ROADMAP.md) owns current priorities, [Validation](VALIDATION.md) owns evidence, and [Packaging](PACKAGING_LESSON.md) owns releases.
 
 ## Required kit
-
-The creator confirmed the meeting place on October 30: **Room 2407, Center Building 2 (センター２号館), Ito Campus**. October 31 remains the planned participation date; the project's demo operating hours are not yet confirmed. Use the [official website](https://lorendw7.github.io/BalloonBarrage/ja/#festival) for visitor-facing Japanese information.
 
 - Accepted primary ZIP, its `.sha256` file and a separately tested fallback ZIP.
 - Freshly extracted primary and fallback folders on local storage; do not run from inside a ZIP.

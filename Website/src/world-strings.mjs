@@ -6,7 +6,7 @@ export const worldStrings = {
     home: "返回当前试玩", skip: "跳到正文", language: "语言", navigation: "规划导航",
     eyebrow: "未来版本 · 音乐小镇计划", headline: "先逛一段街，\n再玩一首歌。",
     intro: "设想一座能自由散步的音乐小镇：你从广场出发，找到喜欢的舞台，停下来射气球、玩节奏挑战，再带一段音乐回家。第一步只做广场、一条路和码头舞台。",
-    status: "规划中 · 尚未实装 · 暂无发布日期", updated: "方向确认于 2026.10.30",
+    status: "规划中 · 尚未实装 · 暂无发布日期", updated: "准备阶段更新于 2026.11.06",
     mapNav: "小镇有哪些地方", loopNav: "一局怎么玩", aiNav: "捣蛋对手", planNav: "开发顺序", choicesNav: "已选定的玩法",
     selected: "想象你第一次来到小镇", decisions: ["在广场认识道路，试着打几颗练习气球。", "沿路标走到码头，看见一座小舞台。", "自己选择开始，镜头停稳，音乐响起。", "和捣蛋角色选气球、抢目标，完成一首歌。", "回到广场，听见新带回的鼓点加入合奏。"],
     boundary: "这是未来的一次游玩示例，尚未做成。当前可下载的是画室里的气球音游；音乐小镇还不能试玩。奖励条件也仍待设计。",
@@ -37,7 +37,7 @@ export const worldStrings = {
       ["它也要遵守规则", "一颗气球只能算一次命中。对手会有失误和休息，不能隔墙射击或一出现就必中；同时打中的归属还需测试。"],
       ["输了也能继续逛", "初步设计不扣生命、不把你打飞，也不强迫重开。仍可选单人演奏；对决成绩与单人记录分开。"]
     ],
-    planTitle: "每一步，都有一个可以验证的问题。", planIntro: "后续一起开发：先讲清一个小步骤，由你写核心玩法，再一起检查。完成并观察一个环节后，才扩建下一块。",
+    planTitle: "每一步，都有一个可以验证的问题。", planIntro: "现在先准备广场→码头舞台→返回的路线草图、视角切换说明和第一组原创素材。之后一次讲清一个小步骤，由你写核心玩法，再一起检查；目前还没有可玩的开放世界。",
     stages: [
       ["OW0","画出第一条路","玩法 C／A／B 与美术 A＋C 已确认；画出白天路线，确定底色、材质与气球分类。","方向确认不代表灰盒或试玩已经完成。"],
       ["OW1","走得舒服","独立第三人称灰盒，只做广场边缘、一条路和一个舞台。","观察：不迷路、视角舒适、相机不穿墙。"],
@@ -80,7 +80,7 @@ export const worldStrings = {
     home: "Back to the current demo", skip: "Skip to content", language: "Language", navigation: "Plan navigation",
     eyebrow: "Future edition · A musical town", headline: "Wander a street.\nStop to play a song.",
     intro: "Imagine a small town you can explore freely: leave the plaza, find a stage, stop to shoot balloons in a rhythm challenge, then bring some music home. Start with just the plaza, one path and the pier stage.",
-    status: "Planning only · Not implemented · No release date", updated: "Direction confirmed 2026.10.30",
+    status: "Planning only · Not implemented · No release date", updated: "Preparation updated 2026.11.06",
     mapNav: "Places to visit", loopNav: "Playing a round", aiNav: "Rivals", planNav: "Development steps", choicesNav: "Selected play ideas",
     selected: "Imagine your first visit", decisions: ["Get your bearings in the plaza and try some practice balloons.", "Follow the signs to a small stage on the pier.", "Choose to start: the camera settles and the music begins.", "Pick balloons and contest targets with a mischievous rival.", "Return to the plaza and hear your new drum part join the ensemble."],
     boundary: "This is an example of a future visit, not a playable town. Current downloads are the studio balloon rhythm game. Reward conditions still need design.",
@@ -111,7 +111,7 @@ export const worldStrings = {
       ["The rival follows rules too", "A balloon counts once. Rivals make mistakes and rest; they cannot fire through walls or land an instant perfect shot. Simultaneous hits still need testing."],
       ["Keep exploring after a loss", "The initial design has no health damage, knockback or forced restart. Solo play remains available and rival scores stay separate from solo records."]
     ],
-    planTitle: "One testable question at every step.", planIntro: "Develop together later: explain one small step, let the learner write the core gameplay, then review it together. Observe a working increment before expanding.",
+    planTitle: "One testable question at every step.", planIntro: "Prepare the plaza → pier stage → return sketch, camera handoff and first original asset brief now. Then explain one small step, let the learner write gameplay and review it together. The open world is not playable yet.",
     stages: [
       ["OW0","Sketch the first route","Gameplay C / A / B and art A + C are confirmed; sketch the daylight route, palette, materials and balloon categories.","Confirmed direction does not mean a graybox or playtest is complete."],
       ["OW1","Walk comfortably","A separate third-person graybox: plaza edge, one path, one stage.","Observe wayfinding, camera comfort and camera collision."],
@@ -154,7 +154,7 @@ export const worldStrings = {
     home: "現在の体験版へ", skip: "本文へ移動", language: "言語", navigation: "計画のナビゲーション",
     eyebrow: "将来の版 · 音楽の街の計画", headline: "街を歩いて、\n立ち止まって一曲。",
     intro: "自由に散歩できる小さな音楽の街を想像してください。広場から舞台を探し、立ち止まって風船を撃つリズム遊びを楽しみ、音楽を持ち帰ります。まずは広場、道一本、埠頭の舞台だけを作る計画です。",
-    status: "計画段階 · 未実装 · 公開日未定", updated: "方向性の確認日 2026.10.30",
+    status: "計画段階 · 未実装 · 公開日未定", updated: "準備段階の更新日 2026.11.06",
     mapNav: "街の場所", loopNav: "一回の遊び方", aiNav: "いたずらな相手", planNav: "開発の順序", choicesNav: "選択済みの遊び",
     selected: "初めての訪問を想像すると", decisions: ["広場で道を覚え、練習用の風船を撃ってみる。", "案内板をたどると、埠頭に小さな舞台がある。", "自分で開始を選ぶと、視点が落ち着いて曲が始まる。", "いたずらな相手と風船を選び、取り合いながら一曲遊ぶ。", "広場へ帰ると、持ち帰った太鼓の音が合奏に加わる。"],
     boundary: "これは将来の遊び方の例で、街はまだ遊べません。現在配布中なのはアトリエの風船リズムゲームです。報酬の条件も今後決めます。",
@@ -185,7 +185,7 @@ export const worldStrings = {
       ["相手もルールを守る", "風船の命中は一度だけ数えます。相手も外したり休んだりし、壁越しや登場直後の必中はありません。同時命中の扱いは今後検証します。"],
       ["負けても散歩は続く", "初期案では体力ダメージ、吹き飛ばし、強制やり直しを入れません。ソロ演奏も選べて、対決の得点はソロ記録と分けます。"]
     ],
-    planTitle: "一段階に、一つの確かめる問い。", planIntro: "今後は小さな手順を説明し、学習者がコアのコードを書き、一緒にレビューします。動く一歩を観察してから次へ進みます。",
+    planTitle: "一段階に、一つの確かめる問い。", planIntro: "今は広場→桟橋ステージ→帰路の図、視点切り替え、最初の独自素材を準備します。その後、小さな手順ごとに学習者がコードを書き、一緒に確認します。オープンワールドはまだ遊べません。",
     stages: [
       ["OW0","最初の道を描く","遊びのC／A／Bと美術のA＋Cは確定。昼の道、配色、素材、風船の区別を描きます。","方向の確定は試作やプレイテストの完了を意味しません。"],
       ["OW1","心地よく歩く","別の三人称グレーボックスで広場の端、道一本、舞台一つ。","観察：道のわかりやすさ、視点の快適さ、カメラの衝突。"],

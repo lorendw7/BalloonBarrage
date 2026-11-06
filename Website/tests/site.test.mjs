@@ -29,10 +29,10 @@ test("all three translations have the same complete, nonempty key set", () => {
   }
 });
 
-test("festival guidance and delivery copy do not fall back to another language", () => {
+test("game guidance and delivery copy do not fall back to another language", () => {
   const keys = ["deliveryNowBody", "deliveryNextTitle", "deliveryNextBody", "checkpointBody", "downloadIntro",
     "watchTitle", "watchBody", "responseTitle", "responseBody", "nextBody",
-    "sequenceTitle", "sequenceBody", "timingTitle", "timingBody", "burstTitle", "burstBody", "festivalSpecialTitle", "festivalSpecialBody"];
+    "sequenceTitle", "sequenceBody", "timingTitle", "timingBody", "burstTitle", "burstBody"];
   for (const key of keys) {
     assert.doesNotMatch(strings.en[key], /[\u3400-\u9fff]/u, `English ${key} contains CJK text`);
     assert.match(strings.ja[key], /[\u3040-\u30ff]/u, `Japanese ${key} needs its own Japanese copy`);
@@ -78,19 +78,14 @@ test("audience previews preserve licensed source bytes and require an explicit a
   }
 });
 
-test("confirmed meeting room and packaged relay stay explicit in every language", () => {
+test("packaged relay stays explicit in every language", () => {
   for (const locale of languages) {
     const html = renderPage(template, locale, selectDownloads([release]));
     const gameHtml = renderPage(gameTemplate, locale, selectDownloads([release]), {}, "game");
-    assert.ok(strings[locale].meetingRoom.includes("2407"));
-    assert.ok(strings[locale].festivalVenue.includes("2407"));
     assert.ok(strings[locale].relayStatus.includes("demo.17"));
-    assert.ok(html.includes(strings[locale].meetingRoom));
     for (const key of ["relayTitle", "relayStatus", "relayRules"])
       assert.ok(gameHtml.includes(strings[locale][key]), `${locale}/${key}`);
-    assert.ok(html.indexOf('class="venue-callout"') < html.indexOf('id="game"'));
   }
-  assert.match(strings.ja.festivalNote, /集合場所は2407教室/);
   assert.match(strings.en.relayStatus, /Included in Windows \/ macOS/);
   assert.doesNotMatch(strings.en.relayStatus, /not in|development source/);
   assert.match(strings.en.relayRules, /Repeated colors.*preserve progress/);

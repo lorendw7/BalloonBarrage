@@ -1,8 +1,16 @@
 # BalloonBarrage
 
-A casual, relaxing rhythm-game prototype set in a warm graffiti studio. Aim freely, hold fire, pop balloons and leave colorful paint; timed hits earn an optional extra reward. Windows keyboard/mouse solo is the exhibition focus. The [game design](Docs/Design/GAME_DESIGN.md) defines behavior, and the [roadmap](Docs/Design/ROADMAP.md) defines delivery priorities.
+A music-and-paint game growing from a playable studio prototype toward an explorable, handmade music town. The next development focus is a small plaza → pier stage → return route. The open world is **planning only**; the published studio demo remains the playable baseline.
 
-[Official website](https://lorendw7.github.io/BalloonBarrage/en/) · [Desktop releases](https://github.com/lorendw7/BalloonBarrage/releases) · [Development roadmap](Docs/Design/ROADMAP.md)
+[Official website](https://lorendw7.github.io/BalloonBarrage/en/) · [Open-world plan](https://lorendw7.github.io/BalloonBarrage/en/open-world/) · [Desktop releases](https://github.com/lorendw7/BalloonBarrage/releases)
+
+## Start the next development step
+
+Read [Game design](Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only) for the selected experience, then [Roadmap](Docs/Design/ROADMAP.md#immediate-lesson-queue) for the current task and acceptance questions. First prepare the route sketch, exploration/stage camera handoff and a small original asset brief. The learner writes one gameplay increment at a time; the assistant prepares assets, tools and documentation, then reviews saved code.
+
+Keep the sunny music-town style, fixed-stage rhythm challenges and musical-layer rewards. The optional later Boss mode is direct combat against a Boss and its AI squad. Exact decisions and deferred research belong to the design and roadmap, not a second checklist here.
+
+The November 6 cleanup removes event promotion, venue details and survey/QR entry points from the website. It does not implement an open-world scene or modify saved gameplay, historical package evidence or asset attribution.
 
 ## Play or open the project
 
@@ -15,27 +23,13 @@ To open the source:
 3. Open `Assets/Scenes/PrototypeScene.unity` and enter Play Mode.
 4. Read the instructions and select Start. Aim with the mouse and hold the left button to fire. Press C during a round to cycle the eight pigments. Esc pauses; Resume continues and Quit exits.
 
-The revised scene offers Festival (ten rounds of about 64–65 seconds) and Standard (all ten complete recordings), with preview → Play → results. One opening sequence demonstrates three noninteractive outline markers before matching real balloons. Hold fire throughout or add optional timed shots; C cycles eight pigments and Esc pauses. Existing scoring, contact-aware effects, persistent paint and the learner's three functions remain. The paint ribbon is deferred. [Game design](Docs/Design/GAME_DESIGN.md) defines the experience; [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) records durations, preparation and remaining listening/calibration limits.
+The existing studio scene offers short sessions (labelled Festival in the saved game; ten rounds of about 64–65 seconds) and Standard (all ten complete recordings), with preview → Play → results. One opening sequence demonstrates three noninteractive outline markers before matching real balloons. Hold fire throughout or add optional timed shots; C cycles eight pigments and Esc pauses. Existing scoring, contact-aware effects, persistent paint and the learner's three functions remain. The paint ribbon is deferred. [Game design](Docs/Design/GAME_DESIGN.md) defines the experience; [Music and charts](Docs/Design/MUSIC_AND_CHARTS.md#festival-and-complete-song-phrase-catalog) records durations, preparation and remaining listening/calibration limits.
 
-## Current work and evidence
+## Current baseline and evidence
 
-The current source fixes continuous spray across wall corners and convex curves, plus wall/floor spill. [Targeted coverage verification](Docs/Project/VALIDATION.md#continuous-spray-corners-and-curved-coverage--october-31) passes 171 checks; the full 404-receiver studio passes 1,256 GPU/physics assertions. [Room-wide ink architecture](Docs/Design/FULL_SCENE_PAINT_ARCHITECTURE.md) defines bounded storage and contact rules. Existing rhythm, scoring, controller support and audience cheers remain.
+The published demo.17 addresses continuous spray across corners, curves and wall/floor boundaries. [Coverage verification](Docs/Project/VALIDATION.md#continuous-spray-corners-and-curved-coverage--october-31) records the 171 targeted checks and 1,256 full-studio GPU/physics assertions. [Paint architecture](Docs/Design/FULL_SCENE_PAINT_ARCHITECTURE.md) defines the 404 prepared receivers and bounded storage.
 
-The [open-world planning page](https://lorendw7.github.io/BalloonBarrage/en/open-world/) introduces the future music town. Confirmed direction combines **C / A / B gameplay** with **A + C art: a sunny street music festival with handmade town details**; the night festival is deferred. This is design work only, with no new gameplay or package. [Game design](Docs/Design/GAME_DESIGN.md#open-world-direction--planning-only) owns decisions and remaining details; the [roadmap](Docs/Design/ROADMAP.md#open-world-development-track--planning-only) defines learner-led development gates.
-
-The current source extends [mirror echo, melody trajectories and the luminous finale](Docs/Design/GAME_DESIGN.md#all-song-showcase--v4) to **all ten songs in Festival and Standard**. V4 records preserve historical scores, note times and audio. [Rainbow chain](Docs/Design/GAME_DESIGN.md#optional-rainbow-chain--source-candidate) previews nearby targets with frames, links and counts. [Local co-op/gamepads](Docs/Design/GAME_DESIGN.md#local-players-and-gamepads) include the creator's completed P2 firing and beat-bonus functions; [the completed lesson](Docs/Design/LOCAL_COOP_LESSON.md) explains them. The showcase includes colored pop glows, a twelve-petal finale and a brief afterglow. Postcards/export remain deferred. [Validation](Docs/Project/VALIDATION.md) distinguishes source checks, immutable packages and physical-device acceptance.
-
-The October 30 demo.11 candidates include an optional [tricolor relay](Docs/Design/GAME_DESIGN.md#optional-tricolor-relay): collect any three different balloon colors, celebrate and count completed sets separately from score. The creator explicitly authorized this code addition; the learner's three functions are preserved. Demo.10 remains the earlier candidate without the relay. [Validation](Docs/Project/VALIDATION.md) owns the exact checks and remaining limits.
-
-The planned October 31 exhibition meeting place is **Room 2407, Center Building 2 (センター２号館), Ito Campus**. Demo operating hours remain unconfirmed. The [official website](https://lorendw7.github.io/BalloonBarrage/en/#festival) carries the translated visitor information.
-
-The [October 29 open music/studio update](Docs/Art/OPEN_MUSIC_STUDIO_UPDATE_20261029.md) adds seven recordings and promotes seven current studio prefabs plus five downloaded Kenney CC0 decorations into production. The [October 28 study](Docs/Art/STUDIO_EXPANSION_20261028.md) remains available. Website media distinguishes generated artwork, Unity previews and standalone evidence. The [art catalog](Docs/Art/ASSET_CATALOG.md) links individual assets and earlier studies.
-
-The creator authorized this festival implementation by parallel Codex agents. Derived section/placement data and a brief demonstration extend the saved rhythm loop while retaining learner-owned pattern/effect functions. Source-data tests, Unity runtime checks, native captures and exact-package checks are recorded separately in Validation.
-
-The October 27 automated Unity fixture passed 72 receiver/pigment contacts, pause persistence, 1,000 retained marks, natural complete-song settlement and ten Retry resets. demo.6 also passed compilation, exact archive/manifest/hash checks and a fresh Windows-package startup smoke. A startup smoke is not a standalone full-song playtest; Editor frame-time measurements are not guaranteed player FPS. Physical feel, venue audio, unfamiliar-player observation and real-Mac launch were excluded from that automated pass. [Validation](Docs/Project/VALIDATION.md) records the exact checks, revision boundaries and remaining limits.
-
-The [roadmap](Docs/Design/ROADMAP.md) tracks all-ten-song delivery, automated validation, immutable packaging and the deferred paint-ribbon experiment. [Music-led festival variety](Docs/Design/GAME_DESIGN.md#music-led-festival-variety) owns the interaction rules. Human listening, physical aiming, venue hardware and real-Mac observations remain distinct from automated checks.
+The saved studio includes twenty song/mode profiles, optional relay/chain rewards, local co-op/gamepads and audience feedback. The creator's two co-op learner decisions are completed; [the lesson](Docs/Design/LOCAL_COOP_LESSON.md) remains a reference, not the next unfinished assignment. [Validation](Docs/Project/VALIDATION.md) distinguishes implementation, controlled checks, immutable packages and outstanding human/device acceptance.
 
 ## Music and attribution
 
@@ -55,7 +49,6 @@ Project documentation is in English; game and website translations are separate.
 - [Localization](Docs/Art/LOCALIZATION.md) and [Interface V2](Docs/Art/INTERFACE_V2.md): shared UI, fonts, layouts and integration notes.
 - [Website and releases](Docs/Project/WEBSITE_AND_RELEASES.md): architecture, release discovery and publication checks.
 - [Desktop release runbook](Docs/Project/PACKAGING_LESSON.md): immutable build/package workflow.
-- [Exhibition operator runbook](Docs/Project/EXHIBITION_RUNBOOK.md): offline setup, handoff and recovery.
 - [Immediate lesson queue](Docs/Design/ROADMAP.md#immediate-lesson-queue): one learner-owned increment at a time.
 
 ## Website preview
@@ -64,7 +57,7 @@ With Node.js 22 or newer, run from the repository root:
 
 ```powershell
 node Website/scripts/build.mjs --offline
-node --test Website/tests/site.test.mjs
+node --test Website/tests/*.test.mjs
 node Website/scripts/serve.mjs
 ```
 
