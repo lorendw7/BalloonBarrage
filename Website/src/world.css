@@ -85,3 +85,67 @@
   .world-heading h2 { font-size: 1.65rem; }
 }
 @media (prefers-reduced-motion: reduce) { .map-place { transition: none; } }
+
+/* Expansion pages share native previews and the brighter site palette. */
+.world-hero { grid-template-columns: minmax(0,.8fr) minmax(0,1.35fr); gap: 2rem; background: none; padding-top: 3rem !important; }
+.world-hero h1 { font-size: clamp(2.1rem,3.8vw,4.3rem); line-height: 1.14; margin-block: 1rem; }
+.world-hero .hero-actions { justify-content: flex-start; }
+.world-intro { font-size: 1rem; }
+.sunny-world-hero-art { min-width: 0; }
+.sunny-world-hero-art .sunny-figure { border-radius: 1.2rem; background: #dff3ed; overflow: hidden; box-shadow: 8px 10px 0 #ffd771; }
+.sunny-world-hero-art .sunny-figure img { aspect-ratio: 1.45; object-fit: cover; }
+.sunny-world-hero-art figcaption { padding: 1rem; }
+.sunny-world-hero-art figcaption > span:last-child { display: none; }
+.world-nav { justify-content: flex-start; max-width: 1480px; margin: auto; gap: .5rem 1.6rem; background: #fffef8; }
+.world-nav a { text-decoration: none; padding: .45rem .2rem; border-bottom: 3px solid transparent; }
+.world-nav a[aria-current="location"] { border-bottom-color: #ffad54; color: #075f68; }
+.world-status { border: 0; border-left: 3px solid #ffb44e; background: #fff0cb; color: #6a4b12; border-radius: 0; font-size: .74rem; }
+.world-page-heading { padding-bottom: .5rem !important; }
+.world-page-heading .world-status { margin-top: .8rem; }
+.sunny-map-layout { display: grid; grid-template-columns: minmax(0,1fr) 18rem; align-items: center; gap: 1.5rem; }
+.sunny-map-figure { min-width: 0; border-radius: 1.2rem; overflow: hidden; background: #b0e7e4; }
+.sunny-map-image { position: relative; }
+.sunny-map-image img { width: 100%; }
+.sunny-map-figure figcaption { font-size: .7rem; padding: .8rem 1rem; background: #eaf6ed; color: #345e60; }
+.sunny-map-pin { position: absolute; display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid #fff; border-radius: 50%; background: #145666; color: #fff; text-decoration: none; font-size: .75rem; font-weight: 800; box-shadow: 0 2px 8px #163f4350; transform: translate(-50%,-50%); }
+.sunny-map-pin:hover, .sunny-map-pin:focus-visible { background: #bd432c; }
+.sunny-map-pin-0 { left: 50%; top: 61%; }
+.sunny-map-pin-1 { left: 23%; top: 62.5%; }
+.sunny-map-pin-2 { left: 79.2%; top: 67.4%; }
+.sunny-map-pin-3 { left: 53.6%; top: 83.5%; }
+.sunny-map-key { display: flex; flex-direction: column; gap: .6rem; }
+.sunny-map-key > a { display: flex; align-items: center; gap: .8rem; border-bottom: 1px solid #c9d7cd; padding: 1rem .2rem; text-decoration: none; }
+.sunny-map-key > a > span { font-weight: 800; font-size: 1.3rem; color: #0a7a82; }
+.sunny-map-key strong { font-size: .95rem; }
+.sunny-map-key small { display: block; font-size: .64rem; color: var(--muted); }
+.sunny-map-key b { margin-left: auto; color: #bd543e; }
+.sunny-north-heading { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.sunny-palette { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 1rem; margin-block: 1.5rem 3rem; }
+.sunny-palette > div { min-width: 0; }
+.sunny-palette > div > span { display: block; height: 90px; border-radius: 1rem 1rem .2rem .2rem; background: var(--swatch); border: 1px solid #163f4310; }
+.sunny-palette strong { display: block; font-size: .8rem; margin-top: .6rem; }
+.sunny-palette code { color: var(--muted); font-size: .75rem; }
+.world-page #art-direction > .sunny-figure { margin-bottom: 3rem; }
+.sunny-plan-boundary { padding-block: .8rem !important; }
+.sunny-plan-boundary > p { border-left: 3px solid #ffba48; padding-left: 1rem; font-size: .85rem; color: #72541a; }
+.sunny-roadmap-intro { display: grid; grid-template-columns: .85fr 1.2fr; align-items: center; gap: 2rem; }
+.sunny-roadmap-intro h2 { margin-block: .6rem 1rem; }
+.sunny-roadmap-intro > .sunny-evidence { grid-column: 1/-1; }
+.world-loop-band { background: #dff3eb; }
+.world-choices { background: #fff0bf; border-color: #edcf7a; }
+.world-cards article { border: 0; border-top: 3px solid #53bcb9; background: #fffef8; border-radius: 0 0 .75rem .75rem; }
+.world-timeline li { border-color: #c9d9ce; }
+@media (max-width: 1050px) {
+  .world-hero { grid-template-columns: 1fr; }
+  .sunny-world-hero-art .sunny-figure img { aspect-ratio: 1.6; }
+  .sunny-map-layout { grid-template-columns: 1fr; }
+  .sunny-map-key { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+}
+@media (max-width: 720px) {
+  .sunny-palette { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .sunny-palette > div > span { height: 70px; }
+  .sunny-roadmap-intro { grid-template-columns: 1fr; }
+  .sunny-map-key { grid-template-columns: 1fr; }
+  .sunny-map-pin { width: 38px; height: 38px; font-size: .65rem; }
+  .sunny-world-hero-art figcaption { font-size: .68rem; }
+}

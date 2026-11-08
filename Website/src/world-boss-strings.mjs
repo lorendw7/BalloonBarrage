@@ -1,7 +1,7 @@
 // Public proposal copy. GAME_DESIGN.md owns behavior; ROADMAP.md owns delivery gates.
 export const bossStrings = {
   "zh-Hans": {
-    nav: "Boss 混斗", teaser: "新增后续计划：和 Boss＋AI 小队直接交战 →",
+    nav: "Boss 混斗", teaser: "后续玩法计划：和 Boss＋AI 小队直接交战 →",
     title: "边走位、边瞄准，和 Boss 正面交锋。",
     intro: "已选方向：单人对抗一名 Boss 和它的 AI 小队，双方用颜料武器直接攻击彼此。比如你进入街区旁的竞技场，绕过掩体，与一台原创“扩音器机甲”交战；机甲只是造型示例，还未制作。",
     distinction: "这个模式的目标是击败敌人，不是打气球计分。普通街区的定点音游保留；Boss 战是你主动进入的另一种挑战，尚未实装。",
@@ -27,12 +27,12 @@ export const bossStrings = {
       ["受约束的场地变化", "后期尝试在审核过的模板里组合掩体和入口。先检查能走通、有躲避空间、目标看得清，再作为候选场地。"]
     ],
     artTitle: "先让 Boss、小兵和攻击提示一眼分清。",
-    art: "后续准备原创 Boss 轮廓、武器、掩体、街区道具、贴图和音效。延续阳光音乐节与手作小镇的风格，用不同身形、动作和图标区分敌人；这些素材仍待制作。",
+    art: "后续准备原创 Boss 轮廓、武器、掩体与攻击提示。已制作的阳光小镇提供配色和比例参考；敌人造型、动画、战斗音效和专用场地仍待制作。",
     order: "开发顺序：先完成基础小镇体验 → 一个可移动交战的试验场 → 一名 Boss＋一名小兵 → 难度与可读性验证 → 可选学习型 AI。没有发布日期。",
     references: "参考方法与技术依据", inspiration: "借鉴 Salmon Run 的敌群压力、分工与大敌阶段感，制作自己的战斗规则、角色和场景。"
   },
   ja: {
-    nav: "ボス乱戦", teaser: "新しい将来案：ボスとAI小隊との直接対決 →",
+    nav: "ボス乱戦", teaser: "将来の遊び：ボスとAI小隊との直接対決 →",
     title: "動いて狙い、ボスと撃ち合う。",
     intro: "選択した方向は、一人でボスとそのAI小隊に挑み、絵の具の武器で互いを直接攻撃するモードです。例えば街区の脇の闘技場で、遮蔽物を回りながら独自の「拡声器メカ」と対決。この姿はまだ制作前の例です。",
     distinction: "目的は敵を倒すことで、風船の得点競争ではありません。街区の定点リズム遊びも残し、自分で入る別の挑戦として考えます。まだ未実装です。",
@@ -58,15 +58,15 @@ export const bossStrings = {
       ["制約付きの場面変化", "後期には確認済みの型から遮蔽物や入口を組み合わせます。通路、回避空間、目標の見やすさを確認して候補にします。"]
     ],
     artTitle: "ボス、小兵、攻撃の合図を見分けやすく。",
-    art: "独自のボスの姿、武器、遮蔽物、街の道具、テクスチャと効果音を今後準備します。陽光の音楽祭と手作りの街を引き継ぎ、体形、動き、アイコンで敵を区別。素材はまだ制作前です。",
+    art: "独自のボス、武器、遮蔽物、攻撃の合図を今後準備します。制作済みの陽光の街を配色と大きさの参考にし、敵の姿、動き、戦闘音、専用の場所はこれから作ります。",
     order: "順序：基本の街の体験 → 動きながら戦える試験場 → ボス一体と小兵一体 → 難度と見やすさの確認 → 任意の学習型AI。公開日は未定です。",
     references: "参考にする考え方と技術", inspiration: "Salmon Runの敵群への対処、役割分担、大きな敵との段階的な対決から学び、独自のルール、キャラクター、景色を作ります。"
   },
   en: {
-    nav: "Boss brawl", teaser: "New later plan: direct combat against a Boss and AI squad →",
+    nav: "Boss brawl", teaser: "A later gameplay plan: direct combat against a Boss and AI squad →",
     title: "Move, aim and trade shots with a Boss.",
     intro: "Selected direction: one player directly fights a Boss and its AI squad with paint weapons. Imagine entering an arena beside a district, moving around cover and confronting an original loudspeaker mech. That design is an example, not a finished asset.",
-    distinction: "The objective is to defeat enemies, not score balloon hits. Fixed music stages remain available; this is a separate encounter you choose to enter. It is not implemented.",
+    distinction: "The objective is to defeat enemies, not score balloon hits. Fixed music stages remain part of the plan; this is a separate encounter you would choose to enter. It is not implemented.",
     steps: [
       ["01 / Take a position and trade shots", "Move while aiming at the Boss or its minions, who fire back. Cover, side routes and range help you choose where to go."],
       ["02 / Read the warning and evade", "The Boss raises a weapon and marks its attack area before striking. Move behind cover or leave the danger zone. Shapes and sound both communicate the warning."],
@@ -89,7 +89,7 @@ export const bossStrings = {
       ["Constrained arena variation", "Later, combine cover and entrances from reviewed templates. Check reachable routes, evasion space and target visibility before considering a layout."]
     ],
     artTitle: "Make the Boss, minions and warnings easy to distinguish.",
-    art: "Prepare original Boss silhouettes, weapons, cover, town props, textures and sound effects later. Carry forward the sunny festival and handmade town through distinct shapes, movements and icons. These assets have not been made yet.",
+    art: "Prepare original Boss silhouettes, weapons, cover and attack cues later. The saved sunny town provides palette and scale references; enemy designs, animation, combat sounds and dedicated arenas remain future work.",
     order: "Order: accept the basic town visit → a movement-and-combat test arena → one Boss and one minion → difficulty and readability checks → optional learned AI. No release date is committed.",
     references: "Design and technical references", inspiration: "Learn from Salmon Run's group pressure, roles and large-enemy encounters while creating original combat rules, characters and environments."
   }

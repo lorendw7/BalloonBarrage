@@ -1,0 +1,702 @@
+{
+  "schema": "balloonbarrage.website.sunny-coast.v1",
+  "date": "2026-11-08",
+  "timezone": "Asia/Tokyo",
+  "evidence_scope": "Native Unity static scene preparation. Not gameplay, human playtest, performance acceptance, or an open-world release. Current downloads remain the studio demo.",
+  "scene": {
+    "name": "OpenWorldSunnyExpansion",
+    "sha256": "3eb12a5352b56f75657fc93dc446aff040d36eb4f65c1eeade7d21e687da0ae4",
+    "unity_version": "6000.0.77f1",
+    "measurements": {
+      "original_land_m2": 7571,
+      "added_land_m2": 26911.5,
+      "total_land_m2": 34482.5,
+      "total_land_ratio": 4.5545501708984375,
+      "added_route_metres": 677.2933349609375
+    },
+    "support_probes": 8211,
+    "clearance_probes": 8211,
+    "original_route_probes_each": 4593
+  },
+  "captures": [
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overview.png",
+      "sha256": "897dc77b8d92e4da68512e4f444c6f7943f4390476da80f74c0db2f7fcb8afa4",
+      "width": 2400,
+      "height": 1600,
+      "position": {
+        "x": 125.0,
+        "y": 215.0,
+        "z": -242.0
+      },
+      "euler": {
+        "x": 43.70681381225586,
+        "y": 326.2392883300781,
+        "z": 0.0
+      },
+      "orthographic": true,
+      "size": 112.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/TopDown.png",
+      "sha256": "c41ca4f81ddda44224a9004536b0c5fd40f43a29f894e94e0f8db1bf79bd0cfb",
+      "width": 2400,
+      "height": 1600,
+      "position": {
+        "x": 0.0,
+        "y": 270.0,
+        "z": -55.0
+      },
+      "euler": {
+        "x": 90.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orthographic": true,
+      "size": 112.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Market.png",
+      "sha256": "328a6002b0481e48b5b26eef199b6ef322fc58bf1728cc24e8cb80b9ab549eaa",
+      "width": 1920,
+      "height": 1080,
+      "position": {
+        "x": 5.0,
+        "y": 5.5,
+        "z": -48.0
+      },
+      "euler": {
+        "x": 5.957245826721191,
+        "y": 190.3048553466797,
+        "z": 5.365058441952897e-08
+      },
+      "orthographic": false,
+      "size": 0.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Meadow.png",
+      "sha256": "2352be5a659b13bd41b03958dde8fd826482a7d2a3b794d1e9d62ae09dbf35d5",
+      "width": 1920,
+      "height": 1080,
+      "position": {
+        "x": -44.0,
+        "y": 7.0,
+        "z": -103.0
+      },
+      "euler": {
+        "x": 5.3665690422058105,
+        "y": 295.6022033691406,
+        "z": 4.287662136448489e-07
+      },
+      "orthographic": false,
+      "size": 0.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/CoralBay.png",
+      "sha256": "f5e9be942d08f33b57ae435d3aca01c11e7e9d2f2fece3b08a4856a8fd9a8c78",
+      "width": 1920,
+      "height": 1080,
+      "position": {
+        "x": 113.0,
+        "y": 5.0,
+        "z": -116.0
+      },
+      "euler": {
+        "x": 4.972339153289795,
+        "y": 330.4612121582031,
+        "z": 1.0712484765917907e-07
+      },
+      "orthographic": false,
+      "size": 0.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Bridge.png",
+      "sha256": "8d0f22f80b6b48a3af2d18922c1f55f3d1cf425b7c12a2c1573156af4b8eccc7",
+      "width": 1920,
+      "height": 1080,
+      "position": {
+        "x": 12.0,
+        "y": 8.0,
+        "z": -51.0
+      },
+      "euler": {
+        "x": 13.126983642578125,
+        "y": 330.01837158203125,
+        "z": 6.575115776286111e-07
+      },
+      "orthographic": false,
+      "size": 0.0,
+      "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overlook.png",
+      "sha256": "e1d1b082b6eac276d3003d33550e8d8715008ee782a0c84642d9ebb594a4cd11",
+      "width": 1920,
+      "height": 1080,
+      "position": {
+        "x": 1.0,
+        "y": 6.0,
+        "z": -119.0
+      },
+      "euler": {
+        "x": 3.6188836097717285,
+        "y": 124.69514465332031,
+        "z": -1.0693491958591039e-07
+      },
+      "orthographic": false,
+      "size": 0.0,
+      "fieldOfView": 58.0
+    }
+  ],
+  "new_cc0_sources": {
+    "title": "Nature Kit (2.1) - additional countryside and coast subset",
+    "author": "Kenney",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourcePage": "https://opengameart.org/content/nature-kit",
+    "officialPage": "https://kenney.nl/assets/nature-kit",
+    "officialLicenseVerified": "2026-11-08",
+    "downloadUrl": "https://opengameart.org/sites/default/files/Nature%20Kit%20%282.1%29.zip",
+    "archive": "NatureKit-2.1.zip",
+    "archiveSha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+    "archiveBytes": 10537521,
+    "retrieved": "2026-11-08",
+    "timezone": "Asia/Tokyo",
+    "preparation": "Selected original OBJ, MTL and license files copied byte-for-byte from the existing pinned cache.",
+    "restorationScript": "Tools/Art/import_open_world_expansion_sources.py",
+    "usageRestrictions": "CC0 permits commercial and noncommercial use; no attribution requirement. Other game assets retain their independent restrictions.",
+    "integrationScope": "Static art sources only. Derived Unity scales, materials, prefabs and collision require their own preparation record.",
+    "files": [
+      {
+        "path": "License.txt",
+        "archiveMember": "License.txt",
+        "bytes": 611,
+        "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+      },
+      {
+        "path": "Models/tree_oak.obj",
+        "archiveMember": "Models/OBJ format/tree_oak.obj",
+        "bytes": 18279,
+        "sha256": "1a1dba69f49a454492db2413110e0867dc6dc3d5fe412d2499047625c93a3c06"
+      },
+      {
+        "path": "Models/tree_oak.mtl",
+        "archiveMember": "Models/OBJ format/tree_oak.mtl",
+        "bytes": 147,
+        "sha256": "0d90ca9c9ac521fcc0a0889ac1aca36f6e4b4ab6cd6975c337ecaf764f08e2e7"
+      },
+      {
+        "path": "Models/tree_detailed.obj",
+        "archiveMember": "Models/OBJ format/tree_detailed.obj",
+        "bytes": 42001,
+        "sha256": "0a67913edf811aabb1c2f54b671c0626eb7c17e6818536484f34d4444030a9c7"
+      },
+      {
+        "path": "Models/tree_detailed.mtl",
+        "archiveMember": "Models/OBJ format/tree_detailed.mtl",
+        "bytes": 179,
+        "sha256": "4037993d8d84f1c7528962076bcf796ba368801622874a2bf2960e70d8b8fc99"
+      },
+      {
+        "path": "Models/tree_pineTallA.obj",
+        "archiveMember": "Models/OBJ format/tree_pineTallA.obj",
+        "bytes": 7471,
+        "sha256": "ed5ea05290032e9afa355203b4ebe44bf81a85fa5aedbb42c2d26a970a7af001"
+      },
+      {
+        "path": "Models/tree_pineTallA.mtl",
+        "archiveMember": "Models/OBJ format/tree_pineTallA.mtl",
+        "bytes": 144,
+        "sha256": "933a40d74e752aa7baf489cd76a1ca36c7fffe95f2c16410772c715c4e102ec6"
+      },
+      {
+        "path": "Models/tree_palmDetailedTall.obj",
+        "archiveMember": "Models/OBJ format/tree_palmDetailedTall.obj",
+        "bytes": 27254,
+        "sha256": "ad249552e6802278c61a1101b9331a8a10ef7ad26d083e9f7681d81ed312f7e5"
+      },
+      {
+        "path": "Models/tree_palmDetailedTall.mtl",
+        "archiveMember": "Models/OBJ format/tree_palmDetailedTall.mtl",
+        "bytes": 147,
+        "sha256": "2f754b719f8d7902d7940fe5f5216fe24cfaf0f021ce3533cace85cee7d0ce44"
+      },
+      {
+        "path": "Models/rock_largeA.obj",
+        "archiveMember": "Models/OBJ format/rock_largeA.obj",
+        "bytes": 8204,
+        "sha256": "60e4896f0bb0077ce820aa842e48a4f50d089a0d39e38d56cbf1bd7286882136"
+      },
+      {
+        "path": "Models/rock_largeA.mtl",
+        "archiveMember": "Models/OBJ format/rock_largeA.mtl",
+        "bytes": 137,
+        "sha256": "b1f406513a297dd69c38653fd9b9de390123ff45242be9bf204f775d9e88c98c"
+      },
+      {
+        "path": "Models/rock_largeC.obj",
+        "archiveMember": "Models/OBJ format/rock_largeC.obj",
+        "bytes": 7330,
+        "sha256": "e96d6790800163ab57547538b0500821693ea9c5d99a9664ab45e56390366c70"
+      },
+      {
+        "path": "Models/rock_largeC.mtl",
+        "archiveMember": "Models/OBJ format/rock_largeC.mtl",
+        "bytes": 137,
+        "sha256": "b1f406513a297dd69c38653fd9b9de390123ff45242be9bf204f775d9e88c98c"
+      },
+      {
+        "path": "Models/rock_tallA.obj",
+        "archiveMember": "Models/OBJ format/rock_tallA.obj",
+        "bytes": 12950,
+        "sha256": "5f6b182753c6f4f54e4b507d4b6bf9ab074775765a25a2a74c88fa7099f98374"
+      },
+      {
+        "path": "Models/rock_tallA.mtl",
+        "archiveMember": "Models/OBJ format/rock_tallA.mtl",
+        "bytes": 169,
+        "sha256": "db75535695bc97d26e50a03f55306f04938b123f0fc3622cac4ac15e5ef27ab8"
+      },
+      {
+        "path": "Models/flower_redA.obj",
+        "archiveMember": "Models/OBJ format/flower_redA.obj",
+        "bytes": 5722,
+        "sha256": "50bcfeb7b6f8c361bc7e61ce55dfd0cc61ad95073351026476207b0db93c3121"
+      },
+      {
+        "path": "Models/flower_redA.mtl",
+        "archiveMember": "Models/OBJ format/flower_redA.mtl",
+        "bytes": 141,
+        "sha256": "0c9ad4852b07f6c3b8d1b1d54ed2c19ce48828f259c6fb900c1ced26ba645b53"
+      },
+      {
+        "path": "Models/flower_redC.obj",
+        "archiveMember": "Models/OBJ format/flower_redC.obj",
+        "bytes": 6685,
+        "sha256": "b86ced850b38fc86767a4bcf95774322f595429eb92916f37a4dda33d14db8a3"
+      },
+      {
+        "path": "Models/flower_redC.mtl",
+        "archiveMember": "Models/OBJ format/flower_redC.mtl",
+        "bytes": 172,
+        "sha256": "babf755ce2a54cfc7ad6a618c2e0f1b06466cbcb6846f4949680822e320a4af5"
+      },
+      {
+        "path": "Models/plant_bushDetailed.obj",
+        "archiveMember": "Models/OBJ format/plant_bushDetailed.obj",
+        "bytes": 9383,
+        "sha256": "f657029e99a52f6933389c8d445699d352102990af574cfe190f4ec746de0b7d"
+      },
+      {
+        "path": "Models/plant_bushDetailed.mtl",
+        "archiveMember": "Models/OBJ format/plant_bushDetailed.mtl",
+        "bytes": 88,
+        "sha256": "b186368ad09ddb6673f90f63c45ecac3f793b36fe14f96bd62e6d44922e7e874"
+      },
+      {
+        "path": "Models/tent_detailedOpen.obj",
+        "archiveMember": "Models/OBJ format/tent_detailedOpen.obj",
+        "bytes": 14239,
+        "sha256": "1f4ff1d2ea9adf6d9b01e23b0a81e4e93517e11cd4142adfe87bb35f482d4df6"
+      },
+      {
+        "path": "Models/tent_detailedOpen.mtl",
+        "archiveMember": "Models/OBJ format/tent_detailedOpen.mtl",
+        "bytes": 133,
+        "sha256": "b2df1a056ed1003277fa1f55600446b0042502670a71c7e61459cd19bed93659"
+      },
+      {
+        "path": "Models/campfire_logs.obj",
+        "archiveMember": "Models/OBJ format/campfire_logs.obj",
+        "bytes": 7761,
+        "sha256": "89db9cba082c0d6543943f9a184e0b0c2e3e3464030cab895ed293ca1a9d6561"
+      },
+      {
+        "path": "Models/campfire_logs.mtl",
+        "archiveMember": "Models/OBJ format/campfire_logs.mtl",
+        "bytes": 132,
+        "sha256": "3b03b52eebf8ddc01804cb28de43b537c0d0b4ea61a99bad235e2a3c904aed89"
+      },
+      {
+        "path": "Models/log_stack.obj",
+        "archiveMember": "Models/OBJ format/log_stack.obj",
+        "bytes": 13863,
+        "sha256": "a40f51c42a8c1c00917f6a9e5ca4f39e5cbde7883d8b9f6958838f5a6a1413a2"
+      },
+      {
+        "path": "Models/log_stack.mtl",
+        "archiveMember": "Models/OBJ format/log_stack.mtl",
+        "bytes": 146,
+        "sha256": "0da11a6ffeafc7ba144a51e856e10e1143bd4e94aa99a69a2eea30239e58a7d5"
+      },
+      {
+        "path": "Models/bridge_wood.obj",
+        "archiveMember": "Models/OBJ format/bridge_wood.obj",
+        "bytes": 10544,
+        "sha256": "876a7836950740997d05733f39f0533359d890bd114015fc13a8c9d059beb4fd"
+      },
+      {
+        "path": "Models/bridge_wood.mtl",
+        "archiveMember": "Models/OBJ format/bridge_wood.mtl",
+        "bytes": 183,
+        "sha256": "20207ce4b250313db94013354e2ad19402419c5cf33d699ff331a2a409f53b12"
+      },
+      {
+        "path": "Models/crops_wheatStageB.obj",
+        "archiveMember": "Models/OBJ format/crops_wheatStageB.obj",
+        "bytes": 37332,
+        "sha256": "802f7f5f3d81a6ae0a2d263fb69eb036c77f57b7b687f8008d9e9922e71f35b6"
+      },
+      {
+        "path": "Models/crops_wheatStageB.mtl",
+        "archiveMember": "Models/OBJ format/crops_wheatStageB.mtl",
+        "bytes": 125,
+        "sha256": "bff900da695cb24fbceeca928421982c064a4c5f2e547b40f8758c81d8dfa172"
+      },
+      {
+        "path": "Models/sign.obj",
+        "archiveMember": "Models/OBJ format/sign.obj",
+        "bytes": 2816,
+        "sha256": "c07f5f5a485acf847d1c26bcc5394fec3a74617959c1bcdc0cd52906c116695c"
+      },
+      {
+        "path": "Models/sign.mtl",
+        "archiveMember": "Models/OBJ format/sign.mtl",
+        "bytes": 164,
+        "sha256": "ea8768ddcf0f916d0ea9eb6f799245d6a9933ae83956fbfc31b89579b0359bba"
+      }
+    ],
+    "models": [
+      {
+        "name": "tree_oak",
+        "sourceVertexCount": 100,
+        "sourceTriangulatedFaceCount": 196,
+        "sourceBoundsMin": [
+          -0.3202769,
+          0.0,
+          -0.369824
+        ],
+        "sourceBoundsMax": [
+          0.3202771,
+          1.22624,
+          0.369824
+        ],
+        "sourceMaterialSlots": [
+          "leafsGreen",
+          "woodBark"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "tree_detailed",
+        "sourceVertexCount": 198,
+        "sourceTriangulatedFaceCount": 402,
+        "sourceBoundsMin": [
+          -0.4146324,
+          0.0,
+          -0.3894665
+        ],
+        "sourceBoundsMax": [
+          0.4324826,
+          1.332417,
+          0.372136
+        ],
+        "sourceMaterialSlots": [
+          "leafsGreen",
+          "woodBark",
+          "_defaultMat"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "tree_pineTallA",
+        "sourceVertexCount": 41,
+        "sourceTriangulatedFaceCount": 78,
+        "sourceBoundsMin": [
+          -0.2070935,
+          0.0,
+          -0.1980365
+        ],
+        "sourceBoundsMax": [
+          0.1791794,
+          1.529606,
+          0.1939135
+        ],
+        "sourceMaterialSlots": [
+          "woodBarkDark",
+          "leafsDark"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "tree_palmDetailedTall",
+        "sourceVertexCount": 172,
+        "sourceTriangulatedFaceCount": 336,
+        "sourceBoundsMin": [
+          -0.5171645,
+          0.0,
+          -0.5197316
+        ],
+        "sourceBoundsMax": [
+          0.5171645,
+          1.423467,
+          0.5145974
+        ],
+        "sourceMaterialSlots": [
+          "woodBark",
+          "leafsGreen"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "rock_largeA",
+        "sourceVertexCount": 42,
+        "sourceTriangulatedFaceCount": 80,
+        "sourceBoundsMin": [
+          -0.3924533,
+          0.0,
+          -0.5077307
+        ],
+        "sourceBoundsMax": [
+          0.3924533,
+          0.259776,
+          0.5077307
+        ],
+        "sourceMaterialSlots": [
+          "dirt",
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "rock_largeC",
+        "sourceVertexCount": 38,
+        "sourceTriangulatedFaceCount": 72,
+        "sourceBoundsMin": [
+          -0.5322049,
+          0.0,
+          -0.507831
+        ],
+        "sourceBoundsMax": [
+          0.5322049,
+          0.321112,
+          0.507831
+        ],
+        "sourceMaterialSlots": [
+          "dirt",
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "rock_tallA",
+        "sourceVertexCount": 70,
+        "sourceTriangulatedFaceCount": 136,
+        "sourceBoundsMin": [
+          -0.4915344,
+          0.0,
+          -0.3416054
+        ],
+        "sourceBoundsMax": [
+          0.4915344,
+          0.9959259,
+          0.3416054
+        ],
+        "sourceMaterialSlots": [
+          "dirt",
+          "grass",
+          "_defaultMat"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_redA",
+        "sourceVertexCount": 33,
+        "sourceTriangulatedFaceCount": 76,
+        "sourceBoundsMin": [
+          -0.05456302,
+          0.0,
+          -0.09052953
+        ],
+        "sourceBoundsMax": [
+          0.1045345,
+          0.2925,
+          0.09052953
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorRed"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_redC",
+        "sourceVertexCount": 38,
+        "sourceTriangulatedFaceCount": 78,
+        "sourceBoundsMin": [
+          -0.0760625,
+          0.0,
+          -0.09052953
+        ],
+        "sourceBoundsMax": [
+          0.1045345,
+          0.2325,
+          0.09052953
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorRed",
+          "colorWhite"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "plant_bushDetailed",
+        "sourceVertexCount": 56,
+        "sourceTriangulatedFaceCount": 104,
+        "sourceBoundsMin": [
+          -0.3012719,
+          0.0,
+          -0.3012719
+        ],
+        "sourceBoundsMax": [
+          0.3012719,
+          0.3604109,
+          0.3012719
+        ],
+        "sourceMaterialSlots": [
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "tent_detailedOpen",
+        "sourceVertexCount": 89,
+        "sourceTriangulatedFaceCount": 232,
+        "sourceBoundsMin": [
+          -0.437464,
+          0.0,
+          -0.3182
+        ],
+        "sourceBoundsMax": [
+          0.437464,
+          0.5611308,
+          0.3482
+        ],
+        "sourceMaterialSlots": [
+          "colorRed",
+          "wood"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "campfire_logs",
+        "sourceVertexCount": 57,
+        "sourceTriangulatedFaceCount": 112,
+        "sourceBoundsMin": [
+          -0.1459262,
+          0.0,
+          -0.1459262
+        ],
+        "sourceBoundsMax": [
+          0.1459262,
+          0.06259983,
+          0.1459262
+        ],
+        "sourceMaterialSlots": [
+          "wood",
+          "woodDark"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "log_stack",
+        "sourceVertexCount": 92,
+        "sourceTriangulatedFaceCount": 184,
+        "sourceBoundsMin": [
+          -0.2,
+          -8.195639e-08,
+          -0.355
+        ],
+        "sourceBoundsMax": [
+          0.2247171,
+          0.3464101,
+          0.355
+        ],
+        "sourceMaterialSlots": [
+          "woodBark",
+          "woodInner"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "bridge_wood",
+        "sourceVertexCount": 112,
+        "sourceTriangulatedFaceCount": 220,
+        "sourceBoundsMin": [
+          -0.52,
+          0.0,
+          -0.52
+        ],
+        "sourceBoundsMax": [
+          0.52,
+          0.4,
+          0.52
+        ],
+        "sourceMaterialSlots": [
+          "woodBark",
+          "wood",
+          "stone"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "crops_wheatStageB",
+        "sourceVertexCount": 192,
+        "sourceTriangulatedFaceCount": 360,
+        "sourceBoundsMin": [
+          -0.2698039,
+          0.0,
+          -0.2233496
+        ],
+        "sourceBoundsMax": [
+          0.2698039,
+          0.5349357,
+          0.2233496
+        ],
+        "sourceMaterialSlots": [
+          "woodInner",
+          "_defaultMat"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "sign",
+        "sourceVertexCount": 24,
+        "sourceTriangulatedFaceCount": 44,
+        "sourceBoundsMin": [
+          -0.15,
+          0.0,
+          -0.0175
+        ],
+        "sourceBoundsMax": [
+          0.15,
+          0.4087705,
+          0.0525
+        ],
+        "sourceMaterialSlots": [
+          "wood",
+          "woodDark",
+          "_defaultMat"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      }
+    ]
+  },
+  "license_note": "These CC0 art sources do not change existing restrictions on the mixed music development bundle. Project-relative source paths identify local source evidence and are not public download links. WebP derivatives and share image preparation are separately recorded in Website/media/provenance.json."
+}

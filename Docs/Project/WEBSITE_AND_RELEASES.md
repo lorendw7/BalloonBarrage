@@ -1,10 +1,14 @@
 # Official website and desktop releases
 
-## Current website direction — November 6, 2026
+## Current website direction — November 8, 2026
 
-The trilingual site now leads with the open-world preparation plan while keeping the published studio demo downloads. Event dates, venue details, special-event promotion, voting/registration links, QR assets and all three survey routes are removed. The build recreates only its known generated `Website/dist` directory so stale pages and QR files cannot survive a rebuild. Removed survey URLs return not found; they do not collect information or redirect to the external form.
+The trilingual site leads with native views of the saved Sunny Coast environment: a larger southern island, four new places, two bridges and a brighter turquoise, coral, sunflower and ivory palette. The home page, map, art gallery and development pages share those images while retaining the published studio demo downloads. Open-world movement, song entry, rivals and Boss combat remain future gameplay. [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) owns the experience and [Roadmap](../Design/ROADMAP.md#immediate-lesson-queue) owns the next learner-written increment.
 
-There are ten topic pages per language (30 routes). The selected daytime handmade music town and later Boss plan remain planning-only. The first next step is a route/camera sketch and small original asset brief, governed by [Game design](../Design/GAME_DESIGN.md#open-world-direction--planning-only) and [Roadmap](../Design/ROADMAP.md#immediate-lesson-queue).
+There are ten topic pages per language (30 routes). The actual top-down capture replaces the earlier topology sketch and provides four numbered destination links. Native image dialogs work with keyboard focus restoration; ordinary image links remain usable without JavaScript. Shared content, language navigation, release discovery, source attribution and retirement checks remain intact.
+
+Seven complete PNG captures are copied byte-for-byte into `Website/media`, alongside bounded WebP derivatives and a separate social image. The website is independently deployable without publishing the local Unity art working tree. `sunny-provenance.json` records exact capture hashes, static area and route evidence, and the new CC0 source manifest; the original Kenney `License.txt` is also published. Public source buttons lead to these website assets and the official publisher.
+
+Event promotion, form links, QR assets and survey routes remain retired. The build recreates only its known generated `Website/dist` directory, so stale files cannot survive a rebuild. Removed survey URLs return not found.
 
 The website retirement does not delete external form replies or change Google Forms settings. Any previously collected invitation emails retain their original 90-day limit; [retention notes](FESTIVAL_SURVEY.md) preserve those obligations. Published desktop packages, historical screenshots, exact image prompts and license attribution remain intact.
 
@@ -41,7 +45,9 @@ node Website/scripts/serve.mjs
 
 Preview at http://127.0.0.1:4173/. Add `--offline` to the build command when release lookup is unavailable. Offline/API-failure state is unknown, not evidence that no release exists. Generated `Website/dist` remains ignored.
 
-The tests cover translation structure, trusted platform-specific release selection, escaping, canonical/share metadata, media provenance, local assets, content-addressed CSS/JS and preview path safety. They do not test Unity players or sustained browser performance.
+The 23 website checks cover translation structure, trusted platform-specific release selection, escaping, canonical/share metadata, media provenance, complete native capture copies, self-contained Sunny Coast publication assets, local links, content-addressed CSS/JS and preview path safety. They do not test Unity players or sustained browser performance. The November 8 offline build and all 23 checks passed.
+
+Local browser inspection on November 8 covered the 1280 px desktop and 390 px mobile home page, with no horizontal overflow or broken loaded images. Mobile map links reached their matching destinations. The image dialog opened, closed with Escape and restored keyboard focus. Switching Chinese → English → Japanese preserved the map subpage. No browser console errors were observed. These checks verify the local website, separately from publication and Unity acceptance.
 
 ## Website content and media
 
@@ -51,30 +57,38 @@ Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page pre
 
 | Route within a language | Content |
 |---|---|
-| `/` | Game introduction, open-world next step, downloads and topic links |
+| `/` | Native coast hero, measured static-map summary, four district previews, studio downloads and topic links |
 | `game/` | Controls, musical demonstration/response, song catalog and relay |
-| `updates/` | Current delivery priorities and expandable historical verification details |
-| `art/` | Filterable scene/prop/artwork gallery and pigment study |
-| `open-world/` | An imagined first visit and plain-language explanations of rivals, camera views and musical rewards |
-| `open-world/map/` | Labelled original topology diagram and district concepts |
+| `updates/` | Current static expansion evidence, studio delivery priorities and historical verification details |
+| `art/` | Native coast gallery, open-asset provenance, existing filterable studio archive and pigment study |
+| `open-world/` | Saved scene overview, new places, evidence boundary and future play ideas |
+| `open-world/map/` | Native top-down capture, numbered destination links, new and original districts |
 | `open-world/play/` | Exploration/challenge loop, readable troupe rules and expandable candidate roles |
 | `open-world/boss/` | Future solo direct combat against a Boss and AI squad; expandable rules, AI research and asset plans |
-| `open-world/art/` | Sunny street festival with handmade details; night festival deferred |
-| `open-world/roadmap/` | Learner-led development gates and deferred scope |
+| `open-world/art/` | Bright palette, native district views, source attribution and material direction |
+| `open-world/roadmap/` | Saved environment baseline, learner-led development gates and deferred scope |
 
-`Website/src/index.html` is the shared shell; `home.html`, `game.html`, `updates.html` and `art.html` supply its bodies through `Website/scripts/templates.mjs`. `world-strings.mjs` and `world-boss-strings.mjs` hold planning translations; `render-world.mjs` renders six world pages. Rule/technology detail is collapsed by default. Content-addressed CSS/JS keeps layout changes coherent. No Unity gameplay or desktop package change is included in the website retirement.
+`Website/src/index.html` is the shared shell; `home.html`, `game.html`, `updates.html` and `art.html` supply its bodies through `Website/scripts/templates.mjs`. `world-strings.mjs` and `world-boss-strings.mjs` distinguish saved scenery from future gameplay; `render-world.mjs` renders six world pages. `sunny-strings.mjs` and `render-sunny.mjs` share localized district, evidence, palette and licensing sections. Rule/technology detail is collapsed by default. Content-addressed CSS/JS keeps layout changes coherent. Website publication does not alter Unity gameplay or desktop packages.
 
 `Website/assets.json` selects canonical project artwork and prepared web derivatives. `python Website/scripts/prepare-images.py` regenerates committed WebP derivatives up to the source resolution, capped at 2560 × 1440. Gameplay, results, interface and coverage screenshots use quality 98 for clearer text and paint edges; other artwork uses quality 92. `Website/media/provenance.json` records source/output hashes, settings and attribution. Canonical PNG/JPEG files and exact image-generation prompts remain preserved.
 
 The current gameplay, mode/song selection and demonstration/response figures use the three native 3840 × 2160 PNGs in `Assets/Art/Previews/Festival20261029`, corresponding to demo.8 source. Their provenance identifies the natural-DSP automated Editor fixture and source commit; they are not recordings of the standalone player or human tests. The two-step guide explains noninteractive outlines followed by real balloons. Earlier captures remain version-labelled in the media archive.
 
-The site shows 2560 × 1440 quality-98 WebP derivatives, links to untouched 4K originals and uses `festival-share-20261029.jpg` as its 1200 × 675 share image. Regenerate only these media with:
+The gameplay page shows 2560 × 1440 quality-98 WebP derivatives, links to untouched 4K originals and retains `festival-share-20261029.jpg` as its 1200 × 675 share image. Other pages use `sunny-share-20261108.jpg`, fitting the complete native overview into 1200 × 675 with ivory side padding. Sunny Coast WebPs use quality 92; the seven outputs are each under 500 KB. Regenerate the studio media with:
 
 ```powershell
 python Website/scripts/prepare-images.py --only festival-selection-20261029 festival-watch-20261029 festival-response-20261029
 ```
 
 The corresponding provenance records are merged without rewriting unrelated derivatives. Large figures stop at 1600 CSS pixels; the dialog may use most of the viewport. The two-step guide stacks below 800 CSS pixels. Below-the-fold images are lazy-loaded, image dialogs restore keyboard focus, and content-addressed CSS/JS prevents cached layout files from mixing with new pages. Translation checks additionally guard the new guide and delivery fields against Chinese text leaking into Japanese/English pages.
+
+Regenerate the coast media only after the native captures are finalized:
+
+```powershell
+python Website/scripts/prepare-images.py --only sunny-overview-20261108 sunny-topdown-20261108 sunny-market-20261108 sunny-meadow-20261108 sunny-coral-bay-20261108 sunny-bridge-20261108 sunny-overlook-20261108
+```
+
+This copies complete PNG originals into the website, then updates their WebP/share derivatives and recorded hashes. The build uses these committed website files, not the local Unity scene. Update `Website/media/sunny-provenance.json` from the matching native manifest if a later capture set replaces them; do not combine measurements or hashes from different scene revisions.
 
 ## Verification after publication
 

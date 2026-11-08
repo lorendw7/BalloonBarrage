@@ -1,14 +1,16 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
-        <p class="eyebrow">{{eyebrow}}</p>
+        <p class="eyebrow sunny-kicker">{{sunnyTag}}</p>
         <h1 class="wordmark" id="hero-title">BALLOON<span>BARRAGE</span></h1>
-        <p class="hero-description">{{intro}}</p>
+        <h2 class="hero-promise">{{sunnyTitle}}</h2><p class="hero-description">{{intro}}</p>
         <p class="release-status">{{heroReleaseStatus}}</p>
         <div class="hero-actions"><a class="button button-teal" href="{{worldUrl}}">{{heroMore}}</a><a class="text-link" href="#download">{{heroDownload}}</a></div>
-        <p class="prototype-note">{{prototype}}</p>
-        <dl class="hero-facts"><div><dt>{{heroLength}}</dt><dd>{{heroLengthValue}}</dd></div><div><dt>{{heroMode}}</dt><dd>{{heroModeValue}}</dd></div><div><dt>{{heroInput}}</dt><dd>{{heroInputValue}}</dd></div></dl>
+        <p class="prototype-note">{{sunnyNative}}</p>
       </div>
+      <div class="sunny-hero-art">{{sunnyHomeVisual}}<a class="sunny-map-ticket" href="{{worldUrl}}map/">{{sunnyMapLink}} <span aria-hidden="true">↗</span></a></div>
     </section>
+    <section class="section sunny-home-metrics">{{sunnyMetrics}}</section>
+    <section class="section sunny-home-places"><div class="sunny-section-heading"><div><p class="eyebrow">01 / SUNNY COAST</p><h2>{{sunnyPlacesTitle}}</h2></div><p>{{sunnyPlacesIntro}}</p></div>{{sunnyDistricts}}<a class="button button-teal" href="{{worldUrl}}map/">{{sunnyMapLink}} <span aria-hidden="true">→</span></a></section>
     <section class="section release-highlight" aria-labelledby="release-highlight-title"><div><p class="eyebrow">NEXT / MUSIC TOWN</p><h2 id="release-highlight-title">{{releaseHighlightTitle}}</h2><p>{{releaseHighlightBody}}</p></div><a class="text-link" href="{{worldUrl}}roadmap/">{{releaseHighlightLink}} <span aria-hidden="true">→</span></a></section>
     <section class="download-section" id="download" aria-labelledby="download-title">
       <div class="section download-grid">
@@ -22,3 +24,4 @@
       <a id="updates" href="{{updatesUrl}}"><h3>{{navUpdates}}</h3><p>{{exploreUpdates}}</p><span aria-hidden="true">→</span></a>
       <a id="art" href="{{artUrl}}"><h3>{{navArt}}</h3><p>{{exploreArt}}</p><span aria-hidden="true">→</span></a>
     </div></section>
+    <section class="section">{{sunnySource}}</section>

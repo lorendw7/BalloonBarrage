@@ -399,5 +399,101 @@
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
     "attribution": "Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing. Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported."
+  },
+  {
+    "source": "Website/media/sunny-overview-20261108.png",
+    "source_sha256": "897dc77b8d92e4da68512e4f444c6f7943f4390476da80f74c0db2f7fcb8afa4",
+    "output": "Website/media/sunny-overview-20261108.webp",
+    "output_sha256": "ab47921141481a469927d5e2d56c45e4471a68ecd79bec5a00c41a47f5013b40",
+    "dimensions": [
+      2160,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-topdown-20261108.png",
+    "source_sha256": "c41ca4f81ddda44224a9004536b0c5fd40f43a29f894e94e0f8db1bf79bd0cfb",
+    "output": "Website/media/sunny-topdown-20261108.webp",
+    "output_sha256": "ee74472d469232619e6316d4bc7d502ec5c815821f7a39010658b467838a0e8b",
+    "dimensions": [
+      2160,
+      1440
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-market-20261108.png",
+    "source_sha256": "328a6002b0481e48b5b26eef199b6ef322fc58bf1728cc24e8cb80b9ab549eaa",
+    "output": "Website/media/sunny-market-20261108.webp",
+    "output_sha256": "46f2e8e709dee7e21c9f53c52db6b389027d3bff425edcf9c86e1da25b32f7e0",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-meadow-20261108.png",
+    "source_sha256": "2352be5a659b13bd41b03958dde8fd826482a7d2a3b794d1e9d62ae09dbf35d5",
+    "output": "Website/media/sunny-meadow-20261108.webp",
+    "output_sha256": "63af2ed4cd9f0c417a4aa6f7d682457cd450c02e686243826e52ab7e345ed726",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-coral-bay-20261108.png",
+    "source_sha256": "f5e9be942d08f33b57ae435d3aca01c11e7e9d2f2fece3b08a4856a8fd9a8c78",
+    "output": "Website/media/sunny-coral-bay-20261108.webp",
+    "output_sha256": "47e4344bb07ca09613b6ed7f25362e6aab4fed4e3826962b9f94f3ede5aca593",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-bridge-20261108.png",
+    "source_sha256": "8d0f22f80b6b48a3af2d18922c1f55f3d1cf425b7c12a2c1573156af4b8eccc7",
+    "output": "Website/media/sunny-bridge-20261108.webp",
+    "output_sha256": "d6310d9f5123ac9f16ff1d646b7b0ca427269f4f954775980aa7a5a85d9c2f41",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-overlook-20261108.png",
+    "source_sha256": "e1d1b082b6eac276d3003d33550e8d8715008ee782a0c84642d9ebb594a4cd11",
+    "output": "Website/media/sunny-overlook-20261108.webp",
+    "output_sha256": "4ef094abc88c3a44a69fba5849dc298c00c1408ea8b0da388c4356dd6ee1b401",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-overview-20261108.png",
+    "source_sha256": "897dc77b8d92e4da68512e4f444c6f7943f4390476da80f74c0db2f7fcb8afa4",
+    "output": "Website/media/sunny-share-20261108.jpg",
+    "output_sha256": "f72237c295387f5f5c2caf3f08b9077583c7d3399b63fc7b0d91f17fc880fe93",
+    "dimensions": [
+      1200,
+      675
+    ],
+    "preparation": "Fit complete native capture in 1200x675 with ivory side padding, no crop or distortion; RGB JPEG quality 92, optimized",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
   }
 ]

@@ -1,0 +1,2 @@
+# Keep the original CC0 license byte-identical across Windows and CI checkouts.
+media/kenney-nature-license.txt -text

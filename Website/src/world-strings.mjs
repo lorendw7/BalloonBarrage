@@ -1,28 +1,33 @@
 // Public-facing translations. Design decisions live in Docs/Design/GAME_DESIGN.md.
 export const worldStrings = {
   "zh-Hans": {
-    nav: "开放世界计划", title: "开放世界计划｜BalloonBarrage 气球弹幕",
-    description: "从一间画室走向音乐街区：中心广场、自由探索、定点音游挑战与对手 AI。未来开发规划，尚未实装。",
-    home: "返回当前试玩", skip: "跳到正文", language: "语言", navigation: "规划导航",
-    eyebrow: "未来版本 · 音乐小镇计划", headline: "先逛一段街，\n再玩一首歌。",
-    intro: "设想一座能自由散步的音乐小镇：你从广场出发，找到喜欢的舞台，停下来射气球、玩节奏挑战，再带一段音乐回家。第一步只做广场、一条路和码头舞台。",
-    status: "规划中 · 尚未实装 · 暂无发布日期", updated: "准备阶段更新于 2026.11.06",
+    nav: "阳光音乐小镇", title: "阳光音乐小镇｜BalloonBarrage 气球弹幕",
+    description: "查看更大的阳光音乐小镇：Unity 静态场景、南部集市、林地与海湾，新鲜明配色和 CC0 素材。开放世界玩法仍待制作。",
+    home: "返回首页", skip: "跳到正文", language: "语言", navigation: "小镇导航",
+    eyebrow: "2026.11.08 · 阳光海岸扩展", headline: "更大的小镇，\n更明亮的色彩。",
+    intro: "从北部广场出发，两座桥把小镇连到新的南部海岸。逛一逛阳光集市、花田林地与海湾营地，再沿环路走向海角。这里展示已保存的 Unity 场景；能自由走动、开始一首歌的体验，是接下来的制作目标。",
+    status: "静态场景已制作 · 开放世界玩法待制作 · 暂无发布日期", updated: "场景与网站更新于 2026.11.08",
     mapNav: "小镇有哪些地方", loopNav: "一局怎么玩", aiNav: "捣蛋对手", planNav: "开发顺序", choicesNav: "已选定的玩法",
     selected: "想象你第一次来到小镇", decisions: ["在广场认识道路，试着打几颗练习气球。", "沿路标走到码头，看见一座小舞台。", "自己选择开始，镜头停稳，音乐响起。", "和捣蛋角色选气球、抢目标，完成一首歌。", "回到广场，听见新带回的鼓点加入合奏。"],
-    boundary: "这是未来的一次游玩示例，尚未做成。当前可下载的是画室里的气球音游；音乐小镇还不能试玩。奖励条件也仍待设计。",
-    mapTitle: "广场像家，街区像三条出门的路。", mapIntro: "每次从中心广场出发，去一个街区玩，再回广场。远期想做码头、花园、屋顶三个方向；第一步只打通“广场 → 码头舞台 → 返回”。",
-    mapLabel: "这张草图只说明地点怎样相连，不是游戏画面或实际尺寸。点击地点看看在那里做什么。",
+    boundary: "以上是未来玩法示例。小镇已有可编辑的静态场景，但没有玩家移动、对手 AI 或歌曲入口。当前可下载游玩的是画室音游。",
+    mapTitle: "两座桥，一片新的阳光海岸。", mapIntro: "原有广场、码头、花园和屋顶区保留在北岸；南岸新增集市、花田林地、海湾营地和海角观景点。桥梁与环路把这些地点连起来，下一步仍从广场到码头的一小段移动练习开始。",
+    mapLabel: "地点连接示意，不代表实际尺寸。上方原生俯视图展示已保存的 Unity 场景；点击地点可了解北岸街区。",
     districtNames: ["气球广场", "鼓点码头", "旋律花园", "切分屋顶"],
-    districtTags: ["安全中心", "第一块候选", "后续扩展", "后续研究"],
-    districts: [
-      "气球塔作为回家地标。练习墙、路线牌和画室入口围绕广场布置；出生点不进行抢夺对战。",
-      "宽阔平路通往鼓棚舞台。用清晰鼓点、留白气球阵列和一个 AI 对手验证核心体验；暂不加入水上移动。",
-      "以拱门和植物组成安静环路。用旋律问答点亮花园装饰，探索较舒缓的音乐表现。",
-      "以错落楼顶表现更活泼的节奏。升空气球、升降装置与高低差仅作后续设想，先验证相机与遮挡。"
+    districtTags: [
+      "北岸中心",
+      "首个玩法练习区",
+      "静态花园环路",
+      "静态高台区"
     ],
-    scale: "设计目标，尚未实测：第一次走到舞台约 30–60 秒；探索、练习、一场挑战和返回合计约 5–8 分钟。用体验决定地图大小。",
+    districts: [
+      "折纸灯塔是回到广场的地标，路牌、长椅与画室外立面围绕清晰通路布置。角色模型用于比例参考，练习气球与出生逻辑尚待接入。",
+      "宽阔步道通往鼓棚舞台，已有静态地面与边界准备。一个定点歌曲挑战将作为后续小步练习；当前没有水上移动或对手。",
+      "拱门、花草和池塘围出安静的步行环路，并与西侧南岸桥相连。旋律问答与点亮花园装饰仍是未来玩法提案。",
+      "屋顶平台通过宽坡道连接地面，房屋为不可进入的外立面。高台已经布置；升降、跳跃与屋顶节奏玩法尚未实现。"
+    ],
+    scale: "已保存场景的陆地面积约 34,482.5 平方米，为原地图的 4.55 倍。面积与静态路径检查不等同于实测步行时长；游玩节奏仍需后续控制器与人工体验验证。",
     loopTitle: "到码头玩一局，会发生什么？",
-    loopIntro: "散步时自由走、没有节奏评分；到了舞台，自己确认才开始射气球的音乐挑战。结束后恢复走路，可以回广场，也可以留下再练一次。",
+    loopIntro: "以下是尚待制作的玩法：散步时自由走、没有节奏评分；到了舞台，自己确认才开始射气球的音乐挑战。结束后恢复走路，可以回广场，也可以留下再练一次。",
     loop: [
       ["01 / 顺着路标走","广场的气球塔告诉你家在哪，路牌带你去码头。第一版先走一条清楚的小路，隐藏路线以后再加。"],
       ["02 / 站定，选择开始","你确认开局，镜头对准舞台，街上的背景音乐让位给挑战歌曲。路过舞台不会突然开始比赛。"],
@@ -37,9 +42,9 @@ export const worldStrings = {
       ["它也要遵守规则", "一颗气球只能算一次命中。对手会有失误和休息，不能隔墙射击或一出现就必中；同时打中的归属还需测试。"],
       ["输了也能继续逛", "初步设计不扣生命、不把你打飞，也不强迫重开。仍可选单人演奏；对决成绩与单人记录分开。"]
     ],
-    planTitle: "每一步，都有一个可以验证的问题。", planIntro: "现在先准备广场→码头舞台→返回的路线草图、视角切换说明和第一组原创素材。之后一次讲清一个小步骤，由你写核心玩法，再一起检查；目前还没有可玩的开放世界。",
+    planTitle: "每一步，都有一个可以验证的问题。", planIntro: "更大的场景、明亮配色与素材已经准备好。先在副本里移动一朵花，熟悉场景；然后由学习者写一个小小的移动步骤，再一起检查。静态地图扩展仍属于 OW0，不代表开放世界已经可玩。",
     stages: [
-      ["OW0","画出第一条路","玩法 C／A／B 与美术 A＋C 已确认；画出白天路线，确定底色、材质与气球分类。","方向确认不代表灰盒或试玩已经完成。"],
+      ["OW0", "准备场景与路线", "已制作北岸小镇和明亮南岸扩展，导入16种CC0自然素材并保留来源；原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
       ["OW1","走得舒服","独立第三人称灰盒，只做广场边缘、一条路和一个舞台。","观察：不迷路、视角舒适、相机不穿墙。"],
       ["OW2","走进一首歌","主动进入稳定舞台视角，复用一个现有歌曲配置，再退出。","检查：音乐时钟、输入切换、结算与重试清理。"],
       ["OW3a","认识一名小队成员","从预告一颗气球开始，逐步加入瞄准、抢球和恢复。","检查：命中唯一结算；玩家看得懂 AI 的意图。"],
@@ -62,41 +67,46 @@ export const worldStrings = {
       ["舞台领队","开局前公布一种规则变化，例如长按气球。属于后续谱面与输入研究，不改变正在进行的挑战。"]
     ],
     artNav: "美术方向",
-    artTitle: "阳光音乐节，手作的小镇。",
-    artIntro: "A＋C 已确认：延续温暖画室，把气球、音乐和街区生活连成一体。先用于广场一角、一条路和一座舞台；本页是设计简报，尚非游戏场景。",
+    artTitle: "青绿海湾，珊瑚屋顶，金色布旗。",
+    artIntro: "新扩展已在 Unity 中制作：更明亮的草地、青绿水面、珊瑚色屋顶与奶油色道路，延续手作招牌、木舞台和布旗。新增 16 种 CC0 Kenney 自然素材，保留原始模型、授权与哈希记录。",
     artRules: [
-      ["暖底色，鲜明目标","奶油色建筑与日光打底，青绿、珊瑚橙点缀。背景保持安静，交互点与气球用对比色、形状和图标共同提示。"],
-      ["有光泽，也有手作感","亮面气球搭配哑光地面、纸海报、纸板招牌、布旗与木舞台。鼓胀、回弹、泄气反馈短促清楚，不遮住下一颗目标。"],
-      ["让音乐成为街区生活","用打气筒、颜料桶、鼓槌和节拍器设计原创道具。各街区拥有自己的乐队与海报；气球花纹、服饰和演出动作留作后续个性表达。"]
+      ["鲜明颜色，清楚的路线", "草地、屋顶、水面与花朵带来更鲜艳的色彩，奶油色路径留出安静区域。路牌和地标形状与颜色共同指路。"],
+      ["原始素材与派生材质分开", "使用 Kenney CC0 模型和已有 Poly Haven 表面，调色写在独立 Unity 材质中。原始文件与授权记录保留，既有石材与木纹继续提供细节。"],
+      ["近景与全景一起检查", "俯视图看地图连接，集市、林地和营地近景看比例与留白。画面来自 Unity 静态场景，不是独立游戏包或玩家实录。"]
     ],
     artLater: "夜间音乐节后置：先验证白天街区，再单独研究夜景灯光、目标清晰度与音乐切换。暂不承诺昼夜循环或上线日期。",
-    sourcesTitle: "规划与当前试玩分开看。", sourceDesign: "完整游戏设计（英文）", sourceRoadmap: "开发路线图（英文）",
-    originality: "参考《斯普拉顿》把玩法、音乐和生活文化统一起来的方法。地图、角色、界面、美术与音乐独立设计；完整设计文档保留官方参考来源。",
-    footer: "先做一段值得反复走的小路。"
+    sourcesTitle: "静态场景、玩法计划与当前试玩分开看。", sourceDesign: "完整游戏设计（英文）", sourceRoadmap: "开发路线图（英文）",
+    originality: "学习《斯普拉顿》连接玩法、音乐与生活文化的方法。项目原创场景布局和道具搭配有明确授权的 CC0 Kenney 模型与 Poly Haven 表面；素材署名、原始文件和准确生成提示词分别保留。",
+    footer: "小镇已经铺开，下一步从走好一小段路开始。"
   },
   en: {
-    nav: "Open-world plans", title: "Open-world plans | BalloonBarrage",
-    description: "A plaza, music districts, opt-in rhythm stages and rival AI. A future BalloonBarrage design proposal, not implemented gameplay.",
-    home: "Back to the current demo", skip: "Skip to content", language: "Language", navigation: "Plan navigation",
-    eyebrow: "Future edition · A musical town", headline: "Wander a street.\nStop to play a song.",
-    intro: "Imagine a small town you can explore freely: leave the plaza, find a stage, stop to shoot balloons in a rhythm challenge, then bring some music home. Start with just the plaza, one path and the pier stage.",
-    status: "Planning only · Not implemented · No release date", updated: "Preparation updated 2026.11.06",
+    nav: "Sunny music town", title: "Sunny music town | BalloonBarrage",
+    description: "Explore native Unity views of a larger sunny music town: a southern market, meadow grove, coral bay, brighter colors and CC0 scenery. Open-world gameplay is still to come.",
+    home: "Back to home", skip: "Skip to content", language: "Language", navigation: "Town navigation",
+    eyebrow: "2026.11.08 · Sunny coast expansion", headline: "A bigger town.\nA brighter palette.",
+    intro: "Two bridges connect the northern plaza to a new southern coast. Discover the market, meadow grove and bay campsite, then follow the loop to the overlook. These are saved Unity environments; walking freely and starting a song are the next development goals.",
+    status: "Static scene prepared · Gameplay still to come · No release date", updated: "Scene and website updated 2026.11.08",
     mapNav: "Places to visit", loopNav: "Playing a round", aiNav: "Rivals", planNav: "Development steps", choicesNav: "Selected play ideas",
     selected: "Imagine your first visit", decisions: ["Get your bearings in the plaza and try some practice balloons.", "Follow the signs to a small stage on the pier.", "Choose to start: the camera settles and the music begins.", "Pick balloons and contest targets with a mischievous rival.", "Return to the plaza and hear your new drum part join the ensemble."],
-    boundary: "This is an example of a future visit, not a playable town. Current downloads are the studio balloon rhythm game. Reward conditions still need design.",
-    mapTitle: "The plaza is home. Three paths lead to music.", mapIntro: "Leave the central plaza for one district, play there, then return. The longer-term idea includes a pier, garden and rooftops; first build only plaza → pier stage → home.",
-    mapLabel: "This sketch shows how places connect, not a game screen or actual scale. Select a place to see what you might do there.",
+    boundary: "The visit above describes future play. An editable static town exists, but player movement, rival AI and song entry are not connected. Current playable downloads remain the studio rhythm game.",
+    mapTitle: "Two bridges. A new sunny coast.", mapIntro: "The plaza, pier, garden and rooftops remain on the north shore. A market, meadow grove, bay campsite and coastal overlook extend the south. Bridges and loops connect the places; the first movement exercise still starts with a small plaza-to-pier route.",
+    mapLabel: "A connection diagram, not a scale map. The native top-down image above shows the saved Unity scene. Select a place to learn about the northern districts.",
     districtNames: ["Balloon Plaza", "Percussion Pier", "Melody Garden", "Syncopation Rooftops"],
-    districtTags: ["Safe hub", "First slice candidate", "Later expansion", "Later study"],
-    districts: [
-      "A balloon tower marks home. A practice wall, route signs and the studio entrance frame the plaza. No active rival contest in the arrival area.",
-      "A wide, flat path leads to a drum-canopy stage. Spacious percussion patterns and one rival test the core experience, without water traversal.",
-      "Arches and plants form a sheltered loop. Melodic call-and-response could illuminate garden decorations for a quieter musical experience.",
-      "Stepped rooftops suggest livelier rhythms. Lift balloons, elevators and vertical routes remain later experiments, after camera and occlusion studies."
+    districtTags: [
+      "Northern hub",
+      "First gameplay exercise",
+      "Static garden loop",
+      "Static raised terrace"
     ],
-    scale: "Unmeasured design targets: about 30–60 seconds to the first stage; about 5–8 minutes for exploration, practice, one challenge and return. Let the experience set the map size.",
+    districts: [
+      "A folded-paper landmark marks the way home. Signs, benches and studio facades frame clear paths. Character models provide scale references; practice balloons and spawn behavior remain future work.",
+      "A broad boardwalk reaches the drum-canopy stage, with static support and boundaries prepared. One fixed song challenge is a later exercise; water traversal and rivals are not present.",
+      "Arches, planting and a pond form a quiet return loop connected to the western bridge south. Melodic call-and-response and illuminated garden rewards remain gameplay proposals.",
+      "Broad ramps link the raised terrace to ground level, with non-enterable building facades. The setting is placed; lifts, jumping and rooftop rhythm challenges are not implemented."
+    ],
+    scale: "The saved scene contains about 34,482.5 m² of land, 4.55 times the original map. Area and static route checks do not measure walking time; pacing still needs a controller and human playtests.",
     loopTitle: "What would one round at the pier feel like?",
-    loopIntro: "Walk freely without rhythm grading. At a stage, choose to begin a balloon-shooting music challenge. Afterwards you can walk home or stay for another try.",
+    loopIntro: "This is the proposed gameplay: walk freely without rhythm grading, then choose to begin a balloon-shooting music challenge at a stage. Afterwards, walk home or stay for another try.",
     loop: [
       ["01 / Follow the signs","The plaza's balloon tower marks home and signs lead to the pier. Make one clear path first; hidden routes can come later."],
       ["02 / Stop and choose to start","The camera faces the stage and street music gives way to the challenge song. Simply walking past a stage does not start a contest."],
@@ -109,11 +119,11 @@ export const worldStrings = {
     aiRules: [
       ["Let you see its next move", "It turns, aims and shows a target before firing, leaving time to react. A pair should take turns giving cues so the screen stays understandable."],
       ["The rival follows rules too", "A balloon counts once. Rivals make mistakes and rest; they cannot fire through walls or land an instant perfect shot. Simultaneous hits still need testing."],
-      ["Keep exploring after a loss", "The initial design has no health damage, knockback or forced restart. Solo play remains available and rival scores stay separate from solo records."]
+      ["Keep exploring after a loss", "The initial design has no health damage, knockback or forced restart. The plan keeps a solo option and separates rival scores from solo records."]
     ],
-    planTitle: "One testable question at every step.", planIntro: "Prepare the plaza → pier stage → return sketch, camera handoff and first original asset brief now. Then explain one small step, let the learner write gameplay and review it together. The open world is not playable yet.",
+    planTitle: "One testable question at every step.", planIntro: "The larger scene, brighter palette and reusable assets are prepared. First move one flower in a practice copy; then let the learner write one small movement step and review it together. The static expansion remains OW0, not a playable open world.",
     stages: [
-      ["OW0","Sketch the first route","Gameplay C / A / B and art A + C are confirmed; sketch the daylight route, palette, materials and balloon categories.","Confirmed direction does not mean a graybox or playtest is complete."],
+      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved, with sixteen additional CC0 nature models and source records. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
       ["OW1","Walk comfortably","A separate third-person graybox: plaza edge, one path, one stage.","Observe wayfinding, camera comfort and camera collision."],
       ["OW2","Walk into a song","Opt into a stable stage view, reuse one existing profile, then leave.","Verify music clock, input handoff, results and Retry cleanup."],
       ["OW3a","Meet one troupe member","Begin with one telegraphed balloon; add aiming, contesting and recovery.","Verify single-hit resolution and whether players understand the intent."],
@@ -136,41 +146,46 @@ export const worldStrings = {
       ["Stage Leader","Announces one modifier before a round, such as a sustained balloon. A later chart/input study, never a change to a running challenge."]
     ],
     artNav: "Art direction",
-    artTitle: "A sunny festival. A handmade town.",
-    artIntro: "A + C is confirmed: extend the warm studio into a town where balloons, music and daily life belong together. Apply it to one plaza corner, path and stage first. This is a design brief, not a game scene.",
+    artTitle: "Turquoise bays. Coral roofs. Golden bunting.",
+    artIntro: "The expansion is built in Unity with brighter grass, turquoise water, coral roofs and warm ivory routes, retaining handmade signs, wooden stages and fabric flags. Sixteen additional CC0 Kenney nature models retain their original files, licenses and hashes.",
     artRules: [
-      ["Warm scenery, clear targets","Cream buildings and daylight with teal and coral accents. Keep backgrounds calm; use contrast, shapes and icons together for balloons and interaction cues."],
-      ["Gloss meets handmade texture","Glossy balloons against matte ground, paper posters, cardboard signs, fabric bunting and wooden stages. Brief inflation, springy hits and deflation never hide the next target."],
-      ["Music as local culture","Design original props from pumps, paint buckets, drumsticks and metronomes. Give districts local bands and posters; balloon patterns, clothing and performance gestures are later identity options."]
+      ["Vivid color, readable routes", "Grass, roofs, water and flowers carry stronger color while ivory paths leave quiet space. Signs and landmark silhouettes work with color to explain the route."],
+      ["Keep originals separate from prepared materials", "CC0 Kenney models and existing Poly Haven surfaces use separate Unity color treatments. Original files and source licenses remain intact; stone and wood textures retain surface detail."],
+      ["Review close views as well as the whole map", "The top-down view shows connections; market, grove and campsite views reveal scale and clear space. These are native static Unity renders, not standalone gameplay or human playtest captures."]
     ],
     artLater: "Night festival deferred: accept the daytime slice first, then study night lighting, target readability and music transitions separately. No day/night cycle or release date is promised.",
-    sourcesTitle: "Keep plans separate from the current demo.", sourceDesign: "Full game design", sourceRoadmap: "Development roadmap",
-    originality: "Study how Splatoon connects play, music and local culture. Maps, characters, interfaces, artwork and music remain original; the full design document records official references.",
-    footer: "Start with a little route worth walking again."
+    sourcesTitle: "Separate static art, future play and current downloads.", sourceDesign: "Full game design", sourceRoadmap: "Development roadmap",
+    originality: "Study how Splatoon connects play, music and local culture. Original project layouts and props accompany licensed CC0 Kenney models and Poly Haven surfaces. Keep attribution, original files and exact image-generation prompts with their separate records.",
+    footer: "The town is taking shape. Start by walking one small route well."
   },
   ja: {
-    nav: "オープンワールド計画", title: "オープンワールド計画 | BalloonBarrage",
-    description: "広場と音楽の街区、自由な探索、ステージ型リズムチャレンジ、ライバルAI。未実装の将来構想です。",
-    home: "現在の体験版へ", skip: "本文へ移動", language: "言語", navigation: "計画のナビゲーション",
-    eyebrow: "将来の版 · 音楽の街の計画", headline: "街を歩いて、\n立ち止まって一曲。",
-    intro: "自由に散歩できる小さな音楽の街を想像してください。広場から舞台を探し、立ち止まって風船を撃つリズム遊びを楽しみ、音楽を持ち帰ります。まずは広場、道一本、埠頭の舞台だけを作る計画です。",
-    status: "計画段階 · 未実装 · 公開日未定", updated: "準備段階の更新日 2026.11.06",
+    nav: "陽光の音楽の街", title: "陽光の音楽の街 | BalloonBarrage",
+    description: "広くなった音楽の街をUnityの画像で紹介。南岸の市場、草花の林、海辺のキャンプ場、鮮やかな配色とCC0素材。探索の遊びは今後制作します。",
+    home: "ホームへ戻る", skip: "本文へ移動", language: "言語", navigation: "街のナビゲーション",
+    eyebrow: "2026.11.08 · 陽光の海岸を拡張", headline: "もっと広い街へ。\nもっと明るい色へ。",
+    intro: "北岸の広場と新しい南岸を、二本の橋でつなぎました。市場、草花の林、湾のキャンプ場から、周回路で岬の展望所へ。ここで紹介するのは保存済みのUnityシーンです。自由な移動や一曲への参加は、これから制作する体験です。",
+    status: "静的なシーンを準備済み · 遊びは今後制作 · 公開日未定", updated: "シーンとサイトの更新日 2026.11.08",
     mapNav: "街の場所", loopNav: "一回の遊び方", aiNav: "いたずらな相手", planNav: "開発の順序", choicesNav: "選択済みの遊び",
     selected: "初めての訪問を想像すると", decisions: ["広場で道を覚え、練習用の風船を撃ってみる。", "案内板をたどると、埠頭に小さな舞台がある。", "自分で開始を選ぶと、視点が落ち着いて曲が始まる。", "いたずらな相手と風船を選び、取り合いながら一曲遊ぶ。", "広場へ帰ると、持ち帰った太鼓の音が合奏に加わる。"],
-    boundary: "これは将来の遊び方の例で、街はまだ遊べません。現在配布中なのはアトリエの風船リズムゲームです。報酬の条件も今後決めます。",
-    mapTitle: "広場は帰る場所。三つの道の先に音楽。", mapIntro: "中央広場から街区へ出かけて遊び、また広場へ戻ります。長期的には埠頭、庭園、屋根街の三方向を考え、まず「広場 → 埠頭の舞台 → 帰還」だけを作ります。",
-    mapLabel: "場所同士のつながりを示す草図です。ゲーム画面や実際の広さではありません。場所を選ぶと、そこで何をするか読めます。",
+    boundary: "上の訪問は将来の遊び方です。編集可能な静的な街はありますが、移動操作、ライバルAI、曲への入口は未接続です。今遊べる配布版はアトリエのリズムゲームです。",
+    mapTitle: "二本の橋と、新しい陽光の海岸。", mapIntro: "北岸の広場、埠頭、庭園、屋根街を残し、南岸に市場、草花の林、海辺のキャンプ場、岬の展望所を追加。橋と周回路でつながります。最初の移動練習は、広場から埠頭への小さな区間から始めます。",
+    mapLabel: "場所のつながりを示す図で、縮尺図ではありません。上のUnity俯瞰画像が保存済みシーンです。場所を選ぶと北岸の街区を読めます。",
     districtNames: ["風船広場", "リズム埠頭", "メロディ庭園", "シンコペ屋根街"],
-    districtTags: ["安全な拠点", "最初の試作候補", "後の拡張", "後の研究"],
-    districts: [
-      "風船の塔を帰還の目印に。練習壁、案内板、アトリエ入口を配置し、到着地点では取り合いを行いません。",
-      "広く平らな道から、太鼓の屋根があるステージへ。見やすい打楽器のパターンと一体のAIで基本体験を確認します。水上移動は含めません。",
-      "アーチと植物に囲まれた穏やかな周回路。メロディの問いかけと応答で庭の装飾が光る、静かな体験を検討します。",
-      "段差のある屋根で、弾むリズムを表現。浮上風船、昇降機、高低差の移動は、カメラと遮蔽の検証後に検討します。"
+    districtTags: [
+      "北岸の中心",
+      "最初の遊びの練習区",
+      "静的な庭園ルート",
+      "静的な高台"
     ],
-    scale: "未計測の設計目標：最初のステージまで約30〜60秒。探索、練習、一回の挑戦と帰還で約5〜8分。体験を基準に広さを決めます。",
+    districts: [
+      "折り紙の目印が広場への帰り道を示します。案内板、ベンチ、アトリエの外壁を通路の周囲に配置。キャラクターは大きさの参考で、練習風船や出現処理は今後の作業です。",
+      "広い遊歩道が太鼓の屋根のステージへ続き、静的な足場と境界を準備済みです。一曲の定点チャレンジは次の練習項目で、水上移動や相手はまだありません。",
+      "アーチ、草花、池を巡る静かな道は、西側の橋で南岸へつながります。メロディの問答や庭の装飾を光らせる報酬は、将来の遊びの案です。",
+      "広い坂道で地面と高台をつなぎ、入れない建物の外観を配置しました。場所はありますが、昇降機、ジャンプ、屋根のリズム遊びは未実装です。"
+    ],
+    scale: "保存済みシーンの陸地は約34,482.5m²で、元のマップの4.55倍です。面積や静的経路の確認から歩行時間は判断できません。遊びのテンポは操作と実際のプレイで検証します。",
     loopTitle: "埠頭で一回遊ぶと、どうなる？",
-    loopIntro: "散歩中は自由に歩き、リズムの採点はありません。舞台で自分から開始すると、風船を撃つ音楽チャレンジへ。終わったら広場へ帰っても、もう一度練習しても構いません。",
+    loopIntro: "以下は今後制作する遊びです。散歩中は自由に歩き、リズム採点はありません。舞台で自分から開始すると風船を撃つ音楽チャレンジへ。終わったら帰っても、もう一度練習しても構いません。",
     loop: [
       ["01 / 案内板をたどる","広場の風船の塔が帰る場所の目印。案内板で埠頭へ進みます。まず道一本をわかりやすく作り、隠し道は後に検討します。"],
       ["02 / 立ち止まって開始する","自分で開始を選ぶと視点が舞台に向き、街の音楽から挑戦の曲へ。通り過ぎただけでは始まりません。"],
@@ -185,9 +200,9 @@ export const worldStrings = {
       ["相手もルールを守る", "風船の命中は一度だけ数えます。相手も外したり休んだりし、壁越しや登場直後の必中はありません。同時命中の扱いは今後検証します。"],
       ["負けても散歩は続く", "初期案では体力ダメージ、吹き飛ばし、強制やり直しを入れません。ソロ演奏も選べて、対決の得点はソロ記録と分けます。"]
     ],
-    planTitle: "一段階に、一つの確かめる問い。", planIntro: "今は広場→桟橋ステージ→帰路の図、視点切り替え、最初の独自素材を準備します。その後、小さな手順ごとに学習者がコードを書き、一緒に確認します。オープンワールドはまだ遊べません。",
+    planTitle: "一段階に、一つの確かめる問い。", planIntro: "広いシーン、明るい配色、再利用できる素材を準備しました。まず練習用コピーで花を一つ動かし、その後、学習者が小さな移動処理を書いて一緒に確認します。静的な拡張はOW0の準備で、遊べる街の完成ではありません。",
     stages: [
-      ["OW0","最初の道を描く","遊びのC／A／Bと美術のA＋Cは確定。昼の道、配色、素材、風船の区別を描きます。","方向の確定は試作やプレイテストの完了を意味しません。"],
+      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸拡張を保存し、CC0自然モデル16種と出典を追加。画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
       ["OW1","心地よく歩く","別の三人称グレーボックスで広場の端、道一本、舞台一つ。","観察：道のわかりやすさ、視点の快適さ、カメラの衝突。"],
       ["OW2","一曲へ入る","自分で安定した舞台視点へ入り、既存の曲設定一つを使って退出。","検証：音楽時計、入力切替、結果とリトライ時の後処理。"],
       ["OW3a","一体のメンバーに会う","風船一つの予告から、照準、取り合い、休止へ。","検証：命中の一意な処理と、相手の意図の伝わり方。"],
@@ -210,16 +225,16 @@ export const worldStrings = {
       ["舞台リーダー","長押し風船など、一つの変更ルールを開始前に告知。将来の譜面・入力研究であり、進行中の挑戦は変えません。"]
     ],
     artNav: "美術の方向性",
-    artTitle: "陽光の音楽祭、手作りの街。",
-    artIntro: "A＋Cが確定。暖かなアトリエを、風船と音楽が暮らしにつながる街へ広げます。まず広場の一角、道一本、舞台一つに適用。設計案であり、実装済みの景色ではありません。",
+    artTitle: "青緑の湾、コーラルの屋根、金色の旗。",
+    artIntro: "Unityで新しい拡張を制作しました。明るい草地、青緑の水面、コーラルの屋根、アイボリーの道に、手作りの看板、木の舞台、布旗を組み合わせています。CC0のKenney自然素材16種を追加し、原本、許諾、ハッシュを保存しています。",
     artRules: [
-      ["暖かな背景、明確な目標","クリーム色の建物と日光に、青緑とコーラルの差し色。背景を穏やかに保ち、風船や操作の目印を色の対比、形、アイコンで伝えます。"],
-      ["つやと手作りの質感","つやのある風船に、マットな地面、紙ポスター、段ボール看板、布旗、木の舞台。膨らみ、弾み、しぼみの反応は短く、次の目標を隠しません。"],
-      ["音楽が街の文化になる","空気入れ、絵の具バケツ、ばち、メトロノームから独自の道具を設計。街区ごとにバンドやポスターを考え、風船の模様、服、演奏動作は後の個性表現に。"]
+      ["鮮やかな色、わかりやすい道", "草地、屋根、水面、花には鮮やかさを。アイボリーの道には落ち着いた空間を残します。案内板と目印の形も色と一緒に道を伝えます。"],
+      ["原本と調整用マテリアルを分ける", "CC0のKenneyモデルと既存のPoly Haven表面を使い、配色は別のUnityマテリアルで調整。元ファイルと許諾は保持し、石や木の質感も残します。"],
+      ["全体と近景の両方で確認する", "俯瞰で接続を、市場や林、キャンプ場の近景で大きさと余白を確認します。画像はUnityの静的シーンで、配布ゲームや人によるプレイの記録ではありません。"]
     ],
     artLater: "夜の音楽祭は後に検討。まず昼の街区を確認し、夜景の照明、目標の見やすさ、音楽の切替を別途研究します。昼夜サイクルや公開日は未定です。",
-    sourcesTitle: "将来の計画と、現在の体験版。", sourceDesign: "ゲーム設計全文（英語）", sourceRoadmap: "開発ロードマップ（英語）",
-    originality: "『スプラトゥーン』から、遊びと音楽、暮らしの文化をつなぐ方法を学びます。マップ、キャラクター、UI、美術、音楽は独自に設計し、設計文書に公式の参考資料を記録します。",
-    footer: "また歩きたくなる、小さな道から。"
+    sourcesTitle: "静的な美術、将来の遊び、現在の体験版。", sourceDesign: "ゲーム設計全文（英語）", sourceRoadmap: "開発ロードマップ（英語）",
+    originality: "『スプラトゥーン』から遊び、音楽、街の文化をつなぐ方法を学びます。独自の配置と道具に、許諾されたCC0のKenneyモデルとPoly Haven表面を組み合わせ、署名、原本、正確な画像生成プロンプトを個別に記録します。",
+    footer: "街の形はできてきました。まず短い道を心地よく歩くことから。"
   }
 };

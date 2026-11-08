@@ -167,14 +167,16 @@ test("ready, empty and API-failure pages render safely in all languages", () => 
   assert.ok(!html.includes('<script>alert("x")'));
 });
 
-test("sharing uses language-specific canonical URLs and the demo.8 response capture", async () => {
+test("sharing uses language-specific URLs, native coast art and the distinct studio capture", async () => {
   const base = "https://lorendw7.github.io/BalloonBarrage/";
   for (const locale of languages) {
     const html = renderPage(template, locale, selectDownload([release]));
     const canonical = base + (locale === "zh-Hans" ? "" : `${locale}/`);
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`));
     assert.ok(html.includes(`<meta property="og:url" content="${canonical}">`));
-    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/festival-share-20261029.jpg">`));
+    assert.ok(html.includes(`<meta property="og:image" content="${base}assets/sunny-share-20261108.jpg">`));
+    const gameHtml = renderPage(gameTemplate, locale, selectDownload([release]), {}, "game");
+    assert.ok(gameHtml.includes(`<meta property="og:image" content="${base}assets/festival-share-20261029.jpg">`));
     assert.ok(!html.includes("v0.1.0-demo.1"), "Introductory copy must not advertise an obsolete package");
   }
   assert.ok((await stat(path.join(site, "media/festival-response-20261029.webp"))).size < 800_000,

@@ -7,6 +7,7 @@ committed derivatives, so the website build remains dependency-free.
 import hashlib
 import argparse
 import json
+import shutil
 from pathlib import Path
 
 from PIL import Image, ImageOps
@@ -33,6 +34,13 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "sunny-overview-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overview.png",
+    "sunny-topdown-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/TopDown.png",
+    "sunny-market-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Market.png",
+    "sunny-meadow-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Meadow.png",
+    "sunny-coral-bay-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/CoralBay.png",
+    "sunny-bridge-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Bridge.png",
+    "sunny-overlook-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overlook.png",
     "room-paint-coverage-20261031": "Assets/StudioArtPack/RoomPaint20261031/Previews/FullRoomControlled.png",
     "festival-selection-20261029": "Assets/Art/Previews/Festival20261029/Selection.png",
     "festival-watch-20261029": "Assets/Art/Previews/Festival20261029/Watch.png",
@@ -89,6 +97,9 @@ PREVIEW_ATTRIBUTIONS = {
     "studio-rhythm-print-20261028": "Original text-free studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
     "botanical-pigment-print-20261028": "Original text-free botanical studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
 }
+SUNNY_ATTRIBUTION = "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original project architecture, CC0 Kenney scenery and Poly Haven surface sources retain separate provenance. Exact source image bytes retained. No generative image editing."
+for sunny_name in (name for name in SOURCES if name.startswith("sunny-")):
+    PREVIEW_ATTRIBUTIONS[sunny_name] = SUNNY_ATTRIBUTION
 
 
 def digest(path):
@@ -105,6 +116,11 @@ def main():
         if selected and name not in selected:
             continue
         source = ROOT / relative
+        if name.startswith("sunny-"):
+            # Keep the website deployment independent of the unpublished Unity working tree.
+            shutil.copyfile(source, MEDIA / f"{name}.png")
+            relative = f"Website/media/{name}.png"
+            source = ROOT / relative
         preserve_alpha = name == "paint-spray-vfx-20261025"
         image = Image.open(source).convert("RGBA" if preserve_alpha else "RGB")
         if name == "results-statistics-20261023":
@@ -131,6 +147,15 @@ def main():
             records[-1]["attribution"] = DEVELOPMENT_ATTRIBUTION
         elif relative == RESULTS_CAPTURE:
             records[-1]["attribution"] = RESULTS_ATTRIBUTION
+    if not selected or "sunny-overview-20261108" in selected:
+        relative = "Website/media/sunny-overview-20261108.png"
+        source = ROOT / relative
+        share = ImageOps.pad(Image.open(source).convert("RGB"), (1200, 675), method=Image.Resampling.LANCZOS, color="#fff9e8")
+        output = MEDIA / "sunny-share-20261108.jpg"
+        share.save(output, "JPEG", quality=92, optimize=True)
+        records.append({"source": relative, "source_sha256": digest(source),
+            "output": output.relative_to(ROOT).as_posix(), "output_sha256": digest(output),
+            "dimensions": [1200, 675], "preparation": "Fit complete native capture in 1200x675 with ivory side padding, no crop or distortion; RGB JPEG quality 92, optimized", "attribution": SUNNY_ATTRIBUTION})
     if selected:
         if "festival-response-20261029" in selected:
             relative = SOURCES["festival-response-20261029"]
