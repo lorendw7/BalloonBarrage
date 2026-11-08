@@ -185,7 +185,7 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .privacy { grid-column: 1/-1; border-top: 1px solid var(--line); padding-top: 1rem; font-size: .8rem; }
 .art-dialog { padding: 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--white); max-width: 96vw; width: fit-content; max-height: 96vh; color: var(--ink); }
 .art-dialog::backdrop { background: #122c2ccc; }
-.art-dialog img { max-width: 94vw; max-height: 82vh; object-fit: contain; margin-top: .8rem; }
+.art-dialog img { max-width: 100%; max-height: 82vh; object-fit: contain; margin-top: .8rem; }
 .art-dialog p { margin-top: .7rem; font-size: .9rem; }
 .dialog-close { display: block; margin-left: auto; border: 1px solid var(--ink); border-radius: 4px; background: var(--paper); padding: .4rem .7rem; cursor: pointer; }
 .updates-section { border-top: 1px solid var(--line); background: radial-gradient(circle at 95% 5%, #f3cd6240 0 9rem, transparent 20rem), radial-gradient(circle at 3% 44%, #28a3a025 0 8rem, transparent 19rem); }

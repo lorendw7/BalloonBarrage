@@ -55,6 +55,8 @@ The initial Sunny Coast browser inspection on November 8 covered the 1280 px des
 
 The final grass-and-flower revision was also inspected at 1280 × 900 and 390 × 844. Its new grass feature fitted both layouts, all loaded image URLs resolved, and the native-image dialog opened and closed with Escape while restoring focus to the originating link. No console errors were observed. A subsequent online build resolved both existing Windows and macOS release entries as ready; this is website metadata verification, not platform playtesting.
 
+The live follow-up found that the image dialog's viewport-based image limit could exceed its padded content area. The image now fits the dialog content width. Local checks at 390, 463 and 1280 px confirmed equal dialog scroll/client widths with the full image loaded; Escape restored focus and the browser reported no console errors.
+
 ## Website content and media
 
 Player-facing copy lives in `Website/src/strings.mjs`; project documentation remains English-only. Each language uses the same page structure and distinguishes published builds from development screenshots, concepts and model previews.
