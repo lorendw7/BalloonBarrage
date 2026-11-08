@@ -1,3 +1,7 @@
 # Keep the original CC0 license byte-identical across Windows and CI checkouts.
 media/kenney-nature-license.txt -text
 media/ambientcg-grass-CC0.txt -text
+
+media/kenney-suburban-license.txt -text
+media/kenney-commercial-license.txt -text
+media/polyhaven-surfaces-CC0.txt -text

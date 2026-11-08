@@ -32,7 +32,7 @@ for (const [file, source] of Object.entries(staticSources)) {
 for (const name of ["NOTICE.txt", "Apache-2.0.txt", "CC-BY-4.0.txt"]) {
   await copyFile(path.join(root, "Assets/StreamingAssets/ThirdParty/Audience", name), path.join(output, "assets", `audience-${name}`));
 }
-for (const name of ["sunny-provenance.json", "kenney-nature-license.txt", "ambientcg-grass-CC0.txt"]) {
+for (const name of ["sunny-provenance.json", "kenney-nature-license.txt", "ambientcg-grass-CC0.txt", "kenney-suburban-license.txt", "kenney-commercial-license.txt", "polyhaven-surfaces-CC0.txt"]) {
   await copyFile(path.join(site,"media",name),path.join(output,"assets",name));
 }
 const release = await getReleaseSnapshot({ offline: process.argv.includes("--offline") });

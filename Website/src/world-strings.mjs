@@ -2,15 +2,15 @@
 export const worldStrings = {
   "zh-Hans": {
     nav: "阳光音乐小镇", title: "阳光音乐小镇｜BalloonBarrage 气球弹幕",
-    description: "查看更大的阳光音乐小镇：Unity 静态场景、南部集市、林地与海湾，新鲜明配色和 CC0 素材。开放世界玩法仍待制作。",
+    description: "查看阳光音乐小镇的 Unity 原生静态场景：西部港湾、南部集市、立体地形、纹理建筑与多样花草。开放世界玩法仍待制作。",
     home: "返回首页", skip: "跳到正文", language: "语言", navigation: "小镇导航",
     eyebrow: "2026.11.08 · 阳光海岸扩展", headline: "更大的小镇，\n更明亮的色彩。",
-    intro: "从北部广场出发，两座桥把小镇连到新的南部海岸。逛一逛阳光集市、花田林地与海湾营地，再沿环路走向海角。这里展示已保存的 Unity 场景；能自由走动、开始一首歌的体验，是接下来的制作目标。",
+    intro: "桥梁把北岸小镇、南部海岸和西部港湾连起来。市场、花田、海湾、高台与下沉花园共同丰富地图；这里展示已保存的静态 Unity 场景，角色移动和歌曲入口仍待编写。",
     status: "静态场景已制作 · 开放世界玩法待制作 · 暂无发布日期", updated: "场景与网站更新于 2026.11.08",
     mapNav: "小镇有哪些地方", loopNav: "一局怎么玩", aiNav: "捣蛋对手", planNav: "开发顺序", choicesNav: "已选定的玩法",
     selected: "想象你第一次来到小镇", decisions: ["在广场认识道路，试着打几颗练习气球。", "沿路标走到码头，看见一座小舞台。", "自己选择开始，镜头停稳，音乐响起。", "和捣蛋角色选气球、抢目标，完成一首歌。", "回到广场，听见新带回的鼓点加入合奏。"],
     boundary: "以上是未来玩法示例。小镇已有可编辑的静态场景，但没有玩家移动、对手 AI 或歌曲入口。当前可下载游玩的是画室音游。",
-    mapTitle: "两座桥，一片新的阳光海岸。", mapIntro: "原有广场、码头、花园和屋顶区保留在北岸；南岸新增集市、花田林地、海湾营地和海角观景点。桥梁与环路把这些地点连起来，下一步仍从广场到码头的一小段移动练习开始。",
+    mapTitle: "从旧小镇，到南岸与西部港湾。", mapIntro: "原有广场、码头、花园和屋顶区保留在北岸，南岸四处地标与新的西部港湾由桥梁和路线连接。高低差与战斗场地布局仍是静态准备，下一步从一小段移动练习开始。",
     mapLabel: "地点连接示意，不代表实际尺寸。上方原生俯视图展示已保存的 Unity 场景；点击地点可了解北岸街区。",
     districtNames: ["气球广场", "鼓点码头", "旋律花园", "切分屋顶"],
     districtTags: [
@@ -25,7 +25,7 @@ export const worldStrings = {
       "拱门、花草和池塘围出安静的步行环路，并与西侧南岸桥相连。旋律问答与点亮花园装饰仍是未来玩法提案。",
       "屋顶平台通过宽坡道连接地面，房屋为不可进入的外立面。高台已经布置；升降、跳跃与屋顶节奏玩法尚未实现。"
     ],
-    scale: "已保存场景的陆地面积约 34,482.5 平方米，为原地图的 4.55 倍。面积与静态路径检查不等同于实测步行时长；游玩节奏仍需后续控制器与人工体验验证。",
+    scale: "当前面积来自已保存场景的静态陆地轮廓。面积与路线支撑检查不等同于实测步行时长；高低差、战斗布局和游玩节奏仍需后续控制器与人工体验验证。",
     loopTitle: "到码头玩一局，会发生什么？",
     loopIntro: "以下是尚待制作的玩法：散步时自由走、没有节奏评分；到了舞台，自己确认才开始射气球的音乐挑战。结束后恢复走路，可以回广场，也可以留下再练一次。",
     loop: [
@@ -44,7 +44,7 @@ export const worldStrings = {
     ],
     planTitle: "每一步，都有一个可以验证的问题。", planIntro: "更大的场景、明亮配色与素材已经准备好。先在副本里移动一朵花，熟悉场景；然后由学习者写一个小小的移动步骤，再一起检查。静态地图扩展仍属于 OW0，不代表开放世界已经可玩。",
     stages: [
-      ["OW0", "准备场景与路线", "已制作并细化北岸小镇和明亮南岸扩展，两批扩展共36种CC0场景模型，另有四种原创3D花卉；来源分别保留，原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
+      ["OW0", "准备场景与路线", "已制作并细化北岸小镇和明亮南岸扩展，港湾继续加入 CC0 建筑、表面细节和高低地形，另有四种原创 3D 花卉；来源分别保留，原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
       ["OW1","走得舒服","独立第三人称灰盒，只做广场边缘、一条路和一个舞台。","观察：不迷路、视角舒适、相机不穿墙。"],
       ["OW2","走进一首歌","主动进入稳定舞台视角，复用一个现有歌曲配置，再退出。","检查：音乐时钟、输入切换、结算与重试清理。"],
       ["OW3a","认识一名小队成员","从预告一颗气球开始，逐步加入瞄准、抢球和恢复。","检查：命中唯一结算；玩家看得懂 AI 的意图。"],
@@ -68,7 +68,7 @@ export const worldStrings = {
     ],
     artNav: "美术方向",
     artTitle: "青绿海湾，珊瑚屋顶，金色布旗。",
-    artIntro: "新扩展已在 Unity 中制作并细化：更明亮的草地、青绿水面、珊瑚色屋顶与奶油色道路，搭配更有层次的花境。两批 CC0 Kenney 场景模型共36种，另有四种原创程序化3D花卉；原始模型、授权与哈希分别记录。",
+    artIntro: "阳光海岸与西部港湾结合明亮配色、开源建筑、细致地面和墙面、多样花境与高低地形。CC0 原始模型与贴图保留许可和哈希；原创程序化几何与纹理另记来源。",
     artRules: [
       ["鲜明颜色，清楚的路线", "草地、屋顶、水面与花朵带来更鲜艳的色彩，奶油色路径留出安静区域。路牌和地标形状与颜色共同指路。"],
       ["原始素材与派生材质分开", "使用 Kenney CC0 模型和已有 Poly Haven 表面，调色写在独立 Unity 材质中。原始文件与授权记录保留，既有石材与木纹继续提供细节。"],
@@ -81,15 +81,15 @@ export const worldStrings = {
   },
   en: {
     nav: "Sunny music town", title: "Sunny music town | BalloonBarrage",
-    description: "Explore native Unity views of a larger sunny music town: a southern market, meadow grove, coral bay, brighter colors and CC0 scenery. Open-world gameplay is still to come.",
+    description: "Explore native static Unity views of a larger sunny town: a western harbor, southern market, varied elevation, textured buildings and planting. Open-world gameplay remains future work.",
     home: "Back to home", skip: "Skip to content", language: "Language", navigation: "Town navigation",
     eyebrow: "2026.11.08 · Sunny coast expansion", headline: "A bigger town.\nA brighter palette.",
-    intro: "Two bridges connect the northern plaza to a new southern coast. Discover the market, meadow grove and bay campsite, then follow the loop to the overlook. These are saved Unity environments; walking freely and starting a song are the next development goals.",
+    intro: "Bridges connect the northern town, southern coast and western harbor. Markets, meadows, bays, terraces and a sunken garden add variety to the saved static Unity scene. Character movement and song entry remain future work.",
     status: "Static scene prepared · Gameplay still to come · No release date", updated: "Scene and website updated 2026.11.08",
     mapNav: "Places to visit", loopNav: "Playing a round", aiNav: "Rivals", planNav: "Development steps", choicesNav: "Selected play ideas",
     selected: "Imagine your first visit", decisions: ["Get your bearings in the plaza and try some practice balloons.", "Follow the signs to a small stage on the pier.", "Choose to start: the camera settles and the music begins.", "Pick balloons and contest targets with a mischievous rival.", "Return to the plaza and hear your new drum part join the ensemble."],
     boundary: "The visit above describes future play. An editable static town exists, but player movement, rival AI and song entry are not connected. Current playable downloads remain the studio rhythm game.",
-    mapTitle: "Two bridges. A new sunny coast.", mapIntro: "The plaza, pier, garden and rooftops remain on the north shore. A market, meadow grove, bay campsite and coastal overlook extend the south. Bridges and loops connect the places; the first movement exercise still starts with a small plaza-to-pier route.",
+    mapTitle: "From the original town to the southern coast and western harbor.", mapIntro: "The plaza, pier, garden and rooftops remain in the north, linked to four southern landmarks and the new western harbor. Elevation and combat layout remain static preparation; the first movement lesson still begins with a short route.",
     mapLabel: "A connection diagram, not a scale map. The native top-down image above shows the saved Unity scene. Select a place to learn about the northern districts.",
     districtNames: ["Balloon Plaza", "Percussion Pier", "Melody Garden", "Syncopation Rooftops"],
     districtTags: [
@@ -104,7 +104,7 @@ export const worldStrings = {
       "Arches, planting and a pond form a quiet return loop connected to the western bridge south. Melodic call-and-response and illuminated garden rewards remain gameplay proposals.",
       "Broad ramps link the raised terrace to ground level, with non-enterable building facades. The setting is placed; lifts, jumping and rooftop rhythm challenges are not implemented."
     ],
-    scale: "The saved scene contains about 34,482.5 m² of land, 4.55 times the original map. Area and static route checks do not measure walking time; pacing still needs a controller and human playtests.",
+    scale: "Area comes from the saved scene’s static land outline. Area and route support checks do not measure walking time; elevation, combat layout and pacing still need a controller and human playtests.",
     loopTitle: "What would one round at the pier feel like?",
     loopIntro: "This is the proposed gameplay: walk freely without rhythm grading, then choose to begin a balloon-shooting music challenge at a stage. Afterwards, walk home or stay for another try.",
     loop: [
@@ -123,7 +123,7 @@ export const worldStrings = {
     ],
     planTitle: "One testable question at every step.", planIntro: "The larger scene, brighter palette and reusable assets are prepared. First move one flower in a practice copy; then let the learner write one small movement step and review it together. The static expansion remains OW0, not a playable open world.",
     stages: [
-      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved and refined. Two batches provide 36 CC0 scenery models; four original 3D flowers have separate provenance. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
+      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved and refined. The western harbor adds CC0 buildings, surface detail and varied elevation; four original 3D flowers have separate provenance. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
       ["OW1","Walk comfortably","A separate third-person graybox: plaza edge, one path, one stage.","Observe wayfinding, camera comfort and camera collision."],
       ["OW2","Walk into a song","Opt into a stable stage view, reuse one existing profile, then leave.","Verify music clock, input handoff, results and Retry cleanup."],
       ["OW3a","Meet one troupe member","Begin with one telegraphed balloon; add aiming, contesting and recovery.","Verify single-hit resolution and whether players understand the intent."],
@@ -147,7 +147,7 @@ export const worldStrings = {
     ],
     artNav: "Art direction",
     artTitle: "Turquoise bays. Coral roofs. Golden bunting.",
-    artIntro: "The Unity expansion combines brighter grass, turquoise water, coral roofs and ivory routes with more varied planting. Two CC0 Kenney scenery batches total 36 models; four original procedural 3D flowers have separate provenance. Original models, licenses and hashes are retained.",
+    artIntro: "Sunny Coast and the western harbor combine bright colors, open-license buildings, detailed ground and walls, varied flowers and elevation. CC0 models and maps retain licenses and hashes; original procedural geometry and patterns keep separate provenance.",
     artRules: [
       ["Vivid color, readable routes", "Grass, roofs, water and flowers carry stronger color while ivory paths leave quiet space. Signs and landmark silhouettes work with color to explain the route."],
       ["Keep originals separate from prepared materials", "CC0 Kenney models and existing Poly Haven surfaces use separate Unity color treatments. Original files and source licenses remain intact; stone and wood textures retain surface detail."],
@@ -160,15 +160,15 @@ export const worldStrings = {
   },
   ja: {
     nav: "陽光の音楽の街", title: "陽光の音楽の街 | BalloonBarrage",
-    description: "広くなった音楽の街をUnityの画像で紹介。南岸の市場、草花の林、海辺のキャンプ場、鮮やかな配色とCC0素材。探索の遊びは今後制作します。",
+    description: "陽光の音楽の町をUnityの静的画像で紹介。西の港、南の市場、高低差、表面の細かな建物、多彩な草花。オープンワールドの遊びはこれから制作します。",
     home: "ホームへ戻る", skip: "本文へ移動", language: "言語", navigation: "街のナビゲーション",
     eyebrow: "2026.11.08 · 陽光の海岸を拡張", headline: "もっと広い街へ。\nもっと明るい色へ。",
-    intro: "北岸の広場と新しい南岸を、二本の橋でつなぎました。市場、草花の林、湾のキャンプ場から、周回路で岬の展望所へ。ここで紹介するのは保存済みのUnityシーンです。自由な移動や一曲への参加は、これから制作する体験です。",
+    intro: "橋が北の町、南の海岸、西の港をつなぎます。市場、花畑、湾、台地、低地の庭園で保存済みの静的なUnityシーンを広げました。キャラクター移動や曲への入口は未実装です。",
     status: "静的なシーンを準備済み · 遊びは今後制作 · 公開日未定", updated: "シーンとサイトの更新日 2026.11.08",
     mapNav: "街の場所", loopNav: "一回の遊び方", aiNav: "いたずらな相手", planNav: "開発の順序", choicesNav: "選択済みの遊び",
     selected: "初めての訪問を想像すると", decisions: ["広場で道を覚え、練習用の風船を撃ってみる。", "案内板をたどると、埠頭に小さな舞台がある。", "自分で開始を選ぶと、視点が落ち着いて曲が始まる。", "いたずらな相手と風船を選び、取り合いながら一曲遊ぶ。", "広場へ帰ると、持ち帰った太鼓の音が合奏に加わる。"],
     boundary: "上の訪問は将来の遊び方です。編集可能な静的な街はありますが、移動操作、ライバルAI、曲への入口は未接続です。今遊べる配布版はアトリエのリズムゲームです。",
-    mapTitle: "二本の橋と、新しい陽光の海岸。", mapIntro: "北岸の広場、埠頭、庭園、屋根街を残し、南岸に市場、草花の林、海辺のキャンプ場、岬の展望所を追加。橋と周回路でつながります。最初の移動練習は、広場から埠頭への小さな区間から始めます。",
+    mapTitle: "元の町から、南岸と西の港へ。", mapIntro: "北岸の広場、埠頭、庭園、屋根街を保ち、南岸の四つの場所と新しい西の港を橋と道でつなぎました。高低差と戦闘場所は静的な準備で、移動の練習は短い道から始めます。",
     mapLabel: "場所のつながりを示す図で、縮尺図ではありません。上のUnity俯瞰画像が保存済みシーンです。場所を選ぶと北岸の街区を読めます。",
     districtNames: ["風船広場", "リズム埠頭", "メロディ庭園", "シンコペ屋根街"],
     districtTags: [
@@ -183,7 +183,7 @@ export const worldStrings = {
       "アーチ、草花、池を巡る静かな道は、西側の橋で南岸へつながります。メロディの問答や庭の装飾を光らせる報酬は、将来の遊びの案です。",
       "広い坂道で地面と高台をつなぎ、入れない建物の外観を配置しました。場所はありますが、昇降機、ジャンプ、屋根のリズム遊びは未実装です。"
     ],
-    scale: "保存済みシーンの陸地は約34,482.5m²で、元のマップの4.55倍です。面積や静的経路の確認から歩行時間は判断できません。遊びのテンポは操作と実際のプレイで検証します。",
+    scale: "面積は保存済みシーンの静的な陸地の輪郭に基づきます。面積や経路の支えの確認から歩行時間は判断できません。高低差、戦闘場所の配置、遊びのテンポは操作と実際のプレイで検証します。",
     loopTitle: "埠頭で一回遊ぶと、どうなる？",
     loopIntro: "以下は今後制作する遊びです。散歩中は自由に歩き、リズム採点はありません。舞台で自分から開始すると風船を撃つ音楽チャレンジへ。終わったら帰っても、もう一度練習しても構いません。",
     loop: [
@@ -202,7 +202,7 @@ export const worldStrings = {
     ],
     planTitle: "一段階に、一つの確かめる問い。", planIntro: "広いシーン、明るい配色、再利用できる素材を準備しました。まず練習用コピーで花を一つ動かし、その後、学習者が小さな移動処理を書いて一緒に確認します。静的な拡張はOW0の準備で、遊べる街の完成ではありません。",
     stages: [
-      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸を保存し、植栽を細かく整えました。二回の拡張でCC0景観モデル計36種と、別途4種のオリジナル3D花モデルを用意。出典を分けて記録し、画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
+      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸を保存し、植栽を細かく整えました。西の港にCC0の建物、表面の細部、高低差を加え、別途4種のオリジナル3D花モデルも用意。出典を分けて記録し、画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
       ["OW1","心地よく歩く","別の三人称グレーボックスで広場の端、道一本、舞台一つ。","観察：道のわかりやすさ、視点の快適さ、カメラの衝突。"],
       ["OW2","一曲へ入る","自分で安定した舞台視点へ入り、既存の曲設定一つを使って退出。","検証：音楽時計、入力切替、結果とリトライ時の後処理。"],
       ["OW3a","一体のメンバーに会う","風船一つの予告から、照準、取り合い、休止へ。","検証：命中の一意な処理と、相手の意図の伝わり方。"],
@@ -226,7 +226,7 @@ export const worldStrings = {
     ],
     artNav: "美術の方向性",
     artTitle: "青緑の湾、コーラルの屋根、金色の旗。",
-    artIntro: "Unityの拡張シーンに、明るい草地、青緑の水面、コーラルの屋根、アイボリーの道と多彩な植栽を組み合わせました。二回の拡張でCC0のKenney景観モデル計36種、別途4種のオリジナル3D花モデルを用意し、原本、許諾、ハッシュを分けて保存しています。",
+    artIntro: "サニーコーストと西の港に、明るい配色、オープン素材の建物、細かな地面と壁、多彩な花、高低差を組み合わせました。CC0の原本と許諾・ハッシュ、独自の形状や模様の出典を分けて保存しています。",
     artRules: [
       ["鮮やかな色、わかりやすい道", "草地、屋根、水面、花には鮮やかさを。アイボリーの道には落ち着いた空間を残します。案内板と目印の形も色と一緒に道を伝えます。"],
       ["原本と調整用マテリアルを分ける", "CC0のKenneyモデルと既存のPoly Haven表面を使い、配色は別のUnityマテリアルで調整。元ファイルと許諾は保持し、石や木の質感も残します。"],

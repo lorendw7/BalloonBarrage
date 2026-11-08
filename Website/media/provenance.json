@@ -401,123 +401,183 @@
     "attribution": "Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing. Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported."
   },
   {
-    "source": "Website/media/sunny-grass-20261108.png",
-    "source_sha256": "82c83a4ec991c20fd5225a36ecba5d14608345cbbc6aa6293cbaa4f3c719fb34",
-    "output": "Website/media/sunny-grass-20261108.webp",
-    "output_sha256": "95ef94730d0f4d9e8f4881d8fff96abddded8aa323c7aa9ad4f66ea4d8d22321",
+    "source": "Website/media/sunny-harbor-overview-20261108.png",
+    "source_sha256": "16ff806628e939f609ccc163edca8552017d4c79c3cd11a9a87601b14374daf4",
+    "output": "Website/media/sunny-harbor-overview-20261108.webp",
+    "output_sha256": "56d1494f769c44750054eb7eb5fbfa1b9c8560801c17044e6bce66789eefc0c9",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-harbor-street-20261108.png",
+    "source_sha256": "4eb23c2627c9423ee3ba6142d7b1b4e5ad9fcaf28bd7d2c84019469a5d910572",
+    "output": "Website/media/sunny-harbor-street-20261108.webp",
+    "output_sha256": "fa509e5c756882ad781bf49cd8c1cbed2033e69b3f9e2d89b1d5cf2867765f1d",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-terrace-20261108.png",
+    "source_sha256": "5c123c61bb71846c18a36d62a74b517281e25e0d64785da0ecc88c45d5112c97",
+    "output": "Website/media/sunny-terrace-20261108.webp",
+    "output_sha256": "94bc132cefde887bf554e0ad0a8bef55e78637c54d120d458caf25e6ede47afa",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-garden-arena-20261108.png",
+    "source_sha256": "9fbb0c8bb81182faedf66f3efa43971eeb4ffd9da6b36e3b103b831373bdec13",
+    "output": "Website/media/sunny-garden-arena-20261108.webp",
+    "output_sha256": "b3f44d9508d0065d4d2fd7378204005ff18ff637f9931e277124612de89c7bfd",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-harbor-bridge-20261108.png",
+    "source_sha256": "4fc53010f28f40c316f8181a7c488473294cfec962446bc39396ee37a3dec13f",
+    "output": "Website/media/sunny-harbor-bridge-20261108.webp",
+    "output_sha256": "7811ebcf92e094deb62f10a8a550b02b300fd65ccdffd01e0f80dbc8a26f5389",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-grass-20261108.png",
+    "source_sha256": "c29b49e59e1d371d35e6af72c5e60385c41029f5fe7ffaad43307548418260de",
+    "output": "Website/media/sunny-grass-20261108.webp",
+    "output_sha256": "89dc023996dc5f1cca5814aa1a8fab50eec32f6b3554f7f5946ec96a7fbb0d8a",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-flowers-20261108.png",
-    "source_sha256": "478a201403c6d507e9d7a0442ae304d7c9c5451f31ad96154d5836e3cf07688a",
+    "source_sha256": "b3678944d55ccf1072035c45d16b022ce73d6a4af067d54d9357e8ebeffd9884",
     "output": "Website/media/sunny-flowers-20261108.webp",
-    "output_sha256": "6945f7c01a53ca57734836a5b738dcc3f3de7c938c3d5e635383c38737053659",
+    "output_sha256": "b99387d20248f446a068ce72e2deb61cf3e72e57ffdae61fd13f8772ac9cdbc7",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-overview-20261108.png",
-    "source_sha256": "eef319a0da8be9eac58b5610ea52a537abb47b33928b8687bb9ee4332329718f",
+    "source_sha256": "dc06763c896d95520b652cb2c83d325cfbe84126885c9c9e2a44451745ae9caa",
     "output": "Website/media/sunny-overview-20261108.webp",
-    "output_sha256": "83c6f0e3395c3f96e02dbaa893e2765b9372fd9e90b3a2fa0513006684fe1453",
+    "output_sha256": "cfb2b28f7d80d11c991370dcc0ee0371da8a01a1a643ecb46face8edc6ffcc12",
     "dimensions": [
       2160,
       1440
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-topdown-20261108.png",
-    "source_sha256": "b0f01ee54a90fe63d111ec0bd06a3ee9768cf25cd8a02ddad862150c3096e666",
+    "source_sha256": "7cc60c811d67a4f341a655ad2ad1df27bb78b9f5c4698aaa08257b01c4a3e1d4",
     "output": "Website/media/sunny-topdown-20261108.webp",
-    "output_sha256": "aa46d55811e575387ef0dba50511f63705044898f6273fd769b3b3b58aa46161",
+    "output_sha256": "17e5db05cf7fd70c9f4b8b7a01ffa8fce0b4229671d77e82739fa77a68ac80b8",
     "dimensions": [
       2160,
       1440
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-market-20261108.png",
-    "source_sha256": "5a50ff1fa29592aebd654dcceceaf423e361a7ed16893e6a0cf9fc21ff8f408b",
+    "source_sha256": "c976b71eb642e6bf811f4052ac5cd48d9ca50cfe53bd8786846c3c8ac9ee62bd",
     "output": "Website/media/sunny-market-20261108.webp",
-    "output_sha256": "85badfa8f3a85e45375dbc12a774d29a461014eed6aeb79ad3501ab68450441e",
+    "output_sha256": "562a7b6b5e0a3eb3305607812307cd233c144901867a3f878149c624d62c0b1f",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-meadow-20261108.png",
-    "source_sha256": "f94995321e64972dcfe38492050d6f8b729386b605d0a1b52b2f20176e83e250",
+    "source_sha256": "4f8bbc5b0aa2444d423ceadb87b718d2a05d09be831b6b4fb6521c61bdb45d64",
     "output": "Website/media/sunny-meadow-20261108.webp",
-    "output_sha256": "ecb14abf1de4395a3173c1bd6ef49348a5250bcf53f83774ecaebbfc1c4c96af",
+    "output_sha256": "24aa0a957ceb1df15fe5348d80c865276cb2c34ec8acc87ce3a7e7fcd561db91",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-coral-bay-20261108.png",
-    "source_sha256": "648903d9b263bf90ff0468bfe68523968e01f4e190b2bbdcaed817a6ce550da6",
+    "source_sha256": "1d5b322d7e2ade19d333f7f8fa8528e305db3a06d267e7578b141e152fb78141",
     "output": "Website/media/sunny-coral-bay-20261108.webp",
-    "output_sha256": "9f205e3eef6d4caf842fce1f0082bd7952e57ada48ca322159e23a52fec034b7",
+    "output_sha256": "f20c50af237f1956edd6bc0e575b0e5e4dd78975ae7acb436be412360886e35d",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-bridge-20261108.png",
-    "source_sha256": "d99550be7f235970aeac0dde1878d14527f202c60668815b7d16789462468655",
+    "source_sha256": "60c5be68bb1b803cf005027a5d17e40fb070f730790162dade313bc9358b7ffa",
     "output": "Website/media/sunny-bridge-20261108.webp",
-    "output_sha256": "c752fbbf6b6a69f8ddd10b962c5215f90d269ab33a3c7f75e12d507ba4834dee",
+    "output_sha256": "e4aac3269411b671390778253da6c72c49bbb0202e97295d21024f464a16a3b9",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-overlook-20261108.png",
-    "source_sha256": "13f1b35f97b0a9b0a8027bc6d30da75a9bbc0c594f31a5aa865644ed3c1d2636",
+    "source_sha256": "f521dd3ec678b34dc3440cec78b23a904db233e496abe37ad38a717a518e9e55",
     "output": "Website/media/sunny-overlook-20261108.webp",
-    "output_sha256": "dd72133fae7b7ddd35e56dbb55b8ac641e3676d3987a67a0ddafa99a266ef9c1",
+    "output_sha256": "e32fcd6ba0ecd260e33da5426fb59d964f9f1efed9ec2b7a762b21c9f7c9753b",
     "dimensions": [
       1920,
       1080
     ],
     "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   },
   {
     "source": "Website/media/sunny-overview-20261108.png",
-    "source_sha256": "eef319a0da8be9eac58b5610ea52a537abb47b33928b8687bb9ee4332329718f",
+    "source_sha256": "dc06763c896d95520b652cb2c83d325cfbe84126885c9c9e2a44451745ae9caa",
     "output": "Website/media/sunny-share-20261108.jpg",
-    "output_sha256": "d225daa12eb633746f3d457323506e32e65ecc815b8745cfa707d9f4e0561760",
+    "output_sha256": "c5020dc631c6e9e70c8cca35e34e2dd30dea0e3128682f90e54489ce1fa05548",
     "dimensions": [
       1200,
       675
     ],
     "preparation": "Fit complete native capture in 1200x675 with ivory side padding, no crop or distortion; RGB JPEG quality 92, optimized",
-    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
   }
 ]

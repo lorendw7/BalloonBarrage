@@ -34,6 +34,12 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "sunny-harbor-overview-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/HarborOverview.png",
+    "sunny-harbor-street-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/HarborStreet.png",
+    "sunny-terrace-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/Terrace.png",
+    "sunny-garden-arena-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/GardenArena.png",
+    "sunny-harbor-bridge-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/HarborBridge.png",
+
     "sunny-grass-20261108": "Assets/Art/OpenWorld/SunnyGrass20261108/Previews/Grass.png",
     "sunny-flowers-20261108": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/Flowers.png",
     "sunny-overview-20261108": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overview.png",
@@ -99,7 +105,7 @@ PREVIEW_ATTRIBUTIONS = {
     "studio-rhythm-print-20261028": "Original text-free studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
     "botanical-pigment-print-20261028": "Original text-free botanical studio art print generated with OpenAI built-in image generation, 2026-10-28. Prepared for a separate scene study; not gameplay or part of demo.6. Exact prompt and canonical source hash are retained in Assets/StudioArtPack/StudioExpansion20261028/Textures/Provenance.json.",
 }
-SUNNY_ATTRIBUTION = "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+SUNNY_ATTRIBUTION = "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
 for sunny_name in (name for name in SOURCES if name.startswith("sunny-")):
     PREVIEW_ATTRIBUTIONS[sunny_name] = SUNNY_ATTRIBUTION
 
