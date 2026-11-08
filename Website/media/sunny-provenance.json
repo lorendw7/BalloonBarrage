@@ -1,14 +1,14 @@
 {
-  "schema": "balloonbarrage.website.sunny-coast.v1",
+  "schema": "balloonbarrage.website.sunny-coast.v3",
   "date": "2026-11-08",
   "timezone": "Asia/Tokyo",
   "evidence_scope": "Native Unity static scene preparation. Not gameplay, human playtest, performance acceptance, or an open-world release. Current downloads remain the studio demo.",
   "scene": {
     "name": "OpenWorldSunnyExpansion",
-    "sha256": "3eb12a5352b56f75657fc93dc446aff040d36eb4f65c1eeade7d21e687da0ae4",
+    "sha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159",
     "unity_version": "6000.0.77f1",
     "measurements": {
-      "original_land_m2": 7571,
+      "original_land_m2": 7571.0,
       "added_land_m2": 26911.5,
       "total_land_m2": 34482.5,
       "total_land_ratio": 4.5545501708984375,
@@ -21,7 +21,7 @@
   "captures": [
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overview.png",
-      "sha256": "897dc77b8d92e4da68512e4f444c6f7943f4390476da80f74c0db2f7fcb8afa4",
+      "sha256": "eef319a0da8be9eac58b5610ea52a537abb47b33928b8687bb9ee4332329718f",
       "width": 2400,
       "height": 1600,
       "position": {
@@ -40,7 +40,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/TopDown.png",
-      "sha256": "c41ca4f81ddda44224a9004536b0c5fd40f43a29f894e94e0f8db1bf79bd0cfb",
+      "sha256": "b0f01ee54a90fe63d111ec0bd06a3ee9768cf25cd8a02ddad862150c3096e666",
       "width": 2400,
       "height": 1600,
       "position": {
@@ -59,7 +59,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Market.png",
-      "sha256": "328a6002b0481e48b5b26eef199b6ef322fc58bf1728cc24e8cb80b9ab549eaa",
+      "sha256": "5a50ff1fa29592aebd654dcceceaf423e361a7ed16893e6a0cf9fc21ff8f408b",
       "width": 1920,
       "height": 1080,
       "position": {
@@ -78,7 +78,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Meadow.png",
-      "sha256": "2352be5a659b13bd41b03958dde8fd826482a7d2a3b794d1e9d62ae09dbf35d5",
+      "sha256": "f94995321e64972dcfe38492050d6f8b729386b605d0a1b52b2f20176e83e250",
       "width": 1920,
       "height": 1080,
       "position": {
@@ -97,7 +97,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/CoralBay.png",
-      "sha256": "f5e9be942d08f33b57ae435d3aca01c11e7e9d2f2fece3b08a4856a8fd9a8c78",
+      "sha256": "648903d9b263bf90ff0468bfe68523968e01f4e190b2bbdcaed817a6ce550da6",
       "width": 1920,
       "height": 1080,
       "position": {
@@ -116,7 +116,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Bridge.png",
-      "sha256": "8d0f22f80b6b48a3af2d18922c1f55f3d1cf425b7c12a2c1573156af4b8eccc7",
+      "sha256": "d99550be7f235970aeac0dde1878d14527f202c60668815b7d16789462468655",
       "width": 1920,
       "height": 1080,
       "position": {
@@ -135,7 +135,7 @@
     },
     {
       "path": "Assets/Art/OpenWorld/SunnyExpansion20261108/Previews/Overlook.png",
-      "sha256": "e1d1b082b6eac276d3003d33550e8d8715008ee782a0c84642d9ebb594a4cd11",
+      "sha256": "13f1b35f97b0a9b0a8027bc6d30da75a9bbc0c594f31a5aa865644ed3c1d2636",
       "width": 1920,
       "height": 1080,
       "position": {
@@ -151,6 +151,40 @@
       "orthographic": false,
       "size": 0.0,
       "fieldOfView": 58.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/Flowers.png",
+      "sha256": "478a201403c6d507e9d7a0442ae304d7c9c5451f31ad96154d5836e3cf07688a",
+      "position": {
+        "x": -53.0,
+        "y": 2.0999999046325684,
+        "z": -104.0
+      },
+      "euler": {
+        "x": 10.98701000213623,
+        "y": 303.6900634765625,
+        "z": 0.0
+      },
+      "width": 1920,
+      "height": 1080,
+      "fieldOfView": 55.0
+    },
+    {
+      "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Previews/Grass.png",
+      "sha256": "82c83a4ec991c20fd5225a36ecba5d14608345cbbc6aa6293cbaa4f3c719fb34",
+      "position": {
+        "x": -53.0,
+        "y": 1.0,
+        "z": -106.0
+      },
+      "euler": {
+        "x": 3.7086169719696045,
+        "y": 315.0,
+        "z": 0.0
+      },
+      "width": 1920,
+      "height": 1080,
+      "fieldOfView": 55.0
     }
   ],
   "new_cc0_sources": {
@@ -698,5 +732,2498 @@
       }
     ]
   },
-  "license_note": "These CC0 art sources do not change existing restrictions on the mixed music development bundle. Project-relative source paths identify local source evidence and are not public download links. WebP derivatives and share image preparation are separately recorded in Website/media/provenance.json."
+  "coastal_detail_sources": {
+    "title": "Nature Kit (2.1) - coastal flowers, foliage and village details subset",
+    "author": "Kenney",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourcePage": "https://opengameart.org/content/nature-kit",
+    "officialPage": "https://kenney.nl/assets/nature-kit",
+    "officialLicenseVerified": "2026-11-08",
+    "downloadUrl": "https://opengameart.org/sites/default/files/Nature%20Kit%20%282.1%29.zip",
+    "archive": "NatureKit-2.1.zip",
+    "archiveSha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+    "archiveBytes": 10537521,
+    "retrieved": "2026-11-08",
+    "timezone": "Asia/Tokyo",
+    "preparation": "Selected original OBJ, MTL and license files copied byte-for-byte from the existing pinned cache.",
+    "restorationScript": "Tools/Art/import_open_world_coastal_details.py",
+    "usageRestrictions": "CC0 permits commercial and noncommercial use; no attribution requirement. Other game assets retain their independent restrictions.",
+    "integrationScope": "Static art sources only. Derived Unity scales, materials, prefabs and placement require their own preparation record.",
+    "files": [
+      {
+        "path": "License.txt",
+        "archiveMember": "License.txt",
+        "bytes": 611,
+        "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+      },
+      {
+        "path": "Models/flower_purpleB.obj",
+        "archiveMember": "Models/OBJ format/flower_purpleB.obj",
+        "bytes": 7390,
+        "sha256": "4c63606e05c4e61f7693db6cedac9f280031c340a8da4c4b4972312b842a5864"
+      },
+      {
+        "path": "Models/flower_purpleB.mtl",
+        "archiveMember": "Models/OBJ format/flower_purpleB.mtl",
+        "bytes": 136,
+        "sha256": "74c412d68fd1756dac2043a7e0602f8ef1be9b80221a9626519758eba9c8026b"
+      },
+      {
+        "path": "Models/flower_purpleC.obj",
+        "archiveMember": "Models/OBJ format/flower_purpleC.obj",
+        "bytes": 6700,
+        "sha256": "4ae6b779ffeb358954602c42a4bf7617cff3b5d6687df7c912f98afacc0d1e5e"
+      },
+      {
+        "path": "Models/flower_purpleC.mtl",
+        "archiveMember": "Models/OBJ format/flower_purpleC.mtl",
+        "bytes": 167,
+        "sha256": "9eb9cff137b2b6fececef78a573f2a5633166a12c24bf321e39f770e825b5424"
+      },
+      {
+        "path": "Models/flower_yellowB.obj",
+        "archiveMember": "Models/OBJ format/flower_yellowB.obj",
+        "bytes": 9288,
+        "sha256": "3a9e9c5cbc05d33882bb48d1fccd650b88809d13b4884010e81a0099a304a86f"
+      },
+      {
+        "path": "Models/flower_yellowB.mtl",
+        "archiveMember": "Models/OBJ format/flower_yellowB.mtl",
+        "bytes": 144,
+        "sha256": "ca4a55c6fd87ce8026d1a8beba9c87fb88b22dff30619f8b80d329a6116cdbc9"
+      },
+      {
+        "path": "Models/flower_yellowC.obj",
+        "archiveMember": "Models/OBJ format/flower_yellowC.obj",
+        "bytes": 6697,
+        "sha256": "80fdbd5325a6d44dbde043ce69497816debb205f680383e24bf3f2f651f3a02d"
+      },
+      {
+        "path": "Models/flower_yellowC.mtl",
+        "archiveMember": "Models/OBJ format/flower_yellowC.mtl",
+        "bytes": 175,
+        "sha256": "d7fde2b529fdbc4098dcca21a67756cb39c808fe5ada52c69a3f94ef6cc252cf"
+      },
+      {
+        "path": "Models/flower_redB.obj",
+        "archiveMember": "Models/OBJ format/flower_redB.obj",
+        "bytes": 7388,
+        "sha256": "f60d27e6a318e5ec7a6bc9d588d5409a9785f7ac42d1274a4d858b3027043c56"
+      },
+      {
+        "path": "Models/flower_redB.mtl",
+        "archiveMember": "Models/OBJ format/flower_redB.mtl",
+        "bytes": 141,
+        "sha256": "0c9ad4852b07f6c3b8d1b1d54ed2c19ce48828f259c6fb900c1ced26ba645b53"
+      },
+      {
+        "path": "Models/plant_flatShort.obj",
+        "archiveMember": "Models/OBJ format/plant_flatShort.obj",
+        "bytes": 2641,
+        "sha256": "8c70e2e83ea65a5496b77c29a9130c710348fe9fbf2fc443ccb9d1bc13d1e7e5"
+      },
+      {
+        "path": "Models/plant_flatShort.mtl",
+        "archiveMember": "Models/OBJ format/plant_flatShort.mtl",
+        "bytes": 94,
+        "sha256": "df409a06731706f40b6b36eeaae085e2500009721c2098063e80cf045c464952"
+      },
+      {
+        "path": "Models/plant_flatTall.obj",
+        "archiveMember": "Models/OBJ format/plant_flatTall.obj",
+        "bytes": 2313,
+        "sha256": "ce83161136481e5bfa190ee0f8e78e24062cdcf3aa9fa35308329b7142ae76ae"
+      },
+      {
+        "path": "Models/plant_flatTall.mtl",
+        "archiveMember": "Models/OBJ format/plant_flatTall.mtl",
+        "bytes": 94,
+        "sha256": "df409a06731706f40b6b36eeaae085e2500009721c2098063e80cf045c464952"
+      },
+      {
+        "path": "Models/plant_bushSmall.obj",
+        "archiveMember": "Models/OBJ format/plant_bushSmall.obj",
+        "bytes": 1630,
+        "sha256": "f07e606f1937469330e9cf9fecccccf6c619f632b91e2f3076dd52d15366de39"
+      },
+      {
+        "path": "Models/plant_bushSmall.mtl",
+        "archiveMember": "Models/OBJ format/plant_bushSmall.mtl",
+        "bytes": 88,
+        "sha256": "b186368ad09ddb6673f90f63c45ecac3f793b36fe14f96bd62e6d44922e7e874"
+      },
+      {
+        "path": "Models/grass_leafsLarge.obj",
+        "archiveMember": "Models/OBJ format/grass_leafsLarge.obj",
+        "bytes": 15462,
+        "sha256": "4cb95c585bc98d47aa661de7bb9b14ab6e2912880fb9dca74efce8abbd818f49"
+      },
+      {
+        "path": "Models/grass_leafsLarge.mtl",
+        "archiveMember": "Models/OBJ format/grass_leafsLarge.mtl",
+        "bytes": 88,
+        "sha256": "b186368ad09ddb6673f90f63c45ecac3f793b36fe14f96bd62e6d44922e7e874"
+      },
+      {
+        "path": "Models/mushroom_redGroup.obj",
+        "archiveMember": "Models/OBJ format/mushroom_redGroup.obj",
+        "bytes": 10425,
+        "sha256": "926c3ec642195e4599ed09832c19624cabf5a9cc187e077667cad305de8ac50f"
+      },
+      {
+        "path": "Models/mushroom_redGroup.mtl",
+        "archiveMember": "Models/OBJ format/mushroom_redGroup.mtl",
+        "bytes": 124,
+        "sha256": "344729f7adb784bd11b3e7d7612c4d52adff19cc3847d31ae8d2514c90e55df3"
+      },
+      {
+        "path": "Models/mushroom_tanGroup.obj",
+        "archiveMember": "Models/OBJ format/mushroom_tanGroup.obj",
+        "bytes": 10425,
+        "sha256": "4d4bc40e8e7255da37181fb572f86597452a94543b659822a10932edf9ae64cb"
+      },
+      {
+        "path": "Models/mushroom_tanGroup.mtl",
+        "archiveMember": "Models/OBJ format/mushroom_tanGroup.mtl",
+        "bytes": 115,
+        "sha256": "95496812b7c3974cad89ff4826b06c3cf0e52a7fa06348547725a3d5137675ea"
+      },
+      {
+        "path": "Models/rock_smallFlatA.obj",
+        "archiveMember": "Models/OBJ format/rock_smallFlatA.obj",
+        "bytes": 2044,
+        "sha256": "f7dd53ee86b38fcf47b54dc1f9b78db81587fc571c203e45e344917598df6e26"
+      },
+      {
+        "path": "Models/rock_smallFlatA.mtl",
+        "archiveMember": "Models/OBJ format/rock_smallFlatA.mtl",
+        "bytes": 137,
+        "sha256": "b1f406513a297dd69c38653fd9b9de390123ff45242be9bf204f775d9e88c98c"
+      },
+      {
+        "path": "Models/rock_smallB.obj",
+        "archiveMember": "Models/OBJ format/rock_smallB.obj",
+        "bytes": 2261,
+        "sha256": "089f79d84a08ff513dfacfd6fb930d5f33be31936675276aebdc873fdffcebaf"
+      },
+      {
+        "path": "Models/rock_smallB.mtl",
+        "archiveMember": "Models/OBJ format/rock_smallB.mtl",
+        "bytes": 137,
+        "sha256": "86d10214ce28199e4134d718b5df04356f295c63705435369565dcbd003c8971"
+      },
+      {
+        "path": "Models/stump_roundDetailed.obj",
+        "archiveMember": "Models/OBJ format/stump_roundDetailed.obj",
+        "bytes": 8344,
+        "sha256": "f3d02ac8673787e3a27b259dc1883c008a367880692f065dabf1c7927588842a"
+      },
+      {
+        "path": "Models/stump_roundDetailed.mtl",
+        "archiveMember": "Models/OBJ format/stump_roundDetailed.mtl",
+        "bytes": 146,
+        "sha256": "0da11a6ffeafc7ba144a51e856e10e1143bd4e94aa99a69a2eea30239e58a7d5"
+      },
+      {
+        "path": "Models/log_large.obj",
+        "archiveMember": "Models/OBJ format/log_large.obj",
+        "bytes": 8578,
+        "sha256": "47efd76cbbcdaf17d010858f13d71dc9076ad8617e0e95913f500808864009aa"
+      },
+      {
+        "path": "Models/log_large.mtl",
+        "archiveMember": "Models/OBJ format/log_large.mtl",
+        "bytes": 146,
+        "sha256": "0da11a6ffeafc7ba144a51e856e10e1143bd4e94aa99a69a2eea30239e58a7d5"
+      },
+      {
+        "path": "Models/pot_large.obj",
+        "archiveMember": "Models/OBJ format/pot_large.obj",
+        "bytes": 3699,
+        "sha256": "b09d20516edd4f389a550fa50fe248e347f928e8c5ff6b5e8da45edd51617d48"
+      },
+      {
+        "path": "Models/pot_large.mtl",
+        "archiveMember": "Models/OBJ format/pot_large.mtl",
+        "bytes": 131,
+        "sha256": "a534b2f77e98658563684e0ad5870b4ee2f1cd92aa37796f24bec3610f98a11c"
+      },
+      {
+        "path": "Models/pot_small.obj",
+        "archiveMember": "Models/OBJ format/pot_small.obj",
+        "bytes": 4092,
+        "sha256": "8ce209f08a9be8ec03143f7f3af887c6956aa6b820a12a78b49eff8be13e9677"
+      },
+      {
+        "path": "Models/pot_small.mtl",
+        "archiveMember": "Models/OBJ format/pot_small.mtl",
+        "bytes": 163,
+        "sha256": "f09c474b0c176b1fb6a45d2bae8a763973bf6657a1afd1843fda0e6d2630fc29"
+      },
+      {
+        "path": "Models/fence_planks.obj",
+        "archiveMember": "Models/OBJ format/fence_planks.obj",
+        "bytes": 5102,
+        "sha256": "e719696675bb87f10bc860d4d3d9640f4c65fea17859d70b7ed8c3f9c969d8b3"
+      },
+      {
+        "path": "Models/fence_planks.mtl",
+        "archiveMember": "Models/OBJ format/fence_planks.mtl",
+        "bytes": 80,
+        "sha256": "444294bb08fac575941d8b635f450a0a7b5a5027c2dbd6a75d10d4d79fc5fe95"
+      },
+      {
+        "path": "Models/path_stoneCircle.obj",
+        "archiveMember": "Models/OBJ format/path_stoneCircle.obj",
+        "bytes": 10466,
+        "sha256": "6f58bd46aa5e3519b6578b10438cc944b0efebc3c0d93088d9767f09de5b3853"
+      },
+      {
+        "path": "Models/path_stoneCircle.mtl",
+        "archiveMember": "Models/OBJ format/path_stoneCircle.mtl",
+        "bytes": 143,
+        "sha256": "3a2c5542d2e4325abb7fb038b8ff12ad5254ed4599ce0682438adb3b866bba97"
+      },
+      {
+        "path": "Models/canoe_paddle.obj",
+        "archiveMember": "Models/OBJ format/canoe_paddle.obj",
+        "bytes": 3052,
+        "sha256": "888640dd7a858f5b6f757d979e16006bd8ac6fce48efac1e91117ae2ed078653"
+      },
+      {
+        "path": "Models/canoe_paddle.mtl",
+        "archiveMember": "Models/OBJ format/canoe_paddle.mtl",
+        "bytes": 80,
+        "sha256": "444294bb08fac575941d8b635f450a0a7b5a5027c2dbd6a75d10d4d79fc5fe95"
+      }
+    ],
+    "models": [
+      {
+        "name": "flower_purpleB",
+        "sourceVertexCount": 48,
+        "sourceTriangulatedFaceCount": 98,
+        "sourceBoundsMin": [
+          -0.07860767,
+          0.0,
+          -0.1195898
+        ],
+        "sourceBoundsMax": [
+          0.1287269,
+          0.2085,
+          0.1195898
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorPurple"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_purpleC",
+        "sourceVertexCount": 38,
+        "sourceTriangulatedFaceCount": 78,
+        "sourceBoundsMin": [
+          -0.0760625,
+          0.0,
+          -0.09052953
+        ],
+        "sourceBoundsMax": [
+          0.1045345,
+          0.1825,
+          0.09052953
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorPurple",
+          "colorWhite"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_yellowB",
+        "sourceVertexCount": 48,
+        "sourceTriangulatedFaceCount": 154,
+        "sourceBoundsMin": [
+          -0.07860767,
+          0.0,
+          -0.1195898
+        ],
+        "sourceBoundsMax": [
+          0.1287269,
+          0.1585,
+          0.1195898
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorYellow"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_yellowC",
+        "sourceVertexCount": 38,
+        "sourceTriangulatedFaceCount": 78,
+        "sourceBoundsMin": [
+          -0.0760625,
+          0.0,
+          -0.09052953
+        ],
+        "sourceBoundsMax": [
+          0.1045345,
+          0.1325,
+          0.09052953
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorYellow",
+          "colorWhite"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "flower_redB",
+        "sourceVertexCount": 48,
+        "sourceTriangulatedFaceCount": 98,
+        "sourceBoundsMin": [
+          -0.07860767,
+          0.0,
+          -0.1195898
+        ],
+        "sourceBoundsMax": [
+          0.1287269,
+          0.2585,
+          0.1195898
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "colorRed"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "plant_flatShort",
+        "sourceVertexCount": 22,
+        "sourceTriangulatedFaceCount": 44,
+        "sourceBoundsMin": [
+          -0.1388099,
+          0.0,
+          -0.1388099
+        ],
+        "sourceBoundsMax": [
+          0.1388099,
+          0.2350794,
+          0.1388099
+        ],
+        "sourceMaterialSlots": [
+          "leafsGreen"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "plant_flatTall",
+        "sourceVertexCount": 18,
+        "sourceTriangulatedFaceCount": 32,
+        "sourceBoundsMin": [
+          -0.1358278,
+          0.0,
+          -0.1358278
+        ],
+        "sourceBoundsMax": [
+          0.1358278,
+          0.2843094,
+          0.1358278
+        ],
+        "sourceMaterialSlots": [
+          "leafsGreen"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "plant_bushSmall",
+        "sourceVertexCount": 13,
+        "sourceTriangulatedFaceCount": 16,
+        "sourceBoundsMin": [
+          -0.1914886,
+          0.0,
+          -0.1681711
+        ],
+        "sourceBoundsMax": [
+          0.1914886,
+          0.2072925,
+          0.1681711
+        ],
+        "sourceMaterialSlots": [
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "grass_leafsLarge",
+        "sourceVertexCount": 120,
+        "sourceTriangulatedFaceCount": 144,
+        "sourceBoundsMin": [
+          -0.2342869,
+          0.0,
+          -0.244246
+        ],
+        "sourceBoundsMax": [
+          0.2416103,
+          0.1425,
+          0.2430622
+        ],
+        "sourceMaterialSlots": [
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "mushroom_redGroup",
+        "sourceVertexCount": 78,
+        "sourceTriangulatedFaceCount": 144,
+        "sourceBoundsMin": [
+          -0.1333016,
+          0.0,
+          -0.142183
+        ],
+        "sourceBoundsMax": [
+          0.1363294,
+          0.250488,
+          0.1120136
+        ],
+        "sourceMaterialSlots": [
+          "_defaultMat",
+          "colorRed"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "mushroom_tanGroup",
+        "sourceVertexCount": 78,
+        "sourceTriangulatedFaceCount": 144,
+        "sourceBoundsMin": [
+          -0.1333016,
+          0.0,
+          -0.142183
+        ],
+        "sourceBoundsMax": [
+          0.1363294,
+          0.250488,
+          0.1120136
+        ],
+        "sourceMaterialSlots": [
+          "_defaultMat",
+          "colorTan"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "rock_smallFlatA",
+        "sourceVertexCount": 12,
+        "sourceTriangulatedFaceCount": 20,
+        "sourceBoundsMin": [
+          -0.2478949,
+          0.0,
+          -0.2147887
+        ],
+        "sourceBoundsMax": [
+          0.2478949,
+          0.06494399,
+          0.2147887
+        ],
+        "sourceMaterialSlots": [
+          "dirt",
+          "grass"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "rock_smallB",
+        "sourceVertexCount": 14,
+        "sourceTriangulatedFaceCount": 24,
+        "sourceBoundsMin": [
+          -0.1804,
+          0.0,
+          -0.1804
+        ],
+        "sourceBoundsMax": [
+          0.1804,
+          0.176792,
+          0.1804
+        ],
+        "sourceMaterialSlots": [
+          "grass",
+          "dirt"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "stump_roundDetailed",
+        "sourceVertexCount": 50,
+        "sourceTriangulatedFaceCount": 96,
+        "sourceBoundsMin": [
+          -0.1958793,
+          0.0,
+          -0.1855
+        ],
+        "sourceBoundsMax": [
+          0.1606477,
+          0.2065,
+          0.1855
+        ],
+        "sourceMaterialSlots": [
+          "woodBark",
+          "woodInner"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "log_large",
+        "sourceVertexCount": 48,
+        "sourceTriangulatedFaceCount": 96,
+        "sourceBoundsMin": [
+          -0.5,
+          0.0,
+          -0.2965801
+        ],
+        "sourceBoundsMax": [
+          0.5,
+          0.4167194,
+          0.2527415
+        ],
+        "sourceMaterialSlots": [
+          "woodBark",
+          "woodInner"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "pot_large",
+        "sourceVertexCount": 36,
+        "sourceTriangulatedFaceCount": 68,
+        "sourceBoundsMin": [
+          -0.2817982,
+          0.0,
+          -0.2440444
+        ],
+        "sourceBoundsMax": [
+          0.2817982,
+          0.2,
+          0.2440444
+        ],
+        "sourceMaterialSlots": [
+          "wood",
+          "woodBarkDark"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "pot_small",
+        "sourceVertexCount": 36,
+        "sourceTriangulatedFaceCount": 72,
+        "sourceBoundsMin": [
+          -0.1617248,
+          0.0,
+          -0.1400578
+        ],
+        "sourceBoundsMax": [
+          0.1617248,
+          0.268,
+          0.1400578
+        ],
+        "sourceMaterialSlots": [
+          "wood",
+          "woodBarkDark",
+          "_defaultMat"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "fence_planks",
+        "sourceVertexCount": 48,
+        "sourceTriangulatedFaceCount": 96,
+        "sourceBoundsMin": [
+          -0.5,
+          0.0,
+          0.43
+        ],
+        "sourceBoundsMax": [
+          0.5,
+          0.3450273,
+          0.5259
+        ],
+        "sourceMaterialSlots": [
+          "wood"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "path_stoneCircle",
+        "sourceVertexCount": 96,
+        "sourceTriangulatedFaceCount": 164,
+        "sourceBoundsMin": [
+          -0.466187,
+          0.0,
+          -0.4383065
+        ],
+        "sourceBoundsMax": [
+          0.466187,
+          0.05,
+          0.4383065
+        ],
+        "sourceMaterialSlots": [
+          "stone",
+          "stoneDark"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      },
+      {
+        "name": "canoe_paddle",
+        "sourceVertexCount": 18,
+        "sourceTriangulatedFaceCount": 32,
+        "sourceBoundsMin": [
+          -0.0383607,
+          0.0,
+          -0.2554272
+        ],
+        "sourceBoundsMax": [
+          0.0383607,
+          0.03610419,
+          0.3347648
+        ],
+        "sourceMaterialSlots": [
+          "wood"
+        ],
+        "units": "Unscaled OBJ source coordinates, not an asserted Unity metre scale."
+      }
+    ]
+  },
+  "grass_surface_sources": {
+    "schema": "balloonbarrage.lush-grass-source.v1",
+    "title": "Grass 005",
+    "assetId": "Grass005",
+    "author": "ambientCG / Lennart Demes",
+    "license": "CC0-1.0",
+    "officialPage": "https://ambientcg.com/view?id=Grass005",
+    "licenseSource": "https://docs.ambientcg.com/license/",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "retrieved": "2026-11-08",
+    "timezone": "Asia/Tokyo",
+    "officialLicenseVerified": "2026-11-08",
+    "sourceTechnique": "Official asset page: Procedural with Bitmap Elements. API creationMethod code: PBRProcedural; API human-readable label is inconsistent.",
+    "downloadUrl": "https://ambientcg.com/get?file=Grass005_1K-JPG.zip",
+    "resolvedDownloadUrl": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Grass005_MPzT24Bl/Grass005_1K-JPG.zip",
+    "archive": "Grass005_1K-JPG.zip",
+    "archiveBytes": 10442657,
+    "archiveSha256": "58a7fb7f32c44a86879483325b62781d04e0ab8f70b0f70ede36c8f1726f8a22",
+    "sourceDimensions": [
+      0,
+      0,
+      0
+    ],
+    "providerTileMetres": null,
+    "projectSuggestedTileMetres": 2,
+    "scaleNote": "Provider API does not declare a physical size. Two metres is a deliberate project mapping choice, not a measured provider dimension.",
+    "preparation": "Three selected original JPEG maps, unchanged official API snapshot and CC0 legal text. Only the selected JPEG filenames are shortened.",
+    "restorationScript": "Tools/Art/import_lush_grass_sources.py",
+    "usageRestrictions": "CC0 permits commercial and noncommercial use. Existing music and other asset restrictions remain separate.",
+    "files": [
+      {
+        "path": "Color.jpg",
+        "archiveMember": "Grass005_1K-JPG_Color.jpg",
+        "bytes": 1875015,
+        "sha256": "5fd8edc1a04e2b9b093229dd0ec41f29668dda9fc698f6610b12cdd83b7690cb",
+        "map": "Diffuse color",
+        "colorSpace": "sRGB",
+        "resolution": "1K",
+        "preparation": "Original JPEG bytes; filename alias only. No pixel edits."
+      },
+      {
+        "path": "NormalGL.jpg",
+        "archiveMember": "Grass005_1K-JPG_NormalGL.jpg",
+        "bytes": 2137845,
+        "sha256": "f89e3a1701511d379a9772774ec6b9d7b7ccf3e944fdcc2b98c09dee4cfd804f",
+        "map": "OpenGL tangent-space normal",
+        "colorSpace": "Linear data; Unity NormalMap",
+        "resolution": "1K",
+        "preparation": "Original JPEG bytes; filename alias only. No pixel edits."
+      },
+      {
+        "path": "Roughness.jpg",
+        "archiveMember": "Grass005_1K-JPG_Roughness.jpg",
+        "bytes": 851896,
+        "sha256": "04ca3a66eee6105cac9754ac773ffd4ee63ca2222984554c4c04b0cdca80da26",
+        "map": "Roughness",
+        "colorSpace": "Linear data",
+        "resolution": "1K",
+        "preparation": "Original JPEG bytes; filename alias only. No pixel edits."
+      },
+      {
+        "path": "upstream-api.json",
+        "bytes": 12844,
+        "sha256": "65b93113199094f6db963c3d182e7401297280ab8093b6d35d97931839d4c2c9",
+        "sourceUrl": "https://ambientcg.com/api/v2/full_json?id=Grass005&include=downloadData,previewData"
+      },
+      {
+        "path": "CC0-1.0.txt",
+        "bytes": 7048,
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+        "sourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+        "restoredFrom": "Assets/Art/OpenWorld/ThirdParty/PolyHavenSurfaces/CC0-1.0.txt"
+      }
+    ]
+  },
+  "asset_counts": {
+    "first_expansion_cc0_models": 16,
+    "coastal_detail_cc0_models": 20,
+    "combined_expansion_cc0_models": 36,
+    "original_flower_models": 4,
+    "scope": "Distinct source models in these two expansion subsets; excludes earlier baseline assets and scene placement counts."
+  },
+  "original_flower_models": {
+    "count": 4,
+    "names": [
+      "DaisyCluster",
+      "CoralTulips",
+      "BluebellCluster",
+      "SunflowerCluster"
+    ],
+    "authoring": "Original procedural 3D Unity mesh geometry authored for this project.",
+    "scope": "Native deterministic geometry, not raster image generation; static decorative assets, not growth or gardening gameplay. Project-authored licensing is separate from CC0 imports.",
+    "source_manifest_sha256": "dd39c84b1b6918b8a5f76e74be6f66d04c9c50f2ce32c099c670dd46168635e7",
+    "source_manifest": {
+      "createdUtc": "2026-11-08T06:37:50.2119660Z",
+      "source": "Assets/StudioArtPack/Editor/OpenWorldBlossomAssetsBuilder.cs",
+      "sourceSha256": "75780870723a55af2b983f100f6552695dbff51d81f169a396866dcbb5af4f56",
+      "unityVersion": "6000.0.77f1",
+      "provenance": "Original procedural geometry authored for BalloonBarrage. No third-party geometry, image, texture or download was used.",
+      "license": "Project-authored assets; repository distribution terms apply. These assets are distinct from the separately attributed CC0 libraries.",
+      "generationMethod": "Deterministic C# geometry construction. This specification is retained verbatim as design provenance, not an AI raster-image prompt.",
+      "creativeSpecification": "Create four original, cheerful low-poly flower clusters for BalloonBarrage's sunny coastal world. DaisyCluster: five gently curved green stems, pointed curved leaves, ten distinct ivory-white spoon petals around each raised golden center. CoralTulips: four stems with long upright green strap leaves, six overlapping coral and peach petals forming an unmistakable open tulip cup with scalloped tips and a small golden interior. BluebellCluster: four bending stems, basal lance-shaped leaves, three hanging blue-violet bells per stem on curved branchlets, open darker interiors and five-lobed flared rims. SunflowerCluster: three taller leafy stems, fourteen broad yellow radial petals per tilted head, large dark-brown seed discs and seven small golden-brown seed details. Keep rooted bases at local ground height zero, varied stem heights, approximately 0.55 to 1.10 meters total height, recognizable close-up silhouettes, gentle curves with visible low-poly facets, bright natural colors, opaque closed or double-sided geometry, fewer than 5000 triangles per complete cluster, one shared-material mesh per prefab, and no colliders, scripts, animation or gameplay. Generate all geometry mathematically in C#; use no raster image generation, external meshes, textures or downloaded source material.",
+      "scope": "Static decorative prefabs only. Geometry checks do not establish movement, gameplay, frame rate or a playable release.",
+      "flowers": [
+        {
+          "name": "DaisyCluster",
+          "prefab": "Assets/Art/OpenWorld/BlossomPrepared/Prefabs/DaisyCluster.prefab",
+          "mesh": "Assets/Art/OpenWorld/BlossomPrepared/Meshes/DaisyCluster.asset",
+          "prefabSha256": "c647b951ab7a74e49dc83e954ba4cdecb5638fb848715338077b2c592729c2f6",
+          "meshSha256": "a75c1eaca6552d3ce47a2bbb76e27ac6bbe07c941d51ca539a31806444ce3142",
+          "stems": 5,
+          "triangles": 2800,
+          "localBoundsMin": {
+            "x": -0.33050984144210815,
+            "y": 0.0,
+            "z": -0.24530497193336487
+          },
+          "localBoundsMax": {
+            "x": 0.39230644702911377,
+            "y": 0.7542129158973694,
+            "z": 0.34183892607688904
+          }
+        },
+        {
+          "name": "CoralTulips",
+          "prefab": "Assets/Art/OpenWorld/BlossomPrepared/Prefabs/CoralTulips.prefab",
+          "mesh": "Assets/Art/OpenWorld/BlossomPrepared/Meshes/CoralTulips.asset",
+          "prefabSha256": "1eb86eeaf9c3d01eacb6e9de6d83b376b671355c201dcff00363e00ee2bbef2a",
+          "meshSha256": "c0ec89670de11ae1fa330a8eb0f229356ca002b869d46cd8a0d17fb63dad4785",
+          "stems": 4,
+          "triangles": 1760,
+          "localBoundsMin": {
+            "x": -0.334544837474823,
+            "y": 0.0,
+            "z": -0.2871134877204895
+          },
+          "localBoundsMax": {
+            "x": 0.38738030195236206,
+            "y": 0.8905329704284668,
+            "z": 0.35964852571487427
+          }
+        },
+        {
+          "name": "BluebellCluster",
+          "prefab": "Assets/Art/OpenWorld/BlossomPrepared/Prefabs/BluebellCluster.prefab",
+          "mesh": "Assets/Art/OpenWorld/BlossomPrepared/Meshes/BluebellCluster.asset",
+          "prefabSha256": "f692d766c21b6058bfc7daaadaa374436672acdf520ab523e01bca7e784013f9",
+          "meshSha256": "219df72c8a064bd02f41986903d98831d60db8c5cf85f2c8ffab186e828d5bdb",
+          "stems": 4,
+          "triangles": 3792,
+          "localBoundsMin": {
+            "x": -0.2916566729545593,
+            "y": 0.0,
+            "z": -0.28675317764282227
+          },
+          "localBoundsMax": {
+            "x": 0.4308008551597595,
+            "y": 0.8800737261772156,
+            "z": 0.3283676505088806
+          }
+        },
+        {
+          "name": "SunflowerCluster",
+          "prefab": "Assets/Art/OpenWorld/BlossomPrepared/Prefabs/SunflowerCluster.prefab",
+          "mesh": "Assets/Art/OpenWorld/BlossomPrepared/Meshes/SunflowerCluster.asset",
+          "prefabSha256": "59a6e1ad2be0b2a84ab0f4bbabe77faa4c1e0a553859fd8137c0984a34857e00",
+          "meshSha256": "1924d9006a68c2a0ab89824b29f02c6bc7106578a1f5c38d7218343c4d3b8ab4",
+          "stems": 3,
+          "triangles": 2640,
+          "localBoundsMin": {
+            "x": -0.39742380380630493,
+            "y": 0.0,
+            "z": -0.23579013347625732
+          },
+          "localBoundsMax": {
+            "x": 0.3419790267944336,
+            "y": 1.1066004037857056,
+            "z": 0.4162694811820984
+          }
+        }
+      ]
+    }
+  },
+  "refinement": {
+    "scene_sha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159",
+    "source_manifest_sha256": "526674058505c80571fdecc3555fb48ec5c91f8e4458d5bb21a87dc64bba7d29",
+    "source_manifest": {
+      "created": "2026-11-08",
+      "scene": "Assets/Scenes/OpenWorldSunnyExpansion.unity",
+      "parentSceneSha256": "3eb12a5352b56f75657fc93dc446aff040d36eb4f65c1eeade7d21e687da0ae4",
+      "sceneSha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159",
+      "source": "Assets/StudioArtPack/Editor/OpenWorldSunnyDetailBuilder.cs",
+      "sourceSha256": "c2fc0aa435f76f3c9e290202fc76983d990e7902ac5677e4bc8d63f39e0119d3",
+      "unityVersion": "6000.0.77f1",
+      "scope": "Static environment refinement and native Edit Mode renders. No gameplay, navigation, planting interaction, Play Mode or performance acceptance.",
+      "assets": "Twenty CC0 Nature Kit 2.1 details plus four original native procedural flower species. Original OBJ/MTL/license bytes and earlier assets remain unchanged; no generated raster image is used.",
+      "placement": "Mixed-height pollinator beds, shop window boxes, bowl planters, crop soil/edging, furnished stalls, campsite details and grouped shore stones. Existing visible crops preserved; intersecting random trees/rocks and their matching proxies removed.",
+      "flowerClusterInstances": 353,
+      "authoredBeds": 25,
+      "removedScatterInstances": 35,
+      "removedMatchingProxies": 22,
+      "verificationNotes": [
+        "Native saved-scene reload passed all three original routes and all four southern routes plus two spurs using the existing support/capsule contract.",
+        "Scene-local refinement preserves parent GUIDs and source asset bytes. New flowers are visual static models; no gameplay or runtime components authored.",
+        "Flower stems and planter insertions use grounded prepared prefabs. Coasts interpolate the existing sloped band; source scene and shared render pipeline remain unchanged.",
+        "Before/after file hashes outside the owned scene/detail roots must also pass the external protected-file audit."
+      ],
+      "previews": [
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/Flowers.png",
+          "sha256": "478a201403c6d507e9d7a0442ae304d7c9c5451f31ad96154d5836e3cf07688a",
+          "position": {
+            "x": -53.0,
+            "y": 2.0999999046325684,
+            "z": -104.0
+          },
+          "euler": {
+            "x": 10.98701000213623,
+            "y": 303.6900634765625,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/MarketGarden.png",
+          "sha256": "efe5e3c4efeec572dab681bbbbd6ad36892cd68894ca10dba3dc080b390ec1f5",
+          "position": {
+            "x": 2.5999999046325684,
+            "y": 2.200000047683716,
+            "z": -59.0
+          },
+          "euler": {
+            "x": 1.2211875915527344,
+            "y": 191.30992126464844,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/PollinatorGarden.png",
+          "sha256": "4199a1e3f033dffe2d7dbcde5299a0c067a68fae3c4611b75e4899fea6ae3974",
+          "position": {
+            "x": -48.0,
+            "y": 3.0,
+            "z": -104.0
+          },
+          "euler": {
+            "x": 3.9342918395996094,
+            "y": 313.45184326171875,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/CampDetails.png",
+          "sha256": "f6e93bb38d8c92c5800d91ad49b8e11984655a6344093bc5763458ad5a4c4c5e",
+          "position": {
+            "x": 112.0,
+            "y": 2.0999999046325684,
+            "z": -109.0
+          },
+          "euler": {
+            "x": 2.5115723609924316,
+            "y": 316.9749450683594,
+            "z": 1.6023648186092032e-07
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        }
+      ],
+      "files": [
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Placement.json",
+          "sha256": "5f99bb4e62fae79a72700a71b6134892ea9414be7e97761cc7299c69472ec010"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Verification.txt",
+          "sha256": "49ee86583e97fc509f8c99a8beb64bd1d8da7f7490434ecc031f793d9879b2e5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Coral.mat",
+          "sha256": "df85726830b98c1b68a1ed72b2095a388f4b2b62a7888362790e5d0d5e475e33"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Cream.mat",
+          "sha256": "72cf6cf6d9af61d2dbfe911a93e27d2faa74542a8a16e16a9c277b1a16ac6e3a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Gold.mat",
+          "sha256": "00d8e30c9fe1eeb1bfc01d108be80bfcc7eb7add1e269e7b837cc17c20ccf65d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Soil.mat",
+          "sha256": "18a375a6a84e997e71bf4cab12eb838230a2e45f1d728f5668c98acf1a1c712b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Teal.mat",
+          "sha256": "960dcd23db414b28dba6365f1a18ca3e132d2ced37b5ca629f061ef0ddac4e5d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Timber.mat",
+          "sha256": "d137c9515b1c6966a2be3ce86395dc5cc7318a5ac177790de38c41c680ad4a51"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Materials/Garden_Window.mat",
+          "sha256": "3ce1c5ac673ffe2105f658ea4d4fc26f04a32c59afc135764e412a2a87b8107e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/000_MulchedSoil.asset",
+          "sha256": "b15d473eaf7606da33f0858969047ba0322c008a8bab0826d4025647d5cfdc4a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/001_MulchedSoil.asset",
+          "sha256": "7d9d0eebab775b62179f1ddb68bc8414b6559d16da5e57515f0c29f9dd312e34"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/002_MulchedSoil.asset",
+          "sha256": "46fe5e2f5bee3ac73ec8f0456b664530e51367dd26833a8590af9ab3760ca400"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/003_MulchedSoil.asset",
+          "sha256": "2e9cde0bc108c4cf85e424f4ab7dd4edcb86fc3ecbff022697a7bf27ec7bc38b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/004_MulchedSoil.asset",
+          "sha256": "081984e634d64021e014aae1dad7c6a9d23b33d6f8e9870249f6499ed5a2fcd0"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/005_MulchedSoil.asset",
+          "sha256": "b7b935a359af53fa95af200f44b1221b4a2ec32c09a95072b21949404aa0922a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/006_MulchedSoil.asset",
+          "sha256": "9f08246f02b96ab7d83e9572663198a814c3315b30882d4ea10a266caf3fb875"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/007_MulchedSoil.asset",
+          "sha256": "99a384fe54a3d042b71cb44ae44d885a2068d8f3b09cf90c8b51b43e783e024f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/008_MulchedSoil.asset",
+          "sha256": "1b099ac40ff8d638e2d39ca6af80263c9d48d11a8f6ccba1d040ff01c8c39cb1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/009_MulchedSoil.asset",
+          "sha256": "0689c7eb733b37ab7e197867237b73bcb677b93181ca02534b50c194d2cfe1c5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/010_MulchedSoil.asset",
+          "sha256": "15e5538fabb4d92a93fe46f08e3a1b9c1f15d9e6f48d5dabd8d9b659d525ad4b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/011_MulchedSoil.asset",
+          "sha256": "b33abf1d94ce1032682372969bec2e8585252e730f7d32663c6235031da94e99"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/012_MulchedSoil.asset",
+          "sha256": "40ffd18f53f511459f77026d464970c033fc97a98dd3e6a1c673e2de34548fb3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/013_MulchedSoil.asset",
+          "sha256": "437af2b63af08c78b90463169cf56b79ee30755956a1ddda4b990f22b660c0c1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/014_MulchedSoil.asset",
+          "sha256": "8db22d85eef9e39debcb3cc5cfdbace497886eacade70f8bb409f1deaf6a7d7d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/015_MulchedSoil.asset",
+          "sha256": "7c85e42162003abc16fc7c7532dc04ec301f0ac65fb05b2604fbf17f92fe3626"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/016_MulchedSoil.asset",
+          "sha256": "614fc1ba17cabb5547a40fde952349100d37d69145c052e71ed9b72d859e8b7d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/017_MulchedSoil.asset",
+          "sha256": "476f2d5ff1e488697ef68966fb7f2b6cda2ccfd3e5183ad66af157331647429e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/018_MulchedSoil.asset",
+          "sha256": "16848aa2e6646ff5e6a3230ebc024ed27a0a0fb84a4c15e0aa2a9d684dbfc77c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/019_MulchedSoil.asset",
+          "sha256": "50ef0da6956522916f47bd1a6fdcaf2e17e97081c587cad32ff009f9dd87df49"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/020_MulchedSoil.asset",
+          "sha256": "688365ca748eccfb5db5ea1e36255376ca9ffc91d74336e7aa6af1deefed4892"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/021_MulchedSoil.asset",
+          "sha256": "d73692eeb1f15c56e89b872372d935253612689e826ba538546dc05969857bfb"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/022_MulchedSoil.asset",
+          "sha256": "c8142962c2a529e79cf43e503978ea37e0e93531d13ab36049d0ad69a81f554c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/023_MulchedSoil.asset",
+          "sha256": "1bc56511728ffe760b0609018ea74a3ac63fa236f581e837a34ff975e60a4fd9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Meshes/024_MulchedSoil.asset",
+          "sha256": "eb62763290fed003df0ce0f0be5f3f076dd110ab0d7f0a686491cb9fef72cd35"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/CampDetails.png",
+          "sha256": "f6e93bb38d8c92c5800d91ad49b8e11984655a6344093bc5763458ad5a4c4c5e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/Flowers.png",
+          "sha256": "478a201403c6d507e9d7a0442ae304d7c9c5451f31ad96154d5836e3cf07688a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/MarketGarden.png",
+          "sha256": "efe5e3c4efeec572dab681bbbbd6ad36892cd68894ca10dba3dc080b390ec1f5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/PollinatorGarden.png",
+          "sha256": "4199a1e3f033dffe2d7dbcde5299a0c067a68fae3c4611b75e4899fea6ae3974"
+        },
+        {
+          "path": "Assets/StudioArtPack/Editor/OpenWorldSunnyDetailBuilder.cs",
+          "sha256": "c2fc0aa435f76f3c9e290202fc76983d990e7902ac5677e4bc8d63f39e0119d3"
+        },
+        {
+          "path": "Assets/Scenes/OpenWorldSunnyExpansion.unity",
+          "sha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/CoastalDetailsPrepared/Manifest.json",
+          "sha256": "a70d07d395c6a15894ad6989edac7c24d81e52bc5a24f5e6c3255768099e447f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/BlossomPrepared/Manifest.json",
+          "sha256": "dd39c84b1b6918b8a5f76e74be6f66d04c9c50f2ce32c099c670dd46168635e7"
+        }
+      ],
+      "protectedFileAudit": {
+        "filesUnchanged": 1013,
+        "existingExpansionAssetsAndMetadataUnchanged": 282,
+        "scope": "SHA-256 compared against pre-refinement local snapshot; includes gameplay scripts, original scenes/art, raw sources and ProjectSettings. Current expansion scene, seven regenerated PNG captures and evidence records are the intended changes."
+      },
+      "flowerAuthoringSceneSha256": "b97435358f051ee13ceb44f3c45ce1cef0ac925ad1578dd2b9c3b2cd62ad8253",
+      "latestGrassRefinement": {
+        "manifest": "Assets/Art/OpenWorld/SunnyGrass20261108/Manifest.json",
+        "sha256": "2ab85b649b3025dee07e39c05b4e3c1f28de48576452db0e28196a179f962734",
+        "source": "Assets/StudioArtPack/Editor/OpenWorldSunnyGrassBuilder.cs",
+        "sourceSha256": "bf6f0310ab072ac9e5aedfd035e17f0b07895f41da7ea272aaf05dcaec250c24",
+        "parentSceneSha256": "b97435358f051ee13ceb44f3c45ce1cef0ac925ad1578dd2b9c3b2cd62ad8253"
+      }
+    }
+  },
+  "grass_refinement": {
+    "scene_sha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159",
+    "source_manifest_sha256": "2ab85b649b3025dee07e39c05b4e3c1f28de48576452db0e28196a179f962734",
+    "source_manifest": {
+      "created": "2026-11-08",
+      "scene": "Assets/Scenes/OpenWorldSunnyExpansion.unity",
+      "parentSceneSha256": "b97435358f051ee13ceb44f3c45ce1cef0ac925ad1578dd2b9c3b2cd62ad8253",
+      "sceneSha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159",
+      "source": "Assets/StudioArtPack/Editor/OpenWorldSunnyGrassBuilder.cs",
+      "sourceSha256": "bf6f0310ab072ac9e5aedfd035e17f0b07895f41da7ea272aaf05dcaec250c24",
+      "unityVersion": "6000.0.77f1",
+      "creativeSpecification": "Author original narrow, gently curved, tapered grass blades as three reusable short/medium/tall tuft meshes. Each tuft has 24 blades in an irregular 0.5-metre radius, three bend segments, 0.012-0.030-metre blade widths, ground-level roots, and three natural green tones. Heights vary around 0.18, 0.30 and 0.46 metres. Double-sided triangle geometry has no alpha texture, animation, scripts or collision. Scatter deterministically on verified grass support only, outside paths, mulched beds, crops, buildings and solid scenery; combine by 16-metre spatial cells and provide a sparse static distant LOD. Ground uses an unmodified separately credited CC0 PBR lawn surface at project-chosen 2-metre tiling. Preserve all original sources and scene GUIDs.",
+      "scope": "Saved static grass appearance, spatial visual LOD and native Editor captures. No movement, wind simulation, gameplay, Play Mode, streaming or runtime performance acceptance.",
+      "surface": "ambientCG Grass005, CC0-1.0, unmodified source JPEGs. Provider describes Procedural with Bitmap Elements. Photographic-style PBR surface, not a claim of pure photogrammetry. Project-chosen 2-metre repeat; provider physical dimensions unspecified. Neutral material tint; OpenGL normal at 0.40 strength; roughness packed into nonmetal smoothness with maximum 0.18.",
+      "sourceManifest": "Assets/Art/OpenWorld/ThirdParty/LushGrass20261108/source-manifest.json",
+      "sourceManifestSha256": "034ed50be0a06d7befd207b8d42fdb7402fab4ebb927277afac18226691ffd2c",
+      "originalGeometry": "Deterministic native C# ribbon geometry. No generated raster images or downloaded grass model. Actual double-sided blades supplement the CC0 surface; four original flower species retain separate provenance.",
+      "lod": "16m spatial cells. LOD0 retains all tufts; LOD1 retains every fourth tuft; thresholds 0.12/0.025 relative screen height. Content triangle inventories count both LOD meshes although only one level displays at a time. Not a measured frame-time claim.",
+      "tuftInstances": 6122,
+      "spatialCells": 141,
+      "groundMeshOverrides": 7,
+      "fullGrassTriangles": 1469280,
+      "distantGrassTriangles": 379920,
+      "previews": [
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Previews/Grass.png",
+          "sha256": "82c83a4ec991c20fd5225a36ecba5d14608345cbbc6aa6293cbaa4f3c719fb34",
+          "position": {
+            "x": -53.0,
+            "y": 1.0,
+            "z": -106.0
+          },
+          "euler": {
+            "x": 3.7086169719696045,
+            "y": 315.0,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/Flowers.png",
+          "sha256": "478a201403c6d507e9d7a0442ae304d7c9c5451f31ad96154d5836e3cf07688a",
+          "position": {
+            "x": -53.0,
+            "y": 2.0999999046325684,
+            "z": -104.0
+          },
+          "euler": {
+            "x": 10.98701000213623,
+            "y": 303.6900634765625,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/MarketGarden.png",
+          "sha256": "efe5e3c4efeec572dab681bbbbd6ad36892cd68894ca10dba3dc080b390ec1f5",
+          "position": {
+            "x": 2.5999999046325684,
+            "y": 2.200000047683716,
+            "z": -59.0
+          },
+          "euler": {
+            "x": 1.2211875915527344,
+            "y": 191.30992126464844,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/PollinatorGarden.png",
+          "sha256": "4199a1e3f033dffe2d7dbcde5299a0c067a68fae3c4611b75e4899fea6ae3974",
+          "position": {
+            "x": -48.0,
+            "y": 3.0,
+            "z": -104.0
+          },
+          "euler": {
+            "x": 3.9342918395996094,
+            "y": 313.45184326171875,
+            "z": 0.0
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyDetail20261108/Previews/CampDetails.png",
+          "sha256": "f6e93bb38d8c92c5800d91ad49b8e11984655a6344093bc5763458ad5a4c4c5e",
+          "position": {
+            "x": 112.0,
+            "y": 2.0999999046325684,
+            "z": -109.0
+          },
+          "euler": {
+            "x": 2.5115723609924316,
+            "y": 316.9749450683594,
+            "z": 1.6023648186092032e-07
+          },
+          "width": 1920,
+          "height": 1080,
+          "fieldOfView": 55.0
+        }
+      ],
+      "verificationNotes": [
+        "All original and southern route support/clearance contracts passed on saved-scene reload. Grass has no collision or runtime scripts.",
+        "6122 original 24-blade tufts in 141 spatial LOD cells; 1469280 full-detail triangles and 379920 sparse-distance triangles. Static inventory includes both LOD levels, not simultaneous rendering or performance acceptance.",
+        "Placement uses five downward support rays per accepted tuft footprint, rejects paths/plazas, excludes mulch/crop rectangles and expands solid obstacle bounds. Raw source pixels unchanged; normal importer and derived packed mask are separately prepared."
+      ],
+      "files": [
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/.gitattributes",
+          "sha256": "781a69ba05fd82ea8de90960527dec976d415165730e671b54d3dbb94416c623"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Materials/GrassBlade_0.mat",
+          "sha256": "dcc20bd310745527054c93530ca111286bd869076379deeaa190e814946e4015"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Materials/GrassBlade_1.mat",
+          "sha256": "d102864143c95a22164f9ad7181e9e3207b52be811c2f2467173ac4b55f16df5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Materials/GrassBlade_2.mat",
+          "sha256": "faaca132e191186003ebb037ddcadb3d3b005f19d3925a0f3bda690d9c672d11"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Materials/LushLawn.mat",
+          "sha256": "c1eb2f565dc737b8ac96e44f48895b5510935643959d0c97af890ed28d6b7cfc"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/MeshStorage.json",
+          "sha256": "9370e09a02ff9bdd37cc065562335893625583a44fcf2d45d1662ee336a9e850"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/000_NearGrass_0.asset",
+          "sha256": "e06a0cf1d2a7224716f167454adb25cc51ebc4dcc6e6065c670f6c1864ccb1c0"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/001_DistantGrass_0.asset",
+          "sha256": "fa929dff9e52c312c8c3fb6b9ba9cb33dd4ea80ee257c2215d0c6eb6b25aae2e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/002_NearGrass_1.asset",
+          "sha256": "fde505e190498d92d0aa7b83a07fcc699bc9166da4cdb82c03ed97ef25f6e200"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/003_DistantGrass_1.asset",
+          "sha256": "c727de3b83ca8ce29859ea78e46ad5dc2d540c6be1116b64704bc9f136cc5d49"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/004_NearGrass_2.asset",
+          "sha256": "9776de1efddf9bd1bae74f2a4cbb7f50423ffe1faad444c5c2e7c6c31a21ab97"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/005_DistantGrass_2.asset",
+          "sha256": "861b69c0fa17f6b283a10f699c980a7e0f4ea97777cfcec764da1e3d8e0eec16"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/006_NearGrass_3.asset",
+          "sha256": "94433ce178fcf3eca0c0264c110987e21192f9ee6fa93a184f71b6269588af72"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/007_DistantGrass_3.asset",
+          "sha256": "98ec80473012c198b998b4d95514aca82c2877ba55ffe01ba44b52dee40f6762"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/008_NearGrass_4.asset",
+          "sha256": "61b4d8af66d2d9701a42bb439ab337594be4ee6a1c844b7ce909c5992e7cf1f0"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/009_DistantGrass_4.asset",
+          "sha256": "2d9b7288ca986ae86ad5c4f6ada90e12c7961dadebb9b072a0122a4b9b8b6778"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/010_NearGrass_5.asset",
+          "sha256": "131a776981ccba79930af7d3fa4edeb73ed0ddf8888c13a0e45a8cb8ad0b7141"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/011_DistantGrass_5.asset",
+          "sha256": "f9acad21e962b528842bda8ee251e5c798695ff7af1e57911aa4a96887cd5988"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/012_NearGrass_6.asset",
+          "sha256": "3cee9f07e5577f087abd90c36678bc35b0b26bdf70e00a89f29906c36e974e22"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/013_DistantGrass_6.asset",
+          "sha256": "328979ea96fea7ba1d1d82c338ea9780aa83788af3bb561ed0dbd08073868a47"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/014_NearGrass_7.asset",
+          "sha256": "dc1aee2c20f138c1b41ec7dfd61f55d59a331d73b78fbc67e3327b8b25c5a6a4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/015_DistantGrass_7.asset",
+          "sha256": "f7f05322c763eb56ad478f9bd6926dbc80b42f8abeba696e336b4630bf7ec549"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/016_NearGrass_8.asset",
+          "sha256": "51e389db7758d1dce77c1ffb561366a4ecbcdf0bc5121c47141cb56bad2e3b2b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/017_DistantGrass_8.asset",
+          "sha256": "e9fa283729394869f4fd4f9cc6f66f1e9cd5aee0f0f0487fea843b03bc6f1533"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/018_NearGrass_9.asset",
+          "sha256": "f7c04d10cf3d41d3530424d757daf05f28ae48fa698fd66ce8b2dfa785323911"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/019_DistantGrass_9.asset",
+          "sha256": "a1dd53d045cf93ffcab87d6a11c1c5f9be3d2e52d772b8fdb84e10b9bacb1940"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/020_NearGrass_10.asset",
+          "sha256": "c182854de0de939daa2f16595e7fcde2378d77be972e5842f52408f9cf886fcd"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/021_DistantGrass_10.asset",
+          "sha256": "9fa3e044266c328f4d0eb69631fc9dad072cfeac1fdb16cfdd8680a89f693db3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/022_NearGrass_11.asset",
+          "sha256": "769b2582b02157b789e97eb81e06a68527b267b5c26351dea1b64a389ad427f5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/023_DistantGrass_11.asset",
+          "sha256": "9e282189b5b633b3d74e45bef124f344a8d81ceb1f4c2822982cb66dba3bff73"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/024_NearGrass_12.asset",
+          "sha256": "c445d29205d2ae206339310ee65c07cd43a2b65883d3eb1efd24ccdd75786b25"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/025_DistantGrass_12.asset",
+          "sha256": "0cf5535b4aa16cd172be09dc73ad07a99fbcfe48bcc998e49bd786be02afe38a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/026_NearGrass_13.asset",
+          "sha256": "68d6f05a49c572e6bb9c9f72d6909f64b56ef4796decd67b9afadcfb8e26352c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/027_DistantGrass_13.asset",
+          "sha256": "423d1b359739fd0ae53872edbb2d248ad37edfc5c8bd7a021048b6878b156e3f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/028_NearGrass_14.asset",
+          "sha256": "382aae31bb1999de32557066934a3e7e1db56fca8eee994f11b091b038b3aba0"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/029_DistantGrass_14.asset",
+          "sha256": "83060de281f343569e8cc86a569911fba918ef20937a90ed3a1d39feea478722"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/030_NearGrass_15.asset",
+          "sha256": "2143dffa08c0ba5ada7b08d3cb378d96a18fae9be2614f59c1b36bbf185980ef"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/031_DistantGrass_15.asset",
+          "sha256": "d3306372779f44df926252d630620e9709fa0441352317abe4d72a0112af927c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/032_NearGrass_16.asset",
+          "sha256": "6aeb8de18786d4a23d8532887b8190a9c5a40e4a9743fb189e8af5a461e0ae93"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/033_DistantGrass_16.asset",
+          "sha256": "b67724582cc008d647b13e036c8eef79db4f13a7257c454cb5928aaa13f064c7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/034_NearGrass_17.asset",
+          "sha256": "16d8c5fdc453f19c21e65cc6b446b5cdf9be5794ce4b8d7a4bb8e9dec9da42d3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/035_DistantGrass_17.asset",
+          "sha256": "3457b4f825f81576e9cd71d1cb1348d7419b19eab07b96f8be6b82f9d81069a7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/036_NearGrass_18.asset",
+          "sha256": "e3d55853e810c30159bf07d88304ce09950c65de88c094ac10a026158d35a466"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/037_DistantGrass_18.asset",
+          "sha256": "f83dbbc81bd6b9a18799dcf6a2847c0ea2f439ef68e90fe85912de6b972f0d41"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/038_NearGrass_19.asset",
+          "sha256": "9566a399623101a6a77b516b609652eaec994e5b0c4fcac4caa4a1b7af341139"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/039_DistantGrass_19.asset",
+          "sha256": "020442b64d036408192cf2e915f2829ccc6628d24c42426da02fa6e58553936a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/040_NearGrass_20.asset",
+          "sha256": "9796c2dffdc2d9cb4c2c8ce7a91b3bf8f99d5d5461ec49b623aa1b03e3845663"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/041_DistantGrass_20.asset",
+          "sha256": "872fa26edb0b9403e84dce870ce25e57f4b0b955b32f9d1a27d27c8de84c65f6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/042_NearGrass_21.asset",
+          "sha256": "ff52815b2291de76232f2763163f4918d04970273d4804f896a6fd4ad5643a88"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/043_DistantGrass_21.asset",
+          "sha256": "49adecb2761760de14527f42e437a94317868f6759c9c806ba38f4beffb435f8"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/044_NearGrass_22.asset",
+          "sha256": "9413067dcdf84e84231f1fafb59f2914afe3671769f7f05ce523a39beff38b23"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/045_DistantGrass_22.asset",
+          "sha256": "b73684bc0f254cd17901e9e064287f3fd1185d4c72cdbff9e35b098083c1949f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/046_NearGrass_23.asset",
+          "sha256": "a8f4d5a87df0391d65b6bcd860af50ec96ea7234612c12c5eb1ba88edd20934a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/047_DistantGrass_23.asset",
+          "sha256": "1566dd3095ac538590aef7ea4d7457a006fb894765785dba98faacd5053221d4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/048_NearGrass_24.asset",
+          "sha256": "5ce92e14afd3ac0615af4222a8a145ce052fc30d75a6e53b4daaaf7df83ee6c4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/049_DistantGrass_24.asset",
+          "sha256": "87145f67f247942bd7e81ad81dde162b35f43d63685f89938ba4de3327897596"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/050_NearGrass_25.asset",
+          "sha256": "b39a6345ad4a9fec83c125f4ff47d888100412fef91048daf390612490b4df09"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/051_DistantGrass_25.asset",
+          "sha256": "44cd5f3b2ba5a8a1d057ecf96777d3bac6968c7e2eba42c6b0faccbb1accb246"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/052_NearGrass_26.asset",
+          "sha256": "6579a915950f66a066720f5ab28910c5d44c5d302c01e232712dc3810125c761"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/053_DistantGrass_26.asset",
+          "sha256": "13c24aa65ae80fc697801887cb1cb30036a9d43acb421a5cf38eeca0edfd92bf"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/054_NearGrass_27.asset",
+          "sha256": "1f1cbea2ce5bf1b90b215bec493abfa85dafcfb7d6a1684d6209c46a78366101"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/055_DistantGrass_27.asset",
+          "sha256": "32dd9c38b2aec98805b5b1f023e42a9ab2792d7545ec222030c38df8dca3ea65"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/056_NearGrass_28.asset",
+          "sha256": "1e3a74381556300b658480486c634a8939150e1b070301d8d1c54a91c9d07d41"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/057_DistantGrass_28.asset",
+          "sha256": "91b4d0cb5b3b06e10efbcbc98a6c4f15ad7b65a5c36879da21a559ea3fc9a9b4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/058_NearGrass_29.asset",
+          "sha256": "abcb6d07f613a91d5a49de367b098febc157dea2e2845c1d31e049019e11e1ad"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/059_DistantGrass_29.asset",
+          "sha256": "367e19552ba8ed0b5044590bfa7ada9e81ee215d5623218f0897fd7425a776a1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/060_NearGrass_30.asset",
+          "sha256": "d7498461ced969fddb4de57d787de39be57271c97c74ce4cd0e1975d293f0c86"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/061_DistantGrass_30.asset",
+          "sha256": "5f4b45315aa10bdbc246b11c4bf0ec51c5d0f8f53de8cd7e255a5c2ec25b205d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/062_NearGrass_31.asset",
+          "sha256": "60d6a7117f372fbcfecb6a80ccc0a3a96b3dede5e848bb4d3264a934c870fa3b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/063_DistantGrass_31.asset",
+          "sha256": "11d72007029bc5fccb3fb16f2d7fdc1635cc1aa700f380ed16e7af05af40b510"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/064_NearGrass_32.asset",
+          "sha256": "11b13a21beea09784ce10306eb95ad8986106a0b96b528ecd083aa0c54e2eca7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/065_DistantGrass_32.asset",
+          "sha256": "8d25a04fc6f48cd58d57fed7267dd9c40a0376e8835d0404af73b90522d55797"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/066_NearGrass_33.asset",
+          "sha256": "c56c9c0947397096dcb8ec6e0e9097ec6bc68b00173e6f66a3303890a5957194"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/067_DistantGrass_33.asset",
+          "sha256": "c91f1ac7c6a7c38cc911129de4164fe4deaacdfe44a06d5a434d4d1538b1ddee"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/068_NearGrass_34.asset",
+          "sha256": "805cd8ffc5fe02e6404394d9b0367968f6eef9a2bfb51c39897bd0df57fa5252"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/069_DistantGrass_34.asset",
+          "sha256": "ee997eb02bd2e717046eff7f0c40a56093e4b10e61dfb4e3655e6218e5e77285"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/070_NearGrass_35.asset",
+          "sha256": "778b9bee02633d50cf202d18cc5a9b6013b8f75c4cb894de0e210e3da6ea6d77"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/071_DistantGrass_35.asset",
+          "sha256": "4dec2d0343c21fec0ed344d7107461216768f02e0abc2e914bc387dd93b8d820"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/072_NearGrass_36.asset",
+          "sha256": "bef7c962ea8a2400e13c32e2dd611d2ec0109fee49ff80f7f08ff6600365acdb"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/073_DistantGrass_36.asset",
+          "sha256": "154b488974bf1714fb4df93e7eec5536c1ec817b85ee04e73ff39dda3b61b1aa"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/074_NearGrass_37.asset",
+          "sha256": "b70b46284a5b5da1d41db245c3862f10fb4bc79bd9b412fd710569f44de0e721"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/075_DistantGrass_37.asset",
+          "sha256": "ddefc784cde29680ab58aa0b92028800648f734b12c7d91638d914a6b494064a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/076_NearGrass_38.asset",
+          "sha256": "cc3ab98e310d720f34fd9878b9267e17f83f915d2d213db29ed2653ccb942627"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/077_DistantGrass_38.asset",
+          "sha256": "3bfe88fae3cab5764966e60d71ef59aea6d8caccb995d77d451d3cb0d4550335"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/078_NearGrass_39.asset",
+          "sha256": "974a223f14859e7a73b3a0c02899d901c4c6df7e9dcc19f5ec05b8829cc0cd52"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/079_DistantGrass_39.asset",
+          "sha256": "9b875e59d78d8cd1593e5743035fb44f9fbef78b945d032c86b9fde6b23a5595"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/080_NearGrass_40.asset",
+          "sha256": "e189201c635579e47edcbdc57bcbb50b753a93a02b5351a1d3344ad5d76ec816"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/081_DistantGrass_40.asset",
+          "sha256": "b293887e47a55b8211fbc5a8b3f61a582550abe63a3b419ddc1fc46b490447a5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/082_NearGrass_41.asset",
+          "sha256": "f4d7bafa3d416fc3cedb73c6942ab9acebf9ac7c9fe9279cd7abcef3c771e4e1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/083_DistantGrass_41.asset",
+          "sha256": "c2daba29264eec419609c42a7f2eb5ae83105ebecc844ccf72682550204508e5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/084_NearGrass_42.asset",
+          "sha256": "a100089b21cf1e93544976469a7d69b74b7bd44ab5bdfbd6b9b3e6b1c78b8794"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/085_DistantGrass_42.asset",
+          "sha256": "f9402681df5d8cf58baa0628e0e121f996665f6cabcbbb961c16de6ce4d06364"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/086_NearGrass_43.asset",
+          "sha256": "568e4b43480e202e5487a7690b8abfdb52e16b16161a7f1e3c2f1e4c83dd31d0"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/087_DistantGrass_43.asset",
+          "sha256": "a21f5a8b206b9cf9843de065f289716f43f544dc08484f1c298f5d82541e7618"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/088_NearGrass_44.asset",
+          "sha256": "d0e5b20ac123a9fb3f570b486464fb89c61fd4d3b479abc32ea32203f3bf6220"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/089_DistantGrass_44.asset",
+          "sha256": "7aac3ae42d089a2d332187d6df809fa5a7f4cee116d3b132b017fe20ac0f998b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/090_NearGrass_45.asset",
+          "sha256": "87b6715533e44b873fe18e79f8071fd23646276338d11b9ee642ca78eb7cded5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/091_DistantGrass_45.asset",
+          "sha256": "ce6bc9fad615522d4c096d6bc60a8e4a0c5835a597d2d6a9f6a6e874547a1a92"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/092_NearGrass_46.asset",
+          "sha256": "d67945e89d70a7c67e8c40e5b6f5733c0294482f5e0e133658bcdab23de1ffe6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/093_DistantGrass_46.asset",
+          "sha256": "4cebc6e3006cfcc5af9c9993e48d3828318f8b31d581f56eb5784ae377b8c8dd"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/094_NearGrass_47.asset",
+          "sha256": "512f9347f4748216d4b3054cc77698355a230c98c490a0c9e1a1720f45e4b920"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/095_DistantGrass_47.asset",
+          "sha256": "4c55625c5cb3975963f9192f7ef54e70f664b251bca1bb5ad1067db857ac3d48"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/096_NearGrass_48.asset",
+          "sha256": "86ed716624bb0f284676c5466abb21436431190e87265c9e76c19b8fe6bbe726"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/097_DistantGrass_48.asset",
+          "sha256": "80728e6880e5d7eb71dd144a90be211893a9863e84aeac232c10732bd30f5c8d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/098_NearGrass_49.asset",
+          "sha256": "77a20572e19382e4351bbede12d0b15bd6876def7cee72ebfee7f41534892e93"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/099_DistantGrass_49.asset",
+          "sha256": "c07795584d36f1bc4504258fb04df73ee821bc0877296d3368d4569e99d4b61b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/100_NearGrass_50.asset",
+          "sha256": "9a00b7acf50bb17a587fc40576c9053fdeba4ed703a65e7669e6c5d4417c4e26"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/101_DistantGrass_50.asset",
+          "sha256": "e8e6c7856bcc824a1bcf9561262e86246e07658496f52a74fe7875591b5cddcf"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/102_NearGrass_51.asset",
+          "sha256": "6d19856e5bf884f3eb57b8b0b511bc569318f70529033fd076805b6eb9c1a092"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/103_DistantGrass_51.asset",
+          "sha256": "73d299d017b4e2297a6b10ba6867b2199ce01b478caef7272ad4370e24104044"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/104_NearGrass_52.asset",
+          "sha256": "83d33ac15d21e33d1b733c67119d8c778d8a79515ff5ee2e7ed406754f5c4431"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/105_DistantGrass_52.asset",
+          "sha256": "bda2358b85042cb21cb3e6722192751632768272336a7db0a3ffa6f1de38e61f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/106_NearGrass_53.asset",
+          "sha256": "dbf7d62c8dec8ba77e30412e5cfdad096fc563eabe44a87c86e4774af69164da"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/107_DistantGrass_53.asset",
+          "sha256": "d79ed8b88dd64262d8e55822d187d5d9b44b5bf413c1b41fc5d6a2a011761705"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/108_NearGrass_54.asset",
+          "sha256": "6fed9005940691a15d3221d5647fef87dce805265478fa7dd80e207b4dd49c5c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/109_DistantGrass_54.asset",
+          "sha256": "afae6f949963cf2161224407222c25bb7f1e6493db14ed836e581f31b9b4cdc8"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/110_NearGrass_55.asset",
+          "sha256": "25cde7acd81a1228a744505dab78b38a2619e5a25a08d7647adf6515bc04ecdb"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/111_DistantGrass_55.asset",
+          "sha256": "249a3d71830f22ba09f93e673262a554c7a962c8945ab3381e0425bbd4554b53"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/112_NearGrass_56.asset",
+          "sha256": "efdaace38f03ddd978979fe82a60d94f1dcf0ad6decde9b28ae626115cc65fb5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/113_DistantGrass_56.asset",
+          "sha256": "39e7489a459ccf22e9a63aacd0f6cb27f4f7045c4bee76681086ba5396d854fc"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/114_NearGrass_57.asset",
+          "sha256": "2b9ed1cacc00641abe3c6fd33af0b60880dc5a07c07f701ba8a745cfa902ebe2"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/115_DistantGrass_57.asset",
+          "sha256": "05f0ef23da6cbb89fbd7b7f625ded8900bfbde9467addaff535c1e2c30e52f14"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/116_NearGrass_58.asset",
+          "sha256": "b4bfcb6cb288b9e209cb8d90baca7b13efd658be59687de5aba22592370a1026"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/117_DistantGrass_58.asset",
+          "sha256": "03eeed3795ef3e5e7d459480bcf34d1186ab9e6a5f41257ff81c3fedc5e0d1b4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/118_NearGrass_59.asset",
+          "sha256": "93e6e48dbc6d74847c020e39004feb06d9bd8501b533aa48c6c401ad2d0da6c7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/119_DistantGrass_59.asset",
+          "sha256": "ebeae22a141118379bbabdb83e9ced43ecbd89d457ff4a67604d3ee35bf2696e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/120_NearGrass_60.asset",
+          "sha256": "d0aeb5e6fb7265fa60c6755e3e3d95a91c854261cb71c60d319899c1fa823d72"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/121_DistantGrass_60.asset",
+          "sha256": "7ab902cb26736795369e846f0acd393754977e4eaa5c74a7f46a3b7da6cdb01d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/122_NearGrass_61.asset",
+          "sha256": "94d3cea16493f68e85383321226002a7d4a64df89d4505c1fb1ba4ef4321128e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/123_DistantGrass_61.asset",
+          "sha256": "ed66140c37320aa1fd1fb2c840a3c9c55a29dc25080b884fed0b9f9b1d7ef866"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/124_NearGrass_62.asset",
+          "sha256": "4519211a13dde6d2ee3f4720bc352b83b8e8219d1ccace7d7cac72a8ab7be5a3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/125_DistantGrass_62.asset",
+          "sha256": "24668f36a82f3b77a220097bdc0bb531e0d33427e1b594c9d650dbfd7f202795"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/126_NearGrass_63.asset",
+          "sha256": "c913c4308d7cc01470afefc97d9727705be9aef65a265db76b76c8475ac2ce23"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/127_DistantGrass_63.asset",
+          "sha256": "36a9fc0d813ac113999070462260d12ecbcbb1688c13fce11d0273bd19164a7b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/128_NearGrass_64.asset",
+          "sha256": "96ce4f5612c20745c7e7d4e0951731fa8d8b49f5fcf35223cb00fb2c88b73a13"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/129_DistantGrass_64.asset",
+          "sha256": "b5ef22b292a8b5d747e2013d92f1e62823308790fb9042e2608019489575ab0d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/130_NearGrass_65.asset",
+          "sha256": "3e7824bd776a6ef9d0551fb5207c8e92de32fda5f0175c5f6eb13d143ca0c104"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/131_DistantGrass_65.asset",
+          "sha256": "7a7c8858411c02e514992f2ca75095f517ca52ca2b22142bab5c98899467d8f1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/132_NearGrass_66.asset",
+          "sha256": "87fd50cd12cfe0e411aabd0caaf2496496916007bd60cc15600c8e9ecc42693f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/133_DistantGrass_66.asset",
+          "sha256": "d10cac7d297e257a0048062f75cdbc72e4184078d45b920ed39d84c036d05179"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/134_NearGrass_67.asset",
+          "sha256": "b4b997db890eaca88d96392960303fc2d0bc295bcb0d010ce5dbb473038ef68a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/135_DistantGrass_67.asset",
+          "sha256": "e2ca5c329bdbeb3c58694e84e3dd58f9678909b8b8f59b38eb903dacd8b71501"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/136_NearGrass_68.asset",
+          "sha256": "bb7004e77f3c9d5e9f729858fb29abd8b3ef660ce7f4c86894273c3d39b51c77"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/137_DistantGrass_68.asset",
+          "sha256": "4be4061d77a44dc9cb07842e37d0e0debe42e5e628b3cf87d3564e046e6a7234"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/138_NearGrass_69.asset",
+          "sha256": "f2d95a80dceefa9ede38b2bd10fee4d46020bebd61853b8341d0222f55ecb3da"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/139_DistantGrass_69.asset",
+          "sha256": "638b2fb2f4977a6ce8507a539a6e70d55b7f71bae1cda3783d97df6c97b6a519"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/140_NearGrass_70.asset",
+          "sha256": "9a9aea3f4ac7d543b703ce64faf3ab594eab24714b3dafa676b3399f989af2d4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/141_DistantGrass_70.asset",
+          "sha256": "0e601a631d7244915a31fc472f6e41632bd19d7b72810ca9909a06870ebcd40e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/142_NearGrass_71.asset",
+          "sha256": "12a9a2357861057e19d53dab638ddc6de7f2653996b9a5e4f80f8b14818f52cd"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/143_DistantGrass_71.asset",
+          "sha256": "57a8b37ed507753be64143e09e05c8a7b82993679f43d6d111c841d9d06d3bce"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/144_NearGrass_72.asset",
+          "sha256": "52116c144680155a60164657255bd286ee53adc7fc7ac92324d663264a094e5f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/145_DistantGrass_72.asset",
+          "sha256": "1d14d1b8d847953067ce550c2cceaa224b6d9646d9e8d3e25494ecab231c4157"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/146_NearGrass_73.asset",
+          "sha256": "f81ee5e4007f5780a4d165bace71645062746a872e4a7bf81917042f63ee21ce"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/147_DistantGrass_73.asset",
+          "sha256": "b78272a721b26c9f8005413b6237fcca32eda6cb2f00790f0a06a27c3399f5c3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/148_NearGrass_74.asset",
+          "sha256": "2f039ff7e0da8ff56dd38b02b4ef8735cab8cb32e4f3ab4fbeb29191e9dd80c7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/149_DistantGrass_74.asset",
+          "sha256": "d690ba07d772b4203e8b15369eaa4d6cce7ecb0a3cbdc4b2f26814d2e93df81f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/150_NearGrass_75.asset",
+          "sha256": "9ce449011e243723c52097f492e6c7302e1dde1319cfcfc1b69f7506133caef9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/151_DistantGrass_75.asset",
+          "sha256": "00a137a6dba84380a7e772156d4398ba91eadad5bb4bb4b02e28719c4543128b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/152_NearGrass_76.asset",
+          "sha256": "759129e9541ba95eb7bc5098bd6012cda447aadebbd9de6ae5e979369e64a65c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/153_DistantGrass_76.asset",
+          "sha256": "b419edb78a0564b7404d0385211ef24c9c8b832e99231a3d7a5568a8771e76dd"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/154_NearGrass_77.asset",
+          "sha256": "d20dabbf7333784a85b68b29eeb9c5280124bc863de85fad46bc8849cd877948"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/155_DistantGrass_77.asset",
+          "sha256": "5d99dd0faf917be6870ff596d0fc749d4a00c3a9ccf46b41d8873a034cefbdaa"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/156_NearGrass_78.asset",
+          "sha256": "400720754eec4796590881d98cc356e366fe3255f0b2f8cdfa116ec40cc8b8c7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/157_DistantGrass_78.asset",
+          "sha256": "6d358b149f0c7601ab5b2d7ea3f6e89d063a780bf01031bdb0474e075da35311"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/158_NearGrass_79.asset",
+          "sha256": "de8ea934e4658884520ec04e5438357677ec8efe4aadccf5a27e42516fbd47fb"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/159_DistantGrass_79.asset",
+          "sha256": "cae230d4b01311776b6798907de62b5aeea4a724c8d454e84d3b609da965673f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/160_NearGrass_80.asset",
+          "sha256": "b8fc72e204d3b44986251b51de9ece29667ca1b430fedc2bc84fbe03be7ce489"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/161_DistantGrass_80.asset",
+          "sha256": "46d7f63f0eb9b143035380a0d239b7bffe930f05c2d12bef9fb995b49a4f9e76"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/162_NearGrass_81.asset",
+          "sha256": "5103480c3700fcc1ba8fa1450447b89a34efd1bb7ad276f8ca7458878826ebac"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/163_DistantGrass_81.asset",
+          "sha256": "3e55229641f8325ab3ebffa40ae5bf6ab753a278651c2c846add877dc21296f5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/164_NearGrass_82.asset",
+          "sha256": "5e64d602f20f2d157ed6636b67ee4792557232e1ff260520f4d7cd29be1d4c26"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/165_DistantGrass_82.asset",
+          "sha256": "a2e72acf75833fa6be542508ae675f61e6091ea7ae3d83fdfb8ad0cf042cdad6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/166_NearGrass_83.asset",
+          "sha256": "6ba864a4576bee65ec164e5da5825acf2eaf75482ea98c114ef1787e40e20230"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/167_DistantGrass_83.asset",
+          "sha256": "e0f20969f2672bc8dcdc2b881924afaf287fbf2b96d2ad229b88a90928f070bf"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/168_NearGrass_84.asset",
+          "sha256": "baebf744210c78b3b3aa345d8b6e91f4a64f3c3f3d77a4f5031a8777ce03021e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/169_DistantGrass_84.asset",
+          "sha256": "cfe5bcf13902df87eff759106f0813438453fc92a756aeddcfe9734d266c2f00"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/170_NearGrass_85.asset",
+          "sha256": "17a930c015b17f1ff287cc4bd8ea9b2113b8e032b65b0ed68f6e6f6172787be3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/171_DistantGrass_85.asset",
+          "sha256": "f2264798a202d5b02f9747f88bca8177d2e0234284ab2c5fb6ba288c254795f8"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/172_NearGrass_86.asset",
+          "sha256": "e51725813b5b88f2f27982f6d167b9fef2e03dd43f90d0896519a51e9066b475"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/173_DistantGrass_86.asset",
+          "sha256": "b8819d701f51d1a2105baad1eddac2b2694f3d98fbf85f0284f3a55f8fdb0b48"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/174_NearGrass_87.asset",
+          "sha256": "f3437093555310dad1c36c111e268887dd81357f19ccd51763d37b517603241d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/175_DistantGrass_87.asset",
+          "sha256": "6b048434ebb6be830608b5995141bccfc8f37fcbe41c80581f2435d8e3bcbc48"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/176_NearGrass_88.asset",
+          "sha256": "abb7c9fa4837cf5e9e8c920e0d3d459eac439ede80154c3facecb077b40ae706"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/177_DistantGrass_88.asset",
+          "sha256": "d67bb93646e7cd34c175decc434173745f77dcf5625f2b1f0cb1f16d8d5f7076"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/178_NearGrass_89.asset",
+          "sha256": "6d0cc41188c8cfd9e45356ea02b5027bd2a74c4428ec073006e80d0d2a3f3952"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/179_DistantGrass_89.asset",
+          "sha256": "3d599b8b05fe550681684110b5e18b29c5a5107f17e02dfb53329a30b23b1c68"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/180_NearGrass_90.asset",
+          "sha256": "2b3b1b4aa46f84ec0358310b0356371251d5964cb534a33c8ab2d100d6bb9e47"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/181_DistantGrass_90.asset",
+          "sha256": "220f0864aafee4daa5b52127c69efed2a86d5471d78a57909d8b23e2bc7c9cc6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/182_NearGrass_91.asset",
+          "sha256": "6cc1a1aa9a43c5106159121c14a054366deaecd7f125a3e63477e2ec5c5b7ab2"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/183_DistantGrass_91.asset",
+          "sha256": "1b2e667aff54df921f75d6bc70c96d13b27eb15420eee3bd425799d4e325e4f1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/184_NearGrass_92.asset",
+          "sha256": "6770a183038bd14fad2bf927706078393b21d7fef1b6a8bcda7b5d582a07527b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/185_DistantGrass_92.asset",
+          "sha256": "52605008c69764a32c14a8fed98bf47fc25c6404c8630a89ed8f0510fdaa2f42"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/186_NearGrass_93.asset",
+          "sha256": "24ef0e9f2358dcbf814491f10292fc429769047c198536d2653c655d868699a6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/187_DistantGrass_93.asset",
+          "sha256": "a14e5ee5329f42023e70889d3d89a0b9759a5ba98144a685e1bb118f3ed91fbe"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/188_NearGrass_94.asset",
+          "sha256": "a7157322b09eba80cafd3ddfe65564114935f43a81b60c5c10ae887a2905a0b5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/189_DistantGrass_94.asset",
+          "sha256": "2ba1392a5357caa26ea5f2abeedf69d51d2ea1c0b93ad2d056c4182402b81a73"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/190_NearGrass_95.asset",
+          "sha256": "fc3f52177cc2503221d287c7d8aa76e899cf75563bc5b6d678c2aba231d6038f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/191_DistantGrass_95.asset",
+          "sha256": "93769db64a8b4f7b58f9a54167dddf12b5f66428e9b48925cc3ee2afc8b76a5c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/192_NearGrass_96.asset",
+          "sha256": "a821a412ff917af9f8c4bfc49bd8d4f5d30fc3d2ac2838d9ed888309ccee3c25"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/193_DistantGrass_96.asset",
+          "sha256": "9e34ad3dc71a86ef2251b00ef51d19c779c97685c132bbb84da6b91ed906397e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/194_NearGrass_97.asset",
+          "sha256": "4e734f5db216065fa7d29edbc8388945e69f0e38a7595331e0d9a981851919b9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/195_DistantGrass_97.asset",
+          "sha256": "d2a9ab17ebcadc85153583b5ad6532a09e7d839aebc1639d6b14f417cc7eb856"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/196_NearGrass_98.asset",
+          "sha256": "274c63846ed9f283ebe70eb220ea4b77cd3b9b3f57340691cd7acae346de52c6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/197_DistantGrass_98.asset",
+          "sha256": "d7f85e316bb0ed7d2e0e7d8e0997004d9ca9c76d9b1e9c14f05ab8dc8c752aa7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/198_NearGrass_99.asset",
+          "sha256": "a660d61275539952c1e6d04e163e6f4c63aae00865f9a5819a777b0e94dfe9f7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/199_DistantGrass_99.asset",
+          "sha256": "2464b449e724abfed4850f7c5bc869fd0c50376f7ad3afe2c39f6259b7c58aa2"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/200_NearGrass_100.asset",
+          "sha256": "e6be683a37d348a089f040aeb4c1b5dbcb2213481f7f2c0d68b3ed41cd03f8c9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/201_DistantGrass_100.asset",
+          "sha256": "66c767b3583d4e19e22865277d95b2e3742df9259a56b498221a016540efaf9c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/202_NearGrass_101.asset",
+          "sha256": "994a5831c8e9e1c0f82a6e59c5563b8bf18df608163d44587813c2a0f64f1245"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/203_DistantGrass_101.asset",
+          "sha256": "933c5fc961d8427c5b817c2a397fef61ffe6e8817a4652cde63c075468c0caa7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/204_NearGrass_102.asset",
+          "sha256": "3b6f66277c588e6be1137a0bb3a56fec3b3bf8743ed62a14da193ca8ba9177dc"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/205_DistantGrass_102.asset",
+          "sha256": "33a96ad1c4eccdb6b3fa189a4960137db4527b5aca548b35e4f85a2c20d2042a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/206_NearGrass_103.asset",
+          "sha256": "07e88d7da8bb3ebd09456b09a20863ddadf1ceec9bc461d5fc81930a347108ea"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/207_DistantGrass_103.asset",
+          "sha256": "a4e341d0c42f213603b64eb19767266674388d7c9b629b1fa70ca4f4ea972b5e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/208_NearGrass_104.asset",
+          "sha256": "1aec90dfa90e19f0c2ad871e6d7e1e50a9e6353b4478ca9035253362eb875b0c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/209_DistantGrass_104.asset",
+          "sha256": "e7bd87d6c927d4c53e570d89b1f28bb943d3a1986ec0c52be455ecd49653de13"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/210_NearGrass_105.asset",
+          "sha256": "81b6660d61d64e1baf1ad95a20e6d3e9f39f3a747ed4a6038d30f17756b423b9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/211_DistantGrass_105.asset",
+          "sha256": "af1ae69e30d71be55b71904d3803b52b831a8240d19f3a2c184c2758929d54a8"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/212_NearGrass_106.asset",
+          "sha256": "e48d2aa5f1ae2b70fc337e5070b0e429282ba47bcbb1e88fda99706b28876ae9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/213_DistantGrass_106.asset",
+          "sha256": "44d93c5cf8960b70b99a7c38512727b6a84669313601b02bb34912e08d88e1e6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/214_NearGrass_107.asset",
+          "sha256": "8302e351f3c03f3ce4768307e9a881b8e6d6b92e8cb96809b043381f04e5624b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/215_DistantGrass_107.asset",
+          "sha256": "7f2373c71e249ef99f699f1bdd86df52d85a213583ec3a224c1a1160e7c44a49"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/216_NearGrass_108.asset",
+          "sha256": "74d32c247ad52a7d67ed14089e77c8f78b19c7b245192a19874e03c718a7f8c3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/217_DistantGrass_108.asset",
+          "sha256": "a51739c89cd83a1e96b7c594acd650f29768addeaf3a89a93ba56e44e4fc3993"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/218_NearGrass_109.asset",
+          "sha256": "7d31d033c5216ef9e092a30ff2c2d873de4717e6f118e1ad628325c6b8587e5a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/219_DistantGrass_109.asset",
+          "sha256": "68faf5903989f263e6097c9863e34968c8783c305d9423c3c1b1eab73fd9a3de"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/220_NearGrass_110.asset",
+          "sha256": "c8f39678936de147f32d1f9cae768e4b9f67e2ac2943c532aac96a24e03f67e3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/221_DistantGrass_110.asset",
+          "sha256": "95bd7c1f61c295c7a76aac1c7290e4aa5fb42c2746da34219cfc6bb490846c8f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/222_NearGrass_111.asset",
+          "sha256": "d9898a7d59cf53da7f50c56fa6aad7c0e339430526e2cfaaa0f95f71c32595ab"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/223_DistantGrass_111.asset",
+          "sha256": "dd173c3fc3f560034224342473f4e67a38dcc7c38ffdd062ce7f4e643a387b2b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/224_NearGrass_112.asset",
+          "sha256": "6df17663826d6f12cac15052dcd01668ade064112886a8f0303f59279dedf1a9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/225_DistantGrass_112.asset",
+          "sha256": "993b0ed11d30f37c5f52323347ad744682a5532219de1d7d387f39c814a2de01"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/226_NearGrass_113.asset",
+          "sha256": "15f64b954c29acbec25f3311ca12d433df7c79c0e01f5323dbcaef662b6fda3d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/227_DistantGrass_113.asset",
+          "sha256": "7d460468c9435f20001eb3d2b36fa696a3a3f3e6027b09a54ba6ee2a64393641"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/228_NearGrass_114.asset",
+          "sha256": "71a749a7715b8ffbc9860d4dcc80ca261a006fd3c90295fe6d3b5886fd5bc6fd"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/229_DistantGrass_114.asset",
+          "sha256": "f08e06b6ab242529aa50a3a93b31c75624d3b71b0b342fd40141b8dca661552b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/230_NearGrass_115.asset",
+          "sha256": "19ae32557a9798989f5d6963c6c150c162528d423bd3d5e27fb212301dc173b6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/231_DistantGrass_115.asset",
+          "sha256": "0e25a94ecba850be29b9a11962c554e3e87356fd0e18ec2fbf4ce36356909ea9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/232_NearGrass_116.asset",
+          "sha256": "52484bf313b09b1ea295531fe8a6442a428892d3686846b8cad53d1eeef9f17d"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/233_DistantGrass_116.asset",
+          "sha256": "68c71b8dce3a078b72782a96fddda5bc1747884877b16a5d0d3cd221d6a068a7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/234_NearGrass_117.asset",
+          "sha256": "18248e1b1591ca54d17f7df48c4f9d636dbc9cccf1ff7eecd88dc804859a1e6f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/235_DistantGrass_117.asset",
+          "sha256": "fec054e769dff36c0beb10dc270594637a2d45199519c5d9e65e0180f7337ea1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/236_NearGrass_118.asset",
+          "sha256": "02b8d7a6e5df7fb780ed1fa6adb3abe73f847e9d5585a00d2971a6f553299d3c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/237_DistantGrass_118.asset",
+          "sha256": "d2307ec728525adf0ec751f948580ddeef4273838030f348c17a8af7b32b6f68"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/238_NearGrass_119.asset",
+          "sha256": "9a553960d422016a32ba3163a76cf814682e15bfd8365390c0ec85b0a2b958be"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/239_DistantGrass_119.asset",
+          "sha256": "081e992b7896d0ee6c5a2048e5f09e234e8964d0293e88e8aab02a178c6d6ee8"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/240_NearGrass_120.asset",
+          "sha256": "b379fba1f1228c3e5bd465c981a461e4a3b941c1037708338bbde203acbce57e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/241_DistantGrass_120.asset",
+          "sha256": "a61861c1cc491887efee2e9395d45434a9220d9b8960d8926286586151b7c2b5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/242_NearGrass_121.asset",
+          "sha256": "b20c0a71a60a23084055b42ab49a67b06cc7c6e6ef2025607663d226a8d9f2e1"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/243_DistantGrass_121.asset",
+          "sha256": "1f62a5c86fe98977355056e5f05a14036d06d86b45b5a1839800159906919769"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/244_NearGrass_122.asset",
+          "sha256": "34f420c59a21a66fa34f86d978e2dce5fe534ee72947fb4d285d492f2a65725f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/245_DistantGrass_122.asset",
+          "sha256": "6d449832fe4fca39f0128738327ec48136ae8d473c9ed35c8bc5a08701cd6231"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/246_NearGrass_123.asset",
+          "sha256": "3bb715b64343e9e802d8d203d5d7a6d48c7faf03195953627b8fea81b0542316"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/247_DistantGrass_123.asset",
+          "sha256": "c12f18c1cdbe4e0f60dd052ab0ab8ba5647438e252d3fac16c1d7a063642f492"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/248_NearGrass_124.asset",
+          "sha256": "59f2b49f75129e0109da720f20f0d8349523fbb3b77a1e20b7595103b20f324b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/249_DistantGrass_124.asset",
+          "sha256": "d7a4ddcbce9908e8c622a2ce51c6d2bef5fa29dd8a50c39eafaa00176904a64c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/250_NearGrass_125.asset",
+          "sha256": "ab34ff743cbf7d8132750d4ac73830fe6ebf8d7423a8e260da2b9369a20ac95b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/251_DistantGrass_125.asset",
+          "sha256": "a95ae8076bd1bfd60ab8de9a2add771f1fef4d4ba5c778aa8d98c02a9167eee7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/252_NearGrass_126.asset",
+          "sha256": "7b13812ed21964ebbf304a2cd853875f5479fbb5f09e55c90ee5fd7d37abf3c7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/253_DistantGrass_126.asset",
+          "sha256": "d4214c40198592b32b62bdfe5dc105b4be3526fda0a687f01038dfb6c4b50a13"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/254_NearGrass_127.asset",
+          "sha256": "75ba3e8d12c919c55ef098d2a49f48f564d5443be24384c088960d8411fbd5eb"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/255_DistantGrass_127.asset",
+          "sha256": "fcdff65819b6d831cdf87328e4386eb1eab03ff44ccdbd11b0be13d8c3460f87"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/256_NearGrass_128.asset",
+          "sha256": "66b75017518d316fe3487af09fafe2875cf0e87fa231d71235c3fa362ecda366"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/257_DistantGrass_128.asset",
+          "sha256": "db509d22aeb575b5bef119ebb5555931bdb8a82c6a23d7d47e36f5f39080b02f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/258_NearGrass_129.asset",
+          "sha256": "c55d07208daaf8aed8edad2213677d250aae5ab44b1ee4963fcb96828dc98cc9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/259_DistantGrass_129.asset",
+          "sha256": "9838c6697752ddd307e75a79da87e1e52f2e4d282f77a189926892e6d4b67570"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/260_NearGrass_130.asset",
+          "sha256": "2017621bcaae9d7e45e888e6fd5ede81c935e75995af0c556f9f83e78a62c0a7"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/261_DistantGrass_130.asset",
+          "sha256": "c8b20c534d6fdfe673067f45734e82d5a33008cf1b50556a4810c0846a23f537"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/262_NearGrass_131.asset",
+          "sha256": "a9dc5fb03810a307d04ec974b1e87fb56a5ff7910785522d783f83943b9a9b18"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/263_DistantGrass_131.asset",
+          "sha256": "e1ff3f25ddebc7e033243c693c2e3d3c1e97b74b6712d0790dcf36382ac9090b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/264_NearGrass_132.asset",
+          "sha256": "0e64c9c577db1529c1847b355a3529bc774e7dd9f9f6501b3fa24922d92c1a5a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/265_DistantGrass_132.asset",
+          "sha256": "e8fc082b800282f03d0ff1cbbac43f3a68a7a7a82535668235f6002abf946dbc"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/266_NearGrass_133.asset",
+          "sha256": "637d800646f73d2ae8926a73e7d9a14e19e6979f2deb4b31c5ca6bbed5d6b496"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/267_DistantGrass_133.asset",
+          "sha256": "44c765b93b3ba5259fbbb2ffc506dec612f77aa6436a7051c8b8baff335649b3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/268_NearGrass_134.asset",
+          "sha256": "af80995624cddbe465582f08df96a9339d9753a7499b7fccaae72d2d0465706c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/269_DistantGrass_134.asset",
+          "sha256": "d456c630fce4fec27afd5856be0995bb28dc2492c1d638585fc0628606749e75"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/270_NearGrass_135.asset",
+          "sha256": "45e5bafb7bd637f3b55cd70d77a80c77a4d85ea0d48e5e323907c4d8808645da"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/271_DistantGrass_135.asset",
+          "sha256": "41cf6a6ea9618b2c72e7fa60f555cb1dd52b5ff9132577d6edd077bdeeb15ef6"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/272_NearGrass_136.asset",
+          "sha256": "ea71cd49bd66cf6df536bc83829a328c46270137c86535d73b22cbe25cbd615b"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/273_DistantGrass_136.asset",
+          "sha256": "0d37214c64fde9e4f638b5039296100516a020b4e3bd78ad15aa54e3161cc699"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/274_NearGrass_137.asset",
+          "sha256": "17335900a36f9451c356938078bed2aac16b71e1595c83220b0e1f4157652bc3"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/275_DistantGrass_137.asset",
+          "sha256": "a090703ef77d971090abe48e18eec590e1f4bdce41cab8c9c563db6bfc26eff4"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/276_NearGrass_138.asset",
+          "sha256": "2ec3b0c63d2e4453e0c103031f5d6d9def6cda7995625022df0f5a87c2982e4a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/277_DistantGrass_138.asset",
+          "sha256": "a3e311e706e2dd98f540ac3ca42ddbfc3503641d104e49a5502f0b80686c0eef"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/278_NearGrass_139.asset",
+          "sha256": "73f46893e932446c29851a14dcc98e4fe9ab98666983f5a7af474efb5539797a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/279_DistantGrass_139.asset",
+          "sha256": "850a25785a419ef3e7befbbef0169ab3ed0950edfb05bc33cb5ff202d341fdfe"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/280_NearGrass_140.asset",
+          "sha256": "4cd3d0c86a2aedf5579777ca3ea7012e897f2841e671a790244f732234942b12"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/281_DistantGrass_140.asset",
+          "sha256": "b9f99553eb4dfce8adf66d2c43131da13a3681ef46c9ab0fcd98b44b6544d254"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_0.asset",
+          "sha256": "c7e3b923f8651975d9de0ed89d3106fa15e847a4f4cedbdec9b483403f402c5f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_1.asset",
+          "sha256": "38f85a28e92c727233ab723eb272b6c27c4d8ac9ddb6ddb94732a4feceead81e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_2.asset",
+          "sha256": "72406c5a052ba948f94c8e14d15f8ce4904dd665bd49108ae9a45e591226548f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_3.asset",
+          "sha256": "fa027ecf2cf7760e704007a238f24a1bc9668caa3f39dd4b59dd812ddf216911"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_4.asset",
+          "sha256": "20bf822edbd1808da4b6dfbdcefe13693134e7e0a627cd6bb860dafcf21bc7c9"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_5.asset",
+          "sha256": "c636e6187a30c578d454e531662cd12b73a986df8ece2773afd29b19863cd0d5"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/MetricGrassSurface_6.asset",
+          "sha256": "e2470492e5b5f822cbe4ad193e6197b272bf8c25492ed168135cec77dc910d29"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/Tuft_0.asset",
+          "sha256": "3bdc83eb21a1af5d97e762eefed0b264e01eff2a3dec4d4b20521375ce8f6c4c"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/Tuft_1.asset",
+          "sha256": "f0db0e7b88d7df883a8be696fd929e69107ccf20d07d49c123042f7dd016bd18"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Meshes/Tuft_2.asset",
+          "sha256": "3c7b9e69fd954b549e4cd56069254e37770d379c022358b44a5f0b9efb73e504"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Placement.json",
+          "sha256": "4b609cecdf42d1a0f181279d5ab8edab816b0c4cac1fe5abe3ac2222214682de"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Prefabs/MeadowGrassTuft.prefab",
+          "sha256": "4f935b1660e695301b2019a35013d153bdb4b57aa8e84b8be4907cf4dca2719f"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Prefabs/ShortGrassTuft.prefab",
+          "sha256": "bc5d81ded056155d6cdfb41a50facca72d61e8aaa37fc69d3ced2e14117a856e"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Prefabs/TallGrassTuft.prefab",
+          "sha256": "4693df9aa8b86998f215a51f97e6838e3981dc8c6f4a8b19f48e3d2d15a35e82"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Previews/Grass.png",
+          "sha256": "82c83a4ec991c20fd5225a36ecba5d14608345cbbc6aa6293cbaa4f3c719fb34"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Textures/Lawn_MetalSmooth.png",
+          "sha256": "1542a6884b1c3804a7e2e4c98e91fc968e42ddb5173e054ea27ae4923877d51a"
+        },
+        {
+          "path": "Assets/Art/OpenWorld/SunnyGrass20261108/Verification.txt",
+          "sha256": "6f658073ce4153a1c66a3aacaa7d79046a1e3b8dc713fbce77338fb430ba2d15"
+        },
+        {
+          "path": "Assets/Scenes/OpenWorldSunnyExpansion.unity",
+          "sha256": "0fd80738d965705763105ca48763f2e8eea28032d535bd69475497e8bb7db159"
+        },
+        {
+          "path": "Assets/StudioArtPack/Editor/OpenWorldGrassStorageVerifier.cs",
+          "sha256": "da6ea78fd576cd0c9694d80b669a38953f68490c5e542ed292013fec220e9bdd"
+        },
+        {
+          "path": "Assets/StudioArtPack/Editor/OpenWorldSunnyGrassBuilder.cs",
+          "sha256": "bf6f0310ab072ac9e5aedfd035e17f0b07895f41da7ea272aaf05dcaec250c24"
+        }
+      ],
+      "protectedFileAudit": {
+        "filesUnchanged": 1534,
+        "scope": "Compared SHA-256 against pre-grass snapshot. Existing art, source textures, flower meshes/prefabs, paired metadata/GUIDs, scripts, other scenes and ProjectSettings remain unchanged. Current expansion scene and refreshed capture/evidence files are intentional edits."
+      },
+      "meshStorage": {
+        "manifest": "Assets/Art/OpenWorld/SunnyGrass20261108/MeshStorage.json",
+        "sha256": "9370e09a02ff9bdd37cc065562335893625583a44fcf2d45d1662ee336a9e850",
+        "beforeBytes": 1022423122,
+        "afterBytes": 401050878,
+        "method": "Remove only unreferenced vertices introduced by combining material submeshes. Compare every triangle corner position, normal, tangent, UV, color, material slot and bounds before/after reimport. GUIDs and local file IDs are unchanged. No triangle removal, simplification or visible geometry change; existing captures remain valid. Native text serialization and project settings remain unchanged."
+      }
+    },
+    "original_geometry": "Deterministic native C# ribbon geometry. No generated raster images or downloaded grass model. Actual double-sided blades supplement the CC0 surface; four original flower species retain separate provenance.",
+    "creative_specification": "Author original narrow, gently curved, tapered grass blades as three reusable short/medium/tall tuft meshes. Each tuft has 24 blades in an irregular 0.5-metre radius, three bend segments, 0.012-0.030-metre blade widths, ground-level roots, and three natural green tones. Heights vary around 0.18, 0.30 and 0.46 metres. Double-sided triangle geometry has no alpha texture, animation, scripts or collision. Scatter deterministically on verified grass support only, outside paths, mulched beds, crops, buildings and solid scenery; combine by 16-metre spatial cells and provide a sparse static distant LOD. Ground uses an unmodified separately credited CC0 PBR lawn surface at project-chosen 2-metre tiling. Preserve all original sources and scene GUIDs.",
+    "evidence_scope": "Photographic-style PBR ground plus original native 3D grass blades. Provider describes Procedural with Bitmap Elements; not a photogrammetry claim. Static appearance and spatial LOD inventories are not runtime performance acceptance."
+  },
+  "license_note": "The CC0 art sources do not change existing restrictions on the mixed music development bundle. Project-relative source paths identify local evidence and are not public download links. Website/media/provenance.json separately records WebP/share preparation."
 }

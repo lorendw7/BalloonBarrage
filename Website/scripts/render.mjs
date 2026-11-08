@@ -2,7 +2,7 @@ import { languages, strings } from "../src/strings.mjs";
 import { repositoryUrl } from "./releases.mjs";
 import { worldStrings } from "../src/world-strings.mjs";
 import { sunnyStrings } from "../src/sunny-strings.mjs";
-import { sunnyFigure, sunnyMetrics, sunnyDistricts, sunnySource, sunnyEvidence } from "./render-sunny.mjs";
+import { sunnyFigure, sunnyMetrics, sunnyDistricts, sunnySource, sunnyEvidence, sunnyFlowers, sunnyGrass } from "./render-sunny.mjs";
 
 export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
@@ -48,10 +48,11 @@ export function renderPage(template, locale, release, staticFiles = {}, page = "
     sunnyMetrics: sunnyMetrics(locale), sunnyPlacesTitle:e(sunny.placesTitle), sunnyPlacesIntro:e(sunny.placesIntro),
     sunnyDistricts: sunnyDistricts(locale,base,{compact:true}), sunnyMapLink:e(sunny.mapLink),
     sunnySource: sunnySource(locale,base), sunnyEvidence: sunnyEvidence(locale),
+    sunnyFlowers: sunnyGrass(locale,base)+sunnyFlowers(locale,base),
     sunnyLatestTitle:e(sunny.latestTitle), sunnyLatestBody:e(sunny.latestBody),
     sunnyGalleryIntro: `<section class="section sunny-gallery-intro"><p class="eyebrow">${e(sunny.tag)}</p><h2>${e(sunny.artTitle)}</h2><p>${e(sunny.artIntro)}</p></section>`,
-    sunnyGallery: `<section class="section sunny-gallery">${sunnyDistricts(locale,base)}${sunnySource(locale,base)}</section>`,
-    sunnyUpdateFigure: sunnyFigure(locale,base,"bridge",sunny.bridgeAlt,sunny.bridgeTitle),
+    sunnyGallery: `<section class="section sunny-gallery">${sunnyGrass(locale,base)}${sunnyFlowers(locale,base)}${sunnyDistricts(locale,base)}${sunnySource(locale,base)}</section>`,
+    sunnyUpdateFigure: sunnyFigure(locale,base,"grass",sunny.grassAlt,sunny.grassTitle),
     description: e(text.description),
     title: e(page ? `${headings[page]} | BalloonBarrage` : text.title), pageHeading: e(headings[page] ?? text.title), pageClass: page ? "site-detail" : "site-home",
     gameUrl: `${home}game/`, updatesUrl: `${home}updates/`, artUrl: `${home}art/`,
@@ -60,7 +61,7 @@ export function renderPage(template, locale, release, staticFiles = {}, page = "
     audienceCheerFile: e(staticFiles["audience-cheer.mp3"] ?? "audience-cheer.mp3"),
     canonicalUrl, shareImageUrl: `${siteUrl}assets/${page === "game" ? "festival-share-20261029.jpg" : "sunny-share-20261108.jpg"}`,
     shareImageAlt:e(page === "game" ? text.prototypeAlt : sunny.overviewAlt),
-    preloadImage:`${base}assets/${page === "game" ? "festival-response-20261029.webp" : page === "updates" ? "sunny-bridge-20261108.webp" : page === "art" ? "sunny-market-20261108.webp" : "sunny-overview-20261108.webp"}`,
+    preloadImage:`${base}assets/${page === "game" ? "festival-response-20261029.webp" : page === "updates" || page === "art" ? "sunny-grass-20261108.webp" : "sunny-overview-20261108.webp"}`,
     heroReleaseStatus: e(heroReleaseStatus) };
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     if (key in special) return special[key];

@@ -505,3 +505,18 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
   .sunny-hero-art figcaption { padding-bottom: 2rem; }
 }
 @media (prefers-reduced-motion: reduce) { .sunny-figure img { transition: none; } }
+
+/* Close-up planting study: source models stay distinct from texture artwork. */
+.sunny-flowers { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); align-items: center; gap: clamp(1.5rem,3vw,3rem); margin-block: 2rem 3rem; padding: clamp(1.2rem,2.4vw,2rem); background: #edf5df; border-radius: 1.4rem; }
+.sunny-flowers .sunny-figure .art-open { border-radius: .8rem; }
+.sunny-flowers-copy .eyebrow { color: #45672f; font-size: .7rem; font-weight: 750; }
+.sunny-flowers-copy h2 { margin-block: .7rem 1rem; font-size: clamp(1.5rem,2.3vw,2.2rem); }
+.sunny-flowers-copy > p:not(.eyebrow) { color: var(--muted); font-size: .9rem; }
+.sunny-flowers-copy > p.small { font-size: .74rem; }
+.sunny-flower-types { padding: 0; margin: 1.3rem 0; display: flex; flex-wrap: wrap; gap: .65rem 1.1rem; list-style: none; }
+.sunny-flower-types li { display: flex; align-items: center; gap: .45rem; font-size: .78rem; font-weight: 650; }
+.sunny-flower-dot { width: .85rem; height: .85rem; border-radius: 50%; background: #fffef4; border: 1px solid #b6bd97; }
+.sunny-flower-dot-1 { background: #ff7759; border-color: #c96049; }
+.sunny-flower-dot-2 { background: #7b8ee8; border-color: #6678c6; }
+.sunny-flower-dot-3 { background: #ffd34e; border-color: #c3a236; }
+@media (max-width: 850px) { .sunny-flowers { grid-template-columns: 1fr; gap: 1rem; } }

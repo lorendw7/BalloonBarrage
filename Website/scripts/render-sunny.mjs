@@ -19,6 +19,14 @@ export function sunnyPalette(locale) {
   const t=sunnyStrings[locale];
   return `<div class="sunny-palette">${["#65AF50","#27A3B8","#FF7759","#FFD34E","#FFF2CE","#4E9FE8"].map((color,i)=>`<div><span style="--swatch:${color}" aria-hidden="true"></span><strong>${e(t.colors[i])}</strong><code>${color}</code></div>`).join("")}</div>`;
 }
+export function sunnyFlowers(locale,base) {
+  const t=sunnyStrings[locale];
+  return `<section class="sunny-flowers" aria-labelledby="sunny-flowers-title">${sunnyFigure(locale,base,"flowers",t.flowerAlt,t.flowerTitle)}<div class="sunny-flowers-copy"><p class="eyebrow">BOTANICAL DETAIL / 3D</p><h2 id="sunny-flowers-title">${e(t.flowerTitle)}</h2><p>${e(t.flowerIntro)}</p><ul class="sunny-flower-types">${t.flowerTypes.map((name,i)=>`<li><span class="sunny-flower-dot sunny-flower-dot-${i}" aria-hidden="true"></span>${e(name)}</li>`).join("")}</ul><p class="small">${e(t.flowerScope)}</p></div></section>`;
+}
+export function sunnyGrass(locale,base) {
+  const t=sunnyStrings[locale];
+  return `<section class="sunny-flowers sunny-grass" aria-labelledby="sunny-grass-title">${sunnyFigure(locale,base,"grass",t.grassAlt,t.grassTitle)}<div class="sunny-flowers-copy"><p class="eyebrow">GROUND / TEXTURE / GRASS</p><h2 id="sunny-grass-title">${e(t.grassTitle)}</h2><p>${e(t.grassIntro)}</p><p class="sunny-source-links"><a href="https://ambientcg.com/view?id=Grass005">${e(t.grassSourceLink)} ↗</a><a href="${base}assets/ambientcg-grass-CC0.txt">CC0 · License</a></p><p class="small">${e(t.grassScope)}</p></div></section>`;
+}
 export function sunnyEvidence(locale) {
   const t=sunnyStrings[locale];
   return `<section class="sunny-evidence" aria-label="${e(t.evidenceTitle)}"><h2>${e(t.evidenceTitle)}</h2><div>${t.evidence.map(([label,body])=>`<article><h3>${e(label)}</h3><p>${e(body)}</p></article>`).join("")}</div></section>`;

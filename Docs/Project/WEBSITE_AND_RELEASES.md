@@ -6,7 +6,11 @@ The trilingual site leads with native views of the saved Sunny Coast environment
 
 There are ten topic pages per language (30 routes). The actual top-down capture replaces the earlier topology sketch and provides four numbered destination links. Native image dialogs work with keyboard focus restoration; ordinary image links remain usable without JavaScript. Shared content, language navigation, release discovery, source attribution and retirement checks remain intact.
 
-Seven complete PNG captures are copied byte-for-byte into `Website/media`, alongside bounded WebP derivatives and a separate social image. The website is independently deployable without publishing the local Unity art working tree. `sunny-provenance.json` records exact capture hashes, static area and route evidence, and the new CC0 source manifest; the original Kenney `License.txt` is also published. Public source buttons lead to these website assets and the official publisher.
+Nine complete PNG captures, including close-ups of flowers and grass, are copied byte-for-byte into `Website/media`, alongside bounded WebP derivatives and a separate social image. The website is independently deployable without publishing the local Unity art working tree. `sunny-provenance.json` records exact capture hashes, static area and route evidence, both expansion CC0 model manifests, the ambientCG grass-source manifest and the original flower/grass geometry provenance. The original Kenney `License.txt` and grass CC0 legal text are also published. Public source buttons lead to these website assets and the official publishers.
+
+The planting update adds shared grass and flower features to the home page and both art pages, and makes the grass close-up the lead image on Updates. Its translated copy distinguishes the two CC0 expansion subsets (16 + 20 models) from four original procedural 3D flower models: daisies, coral tulips, bluebells and sunflowers. The latter are native mesh geometry, not generated raster artwork or a flower-growth mechanic. Counts describe distinct source models, not scene placements. Earlier source and artwork records remain separate.
+
+Ground material uses ambientCG Grass005, which the provider describes as **Procedural with Bitmap Elements**. Website copy describes textured or photographic-style PBR turf, not photogrammetry. Original narrow 3D grass blades supplement that surface. The exact deterministic geometry specification and native scene record are included in public provenance; spatial LOD and geometry inventories do not establish frame-rate or wind-simulation acceptance. Grass textures and original blade meshes are separate from the 36 imported model count.
 
 Event promotion, form links, QR assets and survey routes remain retired. The build recreates only its known generated `Website/dist` directory, so stale files cannot survive a rebuild. Removed survey URLs return not found.
 
@@ -45,9 +49,11 @@ node Website/scripts/serve.mjs
 
 Preview at http://127.0.0.1:4173/. Add `--offline` to the build command when release lookup is unavailable. Offline/API-failure state is unknown, not evidence that no release exists. Generated `Website/dist` remains ignored.
 
-The 23 website checks cover translation structure, trusted platform-specific release selection, escaping, canonical/share metadata, media provenance, complete native capture copies, self-contained Sunny Coast publication assets, local links, content-addressed CSS/JS and preview path safety. They do not test Unity players or sustained browser performance. The November 8 offline build and all 23 checks passed.
+The 25 website checks cover translation structure, trusted platform-specific release selection, escaping, canonical/share metadata, media provenance, complete native capture copies, self-contained Sunny Coast publication assets, local links, content-addressed CSS/JS and preview path safety. The planting update additionally checks that CC0 model/grass inventories remain separate from original native geometry, preserve source technique/license text and identify the same final scene revision. They do not test Unity players or sustained browser performance. The November 8 grass-and-flower build produced 30 pages and 87 image assets; all 25 checks passed.
 
-Local browser inspection on November 8 covered the 1280 px desktop and 390 px mobile home page, with no horizontal overflow or broken loaded images. Mobile map links reached their matching destinations. The image dialog opened, closed with Escape and restored keyboard focus. Switching Chinese → English → Japanese preserved the map subpage. No browser console errors were observed. These checks verify the local website, separately from publication and Unity acceptance.
+The initial Sunny Coast browser inspection on November 8 covered the 1280 px desktop and 390 px mobile home page, with no horizontal overflow or broken loaded images. Mobile map links reached their matching destinations. The image dialog opened, closed with Escape and restored keyboard focus. Switching Chinese → English → Japanese preserved the map subpage. No browser console errors were observed. These checks verify that local website revision, separately from the later planting update, publication and Unity acceptance.
+
+The final grass-and-flower revision was also inspected at 1280 × 900 and 390 × 844. Its new grass feature fitted both layouts, all loaded image URLs resolved, and the native-image dialog opened and closed with Escape while restoring focus to the originating link. No console errors were observed. A subsequent online build resolved both existing Windows and macOS release entries as ready; this is website metadata verification, not platform playtesting.
 
 ## Website content and media
 
@@ -74,7 +80,7 @@ Chinese uses the root; Japanese and English use `/ja/` and `/en/`. Each page pre
 
 The current gameplay, mode/song selection and demonstration/response figures use the three native 3840 × 2160 PNGs in `Assets/Art/Previews/Festival20261029`, corresponding to demo.8 source. Their provenance identifies the natural-DSP automated Editor fixture and source commit; they are not recordings of the standalone player or human tests. The two-step guide explains noninteractive outlines followed by real balloons. Earlier captures remain version-labelled in the media archive.
 
-The gameplay page shows 2560 × 1440 quality-98 WebP derivatives, links to untouched 4K originals and retains `festival-share-20261029.jpg` as its 1200 × 675 share image. Other pages use `sunny-share-20261108.jpg`, fitting the complete native overview into 1200 × 675 with ivory side padding. Sunny Coast WebPs use quality 92; the seven outputs are each under 500 KB. Regenerate the studio media with:
+The gameplay page shows 2560 × 1440 quality-98 WebP derivatives, links to untouched 4K originals and retains `festival-share-20261029.jpg` as its 1200 × 675 share image. Other pages use `sunny-share-20261108.jpg`, fitting the complete native overview into 1200 × 675 with ivory side padding. Sunny Coast WebPs use quality 92, with a 500 KB per-image budget checked by the website suite. Regenerate the studio media with:
 
 ```powershell
 python Website/scripts/prepare-images.py --only festival-selection-20261029 festival-watch-20261029 festival-response-20261029
@@ -85,10 +91,11 @@ The corresponding provenance records are merged without rewriting unrelated deri
 Regenerate the coast media only after the native captures are finalized:
 
 ```powershell
-python Website/scripts/prepare-images.py --only sunny-overview-20261108 sunny-topdown-20261108 sunny-market-20261108 sunny-meadow-20261108 sunny-coral-bay-20261108 sunny-bridge-20261108 sunny-overlook-20261108
+python Website/scripts/refresh-sunny-provenance.py
+python Website/scripts/prepare-images.py --only sunny-overview-20261108 sunny-topdown-20261108 sunny-market-20261108 sunny-meadow-20261108 sunny-coral-bay-20261108 sunny-bridge-20261108 sunny-overlook-20261108 sunny-flowers-20261108 sunny-grass-20261108
 ```
 
-This copies complete PNG originals into the website, then updates their WebP/share derivatives and recorded hashes. The build uses these committed website files, not the local Unity scene. Update `Website/media/sunny-provenance.json` from the matching native manifest if a later capture set replaces them; do not combine measurements or hashes from different scene revisions.
+The provenance refresher requires matching scene/detail/grass hashes, checks native captures, original flower mesh/prefabs and grass-authoring source, and validates the raw CC0 model/grass inventories before replacing the website snapshot. Measurements and probe counts come from native evidence files. The media tool then copies complete PNG originals into the website and updates their WebP/share derivatives and recorded hashes. The build uses those committed website files, not the local Unity scene. Do not combine measurements or captures from different scene revisions.
 
 ## Verification after publication
 

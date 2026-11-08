@@ -44,7 +44,7 @@ export const worldStrings = {
     ],
     planTitle: "每一步，都有一个可以验证的问题。", planIntro: "更大的场景、明亮配色与素材已经准备好。先在副本里移动一朵花，熟悉场景；然后由学习者写一个小小的移动步骤，再一起检查。静态地图扩展仍属于 OW0，不代表开放世界已经可玩。",
     stages: [
-      ["OW0", "准备场景与路线", "已制作北岸小镇和明亮南岸扩展，导入16种CC0自然素材并保留来源；原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
+      ["OW0", "准备场景与路线", "已制作并细化北岸小镇和明亮南岸扩展，两批扩展共36种CC0场景模型，另有四种原创3D花卉；来源分别保留，原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
       ["OW1","走得舒服","独立第三人称灰盒，只做广场边缘、一条路和一个舞台。","观察：不迷路、视角舒适、相机不穿墙。"],
       ["OW2","走进一首歌","主动进入稳定舞台视角，复用一个现有歌曲配置，再退出。","检查：音乐时钟、输入切换、结算与重试清理。"],
       ["OW3a","认识一名小队成员","从预告一颗气球开始，逐步加入瞄准、抢球和恢复。","检查：命中唯一结算；玩家看得懂 AI 的意图。"],
@@ -68,7 +68,7 @@ export const worldStrings = {
     ],
     artNav: "美术方向",
     artTitle: "青绿海湾，珊瑚屋顶，金色布旗。",
-    artIntro: "新扩展已在 Unity 中制作：更明亮的草地、青绿水面、珊瑚色屋顶与奶油色道路，延续手作招牌、木舞台和布旗。新增 16 种 CC0 Kenney 自然素材，保留原始模型、授权与哈希记录。",
+    artIntro: "新扩展已在 Unity 中制作并细化：更明亮的草地、青绿水面、珊瑚色屋顶与奶油色道路，搭配更有层次的花境。两批 CC0 Kenney 场景模型共36种，另有四种原创程序化3D花卉；原始模型、授权与哈希分别记录。",
     artRules: [
       ["鲜明颜色，清楚的路线", "草地、屋顶、水面与花朵带来更鲜艳的色彩，奶油色路径留出安静区域。路牌和地标形状与颜色共同指路。"],
       ["原始素材与派生材质分开", "使用 Kenney CC0 模型和已有 Poly Haven 表面，调色写在独立 Unity 材质中。原始文件与授权记录保留，既有石材与木纹继续提供细节。"],
@@ -123,7 +123,7 @@ export const worldStrings = {
     ],
     planTitle: "One testable question at every step.", planIntro: "The larger scene, brighter palette and reusable assets are prepared. First move one flower in a practice copy; then let the learner write one small movement step and review it together. The static expansion remains OW0, not a playable open world.",
     stages: [
-      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved, with sixteen additional CC0 nature models and source records. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
+      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved and refined. Two batches provide 36 CC0 scenery models; four original 3D flowers have separate provenance. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
       ["OW1","Walk comfortably","A separate third-person graybox: plaza edge, one path, one stage.","Observe wayfinding, camera comfort and camera collision."],
       ["OW2","Walk into a song","Opt into a stable stage view, reuse one existing profile, then leave.","Verify music clock, input handoff, results and Retry cleanup."],
       ["OW3a","Meet one troupe member","Begin with one telegraphed balloon; add aiming, contesting and recovery.","Verify single-hit resolution and whether players understand the intent."],
@@ -147,7 +147,7 @@ export const worldStrings = {
     ],
     artNav: "Art direction",
     artTitle: "Turquoise bays. Coral roofs. Golden bunting.",
-    artIntro: "The expansion is built in Unity with brighter grass, turquoise water, coral roofs and warm ivory routes, retaining handmade signs, wooden stages and fabric flags. Sixteen additional CC0 Kenney nature models retain their original files, licenses and hashes.",
+    artIntro: "The Unity expansion combines brighter grass, turquoise water, coral roofs and ivory routes with more varied planting. Two CC0 Kenney scenery batches total 36 models; four original procedural 3D flowers have separate provenance. Original models, licenses and hashes are retained.",
     artRules: [
       ["Vivid color, readable routes", "Grass, roofs, water and flowers carry stronger color while ivory paths leave quiet space. Signs and landmark silhouettes work with color to explain the route."],
       ["Keep originals separate from prepared materials", "CC0 Kenney models and existing Poly Haven surfaces use separate Unity color treatments. Original files and source licenses remain intact; stone and wood textures retain surface detail."],
@@ -202,7 +202,7 @@ export const worldStrings = {
     ],
     planTitle: "一段階に、一つの確かめる問い。", planIntro: "広いシーン、明るい配色、再利用できる素材を準備しました。まず練習用コピーで花を一つ動かし、その後、学習者が小さな移動処理を書いて一緒に確認します。静的な拡張はOW0の準備で、遊べる街の完成ではありません。",
     stages: [
-      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸拡張を保存し、CC0自然モデル16種と出典を追加。画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
+      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸を保存し、植栽を細かく整えました。二回の拡張でCC0景観モデル計36種と、別途4種のオリジナル3D花モデルを用意。出典を分けて記録し、画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
       ["OW1","心地よく歩く","別の三人称グレーボックスで広場の端、道一本、舞台一つ。","観察：道のわかりやすさ、視点の快適さ、カメラの衝突。"],
       ["OW2","一曲へ入る","自分で安定した舞台視点へ入り、既存の曲設定一つを使って退出。","検証：音楽時計、入力切替、結果とリトライ時の後処理。"],
       ["OW3a","一体のメンバーに会う","風船一つの予告から、照準、取り合い、休止へ。","検証：命中の一意な処理と、相手の意図の伝わり方。"],
@@ -226,7 +226,7 @@ export const worldStrings = {
     ],
     artNav: "美術の方向性",
     artTitle: "青緑の湾、コーラルの屋根、金色の旗。",
-    artIntro: "Unityで新しい拡張を制作しました。明るい草地、青緑の水面、コーラルの屋根、アイボリーの道に、手作りの看板、木の舞台、布旗を組み合わせています。CC0のKenney自然素材16種を追加し、原本、許諾、ハッシュを保存しています。",
+    artIntro: "Unityの拡張シーンに、明るい草地、青緑の水面、コーラルの屋根、アイボリーの道と多彩な植栽を組み合わせました。二回の拡張でCC0のKenney景観モデル計36種、別途4種のオリジナル3D花モデルを用意し、原本、許諾、ハッシュを分けて保存しています。",
     artRules: [
       ["鮮やかな色、わかりやすい道", "草地、屋根、水面、花には鮮やかさを。アイボリーの道には落ち着いた空間を残します。案内板と目印の形も色と一緒に道を伝えます。"],
       ["原本と調整用マテリアルを分ける", "CC0のKenneyモデルと既存のPoly Haven表面を使い、配色は別のUnityマテリアルで調整。元ファイルと許諾は保持し、石や木の質感も残します。"],

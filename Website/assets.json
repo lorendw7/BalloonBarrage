@@ -330,5 +330,21 @@
   {
     "source": "Website/media/sunny-share-20261108.jpg",
     "output": "sunny-share-20261108.jpg"
+  },
+  {
+    "source": "Website/media/sunny-flowers-20261108.png",
+    "output": "sunny-flowers-20261108.png"
+  },
+  {
+    "source": "Website/media/sunny-flowers-20261108.webp",
+    "output": "sunny-flowers-20261108.webp"
+  },
+  {
+    "source": "Website/media/sunny-grass-20261108.png",
+    "output": "sunny-grass-20261108.png"
+  },
+  {
+    "source": "Website/media/sunny-grass-20261108.webp",
+    "output": "sunny-grass-20261108.webp"
   }
 ]
