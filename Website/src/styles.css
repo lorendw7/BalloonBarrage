@@ -530,3 +530,18 @@ kbd { font: inherit; font-size: .85em; padding: .1rem .5rem; border: 1px solid v
 .sunny-harbor-note a { display: inline-block; margin-top: .8rem; color: #076b72; font-weight: 700; font-size: .8rem; }
 .sunny-harbor-note > .small { background: #fff0ce; border-left: 3px solid #dca53b; padding: 1.2rem; align-self: start; font-size: .78rem; }
 @media (max-width: 700px) { .sunny-harbor-note { grid-template-columns: 1fr; gap: 1rem; } }
+
+.sunny-terrain { margin-block: 2rem 3rem; }
+.sunny-terrain > h3 { font-size: clamp(1.5rem,2.5vw,2rem); margin-bottom: .8rem; }
+.sunny-terrain > p { color: var(--muted); max-width: 75ch; font-size: .9rem; }
+.sunny-terrain-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; padding-block: 1.2rem; margin-block: 1rem 2rem; border-block: 1px solid var(--line); }
+.sunny-terrain-metrics > div { display: flex; flex-direction: column-reverse; gap: .3rem; }
+.sunny-terrain-metrics dt { font-size: .68rem; color: var(--muted); }
+.sunny-terrain-metrics dd { font-size: clamp(1.5rem,3vw,2.3rem); font-weight: 750; color: #086f77; }
+.sunny-terrain-views { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
+.sunny-terrain-views > article { min-width: 0; scroll-margin-top: 10rem; }
+.sunny-terrain-views h4 { font-size: 1.2rem; margin-block: .4rem .7rem; }
+.sunny-terrain-views article > p { font-size: .85rem; color: var(--muted); }
+.sunny-terrain-views article > .eyebrow { font-size: .63rem; font-weight: 700; margin-top: .7rem; }
+.sunny-terrain-views figcaption { font-size: .64rem; }
+@media (max-width: 850px) { .sunny-terrain-views { grid-template-columns: 1fr; gap: 2rem; } }

@@ -44,7 +44,7 @@ export const worldStrings = {
     ],
     planTitle: "每一步，都有一个可以验证的问题。", planIntro: "更大的场景、明亮配色与素材已经准备好。先在副本里移动一朵花，熟悉场景；然后由学习者写一个小小的移动步骤，再一起检查。静态地图扩展仍属于 OW0，不代表开放世界已经可玩。",
     stages: [
-      ["OW0", "准备场景与路线", "已制作并细化北岸小镇和明亮南岸扩展，港湾继续加入 CC0 建筑、表面细节和高低地形，另有四种原创 3D 花卉；来源分别保留，原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
+      ["OW0", "准备场景与路线", "已制作并细化北岸小镇和明亮南岸扩展，港湾使用 CC0 建筑，并继续细化自然起伏、曲线小径、掩体周围通路与房屋间巷道，另有四种原创 3D 花卉；来源分别保留，原生图片展示静态场景。", "下一步先编辑一朵花；静态几何验证不代表移动、相机或玩法通过。"],
       ["OW1","走得舒服","独立第三人称灰盒，只做广场边缘、一条路和一个舞台。","观察：不迷路、视角舒适、相机不穿墙。"],
       ["OW2","走进一首歌","主动进入稳定舞台视角，复用一个现有歌曲配置，再退出。","检查：音乐时钟、输入切换、结算与重试清理。"],
       ["OW3a","认识一名小队成员","从预告一颗气球开始，逐步加入瞄准、抢球和恢复。","检查：命中唯一结算；玩家看得懂 AI 的意图。"],
@@ -123,7 +123,7 @@ export const worldStrings = {
     ],
     planTitle: "One testable question at every step.", planIntro: "The larger scene, brighter palette and reusable assets are prepared. First move one flower in a practice copy; then let the learner write one small movement step and review it together. The static expansion remains OW0, not a playable open world.",
     stages: [
-      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved and refined. The western harbor adds CC0 buildings, surface detail and varied elevation; four original 3D flowers have separate provenance. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
+      ["OW0", "Prepare the scene and routes", "The northern town and bright southern expansion are saved and refined. The western harbor combines CC0 buildings with stronger natural contours, curved paths, passages around cover and building alleys; four original 3D flowers have separate provenance. Native images show static scenery.", "Next, edit one flower. Static geometry checks do not accept movement, cameras or gameplay."],
       ["OW1","Walk comfortably","A separate third-person graybox: plaza edge, one path, one stage.","Observe wayfinding, camera comfort and camera collision."],
       ["OW2","Walk into a song","Opt into a stable stage view, reuse one existing profile, then leave.","Verify music clock, input handoff, results and Retry cleanup."],
       ["OW3a","Meet one troupe member","Begin with one telegraphed balloon; add aiming, contesting and recovery.","Verify single-hit resolution and whether players understand the intent."],
@@ -202,7 +202,7 @@ export const worldStrings = {
     ],
     planTitle: "一段階に、一つの確かめる問い。", planIntro: "広いシーン、明るい配色、再利用できる素材を準備しました。まず練習用コピーで花を一つ動かし、その後、学習者が小さな移動処理を書いて一緒に確認します。静的な拡張はOW0の準備で、遊べる街の完成ではありません。",
     stages: [
-      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸を保存し、植栽を細かく整えました。西の港にCC0の建物、表面の細部、高低差を加え、別途4種のオリジナル3D花モデルも用意。出典を分けて記録し、画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
+      ["OW0", "シーンと道を準備する", "北岸の街と明るい南岸を保存し、植栽を細かく整えました。西の港ではCC0の建物に加え、自然な起伏、曲がる道、遮蔽物の回り道、建物の間の路地を整え、別途4種のオリジナル3D花モデルも用意。出典を分けて記録し、画像は静的な景色です。", "次は花を一つ編集。静的な形状確認は移動、カメラ、遊びの合格ではありません。"],
       ["OW1","心地よく歩く","別の三人称グレーボックスで広場の端、道一本、舞台一つ。","観察：道のわかりやすさ、視点の快適さ、カメラの衝突。"],
       ["OW2","一曲へ入る","自分で安定した舞台視点へ入り、既存の曲設定一つを使って退出。","検証：音楽時計、入力切替、結果とリトライ時の後処理。"],
       ["OW3a","一体のメンバーに会う","風船一つの予告から、照準、取り合い、休止へ。","検証：命中の一意な処理と、相手の意図の伝わり方。"],

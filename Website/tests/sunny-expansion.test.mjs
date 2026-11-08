@@ -39,7 +39,7 @@ test("published native captures are complete originals with matching provenance"
   assert.equal(m.total_land_m2,provenance.harbor_expansion.source_manifest.totalLandSquareMetres);
   assert.ok(Math.abs(m.total_land_ratio-m.total_land_m2/m.original_land_m2)<.00001);
   assert.match(provenance.evidence_scope,/Not gameplay/);
-  const views={Overview:"overview",TopDown:"topdown",Market:"market",Meadow:"meadow",CoralBay:"coral-bay",Bridge:"bridge",Overlook:"overlook",Flowers:"flowers",Grass:"grass",HarborOverview:"harbor-overview",HarborStreet:"harbor-street",Terrace:"terrace",GardenArena:"garden-arena",HarborBridge:"harbor-bridge"};
+  const views={Overview:"overview",TopDown:"topdown",Market:"market",Meadow:"meadow",CoralBay:"coral-bay",Bridge:"bridge",Overlook:"overlook",Flowers:"flowers",Grass:"grass",HarborOverview:"harbor-overview",HarborStreet:"harbor-street",Terrace:"terrace",GardenArena:"garden-arena",HarborBridge:"harbor-bridge",Ridgeline:"ridgeline",CourtyardAlley:"courtyard-alley",FlankingCover:"flanking-cover"};
   for(const capture of provenance.captures) {
     const originalName=capture.path.split("/").pop().replace(/\.png$/,"");
     const name=`sunny-${views[originalName]}-20261108.png`;
@@ -48,8 +48,8 @@ test("published native captures are complete originals with matching provenance"
     assert.deepEqual(await readFile(new URL(`dist/assets/${name}`,site)),bytes,name);
     assert.ok((await stat(new URL(`media/${name.replace(/\.png$/,".webp")}`,site))).size<500000,"Native scene thumbnails should remain below 500 KB");
   }
-  assert.equal(provenance.captures.length,14);
-  assert.equal(new Set(provenance.captures.map(c=>c.path.split("/").pop())).size,14);
+  assert.equal(provenance.captures.length,17);
+  assert.equal(new Set(provenance.captures.map(c=>c.path.split("/").pop())).size,17);
   for(const name of ["sunny-provenance.json","kenney-nature-license.txt","ambientcg-grass-CC0.txt","kenney-suburban-license.txt","kenney-commercial-license.txt","polyhaven-surfaces-CC0.txt"])
     assert.deepEqual(await readFile(new URL(`dist/assets/${name}`,site)),await readFile(new URL(`media/${name}`,site)));
   assert.match(await readFile(new URL("media/kenney-nature-license.txt",site),"utf8"),/CC0/);
@@ -63,7 +63,7 @@ test("sunny media needed for publication is contained in the website checkout",a
   const assets=JSON.parse(await readFile(new URL("assets.json",site),"utf8"));
   const media=JSON.parse(await readFile(new URL("media/provenance.json",site),"utf8"));
   const outputs=assets.filter(a=>a.output.startsWith("sunny-"));
-  assert.equal(outputs.length,29);
+  assert.equal(outputs.length,35);
   for(const asset of outputs) assert.match(asset.source,/^Website\/media\//);
   for(const record of media.filter(m=>m.output.includes("/sunny-"))) {
     assert.match(record.source,/^Website\/media\//);
@@ -127,7 +127,7 @@ test("harbor sources, surface coverage and combat layout retain separate evidenc
   }
   const original=p.town_surface_sources.files.find(record=>record.path==="CC0-1.0.txt");
   assert.equal(hash(await readFile(new URL("media/polyhaven-surfaces-CC0.txt",site))),original.sha256);
-  for(const evidence of [p.harbor_expansion,p.textured_town]) assert.equal(evidence.scene_sha256,p.scene.sha256);
+  for(const evidence of [p.harbor_expansion,p.terrain_refinement,p.textured_town]) assert.equal(evidence.scene_sha256,p.scene.sha256);
   assert.match(p.harbor_expansion.evidence_scope,/no combat, enemy AI, movement controller/);
   const texture=p.textured_town.source_manifest;
   assert.equal(texture.coverage.missingTextureSlots,0);
@@ -149,8 +149,43 @@ test("harbor sources, surface coverage and combat layout retain separate evidenc
       assert.ok(html.includes(harborStrings[locale].scope),`${locale}/${route}/scope`);
       if(route!==""&&route!=="open-world/")for(const view of ["harbor-street","terrace","garden-arena","harbor-bridge"])assert.ok(html.includes(`sunny-${view}-20261108.webp`));
     }
-    assert.ok((await readFile(new URL(`dist/${prefix}updates/index.html`,site),"utf8")).includes("sunny-harbor-overview-20261108.webp"));
+    assert.ok((await readFile(new URL(`dist/${prefix}updates/index.html`,site),"utf8")).includes("sunny-ridgeline-20261108.webp"));
   }
+});
+
+test("terrain refinement keeps native evidence separate from implemented movement",async()=>{
+  const p=JSON.parse(await readFile(new URL("media/sunny-provenance.json",site),"utf8"));
+  const terrain=p.terrain_refinement;
+  assert.equal(terrain.scene_sha256,p.scene.sha256);
+  assert.match(terrain.source_manifest_sha256,/^[a-f0-9]{64}$/);
+  assert.equal(terrain.source_manifest.sceneSha256,p.scene.sha256);
+  assert.match(terrain.evidence_scope,/does not implement or accept character movement, combat, enemy AI/);
+  const native=terrain.source_manifest;
+  assert.equal(terrain.creative_specification,native.creativeSpecification);
+  assert.equal(native.landSquareMetres,p.scene.measurements.total_land_m2);
+  assert.ok(Math.abs(native.highestGround-native.lowestGround-native.verticalRange)<.0001);
+  assert.equal(native.alleys.length,native.alleyRoutes);
+  assert.equal(native.coverBypasses.length,native.coverBypassRoutes);
+  assert.equal(native.mainSupportSamples+native.alleySupportSamples+native.coverSupportSamples,native.clearanceSamples);
+  assert.equal(p.scene.harbor_support_probes,native.clearanceSamples);
+  const mainMetres=native.mainRoutes.reduce((sum,route)=>sum+route.lengthMetres,0);
+  const alleyMetres=native.alleys.reduce((sum,route)=>sum+route.lengthMetres,0);
+  const bypassMetres=native.coverBypasses.reduce((sum,route)=>sum+route.lengthMetres,0);
+  assert.equal(p.scene.measurements.harbor_main_route_metres,mainMetres);
+  assert.equal(p.scene.measurements.harbor_alley_metres,alleyMetres);
+  assert.equal(p.scene.measurements.harbor_cover_bypass_metres,bypassMetres);
+  for(const locale of Object.keys(harborStrings)) {
+    const prefix=locale==="zh-Hans"?"":`${locale}/`;
+    for(const route of ["art/","open-world/map/","open-world/art/"]) {
+      const html=await readFile(new URL(`dist/${prefix}${route}index.html`,site),"utf8");
+      for(const view of ["ridgeline","courtyard-alley","flanking-cover"])assert.ok(html.includes(`sunny-${view}-20261108.webp`),`${locale}/${route}/${view}`);
+      assert.ok(html.includes(harborStrings[locale].terrainIntro));
+    }
+  }
+
+  assert.match(harborStrings.en.scope,/character movement, combat, enemy AI and destruction are not implemented/);
+  assert.match(harborStrings["zh-Hans"].scope,/尚未实现角色移动、战斗、敌人 AI/);
+  assert.match(harborStrings.ja.scope,/キャラクター移動、戦闘、敵AI、破壊は未実装/);
 });
 
 test("map links use the final north-up camera and all five destinations",()=>{

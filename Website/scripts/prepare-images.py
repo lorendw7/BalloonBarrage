@@ -34,6 +34,10 @@ DEVELOPMENT_ATTRIBUTION = "Creator-supplied development gameplay screenshot, rec
 RESULTS_CAPTURE = "Website/media/results-statistics-20261023.png"
 RESULTS_ATTRIBUTION = "Creator-supplied Unity 2K Game-view result screenshot, received 2026-10-23. Shows the saved statistics layout with illustrative play values; not a standalone-package capture. Web derivative crops only the Unity editor chrome. No generative editing."
 SOURCES = {
+    "sunny-ridgeline-20261108": "Assets/Art/OpenWorld/HarborTerrainRefinement20261108/Previews/Ridgeline.png",
+    "sunny-courtyard-alley-20261108": "Assets/Art/OpenWorld/HarborTerrainRefinement20261108/Previews/CourtyardAlley.png",
+    "sunny-flanking-cover-20261108": "Assets/Art/OpenWorld/HarborTerrainRefinement20261108/Previews/FlankingCover.png",
+
     "sunny-harbor-overview-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/HarborOverview.png",
     "sunny-harbor-street-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/HarborStreet.png",
     "sunny-terrace-20261108": "Assets/Art/OpenWorld/HarborExpansion20261108/Previews/Terrace.png",

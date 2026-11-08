@@ -39,9 +39,9 @@ def verified_sources(folder):
     return record
 
 
-def finite_number(record, key):
+def finite_number(record, key, *, allow_negative=False):
     value = record[key]
-    if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+    if not isinstance(value, (int, float)) or not math.isfinite(value) or (value < 0 and not allow_negative):
         raise ValueError(f"Invalid native measurement: {key}")
     return value
 
@@ -60,20 +60,25 @@ def main():
     textures = read_json(textures_path)
     buildings_path = ART / "HarborBuildingsPrepared/Manifest.json"
     buildings = read_json(buildings_path)
+    terrain_path = ART / "HarborTerrainRefinement20261108/Manifest.json"
+    terrain = read_json(terrain_path)
     scene_sha = digest(project_file(scene["scene"]))
-    if any(scene_sha != record["sceneSha256"] for record in [scene,detail,grass,harbor,textures]):
-        raise ValueError("All scene, planting, harbor and texture records must identify the same saved scene")
+    if any(scene_sha != record["sceneSha256"] for record in [scene,detail,grass,harbor,textures,terrain]):
+        raise ValueError("All scene, planting, harbor, terrain and texture records must identify the same saved scene")
+    for item in terrain["files"]:
+        if digest(project_file(item["path"])) != item["sha256"]:
+            raise ValueError(f"Terrain evidence file mismatch: {item['path']}")
     source_one = verified_sources(ART / "ThirdParty/KenneyNatureExpansion")
     source_two = verified_sources(ART / "ThirdParty/KenneyCoastalDetails")
     grass_sources = verified_sources(ART / "ThirdParty/LushGrass20261108")
     building_sources = verified_sources(ART / "ThirdParty/KenneyHarborBuildings")
     surface_sources = verified_sources(ART / "ThirdParty/TownSurfaceTextures20261108")
     reused_surfaces = verified_sources(ART / "ThirdParty/PolyHavenSurfaces")
-    for manifest in [harbor,textures,buildings]:
+    for manifest in [harbor,textures,buildings,terrain]:
         if digest(project_file(manifest["source"])) != manifest["sourceSha256"]:
             raise ValueError("Harbor authoring source does not match its recorded specification")
     for manifest,keys in [(textures,["shader","sourceManifest","reusedSourceManifest"]),
-                          (buildings,["upstreamManifest"])]:
+                          (buildings,["upstreamManifest"]),(terrain,["alleySource"])]:
         for key in keys:
             if digest(project_file(manifest[key])) != manifest[key+"Sha256"]:
                 raise ValueError(f"Harbor source mismatch: {key}")
@@ -94,6 +99,8 @@ def main():
     coverage=textures["coverage"]
     if coverage["missingTextureSlots"] != 0 or coverage["texturedSlots"] != coverage["materialSlots"]:
         raise ValueError("Final native material coverage has missing textures")
+    if any(terrain[key] != coverage[key] for key in ["renderers","materialSlots","texturedSlots","missingTextureSlots"]):
+        raise ValueError("Terrain and material coverage must describe the same saved renderer inventory")
     if digest(project_file(grass["source"])) != grass["sourceSha256"]:
         raise ValueError("Grass geometry source does not match its recorded recipe")
     if digest(project_file(grass["sourceManifest"])) != grass["sourceManifestSha256"]:
@@ -115,8 +122,9 @@ def main():
                                   if Path(capture["path"]).name == "Flowers.png"]
     captures += [capture for capture in grass["previews"] if Path(capture["path"]).name == "Grass.png"]
     captures += [capture for capture in harbor["previews"] if "/HarborExpansion20261108/Previews/" in capture["path"]]
-    if len(captures) != 14 or len({capture["path"] for capture in captures}) != 14:
-        raise ValueError("Expected seven scene captures, flower/grass close-ups and five harbor views")
+    captures += [capture for capture in terrain["previews"] if "/HarborTerrainRefinement20261108/Previews/" in capture["path"]]
+    if len(captures) != 17 or len({capture["path"] for capture in captures}) != 17:
+        raise ValueError("Expected seven scene captures, flower/grass close-ups, five harbor views and three terrain views")
     for capture in captures:
         if digest(project_file(capture["path"])) != capture["sha256"]:
             raise ValueError(f"Native capture hash mismatch: {capture['path']}")
@@ -132,9 +140,22 @@ def main():
         raise ValueError("Land components do not agree with the current native total")
     if not math.isclose(total_area/original_area,harbor["totalLandRatio"],rel_tol=1e-6):
         raise ValueError("Current land ratio does not agree with measured area")
+    if finite_number(terrain,"landSquareMetres") != total_area:
+        raise ValueError("Terrain refinement changed the recorded land outline")
+    lowest=finite_number(terrain,"lowestGround",allow_negative=True)
+    highest=finite_number(terrain,"highestGround",allow_negative=True)
+    if not math.isclose(highest-lowest,finite_number(terrain,"verticalRange"),abs_tol=.0001):
+        raise ValueError("Recorded terrain height span is inconsistent")
+    route_metres={family:sum(finite_number(route,"lengthMetres") for route in terrain[family])
+                  for family in ["mainRoutes","alleys","coverBypasses"]}
+    if len(terrain["alleys"]) != terrain["alleyRoutes"] or len(terrain["coverBypasses"]) != terrain["coverBypassRoutes"]:
+        raise ValueError("Authored route counts do not match their native inventories")
+    harbor_support=sum(finite_number(terrain,key) for key in ["mainSupportSamples","alleySupportSamples","coverSupportSamples"])
+    if harbor_support != finite_number(terrain,"clearanceSamples"):
+        raise ValueError("Current support and clearance inventories do not match")
     record = {
-        "schema": "balloonbarrage.website.sunny-coast.v4",
-        "date": harbor["created"], "timezone": "Asia/Tokyo",
+        "schema": "balloonbarrage.website.sunny-coast.v5",
+        "date": terrain["created"], "timezone": "Asia/Tokyo",
         "evidence_scope": "Native Unity static scene preparation. Not gameplay, human playtest, performance acceptance, or an open-world release. Current downloads remain the studio demo.",
         "scene": {
             "name": "OpenWorldSunnyExpansion", "sha256": scene_sha,
@@ -144,13 +165,17 @@ def main():
                 "southern_expansion_land_m2": southern_area,"western_harbor_land_m2":western_area,
                 "total_land_m2": total_area,
                 "total_land_ratio": finite_number(harbor, "totalLandRatio"),
-                "added_route_metres": finite_number(scene,"addedRouteMetres")+finite_number(harbor,"addedRouteMetres"),
+                "added_route_metres": finite_number(scene,"addedRouteMetres")+sum(route_metres.values()),
+                "harbor_main_route_metres":route_metres["mainRoutes"],
+                "harbor_alley_metres":route_metres["alleys"],
+                "harbor_cover_bypass_metres":route_metres["coverBypasses"],
+                "route_measurement_scope":"Sum of current authored centerlines, including routes that may share ground; not unique traversable area or measured player travel distance.",
             },
             "support_probes": finite_number(scene, "routeSupportSamples"),
             "clearance_probes": finite_number(scene, "routeClearanceSamples"),
             "original_route_probes_each": int(original_samples[1].replace(",", "")),
-            "harbor_support_probes": finite_number(harbor,"routeSupportSamples"),
-            "harbor_clearance_probes": finite_number(harbor,"routeClearanceSamples"),
+            "harbor_support_probes": harbor_support,
+            "harbor_clearance_probes": finite_number(terrain,"clearanceSamples"),
         },
         "captures": captures,
         "new_cc0_sources": source_one,
@@ -191,6 +216,12 @@ def main():
         },
         "prepared_harbor_buildings": {
             "source_manifest_sha256": digest(buildings_path),"source_manifest":buildings,
+        },
+        "terrain_refinement": {
+            "scene_sha256": terrain["sceneSha256"],
+            "source_manifest_sha256": digest(terrain_path),"source_manifest":terrain,
+            "creative_specification":terrain["creativeSpecification"],
+            "evidence_scope":"Saved static terrain, curving paths, passages around cover and building alleys. Geometry support, clearance and connectivity evidence does not implement or accept character movement, combat, enemy AI, camera feel or human playtests.",
         },
         "textured_town": {
             "scene_sha256": textures["sceneSha256"],

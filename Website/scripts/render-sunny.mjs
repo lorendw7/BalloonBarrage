@@ -6,7 +6,8 @@ const e = value => String(value).replace(/[&<>"']/g, char => ({ "&":"&amp;", "<"
 export const sunnyViews = ["market", "meadow", "coral-bay", "overlook"];
 export const sunnyIds = ["sunshine-market", "meadow-grove", "coral-bay", "azure-overlook"];
 export const harborViews = ["harbor-street", "terrace", "garden-arena", "harbor-bridge"];
-const captureNames = {overview:"Overview",topdown:"TopDown",market:"Market",meadow:"Meadow","coral-bay":"CoralBay",bridge:"Bridge",overlook:"Overlook",flowers:"Flowers",grass:"Grass","harbor-overview":"HarborOverview","harbor-street":"HarborStreet",terrace:"Terrace","garden-arena":"GardenArena","harbor-bridge":"HarborBridge"};
+export const terrainViews = ["ridgeline", "courtyard-alley", "flanking-cover"];
+const captureNames = {overview:"Overview",topdown:"TopDown",market:"Market",meadow:"Meadow","coral-bay":"CoralBay",bridge:"Bridge",overlook:"Overlook",flowers:"Flowers",grass:"Grass","harbor-overview":"HarborOverview","harbor-street":"HarborStreet",terrace:"Terrace","garden-arena":"GardenArena","harbor-bridge":"HarborBridge",ridgeline:"Ridgeline","courtyard-alley":"CourtyardAlley","flanking-cover":"FlankingCover"};
 export function sunnyCapture(name) {
   const capture=sunnyProvenance.captures.find(item=>item.path.endsWith(`/${captureNames[name]}.png`));
   if(!capture) throw new Error(`Missing native capture: ${name}`);
@@ -22,7 +23,7 @@ export function sunnyMapPlaces(locale) {
   const camera=sunnyCapture("topdown");
   if(!camera.orthographic || Math.abs(camera.euler.x-90)>.01 || Math.abs(camera.euler.y)>.01 || Math.abs(camera.euler.z)>.01) throw new Error("Map pins require the recorded north-up orthographic camera");
   const positions=[[0,-79],[-91,-83],[98,-94],[27,-137],[-245,-65]];
-  return [...t.places.map((p,i)=>({id:sunnyIds[i],title:p[0],tag:p[1]})),{id:"harbor-borough",title:h.title,tag:h.tag}].map((place,i)=>{
+  return [...t.places.map((p,i)=>({id:sunnyIds[i],title:p[0],tag:p[1]})),{id:"harbor-borough",title:h.mapLabel,tag:h.tag}].map((place,i)=>{
     const [x,z]=positions[i];
     const left=50+(x-camera.position.x)/(2*camera.size*camera.width/camera.height)*100;
     const top=50-(z-camera.position.z)/(2*camera.size)*100;
@@ -41,7 +42,12 @@ export function sunnyMetrics(locale) {
 }
 export function sunnyHarbor(locale,base,{compact=false}={}) {
   const h=harborStrings[locale];
-  return `<section class="sunny-harbor" id="harbor-borough" aria-labelledby="sunny-harbor-title"><div class="sunny-section-heading"><div><p class="eyebrow">05 / ${e(h.tag)}</p><h2 id="sunny-harbor-title">${e(h.title)}</h2></div><p>${e(h.intro)}</p></div>${sunnyFigure(locale,base,"harbor-overview",h.overviewAlt,h.title,{wide:true})}<div class="sunny-harbor-note"><div><h3>${e(h.surfaceTitle)}</h3><p>${e(h.surfaceBody)}</p><a href="${base}assets/sunny-provenance.json">${e(h.sourceLabel)} ↗</a></div><p class="small">${e(h.scope)}</p></div>${compact?"":`<div class="sunny-districts">${h.views.map(([title,tag,body,alt],i)=>`<article class="sunny-district" id="${harborViews[i]}">${sunnyFigure(locale,base,harborViews[i],alt,title)}<div class="sunny-district-copy"><div><p class="eyebrow">${e(tag)}</p><h3>${e(title)}</h3><p>${e(body)}</p></div></div></article>`).join("")}</div>`}</section>`;
+  return `<section class="sunny-harbor" id="harbor-borough" aria-labelledby="sunny-harbor-title"><div class="sunny-section-heading"><div><p class="eyebrow">05 / ${e(h.tag)}</p><h2 id="sunny-harbor-title">${e(h.title)}</h2></div><p>${e(h.intro)}</p></div>${sunnyFigure(locale,base,"harbor-overview",h.overviewAlt,h.title,{wide:true})}<div class="sunny-harbor-note"><div><h3>${e(h.surfaceTitle)}</h3><p>${e(h.surfaceBody)}</p><a href="${base}assets/sunny-provenance.json">${e(h.sourceLabel)} ↗</a></div><p class="small">${e(h.scope)}</p></div>${sunnyTerrain(locale,base,{compact})}${compact?"":`<div class="sunny-districts">${h.views.map(([title,tag,body,alt],i)=>`<article class="sunny-district" id="${harborViews[i]}">${sunnyFigure(locale,base,harborViews[i],alt,title)}<div class="sunny-district-copy"><div><p class="eyebrow">${e(tag)}</p><h3>${e(title)}</h3><p>${e(body)}</p></div></div></article>`).join("")}</div>`}</section>`;
+}
+export function sunnyTerrain(locale,base,{compact=false}={}) {
+  const h=harborStrings[locale],terrain=sunnyProvenance.terrain_refinement.source_manifest;
+  const values=[`${new Intl.NumberFormat(locale,{maximumFractionDigits:1}).format(terrain.verticalRange)} m`,terrain.alleyRoutes,terrain.coverBypassRoutes];
+  return `<section class="sunny-terrain" aria-labelledby="terrain-detail-title"><h3 id="terrain-detail-title">${e(h.terrainTitle)}</h3><p>${e(h.terrainIntro)}</p><dl class="sunny-terrain-metrics">${values.map((value,i)=>`<div><dt>${e(h.terrainMetricLabels[i])}</dt><dd>${e(value)}</dd></div>`).join("")}</dl>${compact?"":`<div class="sunny-terrain-views">${h.terrainViews.map(([title,tag,body,alt],i)=>`<article id="${terrainViews[i]}">${sunnyFigure(locale,base,terrainViews[i],alt,title)}<p class="eyebrow">${e(tag)}</p><h4>${e(title)}</h4><p>${e(body)}</p></article>`).join("")}</div>`}</section>`;
 }
 export function sunnyDistricts(locale,base,{compact=false}={}) {
   const t=sunnyStrings[locale];

@@ -18,7 +18,7 @@ export const sunnyStrings = {
       ["阳光集市", "珊瑚屋顶 / 手作摊位", "奶油色石路穿过彩旗和小摊，两侧房屋让中央路线保持清楚。这里是南部环路的共同会合点。", "珊瑚屋顶和青绿门框围绕阳光集市的石铺大街，彩旗悬在宽阔路线两侧"],
       ["花田林地", "多样花境 / 林间休息点", "雏菊、珊瑚色郁金香、蓝铃花与向日葵，为金色植栽和林间小路添上不同的轮廓。花丛集中在路边，开阔草地与休息亭保留清楚的停留空间。", "多种花卉、金色植栽和开源树木围绕西部林间休息点，宽阔路线保持清楚"],
       ["珊瑚海湾", "棕榈树 / 海边营地", "帐篷、木堆和海岸岩石聚成一处小营地，棕榈树延伸到水边；这些仍是静态场景装饰。", "珊瑚色帐篷、棕榈树和沙色营地位于青绿海水旁"],
-      ["蔚蓝观景点", "条纹灯塔 / 海岸终点", "红白条纹地标面向开阔海面。沿路返回集市，或继续绕行另一侧海湾。", "红白条纹海岸地标、金色顶部和休息亭形成南部观景点"]
+      ["蔚蓝观景点", "条纹灯塔 / 海岸终点", "红白条纹地标面向开阔海面。已保存的环路将观景点接回集市和另一侧海湾。", "红白条纹海岸地标、金色顶部和休息亭形成南部观景点"]
     ],
     mapLink: "查看完整地图", galleryLink: "看场景与素材", sourceLink: "场景说明与证据",
     northernTitle: "北部：原有音乐小镇",
@@ -32,8 +32,8 @@ export const sunnyStrings = {
     evidenceTitle: "现在可以看到什么",
     evidence: [["已保存", "独立扩展场景、港湾、桥梁、高低地形、静态碰撞与纹理材质。"], ["已检查", "Unity 场景重载、路线支撑与净空检查、原生相机截图。"], ["接下来", "学习者逐步编写移动、相机和舞台入口；尚未完成开放世界游玩与性能验收。"]],
     planNote: "以下是后续玩法设计。当前地图准备不代表这些系统已经实现。",
-    latestTitle: "西部港湾，让街区与地形更丰富",
-    latestBody: "新的西岸街区加入开源建筑、纹理表面、高台与下沉花园，并通过桥梁接回阳光海岸。原生截图展示静态环境和战斗场地布局准备；角色移动、敌人 AI 与战斗仍待编写，当前下载仍是工作室演示。",
+    latestTitle: "起伏更自然，街巷有更多转折",
+    latestBody: "港湾继续细化：更明显的高低地形、顺坡弯曲的小径、可绕行的独立掩体，以及连接街路的房屋间巷道。图片与检查展示静态布局准备；移动、战斗和敌人 AI 仍待编写，当前下载仍是工作室演示。",
     bridgeTitle: "跨过双桥，接上旧小镇", bridgeAlt: "连接北部小镇和南部新陆地的明亮双桥与护栏",
     artTitle: "从地图全景，看到沿路细节",
     artIntro: "以下图片直接来自 Unity Edit Mode，相机位置与文件哈希保存在场景记录中。点击可查看完整图片。",
@@ -69,7 +69,7 @@ export const sunnyStrings = {
       ["サンシャイン市場", "コーラルの屋根 / 手作りの屋台", "クリーム色の石畳に旗と屋台が並び、中央の道を広く保ちます。南の周回路が集まる場所です。", "コーラル色の屋根と青緑の窓枠、旗と屋台に囲まれた市場の広い石畳"],
       ["花畑の木立", "多彩な花壇 / 木陰の休憩所", "デイジー、コーラル色のチューリップ、ブルーベル、ひまわりが、金色の植栽と木立の道に異なるシルエットを添えます。花は道沿いにまとめ、草地と休憩所の見通しを保ちます。", "多彩な花、金色の植栽、オープン素材の木々が西の休憩所を囲み、広い道の見通しを保っている"],
       ["コーラル湾", "ヤシの木 / 海辺のキャンプ", "テント、薪、海岸の岩が小さなキャンプをつくり、ヤシの木が水辺へ続きます。現在は静的な装飾です。", "青緑の海のそばにコーラル色のテントとヤシの木が並ぶ砂色のキャンプ"],
-      ["アジュール展望所", "縞の灯台 / 海岸の終点", "赤白のランドマークが広い海を見渡します。市場へ戻ることも、反対側の湾へ周回することもできます。", "赤白の縞と金色の屋根を持つ海岸のランドマーク、南の休憩所"]
+      ["アジュール展望所", "縞の灯台 / 海岸の終点", "赤白のランドマークが広い海を見渡します。保存済みの周回路が市場と反対側の湾につながっています。", "赤白の縞と金色の屋根を持つ海岸のランドマーク、南の休憩所"]
     ],
     mapLink: "地図全体を見る", galleryLink: "シーンと素材を見る", sourceLink: "シーンの説明と検証記録",
     northernTitle: "北側：元の音楽の町",
@@ -83,8 +83,8 @@ export const sunnyStrings = {
     evidenceTitle: "今、確認できること",
     evidence: [["保存済み", "独立した拡張シーン、港、橋、高低差、静的コリジョン、表面の細かなマテリアル。"], ["確認済み", "Unity での再読込、道の支持面と通行空間の検査、ネイティブ画像。"], ["次の一歩", "学習者が移動、カメラ、舞台への入口を順に実装。探索プレイと性能の検証はこれからです。"]],
     planNote: "以下は今後のゲームプレイ設計です。地図の準備は、これらのシステムの実装完了を意味しません。",
-    latestTitle: "西の港へ。街並みと地形を広げて",
-    latestBody: "新しい西岸にオープン素材の建物、表面の細部、台地、低い庭園を加え、橋でサニーコーストにつなぎました。画像は静的な環境と戦闘場所の配置準備です。移動、敵AI、戦闘は未実装で、配布版はスタジオデモのままです。",
+    latestTitle: "自然な起伏と、回り道のある街へ",
+    latestBody: "港の起伏を深め、斜面に沿う小道、回り道のある遮蔽物、通りにつながる建物の間の路地を整えました。画像と検査は静的な配置の準備です。移動・戦闘・敵AIは未実装で、配布版はスタジオデモのままです。",
     bridgeTitle: "二本の橋で、元の町とつながる", bridgeAlt: "北の町と新しい南の陸地をつなぐ明るい橋と手すり",
     artTitle: "地図の全景から、道沿いの細部へ",
     artIntro: "画像は Unity Edit Mode から直接撮影しています。カメラ位置とファイルハッシュはシーンの記録に保存。クリックで画像全体を確認できます。",
@@ -120,7 +120,7 @@ export const sunnyStrings = {
       ["Sunshine Market", "CORAL ROOFS / CRAFT STALLS", "Cream paving threads between flags and stalls, with homes set back from the clear central route. The southern loops meet here.", "Coral roofs, turquoise frames and festival bunting around the market's broad paved street"],
       ["Meadow Grove", "VARIED FLOWER BEDS / SHADED REST", "Daisies, coral tulips, bluebells and sunflowers bring different silhouettes to the golden planting and woodland path. Flowers gather beside the route, keeping open grass and the resting pavilion easy to read.", "Varied flowers, golden planting and open-license trees around the western clearing, with broad paths kept clear"],
       ["Coral Bay Camp", "PALMS / SEASIDE CAMP", "Tents, stacked timber and coastal rocks form a small camp, with palms reaching toward the water. They remain static scenery.", "Coral tents and palms on a sandy camping court beside turquoise water"],
-      ["Azure Overlook", "STRIPED BEACON / COASTAL VIEW", "A red-and-ivory landmark faces the open sea. Return toward the market, or follow the loop around the other side of the bay.", "Red-and-ivory coastal beacon with a golden cap beside the southern resting pavilion"]
+      ["Azure Overlook", "STRIPED BEACON / COASTAL VIEW", "A red-and-ivory landmark faces the open sea. The saved loop links the overlook back to the market and the other side of the bay.", "Red-and-ivory coastal beacon with a golden cap beside the southern resting pavilion"]
     ],
     mapLink: "Explore the full map", galleryLink: "See scenes and materials", sourceLink: "Scene guide and evidence",
     northernTitle: "To the north: the original music town",
@@ -134,8 +134,8 @@ export const sunnyStrings = {
     evidenceTitle: "What is here today",
     evidence: [["SAVED", "An expanded scene, harbor, bridges, elevation, static collision and textured materials."], ["CHECKED", "Unity scene reload, route support and clearance probes, and native camera captures."], ["NEXT", "Learner-written movement, camera and stage entry, one step at a time. Exploration playtests and performance acceptance remain ahead."]],
     planNote: "The following is future gameplay design. Preparing the map does not implement these systems.",
-    latestTitle: "A western harbor, with more texture and terrain",
-    latestBody: "The west shore adds open-license buildings, textured surfaces, raised ground and a sunken garden, linked back to Sunny Coast by bridges. Native captures show static scenery and combat-layout preparation. Movement, enemy AI and combat remain future work; downloads still contain the studio demo.",
+    latestTitle: "More natural rises, with paths around and between",
+    latestBody: "The harbor gains stronger elevation, paths that follow the slopes, freestanding cover with room to go around, and alleys connecting the streets. Images and checks cover static layout preparation. Movement, combat and enemy AI remain future work; downloads still contain the studio demo.",
     bridgeTitle: "Two bridges back to the original town", bridgeAlt: "Bright bridges and railings connecting the original northern town to the southern expansion",
     artTitle: "From a wide view to the details along the path",
     artIntro: "These images come directly from Unity Edit Mode. Camera poses and file hashes are retained with the scene. Select any image to inspect it at full size.",

@@ -150,4 +150,5 @@
 }
 @media (max-width: 360px) {
   .sunny-map-pin { width: 30px; height: 30px; }
+  .sunny-map-pin-3 { transform: translate(-50%,calc(-50% + 4px)); }
 }

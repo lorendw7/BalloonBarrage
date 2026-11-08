@@ -401,10 +401,46 @@
     "attribution": "Native Unity 6000.0.77f1 controlled Editor GPU/physics fixture at 2560x1440. 404 active opaque static receivers, eight pigments, 10,000 contacts. Not human play or exact standalone-package acceptance. No generative image editing. Existing original PaintCoverage_Atlas_v1 masks and native procedural shaders; original attribution and exact generation prompts remain in SurfacePaintCoverage20261027. No Nintendo assets imported."
   },
   {
+    "source": "Website/media/sunny-ridgeline-20261108.png",
+    "source_sha256": "176181b7f262276dca66d70130f60d715f0faad64162fd5c72a83c7ee1f1fdc7",
+    "output": "Website/media/sunny-ridgeline-20261108.webp",
+    "output_sha256": "a3d0b17e431f0d07d761bd1b725831fcfc588e39fdb8d8289c3b47653531686c",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-courtyard-alley-20261108.png",
+    "source_sha256": "35618d9771666a126bc99d09792f904467cfd92d91f48c85ce79b72a6c73abd3",
+    "output": "Website/media/sunny-courtyard-alley-20261108.webp",
+    "output_sha256": "a3303d38a09e30f55880927f6e192605693b2952d97fc56f635fa7e3ce38b736",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
+    "source": "Website/media/sunny-flanking-cover-20261108.png",
+    "source_sha256": "b2abb60e53205a99d5b25c629aea75b260048b48e9e415d74b502a136037f97f",
+    "output": "Website/media/sunny-flanking-cover-20261108.webp",
+    "output_sha256": "0ce1170cefa6f7eef42c33007fc2bc8a23d92f84cf95c0f226ab7e2223118fc1",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "preparation": "RGB, preserve source resolution up to 2560x1440, Lanczos when downscaling; WebP quality 92, method 6",
+    "attribution": "Native Unity 6000.0.77f1 Edit Mode camera capture, 2026-11-08. Separate OpenWorldSunnyExpansion static scene; not gameplay, human playtest, performance acceptance or a released open-world build. Original architecture and procedural 3D blossoms/grass blades, CC0 Kenney scenery and City Kit buildings, Poly Haven surfaces and ambientCG Grass005 retain separate provenance. Grass005 is described as Procedural with Bitmap Elements, not pure photogrammetry. Original procedural surface detail and plant geometry retain exact separate specifications. Plant geometry is native 3D mesh authoring, not raster image generation. Exact source image bytes retained. No generative image editing."
+  },
+  {
     "source": "Website/media/sunny-harbor-overview-20261108.png",
-    "source_sha256": "16ff806628e939f609ccc163edca8552017d4c79c3cd11a9a87601b14374daf4",
+    "source_sha256": "87e1fdc5697a0fe95181ad847efb045bba34a6fe8b22a392d351f9f0809eb1b9",
     "output": "Website/media/sunny-harbor-overview-20261108.webp",
-    "output_sha256": "56d1494f769c44750054eb7eb5fbfa1b9c8560801c17044e6bce66789eefc0c9",
+    "output_sha256": "adb9cf39bcafb2df2fff862f1de280e6d0b60a5fcdcaafa5b8cdea75614e2141",
     "dimensions": [
       1920,
       1080
@@ -414,9 +450,9 @@
   },
   {
     "source": "Website/media/sunny-harbor-street-20261108.png",
-    "source_sha256": "4eb23c2627c9423ee3ba6142d7b1b4e5ad9fcaf28bd7d2c84019469a5d910572",
+    "source_sha256": "e0c1b6462929e7c6229689ffcd7fb0889593d221233f1052c0a77cd5f74b2d97",
     "output": "Website/media/sunny-harbor-street-20261108.webp",
-    "output_sha256": "fa509e5c756882ad781bf49cd8c1cbed2033e69b3f9e2d89b1d5cf2867765f1d",
+    "output_sha256": "61034fbe4e51e575e94422c572679ea38d9534072fc529dd234538699fa530a5",
     "dimensions": [
       1920,
       1080
@@ -426,9 +462,9 @@
   },
   {
     "source": "Website/media/sunny-terrace-20261108.png",
-    "source_sha256": "5c123c61bb71846c18a36d62a74b517281e25e0d64785da0ecc88c45d5112c97",
+    "source_sha256": "bda4838a104d1bdaa673ad067d810b7ce28af36f7256a30537af3885123c771a",
     "output": "Website/media/sunny-terrace-20261108.webp",
-    "output_sha256": "94bc132cefde887bf554e0ad0a8bef55e78637c54d120d458caf25e6ede47afa",
+    "output_sha256": "5859282eb3a513934dc16a9b78fe143f092b14773a640231ffadd2f7fe4a8c36",
     "dimensions": [
       1920,
       1080
@@ -438,9 +474,9 @@
   },
   {
     "source": "Website/media/sunny-garden-arena-20261108.png",
-    "source_sha256": "9fbb0c8bb81182faedf66f3efa43971eeb4ffd9da6b36e3b103b831373bdec13",
+    "source_sha256": "0cecef94a820ac1f08eab0da52c75fbf0eb8070ba4bb33ac68c9086c71978337",
     "output": "Website/media/sunny-garden-arena-20261108.webp",
-    "output_sha256": "b3f44d9508d0065d4d2fd7378204005ff18ff637f9931e277124612de89c7bfd",
+    "output_sha256": "482d3f5f11ac2095bf9c6f6f16cda979f6665a0665407f6c3611ae0f826fdb41",
     "dimensions": [
       1920,
       1080
@@ -450,9 +486,9 @@
   },
   {
     "source": "Website/media/sunny-harbor-bridge-20261108.png",
-    "source_sha256": "4fc53010f28f40c316f8181a7c488473294cfec962446bc39396ee37a3dec13f",
+    "source_sha256": "cfda9831819ec9993b515a65a87133ff4fa1cc9c5218c9517e749bddb77020b4",
     "output": "Website/media/sunny-harbor-bridge-20261108.webp",
-    "output_sha256": "7811ebcf92e094deb62f10a8a550b02b300fd65ccdffd01e0f80dbc8a26f5389",
+    "output_sha256": "e2a026784e9b6ce07735a7103cf009eff6221f5a9becb4e0191a31a81ede46c6",
     "dimensions": [
       1920,
       1080
@@ -462,9 +498,9 @@
   },
   {
     "source": "Website/media/sunny-grass-20261108.png",
-    "source_sha256": "c29b49e59e1d371d35e6af72c5e60385c41029f5fe7ffaad43307548418260de",
+    "source_sha256": "bec0f64d05fd138f3b7528edc468294393a758e484a90c00a57cd07542212617",
     "output": "Website/media/sunny-grass-20261108.webp",
-    "output_sha256": "89dc023996dc5f1cca5814aa1a8fab50eec32f6b3554f7f5946ec96a7fbb0d8a",
+    "output_sha256": "49663c01964db6ad37fca9830374509c80ecd4220f3a60a743f0cc4a05987e75",
     "dimensions": [
       1920,
       1080
@@ -474,9 +510,9 @@
   },
   {
     "source": "Website/media/sunny-flowers-20261108.png",
-    "source_sha256": "b3678944d55ccf1072035c45d16b022ce73d6a4af067d54d9357e8ebeffd9884",
+    "source_sha256": "e4aab8a321a9bfa69354113726520bd8e30a9fea400de28831ef5c57afe63309",
     "output": "Website/media/sunny-flowers-20261108.webp",
-    "output_sha256": "b99387d20248f446a068ce72e2deb61cf3e72e57ffdae61fd13f8772ac9cdbc7",
+    "output_sha256": "702b6d8bff06997994582700b4e3cbf585110cda5768427c08270b109b205061",
     "dimensions": [
       1920,
       1080
@@ -486,9 +522,9 @@
   },
   {
     "source": "Website/media/sunny-overview-20261108.png",
-    "source_sha256": "dc06763c896d95520b652cb2c83d325cfbe84126885c9c9e2a44451745ae9caa",
+    "source_sha256": "54675c32e15be98a7c07687712f3c2f688598cd0ce2656b17ffd18bad6dcd515",
     "output": "Website/media/sunny-overview-20261108.webp",
-    "output_sha256": "cfb2b28f7d80d11c991370dcc0ee0371da8a01a1a643ecb46face8edc6ffcc12",
+    "output_sha256": "6c47217ffeb02bd5e791f3155d46983325f8567fb08f72152df3621e663be7f1",
     "dimensions": [
       2160,
       1440
@@ -498,9 +534,9 @@
   },
   {
     "source": "Website/media/sunny-topdown-20261108.png",
-    "source_sha256": "7cc60c811d67a4f341a655ad2ad1df27bb78b9f5c4698aaa08257b01c4a3e1d4",
+    "source_sha256": "b9d8881c44d179bac206af7afb236259d8f505fbdc19529a624cd561d5917733",
     "output": "Website/media/sunny-topdown-20261108.webp",
-    "output_sha256": "17e5db05cf7fd70c9f4b8b7a01ffa8fce0b4229671d77e82739fa77a68ac80b8",
+    "output_sha256": "a762b49c1b86eafd675251fd015aa3859dfcb80d5aa2d2c29b8836d362e5f95c",
     "dimensions": [
       2160,
       1440
@@ -510,9 +546,9 @@
   },
   {
     "source": "Website/media/sunny-market-20261108.png",
-    "source_sha256": "c976b71eb642e6bf811f4052ac5cd48d9ca50cfe53bd8786846c3c8ac9ee62bd",
+    "source_sha256": "9b6d10c60fef24aeab52def5d144cb08978c8ded9b3638516146b50c6f2e7c35",
     "output": "Website/media/sunny-market-20261108.webp",
-    "output_sha256": "562a7b6b5e0a3eb3305607812307cd233c144901867a3f878149c624d62c0b1f",
+    "output_sha256": "069176b777a2bcbf8e06f4100d50fdc9bd297d14df1c8356fb77572456d891ac",
     "dimensions": [
       1920,
       1080
@@ -522,9 +558,9 @@
   },
   {
     "source": "Website/media/sunny-meadow-20261108.png",
-    "source_sha256": "4f8bbc5b0aa2444d423ceadb87b718d2a05d09be831b6b4fb6521c61bdb45d64",
+    "source_sha256": "322220725cb3be00164b522924b78304273f7e701a80cb6bc22c23440f4c097e",
     "output": "Website/media/sunny-meadow-20261108.webp",
-    "output_sha256": "24aa0a957ceb1df15fe5348d80c865276cb2c34ec8acc87ce3a7e7fcd561db91",
+    "output_sha256": "f93441a264d1e3ba72287c197774a4c24a5020445a61dff5c744c114ff974890",
     "dimensions": [
       1920,
       1080
@@ -534,9 +570,9 @@
   },
   {
     "source": "Website/media/sunny-coral-bay-20261108.png",
-    "source_sha256": "1d5b322d7e2ade19d333f7f8fa8528e305db3a06d267e7578b141e152fb78141",
+    "source_sha256": "8ddd5abd17936a79655d5e3c4de5261416f71d39f9b64a2050be867dce5901d9",
     "output": "Website/media/sunny-coral-bay-20261108.webp",
-    "output_sha256": "f20c50af237f1956edd6bc0e575b0e5e4dd78975ae7acb436be412360886e35d",
+    "output_sha256": "8928321dbb9d29dc84717a1c9e7f320652b1c763b5a753863040b281162f81ab",
     "dimensions": [
       1920,
       1080
@@ -546,9 +582,9 @@
   },
   {
     "source": "Website/media/sunny-bridge-20261108.png",
-    "source_sha256": "60c5be68bb1b803cf005027a5d17e40fb070f730790162dade313bc9358b7ffa",
+    "source_sha256": "ddea7a0d37bed23ad594f7d620fcca9ef25bf23175c0866ee8fe7328d39cbd7e",
     "output": "Website/media/sunny-bridge-20261108.webp",
-    "output_sha256": "e4aac3269411b671390778253da6c72c49bbb0202e97295d21024f464a16a3b9",
+    "output_sha256": "eae8233db26243beffea9c8583430157dfbb91d11c8567aeb0912bd2d8c79ebb",
     "dimensions": [
       1920,
       1080
@@ -558,9 +594,9 @@
   },
   {
     "source": "Website/media/sunny-overlook-20261108.png",
-    "source_sha256": "f521dd3ec678b34dc3440cec78b23a904db233e496abe37ad38a717a518e9e55",
+    "source_sha256": "d547fad34b14121dcdb44e43eafd23742ebea06ef7fd4e8bd612b817a4b11c32",
     "output": "Website/media/sunny-overlook-20261108.webp",
-    "output_sha256": "e32fcd6ba0ecd260e33da5426fb59d964f9f1efed9ec2b7a762b21c9f7c9753b",
+    "output_sha256": "56de8651a9e59efddb1d51147f6fe7580aa16ac99052cd9f30a1e4d6d64b3565",
     "dimensions": [
       1920,
       1080
@@ -570,9 +606,9 @@
   },
   {
     "source": "Website/media/sunny-overview-20261108.png",
-    "source_sha256": "dc06763c896d95520b652cb2c83d325cfbe84126885c9c9e2a44451745ae9caa",
+    "source_sha256": "54675c32e15be98a7c07687712f3c2f688598cd0ce2656b17ffd18bad6dcd515",
     "output": "Website/media/sunny-share-20261108.jpg",
-    "output_sha256": "c5020dc631c6e9e70c8cca35e34e2dd30dea0e3128682f90e54489ce1fa05548",
+    "output_sha256": "cc3b29e1ce559debce3f56a30b3981cc3298644b4682a420b0066e8618a90015",
     "dimensions": [
       1200,
       675
